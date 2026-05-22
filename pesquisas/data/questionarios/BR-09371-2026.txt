@@ -1,0 +1,577 @@
+                                       QUESTIONÁRIO
+
+INTRODUÇÃO
+
+            INTRODUÇÃO e TCLE
+ intro      INSERTAR INTRO                                 RU
+
+            Olá! Estamos realizando uma pesquisa de        1. Sim, eu concordo       em
+            opinião    sobre     temas     diversos    e   participar da pesquisa.
+            gostaríamos      de    contar    com     sua
+                                                           2. Não, eu não concordo em
+            participação. A pesquisa deve durar 15
+                                                           participar da pesquisa. =>
+            minutos. Não existem respostas certas ou
+                                                           FILTRAR
+            erradas e estamos apenas procurando
+            suas opiniões sinceras. Por isso, é muito
+            importante que você responda as
+            perguntas      de   forma     individual   e
+            espontânea, sem consultar outras pessoas
+            ou a internet. ​
+
+            Sua resposta a este questionário será
+            mantida estritamente confidencial e será
+            tratada   de     forma    agrupada      em
+            percentuais, nunca de forma individual.
+
+
+D1. Classe: Tomar de ppi: br_socialclass_sr
+
+ A                                 1
+ B1                                2
+ B2                                3
+ C1                                4
+ C2                                5
+ D-E                               6
+
+D2. Região: Tomar de ppi: br_regions_sr
+
+Norte                              1
+Nordeste                           2
+Sudeste                            3
+Sul                                4
+Centro-Oeste                       5
+
+D6. Educação: Tomar de ppi: BR_education_level
+ Analfabeto / Primário incompleto (Analfabeto/ Até 3ª série Fundamental/ Até 3ª série 1º.
+                                                                                            1
+ Grau)
+ Primário completo / Ginasial incompleto (Até 4ª série Fundamental / Até 4ª série 1º.
+                                                                                            2
+ Grau)
+ Ginasial completo / Colegial incompleto (Fundamental completo/ 1º. Grau completo)          3
+ Colegial completo / Superior incompleto (Médio completo/ 2º. Grau completo)                4
+ Superior completo                                                                          5
+ Pós-graduação                                                                              6
+ Mestrado                                                                                   7
+ Doutorado                                                                                  8
+
+D3. Qual o seu município?
+Tomar de ppi: int_cidade (LISTADO LARGO)
+
+
+D4. Qual é o seu gênero?
+
+    1.​ Homem
+    2.​ Mulher
+
+D5. Qual é a sua idade?
+
+    1.​ Menos de 16 anos => FILTRAR
+    2.​ 18-24
+    3.​ 25-34
+    4.​ 35-44
+    5.​ 45-59
+    6.​ 60 anos ou mais
+
+
+BLOCO: ELEIÇÃO 2026
+
+
+P15. Qual é o seu grau de interesse pelas eleições
+de 2026? RU                                            Escala
+                                                       0=Nenhum interesse / 10=total
+                                                       interesse​
+
+P28. Em quem você votou no segundo turno da            RESPOSTA ÚNICA
+eleição presidencial de 2022? RU / ROTAR COD 1 Y       RODIZIAR
+2                                                      Use rodízio completo, exceto
+                                                       Não votei, não sei
+SI EDAD EN 2022 ERA MENOR DE 16, SETAR EN
+P28 COD 99=Não votei                                   1. Lula
+                                                       2. Bolsonaro
+                                                      96. Branco/ Nulo​
+                                                      99. Não votei
+
+P18. Se a eleição fosse hoje e os candidatos fossem   RESPOSTA ÚNICA
+estes, em quem você votaria para presidente do        RODIZIAR
+Brasil? RU / ROTAR COD 1 A 7                          Use rodízio completo, exceto
+                                                      branco/nulo, não sei e prefiro
+                                                      e não resposta
+
+                                                      1. Lula
+                                                      2. Flávio Bolsonaro
+                                                      4. Ratinho Jr
+                                                      6. Romeu Zema
+                                                      7. Renan Santos
+
+                                                      96. Branco/ Nulo
+                                                      97. Não sei
+P18B. Se a eleição fosse hoje e os candidatos         RESPOSTA ÚNICA
+fossem estes, em quem você votaria para presidente    RODIZIAR
+do Brasil? RU / ROTAR COD 1 A 7                       Use rodízio completo, exceto
+                                                      branco/nulo, não sei e prefiro
+                                                      e não resposta
+
+                                                      1. Lula
+                                                      2. Flávio Bolsonaro
+                                                      3. Ronaldo Caiado
+                                                      6. Romeu Zema
+                                                      7. Renan Santos
+
+                                                      96. Branco/ Nulo
+P19. E se os candidatos fossem estes, em quem         RESPOSTA ÚNICA
+você votaria para presidente do Brasil? RU / ROTAR    RODIZIAR
+COD 1 A 7                                             Use rodízio completo, exceto
+                                                      branco/nulo, não sei e prefiro
+                                                      e não resposta
+
+                                                      1. Lula
+                                                      2. Tarcísio de Freitas
+                                                      3. Ronaldo Caiado
+                                                      4. Ratinho Jr
+                                                      6. Romeu Zema
+                                                      7. Renan Santos
+
+                                                      96. Branco/ Nulo
+                                                      97. Não sei
+P19B. E se os candidatos fossem estes, em quem        RESPOSTA ÚNICA
+você votaria para presidente do Brasil? RU / ROTAR    RODIZIAR
+COD 1 A 7                                             Use rodízio completo, exceto
+                                                      branco/nulo, não sei e prefiro
+                                                      e não resposta
+                                                    1. Lula
+                                                    2. Tarcísio de Freitas
+                                                    3. Ronaldo Caiado
+                                                    6. Romeu Zema
+                                                    7. Renan Santos
+
+                                                    96. Branco/ Nulo
+                                                    97. Não sei
+P26. Em um eventual segundo turno entre Lula e      RESPOSTA ÚNICA
+Flávio Bolsonaro, em quem você votaria? RU /        RODIZIAR
+ROTAR COD 1 Y 2                                     Use rodízio completo, exceto
+                                                    branco/nulo, não sei e prefiro
+                                                    e não resposta
+
+                                                    1. Lula
+                                                    2. Flávio Bolsonaro
+
+                                                    96. Branco/ Nulo
+                                                    97. Não sei
+P23. Em um eventual segundo turno entre Lula e      RESPOSTA ÚNICA
+Tarcísio de Freitas, em quem você votaria? RU /     RODIZIAR
+ROTAR CODS 1 Y 2                                    Use rodízio completo, exceto
+                                                    branco/nulo, não sei e prefiro
+                                                    e não resposta
+
+                                                    1. Lula
+                                                    2. Tarcísio de Freitas
+
+                                                    96. Branco/ Nulo
+                                                    97. Não sei
+
+P25. Em um eventual segundo turno entre Lula e      RESPOSTA ÚNICA
+Ratinho Júnior, em quem você votaria? RU /          RODIZIAR
+ROTAR COD 1 Y 2                                     Use rodízio completo, exceto
+                                                    branco/nulo, não sei e prefiro
+                                                    e não resposta
+
+                                                    1. Lula
+                                                    2. Ratinho Jr
+
+                                                    96. Branco/ Nulo
+                                                    97. Não sei
+P29. Independente do seu voto, quem você            1. Lula
+acredita que realmente VAI VENCER A ELEIÇÃO       2. Outro candidato
+para presidente? RU
+                                                    97. Não sei
+                                                    99. Prefiro não responder
+P16. Na sua opinião, o presidente Lula merece ser   RESPOSTA ÚNICA
+reeleito? RU
+                                                     1. Sim
+                                                     2. Não
+
+                                                     97. Não sei
+                                                     99. Prefiro não responder
+P48. Em quem você NÃO votaria de jeito nenhum        1. Lula
+para presidente? RM / ROTAR                          2. Tarcísio de Freitas
+                                                     3. Flavio Bolsonaro
+                                                     4. Ronaldo Caiado
+                                                     5. Ratinho Jr
+                                                     6. Michelle Bolsonaro
+                                                     7. Romeu Zema
+                                                     8. Renan Santos
+
+                                                     99. Rejeita nenhum (RU – NO
+                                                     ROTAR)
+P30. Em uma escala de 0 a 10, qual é a sua           Escala
+disposição de ir votar no dia da eleição? RU         0=Com certeza não vou votar /
+                                                     10=com certeza vou votar
+
+
+BLOCO: POLÍTICA
+
+ P1. Atualmente, como você avalia o governo do        RESPOSTA ÚNICA
+ presidente Lula: ótimo, bom, regular, ruim ou
+ péssimo? RU                                          01.Ótimo
+                                                      02.Bom
+                                                      03.Regular
+                                                      04.Ruim
+                                                      05.Péssimo
+
+                                                      97.Não sei
+                                                      99.Prefiro não responder
+ P2. De uma maneira geral, você aprova ou             01.Aprova
+ desaprova o trabalho que o presidente Lula vem       02.Desaprova
+ fazendo? RU
+                                                      97.Não sei
+                                                      99.Prefiro não responder
+ P3. Existe algum partido político que você gosta?    01.Sim
+ RU                                                   02.Não
+                                                      97.Não sei
+
+ CASO SIM NA ANTERIOR                                 RESPOSTA ÚNICA
+ SI P3=1 SIM                                          APRESENTAR LISTA OU
+ P4. Qual é o partido que você mais gosta? RU /       LOGOS
+ ROTAR CODS 1 A 7                                     RODIZIAR
+
+                                                          1.​ MDB
+                                                          2.​ PSD
+                                                         3.​ PL
+                                                         4.​ União Brasil
+                                                         5.​ PP
+                                                         6.​ Republicanos
+                                                         7.​ PT
+                                                         8.​ PSB
+                                                         9.​ PSDB
+                                                         10.​Podemos
+                                                         11.​PDT
+                                                         12.​PSOL
+                                                         13.​NOVO
+
+                                                         98. Outro partido
+
+P5. Existe algum partido político que você não       01.Sim
+gosta? RU                                            02.Não
+                                                     97. Não sei
+
+CASO SIM NA ANTERIOR                                 RESPOSTA ÚNICA
+P5=1 SIM                                             APRESENTAR LISTA OU
+P6. Qual é o partido que você menos gosta? RU /      LOGOS
+ROTAR CODS 1 A 7                                     RODIZIAR
+NO MOSTRAR EL PARTIDO SELECCIONADO EN
+P4                                                       1.​ MDB
+                                                         2.​ PSD
+                                                         3.​ PL
+                                                         4.​ União Brasil
+                                                         5.​ PP
+                                                         6.​ Republicanos
+                                                         7.​ PT
+                                                         8.​ PSB
+                                                         9.​ PSDB
+                                                         10.​Podemos
+                                                         11.​PDT
+                                                         12.​PSOL
+                                                         13.​NOVO
+
+                                                         98. Outro partido
+
+P7. Na escala de posições políticas, em qual grupo   RESPOSTA ÚNICA
+você se encaixa? RU                                  1. Lulista
+                                                     2. Esquerda não Lulista
+                                                     3. Não tem posicionamento
+                                                     4. Direita não Bolsonarista
+                                                     5. Bolsonarista
+
+                                                     97. Não sei
+CREAR RECO PERFIL (MOSTRAR EN EL LINK TEST)
+
+
+ 1     Apoiadores do PT           P4=7 y P6#7
+ 2     Antagônicos ao PT          P4#7 y P6=7
+ 3     Neutros                    P4#7 y P6#7
+
+
+
+
+As frases abaixo tratam do sistema político e das
+instituições do Brasil. Para cada uma, diga o quanto
+você concorda ou discorda.
+
+
+P56. O sistema político brasileiro serve principalmente   RESPOSTA ÚNICA
+aos interesses de quem já ocupa o poder, e não aos da     1. Discordo totalmente
+população em geral. RU                                    2. Discordo parcialmente
+                                                          3. Nem concordo nem
+                                                          discordo
+                                                          4. Concordo parcialmente
+                                                          5. Concordo totalmente
+
+P57. Os escândalos mostram que o problema não são         RESPOSTA ÚNICA
+apenas pessoas, mas o próprio sistema político. RU        1. Discordo totalmente
+                                                          2. Discordo parcialmente
+                                                          3. Nem concordo nem
+                                                          discordo
+                                                          4. Concordo parcialmente
+                                                          5. Concordo totalmente
+
+P58. As instituições políticas do país estão              RESPOSTA ÚNICA
+desconectadas da realidade vivida pela maioria da         1. Discordo totalmente
+população. RU                                             2. Discordo parcialmente
+                                                          3. Nem concordo nem
+                                                          discordo
+                                                          4. Concordo parcialmente
+                                                          5. Concordo totalmente
+
+P59. Prefiro estabilidade política, mesmo que as          RESPOSTA ÚNICA
+mudanças demorem mais a acontecer. RU                     1. Discordo totalmente
+                                                          2. Discordo parcialmente
+                                                          3. Nem concordo nem
+                                                          discordo
+                                                          4. Concordo parcialmente
+                                                          5. Concordo totalmente
+
+P60. Se surgisse um candidato completamente               RESPOSTA ÚNICA
+independente do sistema político atual, eu consideraria   1. Discordo totalmente
+votar nessa pessoa. RU                                    2. Discordo parcialmente
+                                                         3. Nem concordo nem
+                                                         discordo
+                                                         4. Concordo parcialmente
+                                                         5. Concordo totalmente
+
+P61. Só uma ruptura profunda com o sistema político      RESPOSTA ÚNICA
+atual pode melhorar o país. RU                           1. Discordo totalmente
+                                                         2. Discordo parcialmente
+                                                         3. Nem concordo nem
+                                                         discordo
+                                                         4. Concordo parcialmente
+                                                         5. Concordo totalmente
+
+
+
+
+BLOCO: ECONOMIA
+
+P11. Na sua opinião, de um modo geral, você acha que     01.Caminho certo
+o Brasil está indo no caminho certo ou no caminho        02.Caminho errado
+errado? RU
+                                                         97.Não sei
+                                                         99.Prefiro não responder
+
+P8. Pensando na sua situação financeira no último mês,   RESPOSTA ÚNICA
+e considerando as opções abaixo, você diria que: RU
+                                                         01. Não conseguiu pagar
+                                                         todas as suas contas
+                                                         02.Teve dinheiro apenas para
+                                                         pagar todas as suas contas,
+                                                         sem sobras
+                                                         03.Pagou todas as suas
+                                                         contas e ainda conseguiu
+                                                         economizar
+
+                                                         97.Não sei
+                                                         99.Prefiro não responder
+P9. Ainda pensando na sua situação econômica,            RESPOSTA ÚNICA
+como você acha que estará daqui a 6 meses? RU
+                                                         01.Muito melhor
+                                                         02.Um pouco melhor
+                                                         03. Igual
+                                                         04. Um pouco pior
+                                                         05. Muito pior
+
+                                                         97.Não sei
+                                                         99.Prefiro não responder
+P10. Comparando com 6 meses atrás, você diria que a     RESPOSTA ÚNICA
+sua situação econômica está: RU
+                                                        01.Muito melhor
+                                                        02.Um pouco melhor
+                                                        03. Igual
+                                                        04. Um pouco pior
+                                                        05. Muito pior
+
+                                                        97.Não sei
+                                                        99.Prefiro não responder
+
+P13. Pensando nas suas compras de casa, em              RESPOSTA ÚNICA
+FEVEREIRO os preços dos alimentos e produtos caíram,    RODIZIAR​
+subiram ou ficaram no mesmo nível de JANEIRO? RU        ​
+                                                        1. Caíram           ​
+/ ROTAR
+                                                        ​
+                                                        2. Ficaram no mesmo nível
+                                                        ​
+                                                        3. Subiram               ​
+                                                        ​
+
+
+
+
+P12. Na sua opinião, qual o maior problema do Brasil   RESPOSTA ÚNICA
+hoje? Escolha apenas uma opção. RU / ROTAR             RODIZIAR
+
+                                                       01. Desemprego
+                                                       02. Saúde
+                                                       03. Corrupção
+                                                       04. Educação
+                                                       05. Segurança pública/
+                                                       violência
+                                                       06. Drogas
+                                                       07. Falta de moradia
+                                                       08. Pobreza/ fome/ miséria
+                                                       09. Impostos elevados
+                                                       10. Custo de vida/ inflação
+                                                       11. Desigualdade econômica/
+                                                       social
+                                                       12. Impunidade/ lentidão ou
+                                                       falta de justiça
+                                                       13. Juros elevados
+                                                       14. Salários baixos
+                                                       15. Saneamento básico (água
+                                                       e esgoto) e lixo (coleta e
+                                                       destinação adequada)
+                                                       16. Baixo crescimento da
+                                                       economia
+                                                       17. Falta de valores morais
+                                                        18. Trânsito/ problemas de
+                                                        mobilidade urbana
+                                                        19. Meio ambiente (poluição,
+                                                        desmatamento, etc.)
+                                                        20. Falta de opções de cultura
+                                                        e lazer
+                                                        21. Seca/falta de água
+                                                        22. Intolerância às minorias
+
+P54. Quando se fala em corrupção no Brasil hoje, você   1. É um problema generalizado
+diria que é um problema generalizado em todos os        em todos os poderes
+poderes da República ou mais concentrado em um          2. Está mais concentrado no
+poder específico?                                       Poder Executivo
+                                                        3. Está mais concentrado no
+                                                        Poder Judiciário
+                                                        4. Está mais concentrado no
+                                                        Poder Legislativo
+                                                        97. Não sei
+                                                        99. Prefiro não responder
+
+
+
+BLOCO: DEMOGRÁFICAS
+
+P37. O IBGE - Instituto que faz o Censo no Brasil -     01.Preto
+usa os termos preto, pardo, branco, amarelo e           02.Pardo
+indígena para classificar a cor ou raça das pessoas.    03.Branco
+Qual desses termos descreve melhor a sua cor ou         04.Amarelo
+raça? RU                                                05. Indígena
+
+                                                        97. Não sei
+                                                        99. Prefiro não responder
+P38. Qual é a sua religião? RU                          01. Católica Apostólica
+                                                        Romana
+                                                        02. Assembleia de Deus
+                                                        03. Batista/ Metodista/
+                                                        Presbiteriana
+                                                        04. Universal do Reino de
+                                                        Deus
+                                                        05. Deus é Amor
+                                                        06. Evangelho Quadrangular
+                                                        07. Igreja Internacional da
+                                                        Graça
+                                                        08. Renascer em Cristo
+                                                        09. Sara Nossa Terra
+                                                        10. Outras Evangélicas
+                                                        específicas
+                                                        11. Evangélica - Não sabe
+                                                        especificar
+                                                        12. Adventista
+                                                        13. Testemunha de Jeová
+                                                        14. Judaica
+                                                        15. Espírita/ Kardecista
+                                                        16. Afro-Brasileiras
+                                                        (Umbanda, Candomblé, etc)
+                                                        17. Orientais (Budismo,
+                                                        Islamismo, etc)
+                                                        18. Outras religiões
+                                                        19. É religioso mas não segue
+                                                        nenhuma/ Agnóstico
+                                                        20. Ateu, não tem religião
+
+                                                        99. Prefiro não responder
+
+P39. Atualmente você desempenha algum trabalho             01.​Sim
+remunerado? RU                                             02.​Não
+
+P40. E você procurou emprego nos últimos trinta dias,      01.​Sim
+sim ou não? RU                                             02.​Não
+
+P41. No mês de setembro, você ou alguém do seu
+domicílio recebeu algum valor do Programa Bolsa             01 Sim
+Família? RU                                                 02. Não
+
+
+P42. Considerando seus ganhos de qualquer                  1.​ Até R$ 1.518,00 (até 1
+natureza, como salário, bicos, aposentadorias,                 SM)
+pensões, benefícios do Governo etc., qual foi a sua        2.​ De R$ 1.518,01 a R$
+renda mensal individual no mês passado? RU                     3.036,00 (mais de 1 até
+                                                               2 SM)
+                                                           3.​ De R$ 3.036,01 a R$
+                                                               4.554,00 (mais de 2 até
+                                                               3 SM)
+                                                           4.​ De R$ 4.554,01 a R$
+                                                               7.590,00 (mais de 3 até
+                                                               5 SM)
+                                                           5.​ De R$ 7.590,01 a R$
+                                                               15.180,00 (mais de 5
+                                                               até 10 SM)
+                                                           6.​ Mais de R$ 15.180,00
+                                                               (mais de 10 SM)
+                                                           7.​ Sem rendimento
+                                                            97. Não sabe
+                                                            99. Prefiro não responder/
+                                                        Recusa
+
+
+P43. Normalmente, com que frequência você utiliza a     01.Todos os dias
+Internet? RU                                            02. 5 ou 6 vezes por semana
+                                                        03. De 1 a 4 vezes por semana
+                                                        04. Não utiliza toda semana,
+                                                        mas utiliza pelo menos 1 vez
+                                                        por mês
+                                                        05. Menos do que uma vez por
+                                                        mês
+
+                                                        99. Não aplicável
+
+P44. Para acessar à Internet neste domicilio, algum     01. Sim
+morador utiliza microcomputador (de mesa ou portátil,   02. Não
+como laptop, notebook ou netbook)? RU
+                                                        99. Não aplicável
+
+P45. O seu telefone celular é pré-pago ou pós-pago?     01.Pré-pago
+RU                                                      02.Pós-pago
+
+                                                        97.Não sei
+                                                        99. Prefiro não responder
+
+P55. Somando a sua renda com a renda da(s)                  1. Até 1 salário mínimo
+pessoa(s) que moram com você, também                        (Até R$ 1.518,00)
+considerando os ganhos de qualquer natureza,                2. De 1 a 2 salários
+quanto é, aproximadamente, a renda familiar mensal?         mínimos (De R$ 1.518,01
+RU                                                          a R$ 3.036,00)
+                                                            3. De 2 a 3 salários
+                                                            mínimos (De R$ 3.036,01
+                                                            a R$ 4.554,00)
+   4. De 3 a 5 salários
+   mínimos (De R$ 4.554,01
+   a R$ 7.590,00)
+   5. De 5 a 10 salários
+   mínimos (De R$ 7.590,01
+   a R$ 15.180,00)
+   6. Mais de 10 salários
+   mínimos (Mais de R$
+   15.180,00)
+   7. Sem rendimento
+   97. Não sabe
+   99. Prefiro não responder/
+Recusa
+

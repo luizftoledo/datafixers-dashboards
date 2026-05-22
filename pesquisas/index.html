@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pesquisas eleitorais nacionais — Eleições 2026 | Luiz Toledo</title>
+<meta name="description" content="Pesquisas eleitorais de abrangência nacional registradas no TSE, com data prevista de divulgação. Atualização diária a partir do portal de dados abertos.">
+<link rel="icon" href="../favicon.png">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #f6f6f4;
+    --bg-card: #ffffff;
+    --ink: #14161a;
+    --ink-soft: #4a4f57;
+    --ink-mute: #7b8089;
+    --rule: #e3e3df;
+    --rule-strong: #c8c8c2;
+    --accent: #b21f24;
+    --accent-soft: #f3e1e1;
+    --new: #1f6f4a;
+    --new-soft: #e6f1ea;
+    --past: #9aa0a6;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .top {
+    border-bottom: 1px solid var(--rule);
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+  }
+  .top a.brand { color: var(--ink); font-weight: 600; }
+  .top .meta { color: var(--ink-mute); }
+
+  header.hero {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 48px 24px 24px;
+  }
+  header.hero .kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  header.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.15;
+    margin: 8px 0 12px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  header.hero p.lede {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 760px;
+    margin: 0;
+  }
+  header.hero .source {
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--ink-mute);
+  }
+
+  .status-banner {
+    max-width: 1080px;
+    margin: 16px auto 0;
+    padding: 10px 16px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    background: var(--bg-soft);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    align-items: center;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .status-banner .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 3px;
+    background: var(--new-soft);
+    color: var(--new);
+  }
+  .status-banner.warn .pill { background: #fbeed6; color: #8a5a00; }
+  .status-banner.error .pill { background: var(--accent-soft); color: var(--accent); }
+  .status-banner .sep { color: var(--rule-strong); }
+  .status-banner b { color: var(--ink); font-weight: 600; }
+
+  main { max-width: 1080px; margin: 0 auto; padding: 0 24px 64px; }
+
+  .controls {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 18px 0;
+    margin: 28px 0 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 28px;
+    align-items: flex-end;
+  }
+  .ctrl { display: flex; flex-direction: column; gap: 6px; }
+  .ctrl label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-mute);
+    font-weight: 600;
+  }
+  .ctrl select, .ctrl input[type=text] {
+    font: inherit;
+    border: 1px solid var(--rule-strong);
+    background: var(--bg);
+    padding: 7px 10px;
+    border-radius: 4px;
+    color: var(--ink);
+    min-width: 180px;
+  }
+  .ctrl input[type=text] { min-width: 240px; }
+  .ctrl.toggle {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+  .ctrl.toggle label {
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .summary {
+    margin-left: auto;
+    text-align: right;
+    font-size: 13px;
+    color: var(--ink-mute);
+  }
+  .summary strong { color: var(--ink); font-size: 18px; display: block; }
+
+  .day-group { margin: 32px 0 8px; }
+  .day-group h2 {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    margin: 0 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--ink);
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .day-group h2 .when {
+    font-family: -apple-system, sans-serif;
+    font-size: 12px;
+    color: var(--ink-mute);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .day-group.past h2 { border-bottom-color: var(--rule-strong); color: var(--past); }
+
+  .card {
+    border-bottom: 1px solid var(--rule);
+    padding: 16px 0;
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    gap: 16px 24px;
+    align-items: start;
+  }
+  .card .col-when {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .card .col-when .muted {
+    display: block;
+    font-family: -apple-system, sans-serif;
+    font-size: 11px;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 2px;
+  }
+  .card .col-main h3 {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .card .col-main .who {
+    color: var(--ink-soft);
+    font-size: 13px;
+    margin: 0 0 6px;
+  }
+  .card .col-main .meta {
+    font-size: 13px;
+    color: var(--ink-mute);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+  }
+  .card .col-main .meta b { color: var(--ink); font-weight: 600; }
+  .card .col-side {
+    text-align: right;
+    font-size: 12px;
+    color: var(--ink-mute);
+  }
+  .card .col-side .id {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 11px;
+    background: var(--bg-soft);
+    padding: 3px 7px;
+    border-radius: 3px;
+  }
+  .card .col-side .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 8px;
+    align-items: flex-end;
+  }
+  .card .col-side .actions a,
+  .card .col-side .actions button {
+    font: inherit;
+    font-size: 11px;
+    color: var(--ink-soft);
+    background: none;
+    border: 1px solid var(--rule-strong);
+    padding: 3px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .card .col-side .actions a:hover,
+  .card .col-side .actions button:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+  .card .col-side .actions .copied {
+    color: var(--new);
+    border-color: var(--new);
+  }
+  .card .badge {
+    display: inline-block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 3px;
+    background: var(--new-soft);
+    color: var(--new);
+    margin-left: 8px;
+    vertical-align: 2px;
+  }
+  details.method {
+    margin-top: 8px;
+    font-size: 13px;
+  }
+  details.method summary {
+    cursor: pointer;
+    color: var(--ink-soft);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+  }
+  details.method[open] summary { color: var(--ink); }
+  details.method .body {
+    background: var(--bg-soft);
+    border-left: 3px solid var(--rule-strong);
+    padding: 12px 14px;
+    margin-top: 8px;
+    color: var(--ink-soft);
+    font-size: 13px;
+    white-space: pre-wrap;
+  }
+  details.method .body p { margin: 0 0 8px; }
+  details.method .body p:last-child { margin: 0; }
+  details.method .body h4 {
+    margin: 0 0 4px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-mute);
+    font-weight: 700;
+  }
+  details.questionario { margin-top: 6px; font-size: 13px; }
+  details.questionario summary {
+    cursor: pointer;
+    color: var(--ink-soft);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+  }
+  details.questionario[open] summary { color: var(--ink); }
+  details.questionario .body {
+    background: var(--bg-soft);
+    border-left: 3px solid var(--rule-strong);
+    padding: 12px 14px;
+    margin-top: 8px;
+  }
+  details.questionario .q-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+  details.questionario .q-actions a { color: var(--ink-mute); }
+  details.questionario pre.q-text {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+    line-height: 1.45;
+    max-height: 420px;
+    overflow: auto;
+    margin: 0;
+    padding: 10px 12px;
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    white-space: pre;
+  }
+  p.q-note {
+    margin: 6px 0 0;
+    font-size: 12px;
+    color: var(--ink-mute);
+    font-style: italic;
+  }
+
+  .empty {
+    padding: 48px 0;
+    text-align: center;
+    color: var(--ink-mute);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  footer {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 24px;
+    font-size: 12px;
+    color: var(--ink-mute);
+    border-top: 1px solid var(--rule);
+  }
+  footer a { color: var(--ink-soft); }
+
+  @media (max-width: 720px) {
+    .card { grid-template-columns: 1fr; }
+    .card .col-side { text-align: left; }
+    header.hero { padding-top: 28px; }
+  }
+
+  /* Tela de senha */
+  #gate {
+    position: fixed; inset: 0;
+    background: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 1000;
+  }
+  #gate .box {
+    border: 1px solid var(--rule-strong);
+    padding: 32px;
+    max-width: 360px;
+    width: calc(100% - 48px);
+    text-align: center;
+  }
+  #gate h2 {
+    font-family: Georgia, serif;
+    margin: 0 0 8px;
+    font-size: 22px;
+  }
+  #gate p {
+    color: var(--ink-mute);
+    font-size: 13px;
+    margin: 0 0 18px;
+  }
+  #gate input {
+    width: 100%;
+    font: inherit;
+    padding: 10px 12px;
+    border: 1px solid var(--rule-strong);
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+  #gate button {
+    background: var(--ink);
+    color: white;
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font: inherit;
+    cursor: pointer;
+    width: 100%;
+  }
+  #gate .err {
+    color: var(--accent);
+    font-size: 12px;
+    min-height: 16px;
+    margin-top: 8px;
+  }
+  body.locked > :not(#gate) { display: none !important; }
+</style>
+</head>
+<body class="locked">
+<div id="gate">
+  <div class="box">
+    <h2>Acesso restrito</h2>
+    <p>Página interna — informe a senha para continuar.</p>
+    <form id="gate-form">
+      <input id="gate-input" type="password" autocomplete="current-password" autofocus placeholder="senha">
+      <button type="submit">Entrar</button>
+      <div class="err" id="gate-err"></div>
+    </form>
+  </div>
+</div>
+<script>
+(async () => {
+  // SHA-256 de "bbc"
+  const EXPECTED = "77e6f78af45f649c5f3b8ebe484a91a144eb203a34a89c8dc5b1c4ca87bc6f71";
+  const sha = async (s) => {
+    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s));
+    return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, "0")).join("");
+  };
+  const unlock = () => {
+    document.body.classList.remove("locked");
+    document.getElementById("gate").remove();
+  };
+  if (sessionStorage.getItem("gate-ok") === "1") return unlock();
+  document.getElementById("gate-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const v = document.getElementById("gate-input").value.trim().toLowerCase();
+    if ((await sha(v)) === EXPECTED) {
+      sessionStorage.setItem("gate-ok", "1");
+      unlock();
+    } else {
+      document.getElementById("gate-err").textContent = "Senha incorreta";
+      document.getElementById("gate-input").select();
+    }
+  });
+})();
+</script>
+
+<div class="top">
+  <a href="../" class="brand">Luiz Toledo</a>
+  <span class="meta">Atualizado <span id="updated-at">—</span></span>
+</div>
+
+<header class="hero">
+  <div class="kicker">Eleições 2026 · Monitor</div>
+  <h1>Pesquisas eleitorais nacionais previstas</h1>
+  <p class="lede">
+    Lista de pesquisas de intenção de voto registradas no TSE com abrangência <b>Brasil</b>
+    (cargo Presidente). Os institutos precisam registrar a pesquisa até cinco dias antes da
+    divulgação, então a janela mostra o que está prestes a sair.
+  </p>
+  <p class="source">
+    Fonte: <a href="https://dadosabertos.tse.jus.br/dataset/pesquisas-eleitorais-2026" target="_blank" rel="noopener">Portal de Dados Abertos do TSE</a>
+    · atualização diária via GitHub Actions ·
+    <a href="https://www.tse.jus.br/eleicoes/pesquisa-eleitorais/consulta-as-pesquisas-registradas" target="_blank" rel="noopener">PesqEle</a>
+  </p>
+</header>
+
+<div id="status-banner" class="status-banner" hidden></div>
+
+<main>
+  <section class="controls">
+    <div class="ctrl">
+      <label for="window">Janela de divulgação</label>
+      <select id="window">
+        <option value="3">Próximos 3 dias</option>
+        <option value="7" selected>Próximos 7 dias</option>
+        <option value="14">Próximos 14 dias</option>
+        <option value="30">Próximos 30 dias</option>
+        <option value="all">Todas as datas previstas</option>
+      </select>
+    </div>
+    <div class="ctrl">
+      <label for="empresa">Instituto</label>
+      <select id="empresa"><option value="">Todos</option></select>
+    </div>
+    <div class="ctrl">
+      <label for="search">Busca livre</label>
+      <input id="search" type="text" placeholder="Nome do instituto, protocolo, estatístico…">
+    </div>
+    <div class="ctrl toggle">
+      <input id="incluir-passadas" type="checkbox">
+      <label for="incluir-passadas">incluir pesquisas já divulgadas</label>
+    </div>
+    <div class="summary">
+      <strong id="summary-count">—</strong>
+      <span id="summary-label">pesquisas no filtro</span>
+    </div>
+  </section>
+
+  <div id="results"></div>
+</main>
+
+<footer>
+  Dataset gerado a partir do CSV oficial do TSE
+  (<code>pesquisa_eleitoral_2026_BRASIL.csv</code>, registros com SG_UF=BR).
+  Para diff de novas pesquisas, comparamos protocolos entre execuções consecutivas.
+  <br>
+  Código no <a href="https://github.com/luizftoledo/luizftoledo.github.io" target="_blank" rel="noopener">GitHub</a>.
+</footer>
+
+<script>
+const STATE = {
+  pesquisas: [],
+  novas: new Set(),
+  questionarios: {},
+  atualizadoEm: null,
+  filtroEmpresa: "",
+  filtroBusca: "",
+  janela: "7",
+  incluirPassadas: false,
+};
+
+function idSafe(raw) {
+  // BR067312026 -> BR-06731-2026 (espelha format_protocolo do scraper Python)
+  return raw && raw.length === 11 ? `${raw.slice(0, 2)}-${raw.slice(2, 7)}-${raw.slice(7)}` : raw;
+}
+
+const fmtDate = (iso) => {
+  if (!iso) return "—";
+  const d = new Date(iso);
+  return d.toLocaleDateString("pt-BR", { day: "2-digit", month: "short" });
+};
+const fmtDateLong = (iso) => {
+  if (!iso) return "—";
+  const d = new Date(iso);
+  return d.toLocaleDateString("pt-BR", { weekday: "long", day: "2-digit", month: "long" });
+};
+const fmtUpdated = (iso) => {
+  if (!iso) return "—";
+  const d = new Date(iso);
+  return d.toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
+};
+const dayKey = (iso) => (iso ? iso.slice(0, 10) : "sem-data");
+const today = () => {
+  const d = new Date();
+  d.setHours(0, 0, 0, 0);
+  return d;
+};
+const daysFromToday = (iso) => {
+  if (!iso) return Infinity;
+  const d = new Date(iso);
+  d.setHours(0, 0, 0, 0);
+  return Math.round((d - today()) / (1000 * 60 * 60 * 24));
+};
+const escape = (s) => (s || "").replace(/[&<>"']/g, (c) => ({
+  "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+}[c]));
+
+function render() {
+  const container = document.getElementById("results");
+  const search = STATE.filtroBusca.toLowerCase();
+
+  let pool = STATE.pesquisas.filter((p) => {
+    if (STATE.filtroEmpresa && p.fantasia !== STATE.filtroEmpresa) return false;
+    if (search) {
+      const hay = [p.empresa, p.fantasia, p.id, p.estatistico, p.cargo].join(" ").toLowerCase();
+      if (!hay.includes(search)) return false;
+    }
+    const dias = daysFromToday(p.divulgacao);
+    if (!STATE.incluirPassadas && dias < 0) return false;
+    if (STATE.janela !== "all") {
+      const max = parseInt(STATE.janela, 10);
+      if (dias > max) return false;
+    }
+    return true;
+  });
+
+  // Group by day of divulgacao
+  const groups = new Map();
+  for (const p of pool) {
+    const k = dayKey(p.divulgacao);
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(p);
+  }
+  const sortedDays = [...groups.keys()].sort();
+
+  document.getElementById("summary-count").textContent = pool.length;
+  document.getElementById("summary-label").textContent =
+    pool.length === 1 ? "pesquisa no filtro" : "pesquisas no filtro";
+
+  if (!pool.length) {
+    container.innerHTML = `<div class="empty">Nenhuma pesquisa registrada nessa janela.</div>`;
+    return;
+  }
+
+  const html = sortedDays.map((day) => {
+    const list = groups.get(day);
+    const sample = list[0].divulgacao;
+    const dias = daysFromToday(sample);
+    let when;
+    if (dias === 0) when = "Hoje";
+    else if (dias === 1) when = "Amanhã";
+    else if (dias > 1) when = `Em ${dias} dias`;
+    else if (dias === -1) when = "Ontem";
+    else when = `${Math.abs(dias)} dias atrás`;
+
+    const isPast = dias < 0;
+    return `
+      <section class="day-group ${isPast ? "past" : ""}">
+        <h2>${escape(fmtDateLong(sample))} <span class="when">${escape(when)}</span></h2>
+        ${list.map(renderCard).join("")}
+      </section>`;
+  }).join("");
+
+  container.innerHTML = html;
+}
+
+function renderQuestionario(p) {
+  const q = STATE.questionarios[p.id];
+  if (!q) return "";
+  if (q.status === "ok" && q.file) {
+    return `
+      <details class="questionario">
+        <summary>Questionário aplicado</summary>
+        <div class="body">
+          <div class="q-actions">
+            <a href="data/${escape(q.file)}" download>Baixar .txt</a>
+            <a href="https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml" target="_blank" rel="noopener" title="Cole o protocolo no campo Número do registro.">PDF original (TSE) →</a>
+          </div>
+          <pre class="q-text" data-src="data/${escape(q.file)}">Carregando…</pre>
+        </div>
+      </details>`;
+  }
+  if (q.status === "ok_imagem") {
+    return `<p class="q-note">Questionário disponível apenas como PDF de imagem (sem texto extraível) — <a href="https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml" target="_blank" rel="noopener">abrir no PesqEle</a> com o protocolo <code>${escape(idSafe(p.id))}</code>.</p>`;
+  }
+  return "";
+}
+
+function renderCard(p) {
+  const isNew = STATE.novas.has(p.id);
+  const cargoBits = (p.cargo || "").split(",").map((s) => s.trim()).filter(Boolean);
+  const periodo = (p.inicio && p.fim)
+    ? `Coleta ${fmtDate(p.inicio)} – ${fmtDate(p.fim)}`
+    : "";
+
+  const meta = [
+    p.entrevistados ? `<span><b>${p.entrevistados.toLocaleString("pt-BR")}</b> entrevistados</span>` : "",
+    p.propria ? "<span>Pesquisa própria</span>" : "",
+    p.estatistico ? `<span>Estatístico: ${escape(p.estatistico)}</span>` : "",
+    periodo ? `<span>${escape(periodo)}</span>` : "",
+  ].filter(Boolean).join("");
+
+  return `
+    <article class="card">
+      <div class="col-when">
+        ${escape(fmtDate(p.divulgacao))}
+        <span class="muted">divulgação prevista</span>
+      </div>
+      <div class="col-main">
+        <h3>
+          ${escape(p.fantasia || p.empresa)}
+          ${isNew ? '<span class="badge">nova</span>' : ""}
+        </h3>
+        <p class="who">${escape(p.empresa)}${p.cnpj ? ` · CNPJ ${escape(p.cnpj)}` : ""}</p>
+        <p class="meta">
+          ${cargoBits.map((c) => `<span><b>${escape(c)}</b></span>`).join("")}
+          ${meta}
+        </p>
+        ${(p.metodologia || p.plano_amostral) ? `
+          <details class="method">
+            <summary>Metodologia e plano amostral</summary>
+            <div class="body">
+              ${p.metodologia ? `<h4>Metodologia</h4><p>${escape(p.metodologia)}</p>` : ""}
+              ${p.plano_amostral ? `<h4>Plano amostral</h4><p>${escape(p.plano_amostral)}</p>` : ""}
+            </div>
+          </details>` : ""}
+        ${renderQuestionario(p)}
+      </div>
+      <div class="col-side">
+        <span class="id">${escape(p.id)}</span>
+        <div class="actions">
+          <button type="button" data-copy="${escape(p.id)}">Copiar protocolo</button>
+          <a href="https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml" target="_blank" rel="noopener" title="Abre a busca pública do TSE. Cole o protocolo no campo &quot;Número do registro&quot;.">Consultar no PesqEle →</a>
+        </div>
+      </div>
+    </article>`;
+}
+
+function populateEmpresas() {
+  const empresas = [...new Set(STATE.pesquisas.map((p) => p.fantasia).filter(Boolean))].sort((a, b) => a.localeCompare(b, "pt-BR"));
+  const sel = document.getElementById("empresa");
+  for (const e of empresas) {
+    const opt = document.createElement("option");
+    opt.value = e;
+    opt.textContent = e;
+    sel.appendChild(opt);
+  }
+}
+
+function bind() {
+  document.getElementById("results").addEventListener("click", async (e) => {
+    const summary = e.target.closest("details.questionario > summary");
+    if (summary) {
+      const details = summary.parentElement;
+      // Espera o browser togglar o details, então carrega lazy
+      setTimeout(() => {
+        if (!details.open || details.dataset.loaded === "1") return;
+        const pre = details.querySelector("pre.q-text");
+        if (!pre) return;
+        const src = pre.dataset.src;
+        fetch(src)
+          .then((r) => (r.ok ? r.text() : Promise.reject(`HTTP ${r.status}`)))
+          .then((txt) => { pre.textContent = txt; details.dataset.loaded = "1"; })
+          .catch((err) => { pre.textContent = `Erro ao carregar: ${err}`; });
+      }, 0);
+      return;
+    }
+    const btn = e.target.closest("button[data-copy]");
+    if (!btn) return;
+    try {
+      await navigator.clipboard.writeText(btn.dataset.copy);
+      const orig = btn.textContent;
+      btn.textContent = "Copiado ✓";
+      btn.classList.add("copied");
+      setTimeout(() => {
+        btn.textContent = orig;
+        btn.classList.remove("copied");
+      }, 1500);
+    } catch (err) {
+      btn.textContent = "Falha";
+    }
+  });
+  document.getElementById("window").addEventListener("change", (e) => {
+    STATE.janela = e.target.value;
+    render();
+  });
+  document.getElementById("empresa").addEventListener("change", (e) => {
+    STATE.filtroEmpresa = e.target.value;
+    render();
+  });
+  document.getElementById("search").addEventListener("input", (e) => {
+    STATE.filtroBusca = e.target.value;
+    render();
+  });
+  document.getElementById("incluir-passadas").addEventListener("change", (e) => {
+    STATE.incluirPassadas = e.target.checked;
+    render();
+  });
+}
+
+function renderStatus(status) {
+  const banner = document.getElementById("status-banner");
+  banner.hidden = false;
+  if (!status) {
+    banner.className = "status-banner error";
+    banner.innerHTML = `<span class="pill">Status indisponível</span>
+      <span>Não foi possível ler <code>data/status.json</code>.</span>`;
+    return;
+  }
+  const lastCheck = new Date(status.last_check);
+  const lastChange = status.last_change ? new Date(status.last_change) : null;
+  const ageHours = (Date.now() - lastCheck.getTime()) / 3.6e6;
+
+  let cls = "", label = "Raspador OK";
+  if (!status.ok) { cls = "error"; label = "Raspador com erro"; }
+  else if (ageHours > 30) { cls = "warn"; label = "Raspador atrasado"; }
+
+  const fmtAbs = (d) => d.toLocaleString("pt-BR", {
+    day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit",
+  });
+  const ago = ageHours < 1
+    ? `${Math.max(1, Math.round(ageHours * 60))} min atrás`
+    : ageHours < 48
+      ? `${Math.round(ageHours)} h atrás`
+      : `${Math.round(ageHours / 24)} dias atrás`;
+
+  banner.className = `status-banner${cls ? " " + cls : ""}`;
+  banner.innerHTML = `
+    <span class="pill">${escape(label)}</span>
+    <span>Última verificação: <b>${escape(fmtAbs(lastCheck))}</b> (${escape(ago)})</span>
+    <span class="sep">·</span>
+    <span><b>${status.total}</b> pesquisas no dataset</span>
+    ${lastChange ? `<span class="sep">·</span><span>última mudança em ${escape(fmtAbs(lastChange))}</span>` : ""}
+    <span class="sep">·</span>
+    <span>roda 2× ao dia (09h e 18h BRT) via GitHub Actions</span>
+  `;
+}
+
+async function load() {
+  // Status banner — independente do dataset
+  try {
+    const rs = await fetch(`data/status.json?t=${Date.now()}`);
+    renderStatus(rs.ok ? await rs.json() : null);
+  } catch (e) { renderStatus(null); }
+
+  try {
+    const r = await fetch(`data/pesquisas.json?t=${Date.now()}`);
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    const data = await r.json();
+    STATE.pesquisas = data.pesquisas || [];
+    STATE.atualizadoEm = data.atualizado_em;
+    document.getElementById("updated-at").textContent = fmtUpdated(data.atualizado_em);
+
+    // Try novas.json (optional)
+    try {
+      const rn = await fetch(`data/novas.json?t=${Date.now()}`);
+      if (rn.ok) {
+        const novas = await rn.json();
+        STATE.novas = new Set(novas.map((p) => p.id));
+      }
+    } catch (e) { /* novas.json é opcional */ }
+
+    // Try questionarios.json (optional)
+    try {
+      const rq = await fetch(`data/questionarios.json?t=${Date.now()}`);
+      if (rq.ok) STATE.questionarios = await rq.json();
+    } catch (e) { /* questionarios.json é opcional */ }
+
+    populateEmpresas();
+    bind();
+    render();
+  } catch (e) {
+    document.getElementById("results").innerHTML = `
+      <div class="empty">
+        Não foi possível carregar os dados.<br>
+        ${escape(e.message)}
+      </div>`;
+  }
+}
+
+load();
+</script>
+</body>
+</html>

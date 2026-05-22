@@ -1,0 +1,21 @@
+{
+  "default_source": "ampla",
+  "sources": {
+    "ampla": {
+      "id": "ampla",
+      "label": "Todos os pedidos e recursos (Fala.BR/CGU)",
+      "portal_url": "https://falabr.cgu.gov.br/web/dadosabertoslai",
+      "report_file": "./data/report_data.json",
+      "metadata_file": "./data/metadata.json",
+      "samples_file": "./data/request_samples.jsonl.gz"
+    },
+    "publica": {
+      "id": "publica",
+      "label": "Pedidos e recursos marcados como públicos (BuscaLAI)",
+      "portal_url": "https://buscalai.cgu.gov.br/DownloadDados/DownloadDados",
+      "report_file": "./data/report_data_publica.json",
+      "metadata_file": "./data/metadata_publica.json",
+      "samples_file": "./data/request_samples_publica.jsonl.gz"
+    }
+  }
+}

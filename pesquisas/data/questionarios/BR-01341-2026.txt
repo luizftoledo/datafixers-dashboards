@@ -1,0 +1,671 @@
+                            QUESTIONÁRIO DE PESQUISA
+
+                     PESQUISA ELEITORAL 2026 MINAS GERAIS
+                                (ESTADUAL 2026)
+
+                    Público-alvo: eleitores(as) de Minas Gerais
+
+
+
+                                     Abordagem
+Bom dia/Boa tarde/Boa noite!
+
+Meu nome é [nome/sobrenome], sou entrevistador (a) do DATATEMPO,
+sediado em Belo Horizonte. Tudo bem?
+
+Estou realizando uma pesquisa de opinião com eleitores de Minas Gerais
+sobre as eleições que acontecerão neste ano.
+
+Este questionário é confidencial e as informações que você fornecer serão
+tratadas de forma estatística, de acordo com o código de ética da ABEP –
+Associação Brasileira de Empresas de Pesquisa – à qual o DATATEMPO é
+filiado.
+
+Informo também que esta entrevista será gravada em áudio,
+exclusivamente para controle de qualidade da pesquisa, para confirmar
+que a entrevista foi realizada corretamente. Essa gravação não será
+divulgada, não será associada ao seu nome e não será utilizada para
+nenhum outro fim além do controle interno da pesquisa.
+
+ 1.     Você poderia nos conceder alguns minutos do seu tempo para expressar
+        suas opiniões e, deste modo, contribuir com a nossa pesquisa?
+
+      01. Sim (Pesquisador: agradeça e prossiga a aplicação)
+      02. Não (Pesquisador: agradeça e encerre) [ENCERRAR QUESTIONÁRIO]
+
+                   ATENÇÃO PROGRAMADOR: REGISTRAR:
+Data de início: [____/_____/______] Hora de início: [____:____]
+
+
+
+
+FILTRO
+
+
+
+Antes de começarmos, preciso confirmar algumas informações:
+2.    O(a) senhor(a) possui título de eleitor e vota no estado de Minas
+      Gerais?
+      (LER AS OPÇÕES)
+     01.   Sim
+     02.   Não (Pesquisador: agradeça e encerre)          [ENCERRAR QUESTIONÁRIO]
+     99.   NS/NR (Resposta espontânea – NÃO LER)          [ENCERRAR QUESTIONÁRIO]
+           (Pesquisador: agradeça e encerre)
+                                                                        [___|___]
+
+
+
+
+PERFIL SOCIOECONÔMICOO E DEMOGRÁFICO
+
+
+
+3.   Mesorregião
+     (Pesquisador, não perguntar, anotar conforme planilha de cota)
+      01. Campo das Vertentes
+      02. Central Mineira
+      03. Jequitinhonha
+      04. Metropolitana de Belo Horizonte
+      05. Noroeste de Minas
+      06. Norte de Minas
+      07. Oeste de Minas
+      08. Sul / Sudoeste de Minas
+      09. Triângulo Mineiro/Alto Paranaíba
+      10. Vale do Mucuri
+      11. Vale do Rio Doce
+      12. Zona da Mata
+                                                                        [___|___]
+
+
+4.   Cidade
+     [ATENÇÃO PROGRAMADOR:
+         a. LISTAR APENAS CIDADES DA MESORREGIÃO MARCADA NA Q.3]
+     (Pesquisador, não perguntar, anotar conforme planilha de cota)
+                                                                       [___|___]
+
+
+5.   Qual é o seu bairro de moradia?
+     (ESPONTÂNEA – NÃO LER)
+     Bairro:_______________________________________
+     99.   NS/NR (Resposta espontânea – NÃO LER) (Pesquisador:
+                                                                        ENCERRAR]
+           agradeça e encerre)
+                                                                        [___|___]
+
+
+6.   Para fins de classificação da pesquisa, qual é o seu sexo?
+     (LER AS OPÇÕES)
+     01.   Feminino
+     02.   Masculino
+     99.   NR (Resposta espontânea – NÃO LER) (Pesquisador: agradeça      [ENCERRAR]
+           e encerre)
+                                                                           [___|___]
+
+
+7.   Qual é a sua idade?
+     (ESPONTÂNEA - ENQUADRAR)
+     01.   Menores de 16 anos (Pesquisador: agradeça e encerre)           [ENCERRAR]
+     02.   16 a 24 anos
+     03.   25 a 34 anos
+     04.   35 a 44 anos
+     05.   45 a 59 anos
+     06.   60 anos ou mais
+     99.   NS/NR (Resposta espontânea – NÃO LER) (Pesquisador:            [ENCERRAR]
+           agradeça e encerre)
+                                                                          [___|___]
+
+
+8.   Até que série o(a) senhor(a) cursou a escola?
+     (LER AS OPÇÕES)
+     01.   Até fundamental completo
+     02.   Médio incompleto ou médio completo
+     03.   Superior incompleto ou completo
+     99.   NS/NR (Resposta espontânea – NÃO LER) (Pesquisador:            [ENCERRAR]
+           agradeça e encerre)
+                                                                          [___|___]
+
+
+9.   Em qual faixa está a renda total da sua família no mês passado,
+     somando as rendas de todas as pessoas que moram com você,
+     inclusive a sua?
+
+     (Considere a renda total a soma do salário de todos os moradores no
+     último mês, incluindo salários, benefícios, aposentadoria, pensão, “bicos”,
+     etc.)
+     (LER AS OPÇÕES E MOSTRAR ANEXO 1)
+     01.   Até R$ 3.242,00 (Até 2 salários-mínimos)
+     02.   De R$ 3.242,01 a R$ 8.105,00 (+ de 2 até 5 salários-mínimos)
+     03.   Mais de R$ 8.105,01 (+ de 5 salários-mínimos)
+     99.   NS/NR (Resposta espontânea – NÃO LER) (Pesquisador:            [ENCERRAR]
+           agradeça e encerre)
+                                                                          [___|___]
+INTENÇÃO DE VOTO ESPONTÂNEA
+
+
+
+Em 2026, haverá eleições para presidente, governador, senador, deputado
+estadual e deputado federal....
+10.  Se a eleição para Presidente fosse hoje, em quem o(a) Sr.(a) votaria?
+     (ESPONTÂNEA)
+     Candidato Presidente:_______________________________________
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta espontânea – NÃO LER)
+      99.   Não quis responder (Resposta espontânea – NÃO LER)
+                                                                          [___|___]
+
+
+11.   Se a eleição para Governador fosse hoje, em quem o(a) sr.(a) votaria?
+      (ESPONTÂNEA)
+      Candidato governador:_______________________________________
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta espontânea – NÃO LER)
+      99.   Não quis responder (Resposta espontânea – NÃO LER)
+                                                                          [___|___]
+
+
+12.   Se a eleição para Senador fosse hoje, em quem o(a) sr.(a) votaria?
+      (ESPONTÂNEA)
+      Candidato senador:_______________________________________
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta espontânea – NÃO LER)
+      99.   Não quis responder (Resposta espontânea – NÃO LER)
+                                                                          [___|___]
+
+
+
+
+INTENÇÃO DE VOTO ESTIMULADA: PRESIDENTE
+
+
+
+Agora vamos falar mais especificamente sobre a eleição para presidente...
+13.  [CENÁRIO 1 A] Se a eleição para Presidente fosse hoje e os
+     candidatos fossem esses, em quem o(a) sr.(a) votaria?
+     (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 2)
+     [ATENÇÃO PROGRAMADOR, ALEATORIZAR A ORDEM DOS NOMES]
+      01.   Aldo Rebelo (DC)
+      02.   Flávio Bolsonaro (PL)
+      03.   Lula (PT)
+      04.   Ratinho Júnior (PSD)
+      05.   Renan Santos (Missão)
+      06.   Romeu Zema (NOVO)
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta espontânea – NÃO LER)
+      99.   Não quis responder (Resposta espontânea – NÃO LER)
+                                                                        [___|___]
+
+
+14.   [CENÁRIO 1 B] Se a eleição para Presidente fosse hoje e os
+      candidatos fossem esses, em quem o(a) Sr.(a) votaria?
+      (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 3)
+      [ATENÇÃO PROGRAMADOR, ALEATORIZAR A ORDEM DOS NOMES]
+      01.   Aldo Rebelo (DC)
+      02.   Flávio Bolsonaro (PL)
+      03.   Lula (PT)
+      04.   Renan Santos (Missão)
+      05.   Romeu Zema (NOVO)
+      06.   Ronaldo Caiado (PSD)
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta espontânea – NÃO LER)
+      99.   Não quis responder (Resposta espontânea – NÃO LER)
+                                                                        [___|___]
+
+
+15.   [CENÁRIO 1 C] Se a eleição para Presidente fosse hoje e os
+      candidatos fossem esses, em quem o(a) Sr.(a) votaria?
+      (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 4)
+      [ATENÇÃO PROGRAMADOR, ALEATORIZAR A ORDEM DOS NOMES]
+      01.   Aldo Rebelo (DC)
+      02.   Eduardo Leite (PSD)
+      03.   Flávio Bolsonaro (PL)
+      04.   Lula (PT)
+      05.   Renan Santos (Missão)
+      06.   Romeu Zema (NOVO)
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta espontânea – NÃO LER)
+      99.   Não quis responder (Resposta espontânea – NÃO LER)
+                                                                        [___|___]
+
+
+
+
+16.   [CENÁRIO 2] Se a eleição para Presidente fosse hoje e os candidatos
+      fossem esses, em quem o(a) Sr.(a) votaria?
+      (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 5)
+      [ATENÇÃO PROGRAMADOR, ALEATORIZAR A ORDEM DOS NOMES]
+      01.   Aldo Rebelo (DC)
+      02.   Ciro Gomes (PSDB)
+      03.   Eduardo Leite (PSD)
+      04.   Flávio Bolsonaro (PL)
+      05.   Lula (PT)
+      06.   Renan Santos (Missão)
+      07.   Romeu Zema (NOVO)
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta espontânea – NÃO LER)
+      99.   Não quis responder (Resposta espontânea – NÃO LER)
+                                                                          [___|___]
+
+
+17.   [CENÁRIO 1 - POLARIZADO] Se a eleição para Presidente fosse hoje e
+      os candidatos fossem esses, em quem o(a) sr.(a) votaria?
+      (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 6)
+      [ATENÇÃO PROGRAMADOR, ALEATORIZAR A ORDEM DOS NOMES]
+      01.   Lula (PT)
+      02.   Flávio Bolsonaro (PL)
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta espontânea – NÃO LER)
+      99.   Não quis responder (Resposta espontânea – NÃO LER)
+                                                                        [___|___]
+
+
+18.   [CENÁRIO 2 - POLARIZADO] Se a eleição para Presidente fosse hoje e
+      os candidatos fossem esses, em quem o(a) sr.(a) votaria?
+      (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 7)
+      [ATENÇÃO PROGRAMADOR, ALEATORIZAR A ORDEM DOS NOMES]
+      01.   Lula (PT)
+      02.   Romeu Zema (NOVO)
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta espontânea – NÃO LER)
+      99.   Não quis responder (Resposta espontânea – NÃO LER)
+                                                                        [___|___]
+
+
+19.   [CENÁRIO 3 - POLARIZADO] Se a eleição para Presidente fosse hoje e
+      os candidatos fossem esses, em quem o(a) sr.(a) votaria?
+      (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 8)
+      [ATENÇÃO PROGRAMADOR, ALEATORIZAR A ORDEM DOS NOMES]
+      01.   Lula (PT)
+      02.   Ratinho Júnior (PSD)
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta espontânea – NÃO LER)
+      99.   Não quis responder (Resposta espontânea – NÃO LER)
+                                                                          [___|___]
+
+
+20.   [REJEIÇÃO PRESIDENTE] Se a eleição para Presidente fosse hoje e os
+      candidatos fossem esses, em quem o(a) sr.(a) NÃO VOTARIA DE JEITO
+      NENHUM?
+      (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 9)
+      [ATENÇÃO PROGRAMADOR, ALEATORIZAR A ORDEM DOS NOMES]
+      01.   Aldo Rebelo (DC)
+      02.   Ciro Gomes (PSDB)
+      03.   Eduardo Leite (PSD)
+      04.   Flávio Bolsonaro (PL)
+      05.   Lula (PT)
+      06.   Ratinho Júnior (PSD)
+      07.   Renan Santos (Missão)
+      08.   Romeu Zema (NOVO)
+      09.   Ronaldo Caiado (PSD)
+      97.   Poderia votar em todos/Não rejeita nenhum (Resposta espontânea – NÃO
+            LER)
+      98.   Não votaria em nenhum/Rejeita todos (Resposta espontânea – NÃO LER)
+      99.   NS/NR (Resposta espontânea – NÃO LER)
+                                                                        [___|___]
+
+
+21.   Independentemente do seu voto, quem você acha que irá ganhar
+      as eleições para presidente do Brasil?
+      (RESPOSTA ÚNICA | ESPONTÂNEA)
+      01.   Aldo Rebelo (DC)
+      02.   Ciro Gomes (PSDB)
+      03.   Eduardo Leite (PSD)
+      04.   Flávio Bolsonaro (PL)
+      05.   Lula (PT)
+      06.   Ratinho Júnior (PSD)
+      07.   Renan Santos (Missão)
+      08.   Romeu Zema (NOVO)
+      09.   Ronaldo Caiado (PSD)
+      10.   Outro nome. Qual?______________
+      99.   NS/NR
+                                                                         [___|___]
+
+
+
+
+INTENÇÃO DE VOTO ESTIMULADA: GOVERNADOR
+
+
+
+Agora vamos falar mais especificamente sobre a eleição para governador do
+Estado de Minas Gerais
+
+22.   [CENÁRIO 1] Se a eleição para Governador de Minas Gerais fosse
+      hoje e os candidatos fossem esses, em quem o(a) sr.(a) votaria?
+      (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 10)
+      [ATENÇÃO PROGRAMADOR, ALEATORIZAR A ORDEM DOS NOMES]
+      01.   Aécio Neves (PSDB)
+      02.   Alexandre Kalil (PDT)
+      03.   Ben Mendes (Missão)
+      04.   Cleitinho Azevedo (Republicanos)
+      05.   Gabriel Azevedo (MDB)
+      06.   Maria da Consolação (PSOL)
+      07.   Mateus Simões (PSD)
+      08.   Rafael Duda (PSTU)
+      09.   Túlio Lopes (PCB)
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta espontânea – NÃO LER)
+      99.   Não quis responder (Resposta espontânea – NÃO LER)
+                                                                        [___|___]
+
+
+23.   [CENÁRIO 2] Se a eleição para Governador de Minas Gerais fosse
+      hoje e os candidatos fossem esses, em quem o(a) sr.(a) votaria?
+      (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 11)
+      [ATENÇÃO PROGRAMADOR, ALEATORIZAR A ORDEM DOS NOMES]
+      01.   Alexandre Kalil (PDT)
+      02.   Ben Mendes (Missão)
+      03.   Cleitinho Azevedo (Republicanos)
+      04.   Flávio Roscoe (Sem Partido)
+      05.   Gabriel Azevedo (MDB)
+      06.   Maria da Consolação (PSOL)
+      07.   Mateus Simões (PSD)
+      08.   Rodrigo Pacheco (PSD)
+      09.   Túlio Lopes (PCB)
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta espontânea – NÃO LER)
+      99.   Não quis responder (Resposta espontânea – NÃO LER)
+                                                                        [___|___]
+
+
+
+
+24.   [CENÁRIO 3] Se a eleição para Governador de Minas Gerais fosse
+      hoje e os candidatos fossem esses, em quem o(a) sr.(a) votaria?
+      (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 12)
+      [ATENÇÃO PROGRAMADOR, ALEATORIZAR A ORDEM DOS NOMES]
+      01.   Alexandre Kalil (PDT)
+      02.   Ben Mendes (Missão)
+      03.   Cleitinho Azevedo (Republicanos)
+      04.   Flávio Roscoe (Sem Partido)
+      05.   Gabriel Azevedo (MDB)
+      06.   Maria da Consolação (PSOL)
+      07.   Mateus Simões (PSD)
+      08.   Paulo Abi-Ackel (PSDB)
+      09.   Túlio Lopes (PCB)
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta espontânea – NÃO LER)
+      99.   Não quis responder (Resposta espontânea – NÃO LER)
+                                                                        [___|___]
+
+
+25.   [CENÁRIO 1 - POLARIZADO] Se a eleição para Governador de Minas
+      Gerais fosse hoje e os candidatos fossem esses, em quem o(a) sr.(a)
+      votaria?
+      (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 13)
+      [ATENÇÃO PROGRAMADOR, ALEATORIZAR A ORDEM DOS NOMES]
+      03.   Alexandre Kalil (PDT)
+      04.   Cleitinho Azevedo (Republicanos)
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta espontânea – NÃO LER)
+      99.   Não quis responder (Resposta espontânea – NÃO LER)
+                                                                        [___|___]
+
+
+26.   [CENÁRIO 2 - POLARIZADO] Se a eleição para Governador de Minas
+      Gerais fosse hoje e os candidatos fossem esses, em quem o(a) sr.(a)
+      votaria?
+      (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 14)
+      [ATENÇÃO PROGRAMADOR, ALEATORIZAR A ORDEM DOS NOMES]
+      01.   Cleitinho Azevedo (Republicanos)
+      02.   Mateus Simões (PSD)
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta espontânea – NÃO LER)
+      99.   Não quis responder (Resposta espontânea – NÃO LER)
+                                                                        [___|___]
+
+
+27.   [CENÁRIO 3 - POLARIZADO] Se a eleição para Governador de Minas
+      Gerais fosse hoje e os candidatos fossem esses, em quem o(a) sr.(a)
+      votaria?
+      (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 15)
+      [ATENÇÃO PROGRAMADOR, ALEATORIZAR A ORDEM DOS NOMES]
+      01.   Cleitinho Azevedo (Republicanos)
+      02.   Rodrigo Pacheco (PSD)
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta espontânea – NÃO LER)
+      99.   Não quis responder (Resposta espontânea – NÃO LER)
+                                                                        [___|___]
+
+
+28.   [CENÁRIO 4 - POLARIZADO] Se a eleição para Governador de Minas
+      Gerais fosse hoje e os candidatos fossem esses, em quem o(a) sr.(a)
+      votaria?
+      (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 16)
+      [ATENÇÃO PROGRAMADOR, ALEATORIZAR A ORDEM DOS NOMES]
+      01.   Mateus Simões (PSD)
+      02.   Rodrigo Pacheco (PSD)
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta espontânea – NÃO LER)
+      99.   Não quis responder (Resposta espontânea – NÃO LER)
+                                                                        [___|___]
+
+
+29.   [CENÁRIO 5 - POLARIZADO] Se a eleição para Governador de
+      Minas Gerais fosse hoje e os candidatos fossem esses, em quem
+      o(a) sr.(a) votaria?
+      (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 17)
+      [ATENÇÃO PROGRAMADOR, ALEATORIZAR A ORDEM DOS NOMES]
+      01.   Aécio Neves (PSDB)
+      02.   Mateus Simões (PSD)
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta espontânea – NÃO
+            LER)
+      99.   Não quis responder (Resposta espontânea – NÃO LER)
+                                                                     [___|___]
+
+
+
+
+30.   [REJEIÇÃO GOVERNADOR] Se a eleição para Governador de Minas
+      Gerais fosse hoje e os candidatos fossem esses, em quem o(a) sr.(a)
+      NÃO VOTARIA DE JEITO NENHUM?
+      (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 18)
+      [ATENÇÃO PROGRAMADOR, ALEATORIZAR A ORDEM DOS NOMES]
+      01.   Aécio Neves (PSDB)
+      02.   Alexandre Kalil (PDT)
+      03.   Ben Mendes (Missão)
+      04.   Cleitinho Azevedo (Republicanos)
+      05.   Flávio Roscoe (Sem Partido)
+      06.   Gabriel Azevedo (MDB)
+      07.   Maria da Consolação (PSOL)
+      08.   Mateus Simões (PSD)
+      09.   Paulo Abi-Ackel (PSDB)
+      10.   Rafael Duda (PSTU)
+      11.   Rodrigo Pacheco (PSD)
+      12.   Túlio Lopes (PCB)
+      97.   Poderia votar em todos/Não rejeita nenhum (Resposta espontânea – NÃO
+            LER)
+      98.   Não votaria em nenhum/Rejeita todos (Resposta espontânea – NÃO LER)
+      99.   NS/NR (Resposta espontânea – NÃO LER)
+                                                                       [___|___]
+31.   Independentemente do seu voto, quem você acha que irá ganhar
+      as eleições para governador do Estado de Minas Gerais?
+      (RESPOSTA ÚNICA | ESPONTÂNEA)
+      01.   Aécio Neves (PSDB)
+      02.   Alexandre Kalil (PDT)
+      03.   Ben Mendes (Missão)
+      04.   Cleitinho Azevedo (Republicanos)
+      05.   Flávio Roscoe (Sem Partido)
+      06.   Gabriel Azevedo (MDB)
+      07.   Maria da Consolação (PSOL)
+      08.   Mateus Simões (PSD)
+      09.   Paulo Abi-Ackel (PSDB)
+      10.   Rafael Duda (PSTU)
+      11.   Rodrigo Pacheco (PSD)
+      12.   Túlio Lopes (PCB)
+      98.   Outro nome. Qual?___________
+      99.   NS/NR
+                                                                       [___|___]
+
+
+
+
+INTENÇÃO DE VOTO ESTIMULADA: SENADOR
+
+
+
+      Agora vamos falar sobre o senado... Em 2026, o(a) Sr(a) votará em dois
+      Senadores...
+
+32.   [CENÁRIO 1 - PRIMEIRO VOTO SENADOR] Se as eleições para Senador
+      do Estado de Minas Gerais fossem hoje e os candidatos fossem esses,
+      em quem o(a) Sr(a) votaria primeiro?
+      (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 19)
+      [ATENÇÃO PROGRAMADOR, ALEATORIZAR A ORDEM DOS NOMES]
+      01.   Aécio Neves (PSDB)
+      02.   Alexandre Silveira (PSD)
+      03.   Áurea Carolina (PSOL)
+      04.   Carlos Viana (Podemos)
+      05.   Cristiano Caporezzo (PL)
+      06.   Domingos Sávio (PL)
+      07.   Marcelo Aro (PP)
+      08.   Marília Campos (PT)
+      09.   Vanessa Portugal (PSTU)
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta       [PULAR Q.33]
+            espontânea – NÃO LER)
+      99.   Não quis responder (Resposta espontânea – NÃO LER)     [PULAR Q.33]
+                                                                      [___|___]
+33.   [CENÁRIO 1 - SEGUNDO VOTO SENADOR] Quem seria o seu segundo
+      candidato a Senador?
+      (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 19)
+      [ATENÇÃO PROGRAMADOR, ALEATORIZAR A ORDEM DOS NOMES]
+      01.   Aécio Neves (PSDB)
+      02.   Alexandre Silveira (PSD)
+      03.   Áurea Carolina (PSOL)
+      04.   Carlos Viana (Podemos)
+      05.   Cristiano Caporezzo (PL)
+      06.   Domingos Sávio (PL)
+      07.   Marcelo Aro (PP)
+      08.   Marília Campos (PT)
+      09.   Vanessa Portugal (PSTU)
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta espontânea – NÃO LER)
+      99.   Não quis responder (Resposta espontânea – NÃO LER)
+                                                                        [___|___]
+
+
+34.   [CENÁRIO 2 - PRIMEIRO VOTO SENADOR] Se as eleições para Senador
+      do Estado de Minas Gerais fossem hoje e os candidatos fossem esses,
+      em quem o(a) Sr(a) votaria primeiro?
+      (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 20)
+      [ATENÇÃO PROGRAMADOR, ALEATORIZAR A ORDEM DOS NOMES]
+      01.   Aécio Neves (PSDB)
+      02.   Cristiano Caporezzo (PL)
+      03.   Domingos Sávio (PL)
+      04.   Marcelo Aro (PP)
+      05.   Marília Campos (PT)
+      06.   Vanessa Portugal (PSTU)
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta       [PULAR Q.35]
+            espontânea – NÃO LER)
+      99.   Não quis responder (Resposta espontânea – NÃO LER)     [PULAR Q.35]
+                                                                       [___|___]
+
+
+35.   [CENÁRIO 2 - SEGUNDO VOTO SENADOR] ] Quem seria o seu segundo
+      candidato a Senador?
+      (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 20)
+      [ATENÇÃO PROGRAMADOR, ALEATORIZAR A ORDEM DOS NOMES]
+      01.   Aécio Neves (PSDB)
+      02.   Cristiano Caporezzo (PL)
+      03.   Domingos Sávio (PL)
+      04.   Marcelo Aro (PP)
+      05.   Marília Campos (PT)
+      06.   Vanessa Portugal (PSTU)
+      97.   Votará em branco ou nulo (Resposta espontânea – NÃO LER)
+      98.   Ainda não se decidiu/indeciso/não sabe (Resposta espontânea – NÃO LER)
+       99.    Não quis responder (Resposta espontânea – NÃO LER)
+                                                                   [___|___]
+
+
+
+
+AVALIAÇÃO DA ADMINISTRAÇÃO FEDERAL E ESTADUAL
+
+
+
+(36 – 37)
+       De maneira      geral,    como    o(a) sr(a)    classifica            a
+       administração do(a)____________? O(A) sr(a)  acha     que           ela
+       está sendo:
+       (RESPOSTA ÚNICA | LER AS OPÇÕES)
+       01.    Muito boa (ótima)
+       02.    Boa
+       03.    Regular
+       04.    Ruim
+       05.    Muito ruim (péssima)
+       99.    NS/NR (Resposta espontânea – NÃO LER)
+ 36.         Lula (PT)                                               [___|___]
+ 37.         Romeu Zema (NOVO)                                       [___|___]
+
+
+(38 – 39)
+       E o(a) sr(a) aprova    ou      desaprova       a maneira         como
+       o _______________ vem administrando o país/estado?
+       (RESPOSTA ÚNICA | LER AS OPÇÕES)
+       01.    Aprova
+       02.    Desaprova
+       99.    NS/NR (Resposta espontânea – NÃO LER)
+ 38.         Lula (PT)                                               [___|___]
+ 39.         Romeu Zema (NOVO)                                       [___|___]
+
+
+
+
+CARACTERIZAÇÃO DO ENTREVISTADO
+
+
+
+40.    Qual é a sua ocupação principal atualmente?
+       (RESPOSTA ÚNICA | LER AS OPÇÕES E MOSTRAR ANEXO 21)
+       01.    (PEA) trabalhando em emprego com carteira assinada
+       02.    (PEA) funcionário público
+         03.   (PEA) trabalhando em emprego sem carteira assinada
+         04.   (PEA) trabalhando como autônomo/MEI
+         05.   (PEA) profissional liberal (Nível superior)
+         06.   (PEA) empregador/empresário
+         07.   (PEA) está desempregado há menos de 1 ano
+         08.   (Não PEA) está desempregado há mais de 1 ano
+         09.   (Não PEA) é estudante
+         10.   (Não PEA) estagiário/aprendiz
+         11.   (Não PEA) aposentado e pensionistas
+         12.   (Não PEA) dona de casa
+         13.   (Não PEA) Vive de renda de aluguel, juros, investimentos etc.
+         99.   NR (Resposta espontânea – NÃO LER)
+                                                                               [___|___]
+
+
+41.     Você tem alguma religião? (Se sim) Qual é a sua religião?
+        (RESPOSTA ÚNICA | LER AS OPÇÕES)
+        01.    Católica
+        02.    Evangélica
+        03.    Espírita
+        04.    Outras religiões. Qual?_____________
+        05.    Sem religião
+        99.    NR (Resposta espontânea – NÃO LER)
+                                                                               [___|___]
+
+
+                               Encerramento
+Chegamos ao final da entrevista!
+
+Gostaria de pedir seu nome e telefone de contato. Essas informações são
+apenas para o processo de confirmação de informações, e não serão
+repassadas para terceiros.
+
+       42.      Nome do entrevistado:_____________________________
+       43.      Telefone de contato do entrevistado:_____________________
+       44.      Email (pedir para soletrar) do entrevistado:________________________
+
+
+
+Encerramos a entrevista e eu quero agradecer a sua participação!
+Em caso de dúvidas o(a) sr(a) poderá entrar em contato com a DATATEMPO
+através do telefone (31) 3071-8400.
+
+Tenha um bom dia/boa tarde/boa noite!
+
+                       ATENÇÃO PROGRAMADOR: REGISTRAR:
+      Data de fim: [____/_____/______]      Hora de fim: [____:____]
+
