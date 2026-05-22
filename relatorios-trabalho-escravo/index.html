@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Relatórios de Trabalho Escravo · MTE · Data Fixers</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,sans-serif;background:#fafaf8;color:#111;line-height:1.5;padding:40px 24px;max-width:1200px;margin:0 auto}
+  h1{font-family:'Playfair Display',serif;font-weight:900;font-size:2.2em;letter-spacing:-0.02em;margin-bottom:6px}
+  h2{font-family:'Playfair Display',serif;font-weight:700;font-size:1.5em;margin:32px 0 16px;letter-spacing:-0.01em}
+  .sub{color:#666;font-size:0.95em;margin-bottom:20px}
+  .meta{background:#fff;border:1px solid #e5e5e5;padding:14px 18px;border-radius:8px;margin-bottom:24px;font-size:0.88em;display:flex;gap:24px;flex-wrap:wrap}
+  .meta strong{color:#111}
+  .filters{margin-bottom:20px;display:flex;gap:10px;flex-wrap:wrap}
+  .filters input,.filters select{padding:12px 14px;font-size:0.95em;border:1px solid #ddd;border-radius:6px;background:#fff;font-family:inherit}
+  .filters input{flex:1;min-width:260px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+  .card{background:#fff;border:1px solid #e5e5e5;border-radius:8px;padding:16px 18px;transition:.15s;display:flex;flex-direction:column;gap:8px}
+  .card:hover{border-color:#111;box-shadow:0 4px 12px rgba(0,0,0,.06)}
+  .card.consolidado{background:#1e7e6d;color:#fff;border-color:#1e7e6d}
+  .card.consolidado h3,.card.consolidado a{color:#fff}
+  .card-meta{display:flex;gap:6px;font-size:0.74em;color:#888;flex-wrap:wrap}
+  .card.consolidado .card-meta{color:rgba(255,255,255,0.8)}
+  .card-meta .pill{background:#f0eee8;color:#444;padding:2px 8px;border-radius:999px}
+  .card.consolidado .pill{background:rgba(255,255,255,0.18);color:#fff}
+  .card h3{font-size:1em;font-weight:600;color:#111;line-height:1.3}
+  .card a.open{background:#111;color:#fff;padding:8px 14px;border-radius:6px;text-decoration:none;font-size:0.83em;font-weight:600;display:inline-block;align-self:flex-start;margin-top:auto}
+  .card.consolidado a.open{background:#fff;color:#1e7e6d}
+  .card a.open:hover{opacity:.85}
+  .footer{margin-top:36px;padding-top:18px;border-top:1px solid #e5e5e5;font-size:0.83em;color:#888}
+  .loading{text-align:center;padding:30px;color:#aaa;font-style:italic}
+  .ufs{display:inline-flex;gap:3px;flex-wrap:wrap}
+  .uf-tag{background:#fef08a;color:#7a5e00;padding:1px 6px;border-radius:3px;font-size:0.7em;font-weight:600}
+  .card.consolidado .uf-tag{background:rgba(255,255,255,0.2);color:#fff}
+</style>
+</head>
+<body>
+
+<h1>Relatórios de Trabalho Escravo</h1>
+<p class="sub">Operações de fiscalização do MTE/SIT contra trabalho análogo à escravidão. Inclui consolidados anuais e operações específicas históricas (1995-1999). Fonte: <a href="https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho/areas-de-atuacao/copy_of_combate-ao-trabalho-escravo-e-analogo-ao-de-escravo" target="_blank">gov.br/trabalho-e-emprego</a>.</p>
+
+<div class="meta" id="meta">Carregando…</div>
+
+<div class="filters">
+  <input type="text" id="q" placeholder="Buscar por fazenda, empresa, município…">
+  <select id="ano"><option value="">Todos os anos</option></select>
+  <select id="uf"><option value="">Todas UFs</option></select>
+  <select id="tipo">
+    <option value="">Todos os tipos</option>
+    <option value="consolidado_anual">Consolidados anuais</option>
+    <option value="operacao_especifica">Operações específicas</option>
+  </select>
+</div>
+
+<h2 id="head-consolidados">Relatórios consolidados anuais</h2>
+<div class="grid" id="grid-consolidados"><div class="loading">Carregando…</div></div>
+
+<h2 id="head-operacoes">Operações específicas</h2>
+<div class="grid" id="grid-operacoes"><div class="loading">Carregando…</div></div>
+
+<div class="footer">
+<p>Snapshot atualizado mensalmente via GitHub Actions. Pra ver a Lista Suja atual (empregadores cadastrados), <a href="/lista-suja/">/lista-suja/</a>.</p>
+<p><a href="https://dashboards.datafixers.org">← Voltar pra dashboards</a></p>
+</div>
+
+<script>
+let RELS = null;
+
+fetch('./data/relatorios.json').then(r=>r.json()).then(d=>{
+  RELS = d;
+  document.getElementById('meta').innerHTML = `
+    <span><strong>Total:</strong> ${d.total} relatórios</span>
+    <span><strong>Consolidados anuais:</strong> ${d.consolidados.length}</span>
+    <span><strong>Operações específicas:</strong> ${d.operacoes.length}</span>
+    <span><strong>Extraído:</strong> ${new Date(d.extracted_at).toLocaleString('pt-BR')}</span>
+  `;
+  // Popula filtros
+  const anos = new Set();
+  const ufs = new Set();
+  [...d.consolidados, ...d.operacoes].forEach(r => {
+    if (r.ano) anos.add(r.ano);
+    (r.ufs||[]).forEach(uf => ufs.add(uf));
+  });
+  [...anos].sort((a,b)=>b-a).forEach(a => document.getElementById('ano').insertAdjacentHTML('beforeend', `<option value="${a}">${a}</option>`));
+  [...ufs].sort().forEach(u => document.getElementById('uf').insertAdjacentHTML('beforeend', `<option value="${u}">${u}</option>`));
+
+  render();
+});
+
+function render() {
+  if (!RELS) return;
+  const q = document.getElementById('q').value.trim().toLowerCase();
+  const ano = document.getElementById('ano').value;
+  const uf = document.getElementById('uf').value;
+  const tipo = document.getElementById('tipo').value;
+
+  const match = r => {
+    if (q && !(r.titulo.toLowerCase().includes(q) || (r.titulo_curto||'').toLowerCase().includes(q))) return false;
+    if (ano && String(r.ano) !== ano) return false;
+    if (uf && !(r.ufs||[]).includes(uf)) return false;
+    return true;
+  };
+
+  const cons = RELS.consolidados.filter(r => (!tipo || tipo==='consolidado_anual') && match(r));
+  const ops = RELS.operacoes.filter(r => (!tipo || tipo==='operacao_especifica') && match(r));
+
+  document.getElementById('head-consolidados').style.display = cons.length ? 'block' : 'none';
+  document.getElementById('head-operacoes').style.display = ops.length ? 'block' : 'none';
+
+  const cardHtml = (r, isCons) => `
+    <div class="card${isCons?' consolidado':''}">
+      <div class="card-meta">
+        ${r.ano ? `<span class="pill">${r.ano}</span>` : ''}
+        ${r.op_num ? `<span class="pill">Op. ${r.op_num}</span>` : ''}
+        ${(r.ufs && r.ufs.length) ? `<span class="ufs">${r.ufs.map(u=>`<span class="uf-tag">${u}</span>`).join('')}</span>` : ''}
+      </div>
+      <h3>${r.titulo_curto || r.titulo}</h3>
+      <a class="open" href="${r.url}" target="_blank">Abrir relatório →</a>
+    </div>`;
+
+  document.getElementById('grid-consolidados').innerHTML = cons.map(r => cardHtml(r, true)).join('') || '<div class="loading">Nenhum.</div>';
+  document.getElementById('grid-operacoes').innerHTML = ops.map(r => cardHtml(r, false)).join('') || '<div class="loading">Nenhum.</div>';
+}
+
+['q','ano','uf','tipo'].forEach(id => document.getElementById(id).addEventListener('input', render));
+</script>
+</body>
+</html>
