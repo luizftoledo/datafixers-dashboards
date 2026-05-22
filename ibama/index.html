@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IBAMA · Autos de infração · Data Fixers</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,sans-serif;background:#fafaf8;color:#111;line-height:1.5;padding:40px 24px;max-width:1200px;margin:0 auto}
+  h1{font-family:'Playfair Display',serif;font-weight:900;font-size:2.4em;letter-spacing:-0.02em;margin-bottom:8px}
+  .sub{color:#666;font-size:0.95em;margin-bottom:32px}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:40px}
+  .stat{background:#fff;padding:18px 20px;border:1px solid #e5e5e5;border-radius:8px}
+  .stat .label{font-size:0.7em;letter-spacing:0.12em;text-transform:uppercase;color:#888;font-weight:600;margin-bottom:6px}
+  .stat .value{font-family:'Playfair Display',serif;font-size:1.7em;font-weight:700;color:#111}
+  .stat .sub2{font-size:0.75em;color:#888;margin-top:4px}
+  h2{font-family:'Playfair Display',serif;font-weight:700;font-size:1.5em;margin:36px 0 14px;letter-spacing:-0.01em}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:720px){.grid2{grid-template-columns:1fr}}
+  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e5e5e5;border-radius:8px;overflow:hidden;font-size:0.9em}
+  th{text-align:left;padding:10px 14px;background:#f5f5f3;font-weight:600;font-size:0.7em;letter-spacing:0.1em;text-transform:uppercase;color:#666;border-bottom:1px solid #e5e5e5}
+  td{padding:10px 14px;border-bottom:1px solid #f0f0ee}
+  tr:last-child td{border-bottom:none}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;color:#444}
+  .bar{display:inline-block;height:14px;background:#111;margin-right:8px;vertical-align:middle}
+  .search{margin:28px 0}
+  .search input{width:100%;padding:14px 18px;font-size:1em;border:1px solid #ccc;border-radius:6px;font-family:inherit}
+  .search input:focus{outline:none;border-color:#111}
+  .footer{margin-top:48px;padding-top:24px;border-top:1px solid #e5e5e5;font-size:0.83em;color:#888;line-height:1.7}
+  .footer a{color:#111}
+  .pill{display:inline-block;background:#fff;border:1px solid #ddd;border-radius:999px;padding:3px 10px;font-size:0.72em;color:#666;margin-right:6px;margin-bottom:4px}
+  .loading{color:#aaa;text-align:center;padding:30px;font-style:italic}
+</style>
+</head>
+<body>
+
+<h1>IBAMA · Autos de infração</h1>
+<p class="sub">Dataset de fiscalizações ambientais (Sistema SICAFI). Dados a partir de 2020. Fonte: <a href="https://dadosabertos.ibama.gov.br/" target="_blank">dadosabertos.ibama.gov.br</a>. Atualizado diariamente.</p>
+
+<div class="stats" id="stats"><div class="loading">Carregando…</div></div>
+
+<div class="search">
+  <input type="text" id="busca" placeholder="Buscar por nome, CNPJ ou município (mín. 3 caracteres)…">
+</div>
+<div id="busca-result"></div>
+
+<div class="grid2">
+  <div>
+    <h2>Top estados (por número de autos)</h2>
+    <table><thead><tr><th>UF</th><th class="num">Autos</th><th class="num">Total (R$ mi)</th></tr></thead>
+    <tbody id="tbl-uf"><tr><td colspan="3" class="loading">Carregando…</td></tr></tbody></table>
+  </div>
+  <div>
+    <h2>Autos por ano</h2>
+    <table><thead><tr><th>Ano</th><th class="num">Autos</th><th class="num">Total (R$ mi)</th></tr></thead>
+    <tbody id="tbl-ano"><tr><td colspan="3" class="loading">Carregando…</td></tr></tbody></table>
+  </div>
+</div>
+
+<h2>Top 20 infratores (por valor de multa)</h2>
+<table><thead><tr><th>Infrator</th><th>CPF/CNPJ</th><th class="num">Autos</th><th class="num">Valor (R$ mi)</th></tr></thead>
+<tbody id="tbl-infratores"><tr><td colspan="4" class="loading">Carregando…</td></tr></tbody></table>
+
+<div class="footer">
+  <p>Dados via API: <a href="https://ibama-worker.datafixers.org/api/stats" target="_blank">/api/stats</a> · <a href="https://ibama-worker.datafixers.org/api/uf" target="_blank">/api/uf</a> · <a href="https://ibama-worker.datafixers.org/api/top-infratores" target="_blank">/api/top-infratores</a> · <a href="https://ibama-worker.datafixers.org/api/por-ano" target="_blank">/api/por-ano</a></p>
+  <p style="margin-top:8px"><a href="https://dashboards.datafixers.org">← Voltar pra dashboards.datafixers.org</a></p>
+</div>
+
+<script>
+const API = 'https://ibama-worker.datafixers.org';
+const fmt = n => Number(n||0).toLocaleString('pt-BR');
+const fmtBRL = n => 'R$ ' + Number(n||0).toLocaleString('pt-BR', {minimumFractionDigits:2});
+
+async function loadStats(){
+  const r = await fetch(API + '/api/stats').then(r=>r.json());
+  const s = r.stats || {};
+  const last = r.last_snapshot || {};
+  document.getElementById('stats').innerHTML = `
+    <div class="stat"><div class="label">Total autos</div><div class="value">${fmt(s.total)}</div><div class="sub2">desde ${s.ano_min}</div></div>
+    <div class="stat"><div class="label">Infratores únicos</div><div class="value">${fmt(s.infratores_unicos)}</div></div>
+    <div class="stat"><div class="label">Estados</div><div class="value">${s.estados}/27</div></div>
+    <div class="stat"><div class="label">Valor total</div><div class="value">R$ ${fmt(s.valor_total_milhoes)}M</div></div>
+  `;
+}
+
+async function loadUF(){
+  const data = await fetch(API + '/api/uf').then(r=>r.json());
+  const max = Math.max(...data.map(d=>d.n));
+  document.getElementById('tbl-uf').innerHTML = data.slice(0,15).map(d=>`
+    <tr><td>${d.uf}</td>
+    <td class="num"><span class="bar" style="width:${Math.round(d.n/max*60)}px"></span>${fmt(d.n)}</td>
+    <td class="num">${fmt(d.valor_milhoes)}</td></tr>`).join('');
+}
+
+async function loadAno(){
+  const data = await fetch(API + '/api/por-ano').then(r=>r.json());
+  document.getElementById('tbl-ano').innerHTML = data.map(d=>`
+    <tr><td>${d.ano}</td><td class="num">${fmt(d.n)}</td><td class="num">${fmt(d.valor_milhoes)}</td></tr>`).join('');
+}
+
+async function loadInfratores(){
+  const data = await fetch(API + '/api/top-infratores?limit=20').then(r=>r.json());
+  document.getElementById('tbl-infratores').innerHTML = data.map(d=>`
+    <tr><td>${(d.nome_infrator||'').replace(/\s+/g,' ').trim()}</td>
+    <td><code style="font-size:0.85em;color:#666">${d.cpf_cnpj||'—'}</code></td>
+    <td class="num">${fmt(d.n)}</td>
+    <td class="num"><strong>${fmt(d.valor_milhoes)}</strong></td></tr>`).join('');
+}
+
+let buscaTimer;
+document.getElementById('busca').addEventListener('input', e => {
+  clearTimeout(buscaTimer);
+  const q = e.target.value.trim();
+  if (q.length < 3) { document.getElementById('busca-result').innerHTML = ''; return; }
+  buscaTimer = setTimeout(async () => {
+    const data = await fetch(API + '/api/busca?q=' + encodeURIComponent(q)).then(r=>r.json());
+    if (!Array.isArray(data) || data.length === 0) {
+      document.getElementById('busca-result').innerHTML = '<p style="color:#888">Nenhum resultado.</p>';
+      return;
+    }
+    document.getElementById('busca-result').innerHTML = `
+      <p class="sub" style="margin-top:8px">${data.length} resultado(s) — top 50:</p>
+      <table><thead><tr><th>Data</th><th>UF</th><th>Município</th><th>Infrator</th><th class="num">Valor</th></tr></thead>
+      <tbody>${data.slice(0,50).map(r=>`
+        <tr><td>${(r.data_auto||'').slice(0,10)}</td>
+        <td>${r.uf||'—'}</td>
+        <td>${r.municipio||'—'}</td>
+        <td><strong>${(r.nome_infrator||'').slice(0,50)}</strong><br><span style="font-size:0.78em;color:#888">${r.des_infracao ? r.des_infracao.slice(0,80) : ''}</span></td>
+        <td class="num">${fmtBRL(r.valor)}</td></tr>`).join('')}</tbody></table>`;
+  }, 350);
+});
+
+loadStats();
+loadUF();
+loadAno();
+loadInfratores();
+</script>
+</body>
+</html>
