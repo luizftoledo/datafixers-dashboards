@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-05-10T14:42:03.417399+00:00",
+  "generated_at": "2026-05-22T10:48:43.780415+00:00",
   "counts": {
     "items": 90,
-    "domains": 25,
+    "domains": 24,
     "categories": {
-      "reportagem_autoral": 63,
+      "reportagem_autoral": 60,
       "republicacao": 0,
-      "eco_repercussao": 0,
-      "citacao_fonte": 4,
-      "mencao": 5,
+      "eco_repercussao": 1,
+      "citacao_fonte": 2,
+      "mencao": 9,
       "entrevista": 1,
       "palestra_curso": 0,
       "perfil_bio": 17
     },
     "recent": {
       "last_1_day": 0,
-      "last_7_days": 0,
-      "last_30_days": 1
+      "last_7_days": 2,
+      "last_30_days": 3
     }
   },
   "date_range": {
-    "min": "2017-11-08",
-    "max": "2026-04-14"
+    "min": "2019-02-26",
+    "max": "2026-05-14"
   },
   "methodology": {
     "names": [
@@ -33,7 +33,7 @@
   "sources": {
     "discovery": {
       "seeds": {
-        "known_external_sources": 48
+        "known_external_sources": 50
       },
       "searches": {
         "google-news-rss:\"Luiz Fernando Toledo\"": 40,
@@ -43,24 +43,25 @@
       }
     },
     "enrich": {
-      "fetched": 58,
-      "reused": 36,
+      "fetched": 66,
+      "reused": 31,
       "kept": 90,
-      "dropped": 4,
+      "dropped": 7,
       "categories": {
         "perfil_bio": 17,
-        "reportagem_autoral": 63,
-        "mencao": 5,
+        "reportagem_autoral": 60,
+        "mencao": 9,
         "entrevista": 1,
-        "citacao_fonte": 4
+        "citacao_fonte": 2,
+        "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 50,
+        "bbc.com": 51,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
         "ojoioeotrigo.com.br": 2,
-        "estadao.com.br": 12,
+        "estadao.com.br": 11,
         "g1.globo.com": 2,
         "escavador.com": 1,
         "icfj.org": 1,
@@ -74,17 +75,24 @@
         "talks.ox.ac.uk": 1,
         "cima.ned.org": 1,
         "scielo.br": 1,
-        "em.com.br": 1,
         "piaui.uol.com.br": 1,
-        "abraji.org.br": 2,
+        "abraji.org.br": 1,
         "sbtnews.sbt.com.br": 1,
-        "cartacapital.com.br": 1,
-        "rollingstone.com.br": 1
+        "latamjournalismreview.org": 1,
+        "cnnbrasil.com.br": 3
       },
       "errors": [
         {
+          "url": "https://bbc.com/portuguese/articles/cn76p0jjxz7o",
+          "error": "HTTPSConnectionPool(host='www.bbc.com', port=443): Read timed out. (read timeout=30) | jina: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)"
+        },
+        {
           "url": "https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil",
           "error": "HTTPSConnectionPool(host='devstudies.cam.ac.uk', port=443): Max retries exceeded with url: /news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil (Caused by NameResolutionError(\"HTTPSConnection(host='devstudies.cam.ac.uk', port=443): Failed to resolve 'devstudies.cam.ac.uk' ([Errno -5] No address associated with hostname)\")) | jina: 422 Client Error: Unprocessable Entity for url: https://r.jina.ai/http://https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil"
+        },
+        {
+          "url": "https://piaui.uol.com.br/web/transparencia-tarja-preta",
+          "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) | jina: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)"
         }
       ]
     }
