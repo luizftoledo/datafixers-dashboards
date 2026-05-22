@@ -80,13 +80,13 @@
     .stats{gap:12px}
     .stat{padding:14px 18px}
     .stat .value{font-size:1.6em}
-    .filters{grid-template-columns:repeat(3,1fr)}
+    .filters{grid-template-columns:repeat(2,1fr)}
     .result-meta{font-size:0.78em}
     .result-title{font-size:1.05em}
   }
   @media (min-width: 900px) {
     .search-wrap{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}
-    .filters{grid-template-columns:repeat(3,minmax(140px,180px));margin-top:0}
+    .filters{grid-template-columns:repeat(2,minmax(160px,200px));margin-top:0}
   }
 </style>
 </head>
@@ -107,9 +107,6 @@
       <select id="source" aria-label="Filtrar por fonte">
         <option value="">Todas as fontes</option>
       </select>
-      <select id="type" aria-label="Filtrar por tipo">
-        <option value="">Todos os tipos</option>
-      </select>
     </div>
   </div>
   <div class="hint">Busca com tolerância a acentos. Múltiplas palavras = todas precisam estar no texto.</div>
@@ -126,8 +123,13 @@ const API = 'https://ibama-worker.datafixers.org';
 const $ = id => document.getElementById(id);
 
 const SOURCE_LABELS = {
-  planalto: 'Site do Planalto',
-  biblioteca: 'Biblioteca da Presidência',
+  planalto: 'Site do Planalto · discursos e entrevistas',
+  biblioteca: 'Biblioteca da Presidência · discursos e entrevistas',
+  bluesky: 'Bluesky · posts em rede social',
+};
+const SOURCE_LABELS_SHORT = {
+  planalto: 'Planalto',
+  biblioteca: 'Biblioteca',
   bluesky: 'Bluesky',
 };
 const TYPE_LABELS = {
@@ -163,11 +165,6 @@ async function loadStats() {
   }
 
   // Popula type
-  for (const t of (r.by_type || [])) {
-    const label = TYPE_LABELS[t.type] || t.type;
-    $('type').insertAdjacentHTML('beforeend', `<option value="${t.type}">${label} (${t.n.toLocaleString('pt-BR')})</option>`);
-  }
-
   // By president — barras
   const max = Math.max(...(r.by_president||[]).map(p => p.n));
   $('results').innerHTML =
@@ -194,10 +191,8 @@ async function search() {
   const params = new URLSearchParams({ q, limit: '20' });
   const pres = $('president').value;
   const src = $('source').value;
-  const tp = $('type').value;
   if (pres) params.set('president', pres);
   if (src) params.set('source', src);
-  if (tp) params.set('type', tp);
 
   $('results').innerHTML = '<div class="loading">Buscando…</div>';
   try {
@@ -211,14 +206,13 @@ async function search() {
       `<h2 style="font-family:Playfair Display,serif;font-size:1.15em;margin-bottom:12px">${r.length} resultado(s)</h2>` +
       r.map(d => {
         const srcClass = d.source ? `src-${d.source}` : '';
-        const srcLabel = SOURCE_LABELS[d.source] || d.source || '?';
-        const typeLabel = TYPE_LABELS[d.type] || d.type || '?';
+        const srcLabel = SOURCE_LABELS_SHORT[d.source] || d.source || '?';
+        const typeLabel = (TYPE_LABELS[d.type] || d.type || '').toLowerCase().replace(' (redes sociais)','');
         return `
         <div class="result">
           <div class="result-meta">
             <span class="pill pres">${d.president}</span>
-            <span class="pill ${srcClass}">${srcLabel}</span>
-            <span class="pill">${typeLabel}</span>
+            <span class="pill ${srcClass}">${srcLabel} · ${typeLabel}</span>
             <span class="pill">${(d.date || '').slice(0,10)}</span>
           </div>
           <div class="result-title"><a href="${d.url}" target="_blank" rel="noopener">${d.title}</a></div>
@@ -233,7 +227,6 @@ async function search() {
 $('q').addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(search, 350); });
 $('president').addEventListener('change', search);
 $('source').addEventListener('change', search);
-$('type').addEventListener('change', search);
 
 loadStats();
 </script>
