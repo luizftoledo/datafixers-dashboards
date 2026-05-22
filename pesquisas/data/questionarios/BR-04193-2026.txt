@@ -1,0 +1,719 @@
+                                           I - APRESENTAÇÃO
+
+Bom dia/Boa tarde/Boa noite. Meu nome é [CITE SEU NOME] e sou pesquisador(a) da Nexus - Pesquisa e
+Inteligência de Dados. Estamos realizando um estudo nacional sobre temas políticos e eleições
+presidenciais. Sua participação é totalmente voluntária, suas respostas são anônimas e serão analisadas
+apenas de forma estatística, sem identificação individual, de acordo com a Lei Geral de Proteção de Dados.
+A entrevista dura cerca de 10 minutos. Podemos contar com sua participação?
+
+    1     Sim                                    Continue
+    2     Não                                    Agradeça e encerre
+
+INSTRUÇÃO GERAL PARA O(A) APLICADOR(A): se o entrevistado(a) cair em alguma cota, explicar que a
+cota de entrevistas com aquele perfil específico já foi cumprida, e que por isso a entrevista não poderá
+ser feita. Somente após a explicação deve agradecer e encerrar.
+
+INFORMAÇÕES DE CONTROLE
+
+    HORÁRIO DE INÍCIO: ______:_______                        DATA:____/_____/2026
+    HORÁRIO TÉRMINO: ______:_______                          Nº DA FOLHA DE COTA:
+    CÓDIGO DA CIDADE:      CÓDIGO DA UF:                     Nº DO QUESTIONÁRIO:
+    CÓDIGO DO PESQUISADOR:                                   CHECAGEM 1- SIM 2 - NÃO
+
+
+                                BLOCO PERFIL DO(A) ENTREVISTADO(A)
+
+[FILTRO] Você tem título de eleitor, sim ou não? (ESTIMULADA E ÚNICA)
+
+    1     Sim                                    Continue
+    2     Não                                    Agradeça e encerre
+
+PF1. Sexo (RU)
+Entrevistador: anote sem perguntar
+    1     Feminino                               Continue
+    2     Masculino                              Continue
+
+PF2. Quantos anos você tem? ______________(RU)
+Entrevistador: digite a idade exata informada
+
+SCRIPT: CLASSIFICAR AUTOMATICAMENTE NAS FAIXAS
+
+          Faixas etárias                         Instrução
+    1     Até 15 anos                            Agradeça e encerre
+    2     16 a 17 anos                           Continue
+    3     18 a 24 anos                           Continue
+    4     25 a 34 anos                           Continue
+    5     35 a 44 anos                           Continue
+    6     45 a 59 anos                           Continue
+    7     60 anos ou mais                        Continue
+PF3. Qual o seu grau de escolaridade? (ESPONTÂNEA E ÚNICA; NÃO LER OPÇÕES)
+
+         Faixa de escolaridade                Instrução
+    1    Analfabeto                           Continue
+    2    Sabe ler e escrever                  Continue
+    3    Ensino Fundamental Incompleto        Continue
+    4    Ensino Fundamental Completo          Continue
+    5    Ensino Médio Incompleto              Continue
+    6    Ensino Médio Completo                Continue
+    7    Ensino Superior Incompleto           Continue
+    8    Ensino Superior Completo             Continue
+
+PF4. Atualmente você desempenha algum trabalho remunerado? (ESPONTÂNEA; NÃO LER OPÇÕES)
+
+    1    Sim, desempenho um trabalho remunerado           Continue
+    2    Não, não desempenho trabalho remunerado          Continue
+
+SCRIPT: APLICAR PF5 APENAS PARA QUEM DISSE CÓDIGO 1 NA PF4.
+
+PF5. E como você classifica esse trabalho remunerado? (ESTIMULADA E ÚNICA)
+
+    1    Sou empregado do setor público
+    2    Sou empregado do setor privado
+    3    Sou trabalhador doméstico
+    4    Microempreendedor Individual – MEI
+    5    Sou empresário
+    6    Trabalho por conta própria
+
+SCRIPT: APLICAR PF6 APENAS PARA QUEM DISSE CÓDIGO 1, 2 ou 3 NA PF5.
+
+PF6. E nesse trabalho você tem um vínculo formal de trabalho? (ESTIMULADA E ÚNICA)
+
+    1    Sim, tenho carteira assinada, CLT
+    2    Sim, sou estatutário concursado
+    3    Não, sou trabalhador informal, sem carteira assinada
+
+SCRIPT: APLICAR PF7 APENAS PARA QUEM DISSE CÓDIGO 4, 5 ou 6 NA PF5.
+
+PF7. E você possui CNPJ para desenvolver sua atividade como empresário ou trabalhador conta própria?
+(ESTIMULADA E ÚNICA)
+
+    1    Sim, possuo CNPJ
+    2    Não, não possuo CNPJ
+
+SCRIPT: APLICAR PF8 APENAS PARA QUEM DISSE CÓDIGO 2 NA PF4.
+
+PF8. E você é aposentado, pensionista, estudante, dono(a) de casa ou atualmente está desempregado?
+(ESTIMULADA E ÚNICA)
+
+    1    Aposentado
+    2    Pensionista
+    3    Estudante
+    4    Dono(a) de casa
+    5    Desempregado
+SCRIPT: APLICAR PF9 APENAS PARA QUEM DISSE CÓDIGO 5 NA PF8.
+
+PF9. E você procurou emprego nos últimos trinta dias, sim ou não? (ESTIMULADA E ÚNICA)
+
+    1     Sim
+    2     Não
+
+PF10. Em qual estado você mora? (ESPONTÂNEA E ÚNICA)
+
+    1     Acre                                          15   Paraíba
+    2     Alagoas                                       16   Paraná
+    3     Amapá                                         17   Pernambuco
+    4     Amazonas                                      18   Piauí
+    5     Bahia                                         19   Rio de Janeiro
+    6     Ceará                                         20   Rio Grande do Norte
+    7     Distrito Federal                              21   Rio Grande do Sul
+    8     Espírito Santo                                22   Rondônia
+    9     Goiás                                         23   Roraima
+    10    Maranhão                                      24   Santa Catarina
+    11    Mato Grosso                                   25   São Paulo
+    12    Mato Grosso do Sul                            26   Sergipe
+    13    Minas Gerais                                  27   Tocantins
+    14    Pará
+
+
+PF11. E em qual cidade você mora [SCRIPT: PROGRAMAÇÃO A PARTIR DA UF MARCADA NA PF10]?
+(ESPONTÂNEA E ÚNICA)
+
+
+
+                                     BLOCO POLÍTICA E ELEIÇÕES
+
+
+    1.   Qual o seu nível de interesse nas eleições presidenciais que vão ocorrer em outubro deste ano
+         (2026)? (ESTIMULADA E ÚNICA)
+
+    1     Tenho muito interesse nas eleições de 2026
+    2     Tenho interesse razoável nas eleições de 2026
+    3     Tenho pouco interesse nas eleições de 2026
+    4     Não tenho nenhum interesse nas eleições de 2026
+    98    Não sabe (NÃO LER)
+    99    Não respondeu (NÃO LER)
+
+    2.   Se as eleições fossem hoje, em quem você votaria para Presidente da República?
+         (ESPONTÂNEA E ÚNICA)
+
+    1
+    98    Não sabe (NÃO LER)
+    99    Não respondeu (NÃO LER)
+3.   Se a eleição fosse hoje e os candidatos fossem estes aqui que irei ler, em quem você votaria
+     para Presidente do Brasil? Por favor, espere eu ler todos os nomes antes de dar sua resposta.
+     (ESTIMULADA E ÚNICA)
+
+SCRIPT: FAZER A PERGUNTA PARA CADA CENÁRIO.
+APRESENTAR CANDIDATOS EM ORDEM ALEATÓRIA.
+
+       Nomes                                            Cenário 1                  Cenário 2
+1      Flávio Bolsonaro                                    1                          1
+2      Lula                                                2                          2
+3      Renan Santos                                        3                          3
+4      Romeu Zema                                          4                          4
+5      Joaquim Barbosa                                     5                          5
+6      Ronaldo Caiado                                      6                          6
+7      Augusto Cury                                        7
+8      Cabo Daciolo                                        8
+91     Nenhum (NÃO LER)                                    91                         91
+92     Branco (NÃO LER)                                    92                         92
+93     Nulo (NÃO LER)                                      93                         93
+98     Não sabe (NÃO LER)                                  98                         98
+99     Não respondeu (NÃO LER)                             99                         99
+
+SCRIPT: APLICAR PERGUNTA 4 APÓS O CENÁRIO 1, APENAS PARA QUEM DISSE ALGUM
+CANDIDATO NO CENÁRIO 1.
+
+4.   E você diria que até outubro, quando acontece a eleição para Presidente, essa sua decisão de
+     voto já está tomada e não vai mais mudar ou pode mudar? (ESTIMULADA E ÚNICA)
+
+1     Já está tomada e não vai mais mudar
+2     Pode mudar
+98    Não sabe (NÃO LER)
+99    Não respondeu (NÃO LER)
+
+5.   Pensando em um possível segundo turno entre alguns candidatos, em quem você votaria para
+     Presidente da República se tivesse que escolher entre: (ESTIMULADA E ÚNICA POR LINHA)
+
+SCRIPT: CANDIDATOS EM ORDEM ALEATÓRIA.
+
+                                              2ºT –         2ºT -           2ºT –
+      Nomes
+                                            Cenário 1     Cenário 2       Cenário 3
+ 1    Lula                                      1             1               1
+ 2    Flávio Bolsonaro                          2
+ 3    Romeu Zema                                              2
+ 4    Ronaldo Caiado                                                           2
+91    Nenhum (NÃO LER)                         91             91              91
+92    Branco (NÃO LER)                         92             92              92
+93    Nulo (NÃO LER)                           93             93              93
+98    Não sabe (NÃO LER)                       98             98              98
+99    Não respondeu (NÃO LER)                  99             99              99
+    6.   Agora, sobre cada candidato que eu vou falar, gostaria que você dissesse se: é o único em quem
+         você votaria; se você poderia votar nele, mas também em outro; se você não votaria nele de
+         jeito nenhum; ou se você não conhece: (ESTIMULADA E ÚNICA POR LINHA)
+
+    SCRIPT: CANDIDATOS EM ORDEM ALEATÓRIA.
+
+                                              Poderia       Não votaria
+                               É o único                                                                 Não
+                                             votar nele,     nele de         Não        Não sabe
+                               em quem                                                                respondeu
+                                            ou em algum        jeito       conhece     (NÃO LER)
+                                votaria                                                               (NÃO LER)
+                                               outro         nenhum
+     1    Flávio Bolsonaro         1             2               3             4          98              99
+     2    Lula                     1             2               3             4          98              99
+     3    Renan Santos             1             2               3             4          98              99
+     4    Romeu Zema               1             2               3             4          98              99
+     5    Ronaldo Caiado           1             2               3             4          98              99
+     6    Joaquim Barbosa          1             2               3             4          98              99
+     7    Augusto Cury             1             2               3             4          98              99
+     8    Cabo Daciolo             1             2               3             4          98              99
+
+    7.   De acordo com a sua preferência política, considerando apenas as alternativas a seguir, quem
+         deveria ser eleito Presidente do Brasil nas eleições de 2026? (ESTIMULADA E ÚNICA)
+
+    1     O Presidente Lula
+          Flávio Bolsonaro ou algum outro candidato indicado por Jair Bolsonaro
+    2
+          (ou outro membro de sua família)
+          Um candidato que não fosse apoiado nem por Lula nem por Jair Bolsonaro.
+    3
+          Qual? _______ (ANOTAR)
+    91    Nenhum (NÃO LER)
+    92    Branco (NÃO LER)
+    93    Nulo (NÃO LER)
+    98    Não sabe (NÃO LER)
+    99    Não respondeu (NÃO LER)
+
+
+   ### APENAS PARA QUEM RESPONDEU LULA NO CENÁRIO DE SEGUNDO TURNO CONTRA FLÁVIO
+                           BOLSONARO (CENÁRIO 1 DA P5) ###
+
+8A. Na simulação de segundo turno entre Lula e Flávio Bolsonaro, você declarou que pretende votar
+em LULA. Entre as alternativas a seguir, qual mais se aproxima da sua principal motivação para esse
+voto (ESTIMULADA E ÚNICA)
+
+    1     Ele é o melhor candidato
+    2     Apenas para derrotar Flávio Bolsonaro
+    98    Não sabe (NÃO LER)
+    99    Não respondeu (NÃO LER)
+   ### APENAS PARA QUEM RESPONDEU FLÁVIO BOLSONARO NO CENÁRIO DE SEGUNDO TURNO
+                          CONTRA LULA (CENÁRIO 1 DA P5) ###
+
+8B. Na simulação de segundo turno entre Lula e Flávio Bolsonaro, você declarou que pretende votar
+em FLÁVIO BOLSONARO. Entre as alternativas a seguir, qual mais se aproxima da sua principal
+motivação para esse voto (ESTIMULADA E ÚNICA)
+
+    1    Ele é o melhor candidato
+    2    Apenas para derrotar Lula
+    98   Não sabe (NÃO LER)
+    99   Não respondeu (NÃO LER)
+
+
+9A. Há 10 dias, veio a público um áudio de conversa entre o pré-candidato à Presidência Flávio
+Bolsonaro e o banqueiro Daniel Vorcaro, dono do Master preso pela Polícia Federal. Na conversa, os
+dois falam sobre o pagamento de R$ 134 milhões por Vorcaro como forma de financiar o filme sobre o
+ex-presidente Jair Bolsonaro. Sobre esta notícia, você diria que: (ESTIMULADA E ÚNICA)
+
+    1    Conhece bem e está acompanhando
+    2    Ouviu falar e sabe do que se trata
+    3    Ouviu falar e sabe pouco do que se trata
+    4    Não ouviu falar e não sabe do que se trata
+    98   Não sabe (NÃO LER)
+    99   Não respondeu (NÃO LER)
+
+9B. Na última terça-feira, veio a público um encontro realizado entre o pré-candidato à Presidência
+Flávio Bolsonaro e o banqueiro Daniel Vorcaro (dono do Master) após a sua primeira prisão pela Polícia
+Federal. A visita de Flávio ocorreu no apartamento de Vorcaro em São Paulo no fim de 2025, enquanto
+o banqueiro estava sob prisão domiciliar. Sobre esta notícia, você diria que: (ESTIMULADA E ÚNICA)
+
+    1    Conhece bem e está acompanhando
+    2    Ouviu falar e sabe do que se trata
+    3    Ouviu falar e sabe pouco do que se trata
+    4    Não ouviu falar e não sabe do que se trata
+    98   Não sabe (NÃO LER)
+    99   Não respondeu (NÃO LER)
+
+
+   ### APENAS PARA QUEM RESPONDEU LULA NO CENÁRIO DE SEGUNDO TURNO CONTRA FLÁVIO
+                           BOLSONARO (CENÁRIO 1 DA P5) ###
+
+10A. Você declarou que, num possível segundo turno entre Lula e Flávio Bolsonaro, pretende votar em
+LULA. Você já votava em Lula antes da divulgação das notícias do áudio e da visita de Flávio Bolsonaro
+ao banqueiro Daniel Vorcaro ou passou a votar depois das notícias sobre o áudio e a visita?
+(ESTIMULADA E ÚNICA)
+
+    1    Já votava antes das notícias sobre o áudio e a visita
+    2    Passei a votar depois das notícias sobre o áudio e a visita
+    98   Não sabe (NÃO LER)
+    99   Não respondeu (NÃO LER)
+                   ### APENAS PARA QUEM RESPONDEU CÓDIGO 2 NA P10A ###
+
+10B. E antes, qual era a sua intenção de voto? Você iria votar em Flávio Bolsonaro, iria votar branco,
+nulo ou em nenhum dos dois ou não sabia em quem iria votar? (ESTIMULADA E ÚNICA)
+
+    1    Flávio Bolsonaro
+    2    Branco/Nulo/Nenhum
+    3    Não sabia
+    98   Não sabe (NÃO LER)
+    99   Não respondeu (NÃO LER)
+
+
+   ### APENAS PARA QUEM RESPONDEU FLÁVIO BOLSONARO NO CENÁRIO DE SEGUNDO TURNO
+                          CONTRA LULA (CENÁRIO 1 DA P5) ###
+
+10C. Você declarou que, num possível segundo turno entre Lula e Flávio Bolsonaro, pretende votar em
+FLÁVIO BOLSONARO. Você já votava em Flávio Bolsonaro antes da divulgação das notícias do áudio e
+da visita de Flávio Bolsonaro ao banqueiro Daniel Vorcaro ou passou a votar depois das notícias sobre
+o áudio e a visita? (ESTIMULADA E ÚNICA)
+
+    1    Já votava antes das notícias sobre o áudio e a visita
+    2    Passei a votar depois das notícias sobre o áudio e a visita
+    98   Não sabe (NÃO LER)
+    99   Não respondeu (NÃO LER)
+
+
+                    ### APENAS PARA QUEM RESPONDEU CÓDIGO 2 NA P10C ###
+
+10D. E antes, qual era a sua intenção de voto? Você votaria em Lula, iria votar branco, nulo ou em
+nenhum dos dois ou não sabia em quem iria votar? (ESTIMULADA E ÚNICA)
+
+    1    Lula
+    2    Branco/Nulo/Nenhum
+    3    Não sabia
+    98   Não sabe (NÃO LER)
+    99   Não respondeu (NÃO LER)
+
+
+ ### APENAS PARA QUEM RESPONDEU NENHUM/BRANCO/NULO NO CENÁRIO DE SEGUNDO TURNO
+                                 CONTRA LULA (CENÁRIO 1 DA P5) ###
+10E. Você declarou que, num possível segundo turno entre Lula e Flávio Bolsonaro, pretende votar
+NULO, BRANCO OU EM NENHUM DOS DOIS. Você já votava nulo, branco ou nenhum antes da
+divulgação das notícias do áudio e da visita de Flávio Bolsonaro ao banqueiro Daniel Vorcaro ou passou
+a votar depois das notícias sobre o áudio e a visita? (ESTIMULADA E ÚNICA)
+
+    1    Já votava nulo, branco ou em nenhum antes das notícias sobre
+         o áudio e a visita
+    2    Passei a votar nulo, branco ou em nenhum depois das notícias
+         sobre o áudio e a visita
+    98   Não sabe (NÃO LER)
+    99   Não respondeu (NÃO LER)
+                     ### APENAS PARA QUEM RESPONDEU CÓDIGO 2 NA P10E ###
+10F. E antes, qual era a sua intenção de voto? Você votaria em Lula, votaria em Flávio Bolsonaro ou não
+sabia em quem votar antes de saber do áudio e da visita? (ESTIMULADA E ÚNICA)
+
+    1     Votaria em Lula
+    2     Votaria em Flávio Bolsonaro
+    3     Não sabia em quem votar
+    98    Não sabe (NÃO LER)
+    99    Não respondeu (NÃO LER)
+
+
+     ### APENAS PARA QUEM RESPONDEU “NÃO SABE” OU “NÃO RESPONDEU” NO CENÁRIO DE
+                       SEGUNDO TURNO CONTRA LULA (CENÁRIO 1 DA P5) ###
+10G. Você declarou que, num possível segundo turno entre Lula e Flávio Bolsonaro, ainda está INDECISO
+E NÃO SABE EM QUEM VAI VOTAR. Antes da divulgação das notícias do áudio e da visita de Flávio
+Bolsonaro ao banqueiro Daniel Vorcaro, você ainda estava indeciso ou passou a ficar indeciso depois
+das notícias sobre o áudio e a visita? (ESTIMULADA E ÚNICA)
+
+    1     Já estava indeciso antes das notícias sobre o áudio e a visita
+    2     Passei a ficar indeciso depois das notícias sobre o áudio e a
+          visita
+    98    Não sabe (NÃO LER)
+    99    Não respondeu (NÃO LER)
+
+
+                     ### APENAS PARA QUEM RESPONDEU CÓDIGO 2 NA P10G ###
+10H. E antes, qual era a sua intenção de voto? Você votaria em Lula, votaria em Flávio Bolsonaro ou iria
+anular ou votar em branco? (ESTIMULADA E ÚNICA)
+
+    1     Lula
+    2     Flávio Bolsonaro
+    3     Iria anular ou votar em branco
+    98    Não sabe (NÃO LER)
+    99    Não respondeu (NÃO LER)
+
+
+
+
+                               BLOCO DESEMPENHO DO GOVERNO LULA
+
+
+
+Agora, vamos falar sobre avaliação de governo.
+
+
+11. Como você avalia o governo do Presidente Lula? Você diria que está sendo ótimo, bom, regular,
+    ruim ou péssimo? (ESTIMULADA E ÚNICA)
+
+    1     Ótimo
+    2     Bom
+    3     Regular
+    4     Ruim
+    5     Péssimo
+    98    Não sabe (NÃO LER)
+    99    Não respondeu (NÃO LER)
+12. E, de maneira geral, você diria que aprova ou desaprova o trabalho que o Presidente Lula vem
+    fazendo? (ESTIMULADA E ÚNICA)
+
+    1    Aprova
+    2    Desaprova
+    98   Não sabe (NÃO LER)
+    99   Não respondeu (NÃO LER)
+
+
+
+                         BLOCO CONTEXTO E CONJUNTURA ECONÔMICA
+
+                       Agora, vamos falar sobre outros temas importantes...
+
+13. Para você, qual é hoje o principal problema do Brasil? E o segundo principal problema?
+    (ESPONTÂNEA, ATÉ DUAS CITAÇÕES)
+
+    1    Primeira menção: _________ (ANOTAR) (NÃO LER)
+    2    Primeira menção: _________ (ANOTAR) (NÃO LER)
+    98   Não sabe (NÃO LER)
+    99   Não respondeu (NÃO LER)
+
+14. Como você avalia hoje _____________ (LER ALTERNATIVA)? Você diria que
+    _____________________ (LER ALTERNATIVA) hoje está ótima, boa, regular, ruim ou péssima?
+    (ESTIMULADA E ÚNICA POR LINHA)
+
+    SCRIPT: ITENS EM ORDEM ALEATÓRIA.
+
+                                                                                                Não
+                                                                                  Não sabe
+                         Ótima       Boa       Regular      Ruim       Péssima               respondeu
+                                                                                 (NÃO LER)
+                                                                                             (NÃO LER)
+         A economia
+    1                      1           2          3           4           5         98             99
+         no país
+         A sua
+    2    situação          1           2          3           4           5         98             99
+         financeira
+
+15. E, em relação ao governo anterior (que terminou em dezembro de 2022), você diria que o atual
+    momento _____________ (LER ALTERNATIVA) é muito melhor, um pouco melhor, igual, um pouco
+    pior ou muito pior? (ESTIMULADA E ÚNICA POR LINHA)
+
+    SCRIPT: ITENS EM ORDEM ALEATÓRIA.
+
+                                                                                                Não
+                        Muito      Um pouco               Um pouco      Muito     Não sabe
+                                                 Igual                                       respondeu
+                        melhor      melhor                  pior        pior     (NÃO LER)
+                                                                                             (NÃO LER)
+         Da economia
+    1                      1           2           3           4          5         98             99
+         no país
+         Da sua
+    2    situação          1           2           3           4          5         98             99
+         financeira
+16. E, nos próximos seis meses, você diria que _____________ (LER ALTERNATIVA) vai melhorar muito,
+    melhorar um pouco, ficar igual, piorar um pouco ou piorar muito? (ESTIMULADA E ÚNICA POR
+    LINHA)
+
+    SCRIPT: ITENS EM ORDEM ALEATÓRIA.
+
+                                      Melhorar                Piorar                                     Não
+                         Melhorar                   Ficar                    Piorar        Não sabe
+                                        um                     um                                     respondeu
+                          muito                     igual                    muito        (NÃO LER)
+                                       pouco                  pouco                                   (NÃO LER)
+         A economia
+    1                        1             2            3        4              5            98          99
+         no país
+         A sua
+    2    situação            1             2            3        4              5            98          99
+         financeira
+
+17. De 2022 para hoje, como você diria que se desenvolveu a sua vida econômica especificamente em
+    relação ________________ (LER OPÇÕES)? Você diria que melhorou muito, melhorou um pouco,
+    ficou igual, piorou um pouco ou pirou muito? (ESTIMULADA, ÚNICA POR LINHA, RODÍZIO)
+
+    SCRIPT: ITENS EM ORDEM ALEATÓRIA.
+
+
+                                                                                              Não
+                                                 Melhorou              Piorou                            Não
+                                    Melhorou                Ficou                   Piorou   sabe
+                                                   um                    um                           respondeu
+                                     muito                  igual                   muito    (NÃO
+                                                  pouco                pouco                          (NÃO LER)
+                                                                                              LER)
+    1    A renda da sua família        1            2        3           4            5        98        99
+    2    Sua renda pessoal             1            2        3           4            5        98        99
+    3    Seu poder de compra           1            2        3           4            5        98        99
+    4    Seu acesso a crédito          1            2        3           4            5        98        99
+         Sua capacidade de
+    5                                  1            2        3           4            5        98        99
+         poupança/investimento
+
+
+18. Nos últimos 12 meses, você realizou compra pela internet de produtos que vieram de outros países,
+    em sites ou aplicativos como Shopee, Shein ou Aliexpress? (ESTIMULADA E ÚNICA)
+
+    1     Sim
+    2     Não
+    98    Não sabe (NÃO LER)
+    99    Não respondeu (NÃO LER)
+
+19. E você ficou sabendo, mesmo que só de ouvir falar, que o Governo Federal baixou uma medida
+    provisória que acaba com o imposto nacional sobre os produtos importados comprados em sites
+    como Shopee, Shein ou Aliexpress, a chamada “Taxa das Blusinhas”? (ESTIMULADA E ÚNICA)
+
+    1     Sim
+    2     Não
+    98    Não sabe (NÃO LER)
+    99    Não respondeu (NÃO LER)
+20. E, na sua opinião, o Governo Federal agiu certo ou agiu errado ao acabar com a Taxa das Blusinhas?
+    (ESTIMULADA E ÚNICA)
+
+SCRIPT: ITENS EM ORDEM ALEATÓRIA.
+
+    1     Agiu certo
+    2     Agiu errado
+    98    Não sabe (NÃO LER)
+    99    Não respondeu (NÃO LER)
+
+21. E, agora com o fim desse imposto, você ... (ESTIMULADA E ÚNICA)
+
+SCRIPT: ITENS EM ORDEM ALEATÓRIA.
+
+    1     Vai comprar mais produtos em sites internacionais
+    2     Vai voltar a comprar produtos que tinha deixado de comprar por causa do imposto
+    3     Vai continuar fazendo as compras do mesmo jeito que faço hoje
+    98    Não sabe (NÃO LER)
+    99    Não respondeu (NÃO LER)
+
+
+         Vamos falar agora sobre endividamento.
+
+22. Atualmente, você possui alguma dívida em aberto ou compromisso financeiro a pagar (por
+    exemplo, fatura de cartão de crédito, prestações, carnês/boletos, financiamentos de veículos e/ou
+    imóveis etc.)? Sim ou não? (SE SIM) Está atrasada em mais de 30 dias? (ESTIMULADA E ÚNICA)
+
+    1     NÃO tenho dívidas
+    2     Sim. TENHO dívidas/compromissos financeiros, mas NÃO
+          ESTÃO atrasados
+    3     Sim. TENHO dívidas/compromissos financeiros e ESTÃO
+          atrasados em mais de 30 dias
+    98    Não sabe (NÃO LER)
+    99    Não respondeu (NÃO LER)
+
+23. No início de maio, o Governo Federal anunciou o Desenrola 2.0, um programa de renegociação de
+    dívidas. Você ficou sabendo desse programa, sim ou não? (ESTIMULADA E ÚNICA)
+
+    1     Sim
+    2     Não
+    98    Não sabe (NÃO LER)
+    99    Não respondeu (NÃO LER)
+
+
+    ### APENAS PARA QUEM TEM DÍVIDAS, RESPONDEU CÓDIGOS 2 ou 3 NA P22 ###
+
+24. E em relação ao Desenrola 2.0, você: (ESTIMULADA E ÚNICA)
+
+    1     Já renegociei alguma dívida com base no Desenrola 2.0
+    2     Ainda não renegociei, mas pretendo renegociar alguma dívida no Desenrola 2.0
+    3     Não renegociei e nem pretendo renegociar alguma dívida no Desenrola 2.0
+    98    Não sabe (NÃO LER)
+    99    Não respondeu (NÃO LER)
+                             BLOCO SITUAÇÃO DO VOTO E ELEIÇÕES ANTERIORES
+
+                             Agora, vamos falar sobre participação em eleições ...
+
+    25. Sobre o primeiro turno das eleições 2026, em outubro, qual das seguintes situações melhor
+        descreve a sua situação? (ESTIMULADA E ÚNICA)
+
+        1    Já decidi que vou comparecer para votar
+        2    Provavelmente vou comparecer para votar
+        3    Provavelmente não vou comparecer para votar e/ou vou justificar
+        4    Já decidi que não vou comparecer para votar ou vou justificar
+        99   Prefiro não responder (NÃO LER)
+
+    26. No primeiro turno da última eleição presidencial, em 2022, você: ______ (LER OPÇÕES)
+        (ESTIMULADA E ÚNICA)
+
+        1     Compareceu e votou
+        2     Justificou a sua ausência e não votou
+        3     Não justificou a sua ausência e nem votou
+        98    Não lembro (NÃO LER)
+        99    Prefiro não responder (NÃO LER)
+
+    27. E no primeiro turno da eleição presidencial de 2018, você: ______ (LER OPÇÕES) (ESTIMULADA E
+        ÚNICA)
+
+        1     Compareceu e votou
+        2     Justificou a sua ausência e não votou
+        3     Não justificou a sua ausência e nem votou
+        98    Não lembro (NÃO LER)
+        99    Prefiro não responder (NÃO LER)
+
+    28. Agora, pensando no segundo turno da última eleição presidencial, em 2022, você votou no Lula ou
+        no Jair Bolsonaro? (LER OPÇÕES) (ESTIMULADA E ÚNICA)
+
+        SCRIPT: ITENS EM ORDEM ALEATÓRIA.
+
+        1     Lula
+        2     Jair Bolsonaro
+        92    Branco (NÃO LER)
+        93    Nulo (NÃO LER)
+        94    Não votei (NÃO LER)
+        97    Não lembro (NÃO LER)
+        98    Não sabe (NÃO LER)
+        99    Não respondeu (NÃO LER)
+
+    29. Em uma escala de 0 a 10, em que 0 é “discordo totalmente”, 5 é “nem concordo e nem discordo” e
+        10 é “concordo totalmente”, como você se posiciona em relação às seguintes alternativas: _______
+        (ESTIMULADA, UMA POR LINHA, RANDOMIZADA)
+
+                       0 – Discordo                       5 – Não concordo                      10 – Concordo
+                       totalmente                           e nem discordo                         totalmente
+1    Sou Antilula        0        1      2       3        4       5       6          7   8       9       10
+     Sou
+2    Antibolsonaro       0       1       2       3        4       5        6         7   8        9        10
+     (e sua família)
+SCRIPT: PREVER OPÇÕES ESPONTÂNEAS “NÃO SABE” E “NÃO RESPONDEU” NA PERGUNTA 20.
+
+
+                    BLOCO PERGUNTAS COMPLEMENTARES E ENCERRAMENTO
+
+PF12. Desde 2023, você ou alguém que mora na sua casa recebeu o programa Bolsa Família?
+(ESTIMULADA E ÚNICA)
+
+    1    Sim, o entrevistado
+    2    Sim, alguém que mora na casa do entrevistado
+    3    Sim, ambos
+    4    Não
+    98   Não sabe (NÃO LER)
+    99   Não respondeu (NÃO LER)
+
+PF13. E atualmente, você ou alguém que mora na sua casa recebe o programa Bolsa Família?
+(ESTIMULADA E ÚNICA)
+
+    1    Sim, o entrevistado
+    2    Sim, alguém que mora na casa do entrevistado
+    3    Sim, ambos
+    4    Não
+    98   Não sabe (NÃO LER)
+    99   Não respondeu (NÃO LER)
+
+
+PF14. Considerando seus ganhos de qualquer natureza, como salário, bicos, aposentadorias, pensões,
+investimentos, auxílios do governo etc., qual foi a sua renda mensal individual no mês passado?
+(ESTIMULADA E ÚNICA)
+
+    1    Até R$ 1.621,00 (até 1 SM)
+    2    De R$ 1.621,01 a R$ 3.242,00 (mais de 1 até 2 SM)
+    3    De R$ 3.242,01 a R$ 4.863,00 (mais de 2 até 3 SM)
+    4    De R$ 4.863,01 a R$ 8.105,00 (mais de 3 até 5 SM)
+    5    Mais de R$ 8.105,01 (mais de 5 SM)
+    6    Sem rendimento (NÃO LER)
+    7    Prefiro não responder/Recusa (NÃO LER)
+    98   Não sabe (NÃO LER)
+    99   Não respondeu (NÃO LER)
+
+PF15. Somando a sua renda com a renda da(s) pessoa(s) que moram com você, também considerando
+os ganhos de qualquer natureza (salário, bicos, aposentadorias, pensões, investimentos, auxílios do
+governo etc.), de quanto foi aproximadamente a renda familiar em sua casa no mês passado?
+(ESTIMULADA E ÚNICA)
+
+    1    Até R$ 1.621,00 (até 1 SM)
+    2    De R$ 1.621,01 a R$ 3.242,00 (mais de 1 até 2 SM)
+    3    De R$ 3.242,01 a R$ 4.863,00 (mais de 2 até 3 SM)
+    4    De R$ 4.863,01 a R$ 8.105,00 (mais de 3 até 5 SM)
+    5    Mais de R$ 8.105,01 (mais de 5 SM)
+    6    Sem rendimento (NÃO LER)
+    7    Prefiro não responder/Recusa (NÃO LER)
+    98   Não sabe (NÃO LER)
+    99   Não respondeu (NÃO LER)
+PF16. Qual a sua religião? (ESPONTÂNEA E ÚNICA, NÃO LER OPÇÕES)
+
+     1     Católica Apostólica Romana
+     2     Evangélica (de qualquer denominação)
+     3     Espírita (Kardecista, outras)
+     4     Afro-brasileira (de qualquer denominação)
+     5     Orientais (Budismo, Islamismo, outras)
+     6     Judaica
+     7     Outras religiões _________ (ANOTAR)
+     8     É religioso, mas não segue nenhuma | Agnóstico
+     9     Ateu, não tem religião
+     99    Não respondeu
+
+PF17. Última pergunta: dentre as seguintes alternativas, você se reconhece ou se identifica como de cor
+ou raça: (ESTIMULADA E ÚNICA)
+
+    1      Branca
+    2      Preta
+    3      Amarela
+    4      Parda, ou,
+    5      Indígena
+    99     Prefere não responder / Não respondeu (NÃO LER)
+
+           A NEXUS AGRADECE A SUA PARTICIPAÇÃO. BOM DIA/BOA TARDE/BOA NOITE!
+
+
+
+
+NEALE AHMED EL Digitally
+               AHMED EL
+                         signed by NEALE
+
+DASH:188219138 DASH:18821913821
+               Date: 2026.05.19 17:52:55
+21             -03'00'
+
