@@ -2,74 +2,139 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fafaf8">
 <title>Lulômetro · Discursos presidenciais · Data Fixers</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'Inter',-apple-system,sans-serif;background:#fafaf8;color:#111;line-height:1.5;padding:40px 24px;max-width:1100px;margin:0 auto}
-  h1{font-family:'Playfair Display',serif;font-weight:900;font-size:2.4em;letter-spacing:-0.02em;margin-bottom:6px}
-  .sub{color:#666;font-size:0.95em;margin-bottom:24px}
-  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:28px}
-  .stat{background:#fff;padding:14px 18px;border:1px solid #e5e5e5;border-radius:8px}
-  .stat .label{font-size:0.68em;letter-spacing:0.1em;text-transform:uppercase;color:#888;font-weight:600;margin-bottom:4px}
-  .stat .value{font-family:'Playfair Display',serif;font-size:1.6em;font-weight:700}
-  .search{margin-bottom:20px}
-  .search-row{display:flex;gap:10px;margin-bottom:10px}
-  .search input{flex:1;padding:14px 18px;font-size:1.05em;border:2px solid #111;border-radius:8px;font-family:inherit;background:#fff}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    background:#fafaf8;color:#111;line-height:1.5;
+    padding:24px 16px;max-width:1100px;margin:0 auto;
+    padding-left:max(16px, env(safe-area-inset-left));
+    padding-right:max(16px, env(safe-area-inset-right));
+  }
+  h1{font-family:'Playfair Display',serif;font-weight:900;font-size:2em;letter-spacing:-0.02em;margin-bottom:6px}
+  .sub{color:#666;font-size:0.95em;margin-bottom:20px}
+
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin-bottom:24px}
+  .stat{background:#fff;padding:12px 14px;border:1px solid #e5e5e5;border-radius:8px}
+  .stat .label{font-size:0.62em;letter-spacing:0.08em;text-transform:uppercase;color:#888;font-weight:600;margin-bottom:4px}
+  .stat .value{font-family:'Playfair Display',serif;font-size:1.4em;font-weight:700;line-height:1.1}
+
+  .search{margin-bottom:16px}
+  .search input{
+    width:100%;padding:14px 16px;font-size:16px;
+    border:2px solid #111;border-radius:10px;font-family:inherit;background:#fff;
+    -webkit-appearance:none;appearance:none;
+  }
   .search input:focus{outline:none;border-color:#d96e30}
-  .search select{padding:14px 14px;font-size:0.95em;border:1px solid #ddd;border-radius:8px;background:#fff;font-family:inherit;min-width:160px}
-  .hint{color:#888;font-size:0.83em;margin-top:6px}
+  .filters{display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px}
+  .filters select{
+    padding:12px 14px;font-size:15px;
+    border:1px solid #ddd;border-radius:8px;background:#fff;
+    font-family:inherit;width:100%;
+    -webkit-appearance:none;appearance:none;
+    background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23888' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 14px center;background-size:10px;
+    padding-right:32px;
+  }
+  .hint{color:#888;font-size:0.83em;margin-top:8px}
+
   .results{margin-top:18px}
-  .result{background:#fff;border:1px solid #e5e5e5;border-radius:8px;padding:16px 20px;margin-bottom:12px;transition:.15s}
+  .result{
+    background:#fff;border:1px solid #e5e5e5;border-radius:8px;
+    padding:14px 16px;margin-bottom:10px;transition:.15s;
+  }
   .result:hover{border-color:#111;box-shadow:0 4px 12px rgba(0,0,0,.05)}
-  .result-meta{display:flex;gap:10px;font-size:0.78em;color:#888;margin-bottom:8px;flex-wrap:wrap}
-  .result-meta .pill{background:#f0eee8;color:#444;padding:2px 8px;border-radius:999px;font-size:0.92em}
-  .result-meta .pill.pres{background:#1e7e6d;color:#fff}
-  .result-title{font-weight:600;font-size:1.02em;margin-bottom:6px;color:#111}
+  .result-meta{display:flex;gap:6px;font-size:0.74em;color:#888;margin-bottom:8px;flex-wrap:wrap}
+  .pill{background:#f0eee8;color:#444;padding:3px 8px;border-radius:999px;font-size:0.92em;white-space:nowrap}
+  .pill.pres{background:#1e7e6d;color:#fff}
+  .pill.src-planalto{background:#1f3a5f;color:#fff}
+  .pill.src-biblioteca{background:#6b6453;color:#fff}
+  .pill.src-bluesky{background:#1185fe;color:#fff}
+  .result-title{font-weight:600;font-size:1em;margin-bottom:6px;color:#111;word-wrap:break-word}
   .result-title a{color:inherit;text-decoration:none}
   .result-title a:hover{color:#d96e30}
-  .result-excerpt{font-size:0.9em;color:#444;line-height:1.55}
+  .result-excerpt{font-size:0.9em;color:#444;line-height:1.55;word-wrap:break-word}
   .result-excerpt mark{background:#fef08a;padding:0 2px;border-radius:2px}
-  .loading{text-align:center;padding:40px;color:#aaa;font-style:italic}
-  .empty{text-align:center;padding:40px;color:#888}
+
+  .loading{text-align:center;padding:40px 20px;color:#aaa;font-style:italic}
+  .empty{text-align:center;padding:40px 20px;color:#888}
   .footer{margin-top:36px;padding-top:18px;border-top:1px solid #e5e5e5;font-size:0.83em;color:#888}
+  .footer a{color:#666}
+
   .by-pres{margin-top:14px}
-  .by-pres .bar-row{display:flex;align-items:center;gap:10px;margin-bottom:6px;font-size:0.85em}
-  .by-pres .bar-row .name{min-width:200px}
-  .by-pres .bar-row .bar{height:14px;background:#111;border-radius:2px}
-  .by-pres .bar-row .n{color:#666;font-variant-numeric:tabular-nums}
+  .bar-row{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;margin-bottom:8px;font-size:0.85em}
+  .bar-row .name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .bar-row .bar-wrap{display:flex;align-items:center;gap:8px}
+  .bar-row .bar{height:10px;background:#111;border-radius:2px;flex-shrink:0}
+  .bar-row .n{color:#666;font-variant-numeric:tabular-nums;min-width:48px;text-align:right}
+
+  /* Desktop */
+  @media (min-width: 640px) {
+    body{padding:40px 24px}
+    h1{font-size:2.4em}
+    .stats{gap:12px}
+    .stat{padding:14px 18px}
+    .stat .value{font-size:1.6em}
+    .filters{grid-template-columns:repeat(3,1fr)}
+    .result-meta{font-size:0.78em}
+    .result-title{font-size:1.05em}
+  }
+  @media (min-width: 900px) {
+    .search-wrap{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}
+    .filters{grid-template-columns:repeat(3,minmax(140px,180px));margin-top:0}
+  }
 </style>
 </head>
 <body>
 
 <h1>Lulômetro</h1>
-<p class="sub">Busca em discursos, entrevistas e pronunciamentos de presidentes brasileiros. Full-text search no Cloudflare D1.</p>
+<p class="sub">Busca textual em discursos, entrevistas, pronunciamentos e posts em redes sociais de presidentes brasileiros.</p>
 
 <div class="stats" id="stats"><div class="loading">Carregando…</div></div>
 
 <div class="search">
-  <div class="search-row">
-    <input type="text" id="q" placeholder="Buscar: amazônia, petrobras, eleição, reforma…" autofocus>
-    <select id="president">
-      <option value="">Todos os presidentes</option>
-    </select>
-    <select id="mandate">
-      <option value="">Todos os mandatos</option>
-    </select>
+  <div class="search-wrap">
+    <input type="text" id="q" inputmode="search" autocapitalize="none" autocorrect="off" placeholder="Buscar: amazônia, vorcaro, eleição, reforma…" autofocus>
+    <div class="filters">
+      <select id="president" aria-label="Filtrar por presidente">
+        <option value="">Todos presidentes</option>
+      </select>
+      <select id="source" aria-label="Filtrar por fonte">
+        <option value="">Todas as fontes</option>
+      </select>
+      <select id="type" aria-label="Filtrar por tipo">
+        <option value="">Todos os tipos</option>
+      </select>
+    </div>
   </div>
-  <div class="hint">Busca textual com tolerância a acentos. Use múltiplas palavras pra refinar (todas precisam estar no texto).</div>
+  <div class="hint">Busca com tolerância a acentos. Múltiplas palavras = todas precisam estar no texto.</div>
 </div>
 
 <div class="results" id="results"><div class="hint">Digite acima pra começar.</div></div>
 
 <div class="footer">
-<p><a href="https://dashboards.datafixers.org">← Voltar pra dashboards</a> · API: <a href="https://ibama-worker.datafixers.org/api/lul/stats" target="_blank">/api/lul/stats</a></p>
+  <p><a href="https://dashboards.datafixers.org">← Voltar pra dashboards</a> · API: <a href="https://ibama-worker.datafixers.org/api/lul/stats" target="_blank">/api/lul/stats</a></p>
 </div>
 
 <script>
 const API = 'https://ibama-worker.datafixers.org';
 const $ = id => document.getElementById(id);
+
+const SOURCE_LABELS = {
+  planalto: 'Site do Planalto',
+  biblioteca: 'Biblioteca da Presidência',
+  bluesky: 'Bluesky',
+};
+const TYPE_LABELS = {
+  discurso: 'Discursos',
+  entrevista: 'Entrevistas',
+  post: 'Posts (redes sociais)',
+};
 
 async function loadStats() {
   const r = await fetch(API + '/api/lul/stats').then(r => r.json());
@@ -77,31 +142,44 @@ async function loadStats() {
   $('stats').innerHTML = `
     <div class="stat"><div class="label">Documentos</div><div class="value">${(s.total||0).toLocaleString('pt-BR')}</div></div>
     <div class="stat"><div class="label">Presidentes</div><div class="value">${s.presidentes||0}</div></div>
-    <div class="stat"><div class="label">Mandatos</div><div class="value">${s.mandatos||0}</div></div>
-    <div class="stat"><div class="label">Período</div><div class="value" style="font-size:1.1em">${(s.data_min||'').slice(0,4)}–${(s.data_max||'').slice(0,4)}</div></div>
+    <div class="stat"><div class="label">Última data</div><div class="value" style="font-size:1em">${(s.data_max||'—').slice(0,10)}</div></div>
+    <div class="stat"><div class="label">Tipos</div><div class="value" style="font-size:1em">${(r.by_type||[]).length}</div></div>
   `;
-  // Popula selects
+
+  // Popula president
   const presSet = new Map();
-  const mandateSet = new Set();
   for (const p of (r.by_president || [])) {
     const slug = p.president.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
     if (!presSet.has(slug)) presSet.set(slug, p.president);
-    mandateSet.add(p.mandate);
   }
   for (const [slug, name] of presSet) {
     $('president').insertAdjacentHTML('beforeend', `<option value="${slug}">${name}</option>`);
   }
-  for (const m of mandateSet) {
-    $('mandate').insertAdjacentHTML('beforeend', `<option value="${m}">${m}</option>`);
+
+  // Popula source
+  for (const s of (r.by_source || [])) {
+    const label = SOURCE_LABELS[s.source] || s.source;
+    $('source').insertAdjacentHTML('beforeend', `<option value="${s.source}">${label} (${s.n.toLocaleString('pt-BR')})</option>`);
   }
+
+  // Popula type
+  for (const t of (r.by_type || [])) {
+    const label = TYPE_LABELS[t.type] || t.type;
+    $('type').insertAdjacentHTML('beforeend', `<option value="${t.type}">${label} (${t.n.toLocaleString('pt-BR')})</option>`);
+  }
+
   // By president — barras
   const max = Math.max(...(r.by_president||[]).map(p => p.n));
-  $('results').innerHTML = '<h2 style="font-family:Playfair Display,serif;font-size:1.3em;margin-bottom:12px">Por presidente</h2><div class="by-pres">' +
+  $('results').innerHTML =
+    '<h2 style="font-family:Playfair Display,serif;font-size:1.2em;margin-bottom:12px">Por presidente</h2>' +
+    '<div class="by-pres">' +
     (r.by_president||[]).map(p => `
       <div class="bar-row">
-        <span class="name">${p.president} <span style="color:#888">· ${p.mandate}</span></span>
-        <span class="bar" style="width:${Math.round(p.n/max*220)}px"></span>
-        <span class="n">${p.n}</span>
+        <span class="name">${p.president}<br><span style="color:#888;font-size:0.85em">${p.mandate}</span></span>
+        <span class="bar-wrap">
+          <span class="bar" style="width:${Math.max(20, Math.round(p.n/max*180))}px"></span>
+          <span class="n">${p.n.toLocaleString('pt-BR')}</span>
+        </span>
       </div>
     `).join('') + '</div>';
 }
@@ -109,33 +187,44 @@ async function loadStats() {
 let timer;
 async function search() {
   const q = $('q').value.trim();
-  if (q.length < 2) { return; }
-  const pres = $('president').value;
-  const man = $('mandate').value;
+  if (q.length < 2) {
+    if (q.length === 0) $('results').innerHTML = '<div class="hint">Digite acima pra começar.</div>';
+    return;
+  }
   const params = new URLSearchParams({ q, limit: '20' });
+  const pres = $('president').value;
+  const src = $('source').value;
+  const tp = $('type').value;
   if (pres) params.set('president', pres);
-  if (man) params.set('mandate', man);
+  if (src) params.set('source', src);
+  if (tp) params.set('type', tp);
+
   $('results').innerHTML = '<div class="loading">Buscando…</div>';
   try {
     const r = await fetch(API + '/api/lul/busca?' + params).then(r => r.json());
     if (r.erro) { $('results').innerHTML = `<div class="empty">Erro: ${r.erro}</div>`; return; }
     if (!Array.isArray(r) || r.length === 0) {
-      $('results').innerHTML = '<div class="empty">Nenhum resultado.</div>';
+      $('results').innerHTML = '<div class="empty">Nenhum resultado pra esses filtros.</div>';
       return;
     }
-    $('results').innerHTML = `<h2 style="font-family:Playfair Display,serif;font-size:1.3em;margin-bottom:12px">${r.length} resultado(s)</h2>` +
-      r.map(d => `
+    $('results').innerHTML =
+      `<h2 style="font-family:Playfair Display,serif;font-size:1.15em;margin-bottom:12px">${r.length} resultado(s)</h2>` +
+      r.map(d => {
+        const srcClass = d.source ? `src-${d.source}` : '';
+        const srcLabel = SOURCE_LABELS[d.source] || d.source || '?';
+        const typeLabel = TYPE_LABELS[d.type] || d.type || '?';
+        return `
         <div class="result">
           <div class="result-meta">
             <span class="pill pres">${d.president}</span>
-            <span class="pill">${d.mandate || '?'}</span>
-            <span class="pill">${d.type || '?'}</span>
+            <span class="pill ${srcClass}">${srcLabel}</span>
+            <span class="pill">${typeLabel}</span>
             <span class="pill">${(d.date || '').slice(0,10)}</span>
           </div>
-          <div class="result-title"><a href="${d.url}" target="_blank">${d.title}</a></div>
+          <div class="result-title"><a href="${d.url}" target="_blank" rel="noopener">${d.title}</a></div>
           <div class="result-excerpt">${d.excerpt || ''}</div>
-        </div>
-      `).join('');
+        </div>`;
+      }).join('');
   } catch (e) {
     $('results').innerHTML = `<div class="empty">Erro: ${e.message}</div>`;
   }
@@ -143,7 +232,8 @@ async function search() {
 
 $('q').addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(search, 350); });
 $('president').addEventListener('change', search);
-$('mandate').addEventListener('change', search);
+$('source').addEventListener('change', search);
+$('type').addEventListener('change', search);
 
 loadStats();
 </script>
