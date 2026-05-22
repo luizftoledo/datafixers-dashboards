@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
 """
 Scraper dos Relatórios de Fiscalização de Trabalho Escravo do MTE.
-Página: gov.br/trabalho-e-emprego/.../combate-ao-trabalho-escravo-e-analogo-ao-de-escravo
-
-Extrai metadata de cada link (ano, fazenda, UF) e salva em JSON.
-Roda mensalmente via GitHub Action.
+Extrai títulos REAIS do parágrafo (não do anchor "clique aqui").
 """
 import re, json, urllib.request, datetime, os
-from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT_PAGE = "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho/areas-de-atuacao/copy_of_combate-ao-trabalho-escravo-e-analogo-ao-de-escravo"
@@ -15,54 +11,41 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "relatorios-trabalho-escravo" / "data"
 OUT.mkdir(parents=True, exist_ok=True)
 
-class LinkParser(HTMLParser):
-    def __init__(self):
-        super().__init__()
-        self.links = []
-        self.current_href = None
-        self.current_text = []
-    def handle_starttag(self, tag, attrs):
-        if tag == 'a':
-            href = dict(attrs).get('href', '')
-            self.current_href = href
-            self.current_text = []
-    def handle_data(self, data):
-        if self.current_href is not None:
-            self.current_text.append(data)
-    def handle_endtag(self, tag):
-        if tag == 'a' and self.current_href:
-            text = ' '.join(self.current_text).strip()
-            text = re.sub(r'\s+', ' ', text)
-            if text and self.current_href:
-                self.links.append({'url': self.current_href, 'text': text})
-            self.current_href = None
-            self.current_text = []
+def strip_tags(s):
+    s = re.sub(r'<[^>]+>', '', s)
+    s = re.sub(r'&nbsp;', ' ', s)
+    s = re.sub(r'&amp;', '&', s)
+    s = re.sub(r'&aacute;', 'á', s)
+    s = re.sub(r'\s+', ' ', s)
+    return s.strip()
 
-def extract_meta(url, text):
-    """Extrai ano, UF e nome da operação do título"""
-    # operação ano (op-NN-de-YYYY)
-    op_match = re.search(r'op[\s\-_]*(\d+)[\s\-_]+de[\s\-_]+(\d{4})', url + ' ' + text, re.IGNORECASE)
-    relatorio_match = re.search(r'opera[cç][ãa]o(?:es)?[\s\-_]+(\d{4})|relatorios?[\s\-_]+op[\s\-_]+(\d{4})', url, re.IGNORECASE)
-    # UF (sigla de 2 letras no fim/título)
-    ufs_match = re.findall(r'\b(AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO)\b', text)
-    # tipo
-    if relatorio_match:
-        ano = int(relatorio_match.group(1) or relatorio_match.group(2))
-        tipo = 'consolidado_anual'
-        op_num = None
-    elif op_match:
-        ano = int(op_match.group(2))
-        op_num = int(op_match.group(1))
-        tipo = 'operacao_especifica'
-    else:
-        ano = None
-        op_num = None
-        tipo = 'outro'
+def extract_meta(text, url):
+    """Extrai ano, op_num, UFs"""
+    # Operação específica: "Op. 01 de 1999"
+    op_match = re.search(r'Op\.?\s*(\d+)\s+de\s+(\d{4})', text, re.IGNORECASE)
+    if op_match:
+        return {
+            'ano': int(op_match.group(2)),
+            'op_num': int(op_match.group(1)),
+            'tipo': 'operacao_especifica',
+            'ufs': re.findall(r'\b(AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO)\b', text),
+        }
+    # Consolidado anual: "Operações 2025"
+    cons_match = re.search(r'Opera[çc][õo]es\s+(\d{4})', text, re.IGNORECASE)
+    if cons_match:
+        return {
+            'ano': int(cons_match.group(1)),
+            'op_num': None,
+            'tipo': 'consolidado_anual',
+            'ufs': [],
+        }
+    # Tenta achar ano em qualquer lugar
+    ano_match = re.search(r'\b(19|20)(\d{2})\b', text)
     return {
-        'ano': ano,
-        'op_num': op_num,
-        'ufs': list(set(ufs_match)) if ufs_match else [],
-        'tipo': tipo,
+        'ano': int(ano_match.group(0)) if ano_match else None,
+        'op_num': None,
+        'tipo': 'outro',
+        'ufs': re.findall(r'\b(AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO)\b', text),
     }
 
 def main():
@@ -70,35 +53,61 @@ def main():
     with urllib.request.urlopen(req, timeout=60) as r:
         html = r.read().decode('utf-8', errors='replace')
 
-    parser = LinkParser()
-    parser.feed(html)
+    # Encontra TODOS os <p> que contém um <a> com link de relatório
+    # E pareia com possível <p class="callout"> ANTERIOR (que tem o título do consolidado)
+    paragraphs = re.findall(r'<p[^>]*>(.*?)</p>', html, re.DOTALL)
 
     relatorios = []
-    for link in parser.links:
-        url = link['url']
-        text = link['text']
-        # filtra só relatórios de trabalho escravo
-        if not re.search(r'(operacoes?|operacoe|relatorios?[\s_-]op|op[\s_-]\d|areas-de-atuacao/op-)', url, re.IGNORECASE):
+    pending_callout = None
+
+    for p_inner in paragraphs:
+        # É um callout (título de consolidado)?
+        if 'class="callout"' in '' or 'callout' in p_inner[:50]:
+            pass
+        text_clean = strip_tags(p_inner)
+
+        # Detecta se é callout só de título "Relatório YYYY"
+        if re.search(r'^Relat[óo]rios?\s+\d{4}\s*$', text_clean, re.IGNORECASE):
+            pending_callout = text_clean
             continue
-        if any(s in url for s in ['combate-ao-trabalho-escravo', '#', 'ainda-nao-vinculado']):
+
+        # Tem link de relatório?
+        a_match = re.search(r'<a[^>]+href="([^"]+)"[^>]*>([^<]*?)</a>', p_inner)
+        if not a_match: continue
+        url = a_match.group(1)
+        anchor_text = a_match.group(2)
+
+        # Filtra só relatórios de trabalho escravo
+        if not re.search(r'(operacoe?s?|relatorios?[\s_-]op|/op-?\d|areas-de-atuacao/op[-_])', url, re.IGNORECASE):
             continue
+        # Skip nav/menu
+        if any(s in url for s in ['#', 'mailto:', 'javascript:']): continue
+
         # URL absoluta
         if url.startswith('/'):
             url = 'https://www.gov.br' + url
 
-        meta = extract_meta(url, text)
-        # Extrai "nome principal" do título — remove "Op. NN de YYYY -"
-        clean = re.sub(r'^op[\s\.\-]*\d+[\s\-]+de[\s\-]+\d{4}[\s\-]+', '', text, flags=re.IGNORECASE).strip()
-        clean = re.sub(r'^Relatório\s+\d{4}\s*\-\s*', '', clean).strip()
+        # Limpa o texto: remove "(clique aqui)" e similares
+        clean = re.sub(r'\(?clique\s+aqui\)?\.?', '', text_clean, flags=re.IGNORECASE)
+        clean = re.sub(r'^\s*[-–•]\s*', '', clean)
+        clean = re.sub(r';?\s*$', '', clean)
+        clean = re.sub(r'\s+', ' ', clean).strip()
+
+        # Se for consolidado, junta com o callout pendente
+        meta = extract_meta(clean, url)
+        titulo_completo = clean
+        if meta['tipo'] == 'consolidado_anual' and pending_callout:
+            titulo_completo = f"{pending_callout} — {clean}"
+            pending_callout = None
 
         relatorios.append({
-            'titulo': text,
+            'titulo': titulo_completo,
             'titulo_curto': clean,
             'url': url,
             **meta,
         })
 
-    # Dedupe por URL
+    # Dedupe
     seen = set()
     final = []
     for r in relatorios:
@@ -106,7 +115,7 @@ def main():
             seen.add(r['url'])
             final.append(r)
 
-    # Ordena: consolidados primeiro (mais recentes primeiro), depois operações específicas
+    # Ordena: consolidados (mais recentes primeiro), depois operações (mais recentes primeiro)
     final.sort(key=lambda r: (
         0 if r['tipo']=='consolidado_anual' else 1,
         -(r['ano'] or 0),
@@ -123,7 +132,16 @@ def main():
     }
 
     (OUT / 'relatorios.json').write_text(json.dumps(out, ensure_ascii=False, indent=2))
-    print(f"Total: {out['total']} | Consolidados: {len(out['consolidados'])} | Op. específicas: {len(out['operacoes'])}")
+    print(f"Total: {out['total']} | Consolidados: {len(out['consolidados'])} | Op. específicas: {len(out['operacoes'])} | Outros: {len(out['outros'])}")
+    print()
+    print("Amostra consolidados:")
+    for r in out['consolidados'][:5]:
+        print(f"  • {r['titulo_curto']} ({r['ano']})")
+    print()
+    print("Amostra operações:")
+    for r in out['operacoes'][:5]:
+        ufs = '/'.join(r.get('ufs',[]))
+        print(f"  • {r['titulo_curto'][:80]} [{ufs}]")
 
 if __name__ == '__main__':
     main()
