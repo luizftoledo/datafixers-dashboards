@@ -1,0 +1,1139 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lulometro - Analise de Discurso de Presidentes Brasileiros</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #f3f2ee;
+      --panel: #fffdf8;
+      --ink: #252423;
+      --muted: #63625d;
+      --line: #d6d1c4;
+      --accent: #b8612d;
+      --accent-2: #2b6f62;
+      --accent-3: #274c7f;
+      --shadow: 0 12px 34px rgba(27, 30, 26, 0.1);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Albert Sans", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 8%, rgba(184, 97, 45, 0.12), transparent 40%),
+        radial-gradient(circle at 88% 4%, rgba(43, 111, 98, 0.11), transparent 36%),
+        linear-gradient(180deg, #f5f3ee 0%, #ece8df 100%);
+    }
+
+    .page {
+      width: min(1260px, 96vw);
+      margin: 1.15rem auto 2rem;
+      display: grid;
+      gap: 0.86rem;
+    }
+
+    .quick-nav {
+      display: flex;
+      gap: 0.44rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      border: 1px solid #c8c2b2;
+      border-radius: 999px;
+      padding: 0.34rem 0.72rem;
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.79rem;
+      color: #2f2d28;
+      background: #fff;
+      text-decoration: none;
+    }
+
+    .hero {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      padding: 1rem;
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.25rem, 2.1vw, 2rem);
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: 0.93rem;
+    }
+
+    .status-row {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .status-pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #faf8f2;
+      padding: 0.24rem 0.58rem;
+    }
+
+    .update-schedule-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+
+    .scraper-health-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 0.24rem 0.68rem;
+      border-radius: 999px;
+      border: 1px solid #d6cfbf;
+      background: #efe6cf;
+      color: #5a5346;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
+
+    .scraper-health-btn.is-ok {
+      border-color: #1f8f5f;
+      background: #1f8f5f;
+      color: #fff;
+    }
+
+    .scraper-health-btn.is-fail {
+      border-color: #c84444;
+      background: #c84444;
+      color: #fff;
+    }
+
+    .scraper-health-btn.is-loading {
+      border-color: #d6cfbf;
+      background: #efe6cf;
+      color: #5a5346;
+    }
+
+    .tab-switcher {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      border: 1px solid #c8c2b2;
+      border-radius: 999px;
+      background: #fff;
+      color: #35312c;
+      padding: 0.48rem 0.86rem;
+      min-height: 40px;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
+
+    .tab-btn.is-active {
+      background: #203a33;
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(32, 58, 51, 0.18);
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: minmax(240px, 1.5fr) 170px 190px 220px 110px 90px;
+      gap: 0.54rem;
+      align-items: stretch;
+    }
+
+    .nominal-controls {
+      grid-template-columns: minmax(220px, 1.45fr) repeat(5, minmax(130px, 1fr)) 110px 90px;
+    }
+
+    .method-controls {
+      grid-template-columns: minmax(240px, 1.5fr) 220px;
+    }
+
+    input, select, button {
+      font: inherit;
+      min-height: 42px;
+      border-radius: 12px;
+      border: 1px solid #bfb8a9;
+      padding: 0.55rem 0.68rem;
+      color: var(--ink);
+      background: #fff;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--accent-2);
+      box-shadow: 0 0 0 3px rgba(43, 111, 98, 0.18);
+    }
+
+    button {
+      border: 0;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 120ms ease, filter 120ms ease;
+    }
+
+    button:hover { transform: translateY(-1px); }
+
+    #btn-search { background: var(--accent); color: #fff; }
+    #btn-clear { background: #d8d1c1; color: #3a352f; }
+
+    .load-required-banner {
+      border: 1px solid #d4b07a;
+      border-radius: 12px;
+      background: #fff6e8;
+      padding: 0.58rem 0.7rem;
+      display: grid;
+      gap: 0.2rem;
+    }
+
+    .load-required-banner[hidden] {
+      display: none;
+    }
+
+    .load-required-title {
+      margin: 0;
+      font-size: 0.93rem;
+      line-height: 1.3;
+      color: #6f3d0a;
+      font-weight: 700;
+    }
+
+    .load-required-text {
+      margin: 0;
+      font-size: 0.83rem;
+      line-height: 1.4;
+      color: #6f614f;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.55rem;
+    }
+
+    .usage-examples {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      padding: 0.72rem;
+      display: grid;
+      gap: 0.58rem;
+    }
+
+    .usage-examples h2 {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .examples-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.55rem;
+    }
+
+    .example-card {
+      border: 1px solid #e4dfd2;
+      border-radius: 12px;
+      background: #fdfcf8;
+      padding: 0.56rem;
+      display: grid;
+      gap: 0.34rem;
+      align-content: start;
+    }
+
+    .example-kicker {
+      font-size: 0.73rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+    }
+
+    .example-title {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.32;
+      color: #1f2d3c;
+    }
+
+    .example-meta {
+      margin: 0;
+      font-size: 0.79rem;
+      color: #5a5650;
+    }
+
+    .example-snippet {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.45;
+      color: #2f3a3a;
+      word-break: break-word;
+    }
+
+    .example-snippet mark {
+      background: #ffe2a8;
+      color: #2b1f06;
+      padding: 0 0.08rem;
+      border-radius: 0.18rem;
+      font-weight: 700;
+    }
+
+    .example-link {
+      color: var(--accent-3);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.84rem;
+    }
+
+    .example-link:hover {
+      text-decoration: underline;
+    }
+
+    .example-aliases {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+
+    .alias-chip {
+      border: 1px solid #d8d2c3;
+      border-radius: 999px;
+      padding: 0.14rem 0.48rem;
+      font-size: 0.74rem;
+      color: #4d4942;
+      background: #f7f4ed;
+    }
+
+    .nominal-callout {
+      border: 1px solid #cfe0db;
+      border-radius: 12px;
+      background: #edf7f4;
+      padding: 0.6rem 0.72rem;
+      display: grid;
+      gap: 0.22rem;
+    }
+
+    .nominal-callout strong {
+      font-size: 0.92rem;
+      color: #20443b;
+    }
+
+    .word-insights {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      padding: 0.72rem;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .word-insights-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .word-insights-head h2 {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .word-insights-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 0.9fr;
+      gap: 0.58rem;
+    }
+
+    .word-cloud-box {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fdfcf8;
+      padding: 0.58rem;
+      min-height: 220px;
+    }
+
+    .word-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.34rem 0.52rem;
+      align-items: flex-start;
+      align-content: flex-start;
+      min-height: 160px;
+    }
+
+    .word-chip {
+      color: #254344;
+      line-height: 1.2;
+      user-select: none;
+      cursor: default;
+    }
+
+    .word-table {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .word-table table {
+      min-width: 0;
+      width: 100%;
+      font-size: 0.83rem;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0.68rem 0.74rem;
+      background: #fff;
+    }
+
+    .metric .label {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+      font-weight: 700;
+    }
+
+    .metric .value {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: clamp(0.96rem, 1.72vw, 1.26rem);
+      line-height: 1.3;
+      color: #1f2d3c;
+      word-break: break-word;
+    }
+
+    .panels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.62rem;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      padding: 0.72rem;
+      min-height: 340px;
+      display: grid;
+      gap: 0.5rem;
+      align-content: start;
+    }
+
+    .chart-frame {
+      position: relative;
+      width: 100%;
+      height: clamp(240px, 34vh, 340px);
+      max-height: 340px;
+      min-height: 220px;
+      overflow: hidden;
+    }
+
+    .chart-frame canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+    }
+
+    .panel h2 {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+
+    .panel-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
+
+    .table-shell {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .table-head {
+      padding: 0.72rem;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+    }
+
+    .table-head h2 {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .table-head-actions {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .table-wrap {
+      overflow: auto;
+      max-height: 560px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 880px;
+      font-size: 0.86rem;
+    }
+
+    thead th {
+      position: sticky;
+      top: 0;
+      background: #fbf9f3;
+      z-index: 1;
+      border-bottom: 1px solid var(--line);
+      padding: 0.52rem 0.5rem;
+      text-align: left;
+      color: #55524b;
+      font-weight: 700;
+    }
+
+    tbody td {
+      border-bottom: 1px solid #ebe6da;
+      padding: 0.48rem 0.5rem;
+      vertical-align: top;
+    }
+
+    tbody tr:hover {
+      background: #f9f6ee;
+    }
+
+    a.doc-link {
+      color: var(--accent-3);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    a.doc-link:hover { text-decoration: underline; }
+
+    .hint {
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .nominal-empty {
+      border: 1px dashed #d9d3c6;
+      border-radius: 12px;
+      padding: 0.8rem;
+      background: #fcfbf7;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .active-filters {
+      border: 1px solid #d8d2c3;
+      background: #fffdfa;
+      border-radius: 10px;
+      padding: 0.45rem 0.55rem;
+      color: #4f4b44;
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
+
+    .load-progress-wrap {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      padding: 0.5rem 0.6rem;
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .load-progress-wrap[hidden] {
+      display: none;
+    }
+
+    .load-progress-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      font-size: 0.79rem;
+      color: var(--muted);
+    }
+
+    .load-progress-bar {
+      height: 11px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #e9e4d9;
+      border: 1px solid #d2ccbd;
+      position: relative;
+    }
+
+    .load-progress-fill {
+      width: 0%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #2b6f62, #4f9e8f 55%, #b8612d 100%);
+      transition: width 180ms ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .load-progress-fill::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.35) 45%, transparent 100%);
+      transform: translateX(-100%);
+      animation: progressShine 1.3s linear infinite;
+    }
+
+    @keyframes progressShine {
+      to { transform: translateX(130%); }
+    }
+
+    .methodology {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      padding: 0.78rem;
+      display: grid;
+      gap: 0.42rem;
+    }
+
+    .methodology h2 {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .methodology h3 {
+      margin: 0;
+      font-size: 0.92rem;
+      color: #4f4b44;
+    }
+
+    .methodology-block {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 0.52rem;
+      display: grid;
+      gap: 0.4rem;
+      background: #fffdfa;
+    }
+
+    .methodology-table {
+      min-width: 860px;
+      font-size: 0.82rem;
+    }
+
+    .methodology-table-wrap {
+      max-height: 290px;
+      overflow: auto;
+      border: 1px solid #e7e2d6;
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    @media (max-width: 1120px) {
+      .controls {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .nominal-controls,
+      .method-controls {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .panels {
+        grid-template-columns: 1fr;
+      }
+      .metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .word-insights-grid {
+        grid-template-columns: 1fr;
+      }
+      .examples-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .controls {
+        grid-template-columns: 1fr;
+      }
+      .nominal-controls,
+      .method-controls {
+        grid-template-columns: 1fr;
+      }
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+      .page {
+        width: min(1280px, 97vw);
+      }
+      .chart-frame {
+        height: clamp(210px, 38vh, 280px);
+        max-height: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="quick-nav" aria-label="Atalhos">
+      <a class="nav-btn" href="/">Home</a>
+      <a class="nav-btn" href="/emendas-dashboard/">Emendas</a>
+      <a class="nav-btn" href="/ibama-dashboard/">IBAMA</a>
+      <a class="nav-btn" href="/lai-dashboard/">LAI</a>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <h1>Lulometro: analise de discurso de presidentes brasileiros</h1>
+        <p class="subtitle">
+          Busca completa por palavra-chave em entrevistas e discursos presidenciais.
+          Compare frequencia por presidente, mandato e linha do tempo.
+        </p>
+      </div>
+
+      <div class="status-row">
+        <span class="status-pill" id="status-updated">Atualizando...</span>
+        <span class="status-pill" id="status-total-docs">Documentos: --</span>
+        <span class="status-pill" id="status-sources">Fontes: --</span>
+        <a class="scraper-health-btn is-loading" id="scraper-health-btn" href="https://github.com/luizftoledo/luizftoledo.github.io/actions" target="_blank" rel="noopener noreferrer">Testando raspador...</a>
+      </div>
+      <p class="update-schedule-note" id="update-schedule-note" aria-live="polite">Frequência de atualização: carregando...</p>
+
+      <div class="tab-switcher" role="tablist" aria-label="Modos do Lulometro">
+        <button class="tab-btn is-active" id="tab-btn-textual" type="button" data-tab="textual" role="tab" aria-selected="true">Busca textual</button>
+        <button class="tab-btn" id="tab-btn-nominal" type="button" data-tab="nominal" role="tab" aria-selected="false">Citações nominais</button>
+      </div>
+
+      <section class="load-required-banner textual-only" id="load-required-banner" aria-live="polite">
+        <p class="load-required-title" id="load-required-title">Passo 1 obrigatório: clique em "1) Carregar Base Completa".</p>
+        <p class="load-required-text" id="load-required-text">A busca só funciona depois do carregamento para evitar travamentos.</p>
+      </section>
+
+      <div class="controls textual-only">
+        <input id="term-input" type="text" placeholder="Ex.: amazonia, corrupcao, saude publica" aria-label="Termo de busca">
+        <select id="type-select" aria-label="Tipo de conteudo">
+          <option value="ambos">Entrevista + Discurso</option>
+          <option value="entrevista">Apenas entrevistas</option>
+          <option value="discurso">Apenas discursos</option>
+        </select>
+        <select id="president-select" aria-label="Presidente">
+          <option value="todos">Todos os presidentes</option>
+        </select>
+        <select id="mandate-select" aria-label="Mandato">
+          <option value="todos">Todos os mandatos</option>
+        </select>
+        <button id="btn-search" type="button">1) Carregar Base Completa</button>
+        <button id="btn-clear" type="button">Limpar</button>
+      </div>
+
+      <p class="hint textual-only" id="search-hint">
+        Passo obrigatório: clique em "1) Carregar Base Completa". Depois disso a busca ignora maiúsculas/minúsculas e acentos.
+      </p>
+      <p class="active-filters textual-only" id="active-filters">Filtros ativos: aguardando carregamento da base...</p>
+
+      <div class="load-progress-wrap textual-only" id="load-progress-wrap" hidden aria-live="polite">
+        <div class="load-progress-meta">
+          <span id="load-progress-text">Preparando carregamento...</span>
+          <strong id="load-progress-pct">0%</strong>
+        </div>
+        <div class="load-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="load-progress-fill" id="load-progress-fill"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="usage-examples" data-tab-scope="nominal" hidden aria-label="Citações nominais do Lula">
+      <h2>Citações nominais do Lula</h2>
+      <p class="hint">Esta aba cruza o corpus do Lula 3 com listas oficiais atualizadas diariamente de ministros do governo, Janja, ministros do STF, deputados federais e senadores.</p>
+      <div class="status-row">
+        <span class="status-pill" id="people-status-ready">Índice nominal: carregando...</span>
+        <span class="status-pill" id="people-status-entities">Pessoas rastreadas: --</span>
+        <span class="status-pill" id="people-status-mentions">Menções indexadas: --</span>
+      </div>
+      <div class="nominal-callout">
+        <strong>Esta aba não exige carregar a base textual completa.</strong>
+        <p class="hint">As contagens já vêm pré-processadas no build diário para evitar travamento. A busca textual antiga continua separada na outra aba.</p>
+      </div>
+      <div class="controls nominal-controls">
+        <input id="people-query" type="text" placeholder="Ex.: marina silva, haddad, moraes, janja" aria-label="Buscar pessoa ou cargo">
+        <select id="people-group" aria-label="Grupo monitorado">
+          <option value="todos">Todos os grupos</option>
+          <option value="ministro">Ministros do governo</option>
+          <option value="janja">Janja</option>
+          <option value="stf">STF</option>
+          <option value="deputado">Deputados</option>
+          <option value="senador">Senadores</option>
+        </select>
+        <select id="people-type" aria-label="Tipo de documento">
+          <option value="ambos">Entrevista + Discurso</option>
+          <option value="entrevista">Apenas entrevistas</option>
+          <option value="discurso">Apenas discursos</option>
+        </select>
+        <select id="people-range" aria-label="Janela temporal">
+          <option value="1">Hoje</option>
+          <option value="7">Últimos 7 dias</option>
+          <option value="30" selected>Últimos 30 dias</option>
+          <option value="90">Últimos 90 dias</option>
+          <option value="365">Último ano</option>
+          <option value="0">Todo o período</option>
+        </select>
+        <select id="people-granularity" aria-label="Granularidade">
+          <option value="day">Dia</option>
+          <option value="week">Semana</option>
+          <option value="month" selected>Mês</option>
+          <option value="year">Ano</option>
+        </select>
+        <select id="people-metric" aria-label="Métrica">
+          <option value="occurrences" selected>Ocorrências</option>
+          <option value="documents">Documentos</option>
+        </select>
+        <button id="people-apply" type="button" style="background:#2b6f62;color:#fff;">Atualizar</button>
+        <button id="people-reset" type="button" style="background:#d8d1c1;color:#3a352f;">Limpar</button>
+      </div>
+      <p class="active-filters" id="people-active-filters">Filtros nominais: aguardando índice...</p>
+    </section>
+
+    <section class="word-insights" data-tab-scope="textual" aria-label="Termos mais usados recentemente">
+      <div class="word-insights-head">
+        <h2>Termos Mais Usados Recentemente</h2>
+        <div style="display:flex; gap:0.45rem; align-items:center; flex-wrap:wrap;">
+          <select id="wordcloud-range" aria-label="Janela temporal da nuvem de palavras">
+            <option value="7">Ultimos 7 dias</option>
+            <option value="15">Ultimos 15 dias</option>
+            <option value="30" selected>Ultimos 30 dias</option>
+            <option value="90">Ultimos 3 meses</option>
+            <option value="180">Ultimos 6 meses</option>
+            <option value="365">Ultimo ano</option>
+          </select>
+          <select id="wordcloud-phrase-size" aria-label="Tamanho dos termos da nuvem">
+            <option value="2-3" selected>Frases (2 e 3 palavras)</option>
+            <option value="2">Frases de 2 palavras</option>
+            <option value="3">Frases de 3 palavras</option>
+            <option value="1">Palavras isoladas (modo amplo)</option>
+          </select>
+          <button id="wordcloud-apply" type="button" style="min-height:42px; background:#2b6f62; color:#fff;">Atualizar Nuvem</button>
+        </div>
+      </div>
+      <p class="hint">
+        Para evitar termos genéricos, o padrão mostra frases de 2 e 3 palavras.
+        Exemplos: <strong>saude publica</strong>, <strong>meio ambiente</strong>, <strong>combate ao desmatamento</strong>.
+      </p>
+      <p class="hint" id="wordcloud-context">Carregando termos mais frequentes...</p>
+      <div class="word-insights-grid">
+        <div class="word-cloud-box">
+          <div class="word-cloud" id="wordcloud-cloud"></div>
+        </div>
+        <div class="word-table">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th id="wordcloud-col-label">Termo</th>
+                <th>Ocorrencias</th>
+              </tr>
+            </thead>
+            <tbody id="wordcloud-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="metrics" data-tab-scope="textual" aria-label="Metricas da busca">
+      <article class="metric">
+        <div class="label">Total de Citacoes</div>
+        <div class="value" id="metric-mentions">--</div>
+      </article>
+      <article class="metric">
+        <div class="label">Documentos com o Termo</div>
+        <div class="value" id="metric-docs">--</div>
+      </article>
+      <article class="metric">
+        <div class="label">Presidentes Atingidos</div>
+        <div class="value" id="metric-presidents">--</div>
+      </article>
+      <article class="metric">
+        <div class="label">Primeira / Ultima Citacao</div>
+        <div class="value" id="metric-window">--</div>
+      </article>
+    </section>
+
+    <section class="usage-examples" data-tab-scope="textual" aria-label="Exemplos de uso do termo">
+      <h2>Exemplos De Uso (3 Ultimos Mandatos)</h2>
+      <p class="hint" id="examples-hint">Digite um termo e clique em Buscar para ver trechos reais com destaque.</p>
+      <div class="examples-grid" id="examples-grid"></div>
+    </section>
+
+    <section class="panels" data-tab-scope="textual">
+      <article class="panel">
+        <h2>Linha do Tempo de Citacoes</h2>
+        <p class="panel-note">Soma de citacoes por mes no periodo filtrado.</p>
+        <div class="chart-frame">
+          <canvas id="chart-timeline"></canvas>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>Comparacao Entre Presidentes</h2>
+        <p class="panel-note">Top 12 presidentes/mandatos com maior volume de citacoes.</p>
+        <div class="chart-frame">
+          <canvas id="chart-presidents"></canvas>
+        </div>
+      </article>
+    </section>
+
+    <section class="panels" data-tab-scope="textual">
+      <article class="panel">
+        <h2>Comparacao Entre Mandatos</h2>
+        <p class="panel-note">Volume total de citacoes por mandato no filtro atual.</p>
+        <div class="chart-frame">
+          <canvas id="chart-mandates"></canvas>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>Resumo da Amostra</h2>
+        <p class="panel-note" id="summary-text">Carregando base...</p>
+      </article>
+    </section>
+
+    <section class="metrics" data-tab-scope="nominal" hidden aria-label="Métricas da aba nominal">
+      <article class="metric">
+        <div class="label">Ocorrências no filtro</div>
+        <div class="value" id="people-metric-occurrences">--</div>
+      </article>
+      <article class="metric">
+        <div class="label">Documentos com menção</div>
+        <div class="value" id="people-metric-docs">--</div>
+      </article>
+      <article class="metric">
+        <div class="label">Pessoas citadas</div>
+        <div class="value" id="people-metric-entities">--</div>
+      </article>
+      <article class="metric">
+        <div class="label">Mais citado</div>
+        <div class="value" id="people-metric-top">--</div>
+      </article>
+    </section>
+
+    <section class="usage-examples" data-tab-scope="nominal" hidden aria-label="Exemplos de citações nominais">
+      <h2>Exemplos recentes de citações</h2>
+      <p class="hint" id="people-examples-hint">Carregando exemplos das menções nominais...</p>
+      <div class="examples-grid" id="people-examples-grid"></div>
+    </section>
+
+    <section class="panels" data-tab-scope="nominal" hidden>
+      <article class="panel">
+        <h2>Linha do tempo das citações nominais</h2>
+        <p class="panel-note">A série pode ser por dia, semana, mês ou ano e alterna entre ocorrências totais e documentos com menção.</p>
+        <div class="chart-frame">
+          <canvas id="people-chart-timeline"></canvas>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>Quem Lula mais citou</h2>
+        <p class="panel-note">Ranking do filtro atual, já consolidado a partir do índice nominal diário.</p>
+        <div class="chart-frame">
+          <canvas id="people-chart-top"></canvas>
+        </div>
+      </article>
+    </section>
+
+    <section class="panels" data-tab-scope="nominal" hidden>
+      <article class="panel">
+        <h2>Distribuição por grupo</h2>
+        <p class="panel-note">Mostra como as menções se distribuem entre governo, Janja, STF, Câmara e Senado.</p>
+        <div class="chart-frame">
+          <canvas id="people-chart-groups"></canvas>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>Resumo da aba nominal</h2>
+        <p class="panel-note" id="people-summary-text">Carregando índice nominal...</p>
+      </article>
+    </section>
+
+    <section class="table-shell" data-tab-scope="nominal" hidden>
+      <div class="table-head">
+        <h2>Ranking pesquisável de nomes citados</h2>
+        <span class="hint" id="people-ranking-count">0 linhas</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Grupo</th>
+              <th>Cargo</th>
+              <th>Ocorrências</th>
+              <th>Documentos</th>
+              <th>Última citação</th>
+              <th>Aliases contados</th>
+            </tr>
+          </thead>
+          <tbody id="people-ranking-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="table-shell" data-tab-scope="textual">
+      <div class="table-head">
+        <h2>Super Tabela de Resultados</h2>
+        <span class="hint" id="table-count">0 linhas</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Presidente</th>
+              <th>Mandato</th>
+              <th>Tipo</th>
+              <th>Citacoes</th>
+              <th>Titulo</th>
+              <th>Local</th>
+              <th>Link Original</th>
+            </tr>
+          </thead>
+          <tbody id="results-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="methodology" data-tab-scope="nominal" hidden aria-label="Metodologia da aba nominal">
+      <h2>Metodologia da aba nominal</h2>
+      <p class="hint" id="people-methodology-note">Carregando nota metodológica da aba de citações nominais...</p>
+      <div class="controls method-controls">
+        <input id="people-methodology-search" type="text" placeholder="Filtre o dicionário por nome, cargo ou alias" aria-label="Filtrar dicionário de aliases">
+        <select id="people-methodology-kind" aria-label="Filtrar dicionário por grupo">
+          <option value="todos">Todos os grupos</option>
+          <option value="ministro">Ministros do governo</option>
+          <option value="janja">Janja</option>
+          <option value="stf">STF</option>
+          <option value="deputado">Deputados</option>
+          <option value="senador">Senadores</option>
+        </select>
+      </div>
+      <article class="methodology-block">
+        <h3>Dicionário de nomes e aliases contados</h3>
+        <div class="methodology-table-wrap">
+          <table class="methodology-table">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Grupo</th>
+                <th>Cargo</th>
+                <th>Aliases contados</th>
+                <th>Aliases observados no corpus</th>
+                <th>Fonte oficial</th>
+              </tr>
+            </thead>
+            <tbody id="people-methodology-body">
+              <tr><td colspan="6">Carregando...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+
+    <section class="methodology" data-tab-scope="textual" aria-label="Nota metodologica">
+      <h2>Nota metodologica</h2>
+      <p class="hint" id="methodology-note">
+        Carregando cobertura da base e detalhes metodologicos...
+      </p>
+      <article class="methodology-block" aria-label="Cobertura por presidente">
+        <h3>Cobertura por presidente</h3>
+        <div class="methodology-table-wrap">
+          <table class="methodology-table">
+            <thead>
+              <tr>
+                <th>Presidente</th>
+                <th>Discursos</th>
+                <th>Entrevistas</th>
+                <th>Discursos no buscador</th>
+                <th>Entrevistas no buscador</th>
+                <th>Total no buscador</th>
+                <th>Cobertura</th>
+              </tr>
+            </thead>
+            <tbody id="methodology-president-body">
+              <tr><td colspan="7">Carregando...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+      <article class="methodology-block" aria-label="Cobertura por mandato">
+        <h3>Cobertura por mandato</h3>
+        <div class="methodology-table-wrap">
+          <table class="methodology-table">
+            <thead>
+              <tr>
+                <th>Mandato</th>
+                <th>Discursos</th>
+                <th>Entrevistas</th>
+                <th>Discursos no buscador</th>
+                <th>Entrevistas no buscador</th>
+                <th>Total no buscador</th>
+                <th>Cobertura</th>
+              </tr>
+            </thead>
+            <tbody id="methodology-mandate-body">
+              <tr><td colspan="7">Carregando...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="./vendor/pako.min.js"></script>
+  <script src="../scripts/dashboard-update-schedule.js"></script>
+  <script src="./app.js?v=20260307a"></script>
+</body>
+</html>

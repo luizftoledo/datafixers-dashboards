@@ -1,0 +1,59 @@
+{
+  "discovery": {
+    "seeds": {
+      "known_external_sources": 48
+    },
+    "searches": {
+      "google-news-rss:\"Luiz Fernando Toledo\"": 40,
+      "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 2,
+      "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 3,
+      "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 15
+    }
+  },
+  "enrich": {
+    "fetched": 58,
+    "reused": 36,
+    "kept": 90,
+    "dropped": 4,
+    "categories": {
+      "perfil_bio": 17,
+      "reportagem_autoral": 63,
+      "mencao": 5,
+      "entrevista": 1,
+      "citacao_fonte": 4
+    },
+    "domains": {
+      "bbc.com": 50,
+      "intercept.com.br": 1,
+      "piaui.folha.uol.com.br": 1,
+      "apublica.org": 3,
+      "ojoioeotrigo.com.br": 2,
+      "estadao.com.br": 12,
+      "g1.globo.com": 2,
+      "escavador.com": 1,
+      "icfj.org": 1,
+      "devstudies.cam.ac.uk": 1,
+      "blogfca.pucminas.br": 1,
+      "institutoling.org.br": 1,
+      "tvgazeta.com.br": 1,
+      "reutersinstitute.politics.ox.ac.uk": 1,
+      "brown.columbia.edu": 1,
+      "repositorio.fgv.br": 1,
+      "talks.ox.ac.uk": 1,
+      "cima.ned.org": 1,
+      "scielo.br": 1,
+      "em.com.br": 1,
+      "piaui.uol.com.br": 1,
+      "abraji.org.br": 2,
+      "sbtnews.sbt.com.br": 1,
+      "cartacapital.com.br": 1,
+      "rollingstone.com.br": 1
+    },
+    "errors": [
+      {
+        "url": "https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil",
+        "error": "HTTPSConnectionPool(host='devstudies.cam.ac.uk', port=443): Max retries exceeded with url: /news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil (Caused by NameResolutionError(\"HTTPSConnection(host='devstudies.cam.ac.uk', port=443): Failed to resolve 'devstudies.cam.ac.uk' ([Errno -5] No address associated with hostname)\")) | jina: 422 Client Error: Unprocessable Entity for url: https://r.jina.ai/http://https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil"
+      }
+    ]
+  }
+}

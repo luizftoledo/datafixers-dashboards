@@ -1,0 +1,31 @@
+{
+  "updated_at": "2026-05-04T15:28:45.147756+00:00",
+  "source": "Camara dos Deputados - dadosabertos (CSV anual)",
+  "start_year": 2019,
+  "end_year": 2026,
+  "summary": {
+    "pro_votes": 370853,
+    "anti_votes": 162463,
+    "total_votes": 533316,
+    "alignment_pct": 69.54,
+    "votacoes_validas": 1301,
+    "partidos_com_voto": 28,
+    "deputados_com_voto": 873,
+    "by_vote_kind": {
+      "merito": {
+        "pro_votes": 174914,
+        "anti_votes": 83207,
+        "total_votes": 258121,
+        "alignment_pct": 67.76,
+        "votacoes": 617
+      },
+      "procedimental": {
+        "pro_votes": 195939,
+        "anti_votes": 79256,
+        "total_votes": 275195,
+        "alignment_pct": 71.2,
+        "votacoes": 684
+      }
+    }
+  }
+}

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clipping de citações | Luiz Fernando Toledo</title>
+  <meta name="description" content="Clipping diário de Luiz Fernando Toledo com uma lista organizada de reportagens, menções, entrevistas, perfis e republicações.">
+  <meta property="og:title" content="Clipping | Luiz Fernando Toledo">
+  <meta property="og:description" content="Lista diária de reportagens, menções, entrevistas, perfis e republicações ligados a Luiz Fernando Toledo.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://luizftoledo.github.io/clipping-dashboard/">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f3ee;
+      --panel: #ffffff;
+      --line: #d9d5cc;
+      --ink: #1b1b1b;
+      --muted: #676255;
+      --accent: #183a2d;
+      --accent-soft: #e5f0ea;
+      --tag: #f0ede6;
+      --shadow: 0 12px 32px rgba(30, 24, 12, 0.06);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "IBM Plex Sans", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .shell {
+      width: min(1040px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 26px;
+      margin-bottom: 16px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    h1,
+    h2,
+    h3,
+    summary strong {
+      font-family: "Newsreader", serif;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.02;
+    }
+
+    .hero p {
+      margin: 12px 0 0;
+      max-width: 68ch;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 1rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .hero-meta span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #faf8f3;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+    }
+
+    .toolbar-copy {
+      max-width: 55ch;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.55;
+    }
+
+    .search-box {
+      display: grid;
+      gap: 6px;
+      min-width: min(340px, 100%);
+    }
+
+    .search-box label {
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      font: inherit;
+      background: #fff;
+    }
+
+    .summary-line {
+      padding: 0 2px 12px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .section {
+      padding: 18px 20px;
+      margin-bottom: 16px;
+    }
+
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      align-items: baseline;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 1.45rem;
+    }
+
+    .section-note {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .category-stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .category-block {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fcfbf8;
+      overflow: hidden;
+    }
+
+    .category-block > summary {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 16px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .category-block > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .category-count {
+      flex-shrink: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .entry-list {
+      display: grid;
+      gap: 10px;
+      padding: 0 14px 14px;
+    }
+
+    .entry {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .entry > summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 14px 16px;
+    }
+
+    .entry > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .entry-head {
+      display: grid;
+      gap: 8px;
+    }
+
+    .entry-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--tag);
+      border: 1px solid var(--line);
+    }
+
+    .entry-body {
+      border-top: 1px solid var(--line);
+      padding: 14px 16px 16px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .entry-body p {
+      margin: 0;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .entry-link {
+      font-weight: 700;
+    }
+
+    .footer-note {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .empty-state {
+      padding: 18px;
+      border: 1px dashed var(--line);
+      border-radius: 12px;
+      color: var(--muted);
+      text-align: center;
+      background: #faf8f3;
+    }
+
+    details.footer-box {
+      margin-top: 8px;
+    }
+
+    details.footer-box summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    @media (max-width: 720px) {
+      .shell {
+        width: min(100vw - 16px, 100%);
+        padding: 16px 0 40px;
+      }
+
+      .hero,
+      .toolbar,
+      .section {
+        padding: 16px;
+      }
+
+      .toolbar {
+        align-items: stretch;
+      }
+
+      .search-box {
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="panel hero">
+      <span class="eyebrow">Clipping</span>
+      <h1>Clipping de citações</h1>
+      <p>
+        A página abaixo é uma lista organizada por tipo de registro: reportagens autorais, republicações,
+        repercussões de apurações minhas, citações como fonte, menções de terceiros,
+        entrevistas, palestras e perfis. O bloco de recentes usa apenas datas publicadas verificáveis.
+      </p>
+      <div class="hero-meta" id="heroMeta"></div>
+    </section>
+
+    <section class="panel toolbar">
+      <p class="toolbar-copy" id="toolbarCopy"></p>
+      <div class="search-box">
+        <label for="searchInput">Busca textual simples</label>
+        <input id="searchInput" type="search" placeholder="Filtrar a lista por palavra">
+      </div>
+    </section>
+
+    <section class="panel section">
+      <div class="section-header">
+        <h2 class="section-title">Com data verificável</h2>
+        <p class="section-note" id="recentSummary"></p>
+      </div>
+      <div class="category-stack" id="recentList"></div>
+    </section>
+
+    <section class="panel section">
+      <div class="section-header">
+        <h2 class="section-title">Arquivo completo por tipo</h2>
+        <p class="section-note" id="resultSummary"></p>
+      </div>
+      <div class="category-stack" id="categoryStack"></div>
+    </section>
+
+    <details class="footer-box">
+      <summary>Metodologia e limites</summary>
+      <div class="footer-note" id="methodologyBox"></div>
+    </details>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

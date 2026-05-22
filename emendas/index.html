@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monitor de emendas parlamentares — 2026</title>
+  <meta name="description" content="Acompanhamento diário do empenho das emendas parlamentares em 2026, comparando Portal da Transparência (CGU) e SIOP (Ministério do Planejamento).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --paper: #fafaf7;
+      --ink: #131311;
+      --muted: #686864;
+      --line: #e6e3dc;
+      --line-strong: #c8c4ba;
+      --good: #1f6f48;
+      --good-soft: #e7efe8;
+      --bad: #8b1a1a;
+      --bad-soft: #f5e7e3;
+      --warn: #b45309;
+      --warn-soft: #fbecdc;
+      --accent: #2b3a55;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { background: var(--bg); }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1.4rem 1.2rem 4rem;
+    }
+
+    .topbar {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-bottom: 1.6rem;
+    }
+
+    .topbar a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 1px;
+    }
+
+    .topbar a:hover { color: var(--ink); border-color: var(--ink); }
+
+    .topbar .sep { color: var(--line-strong); }
+
+    .head {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 1.2rem;
+      margin-bottom: 1.6rem;
+    }
+
+    h1 {
+      font-family: "Newsreader", Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(1.8rem, 3.8vw, 2.6rem);
+      line-height: 1.1;
+      letter-spacing: -0.012em;
+      margin: 0 0 0.5rem;
+    }
+
+    .dek {
+      font-family: "Newsreader", Georgia, serif;
+      font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+      line-height: 1.4;
+      color: var(--muted);
+      margin: 0 0 0.9rem;
+      max-width: 62ch;
+    }
+
+    .dateline {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .dateline strong { color: var(--ink); font-weight: 600; }
+
+    section {
+      margin: 2rem 0;
+    }
+
+    section h2 {
+      font-family: "Newsreader", Georgia, serif;
+      font-weight: 600;
+      font-size: 1.45rem;
+      letter-spacing: -0.005em;
+      margin: 0 0 0.4rem;
+    }
+
+    section .sub {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin: 0 0 1rem;
+      max-width: 64ch;
+    }
+
+    .spotlight {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--ink);
+      padding: 1.2rem 1.3rem;
+    }
+
+    .spotlight .kicker {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .spotlight h3 {
+      font-family: "Newsreader", Georgia, serif;
+      font-weight: 600;
+      font-size: 1.3rem;
+      line-height: 1.25;
+      margin: 0 0 0.6rem;
+    }
+
+    .spotlight p {
+      margin: 0 0 0.6rem;
+      font-size: 0.96rem;
+      line-height: 1.55;
+      color: #2b2b27;
+    }
+
+    .spotlight p:last-child { margin-bottom: 0; }
+
+    .spotlight strong { color: var(--ink); font-weight: 600; }
+
+    .features-list {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .feature-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid var(--line);
+      padding: 1.1rem 1.2rem;
+      background: var(--bg);
+      transition: border-color 120ms ease, background 120ms ease;
+    }
+
+    .feature-card:hover {
+      border-color: var(--ink);
+      background: var(--paper);
+    }
+
+    .feature-card .kicker {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .feature-card h3 {
+      font-family: "Newsreader", Georgia, serif;
+      font-weight: 600;
+      font-size: 1.18rem;
+      line-height: 1.25;
+      letter-spacing: -0.005em;
+      margin: 0 0 0.45rem;
+      color: var(--ink);
+    }
+
+    .feature-card p {
+      margin: 0 0 0.55rem;
+      font-size: 0.92rem;
+      color: #2b2b27;
+      line-height: 1.5;
+    }
+
+    .feature-cta {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+      border-bottom: 1px solid #c9d0db;
+      padding-bottom: 1px;
+    }
+
+    .feature-card:hover .feature-cta {
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .num {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-feature-settings: "tnum";
+      font-variant-numeric: tabular-nums;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+
+    .kpi {
+      border: 1px solid var(--line);
+      padding: 0.95rem 1rem 1rem;
+      background: var(--bg);
+    }
+
+    .kpi .label {
+      font-size: 0.74rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .kpi .value {
+      font-family: "IBM Plex Mono", monospace;
+      font-feature-settings: "tnum";
+      font-size: clamp(1.4rem, 3.2vw, 2rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      font-weight: 500;
+    }
+
+    .kpi .foot {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+      line-height: 1.35;
+    }
+
+    .compare-card {
+      border: 1px solid var(--line);
+      padding: 1rem 1.1rem 1.1rem;
+      background: var(--bg);
+    }
+
+    .compare-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.7rem 0;
+    }
+
+    .compare-row + .compare-row {
+      border-top: 1px solid var(--line);
+    }
+
+    .compare-row .label-side {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .compare-row .val {
+      font-family: "IBM Plex Mono", monospace;
+      font-feature-settings: "tnum";
+      font-size: 1.18rem;
+      font-weight: 500;
+    }
+
+    .compare-row .note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 0.28rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+    }
+
+    .badge.good { color: var(--good); background: var(--good-soft); border-color: #c5dccc; }
+    .badge.bad { color: var(--bad); background: var(--bad-soft); border-color: #e6c5bf; }
+    .badge.warn { color: var(--warn); background: var(--warn-soft); border-color: #efd1ad; }
+
+    .badge .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: currentColor;
+    }
+
+    .chart-card {
+      border: 1px solid var(--line);
+      padding: 0.9rem;
+      background: var(--bg);
+    }
+
+    .chart-card canvas {
+      width: 100% !important;
+      height: 320px !important;
+    }
+
+    .chart-foot {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
+      line-height: 1.4;
+    }
+
+    .legend {
+      display: flex; gap: 0.9rem; flex-wrap: wrap;
+      font-size: 0.78rem; color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .legend span { display: inline-flex; align-items: center; gap: 0.35rem; }
+    .legend .sw {
+      width: 10px; height: 10px; border-radius: 2px;
+      display: inline-block;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table th, table td {
+      text-align: left;
+      padding: 0.55rem 0.7rem;
+      font-size: 0.88rem;
+      border-bottom: 1px solid var(--line);
+      vertical-align: middle;
+    }
+
+    table td.num, table th.num { white-space: nowrap; }
+
+    table th {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+      border-bottom: 1px solid var(--line-strong);
+    }
+
+    table td.num, table th.num { text-align: right; font-family: "IBM Plex Mono", monospace; font-feature-settings: "tnum"; }
+
+    .table-wrap {
+      border: 1px solid var(--line);
+      overflow: auto;
+    }
+
+    tr.row-peak td { background: #fff8eb; }
+
+    tr.row-peak td.date-cell::before {
+      content: "▲ ";
+      color: var(--warn);
+      font-weight: 700;
+    }
+
+    .meta-flag {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-left: 0.4rem;
+      font-weight: 500;
+    }
+
+    .health-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+
+    .health-card {
+      border: 1px solid var(--line);
+      padding: 0.85rem 0.95rem;
+      background: var(--bg);
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    .health-card .src {
+      font-size: 0.74rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .health-card .stat {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .health-card .meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding-top: 1.2rem;
+      margin-top: 2.4rem;
+      font-size: 0.86rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .footer h2 {
+      color: var(--ink);
+      font-size: 1.1rem;
+      margin: 0 0 0.5rem;
+    }
+
+    .footer ul {
+      margin: 0.4rem 0 1rem;
+      padding-left: 1.1rem;
+    }
+
+    .footer li + li { margin-top: 0.25rem; }
+
+    .footer a { color: var(--accent); text-decoration: none; border-bottom: 1px solid #c9d0db; padding-bottom: 1px; }
+    .footer a:hover { color: var(--ink); border-color: var(--ink); }
+
+    .quiet { color: var(--muted); font-size: 0.86rem; }
+
+    @media (max-width: 720px) {
+      .grid-3 { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .health-grid { grid-template-columns: 1fr; }
+      .compare-row { grid-template-columns: 1fr; gap: 0.3rem; }
+      .compare-row .label-side { margin-top: 0.4rem; }
+      table th, table td { font-size: 0.82rem; padding: 0.5rem 0.55rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <nav class="topbar">
+      <a href="https://luizftoledo.github.io/">luizftoledo.github.io</a>
+      <span class="sep">/</span>
+      <span>monitor de emendas</span>
+    </nav>
+
+    <header class="head">
+      <h1>Monitor diário de emendas parlamentares</h1>
+      <p class="dek">Acompanhamento do empenho de emendas no orçamento federal de 2026, cruzando duas fontes oficiais — Portal da Transparência (CGU) e SIOP (Planejamento) — com checagem diária de divergência.</p>
+      <div class="dateline">
+        <span><strong id="dateline-updated">—</strong> · última atualização</span>
+        <span><strong id="dateline-source-pt">—</strong> · Portal da Transparência</span>
+        <span><strong id="dateline-source-siop">—</strong> · SIOP (base SIAFI)</span>
+      </div>
+    </header>
+
+    <section id="spotlight-section">
+      <article class="spotlight" id="spotlight" aria-labelledby="spotlight-title">
+        <div class="kicker">Pico do ano</div>
+        <h3 id="spotlight-title">—</h3>
+        <p id="spotlight-body-1">Carregando análise…</p>
+        <p id="spotlight-body-2"></p>
+      </article>
+    </section>
+
+    <section id="features-section">
+      <h2>Análises em destaque</h2>
+      <p class="sub">Reportagens e análises feitas a partir destes dados. Cada peça é um instantâneo congelado de um momento específico — diferente do dashboard, que avança junto com a fonte.</p>
+      <div class="features-list">
+        <a class="feature-card" href="../analises/efeito-messias-2026/">
+          <div class="kicker">Análise · abr/2026</div>
+          <h3>Efeito Messias: a semana mais cara das emendas em 2026</h3>
+          <p>Entre 8 e 17 de abril — janela imediatamente anterior à votação de Jorge Messias para o STF — o governo empenhou R$ 10,5 bi em emendas, cerca de 70× a média de janeiro a março. Linha do tempo, dias de pico e top autores beneficiados.</p>
+          <span class="feature-cta">Ler análise →</span>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Execução em 2026</h2>
+      <p class="sub">Total empenhado no ano até a data mais recente da fonte, comparado com o teto autorizado anual no SIOP.</p>
+      <div class="grid-3">
+        <article class="kpi">
+          <div class="label">Empenhado em 2026</div>
+          <div class="value num" id="kpi-empenhado">—</div>
+          <div class="foot" id="kpi-empenhado-note">por data do empenho · CGU</div>
+        </article>
+        <article class="kpi">
+          <div class="label">Autorizado anual</div>
+          <div class="value num" id="kpi-autorizado">—</div>
+          <div class="foot" id="kpi-autorizado-note">teto orçamentário · SIOP</div>
+        </article>
+        <article class="kpi">
+          <div class="label">Execução</div>
+          <div class="value num" id="kpi-execucao">—</div>
+          <div class="foot" id="kpi-execucao-note">empenhado / autorizado</div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Comparação SIOP × Portal da Transparência</h2>
+      <p class="sub">As duas fontes deveriam concordar no total empenhado do ano. Diferença até ±2% é tolerância normal de defasagem entre snapshots; acima de 5% sinaliza divergência relevante.</p>
+      <article class="compare-card">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.6rem;margin-bottom:0.4rem">
+          <div class="label-side" style="text-transform:none;font-size:0.84rem">Total empenhado em 2026</div>
+          <span class="badge" id="compare-badge"><span class="dot"></span><span id="compare-badge-text">—</span></span>
+        </div>
+        <div class="compare-row">
+          <div>
+            <div class="val num" id="compare-pt">—</div>
+            <div class="note">Portal da Transparência (por data do empenho)</div>
+          </div>
+          <div class="label-side">vs</div>
+          <div>
+            <div class="val num" id="compare-siop">—</div>
+            <div class="note">SIOP (base SIAFI <span id="compare-siop-date">—</span>)</div>
+          </div>
+        </div>
+        <div class="compare-row">
+          <div>
+            <div class="val num" id="compare-diff">—</div>
+            <div class="note" id="compare-diff-note">Diferença absoluta · &nbsp;</div>
+          </div>
+          <div class="label-side">·</div>
+          <div>
+            <div class="val num" id="compare-diff-pct">—</div>
+            <div class="note">Diferença relativa</div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section>
+      <h2>Empenho diário em 2026</h2>
+      <p class="sub">Cada barra é o valor empenhado naquele dia (data oficial do documento). A linha mostra o acumulado do ano. Fonte: <span class="num" id="chart-source">CGU/Portal da Transparência</span>.</p>
+      <article class="chart-card">
+        <div class="legend">
+          <span><span class="sw" style="background:#2b3a55"></span>Empenhado no dia</span>
+          <span><span class="sw" style="background:#b45309"></span>Acumulado do ano</span>
+        </div>
+        <canvas id="chart-daily"></canvas>
+        <p class="chart-foot" id="chart-daily-note">—</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Top 10 dias do ano</h2>
+      <p class="sub">Dias com maior valor empenhado em 2026. Picos isolados costumam refletir liberações concentradas — em janelas de negociação, votação ou fim de prazo orçamentário.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Dia da semana</th>
+              <th class="num">Empenhado no dia</th>
+              <th class="num">% do ano</th>
+            </tr>
+          </thead>
+          <tbody id="table-top-days">
+            <tr><td colspan="4" class="quiet">Carregando…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Top autores em 2026</h2>
+      <p class="sub">Maiores autores de emendas por valor empenhado no ano. Inclui parlamentares individuais, bancadas estaduais e comissões.</p>
+      <div class="grid-2">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Autor</th>
+                <th>Partido</th>
+                <th class="num">Empenhado 2026</th>
+              </tr>
+            </thead>
+            <tbody id="table-top-authors-pt">
+              <tr><td colspan="3" class="quiet">Carregando…</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Órgão executor (SIOP)</th>
+                <th class="num">Empenhado 2026</th>
+              </tr>
+            </thead>
+            <tbody id="table-top-orgaos-siop">
+              <tr><td colspan="2" class="quiet">Carregando…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Para onde foi o último dia</h2>
+      <p class="sub">Localidades que mais receberam empenho na data mais recente da base PT. "Localidade" pode ser município, estado, órgão executor ou unidade de aplicação — segundo o campo oficial do CSV de Documentos.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Localidade de aplicação</th>
+              <th class="num">Empenhado no dia</th>
+            </tr>
+          </thead>
+          <tbody id="table-top-destinations">
+            <tr><td colspan="2" class="quiet">Carregando…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Saúde da raspagem</h2>
+      <p class="sub">As duas fontes têm histórico de quebra silenciosa. Esta seção mostra quando cada fonte foi atualizada pela última vez no servidor de origem e há quantos dias o pipeline está consistente.</p>
+      <div class="health-grid">
+        <article class="health-card">
+          <div class="src">Portal da Transparência (CGU)</div>
+          <div class="stat" id="health-pt-stat">—</div>
+          <div class="meta" id="health-pt-meta">—</div>
+        </article>
+        <article class="health-card">
+          <div class="src">SIOP / Selenium</div>
+          <div class="stat" id="health-siop-stat">—</div>
+          <div class="meta" id="health-siop-meta">—</div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <h2>Metodologia</h2>
+      <p><strong>Fonte primária para a série diária:</strong> CSV <code>2026_EmendasParlamentaresPorDocumento.zip</code> (CGU/Portal da Transparência), agregado por <em>data do documento de empenho</em>. Esta data é a do registro fiscal — o que dá granularidade real dia a dia.</p>
+      <p><strong>Fonte para o teto autorizado e cross-check:</strong> SIOP (Sistema de Planejamento, Orçamento e Finanças do Governo Federal), painel "Emendas Parlamentares — Resultado Primário 6/7/8/9" (Qlik/SigaBrasil). Capturado via Selenium — base SIAFI atualizada com defasagem de até 2 dias úteis.</p>
+      <p><strong>Definição:</strong> "empenhado" é o valor já reservado para pagamento (compromisso firmado pela União), não o que foi efetivamente desembolsado ("pago").</p>
+      <p><strong>Atualização:</strong> rotina diária às 13:10 UTC (10:10 BRT) via GitHub Actions. Quando a fonte original não publica novo arquivo no dia, o pipeline registra <code>source_changed: false</code> e mantém o snapshot anterior.</p>
+      <h2 style="margin-top:1rem">Fontes oficiais</h2>
+      <ul>
+        <li><a id="src-pt-link" href="https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO" target="_blank" rel="noopener">Portal da Transparência — base UNICO de emendas (CGU)</a></li>
+        <li><a id="src-docs-link" href="https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares-documentos" target="_blank" rel="noopener">Portal da Transparência — documentos por emenda (CSV anual)</a></li>
+        <li><a href="https://www1.siop.planejamento.gov.br/QvAJAXZfc/opendoc.htm?document=Painel%20do%20Or%C3%A7amento%20Federal.qvw&host=QVS%40pqlk04&anonymous=true" target="_blank" rel="noopener">SIOP — Painel do Orçamento Federal (Planejamento)</a></li>
+        <li><a href="https://www9.senado.gov.br/QvAJAXZfc/opendoc.htm?document=senado%2Fsigabrasilpainelcidadao.qvw&host=QVS%40www9&anonymous=true" target="_blank" rel="noopener">Siga Brasil — Senado (referência)</a></li>
+      </ul>
+      <p class="quiet">Repositório/código aberto: <a href="https://github.com/luizftoledo/luizftoledo.github.io" target="_blank" rel="noopener">github.com/luizftoledo/luizftoledo.github.io</a> · pipeline em <code>scripts/build_emendas_dashboard_data.py</code>.</p>
+    </footer>
+  </main>
+
+  <script src="./app.js?v=20260502"></script>
+</body>
+</html>

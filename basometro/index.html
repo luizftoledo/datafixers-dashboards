@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Basômetro da Câmara - apoio ao governo</title>
+  <meta name="description" content="Monitor do alinhamento de deputados à orientação do governo em votações nominais da Câmara, com série mensal, rankings e exportação CSV.">
+  <meta property="og:title" content="Basômetro da Câmara - apoio ao governo">
+  <meta property="og:description" content="Acompanhe alinhamento por governo, partido e deputado nas votações nominais da Câmara.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://luizftoledo.github.io/basometro-dashboard/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #f4f4f2;
+      --panel: #ffffff;
+      --ink: #202124;
+      --muted: #5f6368;
+      --line: #d9d9d2;
+      --pro: #2f8f77;
+      --anti: #c45b4d;
+      --accent: #0f6aa6;
+      --shadow: 0 8px 26px rgba(0, 0, 0, 0.08);
+      --chip: #f0efe9;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Albert Sans", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #f7f7f4 0%, #efefe9 100%);
+    }
+
+    .page {
+      width: min(1260px, 96vw);
+      margin: 1.1rem auto 2.2rem;
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .nav-btn {
+      border: 1px solid #d0cec4;
+      border-radius: 999px;
+      background: #fff;
+      color: #3d3a34;
+      text-decoration: none;
+      padding: 0.38rem 0.76rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .hero,
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      padding: 0.95rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.28rem, 2.2vw, 2.08rem);
+      line-height: 1.18;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.1rem;
+      line-height: 1.3;
+    }
+
+    .sub {
+      margin: 0.36rem 0 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+      line-height: 1.5;
+      max-width: 940px;
+    }
+
+    .status-row {
+      margin-top: 0.64rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #faf9f6;
+      padding: 0.25rem 0.58rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .update-schedule-note {
+      margin: 0.45rem 0 0;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+
+    .scraper-health-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 0.24rem 0.68rem;
+      border-radius: 999px;
+      border: 1px solid #d6cfbf;
+      background: #efe6cf;
+      color: #5a5346;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
+
+    .scraper-health-btn.is-ok {
+      border-color: #1f8f5f;
+      background: #1f8f5f;
+      color: #fff;
+    }
+
+    .scraper-health-btn.is-fail {
+      border-color: #c84444;
+      background: #c84444;
+      color: #fff;
+    }
+
+    .scraper-health-btn.is-loading {
+      border-color: #d6cfbf;
+      background: #efe6cf;
+      color: #5a5346;
+    }
+
+    .filters {
+      margin-top: 0.7rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.52rem;
+      align-items: center;
+    }
+
+    .filters label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #4d4a45;
+    }
+
+    .filters select,
+    .filters input {
+      border: 1px solid #cfcbbf;
+      border-radius: 9px;
+      background: #fff;
+      color: #2d2b27;
+      font-size: 0.84rem;
+      min-height: 34px;
+      padding: 0.2rem 0.5rem;
+      font-family: inherit;
+    }
+
+    .btn-export {
+      border: 1px solid #2c6f90;
+      border-radius: 9px;
+      background: #e9f4fb;
+      color: #164663;
+      font-size: 0.82rem;
+      min-height: 34px;
+      padding: 0.2rem 0.58rem;
+      font-family: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-export:hover {
+      background: #dbedf8;
+    }
+
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.55rem;
+    }
+
+    .kpi {
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      padding: 0.66rem 0.72rem;
+      background: #fff;
+      min-height: 86px;
+    }
+
+    .kpi .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .kpi .value {
+      margin-top: 0.22rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: clamp(1rem, 1.5vw, 1.24rem);
+      line-height: 1.25;
+    }
+
+    .value-pro { color: var(--pro); }
+    .value-anti { color: var(--anti); }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+
+    .chart-box {
+      margin-top: 0.45rem;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      padding: 0.5rem;
+      background: #fff;
+      min-height: 320px;
+    }
+
+    .chart-box canvas {
+      width: 100% !important;
+      height: 292px !important;
+    }
+
+    .hint {
+      margin: 0.42rem 0 0;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.5;
+    }
+
+    .context-note {
+      border: 1px solid #ddd6c6;
+      border-radius: 10px;
+      background: #faf6eb;
+      padding: 0.5rem 0.62rem;
+    }
+
+    .tables {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: #fff;
+      margin-top: 0.45rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 560px;
+    }
+
+    th,
+    td {
+      padding: 0.48rem 0.6rem;
+      border-bottom: 1px solid #eceae3;
+      text-align: left;
+      font-size: 0.86rem;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f6f4ef;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #605b52;
+    }
+
+    tr.row-defeat td {
+      background: #fff2ef;
+    }
+
+    .vote-link {
+      color: #0f6aa6;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .vote-link:hover {
+      text-decoration: underline;
+    }
+
+    .chip {
+      display: inline-block;
+      background: var(--chip);
+      border: 1px solid #d8d6cc;
+      border-radius: 999px;
+      padding: 0.06rem 0.44rem;
+      font-size: 0.76rem;
+      color: #4f4b45;
+      white-space: nowrap;
+    }
+
+    .chip-pro { color: #206c58; }
+    .chip-anti { color: #8f4034; }
+
+    .sources {
+      margin: 0.45rem 0 0;
+      padding-left: 1rem;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+
+    .sources li + li { margin-top: 0.25rem; }
+
+    @media (max-width: 1080px) {
+      .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid-2,
+      .tables { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      .page { width: min(1260px, 98vw); }
+      .kpis { grid-template-columns: 1fr; }
+      th, td { font-size: 0.81rem; }
+      .chart-box { min-height: 290px; }
+      .chart-box canvas { height: 262px !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="quick-nav">
+      <a class="nav-btn" href="https://luizftoledo.github.io/" target="_blank" rel="noopener noreferrer">Voltar para home</a>
+      <a class="nav-btn" href="https://datafixers.org/" target="_blank" rel="noopener noreferrer">Ir para datafixers.org</a>
+    </div>
+
+    <section class="hero">
+      <h1>Basômetro da Câmara: apoio ao governo em votações nominais</h1>
+      <p class="sub">Este painel mostra, de forma simples, quantas vezes os deputados votaram de acordo com a orientação da bancada do Governo. O método segue o critério histórico do Basômetro: voto igual à orientação conta como apoio; os demais contam como oposição.</p>
+      <div class="status-row">
+        <span class="pill" id="status-updated">Atualizado: --</span>
+        <span class="pill" id="status-range">Período: --</span>
+        <span class="pill" id="status-source">Fonte: Câmara dos Deputados</span>
+        <a class="scraper-health-btn is-loading" id="scraper-health-btn" href="https://github.com/luizftoledo/luizftoledo.github.io/actions" target="_blank" rel="noopener noreferrer">Testando raspador...</a>
+      </div>
+      <p class="update-schedule-note" id="update-schedule-note" aria-live="polite">Frequência de atualização: carregando...</p>
+      <div class="filters">
+        <label for="filter-government">Recorte de governo</label>
+        <select id="filter-government"></select>
+        <label for="filter-min-party">Mínimo de votos por partido</label>
+        <input id="filter-min-party" type="number" min="1" step="1" value="120">
+        <label for="filter-min-deputy">Mínimo de votos por deputado</label>
+        <input id="filter-min-deputy" type="number" min="1" step="1" value="60">
+        <button class="btn-export" id="btn-export-current" type="button">Exportar CSV do recorte</button>
+      </div>
+      <p class="hint" id="filter-help">Use os filtros e depois exporte o CSV para abrir no Excel/Sheets com o mesmo recorte mostrado na tela.</p>
+    </section>
+
+    <section class="panel">
+      <div class="kpis">
+        <article class="kpi">
+          <div class="label">Alinhamento médio</div>
+          <div class="value value-pro" id="kpi-alignment">--</div>
+        </article>
+        <article class="kpi">
+          <div class="label">Votos pró-governo</div>
+          <div class="value value-pro" id="kpi-pro">--</div>
+        </article>
+        <article class="kpi">
+          <div class="label">Votos contra-governo</div>
+          <div class="value value-anti" id="kpi-anti">--</div>
+        </article>
+        <article class="kpi">
+          <div class="label">Votações nominais válidas</div>
+          <div class="value" id="kpi-votes">--</div>
+        </article>
+      </div>
+      <p class="hint" id="kpi-note">Carregando...</p>
+    </section>
+
+    <section class="panel">
+      <div class="grid-2">
+        <article>
+          <h2>Série mensal de governismo</h2>
+          <p class="hint">Percentual mensal de votos alinhados à orientação do Governo.</p>
+          <div class="chart-box"><canvas id="chart-monthly-rate"></canvas></div>
+        </article>
+        <article>
+          <h2>Pró x contra por mês</h2>
+          <p class="hint">Volume de votos pró-governo e contra-governo nas votações válidas.</p>
+          <div class="chart-box"><canvas id="chart-monthly-volume"></canvas></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Governos comparados</h2>
+      <p class="hint">Comparação do alinhamento médio entre períodos de governo na série disponível.</p>
+      <div class="chart-box"><canvas id="chart-governments"></canvas></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Governo</th>
+              <th>Alinhamento</th>
+              <th>Votos pró</th>
+              <th>Votos contra</th>
+              <th>Total de votos</th>
+              <th>Votações válidas</th>
+            </tr>
+          </thead>
+          <tbody id="table-governments"><tr><td colspan="6">Carregando...</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="tables">
+        <article>
+          <h2>Partidos: mais alinhados</h2>
+          <p class="hint" id="party-note">Filtro aplicado: --</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Partido</th>
+                  <th>Alinhamento</th>
+                  <th>Pró</th>
+                  <th>Contra</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody id="table-parties-pro"><tr><td colspan="5">Carregando...</td></tr></tbody>
+            </table>
+          </div>
+        </article>
+        <article>
+          <h2>Partidos: menos alinhados</h2>
+          <p class="hint">Mesma base do ranking ao lado, ordenada pelos menores percentuais.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Partido</th>
+                  <th>Alinhamento</th>
+                  <th>Pró</th>
+                  <th>Contra</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody id="table-parties-anti"><tr><td colspan="5">Carregando...</td></tr></tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+      <div class="chart-box"><canvas id="chart-parties"></canvas></div>
+      <p class="hint context-note" id="party-context-note">Contexto partidário carregando...</p>
+    </section>
+
+    <section class="panel">
+      <h2>Deputados com mais votos no recorte</h2>
+      <p class="hint" id="deputy-note">Carregando...</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Deputado</th>
+              <th>Partido</th>
+              <th>UF</th>
+              <th>Alinhamento</th>
+              <th>Pró</th>
+              <th>Contra</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="table-deputies"><tr><td colspan="7">Carregando...</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Votações recentes (com orientação do Governo)</h2>
+      <p class="hint">Amostra das votações mais novas no recorte selecionado. Clique no resumo para abrir o registro original da votação na Câmara.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Governo</th>
+              <th>Orientação</th>
+              <th>Alinhamento</th>
+              <th>Pró</th>
+              <th>Contra</th>
+              <th>Resumo da votação</th>
+            </tr>
+          </thead>
+          <tbody id="table-recent"><tr><td colspan="7">Carregando...</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Metodologia e fontes</h2>
+      <p class="hint">Critério usado: o voto é contado como <strong>pró-governo</strong> apenas quando é idêntico à orientação registrada para a bancada <strong>Governo</strong>. Qualquer outro voto válido entra como <strong>contra-governo</strong>.</p>
+      <ul class="sources" id="method-list"></ul>
+      <ul class="sources" id="notes-list"></ul>
+      <ul class="sources">
+        <li><a href="https://github.com/estadao/basometro" target="_blank" rel="noopener noreferrer">Código aberto do Basômetro original (Estadão)</a></li>
+        <li><a href="https://arte.estadao.com.br/politica/basometro/" target="_blank" rel="noopener noreferrer">Referência visual do Basômetro</a></li>
+        <li><a href="https://dadosabertos.camara.leg.br/swagger/api.html" target="_blank" rel="noopener noreferrer">Documentação da API de Dados Abertos da Câmara</a></li>
+        <li><a href="https://dadosabertos.camara.leg.br/arquivos/" target="_blank" rel="noopener noreferrer">Arquivos anuais CSV da Câmara (votações, votos e orientações)</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="../scripts/dashboard-update-schedule.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

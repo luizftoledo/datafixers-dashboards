@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Busca de aeronaves e proprietarios</title>
+  <meta
+    name="description"
+    content="Pesquise registros de aeronaves por prefixo, nome, CPF ou CNPJ em uma base estatica publicada a partir do CSV original da ANAC."
+  >
+  <meta property="og:title" content="Busca de aeronaves e proprietarios">
+  <meta
+    property="og:description"
+    content="Painel para consultar prefixo, operador, proprietarios e documentos de aeronaves com busca flexivel."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://luizftoledo.github.io/aeronaves-dashboard/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #eef4fb;
+      --panel: rgba(255, 255, 255, 0.94);
+      --ink: #102031;
+      --muted: #5d7085;
+      --line: rgba(16, 32, 49, 0.12);
+      --accent: #0a6dff;
+      --accent-2: #ff8f1f;
+      --accent-3: #0d8d7a;
+      --danger: #c63d3d;
+      --shadow: 0 24px 55px rgba(14, 37, 61, 0.14);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Space Grotesk", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(10, 109, 255, 0.18), transparent 32%),
+        radial-gradient(circle at top right, rgba(255, 143, 31, 0.16), transparent 28%),
+        linear-gradient(180deg, #edf4fb 0%, #f5f8fc 44%, #e8eef5 100%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: min(1240px, calc(100vw - 24px));
+      margin: 0 auto;
+      padding: 18px 0 40px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .quick-nav a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(16, 32, 49, 0.18);
+      background: rgba(255, 255, 255, 0.78);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
+    .hero {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(125deg, rgba(10, 109, 255, 0.12), transparent 36%),
+        linear-gradient(300deg, rgba(255, 143, 31, 0.12), transparent 34%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 24px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.95fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: "Chakra Petch", sans-serif;
+      line-height: 1.02;
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 5vw, 4rem);
+      max-width: 13ch;
+    }
+
+    .lede {
+      margin: 14px 0 0;
+      max-width: 72ch;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 34px;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(8, 20, 35, 0.9);
+      color: #eff6ff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .badge.soft {
+      background: rgba(255, 255, 255, 0.82);
+      color: var(--ink);
+      border: 1px solid rgba(16, 32, 49, 0.12);
+    }
+
+    .hero-note {
+      padding: 18px;
+      border-radius: 20px;
+      background:
+        linear-gradient(160deg, rgba(7, 24, 41, 0.95), rgba(12, 59, 116, 0.9));
+      color: #d8e9ff;
+      border: 1px solid rgba(181, 214, 255, 0.22);
+    }
+
+    .hero-note h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .hero-note ul {
+      margin: 0;
+      padding-left: 18px;
+      display: grid;
+      gap: 8px;
+      line-height: 1.5;
+      font-size: 0.92rem;
+    }
+
+    .hero-note strong {
+      color: #ffffff;
+    }
+
+    .search-shell {
+      display: grid;
+      gap: 14px;
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid rgba(16, 32, 49, 0.08);
+    }
+
+    .search-form {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 140px 120px;
+      gap: 10px;
+      align-items: end;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    input,
+    button {
+      font: inherit;
+    }
+
+    input {
+      width: 100%;
+      min-height: 52px;
+      border-radius: 16px;
+      border: 1px solid rgba(16, 32, 49, 0.16);
+      padding: 0.88rem 1rem;
+      background: rgba(255, 255, 255, 0.96);
+      color: var(--ink);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    input:focus {
+      outline: none;
+      border-color: rgba(10, 109, 255, 0.48);
+      box-shadow: 0 0 0 4px rgba(10, 109, 255, 0.14);
+    }
+
+    button {
+      min-height: 52px;
+      border: 0;
+      border-radius: 16px;
+      padding: 0.8rem 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 140ms ease, filter 140ms ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.02);
+    }
+
+    button:disabled {
+      cursor: wait;
+      opacity: 0.7;
+      transform: none;
+      filter: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #3a8fff);
+      color: #fff;
+      box-shadow: 0 16px 34px rgba(10, 109, 255, 0.24);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--ink);
+      border: 1px solid rgba(16, 32, 49, 0.14);
+    }
+
+    .examples {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .search-feedback {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 10px;
+      min-height: 42px;
+      padding: 0.7rem 0.9rem;
+      border-radius: 16px;
+      border: 1px solid rgba(16, 32, 49, 0.1);
+      background: rgba(246, 249, 253, 0.92);
+    }
+
+    .search-feedback[data-tone="ready"] {
+      background: rgba(10, 109, 255, 0.06);
+      border-color: rgba(10, 109, 255, 0.14);
+    }
+
+    .search-feedback[data-tone="success"] {
+      background: rgba(13, 141, 122, 0.08);
+      border-color: rgba(13, 141, 122, 0.18);
+    }
+
+    .search-feedback[data-tone="empty"] {
+      background: rgba(198, 61, 61, 0.08);
+      border-color: rgba(198, 61, 61, 0.18);
+    }
+
+    .search-feedback[data-tone="loading"] {
+      background: rgba(255, 143, 31, 0.1);
+      border-color: rgba(255, 143, 31, 0.22);
+    }
+
+    .search-feedback-count {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(11, 26, 44, 0.92);
+      color: #f4f8ff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+
+    .search-feedback-text {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .examples span {
+      font-size: 0.86rem;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .example-chip {
+      min-height: 38px;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(11, 26, 44, 0.9);
+      color: #dfeeff;
+      font-size: 0.88rem;
+      border: 1px solid rgba(177, 213, 255, 0.16);
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .footer-stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .footer-summary {
+      display: grid;
+      gap: 14px;
+      padding: 20px;
+    }
+
+    .footer-summary .metrics-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .footer-summary .metric {
+      min-height: 100%;
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(16, 32, 49, 0.08);
+      background: rgba(245, 248, 252, 0.96);
+    }
+
+    .metric {
+      padding: 18px;
+      display: grid;
+      gap: 8px;
+      align-content: start;
+    }
+
+    .metric-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .metric-value {
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-family: "Chakra Petch", sans-serif;
+    }
+
+    .metric-note {
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: 0.9rem;
+    }
+
+    .results-shell {
+      padding: 22px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .results-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+      gap: 18px;
+      align-items: end;
+    }
+
+    .results-title {
+      display: grid;
+      gap: 8px;
+    }
+
+    .results-title p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .load-box {
+      display: grid;
+      gap: 8px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(10, 109, 255, 0.06);
+      border: 1px solid rgba(10, 109, 255, 0.12);
+    }
+
+    .load-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .load-row strong {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.86rem;
+    }
+
+    .load-row span {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.4;
+    }
+
+    .load-bar {
+      width: 100%;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(16, 32, 49, 0.08);
+      overflow: hidden;
+    }
+
+    .load-fill {
+      display: block;
+      width: 0%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      transition: width 180ms ease;
+    }
+
+    .status-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      align-items: center;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .status-strip strong {
+      color: var(--ink);
+    }
+
+    .pagination {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(246, 249, 253, 0.95);
+      border: 1px solid rgba(16, 32, 49, 0.08);
+    }
+
+    .pagination[hidden] {
+      display: none !important;
+    }
+
+    .pagination-summary {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .pagination-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .pagination-page {
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-weight: 700;
+      min-width: 88px;
+      text-align: center;
+    }
+
+    .pagination-btn {
+      min-height: 40px;
+      padding: 0.5rem 0.9rem;
+      border-radius: 12px;
+      border: 1px solid rgba(16, 32, 49, 0.14);
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--ink);
+      box-shadow: none;
+    }
+
+    .empty-state {
+      padding: 24px;
+      border-radius: 20px;
+      border: 1px dashed rgba(16, 32, 49, 0.18);
+      background: rgba(248, 251, 255, 0.9);
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .results-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .record-card {
+      padding: 18px;
+      border-radius: 20px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 248, 253, 0.94));
+      border: 1px solid rgba(16, 32, 49, 0.1);
+      display: grid;
+      gap: 14px;
+    }
+
+    .record-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: start;
+    }
+
+    .record-prefix {
+      display: grid;
+      gap: 5px;
+    }
+
+    .record-prefix strong {
+      font-family: "Chakra Petch", sans-serif;
+      font-size: 1.55rem;
+      letter-spacing: 0.02em;
+    }
+
+    .record-prefix span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .record-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      background: rgba(16, 32, 49, 0.08);
+      color: var(--ink);
+    }
+
+    .pill.live {
+      background: rgba(13, 141, 122, 0.14);
+      color: #0f6d5f;
+    }
+
+    .pill.cancelled {
+      background: rgba(198, 61, 61, 0.14);
+      color: var(--danger);
+    }
+
+    .record-main {
+      display: grid;
+      gap: 10px;
+    }
+
+    .record-main h3 {
+      font-size: 1.2rem;
+    }
+
+    .record-main p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .record-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .detail {
+      min-height: 100%;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(245, 248, 252, 0.96);
+      border: 1px solid rgba(16, 32, 49, 0.08);
+    }
+
+    .detail-label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .detail-value {
+      display: block;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      word-break: break-word;
+    }
+
+    .detail-value.mono {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.88rem;
+    }
+
+    .owners-list {
+      display: grid;
+      gap: 6px;
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .owners-list li {
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .footer-grid > * {
+      min-width: 0;
+    }
+
+    .note-card {
+      min-width: 0;
+      padding: 20px;
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .note-card h2 {
+      font-size: 1.25rem;
+    }
+
+    .note-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .note-list li,
+    .note-list a,
+    .meta-row dd {
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .note-list a {
+      text-underline-offset: 0.14em;
+    }
+
+    .meta-dl {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+    }
+
+    .meta-row {
+      display: grid;
+      grid-template-columns: minmax(110px, 140px) minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+    }
+
+    .meta-row dt {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .meta-row dd {
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 1120px) {
+      .hero-grid,
+      .results-head,
+      .footer-grid,
+      .record-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .metrics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 800px) {
+      .page {
+        width: min(100vw - 14px, 100%);
+        padding-top: 14px;
+      }
+
+      .hero-inner,
+      .results-shell,
+      .note-card {
+        padding: 18px;
+      }
+
+      .hero-grid,
+      .results-head,
+      .search-form,
+      .metrics-grid,
+      .footer-grid,
+      .record-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .record-badges {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="quick-nav" aria-label="Navegacao rapida">
+      <a href="/">Voltar ao site</a>
+      <a href="#metodologia">Metodologia</a>
+      <a href="#limites">Limites</a>
+      <a href="#sobre-base">Sobre a base</a>
+    </nav>
+
+    <section class="hero panel">
+      <div class="hero-inner">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Painel jornalistico</p>
+            <h1>Busca de aeronaves e proprietarios</h1>
+            <p class="lede">
+              Pesquise por prefixo da aeronave, nome do operador ou proprietario, CPF ou CNPJ. A busca ignora
+              maiusculas, minusculas e acentos; para prefixos, CPF e CNPJ, tanto faz usar ou nao pontos, barras e
+              tracos.
+            </p>
+            <div class="badge-row">
+              <span class="badge" id="updated-badge">Atualizacao da base: carregando...</span>
+              <span class="badge soft" id="generated-badge">Snapshot local em preparo</span>
+            </div>
+          </div>
+
+          <aside class="hero-note">
+            <h2>Como funciona</h2>
+            <ul>
+              <li><strong>Prefixo:</strong> aceita formatos como <code>PR-AUD</code> ou <code>PRAUD</code>.</li>
+              <li><strong>Nome:</strong> aceita variacoes com e sem acento, como <code>Queiroz</code> e <code>Queiróz</code>.</li>
+              <li><strong>CPF/CNPJ:</strong> compara com ou sem pontuacao, como <code>09296295000160</code> ou <code>09.296.295/0001-60</code>.</li>
+              <li><strong>Fonte:</strong> a pagina usa um snapshot estatico do CSV original, sem depender do site da ANAC em tempo real.</li>
+            </ul>
+          </aside>
+        </div>
+
+        <section class="search-shell" aria-labelledby="search-title">
+          <form class="search-form" id="search-form">
+            <label class="field">
+              <span class="field-label" id="search-title">Busca unica</span>
+              <input
+                id="query"
+                name="query"
+                type="search"
+                autocomplete="off"
+                spellcheck="false"
+                placeholder="Ex.: PR-AUD, Azul, 09.296.295/0001-60, Savegnago"
+              >
+            </label>
+            <button class="btn-primary" id="btn-search" type="submit">Pesquisar</button>
+            <button class="btn-secondary" id="btn-clear" type="button">Limpar</button>
+          </form>
+
+          <div
+            class="search-feedback"
+            id="search-feedback"
+            data-tone="ready"
+            aria-live="polite"
+          >
+            <span class="search-feedback-count" id="search-feedback-count">Base pronta</span>
+            <span class="search-feedback-text" id="search-feedback-text">Digite um termo para consultar a base.</span>
+          </div>
+
+          <div class="examples" id="examples">
+            <span>Exemplos:</span>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="results-shell panel" aria-labelledby="results-title">
+      <div class="results-head">
+        <div class="results-title">
+          <h2 id="results-title">Resultados</h2>
+          <p id="status-line">Carregando a base estatica para pesquisa...</p>
+          <div class="status-strip" aria-live="polite">
+            <span id="results-summary">Digite um termo para consultar a base.</span>
+          </div>
+        </div>
+
+        <div class="load-box" aria-live="polite">
+          <div class="load-row">
+            <span id="load-status-label">Preparando dados da dashboard</span>
+            <strong id="load-status-summary">0%</strong>
+          </div>
+          <div class="load-bar">
+            <span class="load-fill" id="load-status-fill"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="empty-state" id="empty-state">
+        Digite um prefixo, nome, CPF ou CNPJ para procurar registros. Os resultados aparecem abaixo com operador,
+        proprietarios, documento, modelo e situacao da matricula.
+      </div>
+
+      <div class="pagination" id="pagination" hidden>
+        <div class="pagination-summary" id="pagination-summary">-</div>
+        <div class="pagination-controls">
+          <button class="pagination-btn" id="pagination-prev" type="button">Anterior</button>
+          <span class="pagination-page" id="pagination-page">Página 1</span>
+          <button class="pagination-btn" id="pagination-next" type="button">Próxima</button>
+        </div>
+      </div>
+
+      <div class="results-list" id="results-list" hidden></div>
+    </section>
+
+    <footer class="footer-stack">
+      <section class="panel footer-summary" aria-label="Resumo da base completa">
+        <h2>Resumo da base</h2>
+        <div class="metrics-grid">
+          <article class="metric">
+            <span class="metric-label">Registros na base</span>
+            <strong class="metric-value" id="metric-total">-</strong>
+            <span class="metric-note">Total de linhas publicadas neste snapshot.</span>
+          </article>
+          <article class="metric">
+            <span class="metric-label">Sem cancelamento</span>
+            <strong class="metric-value" id="metric-active">-</strong>
+            <span class="metric-note">Registros sem data de cancelamento informada no CSV.</span>
+          </article>
+          <article class="metric">
+            <span class="metric-label">Com cancelamento</span>
+            <strong class="metric-value" id="metric-cancelled">-</strong>
+            <span class="metric-note">Registros com data de cancelamento informada na fonte.</span>
+          </article>
+          <article class="metric">
+            <span class="metric-label">Operadores unicos</span>
+            <strong class="metric-value" id="metric-operators">-</strong>
+            <span class="metric-note">Quantidade de operadores distintos identificados no snapshot.</span>
+          </article>
+        </div>
+      </section>
+
+      <div class="footer-grid">
+        <section class="note-card panel" id="metodologia">
+          <h2>Metodologia</h2>
+          <ul class="note-list" id="methodology-list"></ul>
+        </section>
+
+        <section class="note-card panel" id="limites">
+          <h2>Limites</h2>
+          <ul class="note-list" id="limits-list"></ul>
+        </section>
+
+        <section class="note-card panel" id="sobre-base">
+          <h2>Sobre a base</h2>
+          <dl class="meta-dl">
+            <div class="meta-row">
+              <dt>Fonte</dt>
+              <dd id="meta-source">-</dd>
+            </div>
+            <div class="meta-row">
+              <dt>Atualizacao</dt>
+              <dd id="meta-updated">-</dd>
+            </div>
+            <div class="meta-row">
+              <dt>Gerado em</dt>
+              <dd id="meta-generated">-</dd>
+            </div>
+            <div class="meta-row">
+              <dt>UFs</dt>
+              <dd id="meta-ufs">-</dd>
+            </div>
+            <div class="meta-row">
+              <dt>Faixa de ano</dt>
+              <dd id="meta-years">-</dd>
+            </div>
+            <div class="meta-row">
+              <dt>Limite visual</dt>
+              <dd id="meta-limit">-</dd>
+            </div>
+          </dl>
+        </section>
+      </div>
+    </footer>
+  </main>
+
+  <script src="../ibama-dashboard/vendor/pako.min.js"></script>
+  <script src="./app.js?v=20260309-6"></script>
+</body>
+</html>
