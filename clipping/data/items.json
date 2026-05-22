@@ -1,5 +1,49 @@
 [
   {
+    "url": "https://www.bbc.com/portuguese/articles/c5y0kv55j11o",
+    "title": "Perguntamos às IAs em quem votar — veja o que elas responderam, mesmo proibidas de se posicionar",
+    "description": "Gemini e ChatGPT evitam indicar nomes; já o Grok prioriza Tarcísio e Bolsonaro, indica teste feito pela BBC News Brasil.",
+    "category_hint": "",
+    "relation_hint": "",
+    "notes": "",
+    "published_at": "2026-05-21T00:00:00+00:00",
+    "source_labels": [
+      "google-news-rss:\"Luiz Fernando Toledo\""
+    ],
+    "queries": [
+      "\"Luiz Fernando Toledo\""
+    ],
+    "site_name": "BBC News Brasil",
+    "author_names": [
+      "Luiz Fernando Toledo"
+    ],
+    "text_excerpt": "... icionar Crédito, BBC/EPA/Getty Images Legenda da foto, BBC News Brasil testou resposta de IAs a perguntas sobre preferência de candidatos nas eleições 2026 Article Information Author, Luiz Fernando Toledo Role, Da BBC News Brasil, em Londres Published 21 maio 2026 Tempo de leitura: 10 min Desde abril deste ano virou regra no Brasil que sistemas de inteligência artificial não podem sugerir, ranquear ou priorizar candi ...",
+    "canonical_url": "https://www.bbc.com/portuguese/articles/c5y0kv55j11o",
+    "resolved_url": "https://www.bbc.com/portuguese/articles/c5y0kv55j11o",
+    "status_code": 200,
+    "fetch_ok": true,
+    "content_type": "text/html; charset=utf-8",
+    "error": "",
+    "first_seen_at": "2026-05-22T16:07:52.219700+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
+    "domain": "bbc.com",
+    "published_date": "2026-05-21",
+    "first_seen_date": "2026-05-22",
+    "last_seen_date": "2026-05-22",
+    "id": "51818b1f1e849b09",
+    "category": "reportagem_autoral",
+    "category_label": "Reportagens publicadas por mim",
+    "relation": "autor",
+    "match_score": 13,
+    "matched_name_variants": [
+      "Luiz Fernando Toledo"
+    ],
+    "matched_identity_tokens": [
+      "bbc",
+      "londres"
+    ]
+  },
+  {
     "url": "https://www.bbc.com/portuguese/articles/clyp4e0n3eyo",
     "title": "Preso pela PF, pai de Vorcaro doou R$ 1 milhão ao partido de Zema em 2022",
     "description": "O empresário mineiro Henrique Vorcaro, pai do banqueiro Daniel Vorcaro, foi preso nesta quinta-feira (14) durante a sexta fase da Operação Compliance Zero, deflagrada pela Polícia Federal",
@@ -24,8 +68,8 @@
     "fetch_ok": true,
     "content_type": "text/html; charset=utf-8",
     "error": "",
-    "first_seen_at": "2026-05-22T10:46:02.563363+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "first_seen_at": "2026-05-22T16:07:52.219700+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2026-05-14",
     "first_seen_date": "2026-05-22",
@@ -69,8 +113,8 @@
     "fetch_ok": true,
     "content_type": "text/html; charset=utf-8",
     "error": "",
-    "first_seen_at": "2026-05-22T10:46:02.563363+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "first_seen_at": "2026-05-22T16:07:52.219700+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2026-05-14",
     "first_seen_date": "2026-05-22",
@@ -114,7 +158,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-05-22T10:46:02.563363+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2026-05-14",
     "first_seen_date": "2026-05-22",
@@ -156,7 +200,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-14T15:05:10.150250+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2026-04-14",
     "first_seen_date": "2026-04-14",
@@ -200,7 +244,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-29T15:35:46.824048+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2026-03-11",
     "first_seen_date": "2026-04-29",
@@ -242,7 +286,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-13T15:06:10.056878+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2026-02-26",
     "first_seen_date": "2026-04-13",
@@ -281,7 +325,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "bbc.com",
     "published_date": "2026-02-26",
@@ -296,15 +340,15 @@
       "Luiz Fernando Toledo"
     ],
     "matched_identity_tokens": [
-      "dados",
-      "bbc",
-      "pesquisador",
-      "oxford",
-      "cambridge",
-      "londres",
       "columbia",
+      "reporter",
+      "bbc",
+      "dados",
+      "pesquisador",
       "jornalismo",
-      "reporter"
+      "londres",
+      "oxford",
+      "cambridge"
     ]
   },
   {
@@ -331,7 +375,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [
       "Luiz Fernando Toledo"
     ],
@@ -376,7 +420,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-13T15:06:10.056878+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2026-02-12",
     "first_seen_date": "2026-04-13",
@@ -418,7 +462,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2026-02-09",
     "first_seen_date": "2026-03-09",
@@ -460,7 +504,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-13T15:06:10.056878+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2026-02-05",
     "first_seen_date": "2026-04-13",
@@ -502,7 +546,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2026-02-03",
     "first_seen_date": "2026-03-09",
@@ -544,7 +588,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-13T15:06:10.056878+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2026-01-31",
     "first_seen_date": "2026-04-13",
@@ -586,7 +630,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-13T15:06:10.056878+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2026-01-31",
     "first_seen_date": "2026-04-13",
@@ -605,7 +649,7 @@
     ]
   },
   {
-    "url": "https://bbc.com/portuguese/articles/cn76p0jjxz7o",
+    "url": "https://www.bbc.com/portuguese/articles/cn76p0jjxz7o",
     "title": "As previsões sobre inteligência artificial de 70 anos atrás que são realidade hoje",
     "description": "Desde os anos 1950, a trajetória da inteligência artificial tem sido marcada pelos mesmos dilemas: medo de que máquinas substituam humanos, a tendência de humanizar a tecnologia, o apego emocional que muitas pessoas desenvolvem por ela e as promessas ambiciosas que raramente se cumprem.",
     "category_hint": "",
@@ -619,15 +663,15 @@
       "\"Luiz Fernando Toledo\""
     ],
     "site_name": "BBC News Brasil",
-    "text_excerpt": "... rtificial de 70 anos atrás que são realidade hoje Crédito, Getty Images Legenda da foto, Joseph Weizenbaum, criador do primeiro chatbot, Eliza, de 1966 Article Information Author, Luiz Fernando Toledo Role, Da BBC News Brasil em Londres 31 janeiro 2026 Tempo de leitura: 9 min Recorrer a um chatbot (como o ChatGPT, Gemini ou Claude) em busca de terapia , ou até mesmo de um novo amigo, pode soar como uma história contr ...",
-    "canonical_url": "https://bbc.com/portuguese/articles/cn76p0jjxz7o",
-    "resolved_url": "https://bbc.com/portuguese/articles/cn76p0jjxz7o",
-    "status_code": null,
-    "fetch_ok": false,
-    "content_type": "",
-    "error": "HTTPSConnectionPool(host='www.bbc.com', port=443): Read timed out. (read timeout=30) | jina: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)",
+    "text_excerpt": "... rtificial de 70 anos atrás que são realidade hoje Crédito, Getty Images Legenda da foto, Joseph Weizenbaum, criador do primeiro chatbot, Eliza, de 1966 Article Information Author, Luiz Fernando Toledo Role, Da BBC News Brasil em Londres Published 31 janeiro 2026 Tempo de leitura: 9 min Recorrer a um chatbot (como o ChatGPT, Gemini ou Claude) em busca de terapia , ou até mesmo de um novo amigo, pode soar como uma hist ...",
+    "canonical_url": "https://www.bbc.com/portuguese/articles/cn76p0jjxz7o",
+    "resolved_url": "https://www.bbc.com/portuguese/articles/cn76p0jjxz7o",
+    "status_code": 200,
+    "fetch_ok": true,
+    "content_type": "text/html; charset=utf-8",
+    "error": "",
     "first_seen_at": "2026-04-12T14:26:23.806679+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [
       "Luiz Fernando Toledo"
     ],
@@ -672,7 +716,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-13T15:06:10.056878+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2026-01-30",
     "first_seen_date": "2026-04-13",
@@ -713,7 +757,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-13T15:06:10.056878+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2026-01-27",
     "first_seen_date": "2026-04-13",
@@ -758,7 +802,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2026-01-26",
     "first_seen_date": "2026-03-09",
@@ -800,7 +844,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-13T15:06:10.056878+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2026-01-16",
     "first_seen_date": "2026-04-13",
@@ -842,7 +886,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-13T15:06:10.056878+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2026-01-15",
     "first_seen_date": "2026-04-13",
@@ -857,8 +901,8 @@
     ],
     "matched_identity_tokens": [
       "bbc",
-      "professor",
-      "londres"
+      "londres",
+      "professor"
     ]
   },
   {
@@ -885,7 +929,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-13T15:06:10.056878+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2026-01-09",
     "first_seen_date": "2026-04-13",
@@ -927,7 +971,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-13T15:06:10.056878+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2026-01-06",
     "first_seen_date": "2026-04-13",
@@ -942,8 +986,8 @@
     ],
     "matched_identity_tokens": [
       "bbc",
-      "professor",
-      "londres"
+      "londres",
+      "professor"
     ]
   },
   {
@@ -970,7 +1014,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2026-01-05",
     "first_seen_date": "2026-03-09",
@@ -985,9 +1029,9 @@
     ],
     "matched_identity_tokens": [
       "bbc",
-      "professor",
+      "londres",
       "oxford",
-      "londres"
+      "professor"
     ]
   },
   {
@@ -1013,7 +1057,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-12T14:26:23.806679+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [
       "Luiz Fernando Toledo"
     ],
@@ -1058,7 +1102,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-13T15:06:10.056878+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2025-12-17",
     "first_seen_date": "2026-04-13",
@@ -1097,7 +1141,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-13T15:06:10.056878+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "bbc.com",
     "published_date": "2025-12-12",
@@ -1140,7 +1184,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-13T15:06:10.056878+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2025-12-08",
     "first_seen_date": "2026-04-13",
@@ -1182,7 +1226,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-13T15:06:10.056878+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2025-12-08",
     "first_seen_date": "2026-04-13",
@@ -1224,7 +1268,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2025-12-05",
     "first_seen_date": "2026-03-09",
@@ -1265,7 +1309,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "bbc.com",
     "published_date": "2025-11-26",
@@ -1280,10 +1324,10 @@
       "Luiz Fernando Toledo"
     ],
     "matched_identity_tokens": [
+      "reporter",
       "bbc",
-      "professor",
       "pesquisador",
-      "reporter"
+      "professor"
     ]
   },
   {
@@ -1311,7 +1355,7 @@
     "content_type": "text/html; charset=UTF-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "blogfca.pucminas.br",
     "published_date": "2025-11-18",
     "first_seen_date": "2026-03-09",
@@ -1325,11 +1369,11 @@
       "Luiz Fernando Toledo"
     ],
     "matched_identity_tokens": [
-      "dados",
       "bbc",
-      "londres",
+      "dados",
+      "fiquem sabendo",
       "jornalismo",
-      "fiquem sabendo"
+      "londres"
     ]
   },
   {
@@ -1358,7 +1402,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2025-11-13",
     "first_seen_date": "2026-03-09",
@@ -1399,7 +1443,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-05-02T14:35:29.442326+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [
       "Luiz Fernando Toledo"
     ],
@@ -1417,8 +1461,8 @@
     ],
     "matched_identity_tokens": [
       "bbc",
-      "professor",
-      "londres"
+      "londres",
+      "professor"
     ]
   },
   {
@@ -1447,7 +1491,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2025-11-05",
     "first_seen_date": "2026-03-09",
@@ -1492,7 +1536,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2025-10-18",
     "first_seen_date": "2026-03-09",
@@ -1536,7 +1580,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-05-22T10:46:02.563363+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2025-10-05",
     "first_seen_date": "2026-05-22",
@@ -1580,7 +1624,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-26T14:29:35.070072+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2025-10-01",
     "first_seen_date": "2026-04-26",
@@ -1621,7 +1665,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-05-10T14:41:03.433034+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "bbc.com",
     "published_date": "2025-09-15",
@@ -1636,8 +1680,8 @@
       "Luiz Fernando Toledo"
     ],
     "matched_identity_tokens": [
-      "bbc",
-      "reporter"
+      "reporter",
+      "bbc"
     ]
   },
   {
@@ -1666,7 +1710,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2025-08-18",
     "first_seen_date": "2026-03-09",
@@ -1710,7 +1754,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-17T15:11:01.307254+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2025-08-01",
     "first_seen_date": "2026-03-17",
@@ -1754,7 +1798,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-16T15:16:14.943118+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2025-07-31",
     "first_seen_date": "2026-04-16",
@@ -1768,8 +1812,8 @@
       "Luiz Fernando Toledo"
     ],
     "matched_identity_tokens": [
-      "dados",
       "bbc",
+      "dados",
       "londres"
     ]
   },
@@ -1799,7 +1843,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-17T15:11:01.307254+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2025-07-31",
     "first_seen_date": "2026-03-17",
@@ -1843,7 +1887,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-05T14:22:44.641735+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2025-07-18",
     "first_seen_date": "2026-04-05",
@@ -1887,7 +1931,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2025-06-25",
     "first_seen_date": "2026-03-09",
@@ -1931,7 +1975,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-05-09T14:38:37.383027+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2025-05-03",
     "first_seen_date": "2026-05-09",
@@ -1975,7 +2019,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-09T17:46:17.825922+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2025-04-19",
     "first_seen_date": "2026-03-09",
@@ -2019,7 +2063,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-29T15:35:46.824048+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2024-11-25",
     "first_seen_date": "2026-04-29",
@@ -2063,7 +2107,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-29T15:35:46.824048+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2024-11-11",
     "first_seen_date": "2026-04-29",
@@ -2109,7 +2153,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-18T14:51:04.673611+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2024-10-21",
     "first_seen_date": "2026-03-18",
@@ -2153,7 +2197,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-17T01:30:43.856870+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2024-10-16",
     "first_seen_date": "2026-03-17",
@@ -2197,7 +2241,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-17T15:11:01.307254+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2024-10-01",
     "first_seen_date": "2026-03-17",
@@ -2241,7 +2285,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-27T15:28:10.274652+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "bbc.com",
     "published_date": "2024-09-26",
     "first_seen_date": "2026-04-27",
@@ -2283,7 +2327,7 @@
     "content_type": "text/html; charset=UTF-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "ojoioeotrigo.com.br",
     "published_date": "2024-07-03",
     "first_seen_date": "2026-03-09",
@@ -2322,7 +2366,7 @@
     "content_type": "text/html; charset=UTF-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "apublica.org",
     "published_date": "2024-05-19",
     "first_seen_date": "2026-03-09",
@@ -2360,7 +2404,7 @@
     "content_type": "text/html; charset=UTF-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "cima.ned.org",
     "published_date": "2024-03-19",
@@ -2404,7 +2448,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-17T15:11:01.307254+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "sbtnews.sbt.com.br",
     "published_date": "2023-06-30",
     "first_seen_date": "2026-03-17",
@@ -2418,8 +2462,8 @@
       "Luiz Fernando Toledo"
     ],
     "matched_identity_tokens": [
-      "abraji",
-      "pesquisador"
+      "pesquisador",
+      "abraji"
     ]
   },
   {
@@ -2448,7 +2492,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-05-06T15:54:23.584370+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "piaui.uol.com.br",
     "published_date": "2023-04-26",
     "first_seen_date": "2026-05-06",
@@ -2487,7 +2531,7 @@
     "content_type": "text/html; charset=UTF-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "apublica.org",
     "published_date": "2023-03-01",
     "first_seen_date": "2026-03-09",
@@ -2525,7 +2569,7 @@
     "content_type": "text/html; charset=UTF-8",
     "error": "",
     "first_seen_at": "2026-03-17T15:11:01.307254+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "g1.globo.com",
     "published_date": "2023-01-17",
@@ -2541,9 +2585,9 @@
     ],
     "matched_identity_tokens": [
       "transparencia",
-      "transparência",
+      "jornalista",
       "dados",
-      "jornalista"
+      "transparência"
     ]
   },
   {
@@ -2566,7 +2610,7 @@
     "content_type": "text/html; charset=UTF-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "brown.columbia.edu",
     "site_name": "brown.columbia.edu",
@@ -2604,7 +2648,7 @@
     "content_type": "text/html; charset=UTF-8",
     "error": "",
     "first_seen_at": "2026-04-29T15:35:46.824048+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "reutersinstitute.politics.ox.ac.uk",
     "site_name": "Reuters Institute for the Study of Journalism",
@@ -2621,12 +2665,12 @@
       "Luiz Fernando Toledo Antunes"
     ],
     "matched_identity_tokens": [
-      "reuters institute",
-      "investigative",
-      "abraji",
-      "journalist",
       "data journalism",
-      "fiquem sabendo"
+      "reuters institute",
+      "fiquem sabendo",
+      "investigative",
+      "journalist",
+      "abraji"
     ],
     "text_excerpt": "Luiz Fernando Toledo Antunes | Reuters Institute for the Study of Journalism Skip to main content Digital News Report Digital News Report Executive summary Interactive Country data Lee en español Trends and Predictions Our Climate Network O ..."
   },
@@ -2651,7 +2695,7 @@
     "content_type": "text/plain; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-09T17:46:17.825922+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "piaui.folha.uol.com.br",
     "published_date": "2021-02-06",
@@ -2692,7 +2736,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-05-22T10:46:02.563363+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "cnnbrasil.com.br",
     "published_date": "2020-08-19",
@@ -2733,7 +2777,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-05-22T10:46:02.563363+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "cnnbrasil.com.br",
     "published_date": "2020-06-26",
@@ -2774,7 +2818,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-05-22T10:46:02.563363+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "cnnbrasil.com.br",
     "published_date": "2020-04-24",
@@ -2789,56 +2833,8 @@
       "Luiz Fernando Toledo"
     ],
     "matched_identity_tokens": [
-      "cnn",
-      "dados"
-    ]
-  },
-  {
-    "url": "https://latamjournalismreview.org/pt-br/articles/jornalistas-brasileiros-criam-forca-tarefa-para-obter-documentos-colocados-sob-sigilo-por-orgaos-publicos/",
-    "title": "Jornalistas brasileiros criam força-tarefa para obter documentos colocados sob sigilo por órgãos públicos",
-    "description": "Jornalistas brasileiros criam força-tarefa para obter documentos colocados sob sigilo por órgãos públicos Acesso a informação. Latin American Journalism Review by The Knight Center at The University of Texas at Austin.",
-    "category_hint": "",
-    "relation_hint": "",
-    "notes": "",
-    "published_at": "2019-02-26T23:54:33+00:00",
-    "source_labels": [
-      "google-news-rss:\"Luiz Fernando Toledo\""
-    ],
-    "queries": [
-      "\"Luiz Fernando Toledo\""
-    ],
-    "site_name": "LatAm Journalism Review by the Knight Center",
-    "author_names": [
-      "Alessandra Monnerat"
-    ],
-    "text_excerpt": "... rdo com o G1. No dia 27 de fevereiro, o governo recuou e revogou trechos do decreto , segundo o Estadão. “Quanto mais transparência sobre o sigilo, melhor”, diz o vice-presidente do Fiquem Sabendo, Luiz Fernando Toledo, ao Centro Knight . “A existência de sigilo é importante, realmente há documentos importantes para a segurança nacional e a ciência. O problema é que ninguém sabe como isso é colocado, e agora temos to ...",
-    "canonical_url": "https://latamjournalismreview.org/pt-br/articles/jornalistas-brasileiros-criam-forca-tarefa-para-obter-documentos-colocados-sob-sigilo-por-orgaos-publicos/",
-    "resolved_url": "https://latamjournalismreview.org/pt-br/articles/jornalistas-brasileiros-criam-forca-tarefa-para-obter-documentos-colocados-sob-sigilo-por-orgaos-publicos/",
-    "status_code": 200,
-    "fetch_ok": true,
-    "content_type": "text/html; charset=UTF-8",
-    "error": "",
-    "first_seen_at": "2026-05-22T10:46:02.563363+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
-    "domain": "latamjournalismreview.org",
-    "published_date": "2019-02-26",
-    "first_seen_date": "2026-05-22",
-    "last_seen_date": "2026-05-22",
-    "id": "0a262e48ba5fe910",
-    "category": "mencao",
-    "category_label": "Menções ao meu nome",
-    "relation": "mencionado",
-    "match_score": 5,
-    "matched_name_variants": [
-      "Luiz Fernando Toledo"
-    ],
-    "matched_identity_tokens": [
-      "transparencia",
-      "transparência",
-      "jornalista",
-      "estadão",
-      "estadao",
-      "fiquem sabendo"
+      "dados",
+      "cnn"
     ]
   },
   {
@@ -2864,7 +2860,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-05-22T10:46:02.563363+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "estadao.com.br",
     "published_date": null,
@@ -2879,8 +2875,8 @@
       "Luiz Fernando Toledo"
     ],
     "matched_identity_tokens": [
-      "estadão",
-      "estadao"
+      "estadao",
+      "estadão"
     ]
   },
   {
@@ -2906,7 +2902,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-05-06T15:54:23.584370+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "estadao.com.br",
     "published_date": null,
@@ -2921,8 +2917,8 @@
       "Luiz Fernando Toledo"
     ],
     "matched_identity_tokens": [
-      "estadão",
-      "estadao"
+      "estadao",
+      "estadão"
     ]
   },
   {
@@ -2948,7 +2944,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-05-04T15:34:18.306957+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "estadao.com.br",
     "published_date": null,
@@ -2963,8 +2959,8 @@
       "Luiz Fernando Toledo"
     ],
     "matched_identity_tokens": [
-      "estadão",
-      "estadao"
+      "estadao",
+      "estadão"
     ]
   },
   {
@@ -2990,7 +2986,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-05-03T14:35:05.058691+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "estadao.com.br",
     "published_date": null,
@@ -3005,8 +3001,8 @@
       "Luiz Fernando Toledo"
     ],
     "matched_identity_tokens": [
-      "estadão",
-      "estadao"
+      "estadao",
+      "estadão"
     ]
   },
   {
@@ -3032,7 +3028,7 @@
     "content_type": "text/html; charset=UTF-8",
     "error": "",
     "first_seen_at": "2026-05-03T14:35:05.058691+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "estadao.com.br",
     "published_date": null,
@@ -3047,8 +3043,8 @@
       "Luiz Fernando Toledo"
     ],
     "matched_identity_tokens": [
-      "estadão",
-      "estadao"
+      "estadao",
+      "estadão"
     ]
   },
   {
@@ -3076,7 +3072,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-05-02T14:35:29.442326+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "estadao.com.br",
     "published_date": null,
@@ -3091,9 +3087,9 @@
       "Luiz Fernando Toledo"
     ],
     "matched_identity_tokens": [
+      "estadao",
       "dados",
-      "estadão",
-      "estadao"
+      "estadão"
     ]
   },
   {
@@ -3119,7 +3115,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-25T14:29:53.064519+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "estadao.com.br",
     "published_date": null,
@@ -3134,10 +3130,10 @@
       "Luiz Fernando Toledo"
     ],
     "matched_identity_tokens": [
-      "professor",
-      "pesquisador",
+      "estadao",
       "estadão",
-      "estadao"
+      "pesquisador",
+      "professor"
     ]
   },
   {
@@ -3162,7 +3158,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-04-16T15:16:14.943118+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "abraji.org.br",
     "site_name": "abraji.org.br",
@@ -3178,13 +3174,13 @@
       "Luiz Fernando Toledo"
     ],
     "matched_identity_tokens": [
-      "investigativo",
-      "abraji",
+      "reporter",
       "bbc",
-      "professor",
       "jornalista",
+      "investigativo",
       "jornalismo",
-      "reporter"
+      "abraji",
+      "professor"
     ]
   },
   {
@@ -3212,7 +3208,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-18T14:51:04.673611+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "estadao.com.br",
     "published_date": null,
@@ -3228,8 +3224,8 @@
       "Luiz Fernando Toledo Antunes"
     ],
     "matched_identity_tokens": [
-      "estadão",
-      "estadao"
+      "estadao",
+      "estadão"
     ]
   },
   {
@@ -3255,7 +3251,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-17T01:30:43.856870+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "estadao.com.br",
     "published_date": null,
@@ -3270,8 +3266,8 @@
       "Luiz Fernando Toledo"
     ],
     "matched_identity_tokens": [
-      "estadão",
-      "estadao"
+      "estadao",
+      "estadão"
     ]
   },
   {
@@ -3297,7 +3293,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-17T01:30:43.856870+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "estadao.com.br",
     "published_date": null,
@@ -3312,8 +3308,8 @@
       "Luiz Fernando Toledo"
     ],
     "matched_identity_tokens": [
-      "estadão",
-      "estadao"
+      "estadao",
+      "estadão"
     ]
   },
   {
@@ -3336,7 +3332,7 @@
     "content_type": "text/html; charset=UTF-8",
     "error": "",
     "first_seen_at": "2026-03-17T01:30:43.856870+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "g1.globo.com",
     "site_name": "g1.globo.com",
@@ -3374,7 +3370,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "estadao.com.br",
     "published_date": null,
@@ -3389,8 +3385,8 @@
       "Luiz Fernando Toledo"
     ],
     "matched_identity_tokens": [
-      "estadão",
-      "estadao"
+      "estadao",
+      "estadão"
     ]
   },
   {
@@ -3413,7 +3409,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "talks.ox.ac.uk",
     "site_name": "talks.ox.ac.uk",
@@ -3429,9 +3425,9 @@
       "Luiz Fernando Toledo"
     ],
     "matched_identity_tokens": [
+      "polis",
       "professor",
-      "cambridge",
-      "polis"
+      "cambridge"
     ]
   },
   {
@@ -3453,7 +3449,7 @@
     "content_type": "",
     "error": "HTTPSConnectionPool(host='devstudies.cam.ac.uk', port=443): Max retries exceeded with url: /news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil (Caused by NameResolutionError(\"HTTPSConnection(host='devstudies.cam.ac.uk', port=443): Failed to resolve 'devstudies.cam.ac.uk' ([Errno -5] No address associated with hostname)\")) | jina: 422 Client Error: Unprocessable Entity for url: https://r.jina.ai/http://https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "devstudies.cam.ac.uk",
     "site_name": "devstudies.cam.ac.uk",
@@ -3496,7 +3492,7 @@
     "content_type": "text/html; charset=UTF-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "domain": "tvgazeta.com.br",
     "published_date": null,
     "first_seen_date": "2026-03-09",
@@ -3534,7 +3530,7 @@
     "content_type": "text/html; charset=UTF-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "ojoioeotrigo.com.br",
     "published_date": null,
@@ -3574,7 +3570,7 @@
     "content_type": "text/html; charset=UTF-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "intercept.com.br",
     "published_date": null,
@@ -3589,19 +3585,19 @@
       "Luiz Fernando Toledo"
     ],
     "matched_identity_tokens": [
-      "investigativo",
-      "cnn",
-      "abraji",
-      "dados",
+      "estadao",
       "occrp",
-      "pesquisador",
-      "oxford",
       "columbia",
       "jornalista",
+      "dados",
       "estadão",
+      "investigativo",
+      "fiquem sabendo",
+      "pesquisador",
       "jornalismo",
-      "estadao",
-      "fiquem sabendo"
+      "abraji",
+      "oxford",
+      "cnn"
     ]
   },
   {
@@ -3625,7 +3621,7 @@
     "content_type": "text/html; charset=UTF-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "apublica.org",
     "published_date": null,
@@ -3664,7 +3660,7 @@
     "content_type": "text/html; charset=UTF-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "icfj.org",
     "published_date": null,
@@ -3702,7 +3698,7 @@
     "content_type": "text/html; charset=UTF-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "institutoling.org.br",
     "site_name": "institutoling.org.br",
@@ -3718,12 +3714,12 @@
       "Luiz Fernando Toledo"
     ],
     "matched_identity_tokens": [
-      "abraji",
-      "dados",
       "data journalism",
       "jornalista",
+      "dados",
+      "fiquem sabendo",
       "jornalismo",
-      "fiquem sabendo"
+      "abraji"
     ]
   },
   {
@@ -3747,7 +3743,7 @@
     "content_type": "text/plain; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "escavador.com",
     "published_date": null,
@@ -3784,7 +3780,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "scielo.br",
     "site_name": "scielo.br",
@@ -3822,7 +3818,7 @@
     "content_type": "text/html; charset=utf-8",
     "error": "",
     "first_seen_at": "2026-03-09T13:42:31.137294+00:00",
-    "last_seen_at": "2026-05-22T10:46:02.563363+00:00",
+    "last_seen_at": "2026-05-22T16:07:52.219700+00:00",
     "author_names": [],
     "domain": "repositorio.fgv.br",
     "site_name": "repositorio.fgv.br",

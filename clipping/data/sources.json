@@ -11,20 +11,20 @@
     }
   },
   "enrich": {
-    "fetched": 66,
-    "reused": 31,
+    "fetched": 62,
+    "reused": 35,
     "kept": 90,
     "dropped": 7,
     "categories": {
       "perfil_bio": 17,
-      "reportagem_autoral": 60,
-      "mencao": 9,
+      "reportagem_autoral": 61,
+      "mencao": 8,
       "entrevista": 1,
       "citacao_fonte": 2,
       "eco_repercussao": 1
     },
     "domains": {
-      "bbc.com": 51,
+      "bbc.com": 52,
       "intercept.com.br": 1,
       "piaui.folha.uol.com.br": 1,
       "apublica.org": 3,
@@ -46,21 +46,12 @@
       "piaui.uol.com.br": 1,
       "abraji.org.br": 1,
       "sbtnews.sbt.com.br": 1,
-      "latamjournalismreview.org": 1,
       "cnnbrasil.com.br": 3
     },
     "errors": [
       {
-        "url": "https://bbc.com/portuguese/articles/cn76p0jjxz7o",
-        "error": "HTTPSConnectionPool(host='www.bbc.com', port=443): Read timed out. (read timeout=30) | jina: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)"
-      },
-      {
         "url": "https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil",
         "error": "HTTPSConnectionPool(host='devstudies.cam.ac.uk', port=443): Max retries exceeded with url: /news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil (Caused by NameResolutionError(\"HTTPSConnection(host='devstudies.cam.ac.uk', port=443): Failed to resolve 'devstudies.cam.ac.uk' ([Errno -5] No address associated with hostname)\")) | jina: 422 Client Error: Unprocessable Entity for url: https://r.jina.ai/http://https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil"
-      },
-      {
-        "url": "https://piaui.uol.com.br/web/transparencia-tarja-preta",
-        "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) | jina: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)"
       }
     ]
   }
