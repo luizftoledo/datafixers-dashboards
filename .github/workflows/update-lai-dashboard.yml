@@ -1,0 +1,45 @@
+name: Update LAI Dashboard Data
+
+on:
+  schedule:
+    - cron: "40 13 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pandas
+
+      - name: Build LAI data
+        run: python scripts/build_lai_dashboard_sources.py
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet -- lai/data; then
+            echo "No LAI data changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lai/data
+          git commit -m "data(lai): atualiza datasets"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main || true
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 5))
+          done
+          exit 1
