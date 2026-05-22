@@ -46,6 +46,7 @@ from playwright.sync_api import Error as PlaywrightError
 from playwright.sync_api import sync_playwright
 
 from lulometro_people_index import build_people_index
+from lulometro_bluesky import fetch_all_bluesky_records
 
 try:
     from pypdf import PdfReader
@@ -470,6 +471,8 @@ def is_bot_challenge(text: str) -> bool:
         "evitar o acesso automatizado" in sample
         or "qual codigo esta sendo exibido" in sample
         or "support id" in sample
+        or "request rejected" in sample
+        or "the requested url was rejected" in sample
     )
 
 
@@ -1407,6 +1410,11 @@ def main() -> int:
         default=3,
         help="Skip URLs that already failed this many detail attempts",
     )
+    parser.add_argument(
+        "--skip-bluesky",
+        action="store_true",
+        help="Pula raspagem do Bluesky (perfis em lulometro_bluesky.BLUESKY_ACCOUNTS)",
+    )
     args = parser.parse_args()
 
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -1676,6 +1684,27 @@ def main() -> int:
                 filtered_out += 1
                 continue
             normalized.append(rec)
+
+        # ---- Bluesky (fonte adicional) ----
+        if not args.skip_bluesky:
+            try:
+                print("→ Raspando Bluesky...", flush=True)
+                bsky_records = fetch_all_bluesky_records()
+                normalized.extend(bsky_records)
+            except Exception as exc:
+                crawl_errors.append({
+                    "scope": "bluesky",
+                    "url": "",
+                    "error": f"Bluesky fetch failed: {exc}",
+                })
+        else:
+            # Preserva posts do Bluesky que já estavam no records.jsonl.gz
+            preserved_bsky = [
+                r for r in existing_records.values() if r.get("source") == "bluesky"
+            ]
+            if preserved_bsky:
+                print(f"→ Preservando {len(preserved_bsky)} posts Bluesky de execução anterior", flush=True)
+                normalized.extend(preserved_bsky)
 
         records_sorted = sort_records(normalized)
         save_records(records_sorted)
