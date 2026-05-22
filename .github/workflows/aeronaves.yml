@@ -1,0 +1,51 @@
+name: Update Aeronaves Dashboard Data
+
+on:
+  schedule:
+    # 09:30 horario de Brasilia/Fortaleza ~= 12:30 UTC
+    - cron: "30 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-commit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Update aeronaves data
+        run: |
+          python scripts/update_aeronaves_dashboard_data.py
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet -- aeronaves/data; then
+            echo "No aeronaves data changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add aeronaves/data
+          git commit -m "chore(data): update aeronaves-dashboard dataset"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep $((attempt * 5))
+          done
+          echo "Push failed after retries."
+          exit 1
