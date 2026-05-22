@@ -2,7 +2,8 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#fafaf8">
   <title>Basômetro da Câmara - apoio ao governo</title>
   <meta name="description" content="Monitor do alinhamento de deputados à orientação do governo em votações nominais da Câmara, com série mensal, rankings e exportação CSV.">
   <meta property="og:title" content="Basômetro da Câmara - apoio ao governo">
@@ -29,6 +30,7 @@
     }
 
     * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
 
     body {
       margin: 0;
@@ -37,9 +39,14 @@
       background: linear-gradient(180deg, #f7f7f4 0%, #efefe9 100%);
     }
 
+    /* Mobile-first base */
     .page {
-      width: min(1260px, 96vw);
-      margin: 1.1rem auto 2.2rem;
+      width: 100%;
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 1rem 16px 2rem;
+      padding-left: max(16px, env(safe-area-inset-left));
+      padding-right: max(16px, env(safe-area-inset-right));
       display: grid;
       gap: 0.9rem;
     }
@@ -56,15 +63,18 @@
       background: #fff;
       color: #3d3a34;
       text-decoration: none;
-      padding: 0.38rem 0.76rem;
-      font-size: 0.82rem;
+      padding: 0.6rem 0.95rem;
+      font-size: 0.85rem;
       font-weight: 700;
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
     }
 
     .hero,
     .panel {
       border: 1px solid var(--line);
-      border-radius: 16px;
+      border-radius: 14px;
       background: var(--panel);
       box-shadow: var(--shadow);
       padding: 0.95rem;
@@ -72,14 +82,17 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(1.28rem, 2.2vw, 2.08rem);
-      line-height: 1.18;
+      font-size: clamp(1.28rem, 5.4vw, 2.08rem);
+      line-height: 1.2;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
 
     h2 {
       margin: 0;
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       line-height: 1.3;
+      word-wrap: break-word;
     }
 
     .sub {
@@ -88,10 +101,11 @@
       font-size: 0.93rem;
       line-height: 1.5;
       max-width: 940px;
+      word-wrap: break-word;
     }
 
     .status-row {
-      margin-top: 0.64rem;
+      margin-top: 0.7rem;
       display: flex;
       flex-wrap: wrap;
       gap: 0.45rem;
@@ -101,30 +115,30 @@
       border: 1px solid var(--line);
       border-radius: 999px;
       background: #faf9f6;
-      padding: 0.25rem 0.58rem;
+      padding: 0.32rem 0.65rem;
       font-size: 0.82rem;
       color: var(--muted);
     }
 
     .update-schedule-note {
-      margin: 0.45rem 0 0;
+      margin: 0.55rem 0 0;
       color: var(--muted);
-      font-size: 0.84rem;
-      line-height: 1.45;
+      font-size: 0.86rem;
+      line-height: 1.5;
     }
 
     .scraper-health-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 34px;
-      padding: 0.24rem 0.68rem;
+      min-height: 40px;
+      padding: 0.32rem 0.78rem;
       border-radius: 999px;
       border: 1px solid #d6cfbf;
       background: #efe6cf;
       color: #5a5346;
       text-decoration: none;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 800;
       letter-spacing: 0.01em;
     }
@@ -147,16 +161,17 @@
       color: #5a5346;
     }
 
+    /* Mobile filters: stacked */
     .filters {
-      margin-top: 0.7rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.52rem;
-      align-items: center;
+      margin-top: 0.8rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
+      align-items: stretch;
     }
 
     .filters label {
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       font-weight: 700;
       color: #4d4a45;
     }
@@ -167,10 +182,21 @@
       border-radius: 9px;
       background: #fff;
       color: #2d2b27;
-      font-size: 0.84rem;
-      min-height: 34px;
-      padding: 0.2rem 0.5rem;
+      font-size: 16px;
+      min-height: 44px;
+      padding: 12px 14px;
       font-family: inherit;
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .filters select {
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23888' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      background-size: 10px;
+      padding-right: 32px;
     }
 
     .btn-export {
@@ -178,28 +204,30 @@
       border-radius: 9px;
       background: #e9f4fb;
       color: #164663;
-      font-size: 0.82rem;
-      min-height: 34px;
-      padding: 0.2rem 0.58rem;
+      font-size: 0.92rem;
+      min-height: 44px;
+      padding: 12px 16px;
       font-family: inherit;
       font-weight: 700;
       cursor: pointer;
+      width: 100%;
     }
 
     .btn-export:hover {
       background: #dbedf8;
     }
 
+    /* Mobile: KPIs em 1 coluna */
     .kpis {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: 1fr;
       gap: 0.55rem;
     }
 
     .kpi {
       border: 1px solid var(--line);
       border-radius: 13px;
-      padding: 0.66rem 0.72rem;
+      padding: 0.8rem 0.85rem;
       background: #fff;
       min-height: 86px;
     }
@@ -214,16 +242,18 @@
     .kpi .value {
       margin-top: 0.22rem;
       font-family: "IBM Plex Mono", monospace;
-      font-size: clamp(1rem, 1.5vw, 1.24rem);
+      font-size: clamp(1.1rem, 4.5vw, 1.24rem);
       line-height: 1.25;
+      word-wrap: break-word;
     }
 
     .value-pro { color: var(--pro); }
     .value-anti { color: var(--anti); }
 
+    /* Mobile: gráficos em 1 coluna */
     .grid-2 {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 1fr;
       gap: 0.7rem;
     }
 
@@ -233,40 +263,43 @@
       border-radius: 11px;
       padding: 0.5rem;
       background: #fff;
-      min-height: 320px;
+      min-height: 280px;
     }
 
     .chart-box canvas {
       width: 100% !important;
-      height: 292px !important;
+      height: 250px !important;
     }
 
     .hint {
-      margin: 0.42rem 0 0;
+      margin: 0.5rem 0 0;
       color: var(--muted);
-      font-size: 0.84rem;
+      font-size: 0.86rem;
       line-height: 1.5;
+      word-wrap: break-word;
     }
 
     .context-note {
       border: 1px solid #ddd6c6;
       border-radius: 10px;
       background: #faf6eb;
-      padding: 0.5rem 0.62rem;
+      padding: 0.6rem 0.7rem;
     }
 
+    /* Mobile: tabelas em 1 coluna */
     .tables {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 1fr;
       gap: 0.7rem;
     }
 
     .table-wrap {
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
       border: 1px solid var(--line);
       border-radius: 11px;
       background: #fff;
-      margin-top: 0.45rem;
+      margin-top: 0.5rem;
     }
 
     table {
@@ -277,16 +310,17 @@
 
     th,
     td {
-      padding: 0.48rem 0.6rem;
+      padding: 0.55rem 0.65rem;
       border-bottom: 1px solid #eceae3;
       text-align: left;
-      font-size: 0.86rem;
+      font-size: 0.84rem;
       vertical-align: top;
+      word-wrap: break-word;
     }
 
     th {
       background: #f6f4ef;
-      font-size: 0.78rem;
+      font-size: 0.74rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: #605b52;
@@ -311,7 +345,7 @@
       background: var(--chip);
       border: 1px solid #d8d6cc;
       border-radius: 999px;
-      padding: 0.06rem 0.44rem;
+      padding: 0.08rem 0.5rem;
       font-size: 0.76rem;
       color: #4f4b45;
       white-space: nowrap;
@@ -321,27 +355,84 @@
     .chip-anti { color: #8f4034; }
 
     .sources {
-      margin: 0.45rem 0 0;
-      padding-left: 1rem;
+      margin: 0.5rem 0 0;
+      padding-left: 1.1rem;
       color: var(--muted);
-      font-size: 0.84rem;
-      line-height: 1.45;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      word-wrap: break-word;
     }
 
-    .sources li + li { margin-top: 0.25rem; }
+    .sources li + li { margin-top: 0.35rem; }
+    .sources a {
+      min-height: 40px;
+      display: inline-block;
+      padding: 0.2rem 0;
+    }
 
-    @media (max-width: 1080px) {
+    /* Desktop ≥ 640px */
+    @media (min-width: 640px) {
+      .page {
+        padding: 1.1rem 24px 2.2rem;
+        padding-left: max(24px, env(safe-area-inset-left));
+        padding-right: max(24px, env(safe-area-inset-right));
+      }
+      .hero, .panel { padding: 1.1rem; border-radius: 16px; }
+      h2 { font-size: 1.1rem; }
       .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .grid-2,
-      .tables { grid-template-columns: 1fr; }
+      .kpi { padding: 0.66rem 0.72rem; }
+      .filters {
+        grid-template-columns: auto 1fr;
+        align-items: center;
+      }
+      .filters select,
+      .filters input {
+        min-height: 40px;
+      }
+      .btn-export {
+        width: auto;
+        grid-column: 1 / -1;
+        justify-self: start;
+      }
     }
 
-    @media (max-width: 680px) {
-      .page { width: min(1260px, 98vw); }
-      .kpis { grid-template-columns: 1fr; }
-      th, td { font-size: 0.81rem; }
-      .chart-box { min-height: 290px; }
-      .chart-box canvas { height: 262px !important; }
+    /* Desktop ≥ 900px: layouts mais densos */
+    @media (min-width: 900px) {
+      .page {
+        width: min(1260px, 96vw);
+      }
+      .kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .tables { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .chart-box { min-height: 320px; }
+      .chart-box canvas { height: 292px !important; }
+      .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.52rem;
+      }
+      .filters select,
+      .filters input {
+        width: auto;
+        min-height: 34px;
+        padding: 0.2rem 0.5rem;
+        font-size: 0.84rem;
+      }
+      .btn-export {
+        width: auto;
+        min-height: 34px;
+        padding: 0.2rem 0.58rem;
+        font-size: 0.82rem;
+      }
+      .nav-btn {
+        padding: 0.38rem 0.76rem;
+        min-height: 0;
+        font-size: 0.82rem;
+      }
+      .pill { padding: 0.25rem 0.58rem; }
+      .scraper-health-btn { min-height: 34px; padding: 0.24rem 0.68rem; font-size: 0.78rem; }
+      th, td { font-size: 0.86rem; padding: 0.48rem 0.6rem; }
+      th { font-size: 0.78rem; }
     }
   </style>
 </head>

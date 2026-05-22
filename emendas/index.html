@@ -2,7 +2,8 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
   <title>Monitor de emendas parlamentares — 2026</title>
   <meta name="description" content="Acompanhamento diário do empenho das emendas parlamentares em 2026, comparando Portal da Transparência (CGU) e SIOP (Ministério do Planejamento).">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,6 +28,7 @@
     }
 
     * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
 
     html, body { background: var(--bg); }
 
@@ -39,10 +41,13 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* Mobile-first base */
     .wrap {
       max-width: 980px;
       margin: 0 auto;
-      padding: 1.4rem 1.2rem 4rem;
+      padding: 1.1rem 16px 3rem;
+      padding-left: max(16px, env(safe-area-inset-left));
+      padding-right: max(16px, env(safe-area-inset-right));
     }
 
     .topbar {
@@ -50,16 +55,19 @@
       gap: 0.6rem;
       align-items: center;
       flex-wrap: wrap;
-      font-size: 0.84rem;
+      font-size: 0.88rem;
       color: var(--muted);
-      margin-bottom: 1.6rem;
+      margin-bottom: 1.3rem;
     }
 
     .topbar a {
       color: var(--muted);
       text-decoration: none;
       border-bottom: 1px solid var(--line);
-      padding-bottom: 1px;
+      padding: 0.4rem 0;
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
     }
 
     .topbar a:hover { color: var(--ink); border-color: var(--ink); }
@@ -75,19 +83,22 @@
     h1 {
       font-family: "Newsreader", Georgia, serif;
       font-weight: 600;
-      font-size: clamp(1.8rem, 3.8vw, 2.6rem);
-      line-height: 1.1;
+      font-size: clamp(1.6rem, 7vw, 2.6rem);
+      line-height: 1.15;
       letter-spacing: -0.012em;
       margin: 0 0 0.5rem;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
 
     .dek {
       font-family: "Newsreader", Georgia, serif;
-      font-size: clamp(1.05rem, 1.8vw, 1.2rem);
-      line-height: 1.4;
+      font-size: clamp(1.02rem, 4vw, 1.2rem);
+      line-height: 1.45;
       color: var(--muted);
       margin: 0 0 0.9rem;
       max-width: 62ch;
+      word-wrap: break-word;
     }
 
     .dateline {
@@ -107,16 +118,18 @@
     section h2 {
       font-family: "Newsreader", Georgia, serif;
       font-weight: 600;
-      font-size: 1.45rem;
+      font-size: clamp(1.25rem, 5vw, 1.45rem);
       letter-spacing: -0.005em;
       margin: 0 0 0.4rem;
+      word-wrap: break-word;
     }
 
     section .sub {
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.95rem;
       margin: 0 0 1rem;
       max-width: 64ch;
+      word-wrap: break-word;
     }
 
     .spotlight {
@@ -220,15 +233,16 @@
       font-variant-numeric: tabular-nums;
     }
 
+    /* Mobile: 1 coluna; grids expandem em >=640px */
     .grid-3 {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: 1fr;
       gap: 0.7rem;
     }
 
     .grid-2 {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 1fr;
       gap: 0.7rem;
     }
 
@@ -271,10 +285,14 @@
 
     .compare-row {
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 1rem;
-      align-items: center;
+      grid-template-columns: 1fr;
+      gap: 0.4rem;
+      align-items: start;
       padding: 0.7rem 0;
+    }
+
+    .compare-row .label-side {
+      margin-top: 0.2rem;
     }
 
     .compare-row + .compare-row {
@@ -325,13 +343,13 @@
 
     .chart-card {
       border: 1px solid var(--line);
-      padding: 0.9rem;
+      padding: 0.75rem;
       background: var(--bg);
     }
 
     .chart-card canvas {
       width: 100% !important;
-      height: 320px !important;
+      height: 260px !important;
     }
 
     .chart-foot {
@@ -360,10 +378,11 @@
 
     table th, table td {
       text-align: left;
-      padding: 0.55rem 0.7rem;
-      font-size: 0.88rem;
+      padding: 0.6rem 0.65rem;
+      font-size: 0.84rem;
       border-bottom: 1px solid var(--line);
       vertical-align: middle;
+      word-wrap: break-word;
     }
 
     table td.num, table th.num { white-space: nowrap; }
@@ -381,8 +400,11 @@
 
     .table-wrap {
       border: 1px solid var(--line);
-      overflow: auto;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
+
+    .table-wrap table { min-width: 480px; }
 
     tr.row-peak td { background: #fff8eb; }
 
@@ -401,7 +423,7 @@
 
     .health-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 1fr;
       gap: 0.7rem;
     }
 
@@ -454,18 +476,33 @@
 
     .footer li + li { margin-top: 0.25rem; }
 
-    .footer a { color: var(--accent); text-decoration: none; border-bottom: 1px solid #c9d0db; padding-bottom: 1px; }
+    .footer a { color: var(--accent); text-decoration: none; border-bottom: 1px solid #c9d0db; padding-bottom: 1px; display: inline-block; min-height: 32px; }
     .footer a:hover { color: var(--ink); border-color: var(--ink); }
+
+    .feature-card { min-height: 40px; }
+    .feature-cta { min-height: 40px; display: inline-flex; align-items: center; }
 
     .quiet { color: var(--muted); font-size: 0.86rem; }
 
-    @media (max-width: 720px) {
-      .grid-3 { grid-template-columns: 1fr; }
-      .grid-2 { grid-template-columns: 1fr; }
-      .health-grid { grid-template-columns: 1fr; }
-      .compare-row { grid-template-columns: 1fr; gap: 0.3rem; }
-      .compare-row .label-side { margin-top: 0.4rem; }
-      table th, table td { font-size: 0.82rem; padding: 0.5rem 0.55rem; }
+    /* Desktop ≥ 640px */
+    @media (min-width: 640px) {
+      .wrap { padding: 1.4rem 1.2rem 4rem; }
+      .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .health-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .compare-row {
+        grid-template-columns: 1fr auto 1fr;
+        gap: 1rem;
+        align-items: center;
+      }
+      .compare-row .label-side { margin-top: 0; }
+      table th, table td { font-size: 0.88rem; padding: 0.55rem 0.7rem; }
+      .chart-card { padding: 0.9rem; }
+      .chart-card canvas { height: 320px !important; }
+    }
+
+    /* Desktop ≥ 900px */
+    @media (min-width: 900px) {
+      .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
   </style>
 </head>

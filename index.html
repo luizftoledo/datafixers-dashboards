@@ -1,15 +1,48 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fafaf8">
 <title>Dashboards · Data Fixers</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-body{font-family:-apple-system,sans-serif;max-width:800px;margin:60px auto;padding:0 24px;color:#222;line-height:1.6}
-h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;letter-spacing:-0.02em}
-.sub{color:#888;font-size:0.95em;margin-bottom:32px}
-a.card{display:block;padding:18px 22px;margin:10px 0;background:#fff;border:1px solid #ddd;border-radius:8px;text-decoration:none;color:#222;transition:.15s}
-a.card:hover{background:#fafaf8;border-color:#111;transform:translateX(2px)}
-a.card .t{font-weight:600;color:#111;margin-bottom:4px}
-a.card .d{font-size:0.85em;color:#666}
-.footer{margin-top:48px;padding-top:24px;border-top:1px solid #e5e5e5;color:#888;font-size:0.85em}
-</style></head>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    background:#fafaf8;color:#111;line-height:1.5;
+    padding:24px 16px;max-width:800px;margin:0 auto;
+    padding-left:max(16px, env(safe-area-inset-left));
+    padding-right:max(16px, env(safe-area-inset-right));
+    padding-bottom:max(24px, env(safe-area-inset-bottom));
+  }
+  h1{font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:2em;letter-spacing:-0.02em;margin-bottom:6px}
+  .sub{color:#888;font-size:0.95em;margin-bottom:24px}
+  a.card{
+    display:block;padding:16px 18px;margin:10px 0;
+    background:#fff;border:1px solid #ddd;border-radius:10px;
+    text-decoration:none;color:#222;transition:.15s;
+    -webkit-tap-highlight-color:transparent;
+  }
+  a.card:active{background:#fafaf8;border-color:#111}
+  a.card:hover{background:#fafaf8;border-color:#111}
+  a.card .t{font-weight:600;color:#111;margin-bottom:4px;font-size:1.02em}
+  a.card .d{font-size:0.88em;color:#666;line-height:1.45}
+  .footer{margin-top:36px;padding-top:20px;border-top:1px solid #e5e5e5;color:#888;font-size:0.85em}
+  .footer a{color:#111;text-decoration:none}
+  .footer a:hover{text-decoration:underline}
+
+  /* Desktop */
+  @media (min-width: 640px) {
+    body{padding:60px 24px}
+    h1{font-size:2.4em}
+    .sub{margin-bottom:32px}
+    a.card{padding:18px 22px;border-radius:8px}
+    a.card:hover{transform:translateX(2px)}
+  }
+</style>
+</head>
 <body>
 <h1>Dashboards</h1>
 <p class="sub">Painéis jornalísticos · Data Fixers</p>
@@ -24,6 +57,7 @@ a.card .d{font-size:0.85em;color:#666}
 <a class="card" href="/clipping/"><div class="t">Clipping</div><div class="d">Recortes e indicadores de cobertura</div></a>
 
 <div class="footer">
-<p><a href="https://datafixers.org" style="color:#111">← Voltar pra datafixers.org</a></p>
+<p><a href="https://datafixers.org">← Voltar pra datafixers.org</a></p>
 </div>
-</body></html>
+</body>
+</html>
