@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lista Suja do trabalho escravo · Data Fixers</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;background:#fafaf8;color:#111;line-height:1.5;padding:40px 24px;max-width:1280px;margin:0 auto}
+  h1{font-family:'Playfair Display',serif;font-weight:900;font-size:2.2em;letter-spacing:-0.02em}
+  .sub{color:#666;font-size:0.95em;margin-bottom:20px}
+  .meta{background:#fff;border:1px solid #e5e5e5;padding:14px 18px;border-radius:8px;margin-bottom:24px;font-size:0.88em}
+  .meta strong{color:#111}
+  .search{margin-bottom:18px}
+  .search input{width:100%;padding:14px 18px;font-size:1em;border:1px solid #ccc;border-radius:6px;font-family:inherit}
+  .search input:focus{outline:none;border-color:#111}
+  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e5e5e5;border-radius:8px;overflow:hidden;font-size:0.88em}
+  th{text-align:left;padding:11px 12px;background:#f5f5f3;font-weight:600;font-size:0.7em;letter-spacing:0.08em;text-transform:uppercase;color:#666;border-bottom:1px solid #e5e5e5;position:sticky;top:0}
+  td{padding:11px 12px;border-bottom:1px solid #f0f0ee;vertical-align:top}
+  tr:hover td{background:#fafaf8}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;color:#444;white-space:nowrap}
+  code{font-size:0.92em;color:#555}
+  .uf{display:inline-block;padding:2px 8px;background:#f0eee8;border-radius:4px;font-weight:600;font-size:0.78em}
+  .footer{margin-top:32px;padding-top:18px;border-top:1px solid #e5e5e5;font-size:0.83em;color:#888}
+  .loading{text-align:center;padding:40px;color:#aaa;font-style:italic}
+  .count-pill{background:#111;color:#fff;padding:2px 10px;border-radius:999px;font-size:0.75em;margin-left:8px;vertical-align:middle}
+</style>
+</head>
+<body>
+
+<h1>Lista Suja do trabalho escravo <span class="count-pill" id="total">…</span></h1>
+<p class="sub">Cadastro de Empregadores que tenham submetido trabalhadores a condições análogas à escravidão (Portaria Interministerial MTE/MDHC/MIR nº 18/2024). Snapshot mais recente do <a href="https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho/areas-de-atuacao/cadastro_de_empregadores.pdf" target="_blank">PDF oficial do MTE</a>.</p>
+
+<div class="meta" id="meta">Carregando…</div>
+
+<div class="search">
+  <input type="text" id="busca" placeholder="Buscar por nome, CPF/CNPJ, município, estado…">
+</div>
+
+<table>
+<thead><tr>
+  <th>UF</th>
+  <th>Empregador</th>
+  <th>CPF/CNPJ</th>
+  <th>Estabelecimento</th>
+  <th class="num">Trab.</th>
+  <th class="num">Ano</th>
+  <th class="num">Incluído</th>
+</tr></thead>
+<tbody id="tbody"><tr><td colspan="7" class="loading">Carregando dados…</td></tr></tbody>
+</table>
+
+<div class="footer">
+<p>Snapshot atualizado semanalmente via GitHub Actions. Alertas Telegram em inclusões novas.</p>
+<p><a href="https://dashboards.datafixers.org">← Voltar pra dashboards</a></p>
+</div>
+
+<script>
+fetch('./data/empregadores.json').then(r=>r.json()).then(d=>{
+  document.getElementById('total').textContent = d.count.toLocaleString('pt-BR');
+  document.getElementById('meta').innerHTML = `<strong>Última extração:</strong> ${new Date(d.extracted_at).toLocaleString('pt-BR')} · <strong>Empregadores:</strong> ${d.count}`;
+  
+  const tbody = document.getElementById('tbody');
+  const allRows = d.empregadores;
+  
+  function render(rows) {
+    if (!rows.length) { tbody.innerHTML = '<tr><td colspan="7" class="loading">Nenhum resultado.</td></tr>'; return; }
+    tbody.innerHTML = rows.slice(0, 200).map(r => `
+      <tr>
+        <td><span class="uf">${r.uf}</span></td>
+        <td><strong>${r.empregador || '—'}</strong></td>
+        <td><code>${r.cpf_cnpj_raw}</code></td>
+        <td>${(r.estabelecimento||'').slice(0,80)}</td>
+        <td class="num">${r.trabalhadores}</td>
+        <td class="num">${r.ano}</td>
+        <td class="num">${r.incluido_em}</td>
+      </tr>`).join('') + (rows.length>200 ? `<tr><td colspan="7" style="text-align:center;color:#888;font-style:italic;padding:18px">+${rows.length-200} resultados (use a busca pra filtrar)</td></tr>` : '');
+  }
+  
+  render(allRows);
+  
+  document.getElementById('busca').addEventListener('input', e => {
+    const q = e.target.value.trim().toLowerCase();
+    if (!q) { render(allRows); return; }
+    const qn = q.replace(/\D/g, '');
+    const filtered = allRows.filter(r =>
+      (r.empregador||'').toLowerCase().includes(q) ||
+      (r.estabelecimento||'').toLowerCase().includes(q) ||
+      r.uf.toLowerCase() === q ||
+      (qn && r.cpf_cnpj.startsWith(qn))
+    );
+    render(filtered);
+  });
+});
+</script>
+</body>
+</html>
