@@ -39,6 +39,7 @@
 
 <div class="filters">
   <input type="text" id="q" placeholder="Buscar por empresa, fazenda, município…">
+  <button id="fts-btn" style="padding:11px 18px;background:#1e7e6d;color:#fff;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-family:inherit;font-size:0.9em" title="Busca DENTRO do texto dos relatórios">🔍 Buscar dentro dos PDFs</button>
   <select id="ano"><option value="">Todos os anos</option></select>
   <select id="uf"><option value="">Todas UFs</option></select>
 </div>
@@ -46,14 +47,17 @@
 <div id="anos"><div class="loading">Carregando relatórios…</div></div>
 
 <div class="footer">
-<p>Snapshot atualizado mensalmente. <a href="/lista-suja/">Lista Suja atual (empregadores) →</a></p>
+<p>Snapshot atualizado mensalmente. —</p>
 <p><a href="https://dashboards.datafixers.org">← Voltar pra dashboards</a></p>
 </div>
 
 <script>
 let DATA = null;
 
-fetch('./data/relatorios.json').then(r=>r.json()).then(d=>{
+// Tenta primeiro o JSON com OCR/IA. Se não existir, cai pro básico.
+fetch('./data/relatorios_ocr.json').then(r=>r.ok?r.json():null).catch(_=>null).then(ocr=>{
+  return ocr || fetch('./data/relatorios.json').then(r=>r.json());
+}).then(d=>{
   DATA = d;
   document.getElementById('meta').innerHTML = `
     <span><strong>Total:</strong> ${d.total} relatórios</span>
@@ -93,21 +97,63 @@ function render() {
   document.getElementById('anos').innerHTML = anos.map(ano => `
     <div class="year-block">
       <h3>${ano} <span style="font-size:0.6em;color:#888;font-weight:400;">${byYear[ano].length} operações</span></h3>
-      <div class="grid">${byYear[ano].map(r => `
+      <div class="grid">${byYear[ano].map(r => {
+        const d = r.dados || {};
+        return `
         <div class="card">
           <div class="card-meta">
             ${r.op_num ? `<span class="pill">Op. ${String(r.op_num).padStart(2,'0')}</span>` : ''}
             ${(r.ufs||[]).map(u=>`<span class="uf-tag">${u}</span>`).join('')}
+            ${d.trabalhadores_resgatados ? `<span class="pill" style="background:#fee;color:#a00">${d.trabalhadores_resgatados} resgatado(s)</span>` : ''}
           </div>
-          <h4>${r.titulo.replace(/^Op[\.\s\-]+\d+[\s\-]+de[\s\-]+\d{4}[\s\-]*/, '').trim() || r.titulo}</h4>
+          <h4>${d.empresa || r.titulo.replace(/^Op[\.\s\-]+\d+[\s\-]+de[\s\-]+\d{4}[\s\-]*/, '').trim() || r.titulo}</h4>
+          ${d.cnpj_cpf ? `<div style="font-size:0.78em;color:#666"><code>${d.cnpj_cpf}</code> · ${d.municipio || '?'}</div>` : ''}
+          ${d.tipo_trabalho ? `<div style="font-size:0.78em;color:#1e7e6d;font-weight:600">${d.tipo_trabalho}</div>` : ''}
+          ${r.resumo ? `<div style="font-size:0.83em;color:#444;line-height:1.45;margin-top:4px">${r.resumo}</div>` : ''}
           <a class="open" href="${r.url}" target="_blank">Ver PDF →</a>
-        </div>`).join('')}
+        </div>`;
+      }).join('')}
       </div>
     </div>
   `).join('');
 }
 
 ['q','ano','uf'].forEach(id => document.getElementById(id).addEventListener('input', render));
+
+// === Busca full-text via API (dentro do texto OCR dos PDFs) ===
+document.getElementById('fts-btn').addEventListener('click', async () => {
+  const q = document.getElementById('q').value.trim();
+  if (q.length < 3) { alert('Digite ao menos 3 caracteres'); return; }
+  const out = document.getElementById('anos');
+  out.innerHTML = '<div class="loading">Buscando dentro de '+ (DATA?.total||409) +' relatórios…</div>';
+  try {
+    const r = await fetch('https://ibama-worker.datafixers.org/api/te/busca?q=' + encodeURIComponent(q) + '&limit=30').then(r=>r.json());
+    if (r.erro) { out.innerHTML = '<div class="empty">Erro: ' + r.erro + '</div>'; return; }
+    if (!Array.isArray(r) || r.length === 0) {
+      out.innerHTML = '<div class="empty">Nenhum relatório cita "' + q + '". (Os textos foram extraídos por OCR — alguns PDFs podem ter qualidade ruim de scan)</div>';
+      return;
+    }
+    out.innerHTML = '<h3 style="margin-bottom:14px">'+ r.length +' relatórios citam "<mark>'+ q +'</mark>"</h3>' +
+      r.map(x => `
+        <div class="card" style="margin-bottom:12px">
+          <div class="card-meta">
+            <span class="pill">${x.ano || '?'}</span>
+            ${x.op_num ? `<span class="pill">Op. ${String(x.op_num).padStart(2,'0')}</span>` : ''}
+            ${(x.ufs||'').split(',').filter(Boolean).map(u=>`<span class="uf-tag">${u}</span>`).join('')}
+            ${x.trabalhadores_resgatados ? `<span class="pill" style="background:#fee;color:#a00">${x.trabalhadores_resgatados} resgatado(s)</span>` : ''}
+          </div>
+          <h4>${x.empresa || x.titulo}</h4>
+          ${x.cnpj_cpf ? `<div style="font-size:0.78em;color:#666"><code>${x.cnpj_cpf}</code> · ${x.municipio || '?'}</div>` : ''}
+          <div style="font-size:0.85em;color:#444;background:#fef9e8;padding:10px 14px;border-left:3px solid #d96e30;margin:8px 0;border-radius:0 4px 4px 0;line-height:1.5">
+            ${x.trecho || '(sem trecho)'}
+          </div>
+          <a class="open" href="${x.url}" target="_blank">Ver PDF →</a>
+        </div>`).join('');
+  } catch(e) {
+    out.innerHTML = '<div class="empty">Erro: ' + e.message + '</div>';
+  }
+});
+
 </script>
 </body>
 </html>
