@@ -50,6 +50,8 @@ Campos obrigatórios (TODOS devem aparecer, usando "" ou 0 quando ausente):
 - uf (string): sigla do estado em 2 letras MAIÚSCULAS, "" se ausente
 - data_fatos (string): AAAA-MM-DD se houver dia; senão AAAA-MM; senão AAAA; senão ""
 - resumo (string): 1-2 frases factuais em português. Se OCR for incompreensível: "OCR ilegível — dados insuficientes."
+- punicao (string): penalidades aplicadas ou propostas que o relatório explicitamente mencione — auto(s) de infração lavrado(s), multa, TAC, indenização aos trabalhadores, inclusão na Lista Suja do MTE. Resuma em 1 frase com números quando houver ("12 autos lavrados, R$ 50 mil em indenizações"). "" se o relatório não citar punição. NÃO invente nem deduza por analogia.
+- resgate_status (string): "com_resgate" se houve resgate de trabalhadores, "sem_resgate" se a operação foi explicitamente negativa (inspeção sem resgate), "" se o relatório não deixar claro.
 
 REGRAS:
 - JAMAIS invente. Campo ausente = "" ou 0.
@@ -175,6 +177,9 @@ def sanitize(d):
         trab = int(d.get("trabalhadores_resgatados") or 0)
     except Exception:
         trab = 0
+    status = (d.get("resgate_status") or "").strip().lower()
+    if status not in ("com_resgate", "sem_resgate", ""):
+        status = ""
     return {
         "empresa": (d.get("empresa") or "").strip(),
         "cnpj_cpf": (d.get("cnpj_cpf") or "").strip(),
@@ -184,6 +189,8 @@ def sanitize(d):
         "uf": (d.get("uf") or "").strip().upper()[:2],
         "data_fatos": (d.get("data_fatos") or "").strip(),
         "resumo": (d.get("resumo") or "").strip(),
+        "punicao": (d.get("punicao") or "").strip(),
+        "resgate_status": status,
     }
 
 
@@ -201,11 +208,16 @@ def main():
     LIMIT = int(os.environ.get("LIMIT", "0"))
     FORCE = os.environ.get("FORCE", "0") == "1"
 
+    # Lista de campos que, se faltarem no cache, disparam reprocessamento
+    REQUIRED_FIELDS = ("punicao",)
+
     targets = []
     for r in rels:
         cached = cache.get(r["url"], {})
         if not FORCE and cached.get("dados") and not cached.get("erro"):
-            continue
+            dados = cached.get("dados", {})
+            if all(k in dados for k in REQUIRED_FIELDS):
+                continue
         targets.append({**r, "_text_ocr": cached.get("text_ocr", "")})
 
     if LIMIT > 0:

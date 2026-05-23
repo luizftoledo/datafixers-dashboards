@@ -47,12 +47,14 @@ for r in rows:
     municipio = dados.get('municipio', '')
     resumo = r.get('resumo') or dados.get('resumo', '')
     text_ocr = (r.get('text_ocr') or '')[:14000]  # limita
+    punicao = dados.get('punicao', '')
+    resgate_status = dados.get('resgate_status', '')
 
     # Skip rows que têm placeholder de prompt (Llama copiou prompt)
     if empresa and 'nome da empresa' in empresa.lower(): empresa = ''
     if isinstance(cnpj, str) and 'cnpj' in cnpj.lower() and 'aparec' in cnpj.lower(): cnpj = None
 
-    sql = f"""INSERT OR REPLACE INTO te_docs (url, titulo, ano, op_num, ufs, empresa, cnpj_cpf, trabalhadores_resgatados, tipo_trabalho, data_fatos, municipio, resumo, text_ocr, updated_at) VALUES ({esc(url)}, {esc(titulo)}, {to_int(ano)}, {to_int(op_num)}, {esc(ufs)}, {esc(empresa)}, {esc(cnpj)}, {to_int(trab)}, {esc(tipo)}, {esc(data_fatos)}, {esc(municipio)}, {esc(resumo)}, {esc(text_ocr)}, {esc(__import__('datetime').datetime.utcnow().isoformat())});
+    sql = f"""INSERT OR REPLACE INTO te_docs (url, titulo, ano, op_num, ufs, empresa, cnpj_cpf, trabalhadores_resgatados, tipo_trabalho, data_fatos, municipio, resumo, text_ocr, punicao, resgate_status, updated_at) VALUES ({esc(url)}, {esc(titulo)}, {to_int(ano)}, {to_int(op_num)}, {esc(ufs)}, {esc(empresa)}, {esc(cnpj)}, {to_int(trab)}, {esc(tipo)}, {esc(data_fatos)}, {esc(municipio)}, {esc(resumo)}, {esc(text_ocr)}, {esc(punicao)}, {esc(resgate_status)}, {esc(__import__('datetime').datetime.utcnow().isoformat())});
 """
     with open(f"{OUT_DIR}/r_{n:05d}.sql", 'w') as f:
         f.write(sql)
