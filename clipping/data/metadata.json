@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-05-22T10:48:43.780415+00:00",
+  "generated_at": "2026-05-23T14:51:35.859475+00:00",
   "counts": {
-    "items": 90,
-    "domains": 24,
+    "items": 92,
+    "domains": 23,
     "categories": {
-      "reportagem_autoral": 60,
+      "reportagem_autoral": 64,
       "republicacao": 0,
       "eco_repercussao": 1,
       "citacao_fonte": 2,
-      "mencao": 9,
+      "mencao": 6,
       "entrevista": 1,
       "palestra_curso": 0,
-      "perfil_bio": 17
+      "perfil_bio": 18
     },
     "recent": {
       "last_1_day": 0,
-      "last_7_days": 2,
-      "last_30_days": 3
+      "last_7_days": 1,
+      "last_30_days": 4
     }
   },
   "date_range": {
-    "min": "2019-02-26",
-    "max": "2026-05-14"
+    "min": "2020-04-24",
+    "max": "2026-05-21"
   },
   "methodology": {
     "names": [
@@ -44,24 +44,24 @@
     },
     "enrich": {
       "fetched": 66,
-      "reused": 31,
-      "kept": 90,
+      "reused": 33,
+      "kept": 92,
       "dropped": 7,
       "categories": {
-        "perfil_bio": 17,
-        "reportagem_autoral": 60,
-        "mencao": 9,
+        "perfil_bio": 18,
+        "reportagem_autoral": 64,
+        "mencao": 6,
         "entrevista": 1,
         "citacao_fonte": 2,
         "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 51,
+        "bbc.com": 55,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
         "ojoioeotrigo.com.br": 2,
-        "estadao.com.br": 11,
+        "estadao.com.br": 9,
         "g1.globo.com": 2,
         "escavador.com": 1,
         "icfj.org": 1,
@@ -78,21 +78,12 @@
         "piaui.uol.com.br": 1,
         "abraji.org.br": 1,
         "sbtnews.sbt.com.br": 1,
-        "latamjournalismreview.org": 1,
-        "cnnbrasil.com.br": 3
+        "cnnbrasil.com.br": 4
       },
       "errors": [
         {
-          "url": "https://bbc.com/portuguese/articles/cn76p0jjxz7o",
-          "error": "HTTPSConnectionPool(host='www.bbc.com', port=443): Read timed out. (read timeout=30) | jina: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)"
-        },
-        {
           "url": "https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil",
           "error": "HTTPSConnectionPool(host='devstudies.cam.ac.uk', port=443): Max retries exceeded with url: /news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil (Caused by NameResolutionError(\"HTTPSConnection(host='devstudies.cam.ac.uk', port=443): Failed to resolve 'devstudies.cam.ac.uk' ([Errno -5] No address associated with hostname)\")) | jina: 422 Client Error: Unprocessable Entity for url: https://r.jina.ai/http://https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil"
-        },
-        {
-          "url": "https://piaui.uol.com.br/web/transparencia-tarja-preta",
-          "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) | jina: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=30)"
         }
       ]
     }

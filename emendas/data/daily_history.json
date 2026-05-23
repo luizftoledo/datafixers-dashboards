@@ -248,13 +248,24 @@
   },
   {
     "date": "2026-05-22",
-    "delta_positivo": 13115537041.23,
-    "delta_liquido": 12864113615.06,
+    "delta_positivo": 0.0,
+    "delta_liquido": 0.0,
     "total_empenhado_atual": 330237572853.2,
-    "autores_com_aumento": 552,
-    "destinos_com_aumento": 210,
+    "autores_com_aumento": 0,
+    "destinos_com_aumento": 0,
     "previous_snapshot_date": "2026-05-10",
     "interval_days": 12,
+    "source_changed": false
+  },
+  {
+    "date": "2026-05-23",
+    "delta_positivo": 16351337266.92,
+    "delta_liquido": 16350139286.92,
+    "total_empenhado_atual": 346587712140.12,
+    "autores_com_aumento": 596,
+    "destinos_com_aumento": 232,
+    "previous_snapshot_date": "2026-05-22",
+    "interval_days": 1,
     "source_changed": true
   }
 ]
