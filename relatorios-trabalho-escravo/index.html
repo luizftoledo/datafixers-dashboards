@@ -100,6 +100,16 @@ function tipoPessoa(cnpjCpf) {
   return '?';
 }
 
+// Bloco de punição: distingue 3 estados.
+// - texto -> mostra
+// - "" (IA leu, não achou) -> "— não mencionada"
+// - chave ausente (não reprocessado ainda) -> nada
+function punicaoBlock(d) {
+  if (!('punicao' in d)) return '';
+  if (d.punicao) return `<div class="punicao"><strong>Punição:</strong> ${d.punicao}</div>`;
+  return `<div class="punicao" style="background:#f6f6f6;border-left-color:#bbb;color:#888"><strong>Punição:</strong> não mencionada no relatório</div>`;
+}
+
 function render() {
   if (!DATA) return;
   const q = document.getElementById('q').value.trim().toLowerCase();
@@ -139,7 +149,7 @@ function render() {
           ${d.cnpj_cpf ? `<div style="font-size:0.78em;color:#666"><code>${d.cnpj_cpf}</code> · ${tipoPessoa(d.cnpj_cpf)} · ${d.municipio || '?'}</div>` : ''}
           ${d.tipo_trabalho ? `<div style="font-size:0.78em;color:#1e7e6d;font-weight:600">${d.tipo_trabalho}</div>` : ''}
           ${r.resumo ? `<div style="font-size:0.83em;color:#444;line-height:1.45;margin-top:4px">${r.resumo}</div>` : ''}
-          ${d.punicao ? `<div class="punicao"><strong>Punição:</strong> ${d.punicao}</div>` : ''}
+          ${punicaoBlock(d)}
           <a class="open" href="${r.url}" target="_blank">Ver PDF →</a>
         </div>`;
       }).join('')}
