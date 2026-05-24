@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-23T14:42:56.049860+00:00",
-  "snapshot_date": "2026-05-23",
+  "updated_at": "2026-05-24T14:41:41.532768+00:00",
+  "snapshot_date": "2026-05-24",
   "source_requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
   "source_download_url": "https://dadosabertos-download.cgu.gov.br/PortalDaTransparencia/saida/emendas-parlamentares/EmendasParlamentares.zip",
   "source_senado_reference_url": "https://www9.senado.gov.br/QvAJAXZfc/opendoc.htm?document=senado%2Fsigabrasilpainelcidadao.qvw&host=QVS%40www9&anonymous=true&Sheet=shOrcamentoVisaoGeral",
@@ -26,12 +26,12 @@
   "siop_dotacao_inicial_emenda": 49901486761.0,
   "siop_snapshot_error": "dotação inicial/atual zerada — provável quebra do scraper Qlik (DOM mudou)",
   "siop_details_available": true,
-  "siop_details_fallback_from_previous": true,
+  "siop_details_fallback_from_previous": false,
   "siop_details_rows_count": 0,
   "siop_details_unique_nro_emendas": 0,
   "siop_details_sweep_steps": 27,
-  "siop_details_error": "8 - Emendas de Comissão: filtro não confirmado",
-  "siop_history_days": 60,
-  "siop_history_last_date": "2026-05-23",
+  "siop_details_error": "",
+  "siop_history_days": 61,
+  "siop_history_last_date": "2026-05-24",
   "siop_broken_days": 0
 }

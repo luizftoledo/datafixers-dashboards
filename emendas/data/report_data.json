@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-23T14:42:56.049860+00:00",
-  "snapshot_date": "2026-05-23",
+  "generated_at": "2026-05-24T14:41:41.532768+00:00",
+  "snapshot_date": "2026-05-24",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -13,12 +13,12 @@
   "metrics": {
     "total_empenhado_atual": 346587712140.12,
     "total_empenhado_snapshot_anterior": 330237572853.2,
-    "delta_liquido_desde_snapshot_anterior": 16350139286.92,
-    "delta_positivo_desde_snapshot_anterior": 16351337266.92,
-    "delta_negativo_desde_snapshot_anterior": -1197980.0,
-    "autores_com_aumento": 596,
-    "destinos_com_aumento": 232,
-    "pares_autor_destino_com_aumento": 1093,
+    "delta_liquido_desde_snapshot_anterior": 0.0,
+    "delta_positivo_desde_snapshot_anterior": 0.0,
+    "delta_negativo_desde_snapshot_anterior": 0.0,
+    "autores_com_aumento": 0,
+    "destinos_com_aumento": 0,
+    "pares_autor_destino_com_aumento": 0,
     "total_autores_mapeados": 1611,
     "total_destinos_mapeados": 5457,
     "total_linhas_csv": 93252,
@@ -27,8 +27,8 @@
     "current_year_total_empenhado": 27618179028.93,
     "current_year_total_liquidado": 12983285773.49,
     "current_year_total_pago": 18888707570.24,
-    "current_year_total_empenhado_por_ano_emenda": 44120319015.31,
-    "current_year_total_pago_por_ano_emenda": 16225625508.2,
+    "current_year_total_empenhado_por_ano_emenda": 27618179028.93,
+    "current_year_total_pago_por_ano_emenda": 18888707570.24,
     "_pago_e_empenhado_source": "por_data_documento"
   },
   "top_authors_today": [
@@ -1021,7 +1021,7 @@
     "total_liquidado": 12983285773.49,
     "total_pago": 18888707570.24
   },
-  "run_date": "2026-05-23",
+  "run_date": "2026-05-24",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1121,7 +1121,7 @@
         ]
       },
       "last_update": "",
-      "base_siafi_date": "20/5/2026",
+      "base_siafi_date": "21/5/2026",
       "rows": [],
       "rows_count": 0,
       "unique_nro_emendas": 0,
@@ -1156,8 +1156,7 @@
           "error": ""
         }
       ],
-      "error": "8 - Emendas de Comissão: filtro não confirmado",
-      "fallback_from_previous": true
+      "error": ""
     },
     "documents": {
       "year": 2026,
@@ -3151,6 +3150,17 @@
       "previous_snapshot_date": "2026-05-22",
       "interval_days": 1,
       "source_changed": true
+    },
+    {
+      "date": "2026-05-24",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 346587712140.12,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-05-23",
+      "interval_days": 1,
+      "source_changed": false
     }
   ],
   "siop_daily_history": [
@@ -3753,6 +3763,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-05-24",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
-  ]
+  ],
+  "updated_at": "2026-05-24T14:41:41.532768+00:00"
 }
