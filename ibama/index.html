@@ -19,6 +19,9 @@
   h1{font-family:'Playfair Display',serif;font-weight:900;font-size:2em;letter-spacing:-0.02em;margin-bottom:8px}
   .sub{color:#666;font-size:0.95em;margin-bottom:24px}
   .badge-total{display:inline-block;background:#111;color:#fff;padding:3px 10px;border-radius:999px;font-size:0.75em;font-weight:600;margin-left:6px;font-family:'Inter'}
+  .meta-box{background:#fff;border:1px solid #e5e5e5;border-radius:8px;padding:10px 14px;margin:12px 0 20px;font-size:0.85em;color:#444;display:flex;flex-wrap:wrap;gap:14px}
+  .meta-box span{white-space:nowrap}
+  .meta-box b{color:#111}
 
   /* Tabs */
   .tabs{display:flex;gap:0;border-bottom:2px solid #e5e5e5;margin-bottom:18px}
@@ -132,8 +135,9 @@
 </head>
 <body>
 
-<h1>IBAMA · Buscar autos de infração <span class="badge-total" id="badgeTotal">…</span></h1>
-<p class="sub">Dataset de fiscalizações ambientais (Sistema SICAFI). Fonte: <a href="https://dadosabertos.ibama.gov.br/" target="_blank">dadosabertos.ibama.gov.br</a>. Atualizado diariamente.</p>
+<h1>IBAMA · Buscar autos de infração</h1>
+<p class="sub">Dataset de fiscalizações ambientais (Sistema SICAFI). Fonte: <a href="https://dadosabertos.ibama.gov.br/" target="_blank">dadosabertos.ibama.gov.br</a>.</p>
+<div class="meta-box" id="metaBox"><span>Carregando informações da base…</span></div>
 
 <!-- Abas -->
 <div class="tabs">
@@ -298,13 +302,16 @@ function downloadMulti(data){
 
 function abrirLAI(data){
   if (!data || !data.length) { alert('Nenhum auto selecionado.'); return; }
-  // Lista de autos: num_auto, data, UF, valor
+  // Lista de autos: num_auto + num_processo (protocolo SEI) + data + UF + município
   const linhas = data
-    .filter(r => r.num_auto)
+    .filter(r => r.num_auto || r.num_processo)
     .slice(0, 200)
     .map(r => {
       const dt = (r.data_auto||'').slice(0,10).split('-').reverse().join('/');
-      return `- Auto nº ${r.num_auto} (${dt} · ${r.uf||'?'} · ${r.municipio||'?'})`;
+      const partes = [];
+      if (r.num_auto) partes.push(`Auto nº ${r.num_auto}`);
+      if (r.num_processo) partes.push(`Processo SEI nº ${r.num_processo}`);
+      return `- ${partes.join(' · ')} (${dt} · ${r.uf||'?'} · ${r.municipio||'?'})`;
     });
   const lista = linhas.length ? linhas.join('\n') : '[escreva aqui o número do(s) auto(s) ou SEI]';
   document.getElementById('laiText').value = LAI_TEMPLATE.replace('{AUTOS}', lista);
@@ -338,10 +345,23 @@ const fmtBRLcompact = n => {
 const escapeHtml = s => String(s||'').replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
 const cleanName = s => (s||'').replace(/\s+/g,' ').trim();
 
-// Total banco
+// Meta da base: total, faixa de anos, snapshot
 fetch(API + '/api/stats').then(r=>r.json()).then(r=>{
-  document.getElementById('badgeTotal').textContent = fmt(r.stats?.total) + ' autos no banco';
-}).catch(()=>{});
+  const s = r.stats || {};
+  const last = r.last_snapshot || {};
+  const taken = last.taken_at ? new Date(last.taken_at).toLocaleString('pt-BR', { day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit' }) : '—';
+  const anoMin = (s.ano_min || '').replace(/^0/, '');
+  document.getElementById('metaBox').innerHTML = `
+    <span>📊 <b>${fmt(s.total)}</b> autos de infração</span>
+    <span>📅 Anos: <b>${anoMin || s.ano_min} – ${s.ano_max}</b></span>
+    <span>🌎 <b>${s.estados}/27</b> estados</span>
+    <span>👥 <b>${fmt(s.infratores_unicos)}</b> infratores únicos</span>
+    <span>💰 Multa total: <b>R$ ${fmt(s.valor_total_milhoes)}M</b></span>
+    <span>🔄 Última atualização: <b>${taken}</b></span>
+  `;
+}).catch(()=>{
+  document.getElementById('metaBox').innerHTML = '<span style="color:#a00">Não foi possível carregar informações da base.</span>';
+});
 
 // Tabs
 document.querySelectorAll('.tab').forEach(t=>{
