@@ -4,62 +4,100 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#fafaf8">
-<title>IBAMA · Autos de infração · Data Fixers</title>
+<title>IBAMA · Buscar autos de infração · Data Fixers</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
   body{
     font-family:'Inter',-apple-system,sans-serif;background:#fafaf8;color:#111;line-height:1.5;
-    padding:24px 16px;max-width:1200px;margin:0 auto;
+    padding:24px 16px;max-width:1100px;margin:0 auto;
     padding-left:max(16px, env(safe-area-inset-left));
     padding-right:max(16px, env(safe-area-inset-right));
     padding-bottom:max(24px, env(safe-area-inset-bottom));
   }
   h1{font-family:'Playfair Display',serif;font-weight:900;font-size:2em;letter-spacing:-0.02em;margin-bottom:8px}
   .sub{color:#666;font-size:0.95em;margin-bottom:24px}
-  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin-bottom:28px}
-  .stat{background:#fff;padding:12px 14px;border:1px solid #e5e5e5;border-radius:8px}
-  .stat .label{font-size:0.62em;letter-spacing:0.08em;text-transform:uppercase;color:#888;font-weight:600;margin-bottom:4px}
-  .stat .value{font-family:'Playfair Display',serif;font-size:1.4em;font-weight:700;color:#111;line-height:1.1}
-  .stat .sub2{font-size:0.72em;color:#888;margin-top:4px}
-  h2{font-family:'Playfair Display',serif;font-weight:700;font-size:1.25em;margin:28px 0 12px;letter-spacing:-0.01em}
-  h2 .qmark{color:#888;font-size:0.65em;font-weight:400;font-family:'Inter',sans-serif;margin-left:8px}
-  .grid2{display:grid;grid-template-columns:1fr;gap:18px}
-  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid #e5e5e5;border-radius:8px;background:#fff}
-  table{width:100%;border-collapse:collapse;font-size:0.88em;min-width:480px}
-  th{text-align:left;padding:10px 12px;background:#f5f5f3;font-weight:600;font-size:0.68em;letter-spacing:0.08em;text-transform:uppercase;color:#666;border-bottom:1px solid #e5e5e5;white-space:nowrap}
-  td{padding:10px 12px;border-bottom:1px solid #f0f0ee;vertical-align:top}
-  tr:last-child td{border-bottom:none}
-  td.num{text-align:right;font-variant-numeric:tabular-nums;color:#444;white-space:nowrap}
-  .bar{display:inline-block;height:12px;background:#111;margin-right:6px;vertical-align:middle}
-  .bar-green{background:#2a8050}
-  .bar-orange{background:#d96e30}
-  .search{margin:24px 0 18px}
-  .search input{
-    width:100%;padding:12px 14px;font-size:16px;
+  .badge-total{display:inline-block;background:#111;color:#fff;padding:3px 10px;border-radius:999px;font-size:0.75em;font-weight:600;margin-left:6px;font-family:'Inter'}
+
+  /* Tabs */
+  .tabs{display:flex;gap:0;border-bottom:2px solid #e5e5e5;margin-bottom:18px}
+  .tab{
+    background:none;border:none;padding:12px 18px;font-family:inherit;font-size:0.95em;
+    color:#888;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;
+    font-weight:600;
+  }
+  .tab.active{color:#111;border-bottom-color:#d96e30}
+  .tab:hover{color:#111}
+
+  .panel{display:none}
+  .panel.active{display:block}
+
+  /* Tutorial cards */
+  .tip{
+    background:#fff7ed;border-left:4px solid #d96e30;
+    padding:12px 14px;border-radius:6px;margin-bottom:14px;
+    font-size:0.9em;color:#5a3a10;line-height:1.55;
+  }
+  .tip b{color:#8b4513}
+  .tip code{background:rgba(217,110,48,0.15);padding:1px 6px;border-radius:3px;font-family:'SF Mono',Menaco,monospace;font-size:0.92em}
+
+  /* Inputs */
+  .search-input{
+    width:100%;padding:14px 16px;font-size:16px;
     border:2px solid #111;border-radius:10px;font-family:inherit;background:#fff;
     -webkit-appearance:none;appearance:none;
   }
-  .search input:focus{outline:none;border-color:#d96e30}
-  .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;align-items:center}
-  .toolbar label{font-size:0.78em;color:#666;margin-right:6px}
-  .toolbar select,.toolbar button{
+  .search-input:focus{outline:none;border-color:#d96e30}
+  textarea.search-input{min-height:120px;resize:vertical;font-family:'SF Mono',Menaco,monospace;font-size:14px;line-height:1.5}
+
+  .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px;align-items:center}
+  .toolbar label{font-size:0.82em;color:#666;margin-right:2px}
+  .toolbar button{
     padding:7px 12px;font-size:0.86em;border:1px solid #ccc;border-radius:6px;
     background:#fff;font-family:inherit;cursor:pointer;
   }
-  .toolbar select:focus,.toolbar button:focus{outline:none;border-color:#111}
+  .toolbar button:focus{outline:none;border-color:#111}
   .toolbar button.active{background:#111;color:#fff;border-color:#111}
+  .toolbar .primary{background:#d96e30;color:#fff;border-color:#d96e30;padding:10px 20px;font-weight:600}
+  .toolbar .primary:hover{background:#b85a25}
+
+  /* Results */
+  .result-header{margin:18px 0 10px;font-size:0.95em;color:#666;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .result-header strong{color:#111}
+  .result-actions{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+  .btn-action{
+    background:#fff;border:1px solid #d96e30;color:#d96e30;
+    padding:6px 12px;border-radius:6px;font-family:inherit;font-size:0.85em;
+    cursor:pointer;font-weight:600;
+  }
+  .btn-action:hover{background:#d96e30;color:#fff}
+  .btn-action.secondary{border-color:#888;color:#666}
+  .btn-action.secondary:hover{background:#888;color:#fff}
+  .multa-card{border:1px solid #e5e5e5;border-radius:8px;padding:12px 14px;margin-bottom:10px;background:#fff}
+  .multa-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px;align-items:baseline}
+  .multa-data{color:#666;font-size:0.85em}
+  .multa-valor{font-weight:700;color:#8b4513;font-variant-numeric:tabular-nums}
+  .multa-local{font-size:0.85em;color:#444;margin-bottom:6px}
+  .multa-desc{font-size:0.92em;color:#222;line-height:1.5}
+  .multa-tipo{display:inline-block;background:#f0f0ee;padding:2px 8px;border-radius:999px;font-size:0.72em;color:#555;margin-top:4px;margin-right:4px}
+  .multa-cancelado{background:#ffe0e0;color:#a00;border:1px solid #f0a0a0}
   .infrator-link{
     background:none;border:none;padding:0;color:#0a48a0;font-weight:600;
     text-decoration:underline;text-decoration-style:dotted;cursor:pointer;
     font-family:inherit;font-size:inherit;text-align:left;
   }
   .infrator-link:hover{color:#d96e30}
-  .desmat-section{background:#fff7ed;border:1px solid #f3d4a8;border-radius:10px;padding:18px 16px;margin:28px 0}
-  .desmat-section h2{margin-top:0;color:#8b4513}
-  .desmat-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:18px}
-  .desmat-stats .stat{background:#fff;border-color:#f3d4a8}
+  .multi-row{
+    border:1px solid #e5e5e5;border-radius:8px;padding:12px 14px;margin-bottom:8px;background:#fff;
+    display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;
+  }
+  .multi-row .nome{font-weight:600}
+  .multi-row .cpf{font-family:'SF Mono',Menaco,monospace;font-size:0.85em;color:#666}
+  .multi-row .meta{font-size:0.82em;color:#888}
+  .multi-row .valor{font-weight:700;color:#8b4513;font-variant-numeric:tabular-nums;text-align:right}
+  .multi-row .n{font-size:0.82em;color:#666;text-align:right}
+
   /* Modal de drill-down */
   .modal-back{
     position:fixed;inset:0;background:rgba(0,0,0,0.7);
@@ -79,108 +117,93 @@
     margin-top:-4px;margin-right:-4px;
   }
   .modal-close:hover{background:#e0e0de}
-  .multa-card{border:1px solid #e5e5e5;border-radius:8px;padding:12px 14px;margin-bottom:10px;background:#fafaf8}
-  .multa-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px}
-  .multa-data{color:#666;font-size:0.85em}
-  .multa-valor{font-weight:700;color:#8b4513;font-variant-numeric:tabular-nums}
-  .multa-local{font-size:0.85em;color:#444;margin-bottom:4px}
-  .multa-desc{font-size:0.92em;color:#222;line-height:1.5}
-  .multa-tipo{display:inline-block;background:#f0f0ee;padding:2px 8px;border-radius:999px;font-size:0.72em;color:#555;margin-top:4px}
-  .multa-cancelado{background:#ffe0e0;color:#a00;border:1px solid #f0a0a0}
-  .footer{margin-top:36px;padding-top:20px;border-top:1px solid #e5e5e5;font-size:0.82em;color:#888;line-height:1.7;word-wrap:break-word}
-  .footer a{color:#111}
+
   .loading{color:#aaa;text-align:center;padding:30px;font-style:italic}
+  .empty{color:#888;text-align:center;padding:24px;font-style:italic}
+  .footer{margin-top:48px;padding-top:20px;border-top:1px solid #e5e5e5;font-size:0.82em;color:#888;line-height:1.7;word-wrap:break-word}
+  .footer a{color:#111}
 
   @media (min-width: 640px) {
     body{padding:40px 24px}
     h1{font-size:2.4em}
     .sub{margin-bottom:32px}
-    .stats{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:40px}
-    .stat{padding:18px 20px}
-    .stat .label{font-size:0.7em;letter-spacing:0.12em;margin-bottom:6px}
-    .stat .value{font-size:1.7em}
-    .stat .sub2{font-size:0.75em}
-    h2{font-size:1.5em;margin:36px 0 14px}
-    table{font-size:0.9em;min-width:0}
-    th{padding:10px 14px;font-size:0.7em;letter-spacing:0.1em}
-    td{padding:10px 14px}
-    .bar{height:14px;margin-right:8px}
-    .footer{margin-top:48px;padding-top:24px;font-size:0.83em}
-  }
-  @media (min-width: 900px) {
-    .grid2{grid-template-columns:1fr 1fr;gap:24px}
   }
 </style>
 </head>
 <body>
 
-<h1>IBAMA · Autos de infração</h1>
+<h1>IBAMA · Buscar autos de infração <span class="badge-total" id="badgeTotal">…</span></h1>
 <p class="sub">Dataset de fiscalizações ambientais (Sistema SICAFI). Fonte: <a href="https://dadosabertos.ibama.gov.br/" target="_blank">dadosabertos.ibama.gov.br</a>. Atualizado diariamente.</p>
 
-<div class="stats" id="stats"><div class="loading">Carregando…</div></div>
+<!-- Abas -->
+<div class="tabs">
+  <button class="tab active" data-tab="busca">🔍 Busca</button>
+  <button class="tab" data-tab="multi">📋 Lote de CPF/CNPJ</button>
+</div>
 
-<div class="search">
-  <input type="search" id="busca" inputmode="search" autocapitalize="none" autocorrect="off" placeholder="Buscar (mín. 3 caracteres)…">
-  <div class="toolbar" style="margin-top:8px">
+<!-- Aba 1: Busca simples -->
+<div class="panel active" id="panel-busca">
+  <div class="tip">
+    <b>Como usar:</b> digite <b>nome ou parte do nome</b> (ex: <code>madeireira</code>), <b>CPF/CNPJ ou parte</b> (ex: <code>12345678</code>), ou <b>palavras da descrição da multa</b> (ex: <code>desmatamento</code>, <code>queimada</code>). Mínimo 3 caracteres. <br>
+    Clique no nome de qualquer infrator pra ver <b>todas as multas</b> dele.
+  </div>
+
+  <input type="search" class="search-input" id="busca" inputmode="search" autocapitalize="none" autocorrect="off" placeholder="Buscar (mín. 3 caracteres)…">
+
+  <div class="toolbar">
     <label>Buscar em:</label>
     <button id="scopeAll" class="active" data-scope="all">Nome / CNPJ / Município</button>
     <button id="scopeDesc" data-scope="descricao">Descrição da multa</button>
   </div>
+
+  <div id="busca-result"></div>
 </div>
-<div id="busca-result"></div>
 
-<!-- Seção desmatamento -->
-<div class="desmat-section">
-  <h2>🌳 Recorte: desmatamento e supressão de vegetação</h2>
-  <p class="sub" style="color:#8b4513;margin-bottom:14px">Autos de infração cuja descrição menciona desmatamento, corte ou supressão de vegetação, ou que se enquadram em flora.</p>
-  <div class="desmat-stats" id="desmat-stats"><div class="loading">Carregando…</div></div>
-
-  <div class="grid2" style="margin-top:18px">
-    <div>
-      <h2 style="margin-top:0;font-size:1.1em;color:#8b4513">Top estados — desmatamento</h2>
-      <div class="table-wrap"><table><thead><tr><th>UF</th><th class="num">Autos</th><th class="num">Valor (R$ mi)</th></tr></thead>
-      <tbody id="desmat-uf"><tr><td colspan="3" class="loading">Carregando…</td></tr></tbody></table></div>
-    </div>
-    <div>
-      <h2 style="margin-top:0;font-size:1.1em;color:#8b4513">Top biomas afetados</h2>
-      <div class="table-wrap"><table><thead><tr><th>Bioma</th><th class="num">Autos</th><th class="num">Valor (R$ mi)</th></tr></thead>
-      <tbody id="desmat-bioma"><tr><td colspan="3" class="loading">Carregando…</td></tr></tbody></table></div>
-    </div>
+<!-- Aba 2: Busca múltipla -->
+<div class="panel" id="panel-multi">
+  <div class="tip">
+    <b>Como usar:</b> cole uma lista de <b>CPFs ou CNPJs</b> (separados por espaço, vírgula ou quebra de linha). O sistema busca todos de uma vez e mostra <b>quantos autos cada um tem e o valor total</b>. <br>
+    Útil pra checar uma lista de empresas, autoridades, doadores de campanha, etc. Até <b>50 por vez</b>.
   </div>
 
-  <h2 style="font-size:1.1em;color:#8b4513;margin-top:24px">Top 15 infratores — desmatamento (por valor)</h2>
-  <p class="sub" style="color:#8b4513;margin-bottom:10px">Clique no nome pra ver todas as multas dessa pessoa/empresa.</p>
-  <div class="table-wrap"><table><thead><tr><th>Infrator</th><th>CPF/CNPJ</th><th class="num">Autos</th><th class="num">Valor (R$ mi)</th></tr></thead>
-  <tbody id="desmat-infratores"><tr><td colspan="4" class="loading">Carregando…</td></tr></tbody></table></div>
-</div>
+  <textarea class="search-input" id="multiInput" placeholder="Cole aqui CPFs/CNPJs separados por espaço, vírgula ou quebra de linha…&#10;&#10;Ex:&#10;12345678000199&#10;98765432000150 11111111000111&#10;22.222.222/0001-22, 33333333000133"></textarea>
 
-<!-- Top infratores com filtros -->
-<h2>Top 20 infratores <span class="qmark">filtre por ano e ordene por valor ou quantidade</span></h2>
-<div class="toolbar">
-  <label>Ano:</label>
-  <select id="topAno">
-    <option value="">Todos</option>
-  </select>
-  <label>Ordenar por:</label>
-  <button id="orderValor" class="active" data-order="valor">Maior valor</button>
-  <button id="orderN" data-order="n">Mais autos</button>
-  <label style="margin-left:auto">
-    <input type="checkbox" id="onlyDesmat" style="vertical-align:middle"> só desmatamento
-  </label>
-</div>
-<div class="table-wrap"><table><thead><tr><th>Infrator</th><th>CPF/CNPJ</th><th class="num">Autos</th><th class="num">Valor (R$ mi)</th><th class="num">Período</th></tr></thead>
-<tbody id="tbl-infratores"><tr><td colspan="5" class="loading">Carregando…</td></tr></tbody></table></div>
-
-<div class="grid2">
-  <div>
-    <h2>Top estados (todos os autos)</h2>
-    <div class="table-wrap"><table><thead><tr><th>UF</th><th class="num">Autos</th><th class="num">Total (R$ mi)</th></tr></thead>
-    <tbody id="tbl-uf"><tr><td colspan="3" class="loading">Carregando…</td></tr></tbody></table></div>
+  <div class="toolbar">
+    <button class="primary" id="multiBtn">Buscar lote</button>
+    <button id="multiClear">Limpar</button>
+    <span style="color:#888;font-size:0.85em;margin-left:auto" id="multiCount"></span>
   </div>
-  <div>
-    <h2>Autos por ano</h2>
-    <div class="table-wrap"><table><thead><tr><th>Ano</th><th class="num">Autos</th><th class="num">Total (R$ mi)</th></tr></thead>
-    <tbody id="tbl-ano"><tr><td colspan="3" class="loading">Carregando…</td></tr></tbody></table></div>
+
+  <div id="multi-result"></div>
+</div>
+
+<!-- Modal: texto LAI -->
+<div class="modal-back" id="laiBack">
+  <div class="modal" style="max-width:780px">
+    <button class="modal-close" id="laiClose" aria-label="Fechar">×</button>
+    <h3>📝 Texto pronto pra solicitar via LAI</h3>
+    <div class="modal-sub">Copie e cole no <a href="https://falabr.cgu.gov.br/" target="_blank"><b>falabr.cgu.gov.br</b></a> · órgão: <b>IBAMA</b></div>
+
+    <div style="background:#fff7ed;border-left:4px solid #d96e30;padding:14px 16px;border-radius:6px;margin-bottom:14px;font-size:0.9em;line-height:1.6">
+      <b style="color:#8b4513">Como usar o falabr passo a passo:</b><br>
+      1. Vá em <a href="https://falabr.cgu.gov.br/" target="_blank"><code>falabr.cgu.gov.br</code></a> e faça login (gov.br ou cadastro próprio).<br>
+      2. Clique em <b>"Manifestação"</b> → <b>"Acesso à Informação"</b>.<br>
+      3. No campo <b>Órgão</b>, digite <b>"IBAMA"</b> e selecione.<br>
+      4. Cole o texto abaixo no campo <b>"Detalhamento da Solicitação"</b>.<br>
+      5. <b>Salve o número de protocolo</b>. O órgão tem 20 dias úteis pra responder (prorrogáveis por mais 10).<br>
+      6. Se negarem ou ignorarem: <b>recorra</b> dentro de 10 dias. CGU é a última instância.
+    </div>
+
+    <textarea id="laiText" readonly style="width:100%;min-height:380px;padding:14px;font-family:'SF Mono',Menaco,monospace;font-size:13px;line-height:1.55;border:2px solid #e5e5e5;border-radius:8px;background:#fafaf8;resize:vertical"></textarea>
+
+    <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn-action" id="laiCopy">📋 Copiar texto</button>
+      <a class="btn-action" href="https://falabr.cgu.gov.br/publico/Manifestacao/SelecionarTipoManifestacao.aspx?Tipo=2" target="_blank" style="text-decoration:none;display:inline-block">🌐 Abrir falabr</a>
+    </div>
+
+    <div style="margin-top:14px;padding-top:14px;border-top:1px solid #e5e5e5;font-size:0.82em;color:#888;line-height:1.6">
+      O texto inclui argumentação completa baseada em decisões da CGU e o despacho 2/2023/GABIN do IBAMA, deixando claro que esses dados são públicos e que pedir via SEI (sistema interno do órgão) não é o caminho — devem responder pelo falabr.
+    </div>
   </div>
 </div>
 
@@ -195,12 +218,115 @@
 </div>
 
 <div class="footer">
-  <p>Dados via API: <a href="https://ibama-worker.datafixers.org/api/stats" target="_blank">/stats</a> · <a href="https://ibama-worker.datafixers.org/api/desmatamento" target="_blank">/desmatamento</a> · <a href="https://ibama-worker.datafixers.org/api/top-infratores?ano=2026" target="_blank">/top-infratores?ano=…</a> · <a href="https://ibama-worker.datafixers.org/api/infrator?cpf=…" target="_blank">/infrator?cpf=…</a> · <a href="https://ibama-worker.datafixers.org/api/busca?q=…" target="_blank">/busca?q=…</a></p>
+  <p>API: <a href="https://ibama-worker.datafixers.org/api/busca?q=desmatamento&scope=descricao" target="_blank">/busca?q=…&scope=descricao</a> · <a href="https://ibama-worker.datafixers.org/api/busca-multi?cpfs=…" target="_blank">/busca-multi?cpfs=…</a> · <a href="https://ibama-worker.datafixers.org/api/infrator?cpf=…" target="_blank">/infrator?cpf=…</a></p>
   <p style="margin-top:8px"><a href="https://dashboards.datafixers.org">← Voltar pra dashboards.datafixers.org</a></p>
 </div>
 
 <script>
 const API = 'https://ibama-worker.datafixers.org';
+let _lastResults = [];
+let _lastModalResults = [];
+
+// === CSV download ===
+function downloadResults(name, override){
+  const data = override || _lastResults;
+  if (!data || !data.length) { alert('Nada pra baixar.'); return; }
+  const cols = ['num_auto','data_auto','uf','municipio','nome_infrator','cpf_cnpj','valor','tipo_infracao','des_infracao','biomas','unidade_conservacao','sit_cancelado'];
+  const head = cols.join(';');
+  const rows = data.map(r => cols.map(c => {
+    const v = r[c]; if (v == null) return '';
+    const s = String(v).replace(/"/g, '""').replace(/\r?\n/g, ' ');
+    return /[;"\n]/.test(s) ? `"${s}"` : s;
+  }).join(';'));
+  const csv = '﻿' + head + '\n' + rows.join('\n');
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = `ibama_${name}_${new Date().toISOString().slice(0,10)}.csv`;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=> URL.revokeObjectURL(url), 1000);
+}
+
+// === Texto LAI ===
+const LAI_TEMPLATE = `Solicito acesso à íntegra dos seguintes processos administrativos (SEI) relacionados a multas ambientais. Se necessário, não vejo problema em remover as informações pessoais para cumprimento da LGPD, como CPF ou endereço (lembrando que empresas não se enquadram na LGPD):
+
+{AUTOS}
+
+Vale ressaltar que:
+
+1 -  Segundo o despacho decisório 2/2023/GABIN, assinado pela presidência do Ibama, nomes de pessoas e empresas autuadas devem ser disponibibilizados integralmente, portanto não se enquadram na LGPD;
+
+2 - Segundo diversas decisões recentes da CGU, como a de número 02303.014333/2023-31 e 02303.012756/2023-17, processos de apuração de infração ambiental são documentos públicos de acesso a qualquer interessado, independentemente de o requerente da informação ser ou não parte do processo;
+
+3 - Segundo a CGU, o trabalho adicional para tarjamento de informações não é motivo para negar acesso; o tarjamento de informações sensíveis é previsto, inclusive, em enunciado do ministério (https://www.gov.br/ouvidorias/pt-br/assuntos/noticias/2022/controladoria-publica-novo-enunciado-sobre-harmonizacao-entre-lai-e-lgpd).
+
+4 - O órgão não pode exigir que o pedido de informação seja feito por meio do SEI. O SEI é um sistema com outros propósitos, que não permite recursos e não é interligado ao sistema FALABR, portanto não permite conexão com a CGU e com a CMRI, por exemplo. Também não permite anonimização de pedidos e nem prevê prazos para resposta. Por esses motivos, exigir que pedidos de informação sejam feitos pelo SEI viola diversas premissas da Lei de Acesso à Informação Em relação a isso, deve-se sugere-se ler a decisão 02680.002380/2019-59 (http://buscaprecedentes.cgu.gov.br/busca/dados/Precedente/02680002380201959_CGU.pdf#search=ibama%20sei%20processo), que trata justamente do SEI - "Por conseguinte, a necessidade de identificação prévia do requerente do pedido de acesso à informação, por meio do preenchimento de cadastro de usuário externo no SEI, vai de encontro à garantia de proteção da identidade estabelecida no artigo 6º, inciso IV, do Decreto nº 13.460/2018, que dispõe sobre participação, proteção e defesa dos direitos do usuário dos serviços públicos da administração pública".
+
+Mais especificamente sobre o SEI:
+
+1) Já houve decisão recente da CGU, protocolo 02303.014333/2023-31, apontando que o SEI não é canal apropriado para pedidos de informação (ver decisão - "Ademais, cumpre esclarecer que a Plataforma Fala.BR permite ao cidadão controlar o prazo para entregar, interpor recurso em desfavor da decisão, sendo, portanto, a ferramenta mais adequada para o recebimento da informação em questão")
+2) O SEI não tem prazo de resposta; já recebi respostas depois de mais de um ano da solicitação;
+3) O SEI não permite recursos;
+4) Recorrentemente os servidores que atendem pelo SEI negam pedidos dizendo que só advogados ou partes nos processos podem pedir documentos;
+5) O SEI exige apresentação de documento pessoal, como CPF/RG, e isto fica registrado no sistema.
+6) As partes do processo - inclusive criminosos de todos os tipos - também ficam com acesso ao nome, e-mail e eventualmente até documentos de quem pediu informação sobre eles.
+7) No passado recente, já tive meus dados expostos desta forma ao advogado de uma empresa criminosa, que inclusive me citou em uma de suas petições.
+8) No exercício de minhas atividades enquanto jornalista, é fundamental que eu possa realizar qualquer apuração livre de qualquer ameaça ou embaraço promovido pela parte que é investigada. Portanto não faz sentido algum que eu seja obrigado a criar registros de que estou pedindo informação sobre o acusado, especialmente quando este pode acessar tais registros quase imediatamente após o meu pedido.
+9) A CGU já decidiu em solicitações anteriores que o SEI não é o canal mais adequado para um pedido de LAI.
+
+A CGU já falou, de forma bastante explícita, que "é equivocado o entendimento do IBAMA quando exige que o cidadão apresente pedido de acesso à informação por meio de sistema diverso do Fala.BR", em caso específico relacionado a autos de multas ambientais. (ler: https://buscaprecedentes.cgu.gov.br/?idAnexo=111318&idAws=AnexosRecurso%2F187429%2F4e4af496-6cfa-4388-9ac4-2e30d18a47f8&fileName=SEI_3014786_Parecer___Recurso_de_3%C2%AA_Instancia_1524.pdf&handler=DownloadFile)
+
+Por fim, ressalta-se que a CGU é a instância máxima de monitoramento da LAI, portanto descumprir decisões da CGU ou ignorar o precedente estabelecido em casos idênticos é o mesmo que violar a lei e, portanto, enquadrar-se no artigo 32 da lei.`;
+
+function downloadMulti(data){
+  if (!data || !data.length) return;
+  const cols = ['nome_infrator','cpf_cnpj','cpf_cnpj_norm','n','valor_milhoes','primeiro','ultimo'];
+  const head = cols.join(';');
+  const rows = data.map(r => cols.map(c => {
+    const v = r[c]; if (v == null) return '';
+    const s = String(v).replace(/"/g, '""');
+    return /[;"\n]/.test(s) ? `"${s}"` : s;
+  }).join(';'));
+  const csv = '﻿' + head + '\n' + rows.join('\n');
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = `ibama_lote_${new Date().toISOString().slice(0,10)}.csv`;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=> URL.revokeObjectURL(url), 1000);
+}
+
+function abrirLAI(data){
+  if (!data || !data.length) { alert('Nenhum auto selecionado.'); return; }
+  // Lista de autos: num_auto, data, UF, valor
+  const linhas = data
+    .filter(r => r.num_auto)
+    .slice(0, 200)
+    .map(r => {
+      const dt = (r.data_auto||'').slice(0,10).split('-').reverse().join('/');
+      return `- Auto nº ${r.num_auto} (${dt} · ${r.uf||'?'} · ${r.municipio||'?'})`;
+    });
+  const lista = linhas.length ? linhas.join('\n') : '[escreva aqui o número do(s) auto(s) ou SEI]';
+  document.getElementById('laiText').value = LAI_TEMPLATE.replace('{AUTOS}', lista);
+  document.getElementById('laiBack').classList.add('show');
+}
+document.getElementById('laiClose').addEventListener('click', ()=> document.getElementById('laiBack').classList.remove('show'));
+document.getElementById('laiBack').addEventListener('click', e => {
+  if (e.target.id === 'laiBack') document.getElementById('laiBack').classList.remove('show');
+});
+document.getElementById('laiCopy').addEventListener('click', async ()=>{
+  const t = document.getElementById('laiText');
+  t.select();
+  try {
+    await navigator.clipboard.writeText(t.value);
+    const btn = document.getElementById('laiCopy');
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copiado!';
+    setTimeout(()=> btn.textContent = orig, 1800);
+  } catch(e) {
+    document.execCommand('copy');
+  }
+});
 const fmt = n => Number(n||0).toLocaleString('pt-BR');
 const fmtBRL = n => 'R$ ' + Number(n||0).toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2});
 const fmtBRLcompact = n => {
@@ -212,102 +338,145 @@ const fmtBRLcompact = n => {
 const escapeHtml = s => String(s||'').replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
 const cleanName = s => (s||'').replace(/\s+/g,' ').trim();
 
-async function loadStats(){
-  const r = await fetch(API + '/api/stats').then(r=>r.json());
-  const s = r.stats || {};
-  document.getElementById('stats').innerHTML = `
-    <div class="stat"><div class="label">Total autos</div><div class="value">${fmt(s.total)}</div><div class="sub2">desde ${s.ano_min}</div></div>
-    <div class="stat"><div class="label">Infratores únicos</div><div class="value">${fmt(s.infratores_unicos)}</div></div>
-    <div class="stat"><div class="label">Estados</div><div class="value">${s.estados}/27</div></div>
-    <div class="stat"><div class="label">Valor total</div><div class="value">R$ ${fmt(s.valor_total_milhoes)}M</div></div>
-  `;
-}
+// Total banco
+fetch(API + '/api/stats').then(r=>r.json()).then(r=>{
+  document.getElementById('badgeTotal').textContent = fmt(r.stats?.total) + ' autos no banco';
+}).catch(()=>{});
 
-async function loadUF(){
-  const data = await fetch(API + '/api/uf').then(r=>r.json());
-  const max = Math.max(...data.map(d=>d.n));
-  document.getElementById('tbl-uf').innerHTML = data.slice(0,15).map(d=>`
-    <tr><td>${d.uf}</td>
-    <td class="num"><span class="bar" style="width:${Math.round(d.n/max*60)}px"></span>${fmt(d.n)}</td>
-    <td class="num">${fmt(d.valor_milhoes)}</td></tr>`).join('');
-}
+// Tabs
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click', ()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById('panel-' + t.dataset.tab).classList.add('active');
+  });
+});
 
-async function loadAno(){
-  const data = await fetch(API + '/api/por-ano').then(r=>r.json());
-  document.getElementById('tbl-ano').innerHTML = data.map(d=>`
-    <tr><td>${d.ano}</td><td class="num">${fmt(d.n)}</td><td class="num">${fmt(d.valor_milhoes)}</td></tr>`).join('');
-  // popula select do filtro
-  const sel = document.getElementById('topAno');
-  for (const d of data) {
-    const opt = document.createElement('option');
-    opt.value = d.ano;
-    opt.textContent = d.ano;
-    sel.appendChild(opt);
-  }
-  // default: ano mais recente
-  if (data.length) {
-    sel.value = data[0].ano;
-    loadTopInfratores();
-  }
+// === BUSCA SIMPLES ===
+let buscaTimer, buscaScope = 'all';
+function runBusca(){
+  const q = document.getElementById('busca').value.trim();
+  if (q.length < 3) { document.getElementById('busca-result').innerHTML = ''; return; }
+  clearTimeout(buscaTimer);
+  document.getElementById('busca-result').innerHTML = '<div class="loading">Buscando…</div>';
+  buscaTimer = setTimeout(async () => {
+    const params = new URLSearchParams({ q });
+    if (buscaScope === 'descricao') params.set('scope', 'descricao');
+    try {
+      const data = await fetch(API + '/api/busca?' + params).then(r=>r.json());
+      if (!Array.isArray(data) || data.length === 0) {
+        document.getElementById('busca-result').innerHTML = '<p class="empty">Nenhum resultado.</p>';
+        return;
+      }
+      const total = data.reduce((s, r) => s + (Number(r.valor) || 0), 0);
+      _lastResults = data;
+      document.getElementById('busca-result').innerHTML = `
+        <div class="result-header">
+          <span><strong>${data.length}</strong> resultado(s) · total ${fmtBRLcompact(total)}${data.length >= 100 ? ' (mostrando top 100)' : ''}</span>
+          <div class="result-actions">
+            <button class="btn-action" onclick="downloadResults('busca_${escapeHtml(q.replace(/[^a-z0-9]/gi,'_'))}')">📥 Baixar CSV</button>
+            <button class="btn-action secondary" onclick="abrirLAI(_lastResults)">📝 Texto pra LAI</button>
+          </div>
+        </div>
+        ${data.slice(0,100).map(r=>{
+          const data_auto = (r.data_auto||'').slice(0,10).split('-').reverse().join('/');
+          const cpf = (r.cpf_cnpj||'').replace(/\D/g,'');
+          return `<div class="multa-card">
+            <div class="multa-head">
+              <span class="multa-data">${data_auto}${r.num_auto ? ' · Auto ' + escapeHtml(r.num_auto) : ''}</span>
+              <span class="multa-valor">${fmtBRL(r.valor)}</span>
+            </div>
+            <div class="multa-local">📍 ${escapeHtml(r.municipio||'?')}/${escapeHtml(r.uf||'?')}${r.biomas ? ' · ' + escapeHtml(r.biomas) : ''}</div>
+            <div style="margin:4px 0">
+              <button class="infrator-link" data-cpf="${escapeHtml(cpf)}" data-nome="${escapeHtml(cleanName(r.nome_infrator))}">${escapeHtml(cleanName(r.nome_infrator)) || '(sem nome)'}</button>
+              <code style="font-size:0.78em;color:#888;margin-left:6px">${escapeHtml(r.cpf_cnpj||'—')}</code>
+            </div>
+            <div class="multa-desc">${escapeHtml(r.des_infracao||'(sem descrição)')}</div>
+            ${r.tipo_infracao ? `<span class="multa-tipo">${escapeHtml(r.tipo_infracao)}</span>` : ''}
+            ${r.sit_cancelado === 'S' ? `<span class="multa-tipo multa-cancelado">CANCELADO</span>` : ''}
+          </div>`;
+        }).join('')}`;
+    } catch(e) {
+      document.getElementById('busca-result').innerHTML = '<p class="empty" style="color:#a00">Erro: ' + escapeHtml(e.message) + '</p>';
+    }
+  }, 350);
 }
+document.getElementById('busca').addEventListener('input', runBusca);
+document.querySelectorAll('#scopeAll,#scopeDesc').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    document.getElementById('scopeAll').classList.remove('active');
+    document.getElementById('scopeDesc').classList.remove('active');
+    b.classList.add('active');
+    buscaScope = b.dataset.scope;
+    document.getElementById('busca').placeholder = buscaScope === 'descricao'
+      ? 'Ex: desmatamento, transporte de madeira, queimada, fauna…'
+      : 'Buscar por nome, CNPJ ou município…';
+    runBusca();
+  });
+});
 
-let topOrder = 'valor';
-async function loadTopInfratores(){
-  const ano = document.getElementById('topAno').value;
-  const onlyDesmat = document.getElementById('onlyDesmat').checked;
-  const params = new URLSearchParams({ limit: '20', order: topOrder });
-  if (ano) params.set('ano', ano);
-  if (onlyDesmat) params.set('desmatamento', '1');
-  document.getElementById('tbl-infratores').innerHTML = '<tr><td colspan="5" class="loading">Carregando…</td></tr>';
-  const data = await fetch(API + '/api/top-infratores?' + params).then(r=>r.json());
-  if (!data.length) {
-    document.getElementById('tbl-infratores').innerHTML = '<tr><td colspan="5" style="text-align:center;color:#888;padding:20px">Nenhum resultado com esse filtro.</td></tr>';
+// === BUSCA MÚLTIPLA ===
+function parseCpfs(text){
+  return (text||'').split(/[\s,;\n]+/).map(s => s.replace(/\D/g,'')).filter(s => s.length >= 3);
+}
+document.getElementById('multiInput').addEventListener('input', ()=>{
+  const c = parseCpfs(document.getElementById('multiInput').value).length;
+  document.getElementById('multiCount').textContent = c ? `${c} identificador(es) detectado(s)` : '';
+});
+document.getElementById('multiClear').addEventListener('click', ()=>{
+  document.getElementById('multiInput').value = '';
+  document.getElementById('multi-result').innerHTML = '';
+  document.getElementById('multiCount').textContent = '';
+});
+document.getElementById('multiBtn').addEventListener('click', async ()=>{
+  const cpfs = parseCpfs(document.getElementById('multiInput').value);
+  if (!cpfs.length) {
+    document.getElementById('multi-result').innerHTML = '<p class="empty">Cole pelo menos 1 CPF ou CNPJ.</p>';
     return;
   }
-  document.getElementById('tbl-infratores').innerHTML = data.map(d=>{
-    const cpf = d.cpf_cnpj_norm || (d.cpf_cnpj||'').replace(/\D/g,'');
-    const periodo = (d.primeiro||'').slice(0,7) + ' → ' + (d.ultimo||'').slice(0,7);
-    return `<tr>
-      <td><button class="infrator-link" data-cpf="${escapeHtml(cpf)}" data-nome="${escapeHtml(cleanName(d.nome_infrator))}">${escapeHtml(cleanName(d.nome_infrator))}</button></td>
-      <td><code style="font-size:0.85em;color:#666">${escapeHtml(d.cpf_cnpj||'—')}</code></td>
-      <td class="num">${fmt(d.n)}</td>
-      <td class="num"><strong>${fmt(d.valor_milhoes)}</strong></td>
-      <td class="num" style="font-size:0.82em;color:#888">${escapeHtml(periodo)}</td>
-    </tr>`;
-  }).join('');
-}
+  if (cpfs.length > 50) {
+    document.getElementById('multi-result').innerHTML = `<p class="empty" style="color:#a00">Máximo 50 por vez. Você colou ${cpfs.length}. Divida em lotes.</p>`;
+    return;
+  }
+  document.getElementById('multi-result').innerHTML = '<div class="loading">Buscando ' + cpfs.length + ' identificador(es)…</div>';
+  try {
+    const data = await fetch(API + '/api/busca-multi?cpfs=' + encodeURIComponent(cpfs.join(','))).then(r=>r.json());
+    if (!Array.isArray(data) || data.length === 0) {
+      document.getElementById('multi-result').innerHTML = `
+        <p class="empty">Nenhum dos ${cpfs.length} identificadores tem auto de infração no banco.</p>
+        <p class="empty" style="font-size:0.85em">Identificadores buscados: ${cpfs.slice(0,20).map(c=>`<code>${escapeHtml(c)}</code>`).join(' ')}${cpfs.length > 20 ? ` (+${cpfs.length-20})` : ''}</p>`;
+      return;
+    }
+    const totalValor = data.reduce((s,r) => s + (Number(r.valor_milhoes) || 0) * 1e6, 0);
+    const totalN = data.reduce((s,r) => s + (Number(r.n) || 0), 0);
+    const naoEncontrados = cpfs.filter(c => !data.some(r => (r.cpf_cnpj_norm||'').startsWith(c)));
 
-async function loadDesmatamento(){
-  const r = await fetch(API + '/api/desmatamento').then(r=>r.json());
-  const s = r.stats || {};
-  document.getElementById('desmat-stats').innerHTML = `
-    <div class="stat"><div class="label">Autos desmatamento</div><div class="value">${fmt(s.total)}</div></div>
-    <div class="stat"><div class="label">Infratores</div><div class="value">${fmt(s.infratores)}</div></div>
-    <div class="stat"><div class="label">Multa total</div><div class="value">R$ ${fmt(s.valor_total_milhoes)}M</div></div>
-  `;
-
-  const maxUf = Math.max(...(r.por_uf||[]).map(d=>d.n));
-  document.getElementById('desmat-uf').innerHTML = (r.por_uf||[]).map(d=>`
-    <tr><td>${d.uf || '—'}</td>
-    <td class="num"><span class="bar bar-green" style="width:${Math.round(d.n/maxUf*60)}px"></span>${fmt(d.n)}</td>
-    <td class="num">${fmt(d.valor_milhoes)}</td></tr>`).join('');
-
-  const maxBi = Math.max(...(r.por_bioma||[]).map(d=>d.n));
-  document.getElementById('desmat-bioma').innerHTML = (r.por_bioma||[]).map(d=>`
-    <tr><td>${escapeHtml(d.biomas||'—')}</td>
-    <td class="num"><span class="bar bar-green" style="width:${Math.round(d.n/maxBi*50)}px"></span>${fmt(d.n)}</td>
-    <td class="num">${fmt(d.valor_milhoes)}</td></tr>`).join('');
-
-  document.getElementById('desmat-infratores').innerHTML = (r.top_infratores||[]).map(d=>{
-    const cpf = (d.cpf_cnpj||'').replace(/\D/g,'');
-    return `<tr>
-      <td><button class="infrator-link" data-cpf="${escapeHtml(cpf)}" data-nome="${escapeHtml(cleanName(d.nome_infrator))}">${escapeHtml(cleanName(d.nome_infrator))}</button></td>
-      <td><code style="font-size:0.85em;color:#666">${escapeHtml(d.cpf_cnpj||'—')}</code></td>
-      <td class="num">${fmt(d.n)}</td>
-      <td class="num"><strong>${fmt(d.valor_milhoes)}</strong></td>
-    </tr>`;
-  }).join('');
-}
+    _lastResults = data;
+    document.getElementById('multi-result').innerHTML = `
+      <div class="result-header">
+        <span><strong>${data.length} de ${cpfs.length}</strong> identificadores com autos · ${fmt(totalN)} autos · total ${fmtBRLcompact(totalValor)}</span>
+        <div class="result-actions">
+          <button class="btn-action" onclick="downloadMulti(_lastResults)">📥 Baixar CSV</button>
+        </div>
+      </div>
+      ${data.map(r=>{
+        return `<div class="multi-row">
+          <div>
+            <div class="nome"><button class="infrator-link" data-cpf="${escapeHtml(r.cpf_cnpj_norm)}" data-nome="${escapeHtml(cleanName(r.nome_infrator))}">${escapeHtml(cleanName(r.nome_infrator)) || '(sem nome)'}</button></div>
+            <div class="cpf">${escapeHtml(r.cpf_cnpj||r.cpf_cnpj_norm||'—')}</div>
+            <div class="meta">${(r.primeiro||'').slice(0,7)} → ${(r.ultimo||'').slice(0,7)}</div>
+          </div>
+          <div class="n">${fmt(r.n)} autos</div>
+          <div class="valor">${fmt(r.valor_milhoes)} mi</div>
+        </div>`;
+      }).join('')}
+      ${naoEncontrados.length ? `<div class="result-header" style="margin-top:18px"><strong>${naoEncontrados.length}</strong> sem registro no banco:</div>
+        <div style="font-family:monospace;font-size:0.82em;color:#888;background:#f5f5f3;padding:10px 12px;border-radius:6px">${naoEncontrados.map(c=>escapeHtml(c)).join(' · ')}</div>` : ''}`;
+  } catch(e) {
+    document.getElementById('multi-result').innerHTML = '<p class="empty" style="color:#a00">Erro: ' + escapeHtml(e.message) + '</p>';
+  }
+});
 
 // === DRILL-DOWN ===
 document.addEventListener('click', e => {
@@ -326,114 +495,51 @@ async function openInfrator(cpf, nome){
   document.getElementById('modalSub').innerHTML = cpf ? `CPF/CNPJ: <code>${escapeHtml(cpf)}</code>` : 'Sem CPF/CNPJ registrado';
   document.getElementById('modalBody').innerHTML = '<div class="loading">Carregando multas…</div>';
   document.getElementById('modalBack').classList.add('show');
-  // Manda CPF E nome — backend faz fallback por nome se CPF não bate
   const params = new URLSearchParams();
   if (cpf) params.set('cpf', cpf);
   if (nome) params.set('nome', nome);
   if (!cpf && !nome) {
-    document.getElementById('modalBody').innerHTML = '<p style="color:#888">Sem identificação.</p>';
+    document.getElementById('modalBody').innerHTML = '<p class="empty">Sem identificação.</p>';
     return;
   }
-  const data = await fetch(API + '/api/infrator?' + params).then(r=>r.json());
-  if (!Array.isArray(data) || !data.length) {
-    document.getElementById('modalBody').innerHTML = `<p style="color:#888">Nenhuma multa encontrada com esse identificador. Tente buscar pelo nome no campo no topo da página.</p>`;
-    return;
-  }
-  // Agregação
-  const total = data.reduce((s, r) => s + (Number(r.valor) || 0), 0);
-  const ufs = [...new Set(data.map(r => r.uf).filter(Boolean))];
-  const cancel = data.filter(r => r.sit_cancelado).length;
-  const html = `
-    <div style="background:#f5f5f3;padding:10px 14px;border-radius:6px;margin-bottom:14px;display:flex;gap:18px;flex-wrap:wrap;font-size:0.9em">
-      <div><strong>${data.length}</strong> autos · <strong>${fmtBRLcompact(total)}</strong></div>
-      <div>UFs: ${ufs.join(', ') || '—'}</div>
-      ${cancel ? `<div style="color:#a00">${cancel} cancelado(s)</div>` : ''}
-    </div>
-    ${data.map(m => {
-      const data_auto = (m.data_auto||'').slice(0,10).split('-').reverse().join('/');
-      const cancelClass = m.sit_cancelado ? 'multa-cancelado' : '';
-      return `<div class="multa-card ${cancelClass}">
-        <div class="multa-head">
-          <span class="multa-data">${data_auto}${m.num_auto ? ' · Auto nº ' + escapeHtml(m.num_auto) : ''}</span>
-          <span class="multa-valor">${fmtBRL(m.valor)}</span>
-        </div>
-        <div class="multa-local">📍 ${escapeHtml(m.municipio||'?')}/${escapeHtml(m.uf||'?')}${m.biomas ? ' · ' + escapeHtml(m.biomas) : ''}${m.unidade_conservacao ? ' · UC: ' + escapeHtml(m.unidade_conservacao) : ''}</div>
-        <div class="multa-desc">${escapeHtml(m.des_infracao||'(sem descrição)')}</div>
-        ${m.tipo_infracao ? `<span class="multa-tipo">${escapeHtml(m.tipo_infracao)}</span>` : ''}
-        ${m.sit_cancelado ? `<span class="multa-tipo multa-cancelado">CANCELADO: ${escapeHtml(m.ds_sit||'')}</span>` : ''}
-      </div>`;
-    }).join('')}
-  `;
-  document.getElementById('modalBody').innerHTML = html;
-}
-
-// === BUSCA ===
-let buscaTimer, buscaScope = 'all';
-function runBusca(){
-  const q = document.getElementById('busca').value.trim();
-  if (q.length < 3) { document.getElementById('busca-result').innerHTML = ''; return; }
-  clearTimeout(buscaTimer);
-  buscaTimer = setTimeout(async () => {
-    const params = new URLSearchParams({ q });
-    if (buscaScope === 'descricao') params.set('scope', 'descricao');
-    const data = await fetch(API + '/api/busca?' + params).then(r=>r.json());
-    if (!Array.isArray(data) || data.length === 0) {
-      document.getElementById('busca-result').innerHTML = '<p style="color:#888">Nenhum resultado.</p>';
+  try {
+    const data = await fetch(API + '/api/infrator?' + params).then(r=>r.json());
+    if (!Array.isArray(data) || !data.length) {
+      document.getElementById('modalBody').innerHTML = '<p class="empty">Nenhuma multa encontrada com esse identificador.</p>';
       return;
     }
     const total = data.reduce((s, r) => s + (Number(r.valor) || 0), 0);
-    document.getElementById('busca-result').innerHTML = `
-      <p class="sub" style="margin-top:8px"><strong>${data.length}</strong> resultado(s) · total ${fmtBRLcompact(total)} — top 50:</p>
-      ${data.slice(0,50).map(r=>{
-        const data_auto = (r.data_auto||'').slice(0,10).split('-').reverse().join('/');
-        const cpf = (r.cpf_cnpj||'').replace(/\D/g,'');
+    const ufs = [...new Set(data.map(r => r.uf).filter(Boolean))];
+    const cancel = data.filter(r => r.sit_cancelado === 'S').length;
+    _lastModalResults = data;
+    const safeNome = (nome||'infrator').replace(/[^a-z0-9]/gi,'_').slice(0,40);
+    document.getElementById('modalBody').innerHTML = `
+      <div style="background:#f5f5f3;padding:10px 14px;border-radius:6px;margin-bottom:14px;display:flex;gap:14px;flex-wrap:wrap;font-size:0.9em;align-items:center">
+        <div><strong>${data.length}</strong> autos · <strong>${fmtBRLcompact(total)}</strong></div>
+        <div>UFs: ${ufs.join(', ') || '—'}</div>
+        ${cancel ? `<div style="color:#a00">${cancel} cancelado(s)</div>` : ''}
+        <div style="margin-left:auto;display:flex;gap:6px">
+          <button class="btn-action" onclick="downloadResults('autos_${safeNome}', _lastModalResults)">📥 CSV</button>
+          <button class="btn-action secondary" onclick="abrirLAI(_lastModalResults)">📝 Texto LAI</button>
+        </div>
+      </div>
+      ${data.map(m => {
+        const data_auto = (m.data_auto||'').slice(0,10).split('-').reverse().join('/');
         return `<div class="multa-card">
           <div class="multa-head">
-            <span class="multa-data">${data_auto}</span>
-            <span class="multa-valor">${fmtBRL(r.valor)}</span>
+            <span class="multa-data">${data_auto}${m.num_auto ? ' · Auto nº ' + escapeHtml(m.num_auto) : ''}</span>
+            <span class="multa-valor">${fmtBRL(m.valor)}</span>
           </div>
-          <div class="multa-local">📍 ${escapeHtml(r.municipio||'?')}/${escapeHtml(r.uf||'?')}${r.biomas ? ' · ' + escapeHtml(r.biomas) : ''}</div>
-          <div style="margin:4px 0">
-            <button class="infrator-link" data-cpf="${escapeHtml(cpf)}" data-nome="${escapeHtml(cleanName(r.nome_infrator))}">${escapeHtml(cleanName(r.nome_infrator))}</button>
-            <code style="font-size:0.78em;color:#888;margin-left:6px">${escapeHtml(r.cpf_cnpj||'—')}</code>
-          </div>
-          <div class="multa-desc">${escapeHtml(r.des_infracao||'(sem descrição)')}</div>
-          ${r.tipo_infracao ? `<span class="multa-tipo">${escapeHtml(r.tipo_infracao)}</span>` : ''}
+          <div class="multa-local">📍 ${escapeHtml(m.municipio||'?')}/${escapeHtml(m.uf||'?')}${m.biomas ? ' · ' + escapeHtml(m.biomas) : ''}${m.unidade_conservacao ? ' · UC: ' + escapeHtml(m.unidade_conservacao) : ''}</div>
+          <div class="multa-desc">${escapeHtml(m.des_infracao||'(sem descrição)')}</div>
+          ${m.tipo_infracao ? `<span class="multa-tipo">${escapeHtml(m.tipo_infracao)}</span>` : ''}
+          ${m.sit_cancelado === 'S' ? `<span class="multa-tipo multa-cancelado">CANCELADO${m.ds_sit ? ': ' + escapeHtml(m.ds_sit) : ''}</span>` : ''}
         </div>`;
       }).join('')}`;
-  }, 350);
+  } catch(e) {
+    document.getElementById('modalBody').innerHTML = '<p class="empty" style="color:#a00">Erro: ' + escapeHtml(e.message) + '</p>';
+  }
 }
-document.getElementById('busca').addEventListener('input', runBusca);
-document.querySelectorAll('#scopeAll,#scopeDesc').forEach(b=>{
-  b.addEventListener('click', ()=>{
-    document.getElementById('scopeAll').classList.remove('active');
-    document.getElementById('scopeDesc').classList.remove('active');
-    b.classList.add('active');
-    buscaScope = b.dataset.scope;
-    document.getElementById('busca').placeholder = buscaScope === 'descricao'
-      ? 'Ex: desmatamento, transporte de madeira, queimada, fauna…'
-      : 'Buscar por nome, CNPJ ou município…';
-    runBusca();
-  });
-});
-
-// Listeners dos filtros
-document.getElementById('topAno').addEventListener('change', loadTopInfratores);
-document.getElementById('onlyDesmat').addEventListener('change', loadTopInfratores);
-document.querySelectorAll('#orderValor,#orderN').forEach(b => {
-  b.addEventListener('click', () => {
-    document.getElementById('orderValor').classList.remove('active');
-    document.getElementById('orderN').classList.remove('active');
-    b.classList.add('active');
-    topOrder = b.dataset.order;
-    loadTopInfratores();
-  });
-});
-
-loadStats();
-loadUF();
-loadAno();
-loadDesmatamento();
 </script>
 </body>
 </html>
