@@ -222,8 +222,7 @@
 </div>
 
 <div class="footer">
-  <p>API: <a href="https://ibama-worker.datafixers.org/api/busca?q=desmatamento&scope=descricao" target="_blank">/busca?q=…&scope=descricao</a> · <a href="https://ibama-worker.datafixers.org/api/busca-multi?cpfs=…" target="_blank">/busca-multi?cpfs=…</a> · <a href="https://ibama-worker.datafixers.org/api/infrator?cpf=…" target="_blank">/infrator?cpf=…</a></p>
-  <p style="margin-top:8px"><a href="https://dashboards.datafixers.org">← Voltar pra dashboards.datafixers.org</a></p>
+  <p><a href="https://dashboards.datafixers.org">← Voltar pra dashboards.datafixers.org</a></p>
 </div>
 
 <script>
@@ -338,9 +337,23 @@ const fmt = n => Number(n||0).toLocaleString('pt-BR');
 const fmtBRL = n => 'R$ ' + Number(n||0).toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2});
 const fmtBRLcompact = n => {
   const v = Number(n||0);
-  if (v >= 1e6) return 'R$ ' + (v/1e6).toFixed(2) + ' mi';
-  if (v >= 1e3) return 'R$ ' + (v/1e3).toFixed(0) + ' mil';
-  return 'R$ ' + v.toFixed(2);
+  if (v >= 1e9) return 'R$ ' + (v/1e9).toLocaleString('pt-BR', {maximumFractionDigits:1}) + ' bi';
+  if (v >= 1e6) return 'R$ ' + (v/1e6).toLocaleString('pt-BR', {maximumFractionDigits:1}) + ' mi';
+  if (v >= 1e3) return 'R$ ' + (v/1e3).toLocaleString('pt-BR', {maximumFractionDigits:0}) + ' mil';
+  return 'R$ ' + v.toLocaleString('pt-BR', {maximumFractionDigits:2});
+};
+// Recebe valor em MILHÕES (como vem de /api/stats) e formata humano
+const fmtFromMi = milhoes => {
+  const v = Number(milhoes||0);
+  if (v >= 1000) return 'R$ ' + (v/1000).toLocaleString('pt-BR', {maximumFractionDigits:1}) + ' bi';
+  if (v >= 1) return 'R$ ' + v.toLocaleString('pt-BR', {maximumFractionDigits:1}) + ' mi';
+  return 'R$ ' + (v*1000).toLocaleString('pt-BR', {maximumFractionDigits:0}) + ' mil';
+};
+const fmtNumHuman = n => {
+  const v = Number(n||0);
+  if (v >= 1e6) return (v/1e6).toLocaleString('pt-BR', {maximumFractionDigits:1}) + ' mi';
+  if (v >= 1e3) return (v/1e3).toLocaleString('pt-BR', {maximumFractionDigits:0}) + ' mil';
+  return v.toLocaleString('pt-BR');
 };
 const escapeHtml = s => String(s||'').replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
 const cleanName = s => (s||'').replace(/\s+/g,' ').trim();
@@ -355,8 +368,8 @@ fetch(API + '/api/stats').then(r=>r.json()).then(r=>{
     <span>📊 <b>${fmt(s.total)}</b> autos de infração</span>
     <span>📅 Anos: <b>${anoMin || s.ano_min} – ${s.ano_max}</b></span>
     <span>🌎 <b>${s.estados}/27</b> estados</span>
-    <span>👥 <b>${fmt(s.infratores_unicos)}</b> infratores únicos</span>
-    <span>💰 Multa total: <b>R$ ${fmt(s.valor_total_milhoes)}M</b></span>
+    <span>👥 <b>${fmtNumHuman(s.infratores_unicos)}</b> infratores únicos</span>
+    <span>💰 Multa total: <b>${fmtFromMi(s.valor_total_milhoes)}</b></span>
     <span>🔄 Última atualização: <b>${taken}</b></span>
   `;
 }).catch(()=>{
