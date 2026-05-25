@@ -1,0 +1,30 @@
+name = "ibama-scraper"
+main = "src/index.ts"
+compatibility_date = "2025-05-01"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = false
+
+routes = [
+  { pattern = "ibama-worker.datafixers.org", custom_domain = true }
+]
+
+[triggers]
+crons = [
+  "0 6 * * *",     # 06:00 UTC = 03:00 BRT — scrape diário
+  "0 11 * * *"     # 11:00 UTC = 08:00 BRT — digest matinal Telegram
+]
+
+[[r2_buckets]]
+binding = "ARQUIVOS"
+bucket_name = "datafixers-arquivos"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "ibama"
+database_id = "2bba3c11-c416-47c9-af39-d01f40c7136f"
+
+[ai]
+binding = "AI"
+
+[vars]
+SOURCE_URL = "https://dadosabertos.ibama.gov.br/dados/SIFISC/auto_infracao/auto_infracao/auto_infracao_csv.zip"

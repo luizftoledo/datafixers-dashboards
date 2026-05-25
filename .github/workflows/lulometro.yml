@@ -40,13 +40,6 @@ jobs:
       - name: Install Wrangler
         run: npm install -g wrangler@4
 
-      - name: Checkout worker repo (pra wrangler.toml)
-        uses: actions/checkout@v4
-        with:
-          repository: luizftoledo/datafixers-ibama-worker
-          path: worker
-          token: ${{ secrets.WORKER_REPO_TOKEN || secrets.GITHUB_TOKEN }}
-
       - name: Build Lulometro data (Planalto + Biblioteca + Bluesky)
         run: |
           python scripts/build_lulometro_data.py --max-details 2500 --max-failures 3
