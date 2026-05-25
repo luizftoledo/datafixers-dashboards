@@ -357,6 +357,22 @@ const fmtNumHuman = n => {
 };
 const escapeHtml = s => String(s||'').replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
 const cleanName = s => (s||'').replace(/\s+/g,' ').trim();
+const stripAcc = s => String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+function highlightTerm(text, term){
+  const esc = escapeHtml(text||'');
+  if (!term || term.length < 3) return esc;
+  const t = stripAcc(term).toLowerCase();
+  const src = stripAcc(text||'').toLowerCase();
+  let out = '', i = 0;
+  while (i < src.length) {
+    const idx = src.indexOf(t, i);
+    if (idx < 0) { out += escapeHtml((text||'').slice(i)); break; }
+    out += escapeHtml((text||'').slice(i, idx));
+    out += '<mark style="background:#fff3a0;padding:0 2px;border-radius:2px">' + escapeHtml((text||'').slice(idx, idx + t.length)) + '</mark>';
+    i = idx + t.length;
+  }
+  return out;
+}
 
 // Meta da base: total, faixa de anos, snapshot
 fetch(API + '/api/stats').then(r=>r.json()).then(r=>{
@@ -415,17 +431,19 @@ function runBusca(){
         ${data.slice(0,100).map(r=>{
           const data_auto = (r.data_auto||'').slice(0,10).split('-').reverse().join('/');
           const cpf = (r.cpf_cnpj||'').replace(/\D/g,'');
+          const term = buscaScope === 'descricao' ? q : '';
           return `<div class="multa-card">
             <div class="multa-head">
               <span class="multa-data">${data_auto}${r.num_auto ? ' · Auto ' + escapeHtml(r.num_auto) : ''}</span>
               <span class="multa-valor">${fmtBRL(r.valor)}</span>
             </div>
-            <div class="multa-local">📍 ${escapeHtml(r.municipio||'?')}/${escapeHtml(r.uf||'?')}${r.biomas ? ' · ' + escapeHtml(r.biomas) : ''}</div>
+            <div class="multa-local">📍 ${escapeHtml(r.municipio||'?')}/${escapeHtml(r.uf||'?')}${r.biomas ? ' · ' + escapeHtml(r.biomas) : ''}${r.unidade_conservacao ? ' · UC: ' + highlightTerm(r.unidade_conservacao, term) : ''}</div>
             <div style="margin:4px 0">
-              <button class="infrator-link" data-cpf="${escapeHtml(cpf)}" data-nome="${escapeHtml(cleanName(r.nome_infrator))}">${escapeHtml(cleanName(r.nome_infrator)) || '(sem nome)'}</button>
+              <button class="infrator-link" data-cpf="${escapeHtml(cpf)}" data-nome="${escapeHtml(cleanName(r.nome_infrator))}">${highlightTerm(cleanName(r.nome_infrator), term) || '(sem nome)'}</button>
               <code style="font-size:0.78em;color:#888;margin-left:6px">${escapeHtml(r.cpf_cnpj||'—')}</code>
             </div>
-            <div class="multa-desc">${escapeHtml(r.des_infracao||'(sem descrição)')}</div>
+            <div class="multa-desc">${highlightTerm(r.des_infracao||'(sem descrição)', term)}</div>
+            ${r.des_local ? `<div class="multa-desc" style="font-size:0.85em;color:#555;margin-top:6px;padding-left:10px;border-left:2px solid #e5e5e5"><b style="color:#777">Local:</b> ${highlightTerm(r.des_local, term)}</div>` : ''}
             ${r.tipo_infracao ? `<span class="multa-tipo">${escapeHtml(r.tipo_infracao)}</span>` : ''}
             ${r.sit_cancelado === 'S' ? `<span class="multa-tipo multa-cancelado">CANCELADO</span>` : ''}
           </div>`;
@@ -560,11 +578,12 @@ async function openInfrator(cpf, nome){
         const data_auto = (m.data_auto||'').slice(0,10).split('-').reverse().join('/');
         return `<div class="multa-card">
           <div class="multa-head">
-            <span class="multa-data">${data_auto}${m.num_auto ? ' · Auto nº ' + escapeHtml(m.num_auto) : ''}</span>
+            <span class="multa-data">${data_auto}${m.num_auto ? ' · Auto nº ' + escapeHtml(m.num_auto) : ''}${m.num_processo ? ' · Proc. ' + escapeHtml(m.num_processo) : ''}</span>
             <span class="multa-valor">${fmtBRL(m.valor)}</span>
           </div>
           <div class="multa-local">📍 ${escapeHtml(m.municipio||'?')}/${escapeHtml(m.uf||'?')}${m.biomas ? ' · ' + escapeHtml(m.biomas) : ''}${m.unidade_conservacao ? ' · UC: ' + escapeHtml(m.unidade_conservacao) : ''}</div>
           <div class="multa-desc">${escapeHtml(m.des_infracao||'(sem descrição)')}</div>
+          ${m.des_local ? `<div class="multa-desc" style="font-size:0.85em;color:#555;margin-top:6px;padding-left:10px;border-left:2px solid #e5e5e5"><b style="color:#777">Local:</b> ${escapeHtml(m.des_local)}</div>` : ''}
           ${m.tipo_infracao ? `<span class="multa-tipo">${escapeHtml(m.tipo_infracao)}</span>` : ''}
           ${m.sit_cancelado === 'S' ? `<span class="multa-tipo multa-cancelado">CANCELADO${m.ds_sit ? ': ' + escapeHtml(m.ds_sit) : ''}</span>` : ''}
         </div>`;
