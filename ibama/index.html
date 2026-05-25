@@ -234,7 +234,7 @@ let _lastModalResults = [];
 function downloadResults(name, override){
   const data = override || _lastResults;
   if (!data || !data.length) { alert('Nada pra baixar.'); return; }
-  const cols = ['num_auto','data_auto','uf','municipio','nome_infrator','cpf_cnpj','valor','tipo_infracao','des_infracao','biomas','unidade_conservacao','sit_cancelado'];
+  const cols = ['num_auto','num_processo','data_auto','uf','municipio','nome_infrator','cpf_cnpj','valor','tipo_infracao','des_infracao','des_local','biomas','unidade_conservacao','sit_cancelado'];
   const head = cols.join(';');
   const rows = data.map(r => cols.map(c => {
     const v = r[c]; if (v == null) return '';
@@ -434,7 +434,7 @@ function runBusca(){
           const term = buscaScope === 'descricao' ? q : '';
           return `<div class="multa-card">
             <div class="multa-head">
-              <span class="multa-data">${data_auto}${r.num_auto ? ' · Auto ' + escapeHtml(r.num_auto) : ''}</span>
+              <span class="multa-data">${data_auto}${r.num_auto ? ' · Auto ' + escapeHtml(r.num_auto) : ''}${r.num_processo ? ' · Proc. ' + escapeHtml(r.num_processo) : ''}</span>
               <span class="multa-valor">${fmtBRL(r.valor)}</span>
             </div>
             <div class="multa-local">📍 ${escapeHtml(r.municipio||'?')}/${escapeHtml(r.uf||'?')}${r.biomas ? ' · ' + escapeHtml(r.biomas) : ''}${r.unidade_conservacao ? ' · UC: ' + highlightTerm(r.unidade_conservacao, term) : ''}</div>
