@@ -120,7 +120,12 @@
 <div class="stats" id="stats"><div class="loading">Carregando…</div></div>
 
 <div class="search">
-  <input type="search" id="busca" inputmode="search" autocapitalize="none" autocorrect="off" placeholder="Buscar por nome, CNPJ, município ou descrição da multa (mín. 3 caracteres)…">
+  <input type="search" id="busca" inputmode="search" autocapitalize="none" autocorrect="off" placeholder="Buscar (mín. 3 caracteres)…">
+  <div class="toolbar" style="margin-top:8px">
+    <label>Buscar em:</label>
+    <button id="scopeAll" class="active" data-scope="all">Nome / CNPJ / Município</button>
+    <button id="scopeDesc" data-scope="descricao">Descrição da multa</button>
+  </div>
 </div>
 <div id="busca-result"></div>
 
@@ -321,13 +326,17 @@ async function openInfrator(cpf, nome){
   document.getElementById('modalSub').innerHTML = cpf ? `CPF/CNPJ: <code>${escapeHtml(cpf)}</code>` : 'Sem CPF/CNPJ registrado';
   document.getElementById('modalBody').innerHTML = '<div class="loading">Carregando multas…</div>';
   document.getElementById('modalBack').classList.add('show');
-  if (!cpf) {
-    document.getElementById('modalBody').innerHTML = '<p style="color:#888">Sem CPF/CNPJ, não dá pra listar as multas individualmente.</p>';
+  // Manda CPF E nome — backend faz fallback por nome se CPF não bate
+  const params = new URLSearchParams();
+  if (cpf) params.set('cpf', cpf);
+  if (nome) params.set('nome', nome);
+  if (!cpf && !nome) {
+    document.getElementById('modalBody').innerHTML = '<p style="color:#888">Sem identificação.</p>';
     return;
   }
-  const data = await fetch(API + '/api/infrator?cpf=' + encodeURIComponent(cpf)).then(r=>r.json());
+  const data = await fetch(API + '/api/infrator?' + params).then(r=>r.json());
   if (!Array.isArray(data) || !data.length) {
-    document.getElementById('modalBody').innerHTML = '<p style="color:#888">Nenhuma multa encontrada.</p>';
+    document.getElementById('modalBody').innerHTML = `<p style="color:#888">Nenhuma multa encontrada com esse identificador. Tente buscar pelo nome no campo no topo da página.</p>`;
     return;
   }
   // Agregação
@@ -359,13 +368,15 @@ async function openInfrator(cpf, nome){
 }
 
 // === BUSCA ===
-let buscaTimer;
-document.getElementById('busca').addEventListener('input', e => {
-  clearTimeout(buscaTimer);
-  const q = e.target.value.trim();
+let buscaTimer, buscaScope = 'all';
+function runBusca(){
+  const q = document.getElementById('busca').value.trim();
   if (q.length < 3) { document.getElementById('busca-result').innerHTML = ''; return; }
+  clearTimeout(buscaTimer);
   buscaTimer = setTimeout(async () => {
-    const data = await fetch(API + '/api/busca?q=' + encodeURIComponent(q)).then(r=>r.json());
+    const params = new URLSearchParams({ q });
+    if (buscaScope === 'descricao') params.set('scope', 'descricao');
+    const data = await fetch(API + '/api/busca?' + params).then(r=>r.json());
     if (!Array.isArray(data) || data.length === 0) {
       document.getElementById('busca-result').innerHTML = '<p style="color:#888">Nenhum resultado.</p>';
       return;
@@ -391,6 +402,19 @@ document.getElementById('busca').addEventListener('input', e => {
         </div>`;
       }).join('')}`;
   }, 350);
+}
+document.getElementById('busca').addEventListener('input', runBusca);
+document.querySelectorAll('#scopeAll,#scopeDesc').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    document.getElementById('scopeAll').classList.remove('active');
+    document.getElementById('scopeDesc').classList.remove('active');
+    b.classList.add('active');
+    buscaScope = b.dataset.scope;
+    document.getElementById('busca').placeholder = buscaScope === 'descricao'
+      ? 'Ex: desmatamento, transporte de madeira, queimada, fauna…'
+      : 'Buscar por nome, CNPJ ou município…';
+    runBusca();
+  });
 });
 
 // Listeners dos filtros
