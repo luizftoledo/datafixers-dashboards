@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-05-26T17:03:18.927309+00:00",
+  "generated_at": "2026-05-27T16:52:31.986518+00:00",
   "counts": {
-    "items": 92,
+    "items": 94,
     "domains": 25,
     "categories": {
-      "reportagem_autoral": 62,
+      "reportagem_autoral": 63,
       "republicacao": 0,
-      "eco_repercussao": 1,
+      "eco_repercussao": 2,
       "citacao_fonte": 2,
       "mencao": 8,
       "entrevista": 1,
@@ -14,14 +14,14 @@
       "perfil_bio": 18
     },
     "recent": {
-      "last_1_day": 0,
-      "last_7_days": 1,
-      "last_30_days": 4
+      "last_1_day": 1,
+      "last_7_days": 2,
+      "last_30_days": 5
     }
   },
   "date_range": {
     "min": "2017-11-08",
-    "max": "2026-05-21"
+    "max": "2026-05-26"
   },
   "methodology": {
     "names": [
@@ -43,23 +43,23 @@
       }
     },
     "enrich": {
-      "fetched": 63,
-      "reused": 33,
-      "kept": 92,
-      "dropped": 4,
+      "fetched": 61,
+      "reused": 35,
+      "kept": 94,
+      "dropped": 2,
       "categories": {
         "perfil_bio": 18,
-        "reportagem_autoral": 62,
+        "reportagem_autoral": 63,
+        "eco_repercussao": 2,
         "mencao": 8,
         "entrevista": 1,
-        "citacao_fonte": 2,
-        "eco_repercussao": 1
+        "citacao_fonte": 2
       },
       "domains": {
-        "bbc.com": 53,
+        "bbc.com": 54,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
-        "apublica.org": 3,
+        "apublica.org": 4,
         "ojoioeotrigo.com.br": 2,
         "estadao.com.br": 7,
         "g1.globo.com": 2,
