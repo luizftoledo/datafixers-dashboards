@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-28T17:00:54.290410+00:00",
-  "snapshot_date": "2026-05-28",
+  "generated_at": "2026-05-29T16:52:08.997722+00:00",
+  "snapshot_date": "2026-05-29",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -1021,7 +1021,7 @@
     "total_liquidado": 16146018133.59,
     "total_pago": 19305728451.55
   },
-  "run_date": "2026-05-28",
+  "run_date": "2026-05-29",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1105,7 +1105,7 @@
           "error": ""
         }
       ],
-      "error": "8 - Emendas de Comissão: filtro não confirmado",
+      "error": "dotação inicial/atual zerada — provável quebra do scraper Qlik (DOM mudou)",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -1121,7 +1121,7 @@
         ]
       },
       "last_update": "",
-      "base_siafi_date": "27/5/2026",
+      "base_siafi_date": "28/5/2026",
       "rows": [],
       "rows_count": 0,
       "unique_nro_emendas": 0,
@@ -3237,6 +3237,17 @@
       "previous_snapshot_date": "2026-05-27",
       "interval_days": 1,
       "source_changed": false
+    },
+    {
+      "date": "2026-05-29",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 346996895857.52,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-05-28",
+      "interval_days": 1,
+      "source_changed": false
     }
   ],
   "siop_daily_history": [
@@ -3889,7 +3900,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-05-29",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-05-28T17:00:54.290410+00:00"
+  "updated_at": "2026-05-29T16:52:08.997722+00:00"
 }
