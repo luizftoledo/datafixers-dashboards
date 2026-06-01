@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-31T14:53:07.007282+00:00",
-  "snapshot_date": "2026-05-31",
+  "generated_at": "2026-06-01T18:46:39.521126+00:00",
+  "snapshot_date": "2026-06-01",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -1021,7 +1021,7 @@
     "total_liquidado": 16146018133.59,
     "total_pago": 19305728451.55
   },
-  "run_date": "2026-05-31",
+  "run_date": "2026-06-01",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1105,7 +1105,7 @@
           "error": ""
         }
       ],
-      "error": "6 - Emendas Individuais: filtro não confirmado ; 7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
+      "error": "7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -1121,7 +1121,7 @@
         ]
       },
       "last_update": "",
-      "base_siafi_date": "28/5/2026",
+      "base_siafi_date": "29/5/2026",
       "rows": [],
       "rows_count": 0,
       "unique_nro_emendas": 0,
@@ -1156,8 +1156,7 @@
           "error": ""
         }
       ],
-      "error": "6 - Emendas Individuais: filtro não confirmado ; 7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
-      "fallback_from_previous": true
+      "error": ""
     },
     "documents": {
       "year": 2026,
@@ -3271,6 +3270,17 @@
       "previous_snapshot_date": "2026-05-30",
       "interval_days": 1,
       "source_changed": false
+    },
+    {
+      "date": "2026-06-01",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 346996895857.52,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-05-31",
+      "interval_days": 1,
+      "source_changed": false
     }
   ],
   "siop_daily_history": [
@@ -3953,7 +3963,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-06-01",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-05-31T14:53:07.007282+00:00"
+  "updated_at": "2026-06-01T18:46:39.521126+00:00"
 }
