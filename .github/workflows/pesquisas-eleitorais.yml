@@ -2,8 +2,14 @@ name: Pesquisas eleitorais (TSE)
 
 on:
   schedule:
+    # Rodadas principais
     - cron: "0 12 * * *"
     - cron: "0 21 * * *"
+    # Rodadas de backup (caso o TSE esteja fora numa rodada principal).
+    # Idempotente: só commita se houver mudança e só alerta em pesquisa nova.
+    - cron: "0 15 * * *"
+    - cron: "0 18 * * *"
+    - cron: "30 23 * * *"
   workflow_dispatch: {}
 
 permissions:

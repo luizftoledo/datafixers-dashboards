@@ -16,9 +16,11 @@ import csv
 import io
 import json
 import sys
+import time
 import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.error import URLError
 from urllib.request import Request, urlopen
 
 CSV_ZIP_URL = (
@@ -55,10 +57,30 @@ def clean(raw: str) -> str:
     return "" if raw in ("#NULO#", "#NE#") else raw
 
 
-def fetch_zip() -> bytes:
+def fetch_zip(tentativas: int = 3) -> bytes:
+    """Baixa o zip do TSE com retry e backoff exponencial.
+
+    O CDN do TSE costuma dar timeout pontual; uma única tentativa quebra a
+    run agendada. Tenta `tentativas` vezes (espera 10s, 20s, 40s...) antes de
+    desistir, para que falhas transitórias se auto-resolvam sem alerta falso.
+    """
     req = Request(CSV_ZIP_URL, headers={"User-Agent": "luizftoledo-portfolio/1.0"})
-    with urlopen(req, timeout=180) as resp:
-        return resp.read()
+    ultimo_erro: Exception | None = None
+    for tentativa in range(1, tentativas + 1):
+        try:
+            with urlopen(req, timeout=180) as resp:
+                return resp.read()
+        except (URLError, TimeoutError, OSError) as exc:
+            ultimo_erro = exc
+            if tentativa < tentativas:
+                espera = 10 * (2 ** (tentativa - 1))
+                print(
+                    f"[scraper] tentativa {tentativa}/{tentativas} falhou ({exc}); "
+                    f"nova tentativa em {espera}s",
+                    file=sys.stderr,
+                )
+                time.sleep(espera)
+    raise SystemExit(f"falha ao baixar zip do TSE após {tentativas} tentativas: {ultimo_erro}")
 
 
 def extract_brasil_csv(zip_bytes: bytes) -> str:
