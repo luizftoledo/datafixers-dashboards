@@ -654,6 +654,11 @@
     "ts": "2026-05-28T15:36:34.724222+00:00",
     "txt_bytes": 12656
   },
+  "BR022112026": {
+    "msg": "protocolo não encontrado na busca",
+    "status": "erro",
+    "ts": "2026-06-03T16:25:22.190638+00:00"
+  },
   "BR022762026": {
     "file": "questionarios/BR-02276-2026.txt",
     "pdf_bytes": 82243,
@@ -2316,6 +2321,14 @@
     "ts": "2026-05-13T15:04:07.524465+00:00",
     "txt_bytes": 16193
   },
+  "BR082972026": {
+    "file": "questionarios/BR-08297-2026.txt",
+    "pdf_bytes": 2217281,
+    "sha256": "4e3eeb581186fad942248619433206bb8c2f987d644df859fe352b8dbe6ab2a8",
+    "status": "ok",
+    "ts": "2026-06-03T16:25:08.140946+00:00",
+    "txt_bytes": 12912
+  },
   "BR083372026": {
     "file": "questionarios/BR-08337-2026.txt",
     "pdf_bytes": 295657,
@@ -2355,6 +2368,14 @@
     "status": "ok",
     "ts": "2026-05-13T15:02:47.577390+00:00",
     "txt_bytes": 5400
+  },
+  "BR084892026": {
+    "file": "questionarios/BR-08489-2026.txt",
+    "pdf_bytes": 2216809,
+    "sha256": "b18dd3b4ccf0bfb812bb28da49083fd84785844ef4f206a8d6c9c4bb9c99d5f9",
+    "status": "ok",
+    "ts": "2026-06-03T16:25:17.604934+00:00",
+    "txt_bytes": 12440
   },
   "BR085432026": {
     "file": "questionarios/BR-08543-2026.txt",
