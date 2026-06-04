@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-03T18:13:15.070646+00:00",
+  "generated_at": "2026-06-04T16:37:52.994815+00:00",
   "counts": {
     "items": 93,
     "domains": 23,
@@ -39,12 +39,12 @@
         "google-news-rss:\"Luiz Fernando Toledo\"": 40,
         "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 1,
         "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 3,
-        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 15
+        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 14
       }
     },
     "enrich": {
-      "fetched": 64,
-      "reused": 32,
+      "fetched": 63,
+      "reused": 33,
       "kept": 93,
       "dropped": 3,
       "categories": {
@@ -56,12 +56,12 @@
         "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 56,
+        "bbc.com": 58,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
         "ojoioeotrigo.com.br": 2,
-        "estadao.com.br": 7,
+        "estadao.com.br": 6,
         "g1.globo.com": 2,
         "escavador.com": 1,
         "icfj.org": 1,
@@ -75,7 +75,7 @@
         "talks.ox.ac.uk": 1,
         "cima.ned.org": 1,
         "scielo.br": 1,
-        "piaui.uol.com.br": 2,
+        "piaui.uol.com.br": 1,
         "abraji.org.br": 1,
         "sbtnews.sbt.com.br": 1,
         "cnnbrasil.com.br": 5
