@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-03T18:12:32.846541+00:00",
-  "snapshot_date": "2026-06-03",
+  "generated_at": "2026-06-04T16:27:50.591752+00:00",
+  "snapshot_date": "2026-06-04",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -13,12 +13,12 @@
   "metrics": {
     "total_empenhado_atual": 331344890960.05,
     "total_empenhado_snapshot_anterior": 346996895857.52,
-    "delta_liquido_desde_snapshot_anterior": -15652004897.47,
-    "delta_positivo_desde_snapshot_anterior": 1452672281.91,
-    "delta_negativo_desde_snapshot_anterior": -17104677179.38,
-    "autores_com_aumento": 84,
-    "destinos_com_aumento": 38,
-    "pares_autor_destino_com_aumento": 281,
+    "delta_liquido_desde_snapshot_anterior": 0.0,
+    "delta_positivo_desde_snapshot_anterior": 0.0,
+    "delta_negativo_desde_snapshot_anterior": 0.0,
+    "autores_com_aumento": 0,
+    "destinos_com_aumento": 0,
+    "pares_autor_destino_com_aumento": 0,
     "total_autores_mapeados": 1612,
     "total_destinos_mapeados": 5457,
     "total_linhas_csv": 93553,
@@ -27,8 +27,8 @@
     "current_year_total_empenhado": 29489842919.85,
     "current_year_total_liquidado": 15871529085.71,
     "current_year_total_pago": 22859204164.52,
-    "current_year_total_empenhado_por_ano_emenda": 28877497835.24,
-    "current_year_total_pago_por_ano_emenda": 15684853960.26,
+    "current_year_total_empenhado_por_ano_emenda": 29489842919.85,
+    "current_year_total_pago_por_ano_emenda": 22859204164.52,
     "_pago_e_empenhado_source": "por_data_documento"
   },
   "top_authors_today": [
@@ -1021,7 +1021,7 @@
     "total_liquidado": 15871529085.71,
     "total_pago": 22859204164.52
   },
-  "run_date": "2026-06-03",
+  "run_date": "2026-06-04",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1105,7 +1105,7 @@
           "error": ""
         }
       ],
-      "error": "HTTPConnectionPool(host='localhost', port=37459): Read timed out. (read timeout=120)",
+      "error": "6 - Emendas Individuais: filtro não confirmado ; 7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -1156,7 +1156,7 @@
           "error": ""
         }
       ],
-      "error": "HTTPConnectionPool(host='localhost', port=34647): Read timed out. (read timeout=120)",
+      "error": "6 - Emendas Individuais: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
       "fallback_from_previous": true
     },
     "documents": {
@@ -2398,12 +2398,12 @@
         },
         {
           "author": "DR. ISMAEL ALEXANDRINO",
-          "party": "Nao identificado",
+          "party": "PSD",
           "empenhado": 7113000.0
         },
         {
           "author": "JAIME BAGATTOLI",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 6485273.0
         },
         {
@@ -2413,7 +2413,7 @@
         },
         {
           "author": "RODRIGO DA ZAELI",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 6404456.09
         },
         {
@@ -2428,17 +2428,17 @@
         },
         {
           "author": "DR. HIRAN",
-          "party": "Nao identificado",
+          "party": "PP",
           "empenhado": 4126810.0
         },
         {
           "author": "MARCOS ROGERIO",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 3542219.0
         },
         {
           "author": "HELENA LIMA",
-          "party": "Nao identificado",
+          "party": "PSD",
           "empenhado": 2009932.0
         },
         {
@@ -2448,17 +2448,17 @@
         },
         {
           "author": "MARIA ROSAS",
-          "party": "Nao identificado",
+          "party": "REPUBLICANOS",
           "empenhado": 1999956.0
         },
         {
           "author": "ASTRONAUTA MARCOS PONTES",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 1538564.0
         },
         {
           "author": "ANA PAULA LIMA",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 1303087.72
         }
       ],
@@ -2963,8 +2963,8 @@
       }
     },
     "party_lookup": {
-      "camara_mapeados": 0,
-      "senado_mapeados": 0
+      "camara_mapeados": 512,
+      "senado_mapeados": 81
     }
   },
   "daily_history": [
@@ -3357,6 +3357,17 @@
       "previous_snapshot_date": "2026-06-02",
       "interval_days": 1,
       "source_changed": true
+    },
+    {
+      "date": "2026-06-04",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 331344890960.05,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-06-03",
+      "interval_days": 1,
+      "source_changed": false
     }
   ],
   "siop_daily_history": [
@@ -4069,6 +4080,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-06-04",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
-  ]
+  ],
+  "updated_at": "2026-06-04T16:27:50.591752+00:00"
 }
