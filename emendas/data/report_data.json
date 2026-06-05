@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-04T16:27:50.591752+00:00",
-  "snapshot_date": "2026-06-04",
+  "generated_at": "2026-06-05T16:07:57.954616+00:00",
+  "snapshot_date": "2026-06-05",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -1021,7 +1021,7 @@
     "total_liquidado": 15871529085.71,
     "total_pago": 22859204164.52
   },
-  "run_date": "2026-06-04",
+  "run_date": "2026-06-05",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1105,7 +1105,7 @@
           "error": ""
         }
       ],
-      "error": "6 - Emendas Individuais: filtro não confirmado ; 7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
+      "error": "7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -3368,6 +3368,17 @@
       "previous_snapshot_date": "2026-06-03",
       "interval_days": 1,
       "source_changed": false
+    },
+    {
+      "date": "2026-06-05",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 331344890960.05,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-06-04",
+      "interval_days": 1,
+      "source_changed": false
     }
   ],
   "siop_daily_history": [
@@ -4090,7 +4101,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-06-05",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-06-04T16:27:50.591752+00:00"
+  "updated_at": "2026-06-05T16:07:57.954616+00:00"
 }
