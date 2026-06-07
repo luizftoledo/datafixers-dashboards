@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-06T14:50:59.257549+00:00",
-  "snapshot_date": "2026-06-06",
+  "generated_at": "2026-06-07T14:57:33.455284+00:00",
+  "snapshot_date": "2026-06-07",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -1021,7 +1021,7 @@
     "total_liquidado": 15871529085.71,
     "total_pago": 22859204164.52
   },
-  "run_date": "2026-06-06",
+  "run_date": "2026-06-07",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1105,7 +1105,7 @@
           "error": ""
         }
       ],
-      "error": "6 - Emendas Individuais: filtro não confirmado ; 7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
+      "error": "HTTPConnectionPool(host='localhost', port=34931): Read timed out. (read timeout=120)",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -1156,7 +1156,7 @@
           "error": ""
         }
       ],
-      "error": "6 - Emendas Individuais: filtro não confirmado ; 7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
+      "error": "HTTPConnectionPool(host='localhost', port=51167): Read timed out. (read timeout=120)",
       "fallback_from_previous": true
     },
     "documents": {
@@ -2398,12 +2398,12 @@
         },
         {
           "author": "DR. ISMAEL ALEXANDRINO",
-          "party": "PSD",
+          "party": "Nao identificado",
           "empenhado": 7113000.0
         },
         {
           "author": "JAIME BAGATTOLI",
-          "party": "PL",
+          "party": "Nao identificado",
           "empenhado": 6485273.0
         },
         {
@@ -2413,7 +2413,7 @@
         },
         {
           "author": "RODRIGO DA ZAELI",
-          "party": "PL",
+          "party": "Nao identificado",
           "empenhado": 6404456.09
         },
         {
@@ -2428,17 +2428,17 @@
         },
         {
           "author": "DR. HIRAN",
-          "party": "PP",
+          "party": "Nao identificado",
           "empenhado": 4126810.0
         },
         {
           "author": "MARCOS ROGERIO",
-          "party": "PL",
+          "party": "Nao identificado",
           "empenhado": 3542219.0
         },
         {
           "author": "HELENA LIMA",
-          "party": "PSD",
+          "party": "Nao identificado",
           "empenhado": 2009932.0
         },
         {
@@ -2448,17 +2448,17 @@
         },
         {
           "author": "MARIA ROSAS",
-          "party": "REPUBLICANOS",
+          "party": "Nao identificado",
           "empenhado": 1999956.0
         },
         {
           "author": "ASTRONAUTA MARCOS PONTES",
-          "party": "PL",
+          "party": "Nao identificado",
           "empenhado": 1538564.0
         },
         {
           "author": "ANA PAULA LIMA",
-          "party": "PT",
+          "party": "Nao identificado",
           "empenhado": 1303087.72
         }
       ],
@@ -2963,8 +2963,8 @@
       }
     },
     "party_lookup": {
-      "camara_mapeados": 512,
-      "senado_mapeados": 81
+      "camara_mapeados": 0,
+      "senado_mapeados": 0
     }
   },
   "daily_history": [
@@ -3388,6 +3388,17 @@
       "autores_com_aumento": 0,
       "destinos_com_aumento": 0,
       "previous_snapshot_date": "2026-06-05",
+      "interval_days": 1,
+      "source_changed": false
+    },
+    {
+      "date": "2026-06-07",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 331344890960.05,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-06-06",
       "interval_days": 1,
       "source_changed": false
     }
@@ -4132,7 +4143,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-06-07",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-06-06T14:50:59.257549+00:00"
+  "updated_at": "2026-06-07T14:57:33.455284+00:00"
 }
