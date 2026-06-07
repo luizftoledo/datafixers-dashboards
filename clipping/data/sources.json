@@ -11,19 +11,19 @@
     }
   },
   "enrich": {
-    "fetched": 62,
-    "reused": 31,
+    "fetched": 60,
+    "reused": 33,
     "kept": 91,
     "dropped": 2,
     "categories": {
       "perfil_bio": 17,
-      "reportagem_autoral": 64,
+      "reportagem_autoral": 63,
       "mencao": 7,
       "entrevista": 1,
-      "citacao_fonte": 2
+      "citacao_fonte": 3
     },
     "domains": {
-      "bbc.com": 55,
+      "bbc.com": 54,
       "intercept.com.br": 1,
       "piaui.folha.uol.com.br": 1,
       "apublica.org": 3,
@@ -45,6 +45,7 @@
       "abraji.org.br": 1,
       "sbtnews.sbt.com.br": 1,
       "piaui.uol.com.br": 2,
+      "observatoriodatv.com.br": 1,
       "cnnbrasil.com.br": 3
     },
     "errors": [
