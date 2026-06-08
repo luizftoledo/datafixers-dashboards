@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-07T14:57:33.455284+00:00",
-  "snapshot_date": "2026-06-07",
+  "updated_at": "2026-06-08T16:52:33.624403+00:00",
+  "snapshot_date": "2026-06-08",
   "source_requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
   "source_download_url": "https://dadosabertos-download.cgu.gov.br/PortalDaTransparencia/saida/emendas-parlamentares/EmendasParlamentares.zip",
   "source_senado_reference_url": "https://www9.senado.gov.br/QvAJAXZfc/opendoc.htm?document=senado%2Fsigabrasilpainelcidadao.qvw&host=QVS%40www9&anonymous=true&Sheet=shOrcamentoVisaoGeral",
@@ -24,14 +24,14 @@
   "siop_base_siafi_date": "30/4/2026",
   "siop_dotacao_atual_emenda": 49901486761.0,
   "siop_dotacao_inicial_emenda": 49901486761.0,
-  "siop_snapshot_error": "HTTPConnectionPool(host='localhost', port=34931): Read timed out. (read timeout=120)",
+  "siop_snapshot_error": "dotação inicial/atual zerada — provável quebra do scraper Qlik (DOM mudou)",
   "siop_details_available": true,
-  "siop_details_fallback_from_previous": true,
+  "siop_details_fallback_from_previous": false,
   "siop_details_rows_count": 0,
   "siop_details_unique_nro_emendas": 0,
   "siop_details_sweep_steps": 27,
-  "siop_details_error": "HTTPConnectionPool(host='localhost', port=51167): Read timed out. (read timeout=120)",
-  "siop_history_days": 75,
-  "siop_history_last_date": "2026-06-07",
+  "siop_details_error": "",
+  "siop_history_days": 76,
+  "siop_history_last_date": "2026-06-08",
   "siop_broken_days": 0
 }
