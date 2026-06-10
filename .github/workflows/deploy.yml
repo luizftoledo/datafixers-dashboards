@@ -3,6 +3,15 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # crons necessarios: os commits de dados dos outros workflows usam
+  # GITHUB_TOKEN, e push de GITHUB_TOKEN nao dispara workflow (regra do
+  # GitHub contra loops). Sem isso o site so atualiza em push manual.
+  # Horarios casados com os crons de dados (clipping de manha, pesquisas
+  # 12:00/21:00 UTC).
+  schedule:
+    - cron: "0 7 * * *"
+    - cron: "20 12 * * *"
+    - cron: "20 21 * * *"
 
 jobs:
   deploy:
@@ -11,7 +20,16 @@ jobs:
       contents: read
       deployments: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
+
+      - name: Remover arquivos acima do limite de 25 MiB do Pages
+        # cache de build da LAI (lai/data/cache/yearly_publica, 20-33MB) vive
+        # no git mas nao e consumido pelo site - so os scripts usam. O Pages
+        # rejeita o deploy inteiro se qualquer arquivo passar de 25 MiB.
+        run: |
+          echo "Removidos do deploy (nao do repo):"
+          find . -path ./.git -prune -o -type f -size +24M -print -exec rm -f {} \;
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
