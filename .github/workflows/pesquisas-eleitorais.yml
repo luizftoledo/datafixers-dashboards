@@ -19,9 +19,9 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
@@ -29,7 +29,11 @@ jobs:
         run: python scripts/scrape_pesquisas_tse.py
 
       - name: Install poppler (pdftotext)
-        run: sudo apt-get install -y poppler-utils
+        # apt-get update primeiro: o indice de pacotes da imagem do runner fica
+        # defasado e o install puro da 404 (ex: libpoppler134 9.8 sumiu do mirror)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y poppler-utils
 
       - name: Baixar questionários PesqEle
         continue-on-error: true

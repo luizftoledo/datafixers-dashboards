@@ -57,18 +57,19 @@ def clean(raw: str) -> str:
     return "" if raw in ("#NULO#", "#NE#") else raw
 
 
-def fetch_zip(tentativas: int = 3) -> bytes:
+def fetch_zip(tentativas: int = 5) -> bytes:
     """Baixa o zip do TSE com retry e backoff exponencial.
 
-    O CDN do TSE costuma dar timeout pontual; uma única tentativa quebra a
-    run agendada. Tenta `tentativas` vezes (espera 10s, 20s, 40s...) antes de
-    desistir, para que falhas transitórias se auto-resolvam sem alerta falso.
+    O CDN do TSE dropa conexões de parte dos IPs dos runners (Errno 110 no
+    connect) de forma intermitente — da mesma run, às vezes responde em 4s.
+    Timeout curto (60s) + mais tentativas dá mais chances de pegar uma janela
+    boa do que poucas tentativas de 180s presas num connect que nunca abre.
     """
     req = Request(CSV_ZIP_URL, headers={"User-Agent": "luizftoledo-portfolio/1.0"})
     ultimo_erro: Exception | None = None
     for tentativa in range(1, tentativas + 1):
         try:
-            with urlopen(req, timeout=180) as resp:
+            with urlopen(req, timeout=60) as resp:
                 return resp.read()
         except (URLError, TimeoutError, OSError) as exc:
             ultimo_erro = exc
