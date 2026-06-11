@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-06-10T16:53:48.304073+00:00",
+  "generated_at": "2026-06-11T17:28:36.124724+00:00",
   "counts": {
     "items": 90,
     "domains": 23,
     "categories": {
-      "reportagem_autoral": 62,
+      "reportagem_autoral": 63,
       "republicacao": 0,
       "eco_repercussao": 1,
       "citacao_fonte": 2,
-      "mencao": 7,
+      "mencao": 6,
       "entrevista": 1,
       "palestra_curso": 0,
       "perfil_bio": 17
@@ -43,20 +43,20 @@
       }
     },
     "enrich": {
-      "fetched": 60,
-      "reused": 34,
+      "fetched": 62,
+      "reused": 32,
       "kept": 90,
       "dropped": 4,
       "categories": {
         "perfil_bio": 17,
-        "reportagem_autoral": 62,
-        "mencao": 7,
+        "reportagem_autoral": 63,
+        "mencao": 6,
         "entrevista": 1,
         "citacao_fonte": 2,
         "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 54,
+        "bbc.com": 55,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
@@ -78,7 +78,7 @@
         "abraji.org.br": 1,
         "sbtnews.sbt.com.br": 1,
         "piaui.uol.com.br": 2,
-        "cnnbrasil.com.br": 4
+        "cnnbrasil.com.br": 3
       },
       "errors": [
         {
