@@ -1,650 +1,650 @@
 {
-  "generated_at": "2026-06-11T17:09:07.368583+00:00",
-  "snapshot_date": "2026-06-11",
+  "generated_at": "2026-06-12T16:26:29.583758+00:00",
+  "snapshot_date": "2026-06-12",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
     "download_url": "https://dadosabertos-download.cgu.gov.br/PortalDaTransparencia/saida/emendas-parlamentares/EmendasParlamentares.zip",
     "senado_reference_url": "https://www9.senado.gov.br/QvAJAXZfc/opendoc.htm?document=senado%2Fsigabrasilpainelcidadao.qvw&host=QVS%40www9&anonymous=true&Sheet=shOrcamentoVisaoGeral",
-    "etag": "\"5cddaa8cf7d7af61651197b2ec3e2cb7-4\"",
-    "last_modified": "Wed, 10 Jun 2026 04:27:51 GMT",
-    "zip_bytes": 31388315
+    "etag": "\"86ab2535d86f2ad40e6d323fa51f6683-4\"",
+    "last_modified": "Fri, 12 Jun 2026 01:31:53 GMT",
+    "zip_bytes": 31436669
   },
   "metrics": {
-    "total_empenhado_atual": 331831923935.66,
-    "total_empenhado_snapshot_anterior": 331344890960.05,
-    "delta_liquido_desde_snapshot_anterior": 487032975.61,
-    "delta_positivo_desde_snapshot_anterior": 488743885.02,
-    "delta_negativo_desde_snapshot_anterior": -1710909.41,
-    "autores_com_aumento": 162,
-    "destinos_com_aumento": 46,
-    "pares_autor_destino_com_aumento": 189,
+    "total_empenhado_atual": 331968654583.68,
+    "total_empenhado_snapshot_anterior": 331831923935.66,
+    "delta_liquido_desde_snapshot_anterior": 136730648.02,
+    "delta_positivo_desde_snapshot_anterior": 148023787.02,
+    "delta_negativo_desde_snapshot_anterior": -11293139.0,
+    "autores_com_aumento": 110,
+    "destinos_com_aumento": 29,
+    "pares_autor_destino_com_aumento": 125,
     "total_autores_mapeados": 1612,
     "total_destinos_mapeados": 5457,
-    "total_linhas_csv": 93628,
+    "total_linhas_csv": 93673,
     "baseline_initialized": false,
     "current_year": 2026,
     "current_year_total_empenhado": 30011497413.17,
-    "current_year_total_liquidado": 16146982828.94,
+    "current_year_total_liquidado": 16602020844.18,
     "current_year_total_pago": 23422853190.82,
-    "current_year_total_empenhado_por_ano_emenda": 29364530810.85,
-    "current_year_total_pago_por_ano_emenda": 15948248360.88,
+    "current_year_total_empenhado_por_ano_emenda": 29501261458.87,
+    "current_year_total_pago_por_ano_emenda": 16197772608.38,
     "_pago_e_empenhado_source": "por_data_documento"
   },
   "top_authors_today": [
     {
-      "author": "COM. DA SAUDE",
-      "party": "Comissao",
-      "delta_empenhado": 233481344.0,
-      "share_in_day": 0.47771716671288,
-      "current_empenhado": 11821432851.56
-    },
-    {
-      "author": "COM. ASSUNTOS SOCIAIS",
-      "party": "Comissao",
-      "delta_empenhado": 67907396.0,
-      "share_in_day": 0.13894270206003936,
-      "current_empenhado": 4765589723.3
-    },
-    {
       "author": "COM. DE INTEGRACAO NACIONAL E DES. REGIONAL",
       "party": "Comissao",
-      "delta_empenhado": 39476529.0,
-      "share_in_day": 0.0807714023846755,
-      "current_empenhado": 1885537065.44
+      "delta_empenhado": 43453002.0,
+      "share_in_day": 0.29355418392402644,
+      "current_empenhado": 1928990067.44
+    },
+    {
+      "author": "COM. DA SAUDE",
+      "party": "Comissao",
+      "delta_empenhado": 41454886.0,
+      "share_in_day": 0.2800555696794792,
+      "current_empenhado": 11862887737.56
     },
     {
       "author": "COM. DESENV REGIONAL E TURISMO",
       "party": "Comissao",
-      "delta_empenhado": 22733565.0,
-      "share_in_day": 0.04651426994134098,
-      "current_empenhado": 9233469093.71
+      "delta_empenhado": 16871685.0,
+      "share_in_day": 0.11397955247368728,
+      "current_empenhado": 9250340778.71
     },
     {
-      "author": "COM. ESPORTE",
-      "party": "Comissao",
-      "delta_empenhado": 21503953.94,
-      "share_in_day": 0.04399841020848789,
-      "current_empenhado": 1708716788.58
-    },
-    {
-      "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-      "party": "Comissao",
-      "delta_empenhado": 15645814.55,
-      "share_in_day": 0.032012297298327844,
-      "current_empenhado": 886989270.24
-    },
-    {
-      "author": "COM. AGRICULTURA PEC ABAST D. RURAL",
-      "party": "Comissao",
-      "delta_empenhado": 9190092.59,
-      "share_in_day": 0.01880349375547467,
-      "current_empenhado": 266781543.2
+      "author": "JACK ROCHA",
+      "party": "PT",
+      "delta_empenhado": 5400000.0,
+      "share_in_day": 0.03648062320733888,
+      "current_empenhado": 87233468.19
     },
     {
       "author": "COM. TURISMO",
       "party": "Comissao",
-      "delta_empenhado": 7153011.0,
-      "share_in_day": 0.014635499735627977,
-      "current_empenhado": 1577327265.31
+      "delta_empenhado": 4279733.0,
+      "share_in_day": 0.02891246796315075,
+      "current_empenhado": 1581606998.31
     },
     {
-      "author": "RAFAEL FERA",
-      "party": "Nao identificado",
-      "delta_empenhado": 7102280.0,
-      "share_in_day": 0.014531700994498102,
-      "current_empenhado": 27234173.43
+      "author": "COM. ESPORTE",
+      "party": "Comissao",
+      "delta_empenhado": 3136000.0,
+      "share_in_day": 0.021185784144113838,
+      "current_empenhado": 1711852788.58
     },
     {
-      "author": "PEDRO UCZAI",
-      "party": "Nao identificado",
-      "delta_empenhado": 3350000.0,
-      "share_in_day": 0.0068543057062758215,
-      "current_empenhado": 242735043.89
+      "author": "AIRTON FALEIRO",
+      "party": "PT",
+      "delta_empenhado": 2298848.47,
+      "share_in_day": 0.015530263860155089,
+      "current_empenhado": 184433849.48
     },
     {
-      "author": "JORGE SEIF",
-      "party": "Nao identificado",
-      "delta_empenhado": 2735000.0,
-      "share_in_day": 0.005595977942287872,
-      "current_empenhado": 181659845.1
+      "author": "HUMBERTO COSTA",
+      "party": "PT",
+      "delta_empenhado": 1744375.0,
+      "share_in_day": 0.011784423538389216,
+      "current_empenhado": 346783504.13
     },
     {
       "author": "ERIKA KOKAY",
-      "party": "Nao identificado",
-      "delta_empenhado": 2530000.0,
-      "share_in_day": 0.005176535354291889,
-      "current_empenhado": 209139490.76
+      "party": "PT",
+      "delta_empenhado": 1670000.0,
+      "share_in_day": 0.011281970510417766,
+      "current_empenhado": 210809490.76
     },
     {
-      "author": "DAMARES ALVES",
-      "party": "Nao identificado",
-      "delta_empenhado": 1825000.0,
-      "share_in_day": 0.0037340620638666787,
-      "current_empenhado": 169794424.33
+      "author": "PEDRO UCZAI",
+      "party": "PT",
+      "delta_empenhado": 1614093.9,
+      "share_in_day": 0.010904287293919282,
+      "current_empenhado": 244349137.79
     },
     {
-      "author": "SERGIO MORO",
-      "party": "Nao identificado",
-      "delta_empenhado": 1800000.0,
-      "share_in_day": 0.0036829105287452175,
-      "current_empenhado": 189824005.19
+      "author": "COM. ASSUNTOS SOCIAIS",
+      "party": "Comissao",
+      "delta_empenhado": 1550000.0,
+      "share_in_day": 0.010471289994699123,
+      "current_empenhado": 4767139723.3
     },
     {
-      "author": "SARGENTO PORTUGAL",
-      "party": "Nao identificado",
-      "delta_empenhado": 1697406.24,
-      "share_in_day": 0.0034729973960299066,
-      "current_empenhado": 100891233.24
+      "author": "LAURA CARNEIRO",
+      "party": "PSD",
+      "delta_empenhado": 1285225.0,
+      "share_in_day": 0.008682557215120762,
+      "current_empenhado": 151442054.9
     },
     {
-      "author": "GENERAL PAZUELLO",
-      "party": "Nao identificado",
-      "delta_empenhado": 1689171.93,
-      "share_in_day": 0.0034561494921432666,
-      "current_empenhado": 106190570.92
+      "author": "RODRIGO ROLLEMBERG",
+      "party": "PSB",
+      "delta_empenhado": 1270200.0,
+      "share_in_day": 0.008581053258881824,
+      "current_empenhado": 24636375.0
+    },
+    {
+      "author": "RUBENS OTONI",
+      "party": "PT",
+      "delta_empenhado": 1108011.0,
+      "share_in_day": 0.007485357740849401,
+      "current_empenhado": 238695424.38
     },
     {
       "author": "ERIKA HILTON",
-      "party": "Nao identificado",
-      "delta_empenhado": 1530000.0,
-      "share_in_day": 0.003130473949433435,
-      "current_empenhado": 86803251.0
+      "party": "PSOL",
+      "delta_empenhado": 1100000.0,
+      "share_in_day": 0.0074312380607542165,
+      "current_empenhado": 87903251.0
     },
     {
-      "author": "EDUARDO GIRAO",
-      "party": "Nao identificado",
-      "delta_empenhado": 1040781.0,
-      "share_in_day": 0.0021295018350099867,
-      "current_empenhado": 281720343.92
+      "author": "CARLOS ZARATTINI",
+      "party": "PT",
+      "delta_empenhado": 1000000.0,
+      "share_in_day": 0.0067556709643220155,
+      "current_empenhado": 249200216.83
+    },
+    {
+      "author": "SERGIO SOUZA",
+      "party": "MDB",
+      "delta_empenhado": 920000.0,
+      "share_in_day": 0.006215217287176254,
+      "current_empenhado": 239715600.29
     },
     {
       "author": "HELENA LIMA",
-      "party": "Nao identificado",
-      "delta_empenhado": 1038097.55,
-      "share_in_day": 0.0021240113315331194,
-      "current_empenhado": 103690297.78
+      "party": "PSD",
+      "delta_empenhado": 700020.0,
+      "share_in_day": 0.004729104788444697,
+      "current_empenhado": 104390317.78
     },
     {
-      "author": "TEREZA CRISTINA",
-      "party": "Nao identificado",
-      "delta_empenhado": 1007544.0,
-      "share_in_day": 0.0020614968920967063,
-      "current_empenhado": 241629105.48
+      "author": "JULIO CESAR RIBEIRO",
+      "party": "REPUBLICANOS",
+      "delta_empenhado": 600000.0,
+      "share_in_day": 0.004053402578593209,
+      "current_empenhado": 140961276.04
+    },
+    {
+      "author": "ANA PAULA LIMA",
+      "party": "PT",
+      "delta_empenhado": 600000.0,
+      "share_in_day": 0.004053402578593209,
+      "current_empenhado": 101088437.63
     }
   ],
   "top_destinations_today": [
     {
       "destination": "MÚLTIPLO",
-      "delta_empenhado": 435359405.08,
-      "share_in_day": 0.8807469850802285,
-      "current_empenhado": 214393811172.77
+      "delta_empenhado": 119524212.4,
+      "share_in_day": 0.7969079039374479,
+      "current_empenhado": 214513335385.17
     },
     {
       "destination": "Nacional",
-      "delta_empenhado": 11610494.8,
-      "share_in_day": 0.023488428574342152,
-      "current_empenhado": 15568979278.91
-    },
-    {
-      "destination": "ARIQUEMES - RO",
-      "delta_empenhado": 6614000.0,
-      "share_in_day": 0.013380348492184758,
-      "current_empenhado": 47139041.33
-    },
-    {
-      "destination": "SÃO PAULO (UF)",
-      "delta_empenhado": 5656861.74,
-      "share_in_day": 0.011444025015619391,
-      "current_empenhado": 5597527520.39
-    },
-    {
-      "destination": "SANTA CATARINA (UF)",
-      "delta_empenhado": 4816207.0,
-      "share_in_day": 0.0097433516889174,
-      "current_empenhado": 1734442051.87
-    },
-    {
-      "destination": "DISTRITO FEDERAL (UF)",
-      "delta_empenhado": 3875756.46,
-      "share_in_day": 0.007840788041372292,
-      "current_empenhado": 4046645675.72
-    },
-    {
-      "destination": "RIO DE JANEIRO (UF)",
-      "delta_empenhado": 3781306.62,
-      "share_in_day": 0.007649712780678145,
-      "current_empenhado": 4010153061.97
+      "delta_empenhado": 12400168.71,
+      "share_in_day": 0.08267607254408335,
+      "current_empenhado": 15581379447.62
     },
     {
       "destination": "PARANÁ (UF)",
-      "delta_empenhado": 3028334.57,
-      "share_in_day": 0.006126424538483593,
-      "current_empenhado": 2689676452.66
+      "delta_empenhado": 2320000.0,
+      "share_in_day": 0.01546821602093133,
+      "current_empenhado": 2691996452.66
     },
     {
-      "destination": "BOMBINHAS - SC",
-      "delta_empenhado": 2735000.0,
-      "share_in_day": 0.005532998658319522,
-      "current_empenhado": 11416467.22
+      "destination": "RIO DE JANEIRO (UF)",
+      "delta_empenhado": 2179950.0,
+      "share_in_day": 0.014534455825357437,
+      "current_empenhado": 4012333011.97
+    },
+    {
+      "destination": "SANTA CATARINA (UF)",
+      "delta_empenhado": 2114093.9,
+      "share_in_day": 0.014095371178333274,
+      "current_empenhado": 1736556145.77
+    },
+    {
+      "destination": "DISTRITO FEDERAL (UF)",
+      "delta_empenhado": 2018435.75,
+      "share_in_day": 0.013457586295418338,
+      "current_empenhado": 4048664111.47
+    },
+    {
+      "destination": "SÃO PAULO (UF)",
+      "delta_empenhado": 1722960.86,
+      "share_in_day": 0.011487556369866217,
+      "current_empenhado": 5599250481.25
     },
     {
       "destination": "RIO GRANDE DO SUL (UF)",
-      "delta_empenhado": 1445509.47,
-      "share_in_day": 0.00292431515835399,
-      "current_empenhado": 2395682022.76
+      "delta_empenhado": 1330412.42,
+      "share_in_day": 0.008870304616159492,
+      "current_empenhado": 2397012435.18
     },
     {
-      "destination": "CEARÁ (UF)",
-      "delta_empenhado": 1290000.0,
-      "share_in_day": 0.002609714175222005,
-      "current_empenhado": 1210503588.09
+      "destination": "GOIÁS (UF)",
+      "delta_empenhado": 1108011.0,
+      "share_in_day": 0.007387479957572476,
+      "current_empenhado": 1710467330.46
     },
     {
-      "destination": "CUJUBIM - RO",
-      "delta_empenhado": 1220640.0,
-      "share_in_day": 0.002469396520033324,
-      "current_empenhado": 3829790.0
-    },
-    {
-      "destination": "MATO GROSSO DO SUL (UF)",
-      "delta_empenhado": 1057464.0,
-      "share_in_day": 0.0021392858841759394,
-      "current_empenhado": 2357919825.51
+      "destination": "MINAS GERAIS (UF)",
+      "delta_empenhado": 1086629.3,
+      "share_in_day": 0.007244921011669567,
+      "current_empenhado": 3527699000.81
     },
     {
       "destination": "RORAIMA (UF)",
-      "delta_empenhado": 1046397.55,
-      "share_in_day": 0.0021168980768624624,
-      "current_empenhado": 1826994313.84
+      "delta_empenhado": 725179.92,
+      "share_in_day": 0.0048350170933628015,
+      "current_empenhado": 1827719493.76
     },
     {
-      "destination": "ACRE (UF)",
-      "delta_empenhado": 999996.0,
-      "share_in_day": 0.0020230261522211656,
-      "current_empenhado": 2292098739.49
+      "destination": "CEARÁ (UF)",
+      "delta_empenhado": 704000.0,
+      "share_in_day": 0.004693803482213645,
+      "current_empenhado": 1211207588.09
     },
     {
-      "destination": "ALAGOAS (UF)",
-      "delta_empenhado": 821639.48,
-      "share_in_day": 0.0016622048045566178,
-      "current_empenhado": 1397101394.02
+      "destination": "MATO GROSSO DO SUL (UF)",
+      "delta_empenhado": 698525.0,
+      "share_in_day": 0.004657299825871145,
+      "current_empenhado": 2358618350.51
+    },
+    {
+      "destination": "ESPÍRITO SANTO (UF)",
+      "delta_empenhado": 500007.0,
+      "share_in_day": 0.003333713917231815,
+      "current_empenhado": 2247382084.89
+    },
+    {
+      "destination": "AMAPÁ (UF)",
+      "delta_empenhado": 370000.0,
+      "share_in_day": 0.002466913761958876,
+      "current_empenhado": 2070824821.52
+    },
+    {
+      "destination": "ARIQUEMES - RO",
+      "delta_empenhado": 291016.0,
+      "share_in_day": 0.0019403010144600655,
+      "current_empenhado": 47430057.33
     },
     {
       "destination": "SERGIPE (UF)",
-      "delta_empenhado": 700000.0,
-      "share_in_day": 0.0014161239710507002,
-      "current_empenhado": 1627007215.77
+      "delta_empenhado": 200000.0,
+      "share_in_day": 0.0013334668983561492,
+      "current_empenhado": 1627207215.77
     },
     {
-      "destination": "PERNAMBUCO (UF)",
-      "delta_empenhado": 699914.59,
-      "share_in_day": 0.0014159511836958896,
-      "current_empenhado": 2039726829.78
+      "destination": "PORTO ALEGRE - RS",
+      "delta_empenhado": 145600.0,
+      "share_in_day": 0.0009707639020032766,
+      "current_empenhado": 355825326.77
     },
     {
-      "destination": "PARÁ (UF)",
-      "delta_empenhado": 689040.53,
-      "share_in_day": 0.0013939525879406846,
-      "current_empenhado": 1698314483.72
+      "destination": "BAHIA (UF)",
+      "delta_empenhado": 134941.93,
+      "share_in_day": 0.0008997029842764629,
+      "current_empenhado": 4049890023.23
     },
     {
-      "destination": "MARANHÃO (UF)",
-      "delta_empenhado": 601360.0,
-      "share_in_day": 0.001216571873187213,
-      "current_empenhado": 1232414481.53
+      "destination": "SANTO ANTÔNIO DE PÁDUA - RJ",
+      "delta_empenhado": 100000.0,
+      "share_in_day": 0.0006667334491780746,
+      "current_empenhado": 27879293.08
     }
   ],
   "top_author_destination_today": [
     {
-      "author": "COM. DA SAUDE",
-      "party": "Comissao",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 233481344.0,
-      "current_empenhado": 11821432851.56
-    },
-    {
-      "author": "COM. ASSUNTOS SOCIAIS",
-      "party": "Comissao",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 67907396.0,
-      "current_empenhado": 4750201516.0
-    },
-    {
       "author": "COM. DE INTEGRACAO NACIONAL E DES. REGIONAL",
       "party": "Comissao",
       "destination": "MÚLTIPLO",
-      "delta_empenhado": 39476529.0,
-      "current_empenhado": 1885537065.44
+      "delta_empenhado": 43453002.0,
+      "current_empenhado": 1928990067.44
+    },
+    {
+      "author": "COM. DA SAUDE",
+      "party": "Comissao",
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 41454886.0,
+      "current_empenhado": 11862887737.56
     },
     {
       "author": "COM. DESENV REGIONAL E TURISMO",
       "party": "Comissao",
       "destination": "MÚLTIPLO",
-      "delta_empenhado": 22733565.0,
-      "current_empenhado": 9232901907.71
+      "delta_empenhado": 16871685.0,
+      "current_empenhado": 9249773592.71
     },
     {
-      "author": "COM. ESPORTE",
-      "party": "Comissao",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 21503953.94,
-      "current_empenhado": 1708616788.58
+      "author": "JACK ROCHA",
+      "party": "PT",
+      "destination": "Nacional",
+      "delta_empenhado": 5000000.0,
+      "current_empenhado": 5400000.0
     },
     {
-      "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-      "party": "Comissao",
+      "author": "FERNANDO RODOLFO",
+      "party": "PRD",
       "destination": "MÚLTIPLO",
-      "delta_empenhado": 15645814.55,
-      "current_empenhado": 878889821.22
-    },
-    {
-      "author": "COM. AGRICULTURA PEC ABAST D. RURAL",
-      "party": "Comissao",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 9190092.59,
-      "current_empenhado": 266681543.2
+      "delta_empenhado": 4675000.0,
+      "current_empenhado": 150035226.05
     },
     {
       "author": "COM. TURISMO",
       "party": "Comissao",
       "destination": "MÚLTIPLO",
-      "delta_empenhado": 7153011.0,
-      "current_empenhado": 1577327265.31
+      "delta_empenhado": 4279733.0,
+      "current_empenhado": 1581606998.31
     },
     {
-      "author": "RAFAEL FERA",
-      "party": "Nao identificado",
-      "destination": "ARIQUEMES - RO",
-      "delta_empenhado": 6614000.0,
-      "current_empenhado": 11708050.0
-    },
-    {
-      "author": "SILVIA CRISTINA",
-      "party": "Nao identificado",
+      "author": "COM. ESPORTE",
+      "party": "Comissao",
       "destination": "MÚLTIPLO",
-      "delta_empenhado": 4000000.0,
-      "current_empenhado": 166491352.47
+      "delta_empenhado": 3136000.0,
+      "current_empenhado": 1711752788.58
     },
     {
-      "author": "PEDRO UCZAI",
-      "party": "Nao identificado",
-      "destination": "SANTA CATARINA (UF)",
-      "delta_empenhado": 3350000.0,
-      "current_empenhado": 65082573.93
-    },
-    {
-      "author": "ATILA LINS",
-      "party": "Nao identificado",
+      "author": "AIRTON FALEIRO",
+      "party": "PT",
       "destination": "MÚLTIPLO",
-      "delta_empenhado": 3000000.0,
-      "current_empenhado": 145303595.42
+      "delta_empenhado": 1898848.47,
+      "current_empenhado": 149959381.55
     },
     {
-      "author": "JORGE SEIF",
-      "party": "Nao identificado",
-      "destination": "BOMBINHAS - SC",
-      "delta_empenhado": 2735000.0,
-      "current_empenhado": 2735000.0
+      "author": "HUMBERTO COSTA",
+      "party": "PT",
+      "destination": "PERNAMBUCO (UF)",
+      "delta_empenhado": 1735000.0,
+      "current_empenhado": 69242337.98
     },
     {
       "author": "ERIKA KOKAY",
-      "party": "Nao identificado",
+      "party": "PT",
       "destination": "DISTRITO FEDERAL (UF)",
-      "delta_empenhado": 2530000.0,
-      "current_empenhado": 166024180.21
+      "delta_empenhado": 1670000.0,
+      "current_empenhado": 167694180.21
     },
     {
-      "author": "DAMARES ALVES",
-      "party": "Nao identificado",
-      "destination": "Nacional",
-      "delta_empenhado": 1825000.0,
-      "current_empenhado": 10490616.38
+      "author": "PEDRO UCZAI",
+      "party": "PT",
+      "destination": "SANTA CATARINA (UF)",
+      "delta_empenhado": 1614093.9,
+      "current_empenhado": 66696667.83
     },
     {
-      "author": "SERGIO MORO",
-      "party": "Nao identificado",
-      "destination": "PARANÁ (UF)",
-      "delta_empenhado": 1800000.0,
-      "current_empenhado": 22438555.79
-    },
-    {
-      "author": "SARGENTO PORTUGAL",
-      "party": "Nao identificado",
-      "destination": "RIO DE JANEIRO (UF)",
-      "delta_empenhado": 1697406.24,
-      "current_empenhado": 32568991.24
-    },
-    {
-      "author": "GILSON DANIEL",
-      "party": "Nao identificado",
+      "author": "COM. ASSUNTOS SOCIAIS",
+      "party": "Comissao",
       "destination": "MÚLTIPLO",
-      "delta_empenhado": 1185900.0,
-      "current_empenhado": 95090377.14
+      "delta_empenhado": 1550000.0,
+      "current_empenhado": 4751751516.0
     },
     {
-      "author": "GENERAL PAZUELLO",
-      "party": "Nao identificado",
+      "author": "RODRIGO ROLLEMBERG",
+      "party": "PSB",
       "destination": "Nacional",
-      "delta_empenhado": 1120000.0,
-      "current_empenhado": 19051780.21
+      "delta_empenhado": 1270200.0,
+      "current_empenhado": 16811600.0
     },
     {
-      "author": "HELENA LIMA",
-      "party": "Nao identificado",
-      "destination": "RORAIMA (UF)",
-      "delta_empenhado": 1038097.55,
-      "current_empenhado": 40484577.23
+      "author": "LAURA CARNEIRO",
+      "party": "PSD",
+      "destination": "RIO DE JANEIRO (UF)",
+      "delta_empenhado": 1256000.0,
+      "current_empenhado": 39174388.36
+    },
+    {
+      "author": "RUBENS OTONI",
+      "party": "PT",
+      "destination": "GOIÁS (UF)",
+      "delta_empenhado": 1108011.0,
+      "current_empenhado": 41279784.67
     },
     {
       "author": "ERIKA HILTON",
-      "party": "Nao identificado",
+      "party": "PSOL",
       "destination": "Nacional",
-      "delta_empenhado": 1030000.0,
-      "current_empenhado": 24866000.0
+      "delta_empenhado": 1100000.0,
+      "current_empenhado": 25966000.0
     },
     {
-      "author": "TEREZA CRISTINA",
-      "party": "Nao identificado",
-      "destination": "MATO GROSSO DO SUL (UF)",
-      "delta_empenhado": 1007544.0,
-      "current_empenhado": 42973678.42
+      "author": "CARLOS ZARATTINI",
+      "party": "PT",
+      "destination": "SÃO PAULO (UF)",
+      "delta_empenhado": 1000000.0,
+      "current_empenhado": 14170532.29
+    },
+    {
+      "author": "SERGIO SOUZA",
+      "party": "MDB",
+      "destination": "PARANÁ (UF)",
+      "delta_empenhado": 920000.0,
+      "current_empenhado": 12091262.76
+    },
+    {
+      "author": "JANDIRA FEGHALI",
+      "party": "PCdoB",
+      "destination": "Nacional",
+      "delta_empenhado": 850000.0,
+      "current_empenhado": 28352817.71
+    },
+    {
+      "author": "DR. FERNANDO MAXIMO",
+      "party": "PL",
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 749937.0,
+      "current_empenhado": 83817319.0
+    },
+    {
+      "author": "HELENA LIMA",
+      "party": "PSD",
+      "destination": "RORAIMA (UF)",
+      "delta_empenhado": 700020.0,
+      "current_empenhado": 41184597.23
+    },
+    {
+      "author": "JULIO CESAR RIBEIRO",
+      "party": "REPUBLICANOS",
+      "destination": "Nacional",
+      "delta_empenhado": 600000.0,
+      "current_empenhado": 52852303.37
+    },
+    {
+      "author": "ANA PAULA LIMA",
+      "party": "PT",
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 600000.0,
+      "current_empenhado": 68972444.0
+    },
+    {
+      "author": "RODRIGO DA ZAELI",
+      "party": "PL",
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 600000.0,
+      "current_empenhado": 31112559.0
+    },
+    {
+      "author": "GERVASIO MAIA",
+      "party": "PCdoB",
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 599805.0,
+      "current_empenhado": 169125197.08
+    },
+    {
+      "author": "TALIRIA PETRONE",
+      "party": "PSOL",
+      "destination": "RIO DE JANEIRO (UF)",
+      "delta_empenhado": 550000.0,
+      "current_empenhado": 99142043.72
+    },
+    {
+      "author": "LUIZIANNE LINS",
+      "party": "REDE",
+      "destination": "CEARÁ (UF)",
+      "delta_empenhado": 504000.0,
+      "current_empenhado": 50920629.41
     },
     {
       "author": "VICENTINHO",
       "party": "Nao identificado",
       "destination": "SÃO PAULO (UF)",
-      "delta_empenhado": 1000000.0,
-      "current_empenhado": 23495868.38
+      "delta_empenhado": 500000.0,
+      "current_empenhado": 23995868.38
     },
     {
-      "author": "EDUARDO VELLOSO",
-      "party": "Nao identificado",
-      "destination": "ACRE (UF)",
-      "delta_empenhado": 999996.0,
-      "current_empenhado": 9930458.0
+      "author": "FERNANDA MELCHIONNA",
+      "party": "PSOL",
+      "destination": "RIO GRANDE DO SUL (UF)",
+      "delta_empenhado": 500000.0,
+      "current_empenhado": 71846038.61
     },
     {
-      "author": "VITOR LIPPI",
-      "party": "Nao identificado",
+      "author": "ORIOVISTO GUIMARAES",
+      "party": "PSDB",
+      "destination": "PARANÁ (UF)",
+      "delta_empenhado": 500000.0,
+      "current_empenhado": 49585116.78
+    },
+    {
+      "author": "ROGERIO CORREIA",
+      "party": "PT",
+      "destination": "Nacional",
+      "delta_empenhado": 500000.0,
+      "current_empenhado": 4799985.26
+    },
+    {
+      "author": "JACK ROCHA",
+      "party": "PT",
       "destination": "MÚLTIPLO",
-      "delta_empenhado": 997747.0,
-      "current_empenhado": 200746224.35
+      "delta_empenhado": 500000.0,
+      "current_empenhado": 52401144.14
     },
     {
-      "author": "GERALDO RESENDE",
-      "party": "Nao identificado",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 976560.0,
-      "current_empenhado": 65299336.15
-    },
-    {
-      "author": "TABATA AMARAL",
-      "party": "Nao identificado",
-      "destination": "SÃO PAULO (UF)",
-      "delta_empenhado": 950000.0,
-      "current_empenhado": 42053388.31
-    },
-    {
-      "author": "EDUARDO GIRAO",
-      "party": "Nao identificado",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 800781.0,
-      "current_empenhado": 211711571.82
-    },
-    {
-      "author": "DELEGADO FABIO COSTA",
-      "party": "Nao identificado",
-      "destination": "ALAGOAS (UF)",
-      "delta_empenhado": 800000.0,
-      "current_empenhado": 6276907.89
-    },
-    {
-      "author": "GUTEMBERG REIS",
+      "author": "LUCIANO VIEIRA",
       "party": "Nao identificado",
       "destination": "RIO DE JANEIRO (UF)",
-      "delta_empenhado": 799999.84,
-      "current_empenhado": 18028211.86
+      "delta_empenhado": 500000.0,
+      "current_empenhado": 17419008.8
     },
     {
-      "author": "JAIME BAGATTOLI",
-      "party": "Nao identificado",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 798551.0,
-      "current_empenhado": 180803068.45
-    },
-    {
-      "author": "LEILA BARROS",
-      "party": "Nao identificado",
-      "destination": "DISTRITO FEDERAL (UF)",
-      "delta_empenhado": 756820.04,
-      "current_empenhado": 232077812.92
-    },
-    {
-      "author": "LUIZIANNE LINS",
-      "party": "Nao identificado",
-      "destination": "CEARÁ (UF)",
-      "delta_empenhado": 750000.0,
-      "current_empenhado": 50416629.41
-    },
-    {
-      "author": "DR. FERNANDO MAXIMO",
-      "party": "Nao identificado",
-      "destination": "CUJUBIM - RO",
-      "delta_empenhado": 732360.0,
-      "current_empenhado": 732360.0
-    },
-    {
-      "author": "DELEGADO MATHEUS LAIOLA",
-      "party": "Nao identificado",
+      "author": "SERGIO MORO",
+      "party": "PL",
       "destination": "PARANÁ (UF)",
-      "delta_empenhado": 710460.0,
-      "current_empenhado": 34278155.12
+      "delta_empenhado": 500000.0,
+      "current_empenhado": 22938555.79
     },
     {
-      "author": "JULIANA CARDOSO",
-      "party": "Nao identificado",
-      "destination": "SÃO PAULO (UF)",
-      "delta_empenhado": 700000.0,
-      "current_empenhado": 56092965.0
-    },
-    {
-      "author": "RODRIGO ROLLEMBERG",
-      "party": "Nao identificado",
-      "destination": "Nacional",
-      "delta_empenhado": 700000.0,
-      "current_empenhado": 15541400.0
-    },
-    {
-      "author": "LENIR DE ASSIS",
-      "party": "Nao identificado",
-      "destination": "Nacional",
-      "delta_empenhado": 654770.0,
-      "current_empenhado": 3045271.36
+      "author": "COM. AGRICULTURA E REFORMA AGRARIA",
+      "party": "Comissao",
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 496373.93,
+      "current_empenhado": 879386195.15
     },
     {
       "author": "BENEDITA DA SILVA",
-      "party": "Nao identificado",
+      "party": "PT",
       "destination": "RIO DE JANEIRO (UF)",
-      "delta_empenhado": 650000.0,
-      "current_empenhado": 79106280.22
+      "delta_empenhado": 400000.0,
+      "current_empenhado": 79506280.22
     },
     {
-      "author": "ESPERIDIAO AMIN",
-      "party": "Nao identificado",
-      "destination": "SANTA CATARINA (UF)",
-      "delta_empenhado": 609582.0,
-      "current_empenhado": 47138389.33
+      "author": "LUCIANO DUCCI",
+      "party": "PSB",
+      "destination": "PARANÁ (UF)",
+      "delta_empenhado": 400000.0,
+      "current_empenhado": 7315942.29
     },
     {
-      "author": "KIKO CELEGUIM",
-      "party": "Nao identificado",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 600000.0,
-      "current_empenhado": 82991097.01
-    },
-    {
-      "author": "REIMONT",
-      "party": "Nao identificado",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 600000.0,
-      "current_empenhado": 40585140.0
-    },
-    {
-      "author": "RODRIGO DA ZAELI",
-      "party": "Nao identificado",
-      "destination": "CANARANA - MT",
-      "delta_empenhado": 585937.0,
-      "current_empenhado": 585937.0
-    },
-    {
-      "author": "GERVASIO MAIA",
-      "party": "Nao identificado",
-      "destination": "BREJO DOS SANTOS - PB",
-      "delta_empenhado": 585747.0,
-      "current_empenhado": 585747.0
-    },
-    {
-      "author": "MARCIO HONAISER",
-      "party": "Nao identificado",
+      "author": "AIRTON FALEIRO",
+      "party": "PT",
       "destination": "Nacional",
-      "delta_empenhado": 527218.35,
-      "current_empenhado": 1901749.13
+      "delta_empenhado": 400000.0,
+      "current_empenhado": 6926287.58
     },
     {
-      "author": "GENERAL PAZUELLO",
-      "party": "Nao identificado",
-      "destination": "RIO DE JANEIRO (UF)",
-      "delta_empenhado": 512444.17,
-      "current_empenhado": 20208211.58
-    },
-    {
-      "author": "LAERCIO OLIVEIRA",
-      "party": "Nao identificado",
-      "destination": "SERGIPE (UF)",
-      "delta_empenhado": 500000.0,
-      "current_empenhado": 23450537.57
-    },
-    {
-      "author": "HELDER SALOMAO",
-      "party": "Nao identificado",
+      "author": "FABIANO CONTARATO",
+      "party": "PT",
       "destination": "ESPÍRITO SANTO (UF)",
-      "delta_empenhado": 500000.0,
-      "current_empenhado": 26755631.88
+      "delta_empenhado": 400000.0,
+      "current_empenhado": 22320194.2
     },
     {
-      "author": "JADER BARBALHO",
-      "party": "Nao identificado",
+      "author": "BANDEIRA DE MELLO",
+      "party": "PV",
       "destination": "Nacional",
-      "delta_empenhado": 500000.0,
-      "current_empenhado": 5527400.48
+      "delta_empenhado": 400000.0,
+      "current_empenhado": 4281624.04
     },
     {
-      "author": "ADRIANA VENTURA",
+      "author": "MURILO GALDINO",
       "party": "Nao identificado",
       "destination": "MÚLTIPLO",
-      "delta_empenhado": 500000.0,
-      "current_empenhado": 161707588.15
+      "delta_empenhado": 400000.0,
+      "current_empenhado": 87113603.17
+    },
+    {
+      "author": "ROBERTO MONTEIRO PAI",
+      "party": "PL",
+      "destination": "Nacional",
+      "delta_empenhado": 382000.13,
+      "current_empenhado": 5087332.02
+    },
+    {
+      "author": "FATIMA PELAES",
+      "party": "Nao identificado",
+      "destination": "AMAPÁ (UF)",
+      "delta_empenhado": 370000.0,
+      "current_empenhado": 3412388.0
+    },
+    {
+      "author": "DUDA SALABERT",
+      "party": "PSOL",
+      "destination": "MINAS GERAIS (UF)",
+      "delta_empenhado": 330000.0,
+      "current_empenhado": 27411378.74
+    },
+    {
+      "author": "GERALDO RESENDE",
+      "party": "UNIÃO",
+      "destination": "MATO GROSSO DO SUL (UF)",
+      "delta_empenhado": 300000.0,
+      "current_empenhado": 85146039.92
+    },
+    {
+      "author": "PAULO PIMENTA",
+      "party": "PT",
+      "destination": "RIO GRANDE DO SUL (UF)",
+      "delta_empenhado": 300000.0,
+      "current_empenhado": 13053929.4
+    },
+    {
+      "author": "BOHN GASS",
+      "party": "PT",
+      "destination": "Nacional",
+      "delta_empenhado": 300000.0,
+      "current_empenhado": 7506041.39
+    },
+    {
+      "author": "MARCIO ALVINO",
+      "party": "PL",
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 300000.0,
+      "current_empenhado": 159262483.9
+    },
+    {
+      "author": "IVETE DA SILVEIRA",
+      "party": "MDB",
+      "destination": "SANTA CATARINA (UF)",
+      "delta_empenhado": 300000.0,
+      "current_empenhado": 10864850.0
+    },
+    {
+      "author": "ANA PIMENTEL",
+      "party": "PT",
+      "destination": "MINAS GERAIS (UF)",
+      "delta_empenhado": 300000.0,
+      "current_empenhado": 19575274.65
     }
   ],
   "top_authors_total": [
@@ -661,17 +661,17 @@
     {
       "author": "COM. DA SAUDE",
       "party": "Comissao",
-      "total_empenhado": 11821432851.56
+      "total_empenhado": 11862887737.56
     },
     {
       "author": "COM. DESENV REGIONAL E TURISMO",
       "party": "Comissao",
-      "total_empenhado": 9233469093.71
+      "total_empenhado": 9250340778.71
     },
     {
       "author": "COM. ASSUNTOS SOCIAIS",
       "party": "Comissao",
-      "total_empenhado": 4765589723.3
+      "total_empenhado": 4767139723.3
     },
     {
       "author": "BANCADA DO AMAZONAS",
@@ -691,7 +691,7 @@
     {
       "author": "BANCADA DO PIAUI",
       "party": "Bancada",
-      "total_empenhado": 2474009905.74
+      "total_empenhado": 2465534426.74
     },
     {
       "author": "BANCADA DE ALAGOAS",
@@ -752,15 +752,15 @@
   "top_destinations_total": [
     {
       "destination": "MÚLTIPLO",
-      "total_empenhado": 214393811172.77
+      "total_empenhado": 214513335385.17
     },
     {
       "destination": "Nacional",
-      "total_empenhado": 15568979278.91
+      "total_empenhado": 15581379447.62
     },
     {
       "destination": "SÃO PAULO (UF)",
-      "total_empenhado": 5597527520.39
+      "total_empenhado": 5599250481.25
     },
     {
       "destination": "Nordeste",
@@ -768,31 +768,31 @@
     },
     {
       "destination": "BAHIA (UF)",
-      "total_empenhado": 4049755081.3
+      "total_empenhado": 4049890023.23
     },
     {
       "destination": "DISTRITO FEDERAL (UF)",
-      "total_empenhado": 4046645675.72
+      "total_empenhado": 4048664111.47
     },
     {
       "destination": "RIO DE JANEIRO (UF)",
-      "total_empenhado": 4010153061.97
+      "total_empenhado": 4012333011.97
     },
     {
       "destination": "MINAS GERAIS (UF)",
-      "total_empenhado": 3526612371.51
+      "total_empenhado": 3527699000.81
     },
     {
       "destination": "PARANÁ (UF)",
-      "total_empenhado": 2689676452.66
+      "total_empenhado": 2691996452.66
     },
     {
       "destination": "RIO GRANDE DO SUL (UF)",
-      "total_empenhado": 2395682022.76
+      "total_empenhado": 2397012435.18
     },
     {
       "destination": "MATO GROSSO DO SUL (UF)",
-      "total_empenhado": 2357919825.51
+      "total_empenhado": 2358618350.51
     },
     {
       "destination": "ACRE (UF)",
@@ -804,15 +804,15 @@
     },
     {
       "destination": "ESPÍRITO SANTO (UF)",
-      "total_empenhado": 2246882077.89
+      "total_empenhado": 2247382084.89
     },
     {
       "destination": "AMAPÁ (UF)",
-      "total_empenhado": 2070454821.52
+      "total_empenhado": 2070824821.52
     },
     {
       "destination": "PERNAMBUCO (UF)",
-      "total_empenhado": 2039726829.78
+      "total_empenhado": 2037424262.89
     },
     {
       "destination": "RONDÔNIA (UF)",
@@ -820,32 +820,32 @@
     },
     {
       "destination": "RORAIMA (UF)",
-      "total_empenhado": 1826994313.84
+      "total_empenhado": 1827719493.76
     },
     {
       "destination": "MATO GROSSO (UF)",
-      "total_empenhado": 1816205558.51
+      "total_empenhado": 1816220555.51
     },
     {
       "destination": "SANTA CATARINA (UF)",
-      "total_empenhado": 1734442051.87
+      "total_empenhado": 1736556145.77
     }
   ],
   "top_authors_year": [
     {
       "author": "COM. DA SAUDE",
       "party": "Comissao",
-      "total_empenhado": 2256251965.0
+      "total_empenhado": 2297706851.0
     },
     {
       "author": "COM. ASSUNTOS SOCIAIS",
       "party": "Comissao",
-      "total_empenhado": 1574333748.0
+      "total_empenhado": 1575883748.0
     },
     {
       "author": "COM. DESENV REGIONAL E TURISMO",
       "party": "Comissao",
-      "total_empenhado": 585038475.72
+      "total_empenhado": 601910160.72
     },
     {
       "author": "BANCADA DO PARA",
@@ -870,7 +870,7 @@
     {
       "author": "BANCADA DO PIAUI",
       "party": "Bancada",
-      "total_empenhado": 336664744.0
+      "total_empenhado": 328189265.0
     },
     {
       "author": "BANCADA DO MATO GROSSO DO SUL",
@@ -928,51 +928,51 @@
       "total_empenhado": 199050223.49
     },
     {
-      "author": "BANCADA DE GOIAS",
-      "party": "Bancada",
-      "total_empenhado": 194186120.0
+      "author": "COM. DE INTEGRACAO NACIONAL E DES. REGIONAL",
+      "party": "Comissao",
+      "total_empenhado": 195902152.0
     }
   ],
   "top_destinations_year": [
     {
       "destination": "MÚLTIPLO",
-      "total_empenhado": 25012901860.04
+      "total_empenhado": 25132426072.44
     },
     {
       "destination": "SÃO PAULO (UF)",
-      "total_empenhado": 372100376.92
+      "total_empenhado": 373823337.78
     },
     {
       "destination": "Nacional",
-      "total_empenhado": 351947772.4
+      "total_empenhado": 364347941.11
     },
     {
       "destination": "RORAIMA (UF)",
-      "total_empenhado": 285613579.43
+      "total_empenhado": 286338759.35
     },
     {
       "destination": "RIO DE JANEIRO (UF)",
-      "total_empenhado": 248948108.46
+      "total_empenhado": 251128058.46
     },
     {
       "destination": "MATO GROSSO (UF)",
-      "total_empenhado": 245492967.75
+      "total_empenhado": 245507964.75
     },
     {
       "destination": "MATO GROSSO DO SUL (UF)",
-      "total_empenhado": 199751388.09
+      "total_empenhado": 200449913.09
     },
     {
       "destination": "BAHIA (UF)",
-      "total_empenhado": 148141528.04
+      "total_empenhado": 148276469.97
     },
     {
       "destination": "PARANÁ (UF)",
-      "total_empenhado": 141488396.76
+      "total_empenhado": 143808396.76
     },
     {
       "destination": "DISTRITO FEDERAL (UF)",
-      "total_empenhado": 138469130.64
+      "total_empenhado": 140487566.39
     },
     {
       "destination": "ACRE (UF)",
@@ -984,7 +984,7 @@
     },
     {
       "destination": "ALAGOAS (UF)",
-      "total_empenhado": 95808086.59
+      "total_empenhado": 95908086.59
     },
     {
       "destination": "BOA VISTA - RR",
@@ -992,19 +992,19 @@
     },
     {
       "destination": "MINAS GERAIS (UF)",
-      "total_empenhado": 87578102.56
+      "total_empenhado": 88664731.86
     },
     {
       "destination": "CEARÁ (UF)",
-      "total_empenhado": 86880876.52
+      "total_empenhado": 87584876.52
     },
     {
       "destination": "PERNAMBUCO (UF)",
-      "total_empenhado": 77953028.47
+      "total_empenhado": 75650461.58
     },
     {
       "destination": "RIO GRANDE DO SUL (UF)",
-      "total_empenhado": 66889214.2
+      "total_empenhado": 68219626.62
     },
     {
       "destination": "TOCANTINS (UF)",
@@ -1012,16 +1012,16 @@
     },
     {
       "destination": "ESPÍRITO SANTO (UF)",
-      "total_empenhado": 52543483.58
+      "total_empenhado": 53043490.58
     }
   ],
   "unico_year_summary": {
     "year": 2026,
     "total_empenhado": 30011497413.17,
-    "total_liquidado": 16146982828.94,
+    "total_liquidado": 16602020844.18,
     "total_pago": 23422853190.82
   },
-  "run_date": "2026-06-11",
+  "run_date": "2026-06-12",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1030,21 +1030,21 @@
       "stages": [
         {
           "stage": "Empenhado",
-          "value": 29364530810.85
+          "value": 29501261458.87
         },
         {
           "stage": "Liquidado",
-          "value": 16146982828.94
+          "value": 16602020844.18
         },
         {
           "stage": "Pago",
-          "value": 15948248360.88
+          "value": 16197772608.38
         }
       ],
       "stage_values": {
-        "empenhado": 29364530810.85,
-        "liquidado": 16146982828.94,
-        "pago": 15948248360.88
+        "empenhado": 29501261458.87,
+        "liquidado": 16602020844.18,
+        "pago": 16197772608.38
       }
     },
     "siop_snapshot": {
@@ -1105,7 +1105,7 @@
           "error": ""
         }
       ],
-      "error": "HTTPConnectionPool(host='localhost', port=35027): Read timed out. (read timeout=120)",
+      "error": "dotação inicial/atual zerada — provável quebra do scraper Qlik (DOM mudou)",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -1121,7 +1121,7 @@
         ]
       },
       "last_update": "",
-      "base_siafi_date": "9/6/2026",
+      "base_siafi_date": "11/6/2026",
       "rows": [],
       "rows_count": 0,
       "unique_nro_emendas": 0,
@@ -1156,8 +1156,7 @@
           "error": ""
         }
       ],
-      "error": "HTTPConnectionPool(host='localhost', port=58813): Read timed out. (read timeout=120)",
-      "fallback_from_previous": true
+      "error": ""
     },
     "documents": {
       "year": 2026,
@@ -2442,17 +2441,17 @@
         },
         {
           "author": "GENERAL PAZUELLO",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 1120000.0
         },
         {
           "author": "TEREZA CRISTINA",
-          "party": "Nao identificado",
+          "party": "PP",
           "empenhado": 1000576.0
         },
         {
           "author": "HELENA LIMA",
-          "party": "Nao identificado",
+          "party": "PSD",
           "empenhado": 1000000.0
         },
         {
@@ -2462,47 +2461,47 @@
         },
         {
           "author": "DELEGADO FABIO COSTA",
-          "party": "Nao identificado",
+          "party": "PP",
           "empenhado": 800000.0
         },
         {
           "author": "JULIANA CARDOSO",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 700000.0
         },
         {
           "author": "PAULO PAIM",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 500000.0
         },
         {
           "author": "ATILA LINS",
-          "party": "Nao identificado",
+          "party": "PSD",
           "empenhado": 435000.0
         },
         {
           "author": "RODRIGO ROLLEMBERG",
-          "party": "Nao identificado",
+          "party": "PSB",
           "empenhado": 400000.0
         },
         {
           "author": "ALFREDINHO",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 300000.0
         },
         {
           "author": "ANDRE FERNANDES",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 300000.0
         },
         {
           "author": "ALEXANDRE LINDENMEYER",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 250000.0
         },
         {
           "author": "EDUARDO GIRAO",
-          "party": "Nao identificado",
+          "party": "NOVO",
           "empenhado": 240000.0
         },
         {
@@ -3012,8 +3011,8 @@
       }
     },
     "party_lookup": {
-      "camara_mapeados": 0,
-      "senado_mapeados": 0
+      "camara_mapeados": 513,
+      "senado_mapeados": 81
     }
   },
   "daily_history": [
@@ -3492,6 +3491,17 @@
       "autores_com_aumento": 162,
       "destinos_com_aumento": 46,
       "previous_snapshot_date": "2026-06-10",
+      "interval_days": 1,
+      "source_changed": true
+    },
+    {
+      "date": "2026-06-12",
+      "delta_positivo": 148023787.02,
+      "delta_liquido": 136730648.02,
+      "total_empenhado_atual": 331968654583.68,
+      "autores_com_aumento": 110,
+      "destinos_com_aumento": 29,
+      "previous_snapshot_date": "2026-06-11",
       "interval_days": 1,
       "source_changed": true
     }
@@ -4279,6 +4289,16 @@
     },
     {
       "date": "2026-06-11",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
+    },
+    {
+      "date": "2026-06-12",
       "last_update": "",
       "base_siafi_date": "30/4/2026",
       "dotacao_inicial_emenda": 49901486761.0,
