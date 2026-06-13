@@ -498,15 +498,25 @@ def download_with_curl(url, target):
 
 
 def download_source(url, target):
+    # Tentamos cada downloader algumas vezes: downloads truncados/parciais da CGU
+    # passavam na checagem antiga (size > 0) e geravam caches com dados faltando
+    # (ex.: 2026 vindo pela metade), distorcendo as estatísticas silenciosamente.
     errors = []
     for downloader in (download_with_urllib, download_with_curl):
-        try:
-            downloader(url, target)
-            if target.exists() and target.stat().st_size > 0:
+        for attempt in range(3):
+            try:
+                downloader(url, target)
+                if not (target.exists() and target.stat().st_size > 0):
+                    raise RuntimeError("arquivo vazio")
+                # Valida integridade do ZIP: testzip() retorna None se tudo OK.
+                with zipfile.ZipFile(target) as zf:
+                    bad = zf.testzip()
+                    if bad is not None:
+                        raise RuntimeError(f"ZIP corrompido/truncado (membro {bad})")
                 return
-        except Exception as exc:  # pragma: no cover
-            errors.append(str(exc))
-            target.unlink(missing_ok=True)
+            except Exception as exc:  # pragma: no cover
+                errors.append(f"{downloader.__name__} t{attempt + 1}: {exc}")
+                target.unlink(missing_ok=True)
     raise RuntimeError("Falha no download: " + " | ".join(errors))
 
 
@@ -1248,8 +1258,11 @@ def build_report(year_payloads):
             top_denied = int(conc.get("top_denied", 0) or 0)
             top_requester_share = (top_total / total_requests) if total_requests else 0.0
             top_requester_denied_rate = (top_denied / top_total) if top_total else 0.0
+            # Piso de volume: em órgãos minúsculos um único requerente trivialmente
+            # vira "100% do volume", o que não é distorção jornalística relevante.
             concentration_flag = (
-                top_requester_share >= 0.30
+                total_requests >= 200
+                and top_requester_share >= 0.30
                 and top_requester_denied_rate >= 0.80
             )
             adjusted_denominator = total_requests - top_total
