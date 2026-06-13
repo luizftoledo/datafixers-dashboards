@@ -24,6 +24,7 @@
     minimumFractionDigits: 1,
     maximumFractionDigits: 1,
   });
+  const pctInteger = (value) => `${Math.round(Number(value || 0) * 100)}%`;
   const scheduleHelper = window.DashboardUpdateSchedule || null;
 
   const updatedLine = document.getElementById('updated-line');
@@ -1198,6 +1199,19 @@
     orgCards.innerHTML = selected.map((row) => {
       const profile = profiles[row.org] || { top_themes: [] };
       const topThemes = (profile.top_themes || []).slice(0, 4);
+      const concentration = ((reportData.requester_concentration || {})[row.org])
+        || ((profile.summary || {}).concentration_flag === true ? profile.summary : null)
+        || {};
+      const hasConcentration = concentration.concentration_flag === true;
+      const deniedRateTag = hasConcentration
+        ? `<span class="mini-tag">Taxa bruta: ${pFmt.format(row.denied_rate || 0)} / Ajustada: ${pFmt.format(concentration.denied_rate_adjusted || 0)}</span>`
+        : `<span class="mini-tag">Taxa negado: ${pFmt.format(row.denied_rate)}</span>`;
+      const concentrationBadge = hasConcentration
+        ? '<span class="concentration-badge">⚠️ Concentração</span>'
+        : '';
+      const concentrationNote = hasConcentration
+        ? `<p class="concentration-note">Em ${esc(concentration.concentration_year || '')}, ${pctInteger(concentration.top_requester_share)} dos pedidos vieram de 1 único requerente, com ${pctInteger(concentration.top_requester_denied_rate)} de negativas. Taxa ajustada (excluindo esse requerente): ${pctInteger(concentration.denied_rate_adjusted)}.</p>`
+        : '';
 
       const personalBox = `
         <div class="personal-box">
@@ -1261,9 +1275,11 @@
             <div class="org-tags">
               <span class="mini-tag">Pedidos: ${nFmt.format(row.total_requests)}</span>
               <span class="mini-tag">Negados: ${nFmt.format(row.denied_total)}</span>
-              <span class="mini-tag">Taxa negado: ${pFmt.format(row.denied_rate)}</span>
+              ${deniedRateTag}
+              ${concentrationBadge}
             </div>
           </div>
+          ${concentrationNote}
           ${personalBox}
           <p class="org-note">Análise de conteúdo: os temas abaixo vêm do texto dos pedidos (resumo + detalhamento), não só do campo de assunto.</p>
           ${themesHtml}

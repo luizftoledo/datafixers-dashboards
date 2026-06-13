@@ -736,6 +736,25 @@
       background: #faf8f5;
     }
 
+    .concentration-badge {
+      border: 1px solid rgba(182, 66, 66, 0.45);
+      border-radius: 999px;
+      padding: 0.15rem 0.45rem;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--danger);
+      background: rgba(182, 66, 66, 0.08);
+    }
+
+    .concentration-note {
+      margin: 0;
+      border-left: 3px solid var(--danger);
+      padding: 0.1rem 0 0.1rem 0.55rem;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.42;
+    }
+
     .org-note {
       margin: 0;
       font-size: 0.84rem;
@@ -908,6 +927,21 @@
     }
 
     .methodology-content p {
+      margin: 0;
+    }
+
+    #methodology-note {
+      border: 1px solid #ded9cf;
+      border-left: 3px solid var(--danger);
+      border-radius: 10px;
+      background: #fcfbf8;
+      padding: 0.55rem 0.62rem;
+      color: #4f4941;
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+
+    #methodology-note p {
       margin: 0;
     }
 
@@ -1276,10 +1310,18 @@
 
     </section>
 
+    <section class="card orgs">
+      <h2>Órgãos em detalhe</h2>
+      <div class="org-grid" id="org-cards"></div>
+    </section>
+
     <section class="card methodology">
       <h2>Nota metodológica (como os dados foram tratados)</h2>
       <div class="methodology-content" id="methodology-content">
         <p>Carregando metodologia...</p>
+      </div>
+      <div id="methodology-note">
+        <p>As taxas de negativa podem ser infladas por requerentes em massa (serial requesters) — pessoas que enviam centenas de pedidos automatizados ao mesmo órgão, majoritariamente negados. A dashboard sinaliza esses casos com ⚠️ e exibe a taxa ajustada excluindo esses requerentes. Isso não invalida as negativas, mas contextualiza a escala.</p>
       </div>
     </section>
 

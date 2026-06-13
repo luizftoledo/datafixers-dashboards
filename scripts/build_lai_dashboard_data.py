@@ -37,7 +37,7 @@ DOWNLOAD_TIMEOUT = 300
 START_YEAR_DEFAULT = 2015
 MIN_REQUESTS_TOP_DENIAL_RATE_CURRENT_YEAR = 200
 MIN_REQUESTS_SIGILO100_RANKING = 200
-REQUEST_INDEX_SCHEMA_VERSION = 2
+REQUEST_INDEX_SCHEMA_VERSION = 3
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 DASH_DIR = ROOT_DIR / "lai"
@@ -657,6 +657,7 @@ def process_year_zip(year, zip_path, source_url):
 
     wanted_cols = [
         "IdPedido",
+        "IdSolicitante",
         "DataRegistro",
         "OrgaoDestinatario",
         "AssuntoPedido",
@@ -710,6 +711,7 @@ def process_year_zip(year, zip_path, source_url):
     org_theme_total = Counter()
     org_theme_restricted = Counter()
     org_theme_decision = Counter()
+    org_req_acc = defaultdict(dict)
 
     request_samples = []
 
@@ -732,6 +734,10 @@ def process_year_zip(year, zip_path, source_url):
                 total_requests += len(chunk)
 
                 id_pedido = chunk["IdPedido"].fillna("").astype(str).map(normalize_text)
+                if "IdSolicitante" in chunk.columns:
+                    requester_id = chunk["IdSolicitante"].fillna("").astype(str).map(normalize_text)
+                else:
+                    requester_id = pd.Series([""] * len(chunk), index=chunk.index, dtype="object")
                 org = chunk["OrgaoDestinatario"].fillna("").astype(str).map(normalize_text)
                 subject = chunk["AssuntoPedido"].fillna("").astype(str).map(normalize_text)
                 subject = subject.mask(subject == "", "Assunto não informado")
@@ -831,6 +837,26 @@ def process_year_zip(year, zip_path, source_url):
                 org_restricted.update(org[restricted_mask & valid_org_mask].value_counts(dropna=False).to_dict())
                 org_personal.update(org[personal_mask & valid_org_mask].value_counts(dropna=False).to_dict())
 
+                valid_requester_mask = valid_org_mask & (requester_id != "") & (requester_id != "0")
+                if valid_requester_mask.any():
+                    requester_df = pd.DataFrame(
+                        {
+                            "org": org[valid_requester_mask],
+                            "requester_id": requester_id[valid_requester_mask],
+                            "denied": denied_mask[valid_requester_mask].astype(int),
+                        }
+                    )
+                    requester_groups = requester_df.groupby(
+                        ["org", "requester_id"], sort=False
+                    ).agg(total=("requester_id", "size"), denied=("denied", "sum"))
+                    for (org_name, req_id), counts in requester_groups.iterrows():
+                        slot = org_req_acc[org_name].setdefault(
+                            req_id,
+                            {"total": 0, "denied": 0},
+                        )
+                        slot["total"] += int(counts["total"])
+                        slot["denied"] += int(counts["denied"])
+
                 org_valid_month_mask = valid_org_mask & valid_month_mask
                 if org_valid_month_mask.any():
                     org_month_key = org[org_valid_month_mask] + "|||" + month_str[org_valid_month_mask]
@@ -897,6 +923,27 @@ def process_year_zip(year, zip_path, source_url):
     personal_share_in_restricted = (
         (personal_restricted_total / restricted_total) if restricted_total else 0.0
     )
+    org_requester_concentration = {}
+    for org_name, requester_counts in org_req_acc.items():
+        if not requester_counts:
+            continue
+        top_id, top_counts = sorted(
+            requester_counts.items(),
+            key=lambda item: (
+                -int(item[1].get("total", 0)),
+                -int(item[1].get("denied", 0)),
+                item[0],
+            ),
+        )[0]
+        org_requester_concentration[org_name] = {
+            "distinct": int(len(requester_counts)),
+            "total_attributed": int(
+                sum(int(counts.get("total", 0)) for counts in requester_counts.values())
+            ),
+            "top_id": str(top_id),
+            "top_total": int(top_counts.get("total", 0)),
+            "top_denied": int(top_counts.get("denied", 0)),
+        }
 
     return {
         "year": int(year),
@@ -929,6 +976,7 @@ def process_year_zip(year, zip_path, source_url):
         "org_theme_total": dict(org_theme_total),
         "org_theme_restricted": dict(org_theme_restricted),
         "org_theme_decision": dict(org_theme_decision),
+        "org_requester_concentration": org_requester_concentration,
         "request_index_schema_version": REQUEST_INDEX_SCHEMA_VERSION,
         "request_samples": request_samples,
     }
@@ -1172,6 +1220,62 @@ def build_report(year_payloads):
             "personal_rate_in_total": (personal / total) if total else 0.0,
             "personal_rate_in_restricted": (personal / restricted) if restricted else 0.0,
         }
+
+    requester_concentration = {}
+    for payload in year_payloads:
+        year = int(payload["year"])
+        year_org_total = {
+            normalize_text(org): int(count)
+            for org, count in (payload.get("org_total", {}) or {}).items()
+            if normalize_text(org)
+        }
+        year_org_denied = {
+            normalize_text(org): int(count)
+            for org, count in (payload.get("org_denied", {}) or {}).items()
+            if normalize_text(org)
+        }
+        year_requester_concentration = {
+            normalize_text(org): data
+            for org, data in (payload.get("org_requester_concentration", {}) or {}).items()
+            if normalize_text(org)
+        }
+
+        for org, total_requests in year_org_total.items():
+            denied_total = int(year_org_denied.get(org, 0))
+            raw_denied_rate = (denied_total / total_requests) if total_requests else 0.0
+            conc = year_requester_concentration.get(org, {}) or {}
+            top_total = int(conc.get("top_total", 0) or 0)
+            top_denied = int(conc.get("top_denied", 0) or 0)
+            top_requester_share = (top_total / total_requests) if total_requests else 0.0
+            top_requester_denied_rate = (top_denied / top_total) if top_total else 0.0
+            concentration_flag = (
+                top_requester_share >= 0.30
+                and top_requester_denied_rate >= 0.80
+            )
+            adjusted_denominator = total_requests - top_total
+            if concentration_flag and adjusted_denominator > 0:
+                denied_rate_adjusted = (
+                    (denied_total - top_denied) / adjusted_denominator
+                )
+            elif concentration_flag:
+                denied_rate_adjusted = 0.0
+            else:
+                denied_rate_adjusted = raw_denied_rate
+
+            row = {
+                "concentration_year": year,
+                "top_requester_share": round(top_requester_share, 2),
+                "top_requester_denied_rate": round(top_requester_denied_rate, 2),
+                "concentration_flag": bool(concentration_flag),
+                "denied_rate_adjusted": round(denied_rate_adjusted, 2),
+            }
+            if concentration_flag:
+                row["top_requester_id"] = str(conc.get("top_id", ""))
+            requester_concentration[org] = row
+
+    for org, concentration_row in requester_concentration.items():
+        if org in org_stats:
+            org_stats[org].update(concentration_row)
 
     org_by_denied = sorted(
         org_stats.values(),
@@ -1896,6 +2000,7 @@ def build_report(year_payloads):
         "org_lowest_denial_high_volume": org_by_low_rate[:15],
         "org_top10_plus_pf": top10_plus_pf,
         "org_profiles": org_profiles,
+        "requester_concentration": requester_concentration,
         "personal_info": {
             "series": personal_series,
             "top_orgs": personal_top_orgs,
