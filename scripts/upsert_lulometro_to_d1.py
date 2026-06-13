@@ -89,7 +89,21 @@ def read_records() -> list[dict]:
     return out
 
 
-def wrangler_exec(sql_or_file: str, is_file: bool = False) -> dict:
+class AuthError(RuntimeError):
+    """Token Cloudflare inválido / sem escopo D1 (API code 10000)."""
+
+
+def _looks_like_auth_error(text: str) -> bool:
+    t = (text or "").lower()
+    return (
+        "code: 10000" in t
+        or '"code": 10000' in t
+        or "authentication error" in t
+        or "you may have incorrect permissions" in t
+    )
+
+
+def wrangler_exec(sql_or_file: str, is_file: bool = False, retries: int = 3) -> dict:
     cmd = [
         "npx", "wrangler", "d1", "execute", DB_NAME, "--remote", "--json",
     ]
@@ -97,19 +111,40 @@ def wrangler_exec(sql_or_file: str, is_file: bool = False) -> dict:
         cmd.extend(["--file", sql_or_file])
     else:
         cmd.extend(["--command", sql_or_file])
-    res = subprocess.run(cmd, cwd=str(WORKER_DIR), capture_output=True, text=True)
-    if res.returncode != 0:
-        print(f"   ⚠ wrangler exit {res.returncode}", flush=True)
-        print(f"   STDERR: {res.stderr[:1500]}", flush=True)
-        print(f"   STDOUT: {res.stdout[-1500:]}", flush=True)
-        return {}
-    try:
-        return json.loads(res.stdout)
-    except json.JSONDecodeError as e:
-        print(f"   ⚠ JSON parse falhou: {e}", flush=True)
-        print(f"   STDOUT preview: {res.stdout[:500]}", flush=True)
-        # Considera sucesso mesmo se JSON não parseou (output OK normalmente)
-        return {"ok": True}
+
+    last_err = ""
+    for attempt in range(1, retries + 1):
+        res = subprocess.run(cmd, cwd=str(WORKER_DIR), capture_output=True, text=True)
+        if res.returncode == 0:
+            try:
+                return json.loads(res.stdout)
+            except json.JSONDecodeError as e:
+                print(f"   ⚠ JSON parse falhou: {e}", flush=True)
+                print(f"   STDOUT preview: {res.stdout[:500]}", flush=True)
+                # Considera sucesso mesmo se JSON não parseou (output OK normalmente)
+                return {"ok": True}
+
+        combined = f"{res.stderr}\n{res.stdout}"
+        # Erro de autenticação não se resolve com retry: aborta imediatamente
+        # com diagnóstico claro em vez de queimar minutos tentando 26 chunks.
+        if _looks_like_auth_error(combined):
+            print(f"   ✘ Cloudflare API code 10000 (auth).", flush=True)
+            print(f"   STDERR: {res.stderr[:800]}", flush=True)
+            raise AuthError(
+                "Token Cloudflare sem permissão D1. O CLOUDFLARE_API_TOKEN faz "
+                "deploy no Pages mas não no D1 — recrie-o incluindo o escopo "
+                "'Account → D1 → Edit' e atualize o secret CLOUDFLARE_API_TOKEN."
+            )
+
+        last_err = combined
+        print(f"   ⚠ wrangler exit {res.returncode} (tentativa {attempt}/{retries})", flush=True)
+        print(f"   STDERR: {res.stderr[:1000]}", flush=True)
+        if attempt < retries:
+            # backoff fixo e curto; falhas D1 transitórias costumam ceder rápido
+            subprocess.run(["sleep", str(3 * attempt)])
+
+    print(f"   STDOUT: {last_err[-1000:]}", flush=True)
+    return {}
 
 
 def fetch_existing_signatures() -> dict[str, str]:
@@ -117,7 +152,12 @@ def fetch_existing_signatures() -> dict[str, str]:
     print("→ Consultando D1 pra saber o que já existe...", flush=True)
     res = wrangler_exec("SELECT id, updated_at FROM lulometro_records")
     if not res:
-        return {}
+        # Não confunda "consulta falhou" com "D1 vazio": se assumíssemos vazio,
+        # o script reescreveria os ~2600 records todo dia. Aborta explícito.
+        raise RuntimeError(
+            "Consulta inicial ao D1 falhou (sem erro de auth). Abortando para não "
+            "reescrever a base inteira por engano — verifique conectividade/D1."
+        )
     rows = []
     for item in res:
         rows.extend(item.get("results", []))
