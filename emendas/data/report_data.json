@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-13T15:06:08.673001+00:00",
-  "snapshot_date": "2026-06-13",
+  "generated_at": "2026-06-14T15:14:32.543965+00:00",
+  "snapshot_date": "2026-06-14",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -27,8 +27,8 @@
     "current_year_total_empenhado": 30182198697.05,
     "current_year_total_liquidado": 16602020844.18,
     "current_year_total_pago": 23736196722.77,
-    "current_year_total_empenhado_por_ano_emenda": 30011497413.17,
-    "current_year_total_pago_por_ano_emenda": 23422853190.82,
+    "current_year_total_empenhado_por_ano_emenda": 30182198697.05,
+    "current_year_total_pago_por_ano_emenda": 23736196722.77,
     "_pago_e_empenhado_source": "por_data_documento"
   },
   "top_authors_today": [
@@ -1021,7 +1021,7 @@
     "total_liquidado": 16602020844.18,
     "total_pago": 23736196722.77
   },
-  "run_date": "2026-06-13",
+  "run_date": "2026-06-14",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -2460,7 +2460,7 @@
         },
         {
           "author": "HUMBERTO COSTA",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 1735000.0
         },
         {
@@ -2520,7 +2520,7 @@
         },
         {
           "author": "SERGIO MORO",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 500000.0
         }
       ],
@@ -3026,7 +3026,7 @@
     },
     "party_lookup": {
       "camara_mapeados": 513,
-      "senado_mapeados": 0
+      "senado_mapeados": 81
     }
   },
   "daily_history": [
@@ -3527,6 +3527,17 @@
       "autores_com_aumento": 0,
       "destinos_com_aumento": 0,
       "previous_snapshot_date": "2026-06-12",
+      "interval_days": 1,
+      "source_changed": false
+    },
+    {
+      "date": "2026-06-14",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 331968654583.68,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-06-13",
       "interval_days": 1,
       "source_changed": false
     }
@@ -4341,7 +4352,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-06-14",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-06-13T15:06:08.673001+00:00"
+  "updated_at": "2026-06-14T15:14:32.543965+00:00"
 }
