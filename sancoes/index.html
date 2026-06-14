@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#fafaf7">
+  <title>Radar de Sanções</title>
+  <meta name="description" content="Consulta a empresas e pessoas sancionadas no CEIS e no CNEP, com dados abertos do Portal da Transparência.">
+  <meta property="og:title" content="Radar de Sanções">
+  <meta property="og:description" content="Consulta a sanções do CEIS e CNEP por CNPJ, CPF ou nome.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dashboards.datafixers.org/sancoes/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preload" href="./data/sancoes.json" as="fetch" type="application/json" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="topbar" aria-label="Navegação">
+      <a href="/">Dashboards</a>
+      <span class="sep">/</span>
+      <span>Radar de Sanções</span>
+    </nav>
+
+    <header class="head">
+      <p class="kicker">Dados abertos · CEIS e CNEP</p>
+      <h1>Radar de Sanções</h1>
+      <p class="dek">Consulta a empresas e pessoas punidas ou declaradas inidôneas, a partir dos cadastros nacionais mantidos no Portal da Transparência.</p>
+      <div class="dateline">
+        <span>Dados de <strong id="snapshot-date">carregando...</strong></span>
+        <span>Atualizado em <strong id="updated-at">carregando...</strong></span>
+        <span>CPFs <strong>podem vir mascarados na fonte original</strong></span>
+      </div>
+    </header>
+
+    <section class="sticky-summary" aria-labelledby="summary-title">
+      <div>
+        <p class="kicker">Panorama</p>
+        <h2 id="summary-title">Carregando sanções...</h2>
+      </div>
+      <div class="summary-number" id="active-count" aria-live="polite">...</div>
+      <p class="summary-note" id="summary-note"></p>
+    </section>
+
+    <main>
+      <section class="panel search-panel" aria-labelledby="search-heading">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Busca</p>
+            <h2 id="search-heading">Consultar CNPJ, CPF ou nome</h2>
+            <p class="sub">Cole um documento com ou sem pontuação, ou digite parte do nome do sancionado, razão social ou nome fantasia.</p>
+          </div>
+        </div>
+        <form class="search-form" id="search-form">
+          <label class="sr-only" for="search-input">CNPJ, CPF ou nome</label>
+          <input id="search-input" type="search" autocomplete="off" placeholder="Ex.: 00.000.000/0001-00 ou nome da empresa">
+          <button type="submit">Buscar</button>
+        </form>
+        <div class="search-status" id="search-status" aria-live="polite"></div>
+        <div class="results" id="results"></div>
+      </section>
+
+      <section aria-labelledby="panorama-heading">
+        <div class="section-title">
+          <p class="kicker">Panorama</p>
+          <h2 id="panorama-heading">Resumo dos cadastros</h2>
+        </div>
+        <div class="metric-grid" id="metric-grid">
+          <article class="metric"><span>Total</span><strong>...</strong></article>
+          <article class="metric"><span>Ativas</span><strong>...</strong></article>
+          <article class="metric"><span>Novas em 30 dias</span><strong>...</strong></article>
+          <article class="metric"><span>Novas em 90 dias</span><strong>...</strong></article>
+        </div>
+      </section>
+
+      <section class="grid two" aria-label="Distribuição dos cadastros">
+        <article class="panel">
+          <div class="section-head">
+            <div>
+              <h2>CEIS e CNEP</h2>
+              <p class="sub">Quantidade de registros por cadastro.</p>
+            </div>
+          </div>
+          <div class="chart compact"><canvas id="split-chart"></canvas></div>
+        </article>
+        <article class="panel">
+          <div class="section-head">
+            <div>
+              <h2>Top categorias</h2>
+              <p class="sub">Categorias de sanção mais frequentes no conjunto carregado.</p>
+            </div>
+          </div>
+          <div class="chart compact"><canvas id="category-chart"></canvas></div>
+        </article>
+      </section>
+
+      <section class="panel" aria-labelledby="org-heading">
+        <div class="section-head">
+          <div>
+            <h2 id="org-heading">Órgãos sancionadores</h2>
+            <p class="sub">Os 20 órgãos sancionadores com mais registros.</p>
+          </div>
+        </div>
+        <div class="chart tall"><canvas id="org-chart"></canvas></div>
+      </section>
+
+      <section class="methodology" aria-labelledby="method-heading">
+        <h2 id="method-heading">Metodologia</h2>
+        <p>Fonte: Portal da Transparência, bases CEIS e CNEP. O robô tenta baixar o snapshot do dia; se ele ainda não estiver disponível, recua dia a dia até encontrar o arquivo publicado.</p>
+        <p>Documentos são normalizados sem pontuação quando a fonte traz CNPJ ou CPF aberto. Quando o CPF vem mascarado, o valor é preservado como aparece no arquivo original.</p>
+        <p id="cut-note"></p>
+      </section>
+    </main>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
