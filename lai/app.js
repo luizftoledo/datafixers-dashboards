@@ -399,6 +399,8 @@
       : (status === 'melhorando' ? 'Sinal positivo: cenário melhorou no acumulado' : 'Cenário estável no acumulado');
     const topRateRows = (monitoring.top_denial_rate_current_year || []).slice(0, 5);
     const minRequestsTopRate = Number(monitoring.top_denial_rate_min_requests || 0);
+    const concentrationByOrg = reportData.requester_concentration || {};
+    let topRateHasConcentration = false;
     const topRateHtml = topRateRows.length
       ? `
         <div class="alert-table-wrap">
@@ -413,18 +415,30 @@
               </tr>
             </thead>
             <tbody>
-              ${topRateRows.map((row, index) => `
+              ${topRateRows.map((row, index) => {
+                const conc = concentrationByOrg[row.org] || {};
+                const flagged = conc.concentration_flag === true;
+                if (flagged) topRateHasConcentration = true;
+                const orgCell = flagged
+                  ? `${esc(row.org || '--')} <span class="concentration-badge" title="Taxa inflada por um único requerente">⚠️ concentração *</span>`
+                  : esc(row.org || '--');
+                const rateCell = flagged
+                  ? `<span class="alert-rate-pill">${pFmt.format(row.denied_rate || 0)}</span><br><span class="mini-tag">ajustada: ${pFmt.format(conc.denied_rate_adjusted || 0)}</span>`
+                  : `<span class="alert-rate-pill">${pFmt.format(row.denied_rate || 0)}</span>`;
+                return `
                 <tr>
                   <td>${index + 1}</td>
-                  <td>${esc(row.org || '--')}</td>
-                  <td><span class="alert-rate-pill">${pFmt.format(row.denied_rate || 0)}</span></td>
+                  <td>${orgCell}</td>
+                  <td>${rateCell}</td>
                   <td>${nFmt.format(row.denied_total || 0)}</td>
                   <td>${nFmt.format(row.total_requests || 0)}</td>
                 </tr>
-              `).join('')}
+              `;
+              }).join('')}
             </tbody>
           </table>
         </div>
+        ${topRateHasConcentration ? `<p class="concentration-note">* A taxa é inflada por um único requerente que concentra boa parte dos pedidos no ano e tem quase 100% de negativas (padrão de envio em massa). A taxa <strong>ajustada</strong> exclui esse requerente.</p>` : ''}
       `
       : '<p>Sem dados suficientes para montar o ranking proporcional neste momento.</p>';
 
