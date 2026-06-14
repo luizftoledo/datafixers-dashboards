@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#fafaf7">
+  <title>Cartão corporativo da Presidência</title>
+  <meta name="description" content="Dashboard de dados abertos sobre gastos da Presidência da República no Cartão de Pagamento do Governo Federal, com comparação entre gestões e correção pelo IPCA.">
+  <meta property="og:title" content="Cartão corporativo da Presidência">
+  <meta property="og:description" content="Gastos mensais da Presidência no CPGF desde 2013, por gestão, tipo de transação e unidade gestora.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dashboards.datafixers.org/cartao-corporativo/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preload" href="./data/cpgf_agg.json" as="fetch" type="application/json" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="topbar" aria-label="Navegação">
+      <a href="/">Dashboards</a>
+      <span class="sep">/</span>
+      <span>Cartão corporativo</span>
+    </nav>
+
+    <header class="head">
+      <p class="kicker">Dados abertos · CPGF</p>
+      <h1>Cartão corporativo da Presidência</h1>
+      <p class="dek">Gastos da Presidência da República no Cartão de Pagamento do Governo Federal, agregados por competência mensal, com compras e saques separados.</p>
+      <div class="dateline">
+        <span>Atualizado em <strong id="updated-at">carregando...</strong></span>
+        <span>Valores <strong id="value-mode-label">corrigidos por IPCA</strong></span>
+      </div>
+    </header>
+
+    <section class="sticky-summary" aria-labelledby="summary-title">
+      <div>
+        <p class="kicker">Último período fechado</p>
+        <h2 id="summary-title">Carregando dados...</h2>
+      </div>
+      <div class="summary-number" id="summary-number" aria-live="polite">...</div>
+      <p class="summary-note" id="summary-note"></p>
+    </section>
+
+    <section class="controls" aria-label="Controles">
+      <div class="tabs" role="tablist" aria-label="Modo de comparação">
+        <button class="tab is-active" type="button" data-mode="media_gestao">Média mensal por gestão</button>
+        <button class="tab" type="button" data-mode="mandato_n">Mesmos N meses iniciais</button>
+        <button class="tab" type="button" data-mode="janela_calendario">Janela de calendário</button>
+      </div>
+      <label class="toggle">
+        <input id="real-toggle" type="checkbox" checked>
+        <span>Corrigido por IPCA</span>
+      </label>
+    </section>
+
+    <main>
+      <section class="panel" aria-labelledby="comparison-heading">
+        <div class="section-head">
+          <div>
+            <h2 id="comparison-heading">Comparação entre gestões</h2>
+            <p class="sub" id="comparison-subtitle">Média mensal em reais por mês com dados.</p>
+          </div>
+          <span class="pill" id="ipca-pill">valores de ...</span>
+        </div>
+        <div class="chart tall"><canvas id="comparison-chart"></canvas></div>
+        <p class="note" id="comparison-note"></p>
+      </section>
+
+      <section class="panel" aria-labelledby="unit-heading">
+        <div class="section-head">
+          <div>
+            <h2 id="unit-heading">Quem gasta na Presidência</h2>
+            <p class="sub" id="unit-subtitle">Maiores unidades no período recente comparadas à média histórica do mesmo intervalo de meses.</p>
+          </div>
+        </div>
+        <div class="chart tall"><canvas id="unit-chart"></canvas></div>
+        <p class="note">GSI e ABIN concentram despesas ligadas a segurança e inteligência, que têm caráter estrutural. Secretaria de Administração e gabinetes administrativos podem incluir logística, viagens e suporte operacional da Presidência.</p>
+      </section>
+
+      <section class="panel" aria-labelledby="electoral-heading">
+        <div class="section-head">
+          <div>
+            <h2 id="electoral-heading">Análise eleitoral</h2>
+            <p class="sub">Anos de eleição presidencial: 2014, 2018, 2022 e 2026. Meses de campanha: julho a outubro.</p>
+          </div>
+        </div>
+        <div class="chart tall"><canvas id="electoral-chart"></canvas></div>
+        <p class="note" id="electoral-note"></p>
+      </section>
+
+      <section aria-labelledby="spending-heading">
+        <div class="section-title">
+          <p class="kicker">Como está gastando</p>
+          <h2 id="spending-heading">Compras, saques e série mensal</h2>
+        </div>
+        <div class="grid two">
+          <article class="panel">
+            <h3>Compra vs saque</h3>
+            <p class="sub" id="split-subtitle">Participação no período recente.</p>
+            <div class="chart compact"><canvas id="split-chart"></canvas></div>
+            <div class="mini-stats" id="split-stats"></div>
+          </article>
+          <article class="panel">
+            <h3>Evolução por tipo</h3>
+            <p class="sub">Série mensal de compras e saques.</p>
+            <div class="chart compact"><canvas id="type-chart"></canvas></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="series-heading">
+        <div class="section-head">
+          <div>
+            <h2 id="series-heading">Série mensal</h2>
+            <p class="sub">Gasto total mensal da Presidência, com faixas de gestão ao fundo.</p>
+          </div>
+        </div>
+        <div class="chart tall"><canvas id="monthly-chart"></canvas></div>
+      </section>
+
+      <section class="panel context" aria-labelledby="federal-heading">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Contexto</p>
+            <h2 id="federal-heading">Governo federal — contexto</h2>
+            <p class="sub">Série total do CPGF no governo federal, mantida como referência secundária para comparar escala.</p>
+          </div>
+        </div>
+        <div class="chart tall"><canvas id="federal-chart"></canvas></div>
+        <p class="note" id="federal-note"></p>
+      </section>
+
+      <section class="methodology" aria-labelledby="method-heading">
+        <h2 id="method-heading">Metodologia</h2>
+        <p>Fonte: Portal da Transparência, arquivos mensais do CPGF. A série principal filtra registros em que <strong>NOME ÓRGÃO SUPERIOR</strong> contém “PRESID”. A competência mensal usa <strong>ANO EXTRATO</strong> e <strong>MÊS EXTRATO</strong>, não a data da transação. Valores negativos foram mantidos. Transações cujo texto contém “SAQUE” entram como saque; as demais entram como compra.</p>
+        <p>A correção monetária usa o IPCA mensal da série SGS 433 do Banco Central, encadeado para o poder de compra do mês mais recente disponível.</p>
+      </section>
+    </main>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
