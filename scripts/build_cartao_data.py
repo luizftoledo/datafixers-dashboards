@@ -327,51 +327,64 @@ def fetch_ipca_factors(session, latest_month):
 def build():
     ensure_dirs()
     existing = load_existing()
-    raw_zips = [(raw_zip_month(path), path) for path in local_raw_zips()]
-    raw_zips = [(month, path) for month, path in raw_zips if START_MONTH <= month <= previous_closed_month()]
-    if not raw_zips:
-        raise RuntimeError(f"Nenhum ZIP local encontrado em {RAW_DIR.relative_to(ROOT_DIR)}")
+    existing_months = existing.get("months", {})
+    existing_presidencia = existing.get("presidencia", {})
 
-    latest_month = max(month for month, _path in raw_zips)
+    latest_month = previous_closed_month()
     target_months = list(month_range(START_MONTH, latest_month))
-    raw_by_month = {month: path for month, path in raw_zips}
-    missing = [month for month in target_months if month not in raw_by_month]
-    if missing:
-        raise RuntimeError(f"ZIPs locais ausentes para: {', '.join(missing[:12])}")
+    to_process = [month for month in target_months if month not in existing_months]
 
-    months = {}
-    presidencia = {}
+    new_months = {}
+    new_presidencia = {}
+    session = None
 
-    for index, month in enumerate(target_months, start=1):
-        print(f"[{index}/{len(target_months)}] processando CPGF {month}")
-        parsed, parsed_presidencia = parse_csv_from_zip(raw_by_month[month], month)
+    if to_process:
+        session = requests.Session()
+        session.headers.update({"User-Agent": USER_AGENT})
+
+    for index, month in enumerate(to_process, start=1):
+        print(f"[{index}/{len(to_process)}] baixando e processando CPGF {month}")
+        zip_path = download_month_zip(session, month)
+        parsed, parsed_presidencia = parse_csv_from_zip(zip_path, month)
         for parsed_month, aggregate in parsed.items():
             if START_MONTH <= parsed_month <= latest_month:
-                months[parsed_month] = aggregate
+                new_months[parsed_month] = aggregate
         for parsed_month, aggregate in parsed_presidencia.items():
             if START_MONTH <= parsed_month <= latest_month:
-                presidencia[parsed_month] = aggregate
+                new_presidencia[parsed_month] = aggregate
 
-    ipca_fator = {
-        month: (existing.get("ipca_fator") or {}).get(month)
-        for month in target_months
-    }
-    missing_ipca = [month for month, value in ipca_fator.items() if value is None]
-    if missing_ipca:
-        raise RuntimeError(
-            "ipca_fator ausente no JSON existente para: "
-            + ", ".join(missing_ipca[:12])
-        )
     ordered_months = {
-        month: serializable_month(months.get(month, blank_month()))
+        month: (
+            serializable_month(new_months[month])
+            if month in new_months
+            else existing_months[month]
+        )
         for month in target_months
-        if month in months
+        if month in new_months or month in existing_months
     }
     ordered_presidencia = {
-        month: serializable_presidencia_month(presidencia.get(month, blank_presidencia_month()))
+        month: (
+            serializable_presidencia_month(new_presidencia[month])
+            if month in new_presidencia
+            else existing_presidencia[month]
+        )
         for month in target_months
-        if month in presidencia
+        if month in new_presidencia or month in existing_presidencia
     }
+
+    ipca_fator = existing.get("ipca_fator") or {}
+    missing_ipca = [month for month in target_months if ipca_fator.get(month) is None]
+    if missing_ipca:
+        if session is None:
+            session = requests.Session()
+            session.headers.update({"User-Agent": USER_AGENT})
+        fetched_ipca = fetch_ipca_factors(session, latest_month)
+        ipca_fator = {**ipca_fator}
+        for month in missing_ipca:
+            if month in fetched_ipca:
+                ipca_fator[month] = fetched_ipca[month]
+    ipca_fator = {month: ipca_fator.get(month) for month in target_months}
+
     payload = {
         "updated_at": now_iso(),
         "latest_month": latest_month,
