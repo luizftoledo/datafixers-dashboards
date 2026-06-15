@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-14T15:29:52.537951+00:00",
+  "generated_at": "2026-06-15T18:21:11.782846+00:00",
   "counts": {
-    "items": 91,
+    "items": 90,
     "domains": 23,
     "categories": {
-      "reportagem_autoral": 63,
+      "reportagem_autoral": 61,
       "republicacao": 0,
       "eco_repercussao": 1,
-      "citacao_fonte": 3,
+      "citacao_fonte": 4,
       "mencao": 6,
       "entrevista": 1,
       "palestra_curso": 0,
@@ -33,7 +33,7 @@
   "sources": {
     "discovery": {
       "seeds": {
-        "known_external_sources": 49
+        "known_external_sources": 48
       },
       "searches": {
         "google-news-rss:\"Luiz Fernando Toledo\"": 40,
@@ -43,20 +43,20 @@
       }
     },
     "enrich": {
-      "fetched": 62,
+      "fetched": 60,
       "reused": 33,
-      "kept": 91,
-      "dropped": 4,
+      "kept": 90,
+      "dropped": 3,
       "categories": {
         "perfil_bio": 17,
-        "reportagem_autoral": 63,
+        "reportagem_autoral": 61,
         "mencao": 6,
         "entrevista": 1,
-        "citacao_fonte": 3,
+        "citacao_fonte": 4,
         "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 56,
+        "bbc.com": 54,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
@@ -75,7 +75,7 @@
         "talks.ox.ac.uk": 1,
         "cima.ned.org": 1,
         "scielo.br": 1,
-        "abraji.org.br": 2,
+        "abraji.org.br": 3,
         "sbtnews.sbt.com.br": 1,
         "piaui.uol.com.br": 3,
         "cnnbrasil.com.br": 3
