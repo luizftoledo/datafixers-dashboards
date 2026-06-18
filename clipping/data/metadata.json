@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-17T16:49:05.719973+00:00",
+  "generated_at": "2026-06-18T16:48:13.714265+00:00",
   "counts": {
-    "items": 91,
+    "items": 88,
     "domains": 23,
     "categories": {
-      "reportagem_autoral": 62,
+      "reportagem_autoral": 60,
       "republicacao": 0,
       "eco_repercussao": 1,
-      "citacao_fonte": 5,
+      "citacao_fonte": 4,
       "mencao": 5,
       "entrevista": 1,
       "palestra_curso": 0,
@@ -15,13 +15,13 @@
     },
     "recent": {
       "last_1_day": 0,
-      "last_7_days": 0,
-      "last_30_days": 1
+      "last_7_days": 1,
+      "last_30_days": 4
     }
   },
   "date_range": {
     "min": "2020-04-24",
-    "max": "2026-05-25"
+    "max": "2026-06-15"
   },
   "methodology": {
     "names": [
@@ -44,19 +44,19 @@
     },
     "enrich": {
       "fetched": 60,
-      "reused": 34,
-      "kept": 91,
-      "dropped": 3,
+      "reused": 32,
+      "kept": 88,
+      "dropped": 4,
       "categories": {
         "perfil_bio": 17,
-        "reportagem_autoral": 62,
+        "reportagem_autoral": 60,
         "mencao": 5,
         "entrevista": 1,
-        "citacao_fonte": 5,
+        "citacao_fonte": 4,
         "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 55,
+        "bbc.com": 53,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
@@ -75,7 +75,7 @@
         "talks.ox.ac.uk": 1,
         "cima.ned.org": 1,
         "scielo.br": 1,
-        "abraji.org.br": 4,
+        "abraji.org.br": 3,
         "sbtnews.sbt.com.br": 1,
         "piaui.uol.com.br": 2,
         "cnnbrasil.com.br": 3
