@@ -1,0 +1,693 @@
+                                                                  Questionário • Painel — Maio 2026 (Onda 1)
+
+
+
+
+                                  Questionário
+                                   Painel — Junho 2026 (Onda 2)
+
+
+
+
+Convenções utilizadas
+ RU — Resposta única
+ RM — Resposta múltipla
+ ROTAR / RODIZIAR — Apresentar as alternativas em ordem aleatória
+ FILTRAR — Encerrar a entrevista quando a condição for atendida
+ RU POR FILA — Resposta única para cada linha da matriz
+
+
+
+
+                                              Página 1 de 17
+                                                                    Questionário • Painel — Maio 2026 (Onda 1)
+
+
+INTRODUÇÃO
+
+
+intro • INTRODUÇÃO e TCLE [ RU ]
+
+INSERTAR INTRO​
+​
+Olá! Estamos realizando uma pesquisa de opinião sobre temas diversos e gostaríamos de contar
+com sua participação. A pesquisa deve durar 10 minutos. Não existem respostas certas ou erradas e
+estamos apenas procurando suas opiniões sinceras. Por isso, é muito importante que você
+responda as perguntas de forma individual e espontânea, sem consultar outras pessoas ou a
+internet.​
+​
+Sua resposta a este questionário será mantida estritamente confidencial e será tratada de forma
+agrupada em percentuais, nunca de forma individual.
+Opções de resposta
+    1. Sim, eu concordo em participar da pesquisa.
+    2. Não, eu não concordo em participar da pesquisa. => FILTRAR
+
+
+
+
+PERFIL SOCIODEMOGRÁFICO
+
+
+D1. Classe
+
+    Tomar de ppi: br_socialclass_sr
+Opções de resposta
+    1. A
+    2. B1
+    3. B2
+    4. C1
+    5. C2
+    6. D-E
+
+
+
+D2. Região
+
+    Tomar de ppi: br_regions_sr
+Opções de resposta
+
+
+
+                                             Página 2 de 17
+                                                                Questionário • Painel — Maio 2026 (Onda 1)
+
+
+ 1. Norte
+ 2. Nordeste
+ 3. Sudeste
+ 4. Sul
+ 5. Centro-Oeste
+
+
+
+D3. Qual o seu município?
+
+ Tomar de ppi: int_cidade (LISTADO LARGO)
+
+
+
+
+D4. Qual é o seu gênero?
+
+Opções de resposta
+ 1. Homem
+ 2. Mulher
+
+
+
+D5. Qual é a sua idade?
+
+Opções de resposta
+ Menos de 18 anos => FILTRAR
+ 18-24
+ 25-34
+ 35-44
+ 45-59
+ 60 anos ou mais
+
+
+
+D6. Educação
+
+ Tomar de ppi: BR_education_level
+Opções de resposta
+ 1. Analfabeto / Primário incompleto (Analfabeto/ Até 3ª série Fundamental/ Até 3ª série 1º.
+   Grau)
+ 2. Primário completo / Ginasial incompleto (Até 4ª série Fundamental / Até 4ª série 1º. Grau)
+ 3. Ginasial completo / Colegial incompleto (Fundamental completo/ 1º. Grau completo)
+ 4. Colegial completo / Superior incompleto (Médio completo/ 2º. Grau completo)
+ 5. Superior completo
+
+
+                                            Página 3 de 17
+                                    Questionário • Painel — Maio 2026 (Onda 1)
+
+
+6. Pós-graduação
+7. Mestrado
+8. Doutorado
+
+
+
+
+                   Página 4 de 17
+                                                                    Questionário • Painel — Maio 2026 (Onda 1)
+
+
+BLOCO: ELEIÇÃO 2026
+
+
+interest • P15 [ RU ]
+
+Em uma escala de 0 a 10, qual é o seu grau de interesse pelas eleições de 2026?
+ Escala 0 = Nenhum interesse / 10 = Total interesse
+
+
+
+
+vote_2022 • P28 [ RU / ROTAR COD 1 Y 2 ]
+
+Em quem você votou no segundo turno da eleição presidencial de 2022?
+ SI EDAD EN 2022 ERA MENOR DE 16, SETEAR EN P28 COD 99 = Não votei
+ RESPOSTA ÚNICA
+ RODIZIAR
+ Use rodízio completo, exceto “Não votei” e “Não sei”
+Opções de resposta
+ 1. Lula
+ 2. Jair Bolsonaro
+ 96. Branco/ Nulo
+ 99. Não votei
+
+
+
+voto_1turno1 • P18 [ RU / ROTAR COD 1 A 7 ]
+
+Se a eleição fosse hoje, em quem você votaria para presidente do Brasil?
+ RESPOSTA ÚNICA
+ RODIZIAR
+ Use rodízio completo, exceto branco/nulo, não sei e prefiro não responder
+Opções de resposta
+ 1. Lula
+ 2. Flávio Bolsonaro
+ 3. Ronaldo Caiado
+ 6. Romeu Zema
+ 7. Renan Santos
+ 9. Augusto Cury
+ 10. Cabo Daciolo
+ 12. Samara Martins
+
+
+
+                                               Página 5 de 17
+                                                                    Questionário • Painel — Maio 2026 (Onda 1)
+
+
+ 13. Joaquim Barbosa
+ 96. Branco/ Nulo
+ 97. Não sei
+
+
+
+voto_2turno4 • P26 [ RU / ROTAR COD 1 Y 2 ]
+
+Se o segundo turno fosse hoje entre Lula e Flávio Bolsonaro, em quem você votaria?
+ RESPOSTA ÚNICA
+ RODIZIAR
+ Use rodízio completo, exceto branco/nulo, não sei e prefiro não responder
+Opções de resposta
+ 1. Lula
+ 2. Flávio Bolsonaro
+ 96. Branco/ Nulo
+ 97. Não sei
+
+
+
+turno2_lula_caiado • P57 [ RU / ROTAR COD 1 Y 2 ]
+
+Se o segundo turno fosse hoje entre Lula e Ronaldo Caiado, em quem você votaria?
+ Use rodízio completo, exceto branco/nulo e não sei
+Opções de resposta
+ 1. Lula
+ 2. Ronaldo Caiado
+ 96. Branco/ Nulo
+ 97. Não sei
+
+
+
+turno2_haddad_fb • P58 [ RU / ROTAR ]
+
+Se o segundo turno fosse hoje entre Fernando Haddad e Flávio Bolsonaro, em quem você votaria?
+ Use rodízio completo, exceto branco/nulo e não sei
+Opções de resposta
+ 1. Fernando Haddad
+ 2. Flávio Bolsonaro
+ 96. Branco/ Nulo
+ 97. Não sei
+
+
+
+                                              Página 6 de 17
+                                                                     Questionário • Painel — Maio 2026 (Onda 1)
+
+expectativa • P29 [ RU ]
+
+Independente do seu voto, quem você acredita que vai vencer a eleição presidencial?
+Opções de resposta
+ 1. Lula
+ 2. Outro candidato
+ 97. Não sei
+ 99. Prefiro não responder
+
+
+
+merecimento1 • P16 [ RU ]
+
+Independentemente do seu voto, você acha que o presidente Lula merece ser reeleito?
+ RESPOSTA ÚNICA
+Opções de resposta
+ 1. Sim
+ 2. Não
+ 97. Não sei
+ 99. Prefiro não responder
+
+
+
+prob_voto • P30 [ RU ]
+
+Em uma escala de 0 a 10, qual é a sua disposição de votar nestas eleições?
+ Escala 0 = Com certeza não vou votar / 10 = Com certeza vou votar
+
+
+
+
+rejeicao_base • P48 [ RM / ROTAR ]
+
+Em quais desses candidatos você NÃO votaria de jeito nenhum para presidente?
+Opções de resposta
+ 1. Lula
+ 2. Flávio Bolsonaro
+ 3. Romeu Zema
+ 4. Ronaldo Caiado
+ 5. Renan Santos
+ 99. Rejeita nenhum (RU – NO ROTAR)
+
+
+
+
+                                              Página 7 de 17
+                                                              Questionário • Painel — Maio 2026 (Onda 1)
+
+
+BLOCO: POLÍTICA
+
+
+aval_gov_pond • P1 [ RU ]
+
+De modo geral, como você avalia o governo do presidente Lula: ótimo, bom, regular, ruim ou
+péssimo?
+ RESPOSTA ÚNICA
+Opções de resposta
+ 01. Ótimo
+ 02. Bom
+ 03. Regular
+ 04. Ruim
+ 05. Péssimo
+ 97. Não sei
+ 99. Prefiro não responder
+
+
+
+aprov_presidente • P2 [ RU ]
+
+De maneira geral, você aprova ou desaprova o trabalho que o presidente Lula vem fazendo?
+Opções de resposta
+ 01. Aprova
+ 02. Desaprova
+ 97. Não sei
+ 99. Prefiro não responder
+
+
+
+preference • P3 [ RU ]
+
+Existe algum partido político que você gosta?
+Opções de resposta
+ 01. Sim
+ 02. Não
+ 97. Não sei
+
+
+
+polparty_posit • P4 [ RU / ROTAR CODS 1 A 13 ]
+
+
+
+
+                                           Página 8 de 17
+                                                            Questionário • Painel — Maio 2026 (Onda 1)
+
+
+Qual é o partido que você mais gosta?
+ CASO SIM NA ANTERIOR — SI P3=1 SIM
+ RESPOSTA ÚNICA
+ APRESENTAR LISTA
+Opções de resposta
+ 1. MDB
+ 2. PSD
+ 3. PL
+ 4. União Brasil
+ 5. PP
+ 6. Republicanos
+ 7. PT
+ 8. PSB
+ 9. PSDB
+ 10. Podemos
+ 11. PDT
+ 12. PSOL
+ 13. NOVO
+ 98. Outro partido
+
+
+
+rejection • P5 [ RU ]
+
+Existe algum partido político que você não gosta?
+Opções de resposta
+ 01. Sim
+ 02. Não
+ 97. Não sei
+
+
+
+polparty_negat • P6 [ RU / ROTAR CODS 1 A 7 ]
+
+Qual é o partido que você menos gosta?
+ CASO SIM NA ANTERIOR — P5=1 SIM
+ NO MOSTRAR EL PARTIDO SELECCIONADO EN P4
+ RESPOSTA ÚNICA
+ APRESENTAR LISTA
+ RODIZIAR
+Opções de resposta
+
+
+                                           Página 9 de 17
+                                                                  Questionário • Painel — Maio 2026 (Onda 1)
+
+
+ 1. MDB
+ 2. PSD
+ 3. PL
+ 4. União Brasil
+ 5. PP
+ 6. Republicanos
+ 7. PT
+ 8. PSB
+ 9. PSDB
+ 10. Podemos
+ 11. PDT
+ 12. PSOL
+ 13. NOVO
+ 98. Outro partido
+
+
+
+position • P7 [ RU ]
+
+Na escala de posições políticas, em qual grupo você se encaixa?
+ RESPOSTA ÚNICA
+Opções de resposta
+ 1. Lulista
+ 2. Esquerda não Lulista
+ 3. Não tem posicionamento
+ 4. Direita não Bolsonarista
+ 5. Bolsonarista
+ 97. Não sei
+
+
+
+
+BLOCO: ECONOMIA
+
+
+situaçao_econ • P8 [ RU ]
+
+Pensando na sua situação financeira no último mês, você diria que:
+ RESPOSTA ÚNICA
+Opções de resposta
+ 01. Não conseguiu pagar todas as suas contas
+
+
+                                          Página 10 de 17
+                                                               Questionário • Painel — Maio 2026 (Onda 1)
+
+
+ 02. Teve dinheiro apenas para pagar todas as suas contas, sem sobras
+ 03. Pagou todas as suas contas e ainda conseguiu economizar
+ 97. Não sei
+ 99. Prefiro não responder
+
+
+
+situação_econ_6meses • P9 [ RU ]
+
+Pensando na sua situação econômica, como você acha que estará daqui a 6 meses?
+ RESPOSTA ÚNICA
+Opções de resposta
+ 01. Muito melhor
+ 02. Um pouco melhor
+ 03. Igual
+ 04. Um pouco pior
+ 05. Muito pior
+ 97. Não sei
+ 99. Prefiro não responder
+
+
+
+situação_econ_BR • P10 [ RU ]
+
+Pensando na situação econômica atual do Brasil em comparação com 6 meses atrás, você diria que
+ela está:
+ RESPOSTA ÚNICA
+Opções de resposta
+ 01. Muito melhor
+ 02. Um pouco melhor
+ 03. Igual
+ 04. Um pouco pior
+ 05. Muito pior
+ 97. Não sei
+ 99. Prefiro não responder
+
+
+
+rumos • P11 [ RU ]
+
+De um modo geral, você acha que o Brasil está indo no caminho certo ou no caminho errado?
+ RESPOSTA ÚNICA
+
+
+                                         Página 11 de 17
+                                                              Questionário • Painel — Maio 2026 (Onda 1)
+
+
+Opções de resposta
+ 01. Caminho certo
+ 02. Caminho errado
+ 97. Não sei
+ 99. Prefiro não responder
+
+
+
+problema • P12 [ RU / ROTAR ]
+
+Na sua opinião, qual o maior problema do Brasil hoje? Escolha apenas uma opção.
+ RESPOSTA ÚNICA
+ RODIZIAR
+Opções de resposta
+ 01. Desemprego
+ 03. Corrupção
+ 05. Segurança pública/ violência
+ 08. Pobreza/ fome/ privação extrema
+ 09. Impostos elevados
+ 10. Custo de vida/ inflação
+ 11. Desigualdade econômica/ social
+ 14. Salários baixos
+ 15. Saneamento básico (água e esgoto) e lixo (coleta e destinação adequada)
+ 16. Baixo crescimento econômico
+ 19. Meio ambiente (poluição, desmatamento, etc.)
+ 23. Assistência médica precária
+ 24. Sistema educacional deficiente
+ 25. Polarização política
+ 98. Outros (NO ROTAR)
+
+
+
+alimentos • P13 [ RU / ROTAR ]
+
+No mês de maio, você diria que:
+ RESPOSTA ÚNICA
+ RODIZIAR
+Opções de resposta
+ 1. Os preços dos alimentos subiram mais do que em abril
+ 2. Subiram menos do que em abril
+ 3. Subiram igual a abril
+
+
+                                         Página 12 de 17
+                                   Questionário • Painel — Maio 2026 (Onda 1)
+
+
+4. Não subiram
+
+
+
+
+                 Página 13 de 17
+                                                                 Questionário • Painel — Maio 2026 (Onda 1)
+
+
+BLOCO: DEMOGRÁFICOS
+
+
+color_pond • P37 [ RU ]
+
+O IBGE - Instituto que faz o Censo no Brasil - usa os termos preto, pardo, branco, amarelo e
+indígena para classificar a cor ou raça das pessoas. Qual desses termos descreve melhor a sua cor
+ou raça?
+Opções de resposta
+ 01. Preto
+ 02. Pardo
+ 03. Branco
+ 04. Amarelo
+ 05. Indígena
+ 97. Não sei
+ 99. Prefiro não responder
+
+
+
+religion_pond • P38 [ RU ]
+
+Qual é a sua religião?
+Opções de resposta
+ 01. Católica Apostólica Romana
+ 02. Assembleia de Deus
+ 03. Batista/ Metodista/ Presbiteriana
+ 04. Universal do Reino de Deus
+ 05. Deus é Amor
+ 06. Evangelho Quadrangular
+ 07. Igreja Internacional da Graça
+ 08. Renascer em Cristo
+ 09. Sara Nossa Terra
+ 10. Outras Evangélicas específicas
+ 11. Evangélica - Não sabe especificar
+ 12. Adventista
+ 13. Testemunha de Jeová
+ 14. Judaica
+ 15. Espírita/ Kardecista
+ 16. Afro-Brasileiras (Umbanda, Candomblé, etc)
+ 17. Orientais (Budismo, Islamismo, etc)
+
+
+
+                                           Página 14 de 17
+                                                               Questionário • Painel — Maio 2026 (Onda 1)
+
+
+ 18. Outras religiões
+ 19. É religioso mas não segue nenhuma/ Agnóstico
+ 20. Ateu, não tem religião
+ 99. Prefiro não responder
+
+
+
+trab_pond • P39 [ RU ]
+
+Atualmente você desempenha algum trabalho remunerado?
+Opções de resposta
+ 1. Sim
+ 2. Não
+
+
+
+trab_pond2 • P40 [ RU ]
+
+E você procurou emprego nos últimos trinta dias, sim ou não?
+Opções de resposta
+ 1. Sim
+ 2. Não
+
+
+
+benef_auxilio_gov_pond • P41 [ RU ]
+
+No mês de Abril, você ou alguém do seu domicílio recebeu algum valor do Programa Bolsa Família?
+Opções de resposta
+ 01. Sim
+ 02. Não
+
+
+
+randa_pond • P42 [ RU ]
+
+Considerando seus ganhos de qualquer natureza, como salário, bicos, aposentadorias, pensões,
+benefícios do Governo etc., qual foi a sua renda mensal individual no mês passado?
+Opções de resposta
+ 1. Até R$ 1.518,00 (até 1 SM)
+ 2. De R$ 1.518,01 a R$ 3.036,00 (mais de 1 até 2 SM)
+ 3. De R$ 3.036,01 a R$ 4.554,00 (mais de 2 até 3 SM)
+ 4. De R$ 4.554,01 a R$ 7.590,00 (mais de 3 até 5 SM)
+
+
+                                          Página 15 de 17
+                                                                 Questionário • Painel — Maio 2026 (Onda 1)
+
+
+ 5. De R$ 7.590,01 a R$ 15.180,00 (mais de 5 até 10 SM)
+ 6. Mais de R$ 15.180,00 (mais de 10 SM)
+ 7. Sem rendimento
+ 97. Não sabe
+ 99. Prefiro não responder/ Recusa
+
+
+
+renda_fam_pond • P55 [ RU ]
+
+Somando a sua renda com a renda da(s) pessoa(s) que moram com você, também considerando os
+ganhos de qualquer natureza, quanto é, aproximadamente, a renda familiar mensal?
+Opções de resposta
+ 1. Até 1 salário mínimo (Até R$ 1.518,00)
+ 2. De 1 a 2 salários mínimos (De R$ 1.518,01 a R$ 3.036,00)
+ 3. De 2 a 3 salários mínimos (De R$ 3.036,01 a R$ 4.554,00)
+ 4. De 3 a 5 salários mínimos (De R$ 4.554,01 a R$ 7.590,00)
+ 5. De 5 a 10 salários mínimos (De R$ 7.590,01 a R$ 15.180,00)
+ 6. Mais de 10 salários mínimos (Mais de R$ 15.180,00)
+ 7. Sem rendimento
+ 97. Não sei
+ 99. Prefiro não responder/ Recuso
+
+
+
+internet_pond • P43 [ RU ]
+
+Normalmente, com que frequência você utiliza a Internet?
+Opções de resposta
+ 01. Todos os dias
+ 02. 5 ou 6 vezes por semana
+ 03. De 1 a 4 vezes por semana
+ 04. Não utiliza toda semana, mas utiliza pelo menos 1 vez por mês
+ 05. Menos do que uma vez por mês
+ 99. Não aplicável
+
+
+
+internet_pond • P44 [ RU ]
+
+Para acessar à Internet neste domicílio, algum morador utiliza microcomputador (de mesa ou
+portátil, como laptop, notebook ou netbook)?
+
+
+
+                                             Página 16 de 17
+                                                            Questionário • Painel — Maio 2026 (Onda 1)
+
+
+Opções de resposta
+ 01. Sim
+ 02. Não
+ 99. Não aplicável
+
+
+
+tipo_celular_pond • P45 [ RU ]
+
+O seu telefone celular é pré-pago ou pós-pago?
+Opções de resposta
+ 01. Pré-pago
+ 02. Pós-pago
+ 97. Não sei
+ 99. Prefiro não responder
+
+
+
+
+                                          Página 17 de 17
+
