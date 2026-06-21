@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-20T15:17:16.959851+00:00",
-  "snapshot_date": "2026-06-20",
+  "generated_at": "2026-06-21T15:15:15.493258+00:00",
+  "snapshot_date": "2026-06-21",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -13,12 +13,12 @@
   "metrics": {
     "total_empenhado_atual": 333978864776.13,
     "total_empenhado_snapshot_anterior": 333655202525.95,
-    "delta_liquido_desde_snapshot_anterior": 323662250.18,
-    "delta_positivo_desde_snapshot_anterior": 359210069.84,
-    "delta_negativo_desde_snapshot_anterior": -35547819.66,
-    "autores_com_aumento": 66,
-    "destinos_com_aumento": 21,
-    "pares_autor_destino_com_aumento": 68,
+    "delta_liquido_desde_snapshot_anterior": 0.0,
+    "delta_positivo_desde_snapshot_anterior": 0.0,
+    "delta_negativo_desde_snapshot_anterior": 0.0,
+    "autores_com_aumento": 0,
+    "destinos_com_aumento": 0,
+    "pares_autor_destino_com_aumento": 0,
     "total_autores_mapeados": 1614,
     "total_destinos_mapeados": 5458,
     "total_linhas_csv": 93780,
@@ -27,8 +27,8 @@
     "current_year_total_empenhado": 32219896181.89,
     "current_year_total_liquidado": 18855451179.48,
     "current_year_total_pago": 26171069099.13,
-    "current_year_total_empenhado_por_ano_emenda": 31511471651.32,
-    "current_year_total_pago_por_ano_emenda": 18387826925.93,
+    "current_year_total_empenhado_por_ano_emenda": 32219896181.89,
+    "current_year_total_pago_por_ano_emenda": 26171069099.13,
     "_pago_e_empenhado_source": "por_data_documento"
   },
   "top_authors_today": [
@@ -1021,7 +1021,7 @@
     "total_liquidado": 18855451179.48,
     "total_pago": 26171069099.13
   },
-  "run_date": "2026-06-20",
+  "run_date": "2026-06-21",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1105,7 +1105,7 @@
           "error": ""
         }
       ],
-      "error": "HTTPConnectionPool(host='localhost', port=48653): Read timed out. (read timeout=120)",
+      "error": "HTTPConnectionPool(host='localhost', port=47347): Read timed out. (read timeout=120)",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -1156,7 +1156,7 @@
           "error": ""
         }
       ],
-      "error": "HTTPConnectionPool(host='localhost', port=43467): Read timed out. (read timeout=120)",
+      "error": "HTTPConnectionPool(host='localhost', port=47437): Read timed out. (read timeout=120)",
       "fallback_from_previous": true
     },
     "documents": {
@@ -3667,6 +3667,17 @@
       "previous_snapshot_date": "2026-06-19",
       "interval_days": 1,
       "source_changed": true
+    },
+    {
+      "date": "2026-06-21",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 333978864776.13,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-06-20",
+      "interval_days": 1,
+      "source_changed": false
     }
   ],
   "siop_daily_history": [
@@ -4549,6 +4560,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-06-21",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
-  ]
+  ],
+  "updated_at": "2026-06-21T15:15:15.493258+00:00"
 }
