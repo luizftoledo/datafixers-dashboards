@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-21T15:15:15.493258+00:00",
-  "snapshot_date": "2026-06-21",
+  "generated_at": "2026-06-22T17:46:16.571445+00:00",
+  "snapshot_date": "2026-06-22",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -1021,7 +1021,7 @@
     "total_liquidado": 18855451179.48,
     "total_pago": 26171069099.13
   },
-  "run_date": "2026-06-21",
+  "run_date": "2026-06-22",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1105,7 +1105,7 @@
           "error": ""
         }
       ],
-      "error": "HTTPConnectionPool(host='localhost', port=47347): Read timed out. (read timeout=120)",
+      "error": "6 - Emendas Individuais: filtro não confirmado ; 7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -1156,7 +1156,7 @@
           "error": ""
         }
       ],
-      "error": "HTTPConnectionPool(host='localhost', port=47437): Read timed out. (read timeout=120)",
+      "error": "6 - Emendas Individuais: filtro não confirmado ; 7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
       "fallback_from_previous": true
     },
     "documents": {
@@ -2512,32 +2512,32 @@
         },
         {
           "author": "DR. ISMAEL ALEXANDRINO",
-          "party": "Nao identificado",
+          "party": "PSD",
           "empenhado": 2865000.0
         },
         {
           "author": "CHICO ALENCAR",
-          "party": "Nao identificado",
+          "party": "PSOL",
           "empenhado": 2550000.0
         },
         {
           "author": "SOSTENES CAVALCANTE",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 2450000.0
         },
         {
           "author": "GERALDO RESENDE",
-          "party": "Nao identificado",
+          "party": "UNIÃO",
           "empenhado": 1400000.0
         },
         {
           "author": "BOHN GASS",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 1251790.54
         },
         {
           "author": "TARCISIO MOTTA",
-          "party": "Nao identificado",
+          "party": "PSOL",
           "empenhado": 1200000.0
         },
         {
@@ -2547,12 +2547,12 @@
         },
         {
           "author": "PEDRO UCZAI",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 1000000.0
         },
         {
           "author": "CELSO RUSSOMANNO",
-          "party": "Nao identificado",
+          "party": "REPUBLICANOS",
           "empenhado": 750000.0
         },
         {
@@ -2562,12 +2562,12 @@
         },
         {
           "author": "ADRIANA VENTURA",
-          "party": "Nao identificado",
+          "party": "NOVO",
           "empenhado": 699999.77
         },
         {
           "author": "IZA ARRUDA",
-          "party": "Nao identificado",
+          "party": "MDB",
           "empenhado": 660542.0
         },
         {
@@ -2577,7 +2577,7 @@
         },
         {
           "author": "PEDRO LUCAS FERNANDES",
-          "party": "Nao identificado",
+          "party": "UNIÃO",
           "empenhado": 650000.0
         }
       ],
@@ -3086,8 +3086,8 @@
       }
     },
     "party_lookup": {
-      "camara_mapeados": 0,
-      "senado_mapeados": 0
+      "camara_mapeados": 513,
+      "senado_mapeados": 81
     }
   },
   "daily_history": [
@@ -3676,6 +3676,17 @@
       "autores_com_aumento": 0,
       "destinos_com_aumento": 0,
       "previous_snapshot_date": "2026-06-20",
+      "interval_days": 1,
+      "source_changed": false
+    },
+    {
+      "date": "2026-06-22",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 333978864776.13,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-06-21",
       "interval_days": 1,
       "source_changed": false
     }
@@ -4570,7 +4581,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-06-22",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-06-21T15:15:15.493258+00:00"
+  "updated_at": "2026-06-22T17:46:16.571445+00:00"
 }
