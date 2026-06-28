@@ -66,29 +66,5 @@ jobs:
             done
           fi
 
-      - name: Telegram alert
-        if: steps.commit.outputs.novas != '0'
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: |
-          if [ -z "$TELEGRAM_BOT_TOKEN" ]; then exit 0; fi
-          python - <<'PY'
-          import json, os, urllib.parse, urllib.request
-          from datetime import datetime
-          from pathlib import Path
-          novas = json.loads(Path("pesquisas/data/novas.json").read_text())
-          if not novas: raise SystemExit(0)
-          def fd(s):
-              if not s: return "—"
-              try: return datetime.fromisoformat(s).strftime("%d/%m")
-              except Exception: return s[:10]
-          lines = [f"<b>🗳️ {len(novas)} nova(s) pesquisa(s) nacional(is)</b>", ""]
-          for p in novas[:20]:
-              lines.append(f"• <b>{p.get('fantasia') or p.get('empresa') or '?'}</b> — {p.get('cargo')}\n  divulga {fd(p.get('divulgacao'))} · {p.get('entrevistados') or '?'} ent.\n  <code>{p.get('id')}</code>")
-          if len(novas) > 20: lines.append(f"\n…e mais {len(novas)-20}.")
-          lines.append("\n→ https://dashboards.datafixers.org/pesquisas/")
-          body = urllib.parse.urlencode({"chat_id": os.environ["TELEGRAM_CHAT_ID"], "text": "\n".join(lines), "parse_mode": "HTML", "disable_web_page_preview": "true"}).encode()
-          req = urllib.request.Request(f"https://api.telegram.org/bot{os.environ['TELEGRAM_BOT_TOKEN']}/sendMessage", data=body, method="POST")
-          with urllib.request.urlopen(req, timeout=30) as r: print("telegram:", r.status)
-          PY
+      # Alerta de Telegram removido a pedido do Luiz (28/06/26): os dados continuam
+      # sendo atualizados/commitados, mas sem notificação por mensagem.
