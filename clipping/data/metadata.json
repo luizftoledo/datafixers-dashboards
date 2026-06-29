@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-06-28T15:06:46.237390+00:00",
+  "generated_at": "2026-06-29T16:47:54.348715+00:00",
   "counts": {
-    "items": 88,
+    "items": 87,
     "domains": 23,
     "categories": {
-      "reportagem_autoral": 57,
+      "reportagem_autoral": 58,
       "republicacao": 0,
       "eco_repercussao": 1,
-      "citacao_fonte": 5,
-      "mencao": 7,
+      "citacao_fonte": 4,
+      "mencao": 6,
       "entrevista": 1,
       "palestra_curso": 0,
       "perfil_bio": 17
     },
     "recent": {
-      "last_1_day": 0,
-      "last_7_days": 0,
-      "last_30_days": 2
+      "last_1_day": 1,
+      "last_7_days": 1,
+      "last_30_days": 3
     }
   },
   "date_range": {
     "min": "2020-04-24",
-    "max": "2026-06-15"
+    "max": "2026-06-29"
   },
   "methodology": {
     "names": [
@@ -33,7 +33,7 @@
   "sources": {
     "discovery": {
       "seeds": {
-        "known_external_sources": 49
+        "known_external_sources": 48
       },
       "searches": {
         "google-news-rss:\"Luiz Fernando Toledo\"": 40,
@@ -43,20 +43,20 @@
       }
     },
     "enrich": {
-      "fetched": 58,
-      "reused": 34,
-      "kept": 88,
-      "dropped": 4,
+      "fetched": 57,
+      "reused": 33,
+      "kept": 87,
+      "dropped": 3,
       "categories": {
         "perfil_bio": 17,
-        "reportagem_autoral": 57,
-        "mencao": 7,
+        "reportagem_autoral": 58,
+        "mencao": 6,
         "entrevista": 1,
-        "citacao_fonte": 5,
+        "citacao_fonte": 4,
         "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 51,
+        "bbc.com": 52,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
@@ -75,10 +75,10 @@
         "talks.ox.ac.uk": 1,
         "cima.ned.org": 1,
         "scielo.br": 1,
-        "abraji.org.br": 4,
+        "abraji.org.br": 3,
         "sbtnews.sbt.com.br": 1,
         "piaui.uol.com.br": 3,
-        "cnnbrasil.com.br": 4
+        "cnnbrasil.com.br": 3
       },
       "errors": [
         {
