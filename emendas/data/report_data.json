@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-30T15:39:02.130119+00:00",
-  "snapshot_date": "2026-06-30",
+  "generated_at": "2026-07-01T15:48:09.172940+00:00",
+  "snapshot_date": "2026-07-01",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -997,7 +997,7 @@
     "total_liquidado": 22037343818.84,
     "total_pago": 29259893575.95
   },
-  "run_date": "2026-06-30",
+  "run_date": "2026-07-01",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1097,7 +1097,7 @@
         ]
       },
       "last_update": "",
-      "base_siafi_date": "29/6/2026",
+      "base_siafi_date": "30/6/2026",
       "rows": [],
       "rows_count": 0,
       "unique_nro_emendas": 0,
@@ -2531,7 +2531,7 @@
         },
         {
           "author": "MEIRE SERAFIM",
-          "party": "Nao identificado",
+          "party": "UNIÃO",
           "empenhado": 6000000.0
         },
         {
@@ -2566,7 +2566,7 @@
         },
         {
           "author": "WALDENOR PEREIRA",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 737273.6
         },
         {
@@ -2576,22 +2576,22 @@
         },
         {
           "author": "EMIDINHO MADEIRA",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 599999.69
         },
         {
           "author": "PAULO LEMOS",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 550000.0
         },
         {
           "author": "CORONEL CHRISOSTOMO",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 449500.0
         },
         {
           "author": "ERIKA HILTON",
-          "party": "Nao identificado",
+          "party": "PSOL",
           "empenhado": 442911.0
         },
         {
@@ -3110,7 +3110,7 @@
       }
     },
     "party_lookup": {
-      "camara_mapeados": 0,
+      "camara_mapeados": 513,
       "senado_mapeados": 81
     }
   },
@@ -3799,6 +3799,17 @@
       "autores_com_aumento": 0,
       "destinos_com_aumento": 0,
       "previous_snapshot_date": "2026-06-29",
+      "interval_days": 1,
+      "source_changed": false
+    },
+    {
+      "date": "2026-07-01",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 338385008268.25,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-06-30",
       "interval_days": 1,
       "source_changed": false
     }
@@ -4783,7 +4794,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-07-01",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-06-30T15:39:02.130119+00:00"
+  "updated_at": "2026-07-01T15:48:09.172940+00:00"
 }
