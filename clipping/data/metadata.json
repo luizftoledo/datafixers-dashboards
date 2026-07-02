@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-07-01T16:12:00.927264+00:00",
+  "generated_at": "2026-07-02T15:57:09.936702+00:00",
   "counts": {
-    "items": 89,
+    "items": 88,
     "domains": 23,
     "categories": {
       "reportagem_autoral": 60,
       "republicacao": 0,
       "eco_repercussao": 1,
-      "citacao_fonte": 4,
-      "mencao": 6,
+      "citacao_fonte": 3,
+      "mencao": 5,
       "entrevista": 1,
-      "palestra_curso": 0,
+      "palestra_curso": 1,
       "perfil_bio": 17
     },
     "recent": {
       "last_1_day": 1,
-      "last_7_days": 2,
+      "last_7_days": 3,
       "last_30_days": 4
     }
   },
@@ -43,23 +43,24 @@
       }
     },
     "enrich": {
-      "fetched": 74,
-      "reused": 18,
-      "kept": 89,
-      "dropped": 3,
+      "fetched": 57,
+      "reused": 33,
+      "kept": 88,
+      "dropped": 2,
       "categories": {
         "perfil_bio": 17,
         "reportagem_autoral": 60,
-        "mencao": 6,
+        "palestra_curso": 1,
+        "mencao": 5,
         "entrevista": 1,
-        "citacao_fonte": 4,
+        "citacao_fonte": 3,
         "eco_repercussao": 1
       },
       "domains": {
         "bbc.com": 52,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
-        "apublica.org": 3,
+        "apublica.org": 4,
         "ojoioeotrigo.com.br": 2,
         "estadao.com.br": 4,
         "g1.globo.com": 3,
@@ -75,10 +76,10 @@
         "talks.ox.ac.uk": 1,
         "cima.ned.org": 1,
         "scielo.br": 1,
-        "abraji.org.br": 3,
+        "abraji.org.br": 2,
         "sbtnews.sbt.com.br": 1,
         "piaui.uol.com.br": 3,
-        "cnnbrasil.com.br": 4
+        "cnnbrasil.com.br": 3
       },
       "errors": [
         {
