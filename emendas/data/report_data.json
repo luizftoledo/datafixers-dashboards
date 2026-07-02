@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-01T15:48:09.172940+00:00",
-  "snapshot_date": "2026-07-01",
+  "generated_at": "2026-07-02T15:26:23.351704+00:00",
+  "snapshot_date": "2026-07-02",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -997,7 +997,7 @@
     "total_liquidado": 22037343818.84,
     "total_pago": 29259893575.95
   },
-  "run_date": "2026-07-01",
+  "run_date": "2026-07-02",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1081,7 +1081,7 @@
           "error": ""
         }
       ],
-      "error": "dotação inicial/atual zerada — provável quebra do scraper Qlik (DOM mudou)",
+      "error": "HTTPConnectionPool(host='localhost', port=51907): Read timed out. (read timeout=120)",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -1132,7 +1132,8 @@
           "error": ""
         }
       ],
-      "error": ""
+      "error": "HTTPConnectionPool(host='localhost', port=42267): Read timed out. (read timeout=120)",
+      "fallback_from_previous": true
     },
     "documents": {
       "year": 2026,
@@ -2531,7 +2532,7 @@
         },
         {
           "author": "MEIRE SERAFIM",
-          "party": "UNIÃO",
+          "party": "Nao identificado",
           "empenhado": 6000000.0
         },
         {
@@ -2556,7 +2557,7 @@
         },
         {
           "author": "SERGIO MORO",
-          "party": "PL",
+          "party": "Nao identificado",
           "empenhado": 2300000.0
         },
         {
@@ -2566,37 +2567,37 @@
         },
         {
           "author": "WALDENOR PEREIRA",
-          "party": "PT",
+          "party": "Nao identificado",
           "empenhado": 737273.6
         },
         {
           "author": "HUMBERTO COSTA",
-          "party": "PT",
+          "party": "Nao identificado",
           "empenhado": 700000.0
         },
         {
           "author": "EMIDINHO MADEIRA",
-          "party": "PL",
+          "party": "Nao identificado",
           "empenhado": 599999.69
         },
         {
           "author": "PAULO LEMOS",
-          "party": "PT",
+          "party": "Nao identificado",
           "empenhado": 550000.0
         },
         {
           "author": "CORONEL CHRISOSTOMO",
-          "party": "PL",
+          "party": "Nao identificado",
           "empenhado": 449500.0
         },
         {
           "author": "ERIKA HILTON",
-          "party": "PSOL",
+          "party": "Nao identificado",
           "empenhado": 442911.0
         },
         {
           "author": "ROGERIO CARVALHO",
-          "party": "PT",
+          "party": "Nao identificado",
           "empenhado": 400000.0
         },
         {
@@ -3110,8 +3111,8 @@
       }
     },
     "party_lookup": {
-      "camara_mapeados": 513,
-      "senado_mapeados": 81
+      "camara_mapeados": 0,
+      "senado_mapeados": 0
     }
   },
   "daily_history": [
@@ -3810,6 +3811,17 @@
       "autores_com_aumento": 0,
       "destinos_com_aumento": 0,
       "previous_snapshot_date": "2026-06-30",
+      "interval_days": 1,
+      "source_changed": false
+    },
+    {
+      "date": "2026-07-02",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 338385008268.25,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-07-01",
       "interval_days": 1,
       "source_changed": false
     }
@@ -4804,7 +4816,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-07-02",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-07-01T15:48:09.172940+00:00"
+  "updated_at": "2026-07-02T15:26:23.351704+00:00"
 }
