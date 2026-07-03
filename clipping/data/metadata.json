@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-02T15:57:09.936702+00:00",
+  "generated_at": "2026-07-03T15:44:47.117395+00:00",
   "counts": {
-    "items": 88,
+    "items": 87,
     "domains": 23,
     "categories": {
       "reportagem_autoral": 60,
@@ -10,13 +10,13 @@
       "citacao_fonte": 3,
       "mencao": 5,
       "entrevista": 1,
-      "palestra_curso": 1,
+      "palestra_curso": 0,
       "perfil_bio": 17
     },
     "recent": {
-      "last_1_day": 1,
-      "last_7_days": 3,
-      "last_30_days": 4
+      "last_1_day": 0,
+      "last_7_days": 2,
+      "last_30_days": 3
     }
   },
   "date_range": {
@@ -33,7 +33,7 @@
   "sources": {
     "discovery": {
       "seeds": {
-        "known_external_sources": 48
+        "known_external_sources": 47
       },
       "searches": {
         "google-news-rss:\"Luiz Fernando Toledo\"": 40,
@@ -44,13 +44,12 @@
     },
     "enrich": {
       "fetched": 57,
-      "reused": 33,
-      "kept": 88,
+      "reused": 32,
+      "kept": 87,
       "dropped": 2,
       "categories": {
         "perfil_bio": 17,
         "reportagem_autoral": 60,
-        "palestra_curso": 1,
         "mencao": 5,
         "entrevista": 1,
         "citacao_fonte": 3,
@@ -60,7 +59,7 @@
         "bbc.com": 52,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
-        "apublica.org": 4,
+        "apublica.org": 3,
         "ojoioeotrigo.com.br": 2,
         "estadao.com.br": 4,
         "g1.globo.com": 3,

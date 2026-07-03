@@ -1,7 +1,7 @@
 {
   "discovery": {
     "seeds": {
-      "known_external_sources": 48
+      "known_external_sources": 47
     },
     "searches": {
       "google-news-rss:\"Luiz Fernando Toledo\"": 40,
@@ -12,13 +12,12 @@
   },
   "enrich": {
     "fetched": 57,
-    "reused": 33,
-    "kept": 88,
+    "reused": 32,
+    "kept": 87,
     "dropped": 2,
     "categories": {
       "perfil_bio": 17,
       "reportagem_autoral": 60,
-      "palestra_curso": 1,
       "mencao": 5,
       "entrevista": 1,
       "citacao_fonte": 3,
@@ -28,7 +27,7 @@
       "bbc.com": 52,
       "intercept.com.br": 1,
       "piaui.folha.uol.com.br": 1,
-      "apublica.org": 4,
+      "apublica.org": 3,
       "ojoioeotrigo.com.br": 2,
       "estadao.com.br": 4,
       "g1.globo.com": 3,
