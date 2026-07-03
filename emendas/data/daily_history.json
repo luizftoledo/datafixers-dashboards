@@ -707,5 +707,16 @@
     "previous_snapshot_date": "2026-07-01",
     "interval_days": 1,
     "source_changed": false
+  },
+  {
+    "date": "2026-07-03",
+    "delta_positivo": 1036384517.99,
+    "delta_liquido": 1035037842.05,
+    "total_empenhado_atual": 339420046110.3,
+    "autores_com_aumento": 224,
+    "destinos_com_aumento": 43,
+    "previous_snapshot_date": "2026-07-02",
+    "interval_days": 1,
+    "source_changed": true
   }
 ]
