@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-07-04T14:53:39.898616+00:00",
+  "generated_at": "2026-07-05T15:03:25.856665+00:00",
   "counts": {
     "items": 88,
-    "domains": 23,
+    "domains": 24,
     "categories": {
-      "reportagem_autoral": 60,
+      "reportagem_autoral": 59,
       "republicacao": 0,
       "eco_repercussao": 1,
-      "citacao_fonte": 4,
+      "citacao_fonte": 5,
       "mencao": 5,
       "entrevista": 1,
       "palestra_curso": 0,
@@ -20,7 +20,7 @@
     }
   },
   "date_range": {
-    "min": "2019-02-05",
+    "min": "2019-11-21",
     "max": "2026-07-01"
   },
   "methodology": {
@@ -33,7 +33,7 @@
   "sources": {
     "discovery": {
       "seeds": {
-        "known_external_sources": 48
+        "known_external_sources": 49
       },
       "searches": {
         "google-news-rss:\"Luiz Fernando Toledo\"": 40,
@@ -43,26 +43,26 @@
       }
     },
     "enrich": {
-      "fetched": 58,
-      "reused": 33,
+      "fetched": 61,
+      "reused": 31,
       "kept": 88,
-      "dropped": 3,
+      "dropped": 4,
       "categories": {
         "perfil_bio": 17,
-        "reportagem_autoral": 60,
+        "reportagem_autoral": 59,
         "mencao": 5,
         "entrevista": 1,
-        "citacao_fonte": 4,
+        "citacao_fonte": 5,
         "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 52,
+        "bbc.com": 50,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
         "ojoioeotrigo.com.br": 2,
-        "estadao.com.br": 4,
-        "g1.globo.com": 3,
+        "estadao.com.br": 7,
+        "g1.globo.com": 2,
         "escavador.com": 1,
         "icfj.org": 1,
         "devstudies.cam.ac.uk": 1,
@@ -77,7 +77,8 @@
         "scielo.br": 1,
         "abraji.org.br": 3,
         "sbtnews.sbt.com.br": 1,
-        "piaui.uol.com.br": 3,
+        "piaui.uol.com.br": 2,
+        "observatoriodatv.com.br": 1,
         "cnnbrasil.com.br": 3
       },
       "errors": [
