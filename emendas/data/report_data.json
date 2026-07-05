@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-04T14:43:27.119944+00:00",
-  "snapshot_date": "2026-07-04",
+  "generated_at": "2026-07-05T14:50:03.192657+00:00",
+  "snapshot_date": "2026-07-05",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -1021,7 +1021,7 @@
     "total_liquidado": 24359563850.45,
     "total_pago": 32001029367.04
   },
-  "run_date": "2026-07-04",
+  "run_date": "2026-07-05",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1105,7 +1105,7 @@
           "error": ""
         }
       ],
-      "error": "HTTPConnectionPool(host='localhost', port=54381): Read timed out. (read timeout=120)",
+      "error": "6 - Emendas Individuais: filtro não confirmado ; 7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -1156,7 +1156,7 @@
           "error": ""
         }
       ],
-      "error": "HTTPConnectionPool(host='localhost', port=47759): Read timed out. (read timeout=120)",
+      "error": "6 - Emendas Individuais: filtro não confirmado ; 7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
       "fallback_from_previous": true
     },
     "documents": {
@@ -2623,12 +2623,12 @@
         },
         {
           "author": "DAMARES ALVES",
-          "party": "Nao identificado",
+          "party": "REPUBLICANOS",
           "empenhado": 2100000.0
         },
         {
           "author": "ZENAIDE MAIA",
-          "party": "Nao identificado",
+          "party": "PSD",
           "empenhado": 1899000.0
         },
         {
@@ -2648,7 +2648,7 @@
         },
         {
           "author": "LEILA BARROS",
-          "party": "Nao identificado",
+          "party": "PDT",
           "empenhado": 1300000.0
         },
         {
@@ -2658,12 +2658,12 @@
         },
         {
           "author": "RODRIGO PACHECO",
-          "party": "Nao identificado",
+          "party": "PSB",
           "empenhado": 997420.0
         },
         {
           "author": "IZALCI LUCAS",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 900000.0
         },
         {
@@ -3178,7 +3178,7 @@
     },
     "party_lookup": {
       "camara_mapeados": 513,
-      "senado_mapeados": 0
+      "senado_mapeados": 81
     }
   },
   "daily_history": [
@@ -3910,6 +3910,17 @@
       "autores_com_aumento": 0,
       "destinos_com_aumento": 0,
       "previous_snapshot_date": "2026-07-03",
+      "interval_days": 1,
+      "source_changed": false
+    },
+    {
+      "date": "2026-07-05",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 339420046110.3,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-07-04",
       "interval_days": 1,
       "source_changed": false
     }
@@ -4934,7 +4945,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-07-05",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-07-04T14:43:27.119944+00:00"
+  "updated_at": "2026-07-05T14:50:03.192657+00:00"
 }
