@@ -1,30 +1,30 @@
 {
-  "updated_at": "2026-06-15T18:10:39.533664+00:00",
+  "updated_at": "2026-07-06T16:39:56.802828+00:00",
   "source": "Camara dos Deputados - dadosabertos (CSV anual)",
   "start_year": 2019,
   "end_year": 2026,
   "summary": {
-    "pro_votes": 374348,
-    "anti_votes": 164459,
-    "total_votes": 538807,
-    "alignment_pct": 69.48,
-    "votacoes_validas": 1314,
+    "pro_votes": 373557,
+    "anti_votes": 164667,
+    "total_votes": 538224,
+    "alignment_pct": 69.41,
+    "votacoes_validas": 1313,
     "partidos_com_voto": 28,
-    "deputados_com_voto": 876,
+    "deputados_com_voto": 880,
     "by_vote_kind": {
       "merito": {
-        "pro_votes": 176814,
-        "anti_votes": 83535,
-        "total_votes": 260349,
-        "alignment_pct": 67.91,
-        "votacoes": 622
+        "pro_votes": 177233,
+        "anti_votes": 83464,
+        "total_votes": 260697,
+        "alignment_pct": 67.98,
+        "votacoes": 623
       },
       "procedimental": {
-        "pro_votes": 197534,
-        "anti_votes": 80924,
-        "total_votes": 278458,
-        "alignment_pct": 70.94,
-        "votacoes": 692
+        "pro_votes": 196324,
+        "anti_votes": 81203,
+        "total_votes": 277527,
+        "alignment_pct": 70.74,
+        "votacoes": 690
       }
     }
   }
