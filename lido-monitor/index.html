@@ -2,43 +2,33 @@
 <style>
   :root {
     color-scheme: light dark;
-    --bg: #f5f7fa;
+    --bg: #f7f9fb;
+    --fg: #1a1d23;
     --card-bg: #ffffff;
-    --text: #1a1d23;
-    --text-muted: #5c6470;
-    --border: #e2e6eb;
-    --accent: #0f7a54;
-    --pill-avail-bg: #d9f2e6;
-    --pill-avail-text: #0b6b45;
-    --pill-avail-border: #9fd9bd;
-    --pill-sold-bg: #eceff2;
-    --pill-sold-text: #6b7280;
-    --pill-sold-border: #d7dbe0;
-    --pill-none-text: #a0a6b0;
-    --pill-error-bg: #fbe4e4;
-    --pill-error-text: #a13a3a;
-    --today-bg: #eef6ff;
-    --link: #0f6fb8;
+    --border: #e1e5ea;
+    --muted: #6b7280;
+    --avail-bg: #d1fae5;
+    --avail-fg: #065f46;
+    --full-bg: #e5e7eb;
+    --full-fg: #4b5563;
+    --none-fg: #9ca3af;
+    --link: #2563eb;
+    --header-bg: #eef2f6;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #14171c;
-      --card-bg: #1b1f26;
-      --text: #e8eaed;
-      --text-muted: #9aa2ad;
-      --border: #2a2f38;
-      --accent: #3ddc97;
-      --pill-avail-bg: #123c2c;
-      --pill-avail-text: #6fe3ac;
-      --pill-avail-border: #1e6b48;
-      --pill-sold-bg: #23272f;
-      --pill-sold-text: #8992a0;
-      --pill-sold-border: #333944;
-      --pill-none-text: #656c78;
-      --pill-error-bg: #3a2323;
-      --pill-error-text: #e08080;
-      --today-bg: #1a2733;
-      --link: #6cb6ec;
+      --bg: #0f1115;
+      --fg: #e5e7eb;
+      --card-bg: #171a21;
+      --border: #2a2e37;
+      --muted: #9ca3af;
+      --avail-bg: #064e3b;
+      --avail-fg: #6ee7b7;
+      --full-bg: #262b33;
+      --full-fg: #9ca3af;
+      --none-fg: #6b7280;
+      --link: #60a5fa;
+      --header-bg: #1c2028;
     }
   }
   * { box-sizing: border-box; }
@@ -46,139 +36,128 @@
     margin: 0;
     padding: 2rem 1rem 3rem;
     background: var(--bg);
-    color: var(--text);
+    color: var(--fg);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    display: flex;
-    justify-content: center;
+    line-height: 1.4;
   }
   .wrap {
-    width: 100%;
-    max-width: 760px;
+    max-width: 720px;
+    margin: 0 auto;
   }
   h1 {
     font-size: 1.5rem;
     margin: 0 0 0.25rem;
   }
   .subtitle {
-    color: var(--text-muted);
+    color: var(--muted);
     margin: 0 0 1.5rem;
     font-size: 0.95rem;
-  }
-  .card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
   }
   table {
     width: 100%;
     border-collapse: collapse;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
   }
-  tr.row {
-    border-bottom: 1px solid var(--border);
-  }
-  tr.row:last-child {
-    border-bottom: none;
-  }
-  tr.today {
-    background: var(--today-bg);
+  th {
+    text-align: left;
+    background: var(--header-bg);
+    padding: 0.6rem 0.9rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
   }
   td {
-    padding: 0.9rem 1rem;
+    padding: 0.7rem 0.9rem;
+    border-top: 1px solid var(--border);
     vertical-align: middle;
   }
-  .date-cell {
+  .datecell {
     white-space: nowrap;
-    width: 1%;
-  }
-  .date-num {
-    display: block;
     font-weight: 600;
-    font-size: 1rem;
+    width: 6.5rem;
   }
-  .date-dow {
-    display: block;
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    text-transform: capitalize;
+  .dow {
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: var(--muted);
   }
-  .sessions-cell {
+  .sessioncell {
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
   }
   .pill {
     display: inline-block;
-    padding: 0.3rem 0.65rem;
+    padding: 0.25rem 0.6rem;
     border-radius: 999px;
     font-size: 0.82rem;
-    line-height: 1.3;
     white-space: nowrap;
   }
   .pill-avail {
-    background: var(--pill-avail-bg);
-    color: var(--pill-avail-text);
-    border: 1px solid var(--pill-avail-border);
+    background: var(--avail-bg);
+    color: var(--avail-fg);
     font-weight: 600;
   }
-  .pill-sold {
-    background: var(--pill-sold-bg);
-    color: var(--pill-sold-text);
-    border: 1px solid var(--pill-sold-border);
+  .pill-full {
+    background: var(--full-bg);
+    color: var(--full-fg);
   }
   .pill-none {
-    color: var(--pill-none-text);
+    color: var(--none-fg);
     font-style: italic;
-    font-size: 0.82rem;
-  }
-  .pill-error {
-    background: var(--pill-error-bg);
-    color: var(--pill-error-text);
-    font-style: italic;
+    background: none;
+    padding-left: 0;
   }
   footer {
     margin-top: 1.5rem;
-    color: var(--text-muted);
-    font-size: 0.82rem;
-    line-height: 1.6;
+    color: var(--muted);
+    font-size: 0.85rem;
   }
-  a {
+  footer a {
     color: var(--link);
+  }
+  @media (max-width: 480px) {
+    .sessioncell { flex-direction: column; align-items: flex-start; }
   }
 </style>
 <div class="wrap">
   <h1>🏊 Lido Swim — Parliament Hill Lido</h1>
-  <p class="subtitle">Hampstead Heath, Londres — monitor automático de vagas de reserva</p>
-  <div class="card">
-    <table>
-      <tbody>
-<tr class="row today"><td class="date-cell"><span class="date-num">08/07</span><span class="date-dow">quarta-feira</span></td><td class="sessions-cell"><span class="pill pill-avail">10:30–13:30 · 1 vagas</span><span class="pill pill-sold">14:30–17:30 · esgotado</span><span class="pill pill-sold">18:00–20:30 · esgotado</span></td></tr>
-<tr class="row"><td class="date-cell"><span class="date-num">09/07</span><span class="date-dow">quinta-feira</span></td><td class="sessions-cell"><span class="pill pill-sold">10:30–13:30 · esgotado</span><span class="pill pill-sold">14:30–17:30 · esgotado</span><span class="pill pill-sold">18:00–20:30 · esgotado</span></td></tr>
-<tr class="row"><td class="date-cell"><span class="date-num">10/07</span><span class="date-dow">sexta-feira</span></td><td class="sessions-cell"><span class="pill pill-sold">10:30–13:30 · esgotado</span><span class="pill pill-sold">14:30–17:30 · esgotado</span><span class="pill pill-sold">18:00–20:30 · esgotado</span></td></tr>
-<tr class="row"><td class="date-cell"><span class="date-num">11/07</span><span class="date-dow">sábado</span></td><td class="sessions-cell"><span class="pill pill-sold">10:30–13:30 · esgotado</span><span class="pill pill-sold">14:30–17:30 · esgotado</span></td></tr>
-<tr class="row"><td class="date-cell"><span class="date-num">12/07</span><span class="date-dow">domingo</span></td><td class="sessions-cell"><span class="pill pill-sold">10:30–13:30 · esgotado</span><span class="pill pill-sold">14:30–17:30 · esgotado</span></td></tr>
-<tr class="row"><td class="date-cell"><span class="date-num">13/07</span><span class="date-dow">segunda-feira</span></td><td class="sessions-cell"><span class="pill pill-avail">10:30–13:30 · 288 vagas</span><span class="pill pill-avail">14:30–17:30 · 189 vagas</span><span class="pill pill-sold">18:00–20:30 · esgotado</span></td></tr>
-<tr class="row"><td class="date-cell"><span class="date-num">14/07</span><span class="date-dow">terça-feira</span></td><td class="sessions-cell"><span class="pill pill-avail">10:30–13:30 · 539 vagas</span><span class="pill pill-avail">14:30–17:30 · 475 vagas</span></td></tr>
-<tr class="row"><td class="date-cell"><span class="date-num">15/07</span><span class="date-dow">quarta-feira</span></td><td class="sessions-cell"><span class="pill pill-avail">10:30–13:30 · 800 vagas</span><span class="pill pill-avail">14:30–17:30 · 800 vagas</span><span class="pill pill-avail">18:00–20:30 · 300 vagas</span></td></tr>
-<tr class="row"><td class="date-cell"><span class="date-num">16/07</span><span class="date-dow">quinta-feira</span></td><td class="sessions-cell"><span class="pill pill-avail">10:30–13:30 · 800 vagas</span><span class="pill pill-avail">14:30–17:30 · 800 vagas</span><span class="pill pill-avail">18:00–20:30 · 300 vagas</span></td></tr>
-<tr class="row"><td class="date-cell"><span class="date-num">17/07</span><span class="date-dow">sexta-feira</span></td><td class="sessions-cell"><span class="pill pill-avail">10:30–13:30 · 800 vagas</span><span class="pill pill-avail">14:30–17:30 · 800 vagas</span><span class="pill pill-avail">18:00–20:30 · 300 vagas</span></td></tr>
-<tr class="row"><td class="date-cell"><span class="date-num">18/07</span><span class="date-dow">sábado</span></td><td class="sessions-cell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
-<tr class="row"><td class="date-cell"><span class="date-num">19/07</span><span class="date-dow">domingo</span></td><td class="sessions-cell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
-<tr class="row"><td class="date-cell"><span class="date-num">20/07</span><span class="date-dow">segunda-feira</span></td><td class="sessions-cell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
-<tr class="row"><td class="date-cell"><span class="date-num">21/07</span><span class="date-dow">terça-feira</span></td><td class="sessions-cell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
-<tr class="row"><td class="date-cell"><span class="date-num">22/07</span><span class="date-dow">quarta-feira</span></td><td class="sessions-cell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
-<tr class="row"><td class="date-cell"><span class="date-num">23/07</span><span class="date-dow">quinta-feira</span></td><td class="sessions-cell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
-<tr class="row"><td class="date-cell"><span class="date-num">24/07</span><span class="date-dow">sexta-feira</span></td><td class="sessions-cell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
-<tr class="row"><td class="date-cell"><span class="date-num">25/07</span><span class="date-dow">sábado</span></td><td class="sessions-cell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
-<tr class="row"><td class="date-cell"><span class="date-num">26/07</span><span class="date-dow">domingo</span></td><td class="sessions-cell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
-<tr class="row"><td class="date-cell"><span class="date-num">27/07</span><span class="date-dow">segunda-feira</span></td><td class="sessions-cell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
-<tr class="row"><td class="date-cell"><span class="date-num">28/07</span><span class="date-dow">terça-feira</span></td><td class="sessions-cell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
-<tr class="row"><td class="date-cell"><span class="date-num">29/07</span><span class="date-dow">quarta-feira</span></td><td class="sessions-cell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
-      </tbody>
-    </table>
-  </div>
+  <p class="subtitle">Monitor de vagas de reserva — Hampstead Heath, Londres (piscina, não é lago)</p>
+  <table>
+    <thead>
+      <tr><th>Data</th><th>Sessões</th></tr>
+    </thead>
+    <tbody>
+<tr><td class="datecell">08/07<br><span class="dow">quarta-feira</span></td><td class="sessioncell"><span class="pill pill-avail">10:30–13:30 · 1 vagas</span><span class="pill pill-avail">14:30–17:30 · 1 vagas</span><span class="pill pill-full">18:00–20:30 · esgotado</span></td></tr>
+<tr><td class="datecell">09/07<br><span class="dow">quinta-feira</span></td><td class="sessioncell"><span class="pill pill-full">10:30–13:30 · esgotado</span><span class="pill pill-full">14:30–17:30 · esgotado</span><span class="pill pill-full">18:00–20:30 · esgotado</span></td></tr>
+<tr><td class="datecell">10/07<br><span class="dow">sexta-feira</span></td><td class="sessioncell"><span class="pill pill-full">10:30–13:30 · esgotado</span><span class="pill pill-full">14:30–17:30 · esgotado</span><span class="pill pill-full">18:00–20:30 · esgotado</span></td></tr>
+<tr><td class="datecell">11/07<br><span class="dow">sábado</span></td><td class="sessioncell"><span class="pill pill-full">10:30–13:30 · esgotado</span><span class="pill pill-full">14:30–17:30 · esgotado</span></td></tr>
+<tr><td class="datecell">12/07<br><span class="dow">domingo</span></td><td class="sessioncell"><span class="pill pill-full">10:30–13:30 · esgotado</span><span class="pill pill-full">14:30–17:30 · esgotado</span></td></tr>
+<tr><td class="datecell">13/07<br><span class="dow">segunda-feira</span></td><td class="sessioncell"><span class="pill pill-avail">10:30–13:30 · 267 vagas</span><span class="pill pill-avail">14:30–17:30 · 183 vagas</span><span class="pill pill-full">18:00–20:30 · esgotado</span></td></tr>
+<tr><td class="datecell">14/07<br><span class="dow">terça-feira</span></td><td class="sessioncell"><span class="pill pill-avail">10:30–13:30 · 541 vagas</span><span class="pill pill-avail">14:30–17:30 · 467 vagas</span></td></tr>
+<tr><td class="datecell">15/07<br><span class="dow">quarta-feira</span></td><td class="sessioncell"><span class="pill pill-avail">10:30–13:30 · 800 vagas</span><span class="pill pill-avail">14:30–17:30 · 800 vagas</span><span class="pill pill-avail">18:00–20:30 · 300 vagas</span></td></tr>
+<tr><td class="datecell">16/07<br><span class="dow">quinta-feira</span></td><td class="sessioncell"><span class="pill pill-avail">10:30–13:30 · 800 vagas</span><span class="pill pill-avail">14:30–17:30 · 800 vagas</span><span class="pill pill-avail">18:00–20:30 · 300 vagas</span></td></tr>
+<tr><td class="datecell">17/07<br><span class="dow">sexta-feira</span></td><td class="sessioncell"><span class="pill pill-avail">10:30–13:30 · 800 vagas</span><span class="pill pill-avail">14:30–17:30 · 800 vagas</span><span class="pill pill-avail">18:00–20:30 · 300 vagas</span></td></tr>
+<tr><td class="datecell">18/07<br><span class="dow">sábado</span></td><td class="sessioncell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
+<tr><td class="datecell">19/07<br><span class="dow">domingo</span></td><td class="sessioncell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
+<tr><td class="datecell">20/07<br><span class="dow">segunda-feira</span></td><td class="sessioncell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
+<tr><td class="datecell">21/07<br><span class="dow">terça-feira</span></td><td class="sessioncell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
+<tr><td class="datecell">22/07<br><span class="dow">quarta-feira</span></td><td class="sessioncell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
+<tr><td class="datecell">23/07<br><span class="dow">quinta-feira</span></td><td class="sessioncell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
+<tr><td class="datecell">24/07<br><span class="dow">sexta-feira</span></td><td class="sessioncell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
+<tr><td class="datecell">25/07<br><span class="dow">sábado</span></td><td class="sessioncell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
+<tr><td class="datecell">26/07<br><span class="dow">domingo</span></td><td class="sessioncell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
+<tr><td class="datecell">27/07<br><span class="dow">segunda-feira</span></td><td class="sessioncell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
+<tr><td class="datecell">28/07<br><span class="dow">terça-feira</span></td><td class="sessioncell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
+<tr><td class="datecell">29/07<br><span class="dow">quarta-feira</span></td><td class="sessioncell"><span class="pill pill-none">sem sessão / não liberado ainda</span></td></tr>
+    </tbody>
+  </table>
   <footer>
-    Última atualização: 2026-07-08 15:10 UTC (2026-07-08 16:10 BST horário de Londres)<br>
-    Reservar: <a href="https://cityoflondon.xnlcloud.com/LhWeb/en/Public/Bookings" target="_blank" rel="noopener">cityoflondon.xnlcloud.com/LhWeb</a>
+    Última atualização: 08/07/2026 16:10 UTC (08/07/2026 17:10 BST horário de Londres)<br>
+    <a href="https://cityoflondon.xnlcloud.com/LhWeb/en/Public/Bookings">Reservar no site da City of London</a>
   </footer>
 </div>
