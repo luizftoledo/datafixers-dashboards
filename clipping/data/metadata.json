@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-07T16:12:50.386568+00:00",
+  "generated_at": "2026-07-08T15:54:52.541577+00:00",
   "counts": {
-    "items": 89,
+    "items": 88,
     "domains": 23,
     "categories": {
-      "reportagem_autoral": 61,
+      "reportagem_autoral": 60,
       "republicacao": 0,
       "eco_repercussao": 1,
       "citacao_fonte": 4,
@@ -20,7 +20,7 @@
     }
   },
   "date_range": {
-    "min": "2019-02-05",
+    "min": "2020-04-24",
     "max": "2026-07-07"
   },
   "methodology": {
@@ -43,13 +43,13 @@
       }
     },
     "enrich": {
-      "fetched": 59,
-      "reused": 33,
-      "kept": 89,
+      "fetched": 57,
+      "reused": 34,
+      "kept": 88,
       "dropped": 3,
       "categories": {
         "perfil_bio": 17,
-        "reportagem_autoral": 61,
+        "reportagem_autoral": 60,
         "mencao": 5,
         "entrevista": 1,
         "citacao_fonte": 4,
@@ -62,7 +62,7 @@
         "apublica.org": 3,
         "ojoioeotrigo.com.br": 2,
         "estadao.com.br": 6,
-        "g1.globo.com": 3,
+        "g1.globo.com": 2,
         "escavador.com": 1,
         "icfj.org": 1,
         "devstudies.cam.ac.uk": 1,
