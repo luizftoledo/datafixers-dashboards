@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-09T16:17:04.269287+00:00",
+  "generated_at": "2026-07-10T16:07:42.445814+00:00",
   "counts": {
-    "items": 88,
+    "items": 87,
     "domains": 23,
     "categories": {
-      "reportagem_autoral": 59,
+      "reportagem_autoral": 58,
       "republicacao": 0,
       "eco_repercussao": 1,
       "citacao_fonte": 4,
@@ -20,7 +20,7 @@
     }
   },
   "date_range": {
-    "min": "2019-02-05",
+    "min": "2020-04-24",
     "max": "2026-07-07"
   },
   "methodology": {
@@ -39,17 +39,17 @@
         "google-news-rss:\"Luiz Fernando Toledo\"": 40,
         "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 0,
         "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 2,
-        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 15
+        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 14
       }
     },
     "enrich": {
-      "fetched": 61,
-      "reused": 31,
-      "kept": 88,
+      "fetched": 59,
+      "reused": 32,
+      "kept": 87,
       "dropped": 4,
       "categories": {
         "perfil_bio": 17,
-        "reportagem_autoral": 59,
+        "reportagem_autoral": 58,
         "mencao": 6,
         "entrevista": 1,
         "citacao_fonte": 4,
@@ -62,7 +62,7 @@
         "apublica.org": 3,
         "ojoioeotrigo.com.br": 2,
         "estadao.com.br": 5,
-        "g1.globo.com": 3,
+        "g1.globo.com": 2,
         "escavador.com": 1,
         "icfj.org": 1,
         "devstudies.cam.ac.uk": 1,
