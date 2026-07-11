@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -76,9 +77,23 @@ def is_eligible(location: str) -> bool:
 
 def scrape_jobs() -> tuple[int, list[dict[str, str]]]:
     # The site blocks plain HTTP clients with Cloudflare, but renders in Chromium.
+    proxy_url = os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy")
+    launch_args = ["--no-sandbox", "--disable-dev-shm-usage"]
+    if proxy_url:
+        # This sandbox's outbound TLS-inspecting proxy resets the connection on
+        # Chromium's TLS 1.3 ClientHello (post-quantum hybrid key share); TLS 1.2
+        # avoids that. Also route explicitly via --proxy-server since env vars
+        # alone aren't picked up reliably by the launched browser process.
+        launch_args.append(f"--proxy-server={proxy_url}")
+        launch_args.append("--ssl-version-max=tls1.2")
     with sync_playwright() as playwright:
         try:
-            browser = playwright.chromium.launch(headless=True)
+            # Explicit executable_path avoids Playwright silently substituting
+            # the headless_shell binary, which hits the TLS reset above even
+            # with the same launch args.
+            browser = playwright.chromium.launch(
+                headless=True, executable_path=playwright.chromium.executable_path, args=launch_args
+            )
         except Exception as error:
             raise RuntimeError("Could not launch Chromium for GIJN scraping") from error
         try:
