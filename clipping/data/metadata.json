@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-07-11T14:40:07.481167+00:00",
+  "generated_at": "2026-07-12T14:44:11.134063+00:00",
   "counts": {
-    "items": 45,
-    "domains": 19,
+    "items": 86,
+    "domains": 23,
     "categories": {
-      "reportagem_autoral": 26,
+      "reportagem_autoral": 57,
       "republicacao": 0,
-      "eco_repercussao": 0,
-      "citacao_fonte": 0,
-      "mencao": 1,
+      "eco_repercussao": 1,
+      "citacao_fonte": 5,
+      "mencao": 5,
       "entrevista": 1,
       "palestra_curso": 0,
       "perfil_bio": 17
     },
     "recent": {
       "last_1_day": 0,
-      "last_7_days": 1,
-      "last_30_days": 4
+      "last_7_days": 2,
+      "last_30_days": 5
     }
   },
   "date_range": {
-    "min": "2021-02-06",
+    "min": "2020-04-24",
     "max": "2026-07-07"
   },
   "methodology": {
@@ -36,31 +36,33 @@
         "known_external_sources": 49
       },
       "searches": {
-        "google-news-rss:\"Luiz Fernando Toledo\"": 0,
+        "google-news-rss:\"Luiz Fernando Toledo\"": 40,
         "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 0,
-        "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 0,
-        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 0
+        "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 2,
+        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 14
       }
     },
     "enrich": {
-      "fetched": 31,
+      "fetched": 72,
       "reused": 18,
-      "kept": 45,
+      "kept": 86,
       "dropped": 4,
       "categories": {
         "perfil_bio": 17,
-        "reportagem_autoral": 26,
-        "mencao": 1,
-        "entrevista": 1
+        "reportagem_autoral": 57,
+        "mencao": 5,
+        "entrevista": 1,
+        "citacao_fonte": 5,
+        "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 24,
+        "bbc.com": 51,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
         "ojoioeotrigo.com.br": 2,
-        "estadao.com.br": 1,
-        "g1.globo.com": 1,
+        "estadao.com.br": 4,
+        "g1.globo.com": 2,
         "escavador.com": 1,
         "icfj.org": 1,
         "devstudies.cam.ac.uk": 1,
@@ -72,7 +74,11 @@
         "repositorio.fgv.br": 1,
         "talks.ox.ac.uk": 1,
         "cima.ned.org": 1,
-        "scielo.br": 1
+        "scielo.br": 1,
+        "abraji.org.br": 4,
+        "sbtnews.sbt.com.br": 1,
+        "piaui.uol.com.br": 2,
+        "cnnbrasil.com.br": 3
       },
       "errors": [
         {
