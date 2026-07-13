@@ -7,29 +7,28 @@
       "google-news-rss:\"Luiz Fernando Toledo\"": 40,
       "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 0,
       "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 2,
-      "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 14
+      "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 13
     }
   },
   "enrich": {
-    "fetched": 72,
-    "reused": 18,
-    "kept": 86,
+    "fetched": 60,
+    "reused": 29,
+    "kept": 85,
     "dropped": 4,
     "categories": {
       "perfil_bio": 17,
-      "reportagem_autoral": 57,
+      "reportagem_autoral": 60,
       "mencao": 5,
       "entrevista": 1,
-      "citacao_fonte": 5,
-      "eco_repercussao": 1
+      "citacao_fonte": 2
     },
     "domains": {
-      "bbc.com": 51,
+      "bbc.com": 53,
       "intercept.com.br": 1,
       "piaui.folha.uol.com.br": 1,
       "apublica.org": 3,
       "ojoioeotrigo.com.br": 2,
-      "estadao.com.br": 4,
+      "estadao.com.br": 5,
       "g1.globo.com": 2,
       "escavador.com": 1,
       "icfj.org": 1,
@@ -43,10 +42,10 @@
       "talks.ox.ac.uk": 1,
       "cima.ned.org": 1,
       "scielo.br": 1,
-      "abraji.org.br": 4,
+      "abraji.org.br": 1,
       "sbtnews.sbt.com.br": 1,
       "piaui.uol.com.br": 2,
-      "cnnbrasil.com.br": 3
+      "cnnbrasil.com.br": 2
     },
     "errors": [
       {
