@@ -12,9 +12,6 @@ on:
     - cron: "0 7 * * *"
     - cron: "20 12 * * *"
     - cron: "20 21 * * *"
-    # hora em hora: rede de seguranca pro monitor Lido Swim (routine cloud
-    # tambem usa token que nao dispara o push acima)
-    - cron: "5 * * * *"
 
 jobs:
   deploy:
