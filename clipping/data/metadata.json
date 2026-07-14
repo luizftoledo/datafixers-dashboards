@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-13T16:15:17.926846+00:00",
+  "generated_at": "2026-07-14T15:12:24.158090+00:00",
   "counts": {
     "items": 85,
     "domains": 23,
     "categories": {
-      "reportagem_autoral": 60,
+      "reportagem_autoral": 59,
       "republicacao": 0,
-      "eco_repercussao": 0,
+      "eco_repercussao": 1,
       "citacao_fonte": 2,
       "mencao": 5,
       "entrevista": 1,
@@ -33,26 +33,27 @@
   "sources": {
     "discovery": {
       "seeds": {
-        "known_external_sources": 49
+        "known_external_sources": 48
       },
       "searches": {
         "google-news-rss:\"Luiz Fernando Toledo\"": 40,
         "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 0,
         "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 2,
-        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 13
+        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 14
       }
     },
     "enrich": {
-      "fetched": 60,
+      "fetched": 59,
       "reused": 29,
       "kept": 85,
-      "dropped": 4,
+      "dropped": 3,
       "categories": {
         "perfil_bio": 17,
-        "reportagem_autoral": 60,
+        "reportagem_autoral": 59,
         "mencao": 5,
         "entrevista": 1,
-        "citacao_fonte": 2
+        "citacao_fonte": 2,
+        "eco_repercussao": 1
       },
       "domains": {
         "bbc.com": 53,
@@ -60,7 +61,7 @@
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
         "ojoioeotrigo.com.br": 2,
-        "estadao.com.br": 5,
+        "estadao.com.br": 4,
         "g1.globo.com": 2,
         "escavador.com": 1,
         "icfj.org": 1,
@@ -77,7 +78,7 @@
         "abraji.org.br": 1,
         "sbtnews.sbt.com.br": 1,
         "piaui.uol.com.br": 2,
-        "cnnbrasil.com.br": 2
+        "cnnbrasil.com.br": 3
       },
       "errors": [
         {
