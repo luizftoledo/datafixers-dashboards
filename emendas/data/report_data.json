@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-13T15:48:01.674748+00:00",
-  "snapshot_date": "2026-07-13",
+  "generated_at": "2026-07-14T15:00:28.698369+00:00",
+  "snapshot_date": "2026-07-14",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -1021,7 +1021,7 @@
     "total_liquidado": 25604842866.42,
     "total_pago": 33794203528.28
   },
-  "run_date": "2026-07-13",
+  "run_date": "2026-07-14",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1105,7 +1105,7 @@
           "error": ""
         }
       ],
-      "error": "dotação inicial/atual zerada — provável quebra do scraper Qlik (DOM mudou)",
+      "error": "HTTPConnectionPool(host='localhost', port=59081): Read timed out. (read timeout=120)",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -1156,7 +1156,8 @@
           "error": ""
         }
       ],
-      "error": ""
+      "error": "HTTPConnectionPool(host='localhost', port=52229): Read timed out. (read timeout=120)",
+      "fallback_from_previous": true
     },
     "documents": {
       "year": 2026,
@@ -2685,7 +2686,7 @@
         },
         {
           "author": "RODRIGO PACHECO",
-          "party": "PSB",
+          "party": "Nao identificado",
           "empenhado": 595791.72
         },
         {
@@ -2710,7 +2711,7 @@
         },
         {
           "author": "MARCIO BITTAR",
-          "party": "PL",
+          "party": "Nao identificado",
           "empenhado": 446550.9
         },
         {
@@ -3252,7 +3253,7 @@
     },
     "party_lookup": {
       "camara_mapeados": 512,
-      "senado_mapeados": 81
+      "senado_mapeados": 0
     }
   },
   "daily_history": [
@@ -4083,6 +4084,17 @@
       "autores_com_aumento": 0,
       "destinos_com_aumento": 0,
       "previous_snapshot_date": "2026-07-12",
+      "interval_days": 1,
+      "source_changed": false
+    },
+    {
+      "date": "2026-07-14",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 339881068423.9,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-07-13",
       "interval_days": 1,
       "source_changed": false
     }
@@ -5197,7 +5209,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-07-14",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-07-13T15:48:01.674748+00:00"
+  "updated_at": "2026-07-14T15:00:28.698369+00:00"
 }
