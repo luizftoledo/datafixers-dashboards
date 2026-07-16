@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-15T14:59:21.007290+00:00",
-  "snapshot_date": "2026-07-15",
+  "generated_at": "2026-07-16T15:10:26.542904+00:00",
+  "snapshot_date": "2026-07-16",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -1021,7 +1021,7 @@
     "total_liquidado": 25604842866.42,
     "total_pago": 33794203528.28
   },
-  "run_date": "2026-07-15",
+  "run_date": "2026-07-16",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1030,21 +1030,21 @@
       "stages": [
         {
           "stage": "Empenhado",
-          "value": 37413675299.09
+          "value": 37751924144.79
         },
         {
           "stage": "Liquidado",
-          "value": 25604842866.42
+          "value": 25635187069.1
         },
         {
           "stage": "Pago",
-          "value": 25489761126.93
+          "value": 25492977383.88
         }
       ],
       "stage_values": {
-        "empenhado": 37413675299.09,
-        "liquidado": 25604842866.42,
-        "pago": 25489761126.93
+        "empenhado": 37751924144.79,
+        "liquidado": 25635187069.1,
+        "pago": 25492977383.88
       }
     },
     "siop_snapshot": {
@@ -1105,7 +1105,7 @@
           "error": ""
         }
       ],
-      "error": "7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
+      "error": "dotação inicial/atual zerada — provável quebra do scraper Qlik (DOM mudou)",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -1121,7 +1121,7 @@
         ]
       },
       "last_update": "",
-      "base_siafi_date": "14/7/2026",
+      "base_siafi_date": "15/7/2026",
       "rows": [],
       "rows_count": 0,
       "unique_nro_emendas": 0,
@@ -2650,7 +2650,7 @@
         },
         {
           "author": "ARTHUR OLIVEIRA MAIA",
-          "party": "UNIÃO",
+          "party": "Nao identificado",
           "empenhado": 3386677.74
         },
         {
@@ -2660,17 +2660,17 @@
         },
         {
           "author": "HELIO LOPES",
-          "party": "PL",
+          "party": "Nao identificado",
           "empenhado": 1800000.0
         },
         {
           "author": "SILVIA CRISTINA",
-          "party": "PP",
+          "party": "Nao identificado",
           "empenhado": 732270.0
         },
         {
           "author": "TONINHO WANDSCHEER",
-          "party": "PP",
+          "party": "Nao identificado",
           "empenhado": 731650.0
         },
         {
@@ -2680,7 +2680,7 @@
         },
         {
           "author": "ATILA LINS",
-          "party": "PSD",
+          "party": "Nao identificado",
           "empenhado": 652500.0
         },
         {
@@ -2690,7 +2690,7 @@
         },
         {
           "author": "JANDIRA FEGHALI",
-          "party": "PCdoB",
+          "party": "Nao identificado",
           "empenhado": 524000.0
         },
         {
@@ -2700,12 +2700,12 @@
         },
         {
           "author": "MEIRE SERAFIM",
-          "party": "UNIÃO",
+          "party": "Nao identificado",
           "empenhado": 500000.0
         },
         {
           "author": "CORONEL ASSIS",
-          "party": "PL",
+          "party": "Nao identificado",
           "empenhado": 500000.0
         },
         {
@@ -2715,7 +2715,7 @@
         },
         {
           "author": "PADRE JOAO",
-          "party": "PT",
+          "party": "Nao identificado",
           "empenhado": 399959.0
         },
         {
@@ -2725,7 +2725,7 @@
         },
         {
           "author": "PAULO PIMENTA",
-          "party": "PT",
+          "party": "Nao identificado",
           "empenhado": 383749.61
         },
         {
@@ -3251,7 +3251,7 @@
       }
     },
     "party_lookup": {
-      "camara_mapeados": 512,
+      "camara_mapeados": 0,
       "senado_mapeados": 81
     }
   },
@@ -4105,6 +4105,17 @@
       "autores_com_aumento": 0,
       "destinos_com_aumento": 0,
       "previous_snapshot_date": "2026-07-14",
+      "interval_days": 1,
+      "source_changed": false
+    },
+    {
+      "date": "2026-07-16",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 339881068423.9,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-07-15",
       "interval_days": 1,
       "source_changed": false
     }
@@ -5239,7 +5250,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-07-16",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-07-15T14:59:21.007290+00:00"
+  "updated_at": "2026-07-16T15:10:26.542904+00:00"
 }
