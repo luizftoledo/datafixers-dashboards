@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-18T14:29:23.888274+00:00",
-  "snapshot_date": "2026-07-18",
+  "generated_at": "2026-07-19T14:33:14.104092+00:00",
+  "snapshot_date": "2026-07-19",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -13,12 +13,12 @@
   "metrics": {
     "total_empenhado_atual": 340282550244.53,
     "total_empenhado_snapshot_anterior": 340219317269.6,
-    "delta_liquido_desde_snapshot_anterior": 63232974.93,
-    "delta_positivo_desde_snapshot_anterior": 63257064.93,
-    "delta_negativo_desde_snapshot_anterior": -24090.0,
-    "autores_com_aumento": 37,
-    "destinos_com_aumento": 15,
-    "pares_autor_destino_com_aumento": 38,
+    "delta_liquido_desde_snapshot_anterior": 0.0,
+    "delta_positivo_desde_snapshot_anterior": 0.0,
+    "delta_negativo_desde_snapshot_anterior": 0.0,
+    "autores_com_aumento": 0,
+    "destinos_com_aumento": 0,
+    "pares_autor_destino_com_aumento": 0,
     "total_autores_mapeados": 1614,
     "total_destinos_mapeados": 5459,
     "total_linhas_csv": 94216,
@@ -27,8 +27,8 @@
     "current_year_total_empenhado": 38586585384.03,
     "current_year_total_liquidado": 25638133812.32,
     "current_year_total_pago": 33816434487.66,
-    "current_year_total_empenhado_por_ano_emenda": 37815157119.72,
-    "current_year_total_pago_por_ano_emenda": 25493169943.72,
+    "current_year_total_empenhado_por_ano_emenda": 38586585384.03,
+    "current_year_total_pago_por_ano_emenda": 33816434487.66,
     "_pago_e_empenhado_source": "por_data_documento"
   },
   "top_authors_today": [
@@ -907,7 +907,7 @@
     "total_liquidado": 25638133812.32,
     "total_pago": 33816434487.66
   },
-  "run_date": "2026-07-18",
+  "run_date": "2026-07-19",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -2588,37 +2588,37 @@
         },
         {
           "author": "DR. LUIZ OVANDO",
-          "party": "Nao identificado",
+          "party": "PP",
           "empenhado": 876200.0
         },
         {
           "author": "DUDA SALABERT",
-          "party": "Nao identificado",
+          "party": "PSOL",
           "empenhado": 660000.0
         },
         {
           "author": "CHICO ALENCAR",
-          "party": "Nao identificado",
+          "party": "PSOL",
           "empenhado": 500000.0
         },
         {
           "author": "TONINHO WANDSCHEER",
-          "party": "Nao identificado",
+          "party": "PP",
           "empenhado": 500000.0
         },
         {
           "author": "SARGENTO GONCALVES",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 400000.0
         },
         {
           "author": "NATALIA BONAVIDES",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 400000.0
         },
         {
           "author": "BENES LEOCADIO",
-          "party": "Nao identificado",
+          "party": "UNIÃO",
           "empenhado": 400000.0
         },
         {
@@ -2628,7 +2628,7 @@
         },
         {
           "author": "FERNANDA MELCHIONNA",
-          "party": "Nao identificado",
+          "party": "PSOL",
           "empenhado": 339249.0
         },
         {
@@ -2648,17 +2648,17 @@
         },
         {
           "author": "JOAO MAIA",
-          "party": "Nao identificado",
+          "party": "PP",
           "empenhado": 200013.55
         },
         {
           "author": "CELIA XAKRIABA",
-          "party": "Nao identificado",
+          "party": "PSOL",
           "empenhado": 170204.25
         },
         {
           "author": "PROF. REGINALDO VERAS",
-          "party": "Nao identificado",
+          "party": "PV",
           "empenhado": 150000.0
         }
       ],
@@ -3183,7 +3183,7 @@
       }
     },
     "party_lookup": {
-      "camara_mapeados": 0,
+      "camara_mapeados": 512,
       "senado_mapeados": 81
     }
   },
@@ -4072,6 +4072,17 @@
       "previous_snapshot_date": "2026-07-17",
       "interval_days": 1,
       "source_changed": true
+    },
+    {
+      "date": "2026-07-19",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 340282550244.53,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-07-18",
+      "interval_days": 1,
+      "source_changed": false
     }
   ],
   "siop_daily_history": [
@@ -5234,6 +5245,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-07-19",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
-  ]
+  ],
+  "updated_at": "2026-07-19T14:33:14.104092+00:00"
 }
