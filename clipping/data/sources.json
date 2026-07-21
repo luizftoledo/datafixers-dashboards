@@ -1,7 +1,7 @@
 {
   "discovery": {
     "seeds": {
-      "known_external_sources": 49
+      "known_external_sources": 48
     },
     "searches": {
       "google-news-rss:\"Luiz Fernando Toledo\"": 40,
@@ -11,10 +11,10 @@
     }
   },
   "enrich": {
-    "fetched": 59,
-    "reused": 30,
+    "fetched": 57,
+    "reused": 31,
     "kept": 85,
-    "dropped": 4,
+    "dropped": 3,
     "categories": {
       "perfil_bio": 17,
       "reportagem_autoral": 57,

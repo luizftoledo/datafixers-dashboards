@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T15:33:58.898187+00:00",
+  "generated_at": "2026-07-21T15:26:28.051483+00:00",
   "counts": {
     "items": 85,
     "domains": 23,
@@ -15,7 +15,7 @@
     },
     "recent": {
       "last_1_day": 0,
-      "last_7_days": 1,
+      "last_7_days": 0,
       "last_30_days": 5
     }
   },
@@ -33,7 +33,7 @@
   "sources": {
     "discovery": {
       "seeds": {
-        "known_external_sources": 49
+        "known_external_sources": 48
       },
       "searches": {
         "google-news-rss:\"Luiz Fernando Toledo\"": 40,
@@ -43,10 +43,10 @@
       }
     },
     "enrich": {
-      "fetched": 59,
-      "reused": 30,
+      "fetched": 57,
+      "reused": 31,
       "kept": 85,
-      "dropped": 4,
+      "dropped": 3,
       "categories": {
         "perfil_bio": 17,
         "reportagem_autoral": 57,
