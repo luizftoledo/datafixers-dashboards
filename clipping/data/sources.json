@@ -1,7 +1,7 @@
 {
   "discovery": {
     "seeds": {
-      "known_external_sources": 48
+      "known_external_sources": 47
     },
     "searches": {
       "google-news-rss:\"Luiz Fernando Toledo\"": 40,
@@ -12,9 +12,9 @@
   },
   "enrich": {
     "fetched": 57,
-    "reused": 31,
+    "reused": 30,
     "kept": 85,
-    "dropped": 3,
+    "dropped": 2,
     "categories": {
       "perfil_bio": 17,
       "reportagem_autoral": 57,
@@ -29,7 +29,7 @@
       "piaui.folha.uol.com.br": 1,
       "apublica.org": 3,
       "ojoioeotrigo.com.br": 2,
-      "estadao.com.br": 3,
+      "estadao.com.br": 4,
       "g1.globo.com": 2,
       "escavador.com": 1,
       "icfj.org": 1,
@@ -46,7 +46,7 @@
       "abraji.org.br": 4,
       "sbtnews.sbt.com.br": 1,
       "piaui.uol.com.br": 1,
-      "cnnbrasil.com.br": 3
+      "cnnbrasil.com.br": 2
     },
     "errors": [
       {
