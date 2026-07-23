@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-07-22T15:24:07.602134+00:00",
+  "generated_at": "2026-07-23T15:36:44.868459+00:00",
   "counts": {
-    "items": 85,
+    "items": 86,
     "domains": 23,
     "categories": {
       "reportagem_autoral": 57,
       "republicacao": 0,
       "eco_repercussao": 1,
       "citacao_fonte": 5,
-      "mencao": 4,
+      "mencao": 5,
       "entrevista": 1,
       "palestra_curso": 0,
       "perfil_bio": 17
@@ -16,11 +16,11 @@
     "recent": {
       "last_1_day": 0,
       "last_7_days": 0,
-      "last_30_days": 5
+      "last_30_days": 4
     }
   },
   "date_range": {
-    "min": "2020-06-26",
+    "min": "2020-04-24",
     "max": "2026-07-13"
   },
   "methodology": {
@@ -33,30 +33,30 @@
   "sources": {
     "discovery": {
       "seeds": {
-        "known_external_sources": 47
+        "known_external_sources": 48
       },
       "searches": {
         "google-news-rss:\"Luiz Fernando Toledo\"": 40,
         "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 0,
         "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 2,
-        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 13
+        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 14
       }
     },
     "enrich": {
-      "fetched": 57,
-      "reused": 30,
-      "kept": 85,
-      "dropped": 2,
+      "fetched": 58,
+      "reused": 31,
+      "kept": 86,
+      "dropped": 3,
       "categories": {
         "perfil_bio": 17,
         "reportagem_autoral": 57,
-        "mencao": 4,
+        "mencao": 5,
         "entrevista": 1,
         "citacao_fonte": 5,
         "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 52,
+        "bbc.com": 51,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
@@ -77,13 +77,13 @@
         "scielo.br": 1,
         "abraji.org.br": 4,
         "sbtnews.sbt.com.br": 1,
-        "piaui.uol.com.br": 1,
-        "cnnbrasil.com.br": 2
+        "piaui.uol.com.br": 2,
+        "cnnbrasil.com.br": 3
       },
       "errors": [
         {
           "url": "https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil",
-          "error": "HTTPSConnectionPool(host='devstudies.cam.ac.uk', port=443): Max retries exceeded with url: /news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil (Caused by NameResolutionError(\"HTTPSConnection(host='devstudies.cam.ac.uk', port=443): Failed to resolve 'devstudies.cam.ac.uk' ([Errno -5] No address associated with hostname)\")) | jina: 422 Client Error: Unprocessable Entity for url: https://r.jina.ai/http://https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil"
+          "error": "HTTPSConnectionPool(host='devstudies.cam.ac.uk', port=443): Max retries exceeded with url: /news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil (Caused by NameResolutionError(\"HTTPSConnection(host='devstudies.cam.ac.uk', port=443): Failed to resolve 'devstudies.cam.ac.uk' ([Errno -5] No address associated with hostname)\")) | jina: 403 Client Error: Forbidden for url: https://r.jina.ai/http://https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil"
         }
       ]
     }
