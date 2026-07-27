@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-26T14:52:24.011346+00:00",
+  "generated_at": "2026-07-27T16:03:58.022294+00:00",
   "counts": {
-    "items": 85,
+    "items": 86,
     "domains": 23,
     "categories": {
-      "reportagem_autoral": 57,
+      "reportagem_autoral": 58,
       "republicacao": 0,
       "eco_repercussao": 1,
       "citacao_fonte": 4,
@@ -43,13 +43,13 @@
       }
     },
     "enrich": {
-      "fetched": 56,
+      "fetched": 57,
       "reused": 32,
-      "kept": 85,
+      "kept": 86,
       "dropped": 3,
       "categories": {
         "perfil_bio": 17,
-        "reportagem_autoral": 57,
+        "reportagem_autoral": 58,
         "mencao": 5,
         "entrevista": 1,
         "citacao_fonte": 4,
@@ -61,7 +61,7 @@
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
         "ojoioeotrigo.com.br": 2,
-        "estadao.com.br": 4,
+        "estadao.com.br": 5,
         "g1.globo.com": 2,
         "escavador.com": 1,
         "icfj.org": 1,
