@@ -11,25 +11,25 @@
     }
   },
   "enrich": {
-    "fetched": 56,
-    "reused": 33,
-    "kept": 86,
+    "fetched": 58,
+    "reused": 30,
+    "kept": 85,
     "dropped": 3,
     "categories": {
       "perfil_bio": 17,
-      "reportagem_autoral": 58,
+      "reportagem_autoral": 59,
       "mencao": 5,
       "entrevista": 1,
-      "citacao_fonte": 4,
+      "citacao_fonte": 2,
       "eco_repercussao": 1
     },
     "domains": {
-      "bbc.com": 51,
+      "bbc.com": 53,
       "intercept.com.br": 1,
       "piaui.folha.uol.com.br": 1,
       "apublica.org": 3,
       "ojoioeotrigo.com.br": 2,
-      "estadao.com.br": 5,
+      "estadao.com.br": 4,
       "g1.globo.com": 2,
       "escavador.com": 1,
       "icfj.org": 1,
@@ -43,7 +43,7 @@
       "talks.ox.ac.uk": 1,
       "cima.ned.org": 1,
       "scielo.br": 1,
-      "abraji.org.br": 3,
+      "abraji.org.br": 1,
       "sbtnews.sbt.com.br": 1,
       "piaui.uol.com.br": 2,
       "cnnbrasil.com.br": 3
