@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-30T14:32:14+00:00",
-  "latest_month": "2026-05",
+  "updated_at": "2026-07-30T14:18:35+00:00",
+  "latest_month": "2026-06",
   "first_month": "2013-01",
   "months": {
     "2013-01": {
@@ -5649,6 +5649,43 @@
         "Ministério da Previdência Social": 3426.8,
         "Ministério dos Direitos Humanos e Cidadania": 1780.0
       }
+    },
+    "2026-06": {
+      "total": 13026839.49,
+      "saque": 917154.97,
+      "compra": 12109684.52,
+      "n": 18793,
+      "orgaos": {
+        "Ministério da Justiça e Segurança Pública": 4573429.39,
+        "Ministério da Educação": 1858042.89,
+        "Ministério da Defesa": 1784848.71,
+        "Presidência da República": 1473001.26,
+        "Ministério do Planejamento e Orçamento": 959441.95,
+        "Ministério do Meio Ambiente e Mudança do Cl": 439637.54,
+        "Ministério do Desenvolvimento Agrário e Agr": 407322.66,
+        "Ministério da Fazenda": 285444.22,
+        "Ministério da Saúde": 203480.29,
+        "Ministério da Agricultura e Pecuária": 189808.33,
+        "Ministério do Trabalho e Emprego": 166723.53,
+        "Ministério da Ciência, Tecnologia e Inovaç": 125951.18,
+        "Ministério de Minas e Energia": 103320.56,
+        "Banco Central do Brasil - Orçamento Fiscal e": 84091.28,
+        "Ministério da Integração e do Desenvolvime": 84058.23,
+        "Ministério da Gestão e da Inovação em Ser": 71170.37,
+        "Ministério do Desenvolvimento, Indústria, C": 37560.73,
+        "Ministério da Cultura": 35539.3,
+        "Advocacia-Geral da União": 22119.43,
+        "Ministério das Cidades": 21464.41,
+        "Ministério das Relações Exteriores": 19951.42,
+        "Ministério dos Transportes": 19106.45,
+        "Ministério das Comunicações": 16563.27,
+        "Controladoria-Geral da União": 14372.95,
+        "Ministério de Portos e Aeroportos": 9904.24,
+        "Ministério do Turismo": 7895.0,
+        "Ministério do Esporte": 5060.02,
+        "Ministério dos Direitos Humanos e Cidadania": 3900.4,
+        "Ministério da Previdência Social": 3629.48
+      }
     }
   },
   "ipca_fator": {
@@ -5812,7 +5849,8 @@
     "2026-02": 1.021449,
     "2026-03": 1.012539,
     "2026-04": 1.0058,
-    "2026-05": 1.0
+    "2026-05": 1.0,
+    "2026-06": 1.0
   },
   "gestoes": [
     {
@@ -8034,6 +8072,21 @@
         "EBC": 28554.35,
         "Secretaria de Administração": 13007.26,
         "Fundo De Imprensa Nacional/Exec.Orc.Financ.": 5450.0
+      }
+    },
+    "2026-06": {
+      "total": 1473001.26,
+      "saque": 2012.16,
+      "compra": 1470989.1,
+      "n": 1290,
+      "unidades": {
+        "Secretaria De Administracao - Peculiaridades": 854216.08,
+        "ABIN": 321414.49,
+        "GSI": 258040.58,
+        "EBC": 13378.94,
+        "Secretaria de Administração": 11650.62,
+        "Vice-Presidencia Da Republica": 9069.64,
+        "Fundo De Imprensa Nacional/Exec.Orc.Financ.": 5230.91
       }
     }
   }
