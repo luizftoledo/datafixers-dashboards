@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-30T15:26:29.012083+00:00",
-  "snapshot_date": "2026-07-30",
+  "generated_at": "2026-07-31T15:26:03.474778+00:00",
+  "snapshot_date": "2026-07-31",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -13,12 +13,12 @@
   "metrics": {
     "total_empenhado_atual": 340688915464.17,
     "total_empenhado_snapshot_anterior": 340651647811.68,
-    "delta_liquido_desde_snapshot_anterior": 37267652.49,
-    "delta_positivo_desde_snapshot_anterior": 39400548.37,
-    "delta_negativo_desde_snapshot_anterior": -2132895.88,
-    "autores_com_aumento": 53,
-    "destinos_com_aumento": 20,
-    "pares_autor_destino_com_aumento": 55,
+    "delta_liquido_desde_snapshot_anterior": 0.0,
+    "delta_positivo_desde_snapshot_anterior": 0.0,
+    "delta_negativo_desde_snapshot_anterior": 0.0,
+    "autores_com_aumento": 0,
+    "destinos_com_aumento": 0,
+    "pares_autor_destino_com_aumento": 0,
     "total_autores_mapeados": 1614,
     "total_destinos_mapeados": 5459,
     "total_linhas_csv": 94288,
@@ -27,8 +27,8 @@
     "current_year_total_empenhado": 39068337711.11,
     "current_year_total_liquidado": 25698089463.55,
     "current_year_total_pago": 34025690453.67,
-    "current_year_total_empenhado_por_ano_emenda": 38221522339.36,
-    "current_year_total_pago_por_ano_emenda": 25578925707.46,
+    "current_year_total_empenhado_por_ano_emenda": 39068337711.11,
+    "current_year_total_pago_por_ano_emenda": 34025690453.67,
     "_pago_e_empenhado_source": "por_data_documento"
   },
   "top_authors_today": [
@@ -1021,7 +1021,7 @@
     "total_liquidado": 25698089463.55,
     "total_pago": 34025690453.67
   },
-  "run_date": "2026-07-30",
+  "run_date": "2026-07-31",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1030,21 +1030,21 @@
       "stages": [
         {
           "stage": "Empenhado",
-          "value": 38221522339.36
+          "value": 38249156735.71
         },
         {
           "stage": "Liquidado",
-          "value": 25698089463.55
+          "value": 25723477210.49
         },
         {
           "stage": "Pago",
-          "value": 25578925707.46
+          "value": 25582520802.67
         }
       ],
       "stage_values": {
-        "empenhado": 38221522339.36,
-        "liquidado": 25698089463.55,
-        "pago": 25578925707.46
+        "empenhado": 38249156735.71,
+        "liquidado": 25723477210.49,
+        "pago": 25582520802.67
       }
     },
     "siop_snapshot": {
@@ -1105,7 +1105,7 @@
           "error": ""
         }
       ],
-      "error": "dotação inicial/atual zerada — provável quebra do scraper Qlik (DOM mudou)",
+      "error": "6 - Emendas Individuais: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -1156,7 +1156,8 @@
           "error": ""
         }
       ],
-      "error": ""
+      "error": "6 - Emendas Individuais: filtro não confirmado ; 7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
+      "fallback_from_previous": true
     },
     "documents": {
       "year": 2026,
@@ -2781,12 +2782,12 @@
         },
         {
           "author": "ADRIANA VENTURA",
-          "party": "Nao identificado",
+          "party": "NOVO",
           "empenhado": 2992442.85
         },
         {
           "author": "SERGIO BRITO",
-          "party": "Nao identificado",
+          "party": "PSD",
           "empenhado": 1913875.0
         },
         {
@@ -2796,7 +2797,7 @@
         },
         {
           "author": "DELEGADA ADRIANA ACCORSI",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 1117858.98
         },
         {
@@ -2806,7 +2807,7 @@
         },
         {
           "author": "YANDRA MOURA",
-          "party": "Nao identificado",
+          "party": "UNIÃO",
           "empenhado": 999999.0
         },
         {
@@ -2821,17 +2822,17 @@
         },
         {
           "author": "TALIRIA PETRONE",
-          "party": "Nao identificado",
+          "party": "PSOL",
           "empenhado": 800000.0
         },
         {
           "author": "ORLANDO SILVA",
-          "party": "Nao identificado",
+          "party": "PCdoB",
           "empenhado": 773000.0
         },
         {
           "author": "ANA PAULA LIMA",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 750000.0
         },
         {
@@ -2846,17 +2847,17 @@
         },
         {
           "author": "FERNANDO MONTEIRO",
-          "party": "Nao identificado",
+          "party": "PSD",
           "empenhado": 700000.0
         },
         {
           "author": "DIEGO GARCIA",
-          "party": "Nao identificado",
+          "party": "UNIÃO",
           "empenhado": 690000.0
         },
         {
           "author": "VINICIUS CARVALHO",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 540118.71
         }
       ],
@@ -3441,7 +3442,7 @@
       }
     },
     "party_lookup": {
-      "camara_mapeados": 0,
+      "camara_mapeados": 512,
       "senado_mapeados": 81
     }
   },
@@ -4462,6 +4463,17 @@
       "previous_snapshot_date": "2026-07-29",
       "interval_days": 1,
       "source_changed": true
+    },
+    {
+      "date": "2026-07-31",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 340688915464.17,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-07-30",
+      "interval_days": 1,
+      "source_changed": false
     }
   ],
   "siop_daily_history": [
@@ -5744,6 +5756,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-07-31",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
-  ]
+  ],
+  "updated_at": "2026-07-31T15:26:03.474778+00:00"
 }
