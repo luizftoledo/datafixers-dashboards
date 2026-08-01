@@ -90,9 +90,18 @@ def scrape_jobs() -> tuple[int, list[dict[str, str]]]:
         try:
             # Explicit executable_path avoids Playwright silently substituting
             # the headless_shell binary, which hits the TLS reset above even
-            # with the same launch args.
+            # with the same launch args. Prefer the sandbox's pre-installed
+            # Chromium (PLAYWRIGHT_BROWSERS_PATH) since the pip-installed
+            # playwright version can drift ahead of the browser revision baked
+            # into the image, which breaks playwright.chromium.executable_path.
+            preinstalled_chromium = os.environ.get("PLAYWRIGHT_BROWSERS_PATH")
+            executable_path = (
+                os.path.join(preinstalled_chromium, "chromium")
+                if preinstalled_chromium and os.path.exists(os.path.join(preinstalled_chromium, "chromium"))
+                else playwright.chromium.executable_path
+            )
             browser = playwright.chromium.launch(
-                headless=True, executable_path=playwright.chromium.executable_path, args=launch_args
+                headless=True, executable_path=executable_path, args=launch_args
             )
         except Exception as error:
             raise RuntimeError("Could not launch Chromium for GIJN scraping") from error
