@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-01T14:38:50.194496+00:00",
-  "snapshot_date": "2026-08-01",
+  "generated_at": "2026-08-02T14:41:10.650736+00:00",
+  "snapshot_date": "2026-08-02",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -1021,7 +1021,7 @@
     "total_liquidado": 25698089463.55,
     "total_pago": 34025690453.67
   },
-  "run_date": "2026-08-01",
+  "run_date": "2026-08-02",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1030,21 +1030,21 @@
       "stages": [
         {
           "stage": "Empenhado",
-          "value": 38249156735.71
+          "value": 38285025462.05
         },
         {
           "stage": "Liquidado",
-          "value": 25723477210.49
+          "value": 25728683309.98
         },
         {
           "stage": "Pago",
-          "value": 25582520802.67
+          "value": 25602547207.96
         }
       ],
       "stage_values": {
-        "empenhado": 38249156735.71,
-        "liquidado": 25723477210.49,
-        "pago": 25582520802.67
+        "empenhado": 38285025462.05,
+        "liquidado": 25728683309.98,
+        "pago": 25602547207.96
       }
     },
     "siop_snapshot": {
@@ -1105,7 +1105,7 @@
           "error": ""
         }
       ],
-      "error": "dotação inicial/atual zerada — provável quebra do scraper Qlik (DOM mudou)",
+      "error": "7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -2801,7 +2801,7 @@
         },
         {
           "author": "EFRAIM FILHO",
-          "party": "PL",
+          "party": "Nao identificado",
           "empenhado": 1000000.0
         },
         {
@@ -3442,7 +3442,7 @@
     },
     "party_lookup": {
       "camara_mapeados": 512,
-      "senado_mapeados": 81
+      "senado_mapeados": 0
     }
   },
   "daily_history": [
@@ -4482,6 +4482,17 @@
       "autores_com_aumento": 0,
       "destinos_com_aumento": 0,
       "previous_snapshot_date": "2026-07-31",
+      "interval_days": 1,
+      "source_changed": false
+    },
+    {
+      "date": "2026-08-02",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 340688915464.17,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-08-01",
       "interval_days": 1,
       "source_changed": false
     }
@@ -5786,7 +5797,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-08-02",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-08-01T14:38:50.194496+00:00"
+  "updated_at": "2026-08-02T14:41:10.650736+00:00"
 }
