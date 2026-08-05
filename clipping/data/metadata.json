@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-04T16:02:22.449475+00:00",
+  "generated_at": "2026-08-05T15:51:26.503474+00:00",
   "counts": {
-    "items": 85,
+    "items": 84,
     "domains": 23,
     "categories": {
       "reportagem_autoral": 59,
       "republicacao": 0,
-      "eco_repercussao": 1,
+      "eco_repercussao": 0,
       "citacao_fonte": 2,
       "mencao": 5,
       "entrevista": 1,
@@ -39,21 +39,20 @@
         "google-news-rss:\"Luiz Fernando Toledo\"": 40,
         "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 0,
         "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 2,
-        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 14
+        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 13
       }
     },
     "enrich": {
-      "fetched": 60,
+      "fetched": 59,
       "reused": 28,
-      "kept": 85,
+      "kept": 84,
       "dropped": 3,
       "categories": {
         "perfil_bio": 17,
         "reportagem_autoral": 59,
         "mencao": 5,
         "entrevista": 1,
-        "citacao_fonte": 2,
-        "eco_repercussao": 1
+        "citacao_fonte": 2
       },
       "domains": {
         "bbc.com": 54,
@@ -78,7 +77,7 @@
         "abraji.org.br": 1,
         "sbtnews.sbt.com.br": 1,
         "piaui.uol.com.br": 1,
-        "cnnbrasil.com.br": 3
+        "cnnbrasil.com.br": 2
       },
       "errors": [
         {
