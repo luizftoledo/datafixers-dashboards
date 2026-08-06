@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-05T15:51:26.503474+00:00",
+  "generated_at": "2026-08-06T16:04:20.654393+00:00",
   "counts": {
     "items": 84,
     "domains": 23,
     "categories": {
-      "reportagem_autoral": 59,
+      "reportagem_autoral": 58,
       "republicacao": 0,
-      "eco_repercussao": 0,
+      "eco_repercussao": 1,
       "citacao_fonte": 2,
       "mencao": 5,
       "entrevista": 1,
@@ -33,7 +33,7 @@
   "sources": {
     "discovery": {
       "seeds": {
-        "known_external_sources": 48
+        "known_external_sources": 49
       },
       "searches": {
         "google-news-rss:\"Luiz Fernando Toledo\"": 40,
@@ -43,19 +43,20 @@
       }
     },
     "enrich": {
-      "fetched": 59,
+      "fetched": 61,
       "reused": 28,
       "kept": 84,
-      "dropped": 3,
+      "dropped": 5,
       "categories": {
         "perfil_bio": 17,
-        "reportagem_autoral": 59,
+        "reportagem_autoral": 58,
         "mencao": 5,
         "entrevista": 1,
-        "citacao_fonte": 2
+        "citacao_fonte": 2,
+        "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 54,
+        "bbc.com": 53,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
@@ -77,12 +78,16 @@
         "abraji.org.br": 1,
         "sbtnews.sbt.com.br": 1,
         "piaui.uol.com.br": 1,
-        "cnnbrasil.com.br": 2
+        "cnnbrasil.com.br": 3
       },
       "errors": [
         {
           "url": "https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil",
           "error": "HTTPSConnectionPool(host='devstudies.cam.ac.uk', port=443): Max retries exceeded with url: /news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil (Caused by NameResolutionError(\"HTTPSConnection(host='devstudies.cam.ac.uk', port=443): Failed to resolve 'devstudies.cam.ac.uk' ([Errno -5] No address associated with hostname)\")) | jina: 403 Client Error: Forbidden for url: https://r.jina.ai/http://https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil"
+        },
+        {
+          "url": "https://piaui.uol.com.br/web/mais-da-metade-dos-brasileiros-que-ja-fizeram-pedidos-de-informacao-ao-governo-tem-ensino-superior",
+          "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) | jina: 403 Client Error: Forbidden for url: https://r.jina.ai/http://https://piaui.uol.com.br/web/mais-da-metade-dos-brasileiros-que-ja-fizeram-pedidos-de-informacao-ao-governo-tem-ensino-superior"
         }
       ]
     }
