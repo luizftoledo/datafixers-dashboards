@@ -10,12 +10,12 @@
   "BR000592026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:07:05.654430+00:00"
+    "ts": "2026-08-08T12:39:49.199047+00:00"
   },
   "BR000642026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:09:25.553997+00:00"
+    "ts": "2026-08-08T12:40:57.214777+00:00"
   },
   "BR000942026": {
     "file": "questionarios/BR-00094-2026.txt",
@@ -140,7 +140,7 @@
   "BR004092026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:02:39.153086+00:00"
+    "ts": "2026-08-08T12:35:02.563378+00:00"
   },
   "BR004302026": {
     "file": "questionarios/BR-00430-2026.txt",
@@ -161,7 +161,7 @@
   "BR004552026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:09:43.047076+00:00"
+    "ts": "2026-08-08T12:42:24.866381+00:00"
   },
   "BR005052026": {
     "file": "questionarios/BR-00505-2026.txt",
@@ -206,7 +206,7 @@
   "BR005582026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:04:43.052069+00:00"
+    "ts": "2026-08-08T12:37:22.592215+00:00"
   },
   "BR005742026": {
     "file": "questionarios/BR-00574-2026.txt",
@@ -240,6 +240,11 @@
     "ts": "2026-05-13T15:03:27.781966+00:00",
     "txt_bytes": 16705
   },
+  "BR006092026": {
+    "msg": "resposta inesperada (Content-Type=text/html;charset=iso-8859-1, size=21721)",
+    "status": "erro",
+    "ts": "2026-08-08T12:54:05.794722+00:00"
+  },
   "BR006152026": {
     "file": "questionarios/BR-00615-2026.txt",
     "pdf_bytes": 308571,
@@ -251,7 +256,7 @@
   "BR006362026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:10:05.124449+00:00"
+    "ts": "2026-08-08T12:41:50.126543+00:00"
   },
   "BR006552026": {
     "file": "questionarios/BR-00655-2026.txt",
@@ -325,7 +330,7 @@
   "BR007732026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:05:46.622323+00:00"
+    "ts": "2026-08-08T12:38:35.639254+00:00"
   },
   "BR007892026": {
     "file": "questionarios/BR-00789-2026.txt",
@@ -338,7 +343,7 @@
   "BR008222026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:13:10.818085+00:00"
+    "ts": "2026-08-08T12:44:36.464072+00:00"
   },
   "BR008352026": {
     "file": "questionarios/BR-00835-2026.txt",
@@ -401,7 +406,7 @@
   "BR009562026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:02:00.034502+00:00"
+    "ts": "2026-08-08T12:34:33.596384+00:00"
   },
   "BR009622026": {
     "file": "questionarios/BR-00962-2026.txt",
@@ -414,22 +419,27 @@
   "BR009682026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:15:09.309397+00:00"
+    "ts": "2026-08-08T12:46:40.275021+00:00"
   },
   "BR009722026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
     "ts": "2026-07-25T01:16:14.951835+00:00"
   },
+  "BR009942026": {
+    "msg": "página detalhar não carregou o protocolo esperado",
+    "status": "erro",
+    "ts": "2026-08-08T12:54:46.793080+00:00"
+  },
   "BR010272026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:06:22.226825+00:00"
+    "ts": "2026-08-08T12:38:00.464454+00:00"
   },
   "BR010302026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:05:06.781172+00:00"
+    "ts": "2026-08-08T12:36:48.779160+00:00"
   },
   "BR010742026": {
     "file": "questionarios/BR-01074-2026.txt",
@@ -450,7 +460,7 @@
   "BR010782026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:19:04.164843+00:00"
+    "ts": "2026-08-08T12:50:31.082667+00:00"
   },
   "BR010792026": {
     "file": "questionarios/BR-01079-2026.txt",
@@ -463,7 +473,7 @@
   "BR010842026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:15:47.059682+00:00"
+    "ts": "2026-08-08T12:47:06.784179+00:00"
   },
   "BR011292026": {
     "file": "questionarios/BR-01129-2026.txt",
@@ -492,12 +502,12 @@
   "BR011662026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:11:11.128081+00:00"
+    "ts": "2026-08-08T12:42:59.014937+00:00"
   },
   "BR011682026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:08:32.511600+00:00"
+    "ts": "2026-08-08T12:40:38.046587+00:00"
   },
   "BR011742026": {
     "file": "questionarios/BR-01174-2026.txt",
@@ -510,7 +520,7 @@
   "BR012102026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:16:13.659631+00:00"
+    "ts": "2026-08-08T12:48:04.485912+00:00"
   },
   "BR012212026": {
     "file": "questionarios/BR-01221-2026.txt",
@@ -523,12 +533,12 @@
   "BR012252026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:10:34.887423+00:00"
+    "ts": "2026-08-08T12:42:45.880818+00:00"
   },
   "BR012392026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:11:23.903635+00:00"
+    "ts": "2026-08-08T12:43:23.245902+00:00"
   },
   "BR012472026": {
     "file": "questionarios/BR-01247-2026.txt",
@@ -549,7 +559,7 @@
   "BR013182026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:08:18.207732+00:00"
+    "ts": "2026-08-08T12:40:45.091056+00:00"
   },
   "BR013262026": {
     "file": "questionarios/BR-01326-2026.txt",
@@ -562,7 +572,7 @@
   "BR013272026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:17:32.060856+00:00"
+    "ts": "2026-08-08T12:48:46.342180+00:00"
   },
   "BR013412026": {
     "file": "questionarios/BR-01341-2026.txt",
@@ -636,7 +646,7 @@
   "BR014892026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:11:51.188294+00:00"
+    "ts": "2026-08-08T12:44:09.393798+00:00"
   },
   "BR015132026": {
     "pdf_bytes": 3042207,
@@ -680,7 +690,7 @@
   "BR016262026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:04:07.527655+00:00"
+    "ts": "2026-08-08T12:36:24.543540+00:00"
   },
   "BR016292026": {
     "msg": "página detalhar não carregou o protocolo esperado",
@@ -722,7 +732,7 @@
   "BR016892026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:10:42.299154+00:00"
+    "ts": "2026-08-08T12:42:30.578396+00:00"
   },
   "BR017032026": {
     "file": "questionarios/BR-01703-2026.txt",
@@ -735,12 +745,12 @@
   "BR017092026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:06:29.587373+00:00"
+    "ts": "2026-08-08T12:38:07.388345+00:00"
   },
   "BR017152026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:16:19.848017+00:00"
+    "ts": "2026-08-08T12:48:11.578608+00:00"
   },
   "BR017442026": {
     "file": "questionarios/BR-01744-2026.txt",
@@ -769,7 +779,7 @@
   "BR017842026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:18:56.883325+00:00"
+    "ts": "2026-08-08T12:50:24.607818+00:00"
   },
   "BR017922026": {
     "file": "questionarios/BR-01792-2026.txt",
@@ -790,7 +800,7 @@
   "BR018522026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:00:11.023012+00:00"
+    "ts": "2026-08-08T12:33:19.600691+00:00"
   },
   "BR018682026": {
     "file": "questionarios/BR-01868-2026.txt",
@@ -803,12 +813,12 @@
   "BR018712026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:14:48.446074+00:00"
+    "ts": "2026-08-08T12:46:47.292790+00:00"
   },
   "BR018772026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:07:42.137360+00:00"
+    "ts": "2026-08-08T12:39:55.646464+00:00"
   },
   "BR018782026": {
     "file": "questionarios/BR-01878-2026.txt",
@@ -821,12 +831,12 @@
   "BR018932026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:03:07.691756+00:00"
+    "ts": "2026-08-08T12:35:31.957328+00:00"
   },
   "BR018942026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:18:39.796242+00:00"
+    "ts": "2026-08-08T12:50:18.472899+00:00"
   },
   "BR019022026": {
     "file": "questionarios/BR-01902-2026.txt",
@@ -887,7 +897,7 @@
   "BR019792026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:10:48.660531+00:00"
+    "ts": "2026-08-08T12:42:36.561315+00:00"
   },
   "BR019922026": {
     "file": "questionarios/BR-01992-2026.txt",
@@ -993,12 +1003,12 @@
   "BR022282026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:21:47.014040+00:00"
+    "ts": "2026-08-08T12:53:23.181534+00:00"
   },
   "BR022492026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:16:26.501819+00:00"
+    "ts": "2026-08-08T12:47:47.885672+00:00"
   },
   "BR022762026": {
     "file": "questionarios/BR-02276-2026.txt",
@@ -1027,7 +1037,7 @@
   "BR024022026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:03:57.777856+00:00"
+    "ts": "2026-08-08T12:36:43.071854+00:00"
   },
   "BR024102026": {
     "file": "questionarios/BR-02410-2026.txt",
@@ -1040,7 +1050,7 @@
   "BR024112026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:09:33.215031+00:00"
+    "ts": "2026-08-08T12:42:18.337172+00:00"
   },
   "BR024162026": {
     "file": "questionarios/BR-02416-2026.txt",
@@ -1190,7 +1200,7 @@
   "BR028742026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:16:48.239657+00:00"
+    "ts": "2026-08-08T12:48:53.852802+00:00"
   },
   "BR028972026": {
     "file": "questionarios/BR-02897-2026.txt",
@@ -1203,7 +1213,7 @@
   "BR029042026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:09:04.000357+00:00"
+    "ts": "2026-08-08T12:41:10.241698+00:00"
   },
   "BR029122026": {
     "file": "questionarios/BR-02912-2026.txt",
@@ -1256,7 +1266,7 @@
   "BR030032026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:04:36.483798+00:00"
+    "ts": "2026-08-08T12:37:00.673585+00:00"
   },
   "BR030242026": {
     "file": "questionarios/BR-03024-2026.txt",
@@ -1269,7 +1279,7 @@
   "BR030252026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:19:16.577464+00:00"
+    "ts": "2026-08-08T12:50:54.023167+00:00"
   },
   "BR030382026": {
     "file": "questionarios/BR-03038-2026.txt",
@@ -1290,12 +1300,12 @@
   "BR030672026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:03:22.379087+00:00"
+    "ts": "2026-08-08T12:35:56.237259+00:00"
   },
   "BR030702026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:11:17.792155+00:00"
+    "ts": "2026-08-08T12:43:16.966547+00:00"
   },
   "BR030742026": {
     "file": "questionarios/BR-03074-2026.txt",
@@ -1308,7 +1318,7 @@
   "BR030842026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:04:49.526928+00:00"
+    "ts": "2026-08-08T12:37:29.421712+00:00"
   },
   "BR030862026": {
     "file": "questionarios/BR-03086-2026.txt",
@@ -1329,12 +1339,12 @@
   "BR031132026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:19:50.102392+00:00"
+    "ts": "2026-08-08T12:51:00.139313+00:00"
   },
   "BR031212026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:18:00.050081+00:00"
+    "ts": "2026-08-08T12:50:12.067870+00:00"
   },
   "BR031352026": {
     "file": "questionarios/BR-03135-2026.txt",
@@ -1347,7 +1357,7 @@
   "BR031382026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:00:18.208436+00:00"
+    "ts": "2026-08-08T12:33:34.474285+00:00"
   },
   "BR031452026": {
     "file": "questionarios/BR-03145-2026.txt",
@@ -1360,7 +1370,7 @@
   "BR031482026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:06:36.965646+00:00"
+    "ts": "2026-08-08T12:39:05.967127+00:00"
   },
   "BR031652026": {
     "file": "questionarios/BR-03165-2026.txt",
@@ -1389,7 +1399,7 @@
   "BR031772026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:09:57.408941+00:00"
+    "ts": "2026-08-08T12:41:41.733709+00:00"
   },
   "BR031832026": {
     "file": "questionarios/BR-03183-2026.txt",
@@ -1402,7 +1412,7 @@
   "BR032072026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:01:30.248452+00:00"
+    "ts": "2026-08-08T12:33:56.837345+00:00"
   },
   "BR032132026": {
     "file": "questionarios/BR-03213-2026.txt",
@@ -1415,7 +1425,7 @@
   "BR032382026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:15:03.280909+00:00"
+    "ts": "2026-08-08T12:46:17.392740+00:00"
   },
   "BR032432026": {
     "file": "questionarios/BR-03243-2026.txt",
@@ -1436,7 +1446,7 @@
   "BR032892026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:14:09.653305+00:00"
+    "ts": "2026-08-08T12:45:35.986528+00:00"
   },
   "BR032972026": {
     "file": "questionarios/BR-03297-2026.txt",
@@ -1481,12 +1491,12 @@
   "BR034392026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:02:16.694282+00:00"
+    "ts": "2026-08-08T12:35:20.214616+00:00"
   },
   "BR034452026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:11:44.692171+00:00"
+    "ts": "2026-08-08T12:43:53.767629+00:00"
   },
   "BR034482026": {
     "msg": "página detalhar não carregou o protocolo esperado",
@@ -1512,7 +1522,7 @@
   "BR034792026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:06:56.773334+00:00"
+    "ts": "2026-08-08T12:39:41.173700+00:00"
   },
   "BR034912026": {
     "file": "questionarios/BR-03491-2026.txt",
@@ -1521,6 +1531,11 @@
     "status": "ok",
     "ts": "2026-05-13T15:00:52.379718+00:00",
     "txt_bytes": 1715
+  },
+  "BR034932026": {
+    "msg": "página detalhar não carregou o protocolo esperado",
+    "status": "erro",
+    "ts": "2026-08-08T12:54:21.639878+00:00"
   },
   "BR034962026": {
     "file": "questionarios/BR-03496-2026.txt",
@@ -1610,7 +1625,7 @@
   "BR036562026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:20:44.703645+00:00"
+    "ts": "2026-08-08T12:51:50.759573+00:00"
   },
   "BR036582026": {
     "file": "questionarios/BR-03658-2026.txt",
@@ -1687,7 +1702,7 @@
   "BR038102026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:12:46.289658+00:00"
+    "ts": "2026-08-08T12:45:07.067675+00:00"
   },
   "BR038112026": {
     "file": "questionarios/BR-03811-2026.txt",
@@ -1708,12 +1723,12 @@
   "BR038192026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:08:04.052649+00:00"
+    "ts": "2026-08-08T12:40:18.692396+00:00"
   },
   "BR038332026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:00:36.055383+00:00"
+    "ts": "2026-08-08T12:33:27.188838+00:00"
   },
   "BR038402026": {
     "file": "questionarios/BR-03840-2026.txt",
@@ -1750,12 +1765,12 @@
   "BR039212026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:21:10.984580+00:00"
+    "ts": "2026-08-08T12:53:40.203621+00:00"
   },
   "BR039652026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:18:31.066281+00:00"
+    "ts": "2026-08-08T12:49:44.081180+00:00"
   },
   "BR039692026": {
     "file": "questionarios/BR-03969-2026.txt",
@@ -1832,12 +1847,12 @@
   "BR041612026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:02:31.011685+00:00"
+    "ts": "2026-08-08T12:35:14.000018+00:00"
   },
   "BR041692026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:03:28.529648+00:00"
+    "ts": "2026-08-08T12:36:03.195180+00:00"
   },
   "BR041932026": {
     "file": "questionarios/BR-04193-2026.txt",
@@ -1882,17 +1897,17 @@
   "BR042432026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:02:24.653483+00:00"
+    "ts": "2026-08-08T12:35:26.010008+00:00"
   },
   "BR042442026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:22:08.532737+00:00"
+    "ts": "2026-08-08T12:52:52.772200+00:00"
   },
   "BR042452026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:09:49.566281+00:00"
+    "ts": "2026-08-08T12:41:35.700600+00:00"
   },
   "BR042562026": {
     "file": "questionarios/BR-04256-2026.txt",
@@ -2017,12 +2032,12 @@
   "BR044682026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:08:49.187353+00:00"
+    "ts": "2026-08-08T12:41:17.053801+00:00"
   },
   "BR044882026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:15:35.041656+00:00"
+    "ts": "2026-08-08T12:46:53.344455+00:00"
   },
   "BR045192026": {
     "file": "questionarios/BR-04519-2026.txt",
@@ -2059,12 +2074,12 @@
   "BR045792026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:18:15.787853+00:00"
+    "ts": "2026-08-08T12:49:51.039658+00:00"
   },
   "BR045822026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:00:46.726841+00:00"
+    "ts": "2026-08-08T12:33:41.624576+00:00"
   },
   "BR045942026": {
     "file": "questionarios/BR-04594-2026.txt",
@@ -2117,7 +2132,7 @@
   "BR047792026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:02:45.211288+00:00"
+    "ts": "2026-08-08T12:35:08.406172+00:00"
   },
   "BR048032026": {
     "msg": "página detalhar não carregou o protocolo esperado",
@@ -2172,7 +2187,7 @@
   "BR049392026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:05:19.010060+00:00"
+    "ts": "2026-08-08T12:36:54.748817+00:00"
   },
   "BR049482026": {
     "pdf_bytes": 3248709,
@@ -2184,7 +2199,7 @@
   "BR049562026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:16:34.396459+00:00"
+    "ts": "2026-08-08T12:47:41.586066+00:00"
   },
   "BR049722026": {
     "msg": "página detalhar não carregou o protocolo esperado",
@@ -2194,7 +2209,7 @@
   "BR050262026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:10:18.471889+00:00"
+    "ts": "2026-08-08T12:42:10.822482+00:00"
   },
   "BR050402026": {
     "msg": "página detalhar não carregou o protocolo esperado",
@@ -2244,7 +2259,7 @@
   "BR051212026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:06:15.064144+00:00"
+    "ts": "2026-08-08T12:38:13.423623+00:00"
   },
   "BR051742026": {
     "file": "questionarios/BR-05174-2026.txt",
@@ -2265,12 +2280,12 @@
   "BR051822026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:08:24.580882+00:00"
+    "ts": "2026-08-08T12:40:31.556350+00:00"
   },
   "BR052052026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:20:30.769299+00:00"
+    "ts": "2026-08-08T12:52:31.902660+00:00"
   },
   "BR052102026": {
     "file": "questionarios/BR-05210-2026.txt",
@@ -2283,7 +2298,7 @@
   "BR052252026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:13:55.621487+00:00"
+    "ts": "2026-08-08T12:45:42.149555+00:00"
   },
   "BR052272026": {
     "file": "questionarios/BR-05227-2026.txt",
@@ -2312,7 +2327,7 @@
   "BR053232026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:03:43.771198+00:00"
+    "ts": "2026-08-08T12:36:36.555844+00:00"
   },
   "BR053252026": {
     "file": "questionarios/BR-05325-2026.txt",
@@ -2341,7 +2356,7 @@
   "BR053712026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:01:22.320934+00:00"
+    "ts": "2026-08-08T12:34:13.038160+00:00"
   },
   "BR053762026": {
     "file": "questionarios/BR-05376-2026.txt",
@@ -2370,12 +2385,12 @@
   "BR054082026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:07:35.646652+00:00"
+    "ts": "2026-08-08T12:39:31.815045+00:00"
   },
   "BR054252026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:17:14.891134+00:00"
+    "ts": "2026-08-08T12:48:39.256751+00:00"
   },
   "BR054362026": {
     "file": "questionarios/BR-05436-2026.txt",
@@ -2388,12 +2403,12 @@
   "BR054392026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:05:32.247302+00:00"
+    "ts": "2026-08-08T12:37:54.123361+00:00"
   },
   "BR054952026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:04:57.342525+00:00"
+    "ts": "2026-08-08T12:37:39.811047+00:00"
   },
   "BR054992026": {
     "file": "questionarios/BR-05499-2026.txt",
@@ -2414,22 +2429,22 @@
   "BR055422026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:10:55.454789+00:00"
+    "ts": "2026-08-08T12:43:11.178224+00:00"
   },
   "BR055732026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:17:39.138701+00:00"
+    "ts": "2026-08-08T12:49:22.515511+00:00"
   },
   "BR056202026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:01:02.282031+00:00"
+    "ts": "2026-08-08T12:34:19.816416+00:00"
   },
   "BR056282026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:03:14.208677+00:00"
+    "ts": "2026-08-08T12:35:50.534593+00:00"
   },
   "BR056712026": {
     "file": "questionarios/BR-05671-2026.txt",
@@ -2442,7 +2457,7 @@
   "BR056782026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:10:12.164486+00:00"
+    "ts": "2026-08-08T12:42:04.704725+00:00"
   },
   "BR056862026": {
     "file": "questionarios/BR-05686-2026.txt",
@@ -2471,7 +2486,7 @@
   "BR057362026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:19:56.524152+00:00"
+    "ts": "2026-08-08T12:51:20.878764+00:00"
   },
   "BR057552026": {
     "msg": "página detalhar não carregou o protocolo esperado",
@@ -2497,7 +2512,7 @@
   "BR057732026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:02:52.827839+00:00"
+    "ts": "2026-08-08T12:34:54.049074+00:00"
   },
   "BR057822026": {
     "file": "questionarios/BR-05782-2026.txt",
@@ -2506,6 +2521,11 @@
     "status": "ok",
     "ts": "2026-05-13T15:08:55.794627+00:00",
     "txt_bytes": 26266
+  },
+  "BR058082026": {
+    "msg": "página detalhar não carregou o protocolo esperado",
+    "status": "erro",
+    "ts": "2026-08-08T12:54:30.301759+00:00"
   },
   "BR058092026": {
     "file": "questionarios/BR-05809-2026.txt",
@@ -2547,7 +2567,7 @@
   "BR058562026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:14:31.374440+00:00"
+    "ts": "2026-08-08T12:46:05.403421+00:00"
   },
   "BR058642026": {
     "file": "questionarios/BR-05864-2026.txt",
@@ -2560,7 +2580,7 @@
   "BR058802026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:07:17.593457+00:00"
+    "ts": "2026-08-08T12:39:19.846610+00:00"
   },
   "BR058882026": {
     "file": "questionarios/BR-05888-2026.txt",
@@ -2573,7 +2593,7 @@
   "BR059082026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:17:08.175684+00:00"
+    "ts": "2026-08-08T12:48:33.175666+00:00"
   },
   "BR059122026": {
     "file": "questionarios/BR-05912-2026.txt",
@@ -2586,7 +2606,7 @@
   "BR059132026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:15:15.444874+00:00"
+    "ts": "2026-08-08T12:47:26.210603+00:00"
   },
   "BR059292026": {
     "file": "questionarios/BR-05929-2026.txt",
@@ -2615,7 +2635,7 @@
   "BR059532026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:12:28.970865+00:00"
+    "ts": "2026-08-08T12:43:35.695314+00:00"
   },
   "BR059872026": {
     "file": "questionarios/BR-05987-2026.txt",
@@ -2628,7 +2648,7 @@
   "BR059972026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:02:59.647145+00:00"
+    "ts": "2026-08-08T12:35:37.982164+00:00"
   },
   "BR060092026": {
     "file": "questionarios/BR-06009-2026.txt",
@@ -2641,7 +2661,7 @@
   "BR060262026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:01:40.476077+00:00"
+    "ts": "2026-08-08T12:34:26.762239+00:00"
   },
   "BR060372026": {
     "file": "questionarios/BR-06037-2026.txt",
@@ -2654,7 +2674,7 @@
   "BR060482026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:21:30.931415+00:00"
+    "ts": "2026-08-08T12:52:45.591400+00:00"
   },
   "BR060582026": {
     "file": "questionarios/BR-06058-2026.txt",
@@ -2667,7 +2687,7 @@
   "BR060742026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:13:02.381998+00:00"
+    "ts": "2026-08-08T12:44:49.077848+00:00"
   },
   "BR060872026": {
     "file": "questionarios/BR-06087-2026.txt",
@@ -2696,12 +2716,12 @@
   "BR062362026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:07:27.271394+00:00"
+    "ts": "2026-08-08T12:39:25.938281+00:00"
   },
   "BR062592026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:05:40.318941+00:00"
+    "ts": "2026-08-08T12:38:29.486981+00:00"
   },
   "BR062762026": {
     "file": "questionarios/BR-06276-2026.txt",
@@ -2735,7 +2755,7 @@
   "BR063452026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:06:44.589480+00:00"
+    "ts": "2026-08-08T12:38:57.117769+00:00"
   },
   "BR063602026": {
     "file": "questionarios/BR-06360-2026.txt",
@@ -2764,12 +2784,12 @@
   "BR064812026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:02:06.707307+00:00"
+    "ts": "2026-08-08T12:34:48.013366+00:00"
   },
   "BR064932026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:15:53.310854+00:00"
+    "ts": "2026-08-08T12:47:34.858545+00:00"
   },
   "BR065102026": {
     "file": "questionarios/BR-06510-2026.txt",
@@ -2798,7 +2818,7 @@
   "BR065502026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:18:46.584740+00:00"
+    "ts": "2026-08-08T12:50:36.796242+00:00"
   },
   "BR065592026": {
     "file": "questionarios/BR-06559-2026.txt",
@@ -2811,7 +2831,7 @@
   "BR065912026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:18:09.413596+00:00"
+    "ts": "2026-08-08T12:49:57.145552+00:00"
   },
   "BR065942026": {
     "file": "questionarios/BR-06594-2026.txt",
@@ -2824,7 +2844,7 @@
   "BR065962026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:19:37.563782+00:00"
+    "ts": "2026-08-08T12:51:06.765290+00:00"
   },
   "BR066072026": {
     "file": "questionarios/BR-06607-2026.txt",
@@ -2908,17 +2928,17 @@
   "BR067332026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:01:11.085289+00:00"
+    "ts": "2026-08-08T12:34:03.141412+00:00"
   },
   "BR067512026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:11:38.316220+00:00"
+    "ts": "2026-08-08T12:44:23.841739+00:00"
   },
   "BR067522026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:12:15.788256+00:00"
+    "ts": "2026-08-08T12:44:16.816373+00:00"
   },
   "BR067762026": {
     "file": "questionarios/BR-06776-2026.txt",
@@ -2963,7 +2983,7 @@
   "BR068332026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:21:17.981522+00:00"
+    "ts": "2026-08-08T12:53:16.218413+00:00"
   },
   "BR068352026": {
     "pdf_bytes": 1677978,
@@ -2979,6 +2999,11 @@
     "status": "ok",
     "ts": "2026-05-13T14:53:00.473861+00:00",
     "txt_bytes": 8556
+  },
+  "BR068682026": {
+    "msg": "página detalhar não carregou o protocolo esperado",
+    "status": "erro",
+    "ts": "2026-08-08T12:53:55.101028+00:00"
   },
   "BR068762026": {
     "file": "questionarios/BR-06876-2026.txt",
@@ -3015,7 +3040,7 @@
   "BR069352026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:20:57.833152+00:00"
+    "ts": "2026-08-08T12:52:07.251949+00:00"
   },
   "BR069392026": {
     "file": "questionarios/BR-06939-2026.txt",
@@ -3028,7 +3053,7 @@
   "BR069942026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:07:56.723917+00:00"
+    "ts": "2026-08-08T12:40:06.412430+00:00"
   },
   "BR069972026": {
     "file": "questionarios/BR-06997-2026.txt",
@@ -3113,12 +3138,12 @@
   "BR071542026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:03:37.409247+00:00"
+    "ts": "2026-08-08T12:35:44.689088+00:00"
   },
   "BR071812026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:06:50.723604+00:00"
+    "ts": "2026-08-08T12:39:13.037257+00:00"
   },
   "BR071922026": {
     "file": "questionarios/BR-07192-2026.txt",
@@ -3139,17 +3164,17 @@
   "BR072352026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:12:53.175083+00:00"
+    "ts": "2026-08-08T12:45:21.028037+00:00"
   },
   "BR072372026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:05:59.835270+00:00"
+    "ts": "2026-08-08T12:38:47.829164+00:00"
   },
   "BR072902026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:09:12.056238+00:00"
+    "ts": "2026-08-08T12:40:50.679842+00:00"
   },
   "BR072932026": {
     "file": "questionarios/BR-07293-2026.txt",
@@ -3162,12 +3187,12 @@
   "BR072942026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:05:53.527811+00:00"
+    "ts": "2026-08-08T12:38:41.467814+00:00"
   },
   "BR073352026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:10:27.703439+00:00"
+    "ts": "2026-08-08T12:41:57.537692+00:00"
   },
   "BR073972026": {
     "file": "questionarios/BR-07397-2026.txt",
@@ -3262,7 +3287,7 @@
   "BR075862026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:08:41.482493+00:00"
+    "ts": "2026-08-08T12:41:29.805907+00:00"
   },
   "BR076002026": {
     "file": "questionarios/BR-07600-2026.txt",
@@ -3275,17 +3300,17 @@
   "BR076012026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:16:01.352440+00:00"
+    "ts": "2026-08-08T12:47:00.562511+00:00"
   },
   "BR076042026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:20:24.581472+00:00"
+    "ts": "2026-08-08T12:52:14.215570+00:00"
   },
   "BR076502026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:04:14.842341+00:00"
+    "ts": "2026-08-08T12:36:18.466450+00:00"
   },
   "BR076612026": {
     "file": "questionarios/BR-07661-2026.txt",
@@ -3306,7 +3331,7 @@
   "BR076702026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:12:08.267956+00:00"
+    "ts": "2026-08-08T12:43:59.874404+00:00"
   },
   "BR076832026": {
     "file": "questionarios/BR-07683-2026.txt",
@@ -3327,27 +3352,27 @@
   "BR076962026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:16:55.298859+00:00"
+    "ts": "2026-08-08T12:49:00.949930+00:00"
   },
   "BR077012026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:22:16.596345+00:00"
+    "ts": "2026-08-08T12:53:08.839444+00:00"
   },
   "BR077632026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:09:18.716455+00:00"
+    "ts": "2026-08-08T12:41:23.519890+00:00"
   },
   "BR077732026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:16:07.682838+00:00"
+    "ts": "2026-08-08T12:47:56.083781+00:00"
   },
   "BR078012026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:00:53.807984+00:00"
+    "ts": "2026-08-08T12:33:47.552530+00:00"
   },
   "BR078242026": {
     "file": "questionarios/BR-07824-2026.txt",
@@ -3360,22 +3385,27 @@
   "BR078342026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:07:49.101715+00:00"
+    "ts": "2026-08-08T12:40:12.924036+00:00"
   },
   "BR078382026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:15:21.765431+00:00"
+    "ts": "2026-08-08T12:47:12.791588+00:00"
+  },
+  "BR078402026": {
+    "msg": "página detalhar não carregou o protocolo esperado",
+    "status": "erro",
+    "ts": "2026-08-08T12:54:12.416490+00:00"
   },
   "BR078452026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:14:39.019926+00:00"
+    "ts": "2026-08-08T12:46:34.231526+00:00"
   },
   "BR078472026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:18:23.211493+00:00"
+    "ts": "2026-08-08T12:50:04.355231+00:00"
   },
   "BR078502026": {
     "msg": "página detalhar não carregou o protocolo esperado",
@@ -3401,7 +3431,7 @@
   "BR078782026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:12:00.995568+00:00"
+    "ts": "2026-08-08T12:43:47.575544+00:00"
   },
   "BR079092026": {
     "file": "questionarios/BR-07909-2026.txt",
@@ -3454,7 +3484,7 @@
   "BR079812026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:05:25.998871+00:00"
+    "ts": "2026-08-08T12:37:46.018043+00:00"
   },
   "BR079922026": {
     "file": "questionarios/BR-07992-2026.txt",
@@ -3467,7 +3497,7 @@
   "BR079962026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:20:51.134849+00:00"
+    "ts": "2026-08-08T12:51:57.458582+00:00"
   },
   "BR080142026": {
     "file": "questionarios/BR-08014-2026.txt",
@@ -3488,37 +3518,37 @@
   "BR080362026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:20:03.694567+00:00"
+    "ts": "2026-08-08T12:51:30.786271+00:00"
   },
   "BR080452026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:19:43.899871+00:00"
+    "ts": "2026-08-08T12:51:12.500812+00:00"
   },
   "BR080542026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:14:02.457703+00:00"
+    "ts": "2026-08-08T12:45:27.853367+00:00"
   },
   "BR080632026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:14:55.732391+00:00"
+    "ts": "2026-08-08T12:46:27.126458+00:00"
   },
   "BR080862026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:12:22.726417+00:00"
+    "ts": "2026-08-08T12:44:30.501706+00:00"
   },
   "BR081092026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:20:16.591934+00:00"
+    "ts": "2026-08-08T12:52:24.563004+00:00"
   },
   "BR081332026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:14:24.605719+00:00"
+    "ts": "2026-08-08T12:45:48.113491+00:00"
   },
   "BR081812026": {
     "file": "questionarios/BR-08181-2026.txt",
@@ -3555,7 +3585,7 @@
   "BR082462026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:17:02.079729+00:00"
+    "ts": "2026-08-08T12:48:25.986566+00:00"
   },
   "BR082542026": {
     "file": "questionarios/BR-08254-2026.txt",
@@ -3584,7 +3614,7 @@
   "BR083142026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:21:03.948264+00:00"
+    "ts": "2026-08-08T12:53:29.642810+00:00"
   },
   "BR083372026": {
     "file": "questionarios/BR-08337-2026.txt",
@@ -3605,7 +3635,7 @@
   "BR083542026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:15:28.671501+00:00"
+    "ts": "2026-08-08T12:47:19.717684+00:00"
   },
   "BR083852026": {
     "file": "questionarios/BR-08385-2026.txt",
@@ -3626,7 +3656,7 @@
   "BR084032026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:11:01.915598+00:00"
+    "ts": "2026-08-08T12:42:51.855983+00:00"
   },
   "BR084252026": {
     "file": "questionarios/BR-08425-2026.txt",
@@ -3639,7 +3669,7 @@
   "BR084282026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:19:24.807744+00:00"
+    "ts": "2026-08-08T12:51:36.456734+00:00"
   },
   "BR084532026": {
     "file": "questionarios/BR-08453-2026.txt",
@@ -3668,7 +3698,7 @@
   "BR085212026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:00:25.940182+00:00"
+    "ts": "2026-08-08T12:33:09.563648+00:00"
   },
   "BR085332026": {
     "file": "questionarios/BR-08533-2026.txt",
@@ -3677,6 +3707,11 @@
     "status": "ok",
     "ts": "2026-06-13T16:07:36.852469+00:00",
     "txt_bytes": 2890
+  },
+  "BR085412026": {
+    "msg": "página detalhar não carregou o protocolo esperado",
+    "status": "erro",
+    "ts": "2026-08-08T12:53:47.768182+00:00"
   },
   "BR085432026": {
     "file": "questionarios/BR-08543-2026.txt",
@@ -3694,7 +3729,7 @@
   "BR086022026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:13:17.969396+00:00"
+    "ts": "2026-08-08T12:44:42.761582+00:00"
   },
   "BR086112026": {
     "file": "questionarios/BR-08611-2026.txt",
@@ -3707,7 +3742,7 @@
   "BR086942026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:04:29.359858+00:00"
+    "ts": "2026-08-08T12:37:06.537054+00:00"
   },
   "BR087032026": {
     "file": "questionarios/BR-08703-2026.txt",
@@ -3720,7 +3755,7 @@
   "BR087072026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:13:25.746931+00:00"
+    "ts": "2026-08-08T12:44:57.770893+00:00"
   },
   "BR087132026": {
     "file": "questionarios/BR-08713-2026.txt",
@@ -3733,7 +3768,7 @@
   "BR087302026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:17:52.931032+00:00"
+    "ts": "2026-08-08T12:49:30.053695+00:00"
   },
   "BR087612026": {
     "file": "questionarios/BR-08761-2026.txt",
@@ -3746,7 +3781,7 @@
   "BR087742026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:12:35.659796+00:00"
+    "ts": "2026-08-08T12:43:41.791613+00:00"
   },
   "BR087942026": {
     "file": "questionarios/BR-08794-2026.txt",
@@ -3775,7 +3810,7 @@
   "BR088212026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:03:50.248075+00:00"
+    "ts": "2026-08-08T12:36:12.727969+00:00"
   },
   "BR088312026": {
     "file": "questionarios/BR-08831-2026.txt",
@@ -3836,7 +3871,7 @@
   "BR089512026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:20:38.198405+00:00"
+    "ts": "2026-08-08T12:52:39.361077+00:00"
   },
   "BR089712026": {
     "file": "questionarios/BR-08971-2026.txt",
@@ -3897,7 +3932,7 @@
   "BR090712026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:14:18.627636+00:00"
+    "ts": "2026-08-08T12:45:57.755768+00:00"
   },
   "BR091102026": {
     "file": "questionarios/BR-09110-2026.txt",
@@ -3934,12 +3969,12 @@
   "BR092282026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:19:10.405414+00:00"
+    "ts": "2026-08-08T12:50:44.156409+00:00"
   },
   "BR092472026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:08:56.738329+00:00"
+    "ts": "2026-08-08T12:41:04.319503+00:00"
   },
   "BR092732026": {
     "file": "questionarios/BR-09273-2026.txt",
@@ -3976,22 +4011,22 @@
   "BR093302026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:08:10.234246+00:00"
+    "ts": "2026-08-08T12:40:24.305890+00:00"
   },
   "BR093322026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:16:40.548025+00:00"
+    "ts": "2026-08-08T12:49:14.470253+00:00"
   },
   "BR093332026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:13:35.216589+00:00"
+    "ts": "2026-08-08T12:45:13.981604+00:00"
   },
   "BR093502026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:01:47.782958+00:00"
+    "ts": "2026-08-08T12:34:40.245994+00:00"
   },
   "BR093532026": {
     "file": "questionarios/BR-09353-2026.txt",
@@ -4028,7 +4063,7 @@
   "BR094412026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:19:31.373604+00:00"
+    "ts": "2026-08-08T12:51:43.763653+00:00"
   },
   "BR094462026": {
     "file": "questionarios/BR-09446-2026.txt",
@@ -4073,7 +4108,7 @@
   "BR095762026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:06:08.202727+00:00"
+    "ts": "2026-08-08T12:38:23.312950+00:00"
   },
   "BR095782026": {
     "file": "questionarios/BR-09578-2026.txt",
@@ -4094,7 +4129,7 @@
   "BR096502026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:17:45.994327+00:00"
+    "ts": "2026-08-08T12:49:36.751774+00:00"
   },
   "BR096572026": {
     "file": "questionarios/BR-09657-2026.txt",
@@ -4123,12 +4158,12 @@
   "BR097142026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:04:22.520480+00:00"
+    "ts": "2026-08-08T12:36:30.473839+00:00"
   },
   "BR098232026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:11:31.304407+00:00"
+    "ts": "2026-08-08T12:43:29.128356+00:00"
   },
   "BR098432026": {
     "file": "questionarios/BR-09843-2026.txt",
@@ -4141,7 +4176,7 @@
   "BR098852026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:17:22.671138+00:00"
+    "ts": "2026-08-08T12:48:18.868555+00:00"
   },
   "BR098982026": {
     "file": "questionarios/BR-09898-2026.txt",
@@ -4186,6 +4221,6 @@
   "BR099982026": {
     "msg": "página detalhar não carregou o protocolo esperado",
     "status": "erro",
-    "ts": "2026-08-08T00:13:43.146336+00:00"
+    "ts": "2026-08-08T12:46:11.443008+00:00"
   }
 }
