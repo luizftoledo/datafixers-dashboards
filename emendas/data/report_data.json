@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-07T14:17:09.478140+00:00",
-  "snapshot_date": "2026-08-07",
+  "generated_at": "2026-08-08T13:52:05.849395+00:00",
+  "snapshot_date": "2026-08-08",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -13,12 +13,12 @@
   "metrics": {
     "total_empenhado_atual": 340752418586.86,
     "total_empenhado_snapshot_anterior": 340688915464.17,
-    "delta_liquido_desde_snapshot_anterior": 63503122.69,
-    "delta_positivo_desde_snapshot_anterior": 65469590.34,
-    "delta_negativo_desde_snapshot_anterior": -1966467.65,
-    "autores_com_aumento": 72,
-    "destinos_com_aumento": 25,
-    "pares_autor_destino_com_aumento": 78,
+    "delta_liquido_desde_snapshot_anterior": 0.0,
+    "delta_positivo_desde_snapshot_anterior": 0.0,
+    "delta_negativo_desde_snapshot_anterior": 0.0,
+    "autores_com_aumento": 0,
+    "destinos_com_aumento": 0,
+    "pares_autor_destino_com_aumento": 0,
     "total_autores_mapeados": 1614,
     "total_destinos_mapeados": 5459,
     "total_linhas_csv": 94304,
@@ -27,8 +27,8 @@
     "current_year_total_empenhado": 39225461969.48,
     "current_year_total_liquidado": 25728683309.98,
     "current_year_total_pago": 34104377840.89,
-    "current_year_total_empenhado_por_ano_emenda": 38285025462.05,
-    "current_year_total_pago_por_ano_emenda": 25602547207.96,
+    "current_year_total_empenhado_por_ano_emenda": 39225461969.48,
+    "current_year_total_pago_por_ano_emenda": 34104377840.89,
     "_pago_e_empenhado_source": "por_data_documento"
   },
   "top_authors_today": [
@@ -1021,7 +1021,7 @@
     "total_liquidado": 25728683309.98,
     "total_pago": 34104377840.89
   },
-  "run_date": "2026-08-07",
+  "run_date": "2026-08-08",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1105,7 +1105,7 @@
           "error": ""
         }
       ],
-      "error": "6 - Emendas Individuais: filtro não confirmado ; 7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
+      "error": "dotação inicial/atual zerada — provável quebra do scraper Qlik (DOM mudou)",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -1121,7 +1121,7 @@
         ]
       },
       "last_update": "",
-      "base_siafi_date": "4/8/2026",
+      "base_siafi_date": "6/8/2026",
       "rows": [],
       "rows_count": 0,
       "unique_nro_emendas": 0,
@@ -1156,8 +1156,7 @@
           "error": ""
         }
       ],
-      "error": "6 - Emendas Individuais: filtro não confirmado ; 7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
-      "fallback_from_previous": true
+      "error": ""
     },
     "documents": {
       "year": 2026,
@@ -2801,7 +2800,7 @@
         },
         {
           "author": "MIGUEL LOMBARDI",
-          "party": "PL",
+          "party": "Nao identificado",
           "empenhado": 3400000.0
         },
         {
@@ -2811,37 +2810,37 @@
         },
         {
           "author": "LUIZ PHILIPPE DE ORLEANS E BRAGANCA",
-          "party": "PL",
+          "party": "Nao identificado",
           "empenhado": 2600000.0
         },
         {
           "author": "LUIZ LIMA",
-          "party": "NOVO",
+          "party": "Nao identificado",
           "empenhado": 1803333.0
         },
         {
           "author": "DELEGADO PAULO BILYNSKYJ",
-          "party": "PL",
+          "party": "Nao identificado",
           "empenhado": 1800000.0
         },
         {
           "author": "LUIZA ERUNDINA",
-          "party": "PSOL",
+          "party": "Nao identificado",
           "empenhado": 1637188.0
         },
         {
           "author": "DELEGADO EDER MAURO",
-          "party": "PL",
+          "party": "Nao identificado",
           "empenhado": 1520000.0
         },
         {
           "author": "DELEGADO CAVEIRA",
-          "party": "PL",
+          "party": "Nao identificado",
           "empenhado": 1489855.42
         },
         {
           "author": "CORONEL ULYSSES",
-          "party": "UNIÃO",
+          "party": "Nao identificado",
           "empenhado": 1440000.0
         },
         {
@@ -2856,7 +2855,7 @@
         },
         {
           "author": "ADRIANA VENTURA",
-          "party": "NOVO",
+          "party": "Nao identificado",
           "empenhado": 1011185.8
         },
         {
@@ -3456,7 +3455,7 @@
       }
     },
     "party_lookup": {
-      "camara_mapeados": 512,
+      "camara_mapeados": 0,
       "senado_mapeados": 81
     }
   },
@@ -4554,6 +4553,17 @@
       "previous_snapshot_date": "2026-08-05",
       "interval_days": 2,
       "source_changed": true
+    },
+    {
+      "date": "2026-08-08",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 340752418586.86,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-08-07",
+      "interval_days": 1,
+      "source_changed": false
     }
   ],
   "siop_daily_history": [
@@ -5906,6 +5916,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-08-08",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
-  ]
+  ],
+  "updated_at": "2026-08-08T13:52:05.849395+00:00"
 }
