@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-12T14:23:21.072550+00:00",
-  "snapshot_date": "2026-08-12",
+  "generated_at": "2026-08-13T14:24:50.600909+00:00",
+  "snapshot_date": "2026-08-13",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -1021,7 +1021,7 @@
     "total_liquidado": 25728683309.98,
     "total_pago": 34104377840.89
   },
-  "run_date": "2026-08-12",
+  "run_date": "2026-08-13",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1030,21 +1030,21 @@
       "stages": [
         {
           "stage": "Empenhado",
-          "value": 38650954378.21
+          "value": 38749731048.6
         },
         {
           "stage": "Liquidado",
-          "value": 25785395188.37
+          "value": 25791318233.28
         },
         {
           "stage": "Pago",
-          "value": 25642593826.09
+          "value": 25648173825.32
         }
       ],
       "stage_values": {
-        "empenhado": 38650954378.21,
-        "liquidado": 25785395188.37,
-        "pago": 25642593826.09
+        "empenhado": 38749731048.6,
+        "liquidado": 25791318233.28,
+        "pago": 25648173825.32
       }
     },
     "siop_snapshot": {
@@ -1105,7 +1105,7 @@
           "error": ""
         }
       ],
-      "error": "HTTPConnectionPool(host='localhost', port=49795): Read timed out. (read timeout=120)",
+      "error": "HTTPConnectionPool(host='localhost', port=58003): Read timed out. (read timeout=120)",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -1156,7 +1156,7 @@
           "error": ""
         }
       ],
-      "error": "HTTPConnectionPool(host='localhost', port=57565): Read timed out. (read timeout=120)",
+      "error": "HTTPConnectionPool(host='localhost', port=48813): Read timed out. (read timeout=120)",
       "fallback_from_previous": true
     },
     "documents": {
@@ -4609,6 +4609,17 @@
       "previous_snapshot_date": "2026-08-11",
       "interval_days": 1,
       "source_changed": false
+    },
+    {
+      "date": "2026-08-13",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 340752418586.86,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-08-12",
+      "interval_days": 1,
+      "source_changed": false
     }
   ],
   "siop_daily_history": [
@@ -6011,7 +6022,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-08-13",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-08-12T14:23:21.072550+00:00"
+  "updated_at": "2026-08-13T14:24:50.600909+00:00"
 }
