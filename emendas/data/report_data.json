@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-13T14:24:50.600909+00:00",
-  "snapshot_date": "2026-08-13",
+  "generated_at": "2026-08-14T14:18:25.239221+00:00",
+  "snapshot_date": "2026-08-14",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -1021,7 +1021,7 @@
     "total_liquidado": 25728683309.98,
     "total_pago": 34104377840.89
   },
-  "run_date": "2026-08-13",
+  "run_date": "2026-08-14",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1030,21 +1030,21 @@
       "stages": [
         {
           "stage": "Empenhado",
-          "value": 38749731048.6
+          "value": 38843992763.69
         },
         {
           "stage": "Liquidado",
-          "value": 25791318233.28
+          "value": 25797813621.22
         },
         {
           "stage": "Pago",
-          "value": 25648173825.32
+          "value": 25660779136.1
         }
       ],
       "stage_values": {
-        "empenhado": 38749731048.6,
-        "liquidado": 25791318233.28,
-        "pago": 25648173825.32
+        "empenhado": 38843992763.69,
+        "liquidado": 25797813621.22,
+        "pago": 25660779136.1
       }
     },
     "siop_snapshot": {
@@ -1105,7 +1105,7 @@
           "error": ""
         }
       ],
-      "error": "HTTPConnectionPool(host='localhost', port=58003): Read timed out. (read timeout=120)",
+      "error": "6 - Emendas Individuais: filtro não confirmado ; 7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -1156,7 +1156,7 @@
           "error": ""
         }
       ],
-      "error": "HTTPConnectionPool(host='localhost', port=48813): Read timed out. (read timeout=120)",
+      "error": "6 - Emendas Individuais: filtro não confirmado ; 7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
       "fallback_from_previous": true
     },
     "documents": {
@@ -2851,7 +2851,7 @@
         },
         {
           "author": "STYVENSON VALENTIM",
-          "party": "Nao identificado",
+          "party": "PODEMOS",
           "empenhado": 1150000.0
         },
         {
@@ -2871,7 +2871,7 @@
         },
         {
           "author": "HUMBERTO COSTA",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 960000.0
         }
       ],
@@ -3457,7 +3457,7 @@
     },
     "party_lookup": {
       "camara_mapeados": 513,
-      "senado_mapeados": 0
+      "senado_mapeados": 81
     }
   },
   "daily_history": [
@@ -4618,6 +4618,17 @@
       "autores_com_aumento": 0,
       "destinos_com_aumento": 0,
       "previous_snapshot_date": "2026-08-12",
+      "interval_days": 1,
+      "source_changed": false
+    },
+    {
+      "date": "2026-08-14",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 340752418586.86,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-08-13",
       "interval_days": 1,
       "source_changed": false
     }
@@ -6032,7 +6043,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-08-14",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-08-13T14:24:50.600909+00:00"
+  "updated_at": "2026-08-14T14:18:25.239221+00:00"
 }
