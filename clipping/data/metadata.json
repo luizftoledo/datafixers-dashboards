@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-14T14:40:40.300498+00:00",
+  "generated_at": "2026-08-15T14:00:07.731066+00:00",
   "counts": {
-    "items": 84,
+    "items": 85,
     "domains": 24,
     "categories": {
       "reportagem_autoral": 59,
       "republicacao": 0,
       "eco_repercussao": 1,
-      "citacao_fonte": 2,
+      "citacao_fonte": 3,
       "mencao": 4,
       "entrevista": 1,
       "palestra_curso": 0,
@@ -43,16 +43,16 @@
       }
     },
     "enrich": {
-      "fetched": 58,
+      "fetched": 59,
       "reused": 30,
-      "kept": 84,
+      "kept": 85,
       "dropped": 4,
       "categories": {
         "perfil_bio": 17,
         "reportagem_autoral": 59,
         "mencao": 4,
         "entrevista": 1,
-        "citacao_fonte": 2,
+        "citacao_fonte": 3,
         "eco_repercussao": 1
       },
       "domains": {
@@ -75,7 +75,7 @@
         "talks.ox.ac.uk": 1,
         "cima.ned.org": 1,
         "scielo.br": 1,
-        "abraji.org.br": 1,
+        "abraji.org.br": 2,
         "sbtnews.sbt.com.br": 1,
         "fiquemsabendo.com.br": 1,
         "piaui.uol.com.br": 2,
