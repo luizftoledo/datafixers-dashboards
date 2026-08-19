@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-18T14:17:39.857082+00:00",
+  "generated_at": "2026-08-19T14:18:42.387709+00:00",
   "counts": {
-    "items": 87,
-    "domains": 25,
+    "items": 86,
+    "domains": 24,
     "categories": {
       "reportagem_autoral": 59,
       "republicacao": 0,
       "eco_repercussao": 1,
-      "citacao_fonte": 4,
+      "citacao_fonte": 3,
       "mencao": 5,
       "entrevista": 1,
       "palestra_curso": 0,
@@ -43,25 +43,25 @@
       }
     },
     "enrich": {
-      "fetched": 60,
-      "reused": 30,
-      "kept": 87,
+      "fetched": 58,
+      "reused": 31,
+      "kept": 86,
       "dropped": 3,
       "categories": {
         "perfil_bio": 17,
         "reportagem_autoral": 59,
         "mencao": 5,
         "entrevista": 1,
-        "citacao_fonte": 4,
+        "citacao_fonte": 3,
         "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 52,
+        "bbc.com": 53,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
         "ojoioeotrigo.com.br": 2,
-        "estadao.com.br": 5,
+        "estadao.com.br": 4,
         "g1.globo.com": 2,
         "escavador.com": 1,
         "icfj.org": 1,
@@ -79,7 +79,6 @@
         "sbtnews.sbt.com.br": 1,
         "fiquemsabendo.com.br": 1,
         "piaui.uol.com.br": 1,
-        "observatoriodatv.com.br": 1,
         "cnnbrasil.com.br": 3
       },
       "errors": [
