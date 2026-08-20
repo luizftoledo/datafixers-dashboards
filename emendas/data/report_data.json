@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-19T13:52:26.528444+00:00",
-  "snapshot_date": "2026-08-19",
+  "generated_at": "2026-08-20T13:54:08.559381+00:00",
+  "snapshot_date": "2026-08-20",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -1021,7 +1021,7 @@
     "total_liquidado": 25728683309.98,
     "total_pago": 34104377840.89
   },
-  "run_date": "2026-08-19",
+  "run_date": "2026-08-20",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1105,7 +1105,7 @@
           "error": ""
         }
       ],
-      "error": "dotação inicial/atual zerada — provável quebra do scraper Qlik (DOM mudou)",
+      "error": "7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -1156,7 +1156,8 @@
           "error": ""
         }
       ],
-      "error": ""
+      "error": "6 - Emendas Individuais: filtro não confirmado ; 7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
+      "fallback_from_previous": true
     },
     "documents": {
       "year": 2026,
@@ -2800,7 +2801,7 @@
         },
         {
           "author": "MIGUEL LOMBARDI",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 3400000.0
         },
         {
@@ -2810,37 +2811,37 @@
         },
         {
           "author": "LUIZ PHILIPPE DE ORLEANS E BRAGANCA",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 2600000.0
         },
         {
           "author": "LUIZ LIMA",
-          "party": "Nao identificado",
+          "party": "NOVO",
           "empenhado": 1803333.0
         },
         {
           "author": "DELEGADO PAULO BILYNSKYJ",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 1800000.0
         },
         {
           "author": "LUIZA ERUNDINA",
-          "party": "Nao identificado",
+          "party": "PSOL",
           "empenhado": 1637188.0
         },
         {
           "author": "DELEGADO EDER MAURO",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 1520000.0
         },
         {
           "author": "DELEGADO CAVEIRA",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 1489855.42
         },
         {
           "author": "CORONEL ULYSSES",
-          "party": "Nao identificado",
+          "party": "UNIÃO",
           "empenhado": 1440000.0
         },
         {
@@ -2855,7 +2856,7 @@
         },
         {
           "author": "ADRIANA VENTURA",
-          "party": "Nao identificado",
+          "party": "NOVO",
           "empenhado": 1011185.8
         },
         {
@@ -3455,7 +3456,7 @@
       }
     },
     "party_lookup": {
-      "camara_mapeados": 0,
+      "camara_mapeados": 513,
       "senado_mapeados": 81
     }
   },
@@ -4683,6 +4684,17 @@
       "autores_com_aumento": 0,
       "destinos_com_aumento": 0,
       "previous_snapshot_date": "2026-08-18",
+      "interval_days": 1,
+      "source_changed": false
+    },
+    {
+      "date": "2026-08-20",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 340752418586.86,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-08-19",
       "interval_days": 1,
       "source_changed": false
     }
@@ -6157,7 +6169,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-08-20",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-08-19T13:52:26.528444+00:00"
+  "updated_at": "2026-08-20T13:54:08.559381+00:00"
 }
