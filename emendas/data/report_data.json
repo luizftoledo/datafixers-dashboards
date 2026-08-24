@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-23T13:40:06.727870+00:00",
-  "snapshot_date": "2026-08-23",
+  "generated_at": "2026-08-24T13:57:28.824471+00:00",
+  "snapshot_date": "2026-08-24",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -913,7 +913,7 @@
     "total_liquidado": 25904180725.4,
     "total_pago": 34610961429.55
   },
-  "run_date": "2026-08-23",
+  "run_date": "2026-08-24",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1013,7 +1013,7 @@
         ]
       },
       "last_update": "",
-      "base_siafi_date": "20/8/2026",
+      "base_siafi_date": "21/8/2026",
       "rows": [],
       "rows_count": 0,
       "unique_nro_emendas": 0,
@@ -2819,7 +2819,7 @@
         },
         {
           "author": "FERNANDA MELCHIONNA",
-          "party": "Nao identificado",
+          "party": "PSOL",
           "empenhado": 2500000.0
         },
         {
@@ -2844,7 +2844,7 @@
         },
         {
           "author": "PEDRO CAMPOS",
-          "party": "Nao identificado",
+          "party": "PSB",
           "empenhado": 981000.0
         },
         {
@@ -2869,7 +2869,7 @@
         },
         {
           "author": "ALICE PORTUGAL",
-          "party": "Nao identificado",
+          "party": "PCdoB",
           "empenhado": 450000.0
         },
         {
@@ -2894,12 +2894,12 @@
         },
         {
           "author": "ARTHUR OLIVEIRA MAIA",
-          "party": "Nao identificado",
+          "party": "UNIÃO",
           "empenhado": 305000.0
         },
         {
           "author": "DAMIAO FELICIANO",
-          "party": "Nao identificado",
+          "party": "UNIÃO",
           "empenhado": 300000.0
         },
         {
@@ -2909,7 +2909,7 @@
         },
         {
           "author": "LUIZA ERUNDINA",
-          "party": "Nao identificado",
+          "party": "PSOL",
           "empenhado": 300000.0
         }
       ],
@@ -3494,7 +3494,7 @@
       }
     },
     "party_lookup": {
-      "camara_mapeados": 0,
+      "camara_mapeados": 513,
       "senado_mapeados": 81
     }
   },
@@ -4766,6 +4766,17 @@
       "autores_com_aumento": 0,
       "destinos_com_aumento": 0,
       "previous_snapshot_date": "2026-08-22",
+      "interval_days": 1,
+      "source_changed": false
+    },
+    {
+      "date": "2026-08-24",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 308646108180.92,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-08-23",
       "interval_days": 1,
       "source_changed": false
     }
@@ -6280,7 +6291,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-08-24",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-08-23T13:40:06.727870+00:00"
+  "updated_at": "2026-08-24T13:57:28.824471+00:00"
 }
