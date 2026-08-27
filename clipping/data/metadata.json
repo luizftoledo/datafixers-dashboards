@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-26T14:27:33.147087+00:00",
+  "generated_at": "2026-08-27T23:05:05.471459+00:00",
   "counts": {
-    "items": 78,
-    "domains": 24,
+    "items": 88,
+    "domains": 25,
     "categories": {
-      "reportagem_autoral": 51,
+      "reportagem_autoral": 60,
       "republicacao": 0,
       "eco_repercussao": 1,
-      "citacao_fonte": 3,
+      "citacao_fonte": 4,
       "mencao": 5,
       "entrevista": 1,
       "palestra_curso": 0,
@@ -15,13 +15,13 @@
     },
     "recent": {
       "last_1_day": 1,
-      "last_7_days": 1,
-      "last_30_days": 2
+      "last_7_days": 2,
+      "last_30_days": 3
     }
   },
   "date_range": {
     "min": "2019-09-16",
-    "max": "2026-08-25"
+    "max": "2026-08-27"
   },
   "methodology": {
     "names": [
@@ -36,27 +36,27 @@
         "known_external_sources": 50
       },
       "searches": {
-        "google-news-rss:\"Luiz Fernando Toledo\"": 27,
+        "google-news-rss:\"Luiz Fernando Toledo\"": 40,
         "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 2,
         "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 2,
-        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 14
+        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 15
       }
     },
     "enrich": {
-      "fetched": 52,
+      "fetched": 62,
       "reused": 32,
-      "kept": 78,
+      "kept": 88,
       "dropped": 6,
       "categories": {
         "perfil_bio": 17,
-        "reportagem_autoral": 51,
+        "reportagem_autoral": 60,
         "mencao": 5,
         "entrevista": 1,
-        "citacao_fonte": 3,
+        "citacao_fonte": 4,
         "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 43,
+        "bbc.com": 51,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
@@ -75,10 +75,11 @@
         "talks.ox.ac.uk": 1,
         "cima.ned.org": 1,
         "scielo.br": 1,
-        "abraji.org.br": 2,
+        "abraji.org.br": 3,
         "sbtnews.sbt.com.br": 1,
-        "piaui.uol.com.br": 2,
         "fiquemsabendo.com.br": 1,
+        "piaui.uol.com.br": 2,
+        "mundonegro.inf.br": 1,
         "cnnbrasil.com.br": 3
       },
       "errors": [
