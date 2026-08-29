@@ -1,650 +1,650 @@
 {
-  "generated_at": "2026-08-28T22:59:45.387244+00:00",
-  "snapshot_date": "2026-08-28",
+  "generated_at": "2026-08-29T17:05:20.841809+00:00",
+  "snapshot_date": "2026-08-29",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
     "download_url": "https://dadosabertos-download.cgu.gov.br/PortalDaTransparencia/saida/emendas-parlamentares/EmendasParlamentares.zip",
     "senado_reference_url": "https://www9.senado.gov.br/QvAJAXZfc/opendoc.htm?document=senado%2Fsigabrasilpainelcidadao.qvw&host=QVS%40www9&anonymous=true&Sheet=shOrcamentoVisaoGeral",
-    "etag": "\"332e2f45dbb5ab91af7a71bdff7a0e7a-4\"",
-    "last_modified": "Thu, 27 Aug 2026 06:41:55 GMT",
-    "zip_bytes": 32327006
+    "etag": "\"46a74a7aaca8fd4178fe6a3d1834f3fa-4\"",
+    "last_modified": "Sat, 29 Aug 2026 04:39:07 GMT",
+    "zip_bytes": 32328954
   },
   "metrics": {
-    "total_empenhado_atual": 345688307082.45,
-    "total_empenhado_snapshot_anterior": 312522177875.41,
-    "delta_liquido_desde_snapshot_anterior": 0.0,
-    "delta_positivo_desde_snapshot_anterior": 0.0,
-    "delta_negativo_desde_snapshot_anterior": 0.0,
-    "autores_com_aumento": 0,
-    "destinos_com_aumento": 0,
-    "pares_autor_destino_com_aumento": 0,
+    "total_empenhado_atual": 345743501313.71,
+    "total_empenhado_snapshot_anterior": 345688307082.45,
+    "delta_liquido_desde_snapshot_anterior": 55194231.26,
+    "delta_positivo_desde_snapshot_anterior": 55252863.76,
+    "delta_negativo_desde_snapshot_anterior": -58632.5,
+    "autores_com_aumento": 85,
+    "destinos_com_aumento": 25,
+    "pares_autor_destino_com_aumento": 88,
     "total_autores_mapeados": 1614,
     "total_destinos_mapeados": 5459,
-    "total_linhas_csv": 94448,
+    "total_linhas_csv": 94463,
     "baseline_initialized": false,
     "current_year": 2026,
-    "current_year_total_empenhado": 40668752357.09,
-    "current_year_total_liquidado": 25920861779.7,
-    "current_year_total_pago": 34674617597.97,
-    "current_year_total_empenhado_por_ano_emenda": 40668752357.09,
-    "current_year_total_pago_por_ano_emenda": 34674617597.97,
+    "current_year_total_empenhado": 40733025546.96,
+    "current_year_total_liquidado": 25927492804.19,
+    "current_year_total_pago": 34701804443.2,
+    "current_year_total_empenhado_por_ano_emenda": 39442130185.24,
+    "current_year_total_pago_por_ano_emenda": 25691411536.27,
     "_pago_e_empenhado_source": "por_data_documento"
   },
   "top_authors_today": [
     {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "delta_empenhado": 33074226159.7,
-      "share_in_day": 0.997172799015012,
-      "current_empenhado": 33074226159.7
-    },
-    {
-      "author": "COM. DESENV. URBANO",
+      "author": "COM. DE INTEGRACAO NACIONAL E DES. REGIONAL",
       "party": "Comissao",
-      "delta_empenhado": 45637541.99,
-      "share_in_day": 0.0013759510280480656,
-      "current_empenhado": 1884621304.75
+      "delta_empenhado": 6850956.8,
+      "share_in_day": 0.12399279121093651,
+      "current_empenhado": 2499978440.44
     },
     {
       "author": "COM. DESENV REGIONAL E TURISMO",
       "party": "Comissao",
-      "delta_empenhado": 13910881.31,
-      "share_in_day": 0.00041940671221388714,
-      "current_empenhado": 9646921395.18
+      "delta_empenhado": 6825136.01,
+      "share_in_day": 0.12352547081805774,
+      "current_empenhado": 9653746531.19
     },
     {
-      "author": "COM. DE INTEGRACAO NACIONAL E DES. REGIONAL",
+      "author": "DANIELLA RIBEIRO",
+      "party": "PP",
+      "delta_empenhado": 6254770.6,
+      "share_in_day": 0.11320265004124738,
+      "current_empenhado": 305920478.07
+    },
+    {
+      "author": "COM. DA SAUDE",
       "party": "Comissao",
-      "delta_empenhado": 7588977.53,
-      "share_in_day": 0.00022880420327030785,
-      "current_empenhado": 2493127483.64
+      "delta_empenhado": 5899068.0,
+      "share_in_day": 0.1067649276175726,
+      "current_empenhado": 13439019225.56
     },
     {
-      "author": "ADOLFO VIANA",
-      "party": "Nao identificado",
-      "delta_empenhado": 2965412.07,
-      "share_in_day": 8.940581828873914e-05,
-      "current_empenhado": 211299958.29
+      "author": "COM. TURISMO",
+      "party": "Comissao",
+      "delta_empenhado": 4550469.0,
+      "share_in_day": 0.08235716106527471,
+      "current_empenhado": 1842360001.86
     },
     {
-      "author": "CLAUDIO CAJADO",
-      "party": "Nao identificado",
-      "delta_empenhado": 2865373.55,
-      "share_in_day": 8.63897026427964e-05,
-      "current_empenhado": 266375096.22
-    },
-    {
-      "author": "BANCADA DA BAHIA",
-      "party": "Bancada",
-      "delta_empenhado": 1661470.62,
-      "share_in_day": 5.0092579660876184e-05,
-      "current_empenhado": 2261142433.25
-    },
-    {
-      "author": "LUIZ COUTO",
-      "party": "Nao identificado",
-      "delta_empenhado": 1200000.0,
-      "share_in_day": 3.6179451426623134e-05,
-      "current_empenhado": 158990602.36
+      "author": "TERESA LEITAO",
+      "party": "PT",
+      "delta_empenhado": 2896802.27,
+      "share_in_day": 0.05242809282397999,
+      "current_empenhado": 197276674.18
     },
     {
       "author": "COM. CULTURA",
       "party": "Comissao",
-      "delta_empenhado": 1191871.0,
-      "share_in_day": 3.593436579275062e-05,
-      "current_empenhado": 84052590.17
+      "delta_empenhado": 1946666.0,
+      "share_in_day": 0.03523194758656614,
+      "current_empenhado": 85999256.17
+    },
+    {
+      "author": "BANCADA DA BAHIA",
+      "party": "Bancada",
+      "delta_empenhado": 1829923.48,
+      "share_in_day": 0.03311907031549671,
+      "current_empenhado": 2262972356.73
     },
     {
       "author": "TALIRIA PETRONE",
-      "party": "Nao identificado",
-      "delta_empenhado": 1100000.0,
-      "share_in_day": 3.3164497141071205e-05,
-      "current_empenhado": 182855326.05
+      "party": "PSOL",
+      "delta_empenhado": 1500000.0,
+      "share_in_day": 0.027147914115646554,
+      "current_empenhado": 184355326.05
     },
     {
-      "author": "CHICO ALENCAR",
-      "party": "Nao identificado",
-      "delta_empenhado": 1077586.9,
-      "share_in_day": 3.248875242209617e-05,
-      "current_empenhado": 141091945.74
+      "author": "ASTRONAUTA MARCOS PONTES",
+      "party": "PL",
+      "delta_empenhado": 1500000.0,
+      "share_in_day": 0.027147914115646554,
+      "current_empenhado": 186517367.47
     },
     {
-      "author": "ARTHUR OLIVEIRA MAIA",
+      "author": "LEO PRATES",
       "party": "Nao identificado",
-      "delta_empenhado": 955000.0,
-      "share_in_day": 2.8792813427020912e-05,
-      "current_empenhado": 252504292.08
+      "delta_empenhado": 1500000.0,
+      "share_in_day": 0.027147914115646554,
+      "current_empenhado": 114816561.7
     },
     {
-      "author": "VANDERLAN CARDOSO",
+      "author": "KIM KATAGUIRI",
+      "party": "MISSÃO",
+      "delta_empenhado": 1237000.0,
+      "share_in_day": 0.022387979840703193,
+      "current_empenhado": 192489445.98
+    },
+    {
+      "author": "MENDONCA FILHO",
+      "party": "PL",
+      "delta_empenhado": 1000000.0,
+      "share_in_day": 0.018098609410431038,
+      "current_empenhado": 152879820.1
+    },
+    {
+      "author": "CELSO RUSSOMANNO",
+      "party": "REPUBLICANOS",
+      "delta_empenhado": 1000000.0,
+      "share_in_day": 0.018098609410431038,
+      "current_empenhado": 237300760.63
+    },
+    {
+      "author": "LUIZ PHILIPPE DE ORLEANS E BRAGANCA",
+      "party": "PL",
+      "delta_empenhado": 800000.0,
+      "share_in_day": 0.014478887528344829,
+      "current_empenhado": 174290714.4
+    },
+    {
+      "author": "ALEXANDRE LEITE",
+      "party": "UNIÃO",
+      "delta_empenhado": 793783.04,
+      "share_in_day": 0.014366369197584557,
+      "current_empenhado": 244224022.99
+    },
+    {
+      "author": "PATRUS ANANIAS",
+      "party": "PT",
+      "delta_empenhado": 600000.0,
+      "share_in_day": 0.010859165646258622,
+      "current_empenhado": 222380734.78
+    },
+    {
+      "author": "BANCADA DE RONDONIA",
+      "party": "Bancada",
+      "delta_empenhado": 578724.18,
+      "share_in_day": 0.010474102890191985,
+      "current_empenhado": 2347243058.43
+    },
+    {
+      "author": "BANCADA DO RIO GRANDE DO SUL",
+      "party": "Bancada",
+      "delta_empenhado": 568000.0,
+      "share_in_day": 0.01028001014512483,
+      "current_empenhado": 2417199758.96
+    },
+    {
+      "author": "NELSINHO TRAD",
       "party": "PSD",
-      "delta_empenhado": 824004.0,
-      "share_in_day": 2.484334391111931e-05,
-      "current_empenhado": 298560369.55
-    },
-    {
-      "author": "PASTOR HENRIQUE VIEIRA",
-      "party": "Nao identificado",
-      "delta_empenhado": 750000.0,
-      "share_in_day": 2.261215714163946e-05,
-      "current_empenhado": 96383228.05
-    },
-    {
-      "author": "TADEU VENERI",
-      "party": "Nao identificado",
-      "delta_empenhado": 750000.0,
-      "share_in_day": 2.261215714163946e-05,
-      "current_empenhado": 99381878.5
-    },
-    {
-      "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-      "party": "Comissao",
-      "delta_empenhado": 733550.0,
-      "share_in_day": 2.2116197161666167e-05,
-      "current_empenhado": 1037172997.36
-    },
-    {
-      "author": "FELIPE CARRERAS",
-      "party": "Nao identificado",
-      "delta_empenhado": 711492.52,
-      "share_in_day": 2.145117422312141e-05,
-      "current_empenhado": 218556626.22
-    },
-    {
-      "author": "DANIEL ALMEIDA",
-      "party": "Nao identificado",
-      "delta_empenhado": 564141.04,
-      "share_in_day": 1.7008594462037217e-05,
-      "current_empenhado": 259311502.16
-    },
-    {
-      "author": "MARCON",
-      "party": "Nao identificado",
       "delta_empenhado": 500000.0,
-      "share_in_day": 1.507477142775964e-05,
-      "current_empenhado": 259276926.35
-    },
-    {
-      "author": "VINICIUS CARVALHO",
-      "party": "Nao identificado",
-      "delta_empenhado": 500000.0,
-      "share_in_day": 1.507477142775964e-05,
-      "current_empenhado": 260025215.61
+      "share_in_day": 0.009049304705215519,
+      "current_empenhado": 288005583.69
     }
   ],
   "top_destinations_today": [
     {
-      "destination": "Nordeste",
-      "delta_empenhado": 5037462293.99,
-      "share_in_day": 0.15188574652602885,
-      "current_empenhado": 5161242763.89
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 33645237.74,
+      "share_in_day": 0.5967365787069236,
+      "current_empenhado": 226681160055.1
+    },
+    {
+      "destination": "PARAÍBA (UF)",
+      "delta_empenhado": 6378401.19,
+      "share_in_day": 0.11312820355600109,
+      "current_empenhado": 1126058094.5
     },
     {
       "destination": "Nacional",
-      "delta_empenhado": 4707517594.98,
-      "share_in_day": 0.1419375039394335,
-      "current_empenhado": 15757255960.98
+      "delta_empenhado": 4167928.39,
+      "share_in_day": 0.07392295298859304,
+      "current_empenhado": 15761423889.37
     },
     {
-      "destination": "Sudeste",
-      "delta_empenhado": 2249389773.0,
-      "share_in_day": 0.0678218962170157,
-      "current_empenhado": 2273432382.47
-    },
-    {
-      "destination": "Norte",
-      "delta_empenhado": 1368670760.65,
-      "share_in_day": 0.041267123820993845,
-      "current_empenhado": 1485238128.81
-    },
-    {
-      "destination": "MINAS GERAIS (UF)",
-      "delta_empenhado": 1128027127.86,
-      "share_in_day": 0.03401141932536884,
-      "current_empenhado": 3565411234.19
+      "destination": "PERNAMBUCO (UF)",
+      "delta_empenhado": 3941499.79,
+      "share_in_day": 0.06990698409785283,
+      "current_empenhado": 2064953154.01
     },
     {
       "destination": "SÃO PAULO (UF)",
-      "delta_empenhado": 976548992.48,
-      "share_in_day": 0.029444165352666873,
-      "current_empenhado": 5632008018.2
+      "delta_empenhado": 1978051.43,
+      "share_in_day": 0.03508299308110455,
+      "current_empenhado": 5633986069.63
     },
     {
       "destination": "BAHIA (UF)",
-      "delta_empenhado": 717445421.28,
-      "share_in_day": 0.021631870780015886,
-      "current_empenhado": 4161424874.38
-    },
-    {
-      "destination": "SANTA CATARINA (UF)",
-      "delta_empenhado": 638956553.37,
-      "share_in_day": 0.01926533390077887,
-      "current_empenhado": 1754201353.58
-    },
-    {
-      "destination": "Sul",
-      "delta_empenhado": 610655529.0,
-      "share_in_day": 0.018412022855847143,
-      "current_empenhado": 646677714.12
-    },
-    {
-      "destination": "PARANÁ (UF)",
-      "delta_empenhado": 521868898.25,
-      "share_in_day": 0.015734995633413427,
-      "current_empenhado": 2772741848.52
-    },
-    {
-      "destination": "CEARÁ (UF)",
-      "delta_empenhado": 514043948.19,
-      "share_in_day": 0.015499063667667512,
-      "current_empenhado": 1270064504.17
-    },
-    {
-      "destination": "Centro-Oeste",
-      "delta_empenhado": 466061032.1,
-      "share_in_day": 0.0140523191353024,
-      "current_empenhado": 569901593.66
-    },
-    {
-      "destination": "RIO DE JANEIRO (UF)",
-      "delta_empenhado": 446261160.77,
-      "share_in_day": 0.013455328416053885,
-      "current_empenhado": 4106132454.26
-    },
-    {
-      "destination": "RORAIMA (UF)",
-      "delta_empenhado": 396764477.18,
-      "share_in_day": 0.011962941912913397,
-      "current_empenhado": 1842167540.57
-    },
-    {
-      "destination": "GOIÁS (UF)",
-      "delta_empenhado": 354466661.68,
-      "share_in_day": 0.010687610226301573,
-      "current_empenhado": 1722524166.72
-    },
-    {
-      "destination": "RONDÔNIA (UF)",
-      "delta_empenhado": 354326658.82,
-      "share_in_day": 0.010683388966138048,
-      "current_empenhado": 1877899022.13
-    },
-    {
-      "destination": "PARÁ (UF)",
-      "delta_empenhado": 350723875.84,
-      "share_in_day": 0.01057476058332287,
-      "current_empenhado": 1717972061.13
+      "delta_empenhado": 1920705.66,
+      "share_in_day": 0.03406590059218954,
+      "current_empenhado": 4163345580.04
     },
     {
       "destination": "RIO GRANDE DO SUL (UF)",
-      "delta_empenhado": 335741413.86,
-      "share_in_day": 0.010123020740953212,
-      "current_empenhado": 2528229004.71
+      "delta_empenhado": 718369.05,
+      "share_in_day": 0.012741092586672356,
+      "current_empenhado": 2528947373.76
     },
     {
-      "destination": "MARANHÃO (UF)",
-      "delta_empenhado": 297365784.27,
-      "share_in_day": 0.008965947832310793,
-      "current_empenhado": 1260132526.28
+      "destination": "MATO GROSSO DO SUL (UF)",
+      "delta_empenhado": 680277.0,
+      "share_in_day": 0.012065486732179942,
+      "current_empenhado": 2374697154.14
+    },
+    {
+      "destination": "RONDÔNIA (UF)",
+      "delta_empenhado": 578724.18,
+      "share_in_day": 0.010264331905064726,
+      "current_empenhado": 1878477746.31
+    },
+    {
+      "destination": "RIO GRANDE DO NORTE (UF)",
+      "delta_empenhado": 463014.42,
+      "share_in_day": 0.008212087636827339,
+      "current_empenhado": 1515691998.42
+    },
+    {
+      "destination": "GOIÁS (UF)",
+      "delta_empenhado": 400000.0,
+      "share_in_day": 0.0070944551893889944,
+      "current_empenhado": 1722924166.72
+    },
+    {
+      "destination": "MINAS GERAIS (UF)",
+      "delta_empenhado": 275294.64,
+      "share_in_day": 0.004882663718397438,
+      "current_empenhado": 3565686528.83
+    },
+    {
+      "destination": "PIAUÍ (UF)",
+      "delta_empenhado": 257500.0,
+      "share_in_day": 0.004567055528169165,
+      "current_empenhado": 1123306931.92
+    },
+    {
+      "destination": "SÃO JOSÉ DO CALÇADO - ES",
+      "delta_empenhado": 200000.0,
+      "share_in_day": 0.0035472275946944972,
+      "current_empenhado": 1093750.0
+    },
+    {
+      "destination": "RIO DE JANEIRO (UF)",
+      "delta_empenhado": 145041.63,
+      "share_in_day": 0.002572478361577346,
+      "current_empenhado": 4106277495.89
     },
     {
       "destination": "DISTRITO FEDERAL (UF)",
-      "delta_empenhado": 290777882.65,
-      "share_in_day": 0.00876731441389543,
-      "current_empenhado": 4118124261.6
+      "delta_empenhado": 127390.0,
+      "share_in_day": 0.00225940661644066,
+      "current_empenhado": 4118251651.6
+    },
+    {
+      "destination": "AMAZONAS (UF)",
+      "delta_empenhado": 104000.0,
+      "share_in_day": 0.0018445583492411387,
+      "current_empenhado": 981474767.37
+    },
+    {
+      "destination": "MARANHÃO (UF)",
+      "delta_empenhado": 101011.21,
+      "share_in_day": 0.0017915487574274038,
+      "current_empenhado": 1260233537.49
+    },
+    {
+      "destination": "ESPÍRITO SANTO (UF)",
+      "delta_empenhado": 100000.0,
+      "share_in_day": 0.0017736137973472486,
+      "current_empenhado": 2320390292.93
+    },
+    {
+      "destination": "CEARÁ (UF)",
+      "delta_empenhado": 84401.35,
+      "share_in_day": 0.0014969539887473421,
+      "current_empenhado": 1270148905.52
     }
   ],
   "top_author_destination_today": [
     {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "Nordeste",
-      "delta_empenhado": 5037462293.99,
-      "current_empenhado": 5037462293.99
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "Nacional",
-      "delta_empenhado": 4701184023.64,
-      "current_empenhado": 4701184023.64
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "Sudeste",
-      "delta_empenhado": 2249389773.0,
-      "current_empenhado": 2249389773.0
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "Norte",
-      "delta_empenhado": 1368670760.65,
-      "current_empenhado": 1368670760.65
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "MINAS GERAIS (UF)",
-      "delta_empenhado": 1127257288.86,
-      "current_empenhado": 1127257288.86
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "SÃO PAULO (UF)",
-      "delta_empenhado": 975549708.17,
-      "current_empenhado": 975549708.17
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "BAHIA (UF)",
-      "delta_empenhado": 712765113.61,
-      "current_empenhado": 712765113.61
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "SANTA CATARINA (UF)",
-      "delta_empenhado": 638756553.37,
-      "current_empenhado": 638756553.37
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "Sul",
-      "delta_empenhado": 610655529.0,
-      "current_empenhado": 610655529.0
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "PARANÁ (UF)",
-      "delta_empenhado": 521006841.54,
-      "current_empenhado": 521006841.54
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "CEARÁ (UF)",
-      "delta_empenhado": 513843948.19,
-      "current_empenhado": 513843948.19
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "Centro-Oeste",
-      "delta_empenhado": 466061032.1,
-      "current_empenhado": 466061032.1
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "RIO DE JANEIRO (UF)",
-      "delta_empenhado": 446207814.96,
-      "current_empenhado": 446207814.96
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "RORAIMA (UF)",
-      "delta_empenhado": 396762986.27,
-      "current_empenhado": 396762986.27
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "GOIÁS (UF)",
-      "delta_empenhado": 354466661.68,
-      "current_empenhado": 354466661.68
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "RONDÔNIA (UF)",
-      "delta_empenhado": 354014822.33,
-      "current_empenhado": 354014822.33
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "PARÁ (UF)",
-      "delta_empenhado": 350723875.84,
-      "current_empenhado": 350723875.84
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "RIO GRANDE DO SUL (UF)",
-      "delta_empenhado": 335736087.31,
-      "current_empenhado": 335736087.31
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "MARANHÃO (UF)",
-      "delta_empenhado": 297036858.44,
-      "current_empenhado": 297036858.44
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "DISTRITO FEDERAL (UF)",
-      "delta_empenhado": 290769882.65,
-      "current_empenhado": 290769882.65
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "RIO GRANDE DO NORTE (UF)",
-      "delta_empenhado": 266405851.33,
-      "current_empenhado": 266405851.33
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "PARAÍBA (UF)",
-      "delta_empenhado": 266127326.56,
-      "current_empenhado": 266127326.56
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "AMAPÁ (UF)",
-      "delta_empenhado": 264675296.33,
-      "current_empenhado": 264675296.33
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "PERNAMBUCO (UF)",
-      "delta_empenhado": 255208330.47,
-      "current_empenhado": 255208330.47
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "PIAUÍ (UF)",
-      "delta_empenhado": 253651058.67,
-      "current_empenhado": 253651058.67
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "PORTO ALEGRE - RS",
-      "delta_empenhado": 241758457.99,
-      "current_empenhado": 241758457.99
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "AMAZONAS (UF)",
-      "delta_empenhado": 218564645.3,
-      "current_empenhado": 218564645.3
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "MATO GROSSO DO SUL (UF)",
-      "delta_empenhado": 204613264.1,
-      "current_empenhado": 204613264.1
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "ESPÍRITO SANTO (UF)",
-      "delta_empenhado": 203546518.21,
-      "current_empenhado": 203546518.21
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "SERGIPE (UF)",
-      "delta_empenhado": 196167352.65,
-      "current_empenhado": 196167352.65
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "MANAUS - AM",
-      "delta_empenhado": 191418579.79,
-      "current_empenhado": 191418579.79
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "MATO GROSSO (UF)",
-      "delta_empenhado": 190779466.77,
-      "current_empenhado": 190779466.77
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "ALAGOAS (UF)",
-      "delta_empenhado": 171097979.57,
-      "current_empenhado": 171097979.57
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "ACRE (UF)",
-      "delta_empenhado": 147987547.62,
-      "current_empenhado": 147987547.62
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "TOCANTINS (UF)",
-      "delta_empenhado": 112699877.88,
-      "current_empenhado": 112699877.88
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "BOA VISTA - RR",
-      "delta_empenhado": 105867482.96,
-      "current_empenhado": 105867482.96
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "SERRA - ES",
-      "delta_empenhado": 101348500.0,
-      "current_empenhado": 101348500.0
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "RIO DE JANEIRO - RJ",
-      "delta_empenhado": 77558817.96,
-      "current_empenhado": 77558817.96
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "LAVRAS DA MANGABEIRA - CE",
-      "delta_empenhado": 66400000.0,
-      "current_empenhado": 66400000.0
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "MACAPÁ - AP",
-      "delta_empenhado": 59618869.55,
-      "current_empenhado": 59618869.55
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "SANTA MARIA - RS",
-      "delta_empenhado": 56934117.0,
-      "current_empenhado": 56934117.0
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "MACEIÓ - AL",
-      "delta_empenhado": 54655903.52,
-      "current_empenhado": 54655903.52
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "IMPERATRIZ - MA",
-      "delta_empenhado": 54068872.29,
-      "current_empenhado": 54068872.29
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "TERESINA - PI",
-      "delta_empenhado": 51683514.84,
-      "current_empenhado": 51683514.84
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "CUIABÁ - MT",
-      "delta_empenhado": 50906601.72,
-      "current_empenhado": 50906601.72
-    },
-    {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "ITABORAÍ - RJ",
-      "delta_empenhado": 46417295.53,
-      "current_empenhado": 46417295.53
-    },
-    {
-      "author": "COM. DESENV. URBANO",
+      "author": "COM. DE INTEGRACAO NACIONAL E DES. REGIONAL",
       "party": "Comissao",
       "destination": "MÚLTIPLO",
-      "delta_empenhado": 45637541.99,
-      "current_empenhado": 1882621304.75
+      "delta_empenhado": 6850956.8,
+      "current_empenhado": 2499978440.44
     },
     {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "RECIFE - PE",
-      "delta_empenhado": 42037133.42,
-      "current_empenhado": 42037133.42
+      "author": "COM. DESENV REGIONAL E TURISMO",
+      "party": "Comissao",
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 6825136.01,
+      "current_empenhado": 9653179345.19
     },
     {
-      "author": "Sem informação",
-      "party": "Nao identificado",
-      "destination": "SÃO PAULO - SP",
-      "delta_empenhado": 40396565.87,
-      "current_empenhado": 40396565.87
+      "author": "DANIELLA RIBEIRO",
+      "party": "PP",
+      "destination": "PARAÍBA (UF)",
+      "delta_empenhado": 6254770.6,
+      "current_empenhado": 38149662.67
     },
     {
-      "author": "Sem informação",
+      "author": "COM. DA SAUDE",
+      "party": "Comissao",
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 5899068.0,
+      "current_empenhado": 13439019225.56
+    },
+    {
+      "author": "COM. TURISMO",
+      "party": "Comissao",
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 4550469.0,
+      "current_empenhado": 1839860001.86
+    },
+    {
+      "author": "TERESA LEITAO",
+      "party": "PT",
+      "destination": "PERNAMBUCO (UF)",
+      "delta_empenhado": 2896802.27,
+      "current_empenhado": 39857261.61
+    },
+    {
+      "author": "COM. CULTURA",
+      "party": "Comissao",
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 1946666.0,
+      "current_empenhado": 42787837.5
+    },
+    {
+      "author": "BANCADA DA BAHIA",
+      "party": "Bancada",
+      "destination": "BAHIA (UF)",
+      "delta_empenhado": 1829923.48,
+      "current_empenhado": 1523872236.66
+    },
+    {
+      "author": "TALIRIA PETRONE",
+      "party": "PSOL",
+      "destination": "Nacional",
+      "delta_empenhado": 1500000.0,
+      "current_empenhado": 18313320.12
+    },
+    {
+      "author": "ASTRONAUTA MARCOS PONTES",
+      "party": "PL",
+      "destination": "Nacional",
+      "delta_empenhado": 1500000.0,
+      "current_empenhado": 23218628.57
+    },
+    {
+      "author": "LEO PRATES",
       "party": "Nao identificado",
-      "destination": "ITACOATIARA - AM",
-      "delta_empenhado": 36143733.0,
-      "current_empenhado": 36143733.0
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 1500000.0,
+      "current_empenhado": 72837000.0
+    },
+    {
+      "author": "KIM KATAGUIRI",
+      "party": "MISSÃO",
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 1237000.0,
+      "current_empenhado": 169940973.62
+    },
+    {
+      "author": "MENDONCA FILHO",
+      "party": "PL",
+      "destination": "PERNAMBUCO (UF)",
+      "delta_empenhado": 1000000.0,
+      "current_empenhado": 13534435.41
+    },
+    {
+      "author": "CELSO RUSSOMANNO",
+      "party": "REPUBLICANOS",
+      "destination": "SÃO PAULO (UF)",
+      "delta_empenhado": 1000000.0,
+      "current_empenhado": 55438398.77
+    },
+    {
+      "author": "ROBERTA ROMA",
+      "party": "PL",
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 1000000.0,
+      "current_empenhado": 92009111.97
+    },
+    {
+      "author": "LUIZ PHILIPPE DE ORLEANS E BRAGANCA",
+      "party": "PL",
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 924946.49,
+      "current_empenhado": 94048469.49
+    },
+    {
+      "author": "PAULO FREIRE COSTA",
+      "party": "PL",
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 796940.4,
+      "current_empenhado": 143795141.65
+    },
+    {
+      "author": "ALEXANDRE LEITE",
+      "party": "UNIÃO",
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 793783.04,
+      "current_empenhado": 225733952.2
+    },
+    {
+      "author": "PATRUS ANANIAS",
+      "party": "PT",
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 600000.0,
+      "current_empenhado": 140362801.48
+    },
+    {
+      "author": "BANCADA DE RONDONIA",
+      "party": "Bancada",
+      "destination": "RONDÔNIA (UF)",
+      "delta_empenhado": 578724.18,
+      "current_empenhado": 1083667747.08
+    },
+    {
+      "author": "BANCADA DO RIO GRANDE DO SUL",
+      "party": "Bancada",
+      "destination": "RIO GRANDE DO SUL (UF)",
+      "delta_empenhado": 568000.0,
+      "current_empenhado": 1311247776.59
+    },
+    {
+      "author": "NELSINHO TRAD",
+      "party": "PSD",
+      "destination": "MATO GROSSO DO SUL (UF)",
+      "delta_empenhado": 500000.0,
+      "current_empenhado": 4377520.0
+    },
+    {
+      "author": "RICARDO SALLES",
+      "party": "NOVO",
+      "destination": "SÃO PAULO (UF)",
+      "delta_empenhado": 450000.0,
+      "current_empenhado": 37145728.0
+    },
+    {
+      "author": "DELEGADA ADRIANA ACCORSI",
+      "party": "PT",
+      "destination": "GOIÁS (UF)",
+      "delta_empenhado": 400000.0,
+      "current_empenhado": 20687668.15
+    },
+    {
+      "author": "JOAO CURY",
+      "party": "MDB",
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 400000.0,
+      "current_empenhado": 36237670.32
+    },
+    {
+      "author": "CARLOS SAMPAIO",
+      "party": "PSD",
+      "destination": "SÃO PAULO (UF)",
+      "delta_empenhado": 396000.0,
+      "current_empenhado": 12758129.95
+    },
+    {
+      "author": "NATALIA BONAVIDES",
+      "party": "PT",
+      "destination": "RIO GRANDE DO NORTE (UF)",
+      "delta_empenhado": 363000.0,
+      "current_empenhado": 54014969.84
+    },
+    {
+      "author": "LUIZA ERUNDINA",
+      "party": "PSOL",
+      "destination": "Nacional",
+      "delta_empenhado": 300000.0,
+      "current_empenhado": 45426103.65
+    },
+    {
+      "author": "JEFFERSON CAMPOS",
+      "party": "PL",
+      "destination": "SÃO PAULO (UF)",
+      "delta_empenhado": 300000.0,
+      "current_empenhado": 27650703.0
+    },
+    {
+      "author": "BENEDITA DA SILVA",
+      "party": "PT",
+      "destination": "Nacional",
+      "delta_empenhado": 300000.0,
+      "current_empenhado": 19035759.71
+    },
+    {
+      "author": "MERLONG SOLANO",
+      "party": "PT",
+      "destination": "PIAUÍ (UF)",
+      "delta_empenhado": 257500.0,
+      "current_empenhado": 46642746.32
+    },
+    {
+      "author": "RODRIGO ROLLEMBERG",
+      "party": "PSB",
+      "destination": "Nacional",
+      "delta_empenhado": 250000.0,
+      "current_empenhado": 27113960.9
+    },
+    {
+      "author": "SAMIA BOMFIM",
+      "party": "PSOL",
+      "destination": "SÃO PAULO (UF)",
+      "delta_empenhado": 221487.34,
+      "current_empenhado": 88249074.36
+    },
+    {
+      "author": "FAUSTO PINATO",
+      "party": "UNIÃO",
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 200000.0,
+      "current_empenhado": 222360928.93
+    },
+    {
+      "author": "MIGUEL LOMBARDI",
+      "party": "PL",
+      "destination": "SÃO PAULO (UF)",
+      "delta_empenhado": 200000.0,
+      "current_empenhado": 9808190.21
+    },
+    {
+      "author": "FABIANO CONTARATO",
+      "party": "PT",
+      "destination": "SÃO JOSÉ DO CALÇADO - ES",
+      "delta_empenhado": 200000.0,
+      "current_empenhado": 200000.0
+    },
+    {
+      "author": "CAMILA JARA",
+      "party": "PT",
+      "destination": "MATO GROSSO DO SUL (UF)",
+      "delta_empenhado": 180277.0,
+      "current_empenhado": 28261058.92
+    },
+    {
+      "author": "ERIKA KOKAY",
+      "party": "PT",
+      "destination": "DISTRITO FEDERAL (UF)",
+      "delta_empenhado": 130000.0,
+      "current_empenhado": 180033085.41
+    },
+    {
+      "author": "ANA PAULA LEAO",
+      "party": "PP",
+      "destination": "MINAS GERAIS (UF)",
+      "delta_empenhado": 119375.0,
+      "current_empenhado": 15355216.09
+    },
+    {
+      "author": "PLINIO VALERIO",
+      "party": "PSDB",
+      "destination": "AMAZONAS (UF)",
+      "delta_empenhado": 104000.0,
+      "current_empenhado": 22044975.66
+    },
+    {
+      "author": "MARCIO JERRY",
+      "party": "PCdoB",
+      "destination": "MARANHÃO (UF)",
+      "delta_empenhado": 101010.27,
+      "current_empenhado": 27833273.0
+    },
+    {
+      "author": "GENERAL GIRAO",
+      "party": "PL",
+      "destination": "RIO GRANDE DO NORTE (UF)",
+      "delta_empenhado": 100014.42,
+      "current_empenhado": 38443509.51
+    },
+    {
+      "author": "VICENTINHO",
+      "party": "Nao identificado",
+      "destination": "SÃO PAULO (UF)",
+      "delta_empenhado": 100000.0,
+      "current_empenhado": 26665019.62
+    },
+    {
+      "author": "FABIANO CONTARATO",
+      "party": "PT",
+      "destination": "ESPÍRITO SANTO (UF)",
+      "delta_empenhado": 100000.0,
+      "current_empenhado": 22831264.2
+    },
+    {
+      "author": "JACK ROCHA",
+      "party": "PT",
+      "destination": "MÚLTIPLO",
+      "delta_empenhado": 100000.0,
+      "current_empenhado": 62243896.14
+    },
+    {
+      "author": "ODAIR CUNHA",
+      "party": "Nao identificado",
+      "destination": "MINAS GERAIS (UF)",
+      "delta_empenhado": 99999.97,
+      "current_empenhado": 27352415.55
+    },
+    {
+      "author": "LUIZ COUTO",
+      "party": "PT",
+      "destination": "PARAÍBA (UF)",
+      "delta_empenhado": 99992.0,
+      "current_empenhado": 58774258.9
+    },
+    {
+      "author": "TARCISIO MOTTA",
+      "party": "PSOL",
+      "destination": "RIO DE JANEIRO (UF)",
+      "delta_empenhado": 91000.0,
+      "current_empenhado": 52178134.47
+    },
+    {
+      "author": "ROBERTO MONTEIRO PAI",
+      "party": "PL",
+      "destination": "Nacional",
+      "delta_empenhado": 90194.23,
+      "current_empenhado": 5334667.12
+    },
+    {
+      "author": "JOAO LEAO",
+      "party": "Nao identificado",
+      "destination": "BAHIA (UF)",
+      "delta_empenhado": 86000.0,
+      "current_empenhado": 20113512.28
     }
   ],
   "top_authors_total": [
@@ -661,12 +661,12 @@
     {
       "author": "COM. DA SAUDE",
       "party": "Comissao",
-      "total_empenhado": 13433120157.56
+      "total_empenhado": 13439019225.56
     },
     {
       "author": "COM. DESENV REGIONAL E TURISMO",
       "party": "Comissao",
-      "total_empenhado": 9646921395.18
+      "total_empenhado": 9653746531.19
     },
     {
       "author": "COM. ASSUNTOS SOCIAIS",
@@ -689,14 +689,14 @@
       "total_empenhado": 2506647924.88
     },
     {
+      "author": "COM. DE INTEGRACAO NACIONAL E DES. REGIONAL",
+      "party": "Comissao",
+      "total_empenhado": 2499978440.44
+    },
+    {
       "author": "BANCADA DO MARANHAO",
       "party": "Bancada",
       "total_empenhado": 2498828815.35
-    },
-    {
-      "author": "COM. DE INTEGRACAO NACIONAL E DES. REGIONAL",
-      "party": "Comissao",
-      "total_empenhado": 2493127483.64
     },
     {
       "author": "BANCADA DO PIAUI",
@@ -711,7 +711,7 @@
     {
       "author": "BANCADA DE ALAGOAS",
       "party": "Bancada",
-      "total_empenhado": 2462831358.64
+      "total_empenhado": 2462912607.64
     },
     {
       "author": "BANCADA DE MINAS GERAIS",
@@ -726,7 +726,7 @@
     {
       "author": "BANCADA DO RIO GRANDE DO SUL",
       "party": "Bancada",
-      "total_empenhado": 2416631758.96
+      "total_empenhado": 2417199758.96
     },
     {
       "author": "BANCADA DO RIO GRANDE DO NORTE",
@@ -752,15 +752,15 @@
   "top_destinations_total": [
     {
       "destination": "MÚLTIPLO",
-      "total_empenhado": 226647514817.36
+      "total_empenhado": 226681160055.1
     },
     {
       "destination": "Nacional",
-      "total_empenhado": 15757255960.98
+      "total_empenhado": 15761423889.37
     },
     {
       "destination": "SÃO PAULO (UF)",
-      "total_empenhado": 5632008018.2
+      "total_empenhado": 5633986069.63
     },
     {
       "destination": "Nordeste",
@@ -768,31 +768,31 @@
     },
     {
       "destination": "BAHIA (UF)",
-      "total_empenhado": 4161424874.38
+      "total_empenhado": 4163345580.04
     },
     {
       "destination": "DISTRITO FEDERAL (UF)",
-      "total_empenhado": 4118124261.6
+      "total_empenhado": 4118251651.6
     },
     {
       "destination": "RIO DE JANEIRO (UF)",
-      "total_empenhado": 4106132454.26
+      "total_empenhado": 4106277495.89
     },
     {
       "destination": "MINAS GERAIS (UF)",
-      "total_empenhado": 3565411234.19
+      "total_empenhado": 3565686528.83
     },
     {
       "destination": "PARANÁ (UF)",
-      "total_empenhado": 2772741848.52
+      "total_empenhado": 2772769669.32
     },
     {
       "destination": "RIO GRANDE DO SUL (UF)",
-      "total_empenhado": 2528229004.71
+      "total_empenhado": 2528947373.76
     },
     {
       "destination": "MATO GROSSO DO SUL (UF)",
-      "total_empenhado": 2374016877.14
+      "total_empenhado": 2374697154.14
     },
     {
       "destination": "ACRE (UF)",
@@ -800,7 +800,7 @@
     },
     {
       "destination": "ESPÍRITO SANTO (UF)",
-      "total_empenhado": 2320290292.93
+      "total_empenhado": 2320390292.93
     },
     {
       "destination": "Sudeste",
@@ -812,11 +812,11 @@
     },
     {
       "destination": "PERNAMBUCO (UF)",
-      "total_empenhado": 2061011654.22
+      "total_empenhado": 2064953154.01
     },
     {
       "destination": "RONDÔNIA (UF)",
-      "total_empenhado": 1877899022.13
+      "total_empenhado": 1878477746.31
     },
     {
       "destination": "RORAIMA (UF)",
@@ -835,7 +835,7 @@
     {
       "author": "COM. DA SAUDE",
       "party": "Comissao",
-      "total_empenhado": 3867939271.0
+      "total_empenhado": 3873838339.0
     },
     {
       "author": "COM. ASSUNTOS SOCIAIS",
@@ -845,12 +845,12 @@
     {
       "author": "COM. DESENV REGIONAL E TURISMO",
       "party": "Comissao",
-      "total_empenhado": 998490777.19
+      "total_empenhado": 1005315913.2
     },
     {
       "author": "COM. DE INTEGRACAO NACIONAL E DES. REGIONAL",
       "party": "Comissao",
-      "total_empenhado": 760039568.2
+      "total_empenhado": 766890525.0
     },
     {
       "author": "COM. DESENV. URBANO",
@@ -880,7 +880,7 @@
     {
       "author": "BANCADA DE ALAGOAS",
       "party": "Bancada",
-      "total_empenhado": 363493255.22
+      "total_empenhado": 363574504.22
     },
     {
       "author": "BANCADA DO MARANHAO",
@@ -928,27 +928,27 @@
       "total_empenhado": 288472016.93
     },
     {
-      "author": "BANCADA DE RORAIMA",
-      "party": "Bancada",
-      "total_empenhado": 286130208.43
+      "author": "COM. TURISMO",
+      "party": "Comissao",
+      "total_empenhado": 287906420.55
     }
   ],
   "top_destinations_year": [
     {
       "destination": "MÚLTIPLO",
-      "total_empenhado": 33888119884.28
+      "total_empenhado": 33921765122.02
     },
     {
       "destination": "Nacional",
-      "total_empenhado": 507049385.07
+      "total_empenhado": 511217313.46
     },
     {
       "destination": "SÃO PAULO (UF)",
-      "total_empenhado": 400836958.57
+      "total_empenhado": 402815010.0
     },
     {
       "destination": "RIO DE JANEIRO (UF)",
-      "total_empenhado": 341826839.63
+      "total_empenhado": 341971881.26
     },
     {
       "destination": "RORAIMA (UF)",
@@ -960,11 +960,11 @@
     },
     {
       "destination": "BAHIA (UF)",
-      "total_empenhado": 239674852.5
+      "total_empenhado": 241595558.16
     },
     {
       "destination": "PARANÁ (UF)",
-      "total_empenhado": 222810520.27
+      "total_empenhado": 222838341.07
     },
     {
       "destination": "ACRE (UF)",
@@ -972,27 +972,31 @@
     },
     {
       "destination": "MATO GROSSO DO SUL (UF)",
-      "total_empenhado": 209560116.1
+      "total_empenhado": 210240393.1
     },
     {
       "destination": "DISTRITO FEDERAL (UF)",
-      "total_empenhado": 207913552.8
+      "total_empenhado": 208040942.8
     },
     {
       "destination": "RIO GRANDE DO SUL (UF)",
-      "total_empenhado": 198225590.26
+      "total_empenhado": 198943959.31
     },
     {
       "destination": "MINAS GERAIS (UF)",
-      "total_empenhado": 120936720.52
+      "total_empenhado": 121212015.16
     },
     {
       "destination": "ESPÍRITO SANTO (UF)",
-      "total_empenhado": 112717899.59
+      "total_empenhado": 112817899.59
     },
     {
       "destination": "CEARÁ (UF)",
-      "total_empenhado": 109803976.0
+      "total_empenhado": 109888377.35
+    },
+    {
+      "destination": "PERNAMBUCO (UF)",
+      "total_empenhado": 102017325.32
     },
     {
       "destination": "CAMPO GRANDE - MS",
@@ -1000,11 +1004,7 @@
     },
     {
       "destination": "ALAGOAS (UF)",
-      "total_empenhado": 99667651.13
-    },
-    {
-      "destination": "PERNAMBUCO (UF)",
-      "total_empenhado": 98075825.53
+      "total_empenhado": 99748900.13
     },
     {
       "destination": "BOA VISTA - RR",
@@ -1012,16 +1012,16 @@
     },
     {
       "destination": "TOCANTINS (UF)",
-      "total_empenhado": 58825132.7
+      "total_empenhado": 58826126.7
     }
   ],
   "unico_year_summary": {
     "year": 2026,
-    "total_empenhado": 40668752357.09,
-    "total_liquidado": 25920861779.7,
-    "total_pago": 34674617597.97
+    "total_empenhado": 40733025546.96,
+    "total_liquidado": 25927492804.19,
+    "total_pago": 34701804443.2
   },
-  "run_date": "2026-08-28",
+  "run_date": "2026-08-29",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1030,21 +1030,21 @@
       "stages": [
         {
           "stage": "Empenhado",
-          "value": 39386935953.98
+          "value": 39442130185.24
         },
         {
           "stage": "Liquidado",
-          "value": 25920861779.7
+          "value": 25927492804.19
         },
         {
           "stage": "Pago",
-          "value": 25674789138.59
+          "value": 25691411536.27
         }
       ],
       "stage_values": {
-        "empenhado": 39386935953.98,
-        "liquidado": 25920861779.7,
-        "pago": 25674789138.59
+        "empenhado": 39442130185.24,
+        "liquidado": 25927492804.19,
+        "pago": 25691411536.27
       }
     },
     "siop_snapshot": {
@@ -1105,7 +1105,7 @@
           "error": ""
         }
       ],
-      "error": "6 - Emendas Individuais: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
+      "error": "dotação inicial/atual zerada — provável quebra do scraper Qlik (DOM mudou)",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -1163,14 +1163,14 @@
       "source": {
         "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares-documentos/2026",
         "download_url": "https://dadosabertos-download.cgu.gov.br/PortalDaTransparencia/saida/emendas-parlamentares-documentos/2026_EmendasParlamentaresPorDocumento.zip",
-        "last_modified": "Thu, 27 Aug 2026 06:42:00 GMT",
-        "etag": "\"2d078c22204c421fb1b6d0ded6d8a8b1-2\"",
+        "last_modified": "Sat, 29 Aug 2026 04:39:14 GMT",
+        "etag": "\"19198cd87ef5c973fbe8ec36ced55ede-2\"",
         "csv_member": "2026_EmendasParlamentares_PorDocumento.csv"
       },
-      "rows_processed": 284719,
-      "rows_valid_year": 284719,
+      "rows_processed": 285671,
+      "rows_valid_year": 285671,
       "date_min": "2026-01-02",
-      "date_max": "2026-08-25",
+      "date_max": "2026-08-27",
       "daily_series": [
         {
           "date": "2026-01-01",
@@ -1797,1046 +1797,1060 @@
         },
         {
           "date": "2026-03-31",
-          "empenhado": 40371042.88,
+          "empenhado": 40071042.88,
           "pago": 183197506.74,
-          "acumulado_empenhado": 1344181772.7,
+          "acumulado_empenhado": 1343881772.7,
           "acumulado_pago": 5255410918.62
         },
         {
           "date": "2026-04-01",
           "empenhado": 18281848.67,
           "pago": 54456918.89,
-          "acumulado_empenhado": 1362463621.37,
+          "acumulado_empenhado": 1362163621.37,
           "acumulado_pago": 5309867837.51
         },
         {
           "date": "2026-04-02",
           "empenhado": 90541907.64,
           "pago": 224826142.64,
-          "acumulado_empenhado": 1453005529.01,
+          "acumulado_empenhado": 1452705529.01,
           "acumulado_pago": 5534693980.15
         },
         {
           "date": "2026-04-03",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 1453005529.01,
+          "acumulado_empenhado": 1452705529.01,
           "acumulado_pago": 5534693980.15
         },
         {
           "date": "2026-04-04",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 1453005529.01,
+          "acumulado_empenhado": 1452705529.01,
           "acumulado_pago": 5534693980.15
         },
         {
           "date": "2026-04-05",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 1453005529.01,
+          "acumulado_empenhado": 1452705529.01,
           "acumulado_pago": 5534693980.15
         },
         {
           "date": "2026-04-06",
           "empenhado": 107371122.73,
           "pago": 45743511.73,
-          "acumulado_empenhado": 1560376651.74,
+          "acumulado_empenhado": 1560076651.74,
           "acumulado_pago": 5580437491.88
         },
         {
           "date": "2026-04-07",
           "empenhado": 30782949.41,
           "pago": 41137733.07,
-          "acumulado_empenhado": 1591159601.15,
+          "acumulado_empenhado": 1590859601.15,
           "acumulado_pago": 5621575224.95
         },
         {
           "date": "2026-04-08",
           "empenhado": 1048669700.12,
           "pago": 41386628.6,
-          "acumulado_empenhado": 2639829301.27,
+          "acumulado_empenhado": 2639529301.27,
           "acumulado_pago": 5662961853.55
         },
         {
           "date": "2026-04-09",
           "empenhado": 348123201.58,
           "pago": 20167704.34,
-          "acumulado_empenhado": 2987952502.85,
+          "acumulado_empenhado": 2987652502.85,
           "acumulado_pago": 5683129557.89
         },
         {
           "date": "2026-04-10",
-          "empenhado": 1528137694.0,
+          "empenhado": 1528093694.0,
           "pago": 86005104.51,
-          "acumulado_empenhado": 4516090196.85,
+          "acumulado_empenhado": 4515746196.85,
           "acumulado_pago": 5769134662.4
         },
         {
           "date": "2026-04-11",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 4516090196.85,
+          "acumulado_empenhado": 4515746196.85,
           "acumulado_pago": 5769134662.4
         },
         {
           "date": "2026-04-12",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 4516090196.85,
+          "acumulado_empenhado": 4515746196.85,
           "acumulado_pago": 5769134662.4
         },
         {
           "date": "2026-04-13",
           "empenhado": 3752859724.68,
           "pago": 30512514.75,
-          "acumulado_empenhado": 8268949921.53,
+          "acumulado_empenhado": 8268605921.53,
           "acumulado_pago": 5799647177.15
         },
         {
           "date": "2026-04-14",
           "empenhado": 843696365.3,
           "pago": 58066301.66,
-          "acumulado_empenhado": 9112646286.83,
+          "acumulado_empenhado": 9112302286.83,
           "acumulado_pago": 5857713478.81
         },
         {
           "date": "2026-04-15",
           "empenhado": 280213766.78,
           "pago": 97531114.93,
-          "acumulado_empenhado": 9392860053.61,
+          "acumulado_empenhado": 9392516053.61,
           "acumulado_pago": 5955244593.74
         },
         {
           "date": "2026-04-16",
           "empenhado": 1413878608.37,
           "pago": 97668436.73,
-          "acumulado_empenhado": 10806738661.98,
+          "acumulado_empenhado": 10806394661.98,
           "acumulado_pago": 6052913030.47
         },
         {
           "date": "2026-04-17",
           "empenhado": 1211669925.01,
           "pago": 59097376.74,
-          "acumulado_empenhado": 12018408586.99,
+          "acumulado_empenhado": 12018064586.99,
           "acumulado_pago": 6112010407.21
         },
         {
           "date": "2026-04-18",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 12018408586.99,
+          "acumulado_empenhado": 12018064586.99,
           "acumulado_pago": 6112010407.21
         },
         {
           "date": "2026-04-19",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 12018408586.99,
+          "acumulado_empenhado": 12018064586.99,
           "acumulado_pago": 6112010407.21
         },
         {
           "date": "2026-04-20",
           "empenhado": 1366691.99,
           "pago": 20858861.1,
-          "acumulado_empenhado": 12019775278.98,
+          "acumulado_empenhado": 12019431278.98,
           "acumulado_pago": 6132869268.31
         },
         {
           "date": "2026-04-21",
           "empenhado": 523198.0,
           "pago": 0.0,
-          "acumulado_empenhado": 12020298476.98,
+          "acumulado_empenhado": 12019954476.98,
           "acumulado_pago": 6132869268.31
         },
         {
           "date": "2026-04-22",
           "empenhado": 347000102.94,
           "pago": 12236736.7,
-          "acumulado_empenhado": 12367298579.92,
+          "acumulado_empenhado": 12366954579.92,
           "acumulado_pago": 6145106005.01
         },
         {
           "date": "2026-04-23",
           "empenhado": 386558143.89,
           "pago": 34895505.1,
-          "acumulado_empenhado": 12753856723.81,
+          "acumulado_empenhado": 12753512723.81,
           "acumulado_pago": 6180001510.11
         },
         {
           "date": "2026-04-24",
           "empenhado": 57912294.63,
           "pago": 174483534.17,
-          "acumulado_empenhado": 12811769018.44,
+          "acumulado_empenhado": 12811425018.44,
           "acumulado_pago": 6354485044.28
         },
         {
           "date": "2026-04-25",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 12811769018.44,
+          "acumulado_empenhado": 12811425018.44,
           "acumulado_pago": 6354485044.28
         },
         {
           "date": "2026-04-26",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 12811769018.44,
+          "acumulado_empenhado": 12811425018.44,
           "acumulado_pago": 6354485044.28
         },
         {
           "date": "2026-04-27",
           "empenhado": 69065515.43,
           "pago": 55927951.86,
-          "acumulado_empenhado": 12880834533.87,
+          "acumulado_empenhado": 12880490533.87,
           "acumulado_pago": 6410412996.14
         },
         {
           "date": "2026-04-28",
           "empenhado": 265248857.73,
           "pago": 31743793.19,
-          "acumulado_empenhado": 13146083391.6,
+          "acumulado_empenhado": 13145739391.6,
           "acumulado_pago": 6442156789.33
         },
         {
           "date": "2026-04-29",
           "empenhado": 327697824.12,
           "pago": 104242674.41,
-          "acumulado_empenhado": 13473781215.72,
+          "acumulado_empenhado": 13473437215.72,
           "acumulado_pago": 6546399463.74
         },
         {
           "date": "2026-04-30",
           "empenhado": 312943742.36,
           "pago": 108985933.83,
-          "acumulado_empenhado": 13786724958.08,
+          "acumulado_empenhado": 13786380958.08,
           "acumulado_pago": 6655385397.57
         },
         {
           "date": "2026-05-01",
           "empenhado": 300000.0,
           "pago": 0.0,
-          "acumulado_empenhado": 13787024958.08,
+          "acumulado_empenhado": 13786680958.08,
           "acumulado_pago": 6655385397.57
         },
         {
           "date": "2026-05-02",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 13787024958.08,
+          "acumulado_empenhado": 13786680958.08,
           "acumulado_pago": 6655385397.57
         },
         {
           "date": "2026-05-03",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 13787024958.08,
+          "acumulado_empenhado": 13786680958.08,
           "acumulado_pago": 6655385397.57
         },
         {
           "date": "2026-05-04",
           "empenhado": 367581054.75,
           "pago": 127634238.56,
-          "acumulado_empenhado": 14154606012.83,
+          "acumulado_empenhado": 14154262012.83,
           "acumulado_pago": 6783019636.13
         },
         {
           "date": "2026-05-05",
           "empenhado": 165678643.09,
           "pago": 37224722.91,
-          "acumulado_empenhado": 14320284655.92,
+          "acumulado_empenhado": 14319940655.92,
           "acumulado_pago": 6820244359.04
         },
         {
           "date": "2026-05-06",
           "empenhado": 125475645.85,
           "pago": 2461737343.6,
-          "acumulado_empenhado": 14445760301.77,
+          "acumulado_empenhado": 14445416301.77,
           "acumulado_pago": 9281981702.64
         },
         {
           "date": "2026-05-07",
           "empenhado": 114557825.78,
           "pago": 101558775.73,
-          "acumulado_empenhado": 14560318127.55,
+          "acumulado_empenhado": 14559974127.55,
           "acumulado_pago": 9383540478.37
         },
         {
           "date": "2026-05-08",
           "empenhado": 5689190340.69,
           "pago": 1446886488.68,
-          "acumulado_empenhado": 20249508468.24,
+          "acumulado_empenhado": 20249164468.24,
           "acumulado_pago": 10830426967.05
         },
         {
           "date": "2026-05-09",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 20249508468.24,
+          "acumulado_empenhado": 20249164468.24,
           "acumulado_pago": 10830426967.05
         },
         {
           "date": "2026-05-10",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 20249508468.24,
+          "acumulado_empenhado": 20249164468.24,
           "acumulado_pago": 10830426967.05
         },
         {
           "date": "2026-05-11",
           "empenhado": 1790122231.36,
           "pago": 1180897669.94,
-          "acumulado_empenhado": 22039630699.6,
+          "acumulado_empenhado": 22039286699.6,
           "acumulado_pago": 12011324636.99
         },
         {
           "date": "2026-05-12",
           "empenhado": 318869802.05,
           "pago": 3497092420.99,
-          "acumulado_empenhado": 22358500501.65,
+          "acumulado_empenhado": 22358156501.65,
           "acumulado_pago": 15508417057.98
         },
         {
           "date": "2026-05-13",
           "empenhado": 420020992.13,
           "pago": 174256118.76,
-          "acumulado_empenhado": 22778521493.78,
+          "acumulado_empenhado": 22778177493.78,
           "acumulado_pago": 15682673176.74
         },
         {
           "date": "2026-05-14",
           "empenhado": 119525640.52,
           "pago": 858815791.64,
-          "acumulado_empenhado": 22898047134.3,
+          "acumulado_empenhado": 22897703134.3,
           "acumulado_pago": 16541488968.38
         },
         {
           "date": "2026-05-15",
           "empenhado": 1735528222.1,
           "pago": 1270421957.62,
-          "acumulado_empenhado": 24633575356.4,
+          "acumulado_empenhado": 24633231356.4,
           "acumulado_pago": 17811910926.0
         },
         {
           "date": "2026-05-16",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 24633575356.4,
+          "acumulado_empenhado": 24633231356.4,
           "acumulado_pago": 17811910926.0
         },
         {
           "date": "2026-05-17",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 24633575356.4,
+          "acumulado_empenhado": 24633231356.4,
           "acumulado_pago": 17811910926.0
         },
         {
           "date": "2026-05-18",
-          "empenhado": 1085801791.97,
+          "empenhado": 1085796791.97,
           "pago": 235186950.32,
-          "acumulado_empenhado": 25719377148.37,
+          "acumulado_empenhado": 25719028148.37,
           "acumulado_pago": 18047097876.32
         },
         {
           "date": "2026-05-19",
           "empenhado": 582073706.24,
           "pago": 69255808.46,
-          "acumulado_empenhado": 26301450854.61,
+          "acumulado_empenhado": 26301101854.61,
           "acumulado_pago": 18116353684.78
         },
         {
           "date": "2026-05-20",
           "empenhado": 900530457.17,
           "pago": 70131056.34,
-          "acumulado_empenhado": 27201981311.78,
+          "acumulado_empenhado": 27201632311.78,
           "acumulado_pago": 18186484741.12
         },
         {
           "date": "2026-05-21",
           "empenhado": 117881778.44,
           "pago": 702264596.97,
-          "acumulado_empenhado": 27319863090.22,
+          "acumulado_empenhado": 27319514090.22,
           "acumulado_pago": 18888749338.09
         },
         {
           "date": "2026-05-22",
-          "empenhado": 276795488.25,
+          "empenhado": 276770488.25,
           "pago": 150449099.02,
-          "acumulado_empenhado": 27596658578.47,
+          "acumulado_empenhado": 27596284578.47,
           "acumulado_pago": 19039198437.11
         },
         {
           "date": "2026-05-23",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 27596658578.47,
+          "acumulado_empenhado": 27596284578.47,
           "acumulado_pago": 19039198437.11
         },
         {
           "date": "2026-05-24",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 27596658578.47,
+          "acumulado_empenhado": 27596284578.47,
           "acumulado_pago": 19039198437.11
         },
         {
           "date": "2026-05-25",
-          "empenhado": 80350416.75,
+          "empenhado": 80150403.2,
           "pago": 266543763.5,
-          "acumulado_empenhado": 27677008995.22,
+          "acumulado_empenhado": 27676434981.67,
           "acumulado_pago": 19305742200.61
         },
         {
           "date": "2026-05-26",
-          "empenhado": 118203750.89,
+          "empenhado": 117871750.89,
           "pago": 2986280586.48,
-          "acumulado_empenhado": 27795212746.11,
+          "acumulado_empenhado": 27794306732.56,
           "acumulado_pago": 22292022787.09
         },
         {
           "date": "2026-05-27",
           "empenhado": 299808956.93,
           "pago": 62282800.15,
-          "acumulado_empenhado": 28095021703.04,
+          "acumulado_empenhado": 28094115689.49,
           "acumulado_pago": 22354305587.24
         },
         {
           "date": "2026-05-28",
           "empenhado": 110461607.3,
           "pago": 431859650.13,
-          "acumulado_empenhado": 28205483310.34,
+          "acumulado_empenhado": 28204577296.79,
           "acumulado_pago": 22786165237.37
         },
         {
           "date": "2026-05-29",
           "empenhado": 203469344.47,
           "pago": 38467449.29,
-          "acumulado_empenhado": 28408952654.81,
+          "acumulado_empenhado": 28408046641.26,
           "acumulado_pago": 22824632686.66
         },
         {
           "date": "2026-05-30",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 28408952654.81,
+          "acumulado_empenhado": 28408046641.26,
           "acumulado_pago": 22824632686.66
         },
         {
           "date": "2026-05-31",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 28408952654.81,
+          "acumulado_empenhado": 28408046641.26,
           "acumulado_pago": 22824632686.66
         },
         {
           "date": "2026-06-01",
           "empenhado": 1040071213.31,
           "pago": 73048779.21,
-          "acumulado_empenhado": 29449023868.12,
+          "acumulado_empenhado": 29448117854.57,
           "acumulado_pago": 22897681465.87
         },
         {
           "date": "2026-06-02",
           "empenhado": 297632710.06,
           "pago": 218893737.89,
-          "acumulado_empenhado": 29746656578.18,
+          "acumulado_empenhado": 29745750564.63,
           "acumulado_pago": 23116575203.76
         },
         {
           "date": "2026-06-03",
           "empenhado": 161576141.8,
           "pago": 106602015.86,
-          "acumulado_empenhado": 29908232719.98,
+          "acumulado_empenhado": 29907326706.43,
           "acumulado_pago": 23223177219.62
         },
         {
           "date": "2026-06-04",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 29908232719.98,
+          "acumulado_empenhado": 29907326706.43,
           "acumulado_pago": 23223177219.62
         },
         {
           "date": "2026-06-05",
           "empenhado": 762288.12,
           "pago": 134164517.83,
-          "acumulado_empenhado": 29908995008.1,
+          "acumulado_empenhado": 29908088994.55,
           "acumulado_pago": 23357341737.45
         },
         {
           "date": "2026-06-06",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 29908995008.1,
+          "acumulado_empenhado": 29908088994.55,
           "acumulado_pago": 23357341737.45
         },
         {
           "date": "2026-06-07",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 29908995008.1,
+          "acumulado_empenhado": 29908088994.55,
           "acumulado_pago": 23357341737.45
         },
         {
           "date": "2026-06-08",
           "empenhado": 54861354.27,
           "pago": 103988754.72,
-          "acumulado_empenhado": 29963856362.37,
+          "acumulado_empenhado": 29962950348.82,
           "acumulado_pago": 23461330492.17
         },
         {
           "date": "2026-06-09",
           "empenhado": 108022131.3,
           "pago": 252812717.02,
-          "acumulado_empenhado": 30071878493.67,
+          "acumulado_empenhado": 30070972480.12,
           "acumulado_pago": 23714143209.19
         },
         {
           "date": "2026-06-10",
-          "empenhado": 81422907.4,
+          "empenhado": 81410927.4,
           "pago": 60565578.33,
-          "acumulado_empenhado": 30153301401.07,
+          "acumulado_empenhado": 30152383407.52,
           "acumulado_pago": 23774708787.52
         },
         {
           "date": "2026-06-11",
           "empenhado": 484586923.96,
           "pago": 535454285.99,
-          "acumulado_empenhado": 30637888325.03,
+          "acumulado_empenhado": 30636970331.48,
           "acumulado_pago": 24310163073.51
         },
         {
           "date": "2026-06-12",
           "empenhado": 107037874.65,
           "pago": 357361266.62,
-          "acumulado_empenhado": 30744926199.68,
+          "acumulado_empenhado": 30744008206.13,
           "acumulado_pago": 24667524340.13
         },
         {
           "date": "2026-06-13",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 30744926199.68,
+          "acumulado_empenhado": 30744008206.13,
           "acumulado_pago": 24667524340.13
         },
         {
           "date": "2026-06-14",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 30744926199.68,
+          "acumulado_empenhado": 30744008206.13,
           "acumulado_pago": 24667524340.13
         },
         {
           "date": "2026-06-15",
           "empenhado": 158158411.94,
           "pago": 14117364.09,
-          "acumulado_empenhado": 30903084611.62,
+          "acumulado_empenhado": 30902166618.07,
           "acumulado_pago": 24681641704.22
         },
         {
           "date": "2026-06-16",
           "empenhado": 543241691.79,
           "pago": 1273764750.49,
-          "acumulado_empenhado": 31446326303.41,
+          "acumulado_empenhado": 31445408309.86,
           "acumulado_pago": 25955406454.71
         },
         {
           "date": "2026-06-17",
-          "empenhado": 189646841.75,
+          "empenhado": 189643841.75,
           "pago": 166595859.16,
-          "acumulado_empenhado": 31635973145.16,
+          "acumulado_empenhado": 31635052151.61,
           "acumulado_pago": 26122002313.87
         },
         {
           "date": "2026-06-18",
           "empenhado": 326782506.04,
           "pago": 65390292.32,
-          "acumulado_empenhado": 31962755651.2,
+          "acumulado_empenhado": 31961834657.65,
           "acumulado_pago": 26187392606.19
         },
         {
           "date": "2026-06-19",
           "empenhado": 3414572276.49,
           "pago": 401199467.59,
-          "acumulado_empenhado": 35377327927.69,
+          "acumulado_empenhado": 35376406934.14,
           "acumulado_pago": 26588592073.78
         },
         {
           "date": "2026-06-20",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 35377327927.69,
+          "acumulado_empenhado": 35376406934.14,
           "acumulado_pago": 26588592073.78
         },
         {
           "date": "2026-06-21",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 35377327927.69,
+          "acumulado_empenhado": 35376406934.14,
           "acumulado_pago": 26588592073.78
         },
         {
           "date": "2026-06-22",
           "empenhado": 330480681.8,
           "pago": 1690696034.78,
-          "acumulado_empenhado": 35707808609.49,
+          "acumulado_empenhado": 35706887615.94,
           "acumulado_pago": 28279288108.56
         },
         {
           "date": "2026-06-23",
-          "empenhado": 239685753.12,
+          "empenhado": 239675753.12,
           "pago": 309870749.79,
-          "acumulado_empenhado": 35947494362.61,
+          "acumulado_empenhado": 35946563369.06,
           "acumulado_pago": 28589158858.35
         },
         {
           "date": "2026-06-24",
           "empenhado": 220873142.54,
           "pago": 63123180.66,
-          "acumulado_empenhado": 36168367505.15,
+          "acumulado_empenhado": 36167436511.6,
           "acumulado_pago": 28652282039.01
         },
         {
           "date": "2026-06-25",
           "empenhado": 221240155.0,
           "pago": 607611536.94,
-          "acumulado_empenhado": 36389607660.15,
+          "acumulado_empenhado": 36388676666.6,
           "acumulado_pago": 29259893575.95
         },
         {
           "date": "2026-06-26",
           "empenhado": 309408347.7,
           "pago": 680705705.65,
-          "acumulado_empenhado": 36699016007.85,
+          "acumulado_empenhado": 36698085014.3,
           "acumulado_pago": 29940599281.6
         },
         {
           "date": "2026-06-27",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 36699016007.85,
+          "acumulado_empenhado": 36698085014.3,
           "acumulado_pago": 29940599281.6
         },
         {
           "date": "2026-06-28",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 36699016007.85,
+          "acumulado_empenhado": 36698085014.3,
           "acumulado_pago": 29940599281.6
         },
         {
           "date": "2026-06-29",
           "empenhado": 214541998.72,
           "pago": 1934499816.18,
-          "acumulado_empenhado": 36913558006.57,
+          "acumulado_empenhado": 36912627013.02,
           "acumulado_pago": 31875099097.78
         },
         {
           "date": "2026-06-30",
           "empenhado": 354509729.34,
           "pago": 58193884.66,
-          "acumulado_empenhado": 37268067735.91,
+          "acumulado_empenhado": 37267136742.36,
           "acumulado_pago": 31933292982.44
         },
         {
           "date": "2026-07-01",
-          "empenhado": 153308134.07,
+          "empenhado": 153305524.07,
           "pago": 67742240.73,
-          "acumulado_empenhado": 37421375869.98,
+          "acumulado_empenhado": 37420442266.43,
           "acumulado_pago": 32001035223.17
         },
         {
           "date": "2026-07-02",
           "empenhado": 153572990.1,
           "pago": 316947544.84,
-          "acumulado_empenhado": 37574948860.08,
+          "acumulado_empenhado": 37574015256.53,
           "acumulado_pago": 32317982768.01
         },
         {
           "date": "2026-07-03",
           "empenhado": 92091634.0,
           "pago": 1273998108.73,
-          "acumulado_empenhado": 37667040494.08,
+          "acumulado_empenhado": 37666106890.53,
           "acumulado_pago": 33591980876.74
         },
         {
           "date": "2026-07-04",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 37667040494.08,
+          "acumulado_empenhado": 37666106890.53,
           "acumulado_pago": 33591980876.74
         },
         {
           "date": "2026-07-05",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 37667040494.08,
+          "acumulado_empenhado": 37666106890.53,
           "acumulado_pago": 33591980876.74
         },
         {
           "date": "2026-07-06",
           "empenhado": 16822792.28,
           "pago": 149865302.04,
-          "acumulado_empenhado": 37683863286.36,
+          "acumulado_empenhado": 37682929682.81,
           "acumulado_pago": 33741846178.78
         },
         {
           "date": "2026-07-07",
           "empenhado": 31395314.73,
           "pago": 8976937.86,
-          "acumulado_empenhado": 37715258601.09,
+          "acumulado_empenhado": 37714324997.54,
           "acumulado_pago": 33750823116.64
         },
         {
           "date": "2026-07-08",
           "empenhado": 83132106.34,
           "pago": 17205144.12,
-          "acumulado_empenhado": 37798390707.43,
+          "acumulado_empenhado": 37797457103.88,
           "acumulado_pago": 33768028260.76
         },
         {
           "date": "2026-07-09",
           "empenhado": 42301117.79,
           "pago": 1581487.22,
-          "acumulado_empenhado": 37840691825.22,
+          "acumulado_empenhado": 37839758221.67,
           "acumulado_pago": 33769609747.98
         },
         {
           "date": "2026-07-10",
           "empenhado": 69894843.35,
           "pago": 24593780.3,
-          "acumulado_empenhado": 37910586668.57,
+          "acumulado_empenhado": 37909653065.02,
           "acumulado_pago": 33794203528.28
         },
         {
           "date": "2026-07-11",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 37910586668.57,
+          "acumulado_empenhado": 37909653065.02,
           "acumulado_pago": 33794203528.28
         },
         {
           "date": "2026-07-12",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 37910586668.57,
+          "acumulado_empenhado": 37909653065.02,
           "acumulado_pago": 33794203528.28
         },
         {
           "date": "2026-07-13",
-          "empenhado": 173792502.58,
+          "empenhado": 173418132.39,
           "pago": 6856115.6,
-          "acumulado_empenhado": 38084379171.15,
+          "acumulado_empenhado": 38083071197.41,
           "acumulado_pago": 33801059643.88
         },
         {
           "date": "2026-07-14",
-          "empenhado": 61789012.89,
+          "empenhado": 61779012.89,
           "pago": 6503577.81,
-          "acumulado_empenhado": 38146168184.04,
+          "acumulado_empenhado": 38144850210.3,
           "acumulado_pago": 33807563221.69
         },
         {
           "date": "2026-07-15",
-          "empenhado": 118112277.76,
+          "empenhado": 118035146.44,
           "pago": 4164859.84,
-          "acumulado_empenhado": 38264280461.8,
+          "acumulado_empenhado": 38262885356.74,
           "acumulado_pago": 33811728081.53
         },
         {
           "date": "2026-07-16",
           "empenhado": 64787154.03,
           "pago": 4706406.13,
-          "acumulado_empenhado": 38329067615.83,
+          "acumulado_empenhado": 38327672510.77,
           "acumulado_pago": 33816434487.66
         },
         {
           "date": "2026-07-17",
-          "empenhado": 95107275.61,
+          "empenhado": 90763035.16,
           "pago": 27848282.41,
-          "acumulado_empenhado": 38424174891.44,
+          "acumulado_empenhado": 38418435545.93,
           "acumulado_pago": 33844282770.07
         },
         {
           "date": "2026-07-18",
           "empenhado": 250000.0,
           "pago": 0.0,
-          "acumulado_empenhado": 38424424891.44,
+          "acumulado_empenhado": 38418685545.93,
           "acumulado_pago": 33844282770.07
         },
         {
           "date": "2026-07-19",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 38424424891.44,
+          "acumulado_empenhado": 38418685545.93,
           "acumulado_pago": 33844282770.07
         },
         {
           "date": "2026-07-20",
           "empenhado": 71747715.21,
           "pago": 9528199.18,
-          "acumulado_empenhado": 38496172606.65,
+          "acumulado_empenhado": 38490433261.14,
           "acumulado_pago": 33853810969.25
         },
         {
           "date": "2026-07-21",
-          "empenhado": 79875357.44,
+          "empenhado": 79850245.44,
           "pago": 50120282.72,
-          "acumulado_empenhado": 38576047964.09,
+          "acumulado_empenhado": 38570283506.58,
           "acumulado_pago": 33903931251.97
         },
         {
           "date": "2026-07-22",
           "empenhado": 33879068.32,
           "pago": 49697800.84,
-          "acumulado_empenhado": 38609927032.41,
+          "acumulado_empenhado": 38604162574.9,
           "acumulado_pago": 33953629052.81
         },
         {
           "date": "2026-07-23",
-          "empenhado": 60044868.68,
+          "empenhado": 60043792.68,
           "pago": 19639359.36,
-          "acumulado_empenhado": 38669971901.09,
+          "acumulado_empenhado": 38664206367.58,
           "acumulado_pago": 33973268412.17
         },
         {
           "date": "2026-07-24",
           "empenhado": 52623452.44,
           "pago": 23788018.33,
-          "acumulado_empenhado": 38722595353.53,
+          "acumulado_empenhado": 38716829820.02,
           "acumulado_pago": 33997056430.5
         },
         {
           "date": "2026-07-25",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 38722595353.53,
+          "acumulado_empenhado": 38716829820.02,
           "acumulado_pago": 33997056430.5
         },
         {
           "date": "2026-07-26",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 38722595353.53,
+          "acumulado_empenhado": 38716829820.02,
           "acumulado_pago": 33997056430.5
         },
         {
           "date": "2026-07-27",
           "empenhado": 75153387.35,
           "pago": 18047121.54,
-          "acumulado_empenhado": 38797748740.88,
+          "acumulado_empenhado": 38791983207.37,
           "acumulado_pago": 34015103552.04
         },
         {
           "date": "2026-07-28",
-          "empenhado": 58828666.36,
+          "empenhado": 58826949.54,
           "pago": 10586901.63,
-          "acumulado_empenhado": 38856577407.24,
+          "acumulado_empenhado": 38850810156.91,
           "acumulado_pago": 34025690453.67
         },
         {
           "date": "2026-07-29",
           "empenhado": 44392806.07,
           "pago": 51381375.72,
-          "acumulado_empenhado": 38900970213.31,
+          "acumulado_empenhado": 38895202962.98,
           "acumulado_pago": 34077071829.39
         },
         {
           "date": "2026-07-30",
-          "empenhado": 148386572.44,
+          "empenhado": 148349572.44,
           "pago": 27306011.5,
-          "acumulado_empenhado": 39049356785.75,
+          "acumulado_empenhado": 39043552535.42,
           "acumulado_pago": 34104377840.89
         },
         {
           "date": "2026-07-31",
-          "empenhado": 64204028.63,
+          "empenhado": 64183624.63,
           "pago": 22647284.53,
-          "acumulado_empenhado": 39113560814.38,
+          "acumulado_empenhado": 39107736160.05,
           "acumulado_pago": 34127025125.42
         },
         {
           "date": "2026-08-01",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 39113560814.38,
+          "acumulado_empenhado": 39107736160.05,
           "acumulado_pago": 34127025125.42
         },
         {
           "date": "2026-08-02",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 39113560814.38,
+          "acumulado_empenhado": 39107736160.05,
           "acumulado_pago": 34127025125.42
         },
         {
           "date": "2026-08-03",
           "empenhado": 80370947.23,
           "pago": 12592299.1,
-          "acumulado_empenhado": 39193931761.61,
+          "acumulado_empenhado": 39188107107.28,
           "acumulado_pago": 34139617424.52
         },
         {
           "date": "2026-08-04",
-          "empenhado": 49952376.48,
+          "empenhado": 49563376.48,
           "pago": 7876802.86,
-          "acumulado_empenhado": 39243884138.09,
+          "acumulado_empenhado": 39237670483.76,
           "acumulado_pago": 34147494227.38
         },
         {
           "date": "2026-08-05",
           "empenhado": 158845723.53,
           "pago": 22102061.72,
-          "acumulado_empenhado": 39402729861.62,
+          "acumulado_empenhado": 39396516207.29,
           "acumulado_pago": 34169596289.1
         },
         {
           "date": "2026-08-06",
-          "empenhado": 23868222.33,
+          "empenhado": 23090870.78,
           "pago": 19277292.83,
-          "acumulado_empenhado": 39426598083.95,
+          "acumulado_empenhado": 39419607078.07,
           "acumulado_pago": 34188873581.93
         },
         {
           "date": "2026-08-07",
           "empenhado": 41951015.93,
           "pago": 12632618.9,
-          "acumulado_empenhado": 39468549099.88,
+          "acumulado_empenhado": 39461558094.0,
           "acumulado_pago": 34201506200.83
         },
         {
           "date": "2026-08-08",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 39468549099.88,
+          "acumulado_empenhado": 39461558094.0,
           "acumulado_pago": 34201506200.83
         },
         {
           "date": "2026-08-09",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 39468549099.88,
+          "acumulado_empenhado": 39461558094.0,
           "acumulado_pago": 34201506200.83
         },
         {
           "date": "2026-08-10",
           "empenhado": 125728035.59,
           "pago": 5730529.98,
-          "acumulado_empenhado": 39594277135.47,
+          "acumulado_empenhado": 39587286129.59,
           "acumulado_pago": 34207236730.81
         },
         {
           "date": "2026-08-11",
-          "empenhado": 124764943.21,
+          "empenhado": 124737818.55,
           "pago": 9506758.54,
-          "acumulado_empenhado": 39719042078.68,
+          "acumulado_empenhado": 39712023948.14,
           "acumulado_pago": 34216743489.35
         },
         {
           "date": "2026-08-12",
-          "empenhado": 99342781.08,
+          "empenhado": 99312782.97,
           "pago": 57393075.37,
-          "acumulado_empenhado": 39818384859.76,
+          "acumulado_empenhado": 39811336731.11,
           "acumulado_pago": 34274136564.72
         },
         {
           "date": "2026-08-13",
-          "empenhado": 186276029.07,
+          "empenhado": 186246029.07,
           "pago": 190456931.23,
-          "acumulado_empenhado": 40004660888.83,
+          "acumulado_empenhado": 39997582760.18,
           "acumulado_pago": 34464593495.95
         },
         {
           "date": "2026-08-14",
           "empenhado": 194356742.12,
           "pago": 125595663.98,
-          "acumulado_empenhado": 40199017630.95,
+          "acumulado_empenhado": 40191939502.3,
           "acumulado_pago": 34590189159.93
         },
         {
           "date": "2026-08-15",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 40199017630.95,
+          "acumulado_empenhado": 40191939502.3,
           "acumulado_pago": 34590189159.93
         },
         {
           "date": "2026-08-16",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 40199017630.95,
+          "acumulado_empenhado": 40191939502.3,
           "acumulado_pago": 34590189159.93
         },
         {
           "date": "2026-08-17",
-          "empenhado": 156428167.87,
+          "empenhado": 156392589.87,
           "pago": 19318935.85,
-          "acumulado_empenhado": 40355445798.82,
+          "acumulado_empenhado": 40348332092.17,
           "acumulado_pago": 34609508095.78
         },
         {
           "date": "2026-08-18",
           "empenhado": 92290266.36,
           "pago": 12333455.23,
-          "acumulado_empenhado": 40447736065.18,
+          "acumulado_empenhado": 40440622358.53,
           "acumulado_pago": 34621841551.01
         },
         {
           "date": "2026-08-19",
-          "empenhado": 43185232.89,
+          "empenhado": 42801433.83,
           "pago": 10076298.37,
-          "acumulado_empenhado": 40490921298.07,
+          "acumulado_empenhado": 40483423792.36,
           "acumulado_pago": 34631917849.38
         },
         {
           "date": "2026-08-20",
           "empenhado": 21915091.13,
           "pago": 6266137.64,
-          "acumulado_empenhado": 40512836389.2,
+          "acumulado_empenhado": 40505338883.49,
           "acumulado_pago": 34638183987.02
         },
         {
           "date": "2026-08-21",
-          "empenhado": 29607890.8,
+          "empenhado": 28973162.8,
           "pago": 8642732.96,
-          "acumulado_empenhado": 40542444280.0,
+          "acumulado_empenhado": 40534312046.29,
           "acumulado_pago": 34646826719.98
         },
         {
           "date": "2026-08-22",
           "empenhado": 0.0,
           "pago": 0.0,
-          "acumulado_empenhado": 40542444280.0,
+          "acumulado_empenhado": 40534312046.29,
           "acumulado_pago": 34646826719.98
         },
         {
           "date": "2026-08-23",
           "empenhado": 26722.52,
           "pago": 0.0,
-          "acumulado_empenhado": 40542471002.52,
+          "acumulado_empenhado": 40534338768.81,
           "acumulado_pago": 34646826719.98
         },
         {
           "date": "2026-08-24",
-          "empenhado": 21394930.91,
+          "empenhado": 18894930.91,
           "pago": 23470846.94,
-          "acumulado_empenhado": 40563865933.43,
+          "acumulado_empenhado": 40553233699.72,
           "acumulado_pago": 34670297566.92
         },
         {
           "date": "2026-08-25",
-          "empenhado": 104886423.66,
+          "empenhado": 104576562.03,
           "pago": 4320031.05,
-          "acumulado_empenhado": 40668752357.09,
+          "acumulado_empenhado": 40657810261.75,
           "acumulado_pago": 34674617597.97
+        },
+        {
+          "date": "2026-08-26",
+          "empenhado": 41384639.92,
+          "pago": 2099811.89,
+          "acumulado_empenhado": 40699194901.67,
+          "acumulado_pago": 34676717409.86
+        },
+        {
+          "date": "2026-08-27",
+          "empenhado": 33830645.29,
+          "pago": 25087033.34,
+          "acumulado_empenhado": 40733025546.96,
+          "acumulado_pago": 34701804443.2
         }
       ],
       "top_authors_year": [
         {
           "author": "COM. DA SAUDE",
           "party": "Comissao",
-          "empenhado": 3867988939.0,
+          "empenhado": 3873888007.0,
           "pago": 3611520301.16
         },
         {
@@ -2848,14 +2862,14 @@
         {
           "author": "COM. DESENV REGIONAL E TURISMO",
           "party": "Comissao",
-          "empenhado": 1054396050.0,
-          "pago": 973198309.01
+          "empenhado": 1061220323.01,
+          "pago": 973752492.62
         },
         {
           "author": "COM. DE INTEGRACAO NACIONAL E DES. REGIONAL",
           "party": "Comissao",
-          "empenhado": 761283873.88,
-          "pago": 324429094.85
+          "empenhado": 768134830.68,
+          "pago": 324429449.15
         },
         {
           "author": "COM. DESENV. URBANO",
@@ -2867,7 +2881,7 @@
           "author": "COM. ESPORTE",
           "party": "Comissao",
           "empenhado": 492027307.0,
-          "pago": 308506016.15
+          "pago": 308588062.72
         },
         {
           "author": "BANCADA DO AMAZONAS",
@@ -2878,13 +2892,13 @@
         {
           "author": "BANCADA DO PARA",
           "party": "Bancada",
-          "empenhado": 389783935.01,
+          "empenhado": 389883935.01,
           "pago": 314776780.86
         },
         {
           "author": "BANCADA DE ALAGOAS",
           "party": "Bancada",
-          "empenhado": 377762553.54,
+          "empenhado": 377843802.54,
           "pago": 342800543.72
         },
         {
@@ -2903,7 +2917,7 @@
           "author": "BANCADA DO AMAPA",
           "party": "Bancada",
           "empenhado": 352730300.48,
-          "pago": 333921153.84
+          "pago": 333921370.62
         },
         {
           "author": "BANCADA DO PIAUI",
@@ -2951,216 +2965,216 @@
           "author": "BANCADA DO MATO GROSSO DO SUL",
           "party": "Bancada",
           "empenhado": 315554493.46,
-          "pago": 160953971.22
+          "pago": 162225272.08
         }
       ],
       "top_authors_last_day": [
         {
-          "author": "COM. DESENV. URBANO",
-          "party": "Comissao",
-          "empenhado": 45637541.99
+          "author": "DANIELLA RIBEIRO",
+          "party": "PP",
+          "empenhado": 6254770.6
         },
         {
           "author": "COM. DESENV REGIONAL E TURISMO",
           "party": "Comissao",
-          "empenhado": 13910881.31
+          "empenhado": 6118392.61
         },
         {
-          "author": "COM. DE INTEGRACAO NACIONAL E DES. REGIONAL",
+          "author": "COM. DA SAUDE",
           "party": "Comissao",
-          "empenhado": 8707943.63
+          "empenhado": 5899068.0
         },
         {
-          "author": "ADOLFO VIANA",
-          "party": "PSDB",
-          "empenhado": 2965412.07
-        },
-        {
-          "author": "CLAUDIO CAJADO",
-          "party": "PP",
-          "empenhado": 2865373.55
-        },
-        {
-          "author": "BANCADA DA BAHIA",
-          "party": "Bancada",
-          "empenhado": 1661470.62
-        },
-        {
-          "author": "CORONEL ULYSSES",
-          "party": "UNIÃO",
-          "empenhado": 1440000.0
-        },
-        {
-          "author": "FABIANO CONTARATO",
+          "author": "TERESA LEITAO",
           "party": "PT",
-          "empenhado": 1368382.81
+          "empenhado": 2887399.1
         },
         {
           "author": "COM. CULTURA",
           "party": "Comissao",
-          "empenhado": 1315328.0
+          "empenhado": 1946666.0
         },
         {
-          "author": "CHICO ALENCAR",
-          "party": "PSOL",
-          "empenhado": 1309000.0
-        },
-        {
-          "author": "LUIZ COUTO",
-          "party": "PT",
-          "empenhado": 1200000.0
-        },
-        {
-          "author": "TALIRIA PETRONE",
-          "party": "PSOL",
-          "empenhado": 1100000.0
+          "author": "BANCADA DA BAHIA",
+          "party": "Bancada",
+          "empenhado": 1819512.71
         },
         {
           "author": "TIAGO MITRAUD",
           "party": "Nao identificado",
-          "empenhado": 1080000.0
+          "empenhado": 1234165.0
+        },
+        {
+          "author": "MENDONCA FILHO",
+          "party": "PL",
+          "empenhado": 1000000.0
+        },
+        {
+          "author": "DANRLEI DE DEUS HINTERHOLZ",
+          "party": "PSD",
+          "empenhado": 700000.0
+        },
+        {
+          "author": "NELSINHO TRAD",
+          "party": "PSD",
+          "empenhado": 500000.0
         },
         {
           "author": "ONYX LORENZONI",
           "party": "Nao identificado",
-          "empenhado": 999988.0
+          "empenhado": 499998.0
         },
         {
-          "author": "ARTHUR OLIVEIRA MAIA",
-          "party": "UNIÃO",
-          "empenhado": 955000.0
+          "author": "ALIEL MACHADO",
+          "party": "PV",
+          "empenhado": 450000.0
         },
         {
-          "author": "WELLINGTON FAGUNDES",
+          "author": "SANDERSON",
           "party": "PL",
-          "empenhado": 850886.08
+          "empenhado": 416194.0
         },
         {
-          "author": "VANDERLAN CARDOSO",
-          "party": "PSD",
-          "empenhado": 824004.0
+          "author": "BANCADA DO RIO DE JANEIRO",
+          "party": "Bancada",
+          "empenhado": 322000.0
         },
         {
-          "author": "PASTOR HENRIQUE VIEIRA",
-          "party": "PSOL",
-          "empenhado": 750000.0
+          "author": "ADRIANA VENTURA",
+          "party": "NOVO",
+          "empenhado": 309600.0
         },
         {
-          "author": "TADEU VENERI",
-          "party": "PT",
-          "empenhado": 750000.0
+          "author": "Sem informação",
+          "party": "Nao identificado",
+          "empenhado": 300000.0
         },
         {
-          "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-          "party": "Comissao",
-          "empenhado": 733550.0
+          "author": "RODRIGO ROLLEMBERG",
+          "party": "PSB",
+          "empenhado": 250000.0
+        },
+        {
+          "author": "BANCADA DE RONDONIA",
+          "party": "Bancada",
+          "empenhado": 239204.14
+        },
+        {
+          "author": "POMPEO DE MATTOS",
+          "party": "PDT",
+          "empenhado": 219792.0
+        },
+        {
+          "author": "BANCADA DO ACRE",
+          "party": "Bancada",
+          "empenhado": 207069.64
         }
       ],
       "top_destinations_last_day": [
         {
           "destination": "Nacional",
-          "empenhado": 25246882.2
-        },
-        {
-          "destination": "TUCANO - BA",
-          "empenhado": 19617224.0
-        },
-        {
-          "destination": "BAHIA (UF)",
-          "empenhado": 8703715.74
-        },
-        {
-          "destination": "SANTA MARIA - RS",
-          "empenhado": 7655501.0
-        },
-        {
-          "destination": "BURITI DOS MONTES - PI",
-          "empenhado": 2392343.99
-        },
-        {
-          "destination": "RIO GRANDE DO SUL (UF)",
-          "empenhado": 2002405.55
-        },
-        {
-          "destination": "MINAS GERAIS (UF)",
-          "empenhado": 1973288.1
-        },
-        {
-          "destination": "VALINHOS - SP",
-          "empenhado": 1913875.0
-        },
-        {
-          "destination": "CORIBE - BA",
-          "empenhado": 1913875.0
-        },
-        {
-          "destination": "ANGRA DOS REIS - RJ",
-          "empenhado": 1700855.0
-        },
-        {
-          "destination": "GUARABIRA - PB",
-          "empenhado": 1502045.0
-        },
-        {
-          "destination": "APUCARANA - PR",
-          "empenhado": 1474736.0
-        },
-        {
-          "destination": "ACRE (UF)",
-          "empenhado": 1440000.0
-        },
-        {
-          "destination": "SÃO PAULO (UF)",
-          "empenhado": 1392234.31
-        },
-        {
-          "destination": "ESPÍRITO SANTO (UF)",
-          "empenhado": 1368652.81
+          "empenhado": 6495237.85
         },
         {
           "destination": "PARAÍBA (UF)",
-          "empenhado": 1200000.0
+          "empenhado": 6254770.6
         },
         {
-          "destination": "ITABAIANA - SE",
-          "empenhado": 1188608.0
+          "destination": "RIO BONITO - RJ",
+          "empenhado": 5899068.0
         },
         {
-          "destination": "MATO GROSSO (UF)",
-          "empenhado": 1129338.34
+          "destination": "PERNAMBUCO (UF)",
+          "empenhado": 3932096.62
         },
         {
-          "destination": "CUNHA - SP",
-          "empenhado": 974658.0
+          "destination": "RIO GRANDE DO SUL (UF)",
+          "empenhado": 2092569.79
         },
         {
-          "destination": "DOM ELISEU - PA",
-          "empenhado": 974658.0
+          "destination": "BAHIA (UF)",
+          "empenhado": 1901871.53
+        },
+        {
+          "destination": "MINAS GERAIS (UF)",
+          "empenhado": 1593534.2
+        },
+        {
+          "destination": "MATO GROSSO DO SUL (UF)",
+          "empenhado": 680277.0
+        },
+        {
+          "destination": "UMUARAMA - PR",
+          "empenhado": 584795.0
+        },
+        {
+          "destination": "ITACARÉ - BA",
+          "empenhado": 461339.0
+        },
+        {
+          "destination": "ESTRELA DO SUL - MG",
+          "empenhado": 461338.0
+        },
+        {
+          "destination": "PARANÁ (UF)",
+          "empenhado": 460136.0
+        },
+        {
+          "destination": "SOLÂNEA - PB",
+          "empenhado": 389863.0
+        },
+        {
+          "destination": "LIVRAMENTO - PB",
+          "empenhado": 389000.0
+        },
+        {
+          "destination": "SÃO PAULO (UF)",
+          "empenhado": 371493.0
+        },
+        {
+          "destination": "RIO DE JANEIRO (UF)",
+          "empenhado": 342991.63
+        },
+        {
+          "destination": "CRUZEIRO DO SUL - AC",
+          "empenhado": 300000.0
+        },
+        {
+          "destination": "RONDÔNIA (UF)",
+          "empenhado": 239204.14
+        },
+        {
+          "destination": "SANTA ROSA DO PURUS - AC",
+          "empenhado": 207069.64
+        },
+        {
+          "destination": "PIAUÍ (UF)",
+          "empenhado": 172500.0
         }
       ],
       "totals": {
-        "total_empenhado_year": 40668752357.09,
-        "total_pago_year": 34674617597.97,
-        "total_empenhado_last_day": 104886423.66,
-        "total_pago_last_day": 4320031.05
+        "total_empenhado_year": 40733025546.96,
+        "total_pago_year": 34701804443.2,
+        "total_empenhado_last_day": 33830645.29,
+        "total_pago_last_day": 25087033.34
       }
     },
     "apoiamento": {
       "available": true,
       "year": 2026,
-      "rows_processed": 14406,
+      "rows_processed": 14903,
       "top_supporters": [
         {
           "supporter": "MARCELO CASTRO",
           "group": "Parlamentar",
-          "empenhado": 84844576.44,
-          "pago": 16711406.39,
+          "empenhado": 84945165.52,
+          "pago": 16695026.39,
           "authors_count": 4,
-          "share_empenhado": 0.014768944315241166,
+          "share_empenhado": 0.01456764680430711,
           "top_supported_authors": [
             {
               "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-              "empenhado": 46192298.92
+              "empenhado": 46292888.0
             },
             {
               "author": "COM. DESENV REGIONAL E TURISMO",
@@ -3173,12 +3187,34 @@
           ]
         },
         {
+          "supporter": "PROFESSORA DORINHA SEABRA",
+          "group": "Parlamentar",
+          "empenhado": 72650623.76,
+          "pago": 16633008.26,
+          "authors_count": 4,
+          "share_empenhado": 0.012459197890421419,
+          "top_supported_authors": [
+            {
+              "author": "COM. AGRICULTURA E REFORMA AGRARIA",
+              "empenhado": 36393140.76
+            },
+            {
+              "author": "COM. DESENV REGIONAL E TURISMO",
+              "empenhado": 33555284.0
+            },
+            {
+              "author": "COM. DESENV. URBANO",
+              "empenhado": 2702199.0
+            }
+          ]
+        },
+        {
           "supporter": "EDUARDO BRAGA",
           "group": "Parlamentar",
-          "empenhado": 71448548.67,
-          "pago": 16617712.81,
+          "empenhado": 71549137.75,
+          "pago": 16601332.81,
           "authors_count": 4,
-          "share_empenhado": 0.012437090041438932,
+          "share_empenhado": 0.01227029886296838,
           "top_supported_authors": [
             {
               "author": "COM. DESENV REGIONAL E TURISMO",
@@ -3186,29 +3222,7 @@
             },
             {
               "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-              "empenhado": 34382551.68
-            },
-            {
-              "author": "COM. DESENV. URBANO",
-              "empenhado": 914326.0
-            }
-          ]
-        },
-        {
-          "supporter": "PROFESSORA DORINHA SEABRA",
-          "group": "Parlamentar",
-          "empenhado": 70279637.68,
-          "pago": 16325009.24,
-          "authors_count": 4,
-          "share_empenhado": 0.012233617031788258,
-          "top_supported_authors": [
-            {
-              "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-              "empenhado": 36292551.68
-            },
-            {
-              "author": "COM. DESENV REGIONAL E TURISMO",
-              "empenhado": 33072760.0
+              "empenhado": 34483140.76
             },
             {
               "author": "COM. DESENV. URBANO",
@@ -3219,14 +3233,14 @@
         {
           "supporter": "IVETE DA SILVEIRA",
           "group": "Parlamentar",
-          "empenhado": 64668571.68,
-          "pago": 16591896.59,
+          "empenhado": 64769160.76,
+          "pago": 16899895.61,
           "authors_count": 4,
-          "share_empenhado": 0.011256895539616672,
+          "share_empenhado": 0.011107568653108529,
           "top_supported_authors": [
             {
               "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-              "empenhado": 30225975.3
+              "empenhado": 30326564.38
             },
             {
               "author": "COM. DESENV REGIONAL E TURISMO",
@@ -3241,14 +3255,14 @@
         {
           "supporter": "CID GOMES",
           "group": "Parlamentar",
-          "empenhado": 63546138.68,
-          "pago": 16325009.24,
+          "empenhado": 63646727.76,
+          "pago": 16308629.24,
           "authors_count": 4,
-          "share_empenhado": 0.011061512980469689,
+          "share_empenhado": 0.010915077327611624,
           "top_supported_authors": [
             {
               "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-              "empenhado": 36292551.68
+              "empenhado": 36393140.76
             },
             {
               "author": "COM. DESENV REGIONAL E TURISMO",
@@ -3263,14 +3277,14 @@
         {
           "supporter": "AUGUSTA BRITO",
           "group": "Parlamentar",
-          "empenhado": 63263147.36,
-          "pago": 16591896.59,
+          "empenhado": 63363736.44,
+          "pago": 16899895.61,
           "authors_count": 4,
-          "share_empenhado": 0.011012252518314725,
+          "share_empenhado": 0.010866545812331051,
           "top_supported_authors": [
             {
               "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-              "empenhado": 32508425.3
+              "empenhado": 32609014.38
             },
             {
               "author": "COM. DESENV REGIONAL E TURISMO",
@@ -3285,14 +3299,14 @@
         {
           "supporter": "WEVERTON",
           "group": "Parlamentar",
-          "empenhado": 59930387.09,
-          "pago": 16325009.24,
+          "empenhado": 60030976.17,
+          "pago": 16308629.24,
           "authors_count": 3,
-          "share_empenhado": 0.010432117017508893,
+          "share_empenhado": 0.010294995045438305,
           "top_supported_authors": [
             {
               "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-              "empenhado": 41017128.09
+              "empenhado": 41117717.17
             },
             {
               "author": "COM. DESENV REGIONAL E TURISMO",
@@ -3303,14 +3317,14 @@
         {
           "supporter": "PLÍNIO VALÉRIO",
           "group": "Parlamentar",
-          "empenhado": 59493860.85,
-          "pago": 16591896.59,
+          "empenhado": 59594449.93,
+          "pago": 16575516.59,
           "authors_count": 3,
-          "share_empenhado": 0.010356130643350248,
+          "share_empenhado": 0.010220133103075795,
           "top_supported_authors": [
             {
               "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-              "empenhado": 31974555.47
+              "empenhado": 32075144.55
             },
             {
               "author": "COM. DESENV REGIONAL E TURISMO",
@@ -3321,14 +3335,14 @@
         {
           "supporter": "ELIZIANE GAMA",
           "group": "Parlamentar",
-          "empenhado": 59467568.85,
-          "pago": 16591896.59,
+          "empenhado": 59568157.93,
+          "pago": 16575516.59,
           "authors_count": 3,
-          "share_empenhado": 0.010351553979758663,
+          "share_empenhado": 0.010215624164074568,
           "top_supported_authors": [
             {
               "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-              "empenhado": 32499805.47
+              "empenhado": 32600394.55
             },
             {
               "author": "COM. DESENV REGIONAL E TURISMO",
@@ -3339,14 +3353,14 @@
         {
           "supporter": "BETO FARO",
           "group": "Parlamentar",
-          "empenhado": 59326518.5,
-          "pago": 17207896.59,
+          "empenhado": 59427107.58,
+          "pago": 17177964.59,
           "authors_count": 4,
-          "share_empenhado": 0.010327001264049505,
+          "share_empenhado": 0.010191434774745047,
           "top_supported_authors": [
             {
               "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-              "empenhado": 31887353.12
+              "empenhado": 31987942.2
             },
             {
               "author": "COM. DESENV REGIONAL E TURISMO",
@@ -3361,14 +3375,14 @@
         {
           "supporter": "RODRIGO PACHECO",
           "group": "Parlamentar",
-          "empenhado": 58956451.3,
-          "pago": 16349375.69,
+          "empenhado": 59057040.38,
+          "pago": 16332995.69,
           "authors_count": 4,
-          "share_empenhado": 0.010262583453282752,
+          "share_empenhado": 0.010127970206391364,
           "top_supported_authors": [
             {
               "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-              "empenhado": 31562975.3
+              "empenhado": 31663564.38
             },
             {
               "author": "COM. DESENV REGIONAL E TURISMO",
@@ -3383,14 +3397,14 @@
         {
           "supporter": "ANGELO CORONEL",
           "group": "Parlamentar",
-          "empenhado": 58919763.3,
-          "pago": 16737946.14,
+          "empenhado": 59020352.38,
+          "pago": 16721566.14,
           "authors_count": 4,
-          "share_empenhado": 0.010256197151980149,
+          "share_empenhado": 0.010121678408351008,
           "top_supported_authors": [
             {
               "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-              "empenhado": 31179893.92
+              "empenhado": 31280483.0
             },
             {
               "author": "COM. DESENV REGIONAL E TURISMO",
@@ -3405,14 +3419,14 @@
         {
           "supporter": "EFRAIM FILHO",
           "group": "Parlamentar",
-          "empenhado": 58220016.3,
-          "pago": 16591896.59,
+          "empenhado": 58320605.38,
+          "pago": 16575516.59,
           "authors_count": 4,
-          "share_empenhado": 0.010134391788439142,
+          "share_empenhado": 0.010001675497226262,
           "top_supported_authors": [
             {
               "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-              "empenhado": 33852648.92
+              "empenhado": 33953238.0
             },
             {
               "author": "COM. DESENV REGIONAL E TURISMO",
@@ -3425,12 +3439,34 @@
           ]
         },
         {
+          "supporter": "MARA GABRILLI",
+          "group": "Parlamentar",
+          "empenhado": 57225312.38,
+          "pago": 16330679.09,
+          "authors_count": 4,
+          "share_empenhado": 0.009813838538247435,
+          "top_supported_authors": [
+            {
+              "author": "COM. AGRICULTURA E REFORMA AGRARIA",
+              "empenhado": 31186064.38
+            },
+            {
+              "author": "COM. DESENV REGIONAL E TURISMO",
+              "empenhado": 22180302.0
+            },
+            {
+              "author": "COM. DESENV. URBANO",
+              "empenhado": 3858946.0
+            }
+          ]
+        },
+        {
           "supporter": "AUGUSTO COUTINHO",
           "group": "Parlamentar",
           "empenhado": 57042338.66,
           "pago": 395403.97,
           "authors_count": 5,
-          "share_empenhado": 0.009929392762970913,
+          "share_empenhado": 0.009782459512600558,
           "top_supported_authors": [
             {
               "author": "COM. DESENV. URBANO",
@@ -3449,14 +3485,14 @@
         {
           "supporter": "JUSSARA LIMA",
           "group": "Parlamentar",
-          "empenhado": 55627917.84,
-          "pago": 18969224.64,
+          "empenhado": 55728506.92,
+          "pago": 18952844.64,
           "authors_count": 4,
-          "share_empenhado": 0.009683183715729451,
+          "share_empenhado": 0.009557144315067604,
           "top_supported_authors": [
             {
               "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-              "empenhado": 32508888.6
+              "empenhado": 32609477.68
             },
             {
               "author": "COM. DESENV REGIONAL E TURISMO",
@@ -3471,14 +3507,14 @@
         {
           "supporter": "ZENAIDE MAIA",
           "group": "Parlamentar",
-          "empenhado": 55554863.5,
-          "pago": 16325009.24,
+          "empenhado": 55655452.58,
+          "pago": 16308629.24,
           "authors_count": 3,
-          "share_empenhado": 0.009670467104665811,
+          "share_empenhado": 0.009544615881976363,
           "top_supported_authors": [
             {
               "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-              "empenhado": 31906135.5
+              "empenhado": 32006724.58
             },
             {
               "author": "COM. DESENV REGIONAL E TURISMO",
@@ -3487,38 +3523,16 @@
           ]
         },
         {
-          "supporter": "MARA GABRILLI",
-          "group": "Parlamentar",
-          "empenhado": 54854326.3,
-          "pago": 16347059.09,
-          "authors_count": 4,
-          "share_empenhado": 0.009548524190555427,
-          "top_supported_authors": [
-            {
-              "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-              "empenhado": 31085475.3
-            },
-            {
-              "author": "COM. DESENV REGIONAL E TURISMO",
-              "empenhado": 21697778.0
-            },
-            {
-              "author": "COM. DESENV. URBANO",
-              "empenhado": 2071073.0
-            }
-          ]
-        },
-        {
           "supporter": "FLAVIO ARNS",
           "group": "Parlamentar",
-          "empenhado": 54380768.92,
-          "pago": 16325009.24,
+          "empenhado": 54481358.0,
+          "pago": 16308629.24,
           "authors_count": 4,
-          "share_empenhado": 0.009466091784516633,
+          "share_empenhado": 0.009343264868630415,
           "top_supported_authors": [
             {
               "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-              "empenhado": 31560648.92
+              "empenhado": 31661238.0
             },
             {
               "author": "COM. DESENV REGIONAL E TURISMO",
@@ -3531,46 +3545,46 @@
           ]
         },
         {
-          "supporter": "ZEQUINHA MARINHO",
+          "supporter": "TERESA LEITÃO",
           "group": "Parlamentar",
-          "empenhado": 53050577.47,
-          "pago": 17518759.24,
+          "empenhado": 53349979.67,
+          "pago": 16357362.14,
           "authors_count": 4,
-          "share_empenhado": 0.00923454459225087,
+          "share_empenhado": 0.009149239466330077,
           "top_supported_authors": [
             {
               "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-              "empenhado": 32977305.47
+              "empenhado": 33523594.96
             },
             {
               "author": "COM. DESENV REGIONAL E TURISMO",
-              "empenhado": 19507533.0
+              "empenhado": 13410976.71
             },
             {
               "author": "COM. DESENV. URBANO",
-              "empenhado": 565739.0
+              "empenhado": 6415408.0
             }
           ]
         },
         {
-          "supporter": "JAQUES WAGNER",
+          "supporter": "ZEQUINHA MARINHO",
           "group": "Parlamentar",
-          "empenhado": 52265672.5,
-          "pago": 16325009.24,
+          "empenhado": 53167073.62,
+          "pago": 17502379.24,
           "authors_count": 4,
-          "share_empenhado": 0.009097915731797029,
+          "share_empenhado": 0.009117872045730448,
           "top_supported_authors": [
             {
               "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-              "empenhado": 32035929.5
+              "empenhado": 33077894.55
             },
             {
               "author": "COM. DESENV REGIONAL E TURISMO",
-              "empenhado": 19048457.0
+              "empenhado": 19523440.07
             },
             {
               "author": "COM. DESENV. URBANO",
-              "empenhado": 1181286.0
+              "empenhado": 565739.0
             }
           ]
         }
@@ -3578,19 +3592,19 @@
       "top_supported_authors": [
         {
           "author": "COM. AGRICULTURA E REFORMA AGRARIA",
-          "empenhado": 2095782876.25
+          "empenhado": 2104497394.61
         },
         {
           "author": "COM. DESENV. URBANO",
-          "empenhado": 1347324784.87
+          "empenhado": 1390233736.87
         },
         {
           "author": "COM. DESENV REGIONAL E TURISMO",
-          "empenhado": 1122589353.24
+          "empenhado": 1143962609.85
         },
         {
           "author": "COM. DE INTEGRACAO NACIONAL E DES. REGIONAL",
-          "empenhado": 423417556.38
+          "empenhado": 432849068.68
         },
         {
           "author": "COM. ESPORTE",
@@ -3598,7 +3612,7 @@
         },
         {
           "author": "COM. TURISMO",
-          "empenhado": 286679014.2
+          "empenhado": 288800260.2
         },
         {
           "author": "COM. AGRICULTURA PEC ABAST D. RURAL",
@@ -3606,7 +3620,7 @@
         },
         {
           "author": "COM. CULTURA",
-          "empenhado": 14301205.5
+          "empenhado": 16038976.5
         },
         {
           "author": "COM. DA SAUDE",
@@ -3620,20 +3634,20 @@
       "top_supporter_groups": [
         {
           "group": "Parlamentar",
-          "empenhado": 5744796285.3
+          "empenhado": 5831083541.57
         }
       ],
       "totals": {
-        "total_empenhado": 5744796285.3,
-        "total_pago": 1192607441.65,
-        "top1_share": 0.014768944315241164,
-        "top5_share": 0.06175805990855472
+        "total_empenhado": 5831083541.57,
+        "total_pago": 1193279222.57,
+        "top1_share": 0.01456764680430711,
+        "top5_share": 0.06131978953841707
       },
       "source": {
         "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/apoiamento-emendas-parlamentares-documentos/2026",
         "download_url": "https://dadosabertos-download.cgu.gov.br/PortalDaTransparencia/saida/emendas-parlamentares-apoiamento/2026_ApoiamentoEmendasParlamentares.zip",
-        "last_modified": "Thu, 27 Aug 2026 06:42:05 GMT",
-        "etag": "\"b77d65ab5ff4b5c46093f667cf9666d8\""
+        "last_modified": "Sat, 29 Aug 2026 04:39:19 GMT",
+        "etag": "\"5081ff72125d6f41588eefcba40dbc88\""
       }
     },
     "party_lookup": {
@@ -4966,6 +4980,17 @@
       "previous_snapshot_date": "2026-08-27",
       "interval_days": 1,
       "source_changed": false
+    },
+    {
+      "date": "2026-08-29",
+      "delta_positivo": 55252863.76,
+      "delta_liquido": 55194231.26,
+      "total_empenhado_atual": 345743501313.71,
+      "autores_com_aumento": 85,
+      "destinos_com_aumento": 25,
+      "previous_snapshot_date": "2026-08-28",
+      "interval_days": 1,
+      "source_changed": true
     }
   ],
   "siop_daily_history": [
@@ -6528,7 +6553,16 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-08-29",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
-  ],
-  "updated_at": "2026-08-28T22:59:45.387244+00:00"
+  ]
 }
