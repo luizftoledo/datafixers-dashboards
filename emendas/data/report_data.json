@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-29T17:05:20.841809+00:00",
-  "snapshot_date": "2026-08-29",
+  "generated_at": "2026-08-30T17:22:14.021045+00:00",
+  "snapshot_date": "2026-08-30",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -13,12 +13,12 @@
   "metrics": {
     "total_empenhado_atual": 345743501313.71,
     "total_empenhado_snapshot_anterior": 345688307082.45,
-    "delta_liquido_desde_snapshot_anterior": 55194231.26,
-    "delta_positivo_desde_snapshot_anterior": 55252863.76,
-    "delta_negativo_desde_snapshot_anterior": -58632.5,
-    "autores_com_aumento": 85,
-    "destinos_com_aumento": 25,
-    "pares_autor_destino_com_aumento": 88,
+    "delta_liquido_desde_snapshot_anterior": 0.0,
+    "delta_positivo_desde_snapshot_anterior": 0.0,
+    "delta_negativo_desde_snapshot_anterior": 0.0,
+    "autores_com_aumento": 0,
+    "destinos_com_aumento": 0,
+    "pares_autor_destino_com_aumento": 0,
     "total_autores_mapeados": 1614,
     "total_destinos_mapeados": 5459,
     "total_linhas_csv": 94463,
@@ -27,8 +27,8 @@
     "current_year_total_empenhado": 40733025546.96,
     "current_year_total_liquidado": 25927492804.19,
     "current_year_total_pago": 34701804443.2,
-    "current_year_total_empenhado_por_ano_emenda": 39442130185.24,
-    "current_year_total_pago_por_ano_emenda": 25691411536.27,
+    "current_year_total_empenhado_por_ano_emenda": 40733025546.96,
+    "current_year_total_pago_por_ano_emenda": 34701804443.2,
     "_pago_e_empenhado_source": "por_data_documento"
   },
   "top_authors_today": [
@@ -1021,7 +1021,7 @@
     "total_liquidado": 25927492804.19,
     "total_pago": 34701804443.2
   },
-  "run_date": "2026-08-29",
+  "run_date": "2026-08-30",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1105,7 +1105,7 @@
           "error": ""
         }
       ],
-      "error": "dotação inicial/atual zerada — provável quebra do scraper Qlik (DOM mudou)",
+      "error": "7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -1156,7 +1156,8 @@
           "error": ""
         }
       ],
-      "error": ""
+      "error": "6 - Emendas Individuais: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
+      "fallback_from_previous": true
     },
     "documents": {
       "year": 2026,
@@ -3006,12 +3007,12 @@
         },
         {
           "author": "MENDONCA FILHO",
-          "party": "PL",
+          "party": "Nao identificado",
           "empenhado": 1000000.0
         },
         {
           "author": "DANRLEI DE DEUS HINTERHOLZ",
-          "party": "PSD",
+          "party": "Nao identificado",
           "empenhado": 700000.0
         },
         {
@@ -3026,12 +3027,12 @@
         },
         {
           "author": "ALIEL MACHADO",
-          "party": "PV",
+          "party": "Nao identificado",
           "empenhado": 450000.0
         },
         {
           "author": "SANDERSON",
-          "party": "PL",
+          "party": "Nao identificado",
           "empenhado": 416194.0
         },
         {
@@ -3041,7 +3042,7 @@
         },
         {
           "author": "ADRIANA VENTURA",
-          "party": "NOVO",
+          "party": "Nao identificado",
           "empenhado": 309600.0
         },
         {
@@ -3051,7 +3052,7 @@
         },
         {
           "author": "RODRIGO ROLLEMBERG",
-          "party": "PSB",
+          "party": "Nao identificado",
           "empenhado": 250000.0
         },
         {
@@ -3061,7 +3062,7 @@
         },
         {
           "author": "POMPEO DE MATTOS",
-          "party": "PDT",
+          "party": "Nao identificado",
           "empenhado": 219792.0
         },
         {
@@ -3651,7 +3652,7 @@
       }
     },
     "party_lookup": {
-      "camara_mapeados": 513,
+      "camara_mapeados": 0,
       "senado_mapeados": 81
     }
   },
@@ -4991,6 +4992,17 @@
       "previous_snapshot_date": "2026-08-28",
       "interval_days": 1,
       "source_changed": true
+    },
+    {
+      "date": "2026-08-30",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 345743501313.71,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-08-29",
+      "interval_days": 1,
+      "source_changed": false
     }
   ],
   "siop_daily_history": [
@@ -6563,6 +6575,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-08-30",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
-  ]
+  ],
+  "updated_at": "2026-08-30T17:22:14.021045+00:00"
 }
