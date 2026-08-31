@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-30T17:22:14.021045+00:00",
-  "snapshot_date": "2026-08-30",
+  "generated_at": "2026-08-31T19:29:03.773226+00:00",
+  "snapshot_date": "2026-08-31",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -1021,7 +1021,7 @@
     "total_liquidado": 25927492804.19,
     "total_pago": 34701804443.2
   },
-  "run_date": "2026-08-30",
+  "run_date": "2026-08-31",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1105,7 +1105,7 @@
           "error": ""
         }
       ],
-      "error": "7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
+      "error": "dotação inicial/atual zerada — provável quebra do scraper Qlik (DOM mudou)",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -1121,7 +1121,7 @@
         ]
       },
       "last_update": "",
-      "base_siafi_date": "27/8/2026",
+      "base_siafi_date": "28/8/2026",
       "rows": [],
       "rows_count": 0,
       "unique_nro_emendas": 0,
@@ -1156,8 +1156,7 @@
           "error": ""
         }
       ],
-      "error": "6 - Emendas Individuais: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
-      "fallback_from_previous": true
+      "error": ""
     },
     "documents": {
       "year": 2026,
@@ -3007,12 +3006,12 @@
         },
         {
           "author": "MENDONCA FILHO",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 1000000.0
         },
         {
           "author": "DANRLEI DE DEUS HINTERHOLZ",
-          "party": "Nao identificado",
+          "party": "PSD",
           "empenhado": 700000.0
         },
         {
@@ -3027,12 +3026,12 @@
         },
         {
           "author": "ALIEL MACHADO",
-          "party": "Nao identificado",
+          "party": "PV",
           "empenhado": 450000.0
         },
         {
           "author": "SANDERSON",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 416194.0
         },
         {
@@ -3042,7 +3041,7 @@
         },
         {
           "author": "ADRIANA VENTURA",
-          "party": "Nao identificado",
+          "party": "NOVO",
           "empenhado": 309600.0
         },
         {
@@ -3052,7 +3051,7 @@
         },
         {
           "author": "RODRIGO ROLLEMBERG",
-          "party": "Nao identificado",
+          "party": "PSB",
           "empenhado": 250000.0
         },
         {
@@ -3062,7 +3061,7 @@
         },
         {
           "author": "POMPEO DE MATTOS",
-          "party": "Nao identificado",
+          "party": "PDT",
           "empenhado": 219792.0
         },
         {
@@ -3652,7 +3651,7 @@
       }
     },
     "party_lookup": {
-      "camara_mapeados": 0,
+      "camara_mapeados": 513,
       "senado_mapeados": 81
     }
   },
@@ -5001,6 +5000,17 @@
       "autores_com_aumento": 0,
       "destinos_com_aumento": 0,
       "previous_snapshot_date": "2026-08-29",
+      "interval_days": 1,
+      "source_changed": false
+    },
+    {
+      "date": "2026-08-31",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 345743501313.71,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-08-30",
       "interval_days": 1,
       "source_changed": false
     }
@@ -6585,7 +6595,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-08-31",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-08-30T17:22:14.021045+00:00"
+  "updated_at": "2026-08-31T19:29:03.773226+00:00"
 }
