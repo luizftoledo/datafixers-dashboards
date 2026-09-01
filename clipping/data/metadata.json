@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-08-31T19:42:46.259598+00:00",
+  "generated_at": "2026-09-01T17:28:11.905189+00:00",
   "counts": {
-    "items": 88,
+    "items": 85,
     "domains": 24,
     "categories": {
-      "reportagem_autoral": 59,
+      "reportagem_autoral": 57,
       "republicacao": 0,
       "eco_repercussao": 1,
       "citacao_fonte": 4,
-      "mencao": 6,
+      "mencao": 5,
       "entrevista": 1,
       "palestra_curso": 0,
       "perfil_bio": 17
@@ -39,24 +39,24 @@
         "google-news-rss:\"Luiz Fernando Toledo\"": 40,
         "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 1,
         "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 2,
-        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 14
+        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 13
       }
     },
     "enrich": {
-      "fetched": 60,
+      "fetched": 57,
       "reused": 33,
-      "kept": 88,
+      "kept": 85,
       "dropped": 5,
       "categories": {
         "perfil_bio": 17,
-        "reportagem_autoral": 59,
-        "mencao": 6,
+        "reportagem_autoral": 57,
+        "mencao": 5,
         "entrevista": 1,
         "citacao_fonte": 4,
         "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 52,
+        "bbc.com": 50,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
@@ -79,7 +79,7 @@
         "sbtnews.sbt.com.br": 1,
         "fiquemsabendo.com.br": 1,
         "piaui.uol.com.br": 2,
-        "cnnbrasil.com.br": 3
+        "cnnbrasil.com.br": 2
       },
       "errors": [
         {
