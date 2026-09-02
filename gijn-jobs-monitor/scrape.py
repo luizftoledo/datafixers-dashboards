@@ -3,7 +3,9 @@ import argparse
 import json
 import os
 import re
+import subprocess
 import sys
+import time
 from pathlib import Path
 from urllib.parse import urljoin
 
@@ -75,10 +77,31 @@ def is_eligible(location: str) -> bool:
     )
 
 
+def ensure_display() -> None:
+    # Cloudflare's managed challenge on this site fingerprints headless Chromium
+    # (navigator.webdriver, missing headed-mode signals) and hard-blocks it with a
+    # 403 "Just a moment..." interstitial. Running a real (headed) browser under a
+    # virtual X server passes the challenge; a genuinely headless launch does not.
+    if os.environ.get("DISPLAY"):
+        return
+    subprocess.Popen(
+        ["Xvfb", ":99", "-screen", "0", "1280x800x24", "-nolisten", "tcp"],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+    time.sleep(1)
+    os.environ["DISPLAY"] = ":99"
+
+
 def scrape_jobs() -> tuple[int, list[dict[str, str]]]:
     # The site blocks plain HTTP clients with Cloudflare, but renders in Chromium.
+    ensure_display()
     proxy_url = os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy")
-    launch_args = ["--no-sandbox", "--disable-dev-shm-usage"]
+    launch_args = [
+        "--no-sandbox",
+        "--disable-dev-shm-usage",
+        "--disable-blink-features=AutomationControlled",
+    ]
     if proxy_url:
         # This sandbox's outbound TLS-inspecting proxy resets the connection on
         # Chromium's TLS 1.3 ClientHello (post-quantum hybrid key share); TLS 1.2
@@ -101,21 +124,24 @@ def scrape_jobs() -> tuple[int, list[dict[str, str]]]:
                 else playwright.chromium.executable_path
             )
             browser = playwright.chromium.launch(
-                headless=True, executable_path=executable_path, args=launch_args
+                headless=False, executable_path=executable_path, args=launch_args
             )
         except Exception as error:
             raise RuntimeError("Could not launch Chromium for GIJN scraping") from error
         try:
             page = browser.new_page(user_agent=USER_AGENT)
             response = page.goto(JOBS_URL, wait_until="domcontentloaded", timeout=30_000)
-            if response is None or not response.ok:
-                status = "no response" if response is None else f"HTTP {response.status}"
-                raise RuntimeError(f"Could not load {JOBS_URL}: {status}")
+            if response is None:
+                raise RuntimeError(f"Could not load {JOBS_URL}: no response")
 
             try:
-                page.wait_for_selector("main .tax__postsgrid a.jobpreview", timeout=30_000)
+                # Generous timeout: Cloudflare's challenge (if triggered) resolves
+                # and redirects within a few seconds for a real headed browser.
+                page.wait_for_selector("main .tax__postsgrid a.jobpreview", timeout=45_000)
             except Exception as error:
-                raise RuntimeError("Job listing selector was not found on the GIJN page") from error
+                raise RuntimeError(
+                    f"Job listing selector was not found on the GIJN page (initial response: HTTP {response.status})"
+                ) from error
 
             container = page.query_selector("main .tax__postsgrid")
             if container is None:
