@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-02T17:06:42.965276+00:00",
-  "snapshot_date": "2026-09-02",
+  "generated_at": "2026-09-03T17:00:50.698103+00:00",
+  "snapshot_date": "2026-09-03",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -1021,7 +1021,7 @@
     "total_liquidado": 25927492804.19,
     "total_pago": 34701804443.2
   },
-  "run_date": "2026-09-02",
+  "run_date": "2026-09-03",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1121,7 +1121,7 @@
         ]
       },
       "last_update": "",
-      "base_siafi_date": "1/9/2026",
+      "base_siafi_date": "2/9/2026",
       "rows": [],
       "rows_count": 0,
       "unique_nro_emendas": 0,
@@ -3006,12 +3006,12 @@
         },
         {
           "author": "MENDONCA FILHO",
-          "party": "PL",
+          "party": "Nao identificado",
           "empenhado": 1000000.0
         },
         {
           "author": "DANRLEI DE DEUS HINTERHOLZ",
-          "party": "PSD",
+          "party": "Nao identificado",
           "empenhado": 700000.0
         },
         {
@@ -3026,12 +3026,12 @@
         },
         {
           "author": "ALIEL MACHADO",
-          "party": "PV",
+          "party": "Nao identificado",
           "empenhado": 450000.0
         },
         {
           "author": "SANDERSON",
-          "party": "PL",
+          "party": "Nao identificado",
           "empenhado": 416194.0
         },
         {
@@ -3041,7 +3041,7 @@
         },
         {
           "author": "ADRIANA VENTURA",
-          "party": "NOVO",
+          "party": "Nao identificado",
           "empenhado": 309600.0
         },
         {
@@ -3051,7 +3051,7 @@
         },
         {
           "author": "RODRIGO ROLLEMBERG",
-          "party": "PSB",
+          "party": "Nao identificado",
           "empenhado": 250000.0
         },
         {
@@ -3061,7 +3061,7 @@
         },
         {
           "author": "POMPEO DE MATTOS",
-          "party": "PDT",
+          "party": "Nao identificado",
           "empenhado": 219792.0
         },
         {
@@ -3651,7 +3651,7 @@
       }
     },
     "party_lookup": {
-      "camara_mapeados": 513,
+      "camara_mapeados": 0,
       "senado_mapeados": 81
     }
   },
@@ -5033,6 +5033,17 @@
       "autores_com_aumento": 0,
       "destinos_com_aumento": 0,
       "previous_snapshot_date": "2026-09-01",
+      "interval_days": 1,
+      "source_changed": false
+    },
+    {
+      "date": "2026-09-03",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 345743501313.71,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-09-02",
       "interval_days": 1,
       "source_changed": false
     }
@@ -6647,7 +6658,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-09-03",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-09-02T17:06:42.965276+00:00"
+  "updated_at": "2026-09-03T17:00:50.698103+00:00"
 }
