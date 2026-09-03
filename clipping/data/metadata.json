@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-09-02T17:24:41.941504+00:00",
+  "generated_at": "2026-09-03T17:17:58.352358+00:00",
   "counts": {
-    "items": 89,
-    "domains": 25,
+    "items": 84,
+    "domains": 23,
     "categories": {
-      "reportagem_autoral": 57,
+      "reportagem_autoral": 55,
       "republicacao": 0,
       "eco_repercussao": 1,
-      "citacao_fonte": 4,
+      "citacao_fonte": 2,
       "mencao": 8,
       "entrevista": 1,
       "palestra_curso": 0,
-      "perfil_bio": 18
+      "perfil_bio": 17
     },
     "recent": {
       "last_1_day": 1,
@@ -20,7 +20,7 @@
     }
   },
   "date_range": {
-    "min": "2015-10-28",
+    "min": "2019-04-09",
     "max": "2026-09-02"
   },
   "methodology": {
@@ -36,56 +36,58 @@
         "known_external_sources": 50
       },
       "searches": {
-        "google-news-rss:\"Luiz Fernando Toledo\"": 40,
+        "google-news-rss:\"Luiz Fernando Toledo\"": 34,
         "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 1,
-        "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 2,
+        "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 1,
         "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 10
       }
     },
     "enrich": {
-      "fetched": 61,
-      "reused": 33,
-      "kept": 89,
-      "dropped": 5,
+      "fetched": 59,
+      "reused": 31,
+      "kept": 84,
+      "dropped": 6,
       "categories": {
-        "perfil_bio": 18,
-        "reportagem_autoral": 57,
+        "perfil_bio": 17,
+        "reportagem_autoral": 55,
         "mencao": 8,
         "entrevista": 1,
-        "citacao_fonte": 4,
+        "citacao_fonte": 2,
         "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 41,
+        "bbc.com": 35,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
-        "apublica.org": 3,
+        "apublica.org": 4,
         "ojoioeotrigo.com.br": 2,
-        "estadao.com.br": 14,
+        "estadao.com.br": 20,
         "g1.globo.com": 3,
         "escavador.com": 1,
         "icfj.org": 1,
         "devstudies.cam.ac.uk": 1,
         "blogfca.pucminas.br": 1,
         "institutoling.org.br": 1,
-        "tvgazeta.com.br": 1,
-        "reutersinstitute.politics.ox.ac.uk": 2,
+        "tvgazeta.com.br": 2,
+        "reutersinstitute.politics.ox.ac.uk": 1,
         "brown.columbia.edu": 1,
         "repositorio.fgv.br": 1,
         "talks.ox.ac.uk": 1,
         "cima.ned.org": 1,
         "scielo.br": 1,
-        "abraji.org.br": 3,
-        "fiquemsabendo.com.br": 1,
         "sbtnews.sbt.com.br": 1,
-        "piaui.uol.com.br": 2,
-        "lance.com.br": 1,
-        "cnnbrasil.com.br": 3
+        "abraji.org.br": 1,
+        "correiobraziliense.com.br": 1,
+        "cnnbrasil.com.br": 2
       },
       "errors": [
         {
           "url": "https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil",
           "error": "HTTPSConnectionPool(host='devstudies.cam.ac.uk', port=443): Max retries exceeded with url: /news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil (Caused by NameResolutionError(\"HTTPSConnection(host='devstudies.cam.ac.uk', port=443): Failed to resolve 'devstudies.cam.ac.uk' ([Errno -5] No address associated with hostname)\")) | jina: 403 Client Error: Forbidden for url: https://r.jina.ai/http://https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil"
+        },
+        {
+          "url": "https://noticias.uol.com.br/colunas/jose-roberto-de-toledo/2023/05/15/exercito-gasta-mais-com-viuvas-e-herdeiros-de-generais-do-que-com-soldados.htm",
+          "error": "403 Client Error: Forbidden for url: https://noticias.uol.com.br/colunas/jose-roberto-de-toledo/2023/05/15/exercito-gasta-mais-com-viuvas-e-herdeiros-de-generais-do-que-com-soldados.htm | jina: 403 Client Error: Forbidden for url: https://r.jina.ai/http://https://noticias.uol.com.br/colunas/jose-roberto-de-toledo/2023/05/15/exercito-gasta-mais-com-viuvas-e-herdeiros-de-generais-do-que-com-soldados.htm"
         }
       ]
     }
