@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-06T16:10:09.725423+00:00",
-  "snapshot_date": "2026-09-06",
+  "generated_at": "2026-09-07T18:13:31.455273+00:00",
+  "snapshot_date": "2026-09-07",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -933,7 +933,7 @@
     "total_liquidado": 25972986180.0,
     "total_pago": 34769764999.47
   },
-  "run_date": "2026-09-06",
+  "run_date": "2026-09-07",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1033,7 +1033,7 @@
         ]
       },
       "last_update": "",
-      "base_siafi_date": "3/9/2026",
+      "base_siafi_date": "4/9/2026",
       "rows": [],
       "rows_count": 0,
       "unique_nro_emendas": 0,
@@ -1068,8 +1068,7 @@
           "error": ""
         }
       ],
-      "error": "7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
-      "fallback_from_previous": true
+      "error": ""
     },
     "documents": {
       "year": 2026,
@@ -2948,12 +2947,12 @@
         },
         {
           "author": "MARCIO JERRY",
-          "party": "Nao identificado",
+          "party": "PCdoB",
           "empenhado": 664627.23
         },
         {
           "author": "FERNANDO MINEIRO",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 651950.17
         },
         {
@@ -2973,22 +2972,22 @@
         },
         {
           "author": "SAMIA BOMFIM",
-          "party": "Nao identificado",
+          "party": "PSOL",
           "empenhado": 400000.0
         },
         {
           "author": "DELEGADO MARCELO FREITAS",
-          "party": "Nao identificado",
+          "party": "UNIÃO",
           "empenhado": 398000.0
         },
         {
           "author": "DAIANA SANTOS",
-          "party": "Nao identificado",
+          "party": "PCdoB",
           "empenhado": 300000.0
         },
         {
           "author": "FRED LINHARES",
-          "party": "Nao identificado",
+          "party": "REPUBLICANOS",
           "empenhado": 245000.0
         },
         {
@@ -2998,7 +2997,7 @@
         },
         {
           "author": "PROF. REGINALDO VERAS",
-          "party": "Nao identificado",
+          "party": "PV",
           "empenhado": 200000.0
         },
         {
@@ -3013,7 +3012,7 @@
         },
         {
           "author": "PAULO GUEDES",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 112560.0
         },
         {
@@ -3023,12 +3022,12 @@
         },
         {
           "author": "MARCELO ALVARO ANTONIO",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 99500.0
         },
         {
           "author": "REGINALDO LOPES",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 99500.0
         }
       ],
@@ -3609,7 +3608,7 @@
       }
     },
     "party_lookup": {
-      "camara_mapeados": 0,
+      "camara_mapeados": 513,
       "senado_mapeados": 81
     }
   },
@@ -5035,6 +5034,17 @@
       "autores_com_aumento": 0,
       "destinos_com_aumento": 0,
       "previous_snapshot_date": "2026-09-05",
+      "interval_days": 1,
+      "source_changed": false
+    },
+    {
+      "date": "2026-09-07",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 345888919871.45,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-09-06",
       "interval_days": 1,
       "source_changed": false
     }
@@ -6689,7 +6699,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-09-07",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-09-06T16:10:09.725423+00:00"
+  "updated_at": "2026-09-07T18:13:31.455273+00:00"
 }
