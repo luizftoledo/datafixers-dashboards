@@ -190,6 +190,28 @@ def write_state(state_file: Path, jobs: list[dict[str, str]]) -> None:
     state_file.write_text(json.dumps(jobs, indent=2) + "\n", encoding="utf-8")
 
 
+SCRAPE_ATTEMPTS = 3
+SCRAPE_RETRY_DELAY_SECONDS = 10
+
+
+def scrape_jobs_with_retries() -> tuple[int, list[dict[str, str]]]:
+    # Cloudflare's challenge (or the sandbox's outbound proxy reaching it) is
+    # occasionally flaky rather than a hard block: a fresh browser launch a few
+    # seconds later often succeeds where the previous attempt hit a 403 or
+    # timed out waiting for the listing selector.
+    last_error: Exception | None = None
+    for attempt in range(1, SCRAPE_ATTEMPTS + 1):
+        try:
+            return scrape_jobs()
+        except Exception as error:
+            last_error = error
+            if attempt < SCRAPE_ATTEMPTS:
+                time.sleep(SCRAPE_RETRY_DELAY_SECONDS)
+    raise RuntimeError(
+        f"Scraping failed after {SCRAPE_ATTEMPTS} attempts: {last_error}"
+    ) from last_error
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Monitor new UK and unrestricted remote GIJN jobs.")
     parser.add_argument("--state-file", default="gijn-jobs-monitor/state.json")
@@ -199,7 +221,7 @@ def main() -> int:
 
     try:
         previous_urls = load_previous_urls(state_file)
-        total_posts, jobs = scrape_jobs()
+        total_posts, jobs = scrape_jobs_with_retries()
         eligible = [job for job in jobs if is_eligible(job["location"])]
         new_jobs = [job for job in eligible if job["url"] not in previous_urls]
         if not args.dry_run:
