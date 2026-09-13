@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-12T16:31:06.138345+00:00",
+  "generated_at": "2026-09-13T17:04:54.303374+00:00",
   "counts": {
     "items": 93,
     "domains": 24,
@@ -14,14 +14,14 @@
       "perfil_bio": 18
     },
     "recent": {
-      "last_1_day": 1,
-      "last_7_days": 2,
-      "last_30_days": 6
+      "last_1_day": 3,
+      "last_7_days": 5,
+      "last_30_days": 9
     }
   },
   "date_range": {
     "min": "2019-09-16",
-    "max": "2026-09-11"
+    "max": "2026-09-12"
   },
   "methodology": {
     "names": [
@@ -37,16 +37,16 @@
       },
       "searches": {
         "google-news-rss:\"Luiz Fernando Toledo\"": 40,
-        "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 2,
-        "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 2,
+        "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 1,
+        "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 3,
         "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 17
       }
     },
     "enrich": {
-      "fetched": 64,
+      "fetched": 63,
       "reused": 36,
       "kept": 93,
-      "dropped": 7,
+      "dropped": 6,
       "categories": {
         "perfil_bio": 18,
         "reportagem_autoral": 63,
@@ -56,12 +56,12 @@
         "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 54,
+        "bbc.com": 55,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
         "ojoioeotrigo.com.br": 2,
-        "estadao.com.br": 7,
+        "estadao.com.br": 6,
         "g1.globo.com": 2,
         "escavador.com": 1,
         "icfj.org": 1,
