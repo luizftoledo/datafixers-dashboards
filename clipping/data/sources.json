@@ -7,29 +7,29 @@
       "google-news-rss:\"Luiz Fernando Toledo\"": 40,
       "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 1,
       "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 3,
-      "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 15
+      "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 14
     }
   },
   "enrich": {
-    "fetched": 61,
-    "reused": 34,
-    "kept": 89,
+    "fetched": 60,
+    "reused": 33,
+    "kept": 87,
     "dropped": 6,
     "categories": {
-      "perfil_bio": 18,
-      "reportagem_autoral": 59,
+      "perfil_bio": 19,
+      "reportagem_autoral": 56,
       "mencao": 7,
       "entrevista": 1,
       "citacao_fonte": 3,
       "eco_repercussao": 1
     },
     "domains": {
-      "bbc.com": 52,
+      "bbc.com": 50,
       "intercept.com.br": 1,
       "piaui.folha.uol.com.br": 1,
       "apublica.org": 3,
       "ojoioeotrigo.com.br": 2,
-      "estadao.com.br": 5,
+      "estadao.com.br": 4,
       "g1.globo.com": 1,
       "escavador.com": 1,
       "icfj.org": 1,
@@ -37,7 +37,7 @@
       "blogfca.pucminas.br": 1,
       "institutoling.org.br": 1,
       "tvgazeta.com.br": 1,
-      "reutersinstitute.politics.ox.ac.uk": 1,
+      "reutersinstitute.politics.ox.ac.uk": 2,
       "brown.columbia.edu": 1,
       "repositorio.fgv.br": 1,
       "talks.ox.ac.uk": 1,
