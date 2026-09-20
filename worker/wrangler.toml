@@ -10,7 +10,7 @@ routes = [
 
 [triggers]
 crons = [
-  "0 6 * * *",     # 06:00 UTC = 03:00 BRT — scrape diário
+  "0 9 * * *",     # 09:00 UTC = 06:00 BRT — confere a fonte e a watchlist após a carga
   "0 11 * * *"     # 11:00 UTC = 08:00 BRT — digest matinal Telegram
 ]
 
@@ -27,4 +27,13 @@ database_id = "2bba3c11-c416-47c9-af39-d01f40c7136f"
 binding = "AI"
 
 [vars]
-SOURCE_URL = "https://dadosabertos.ibama.gov.br/dados/SIFISC/auto_infracao/auto_infracao/auto_infracao_csv.zip"
+SOURCE_URL = "https://stibamadadosabertosprd.blob.core.windows.net/dados-abertos/dados/SIFISC/auto_infracao/auto_infracao/auto_infracao_csv.zip"
+
+[observability]
+enabled = true
+
+[observability.logs]
+enabled = true
+
+[observability.traces]
+enabled = true
