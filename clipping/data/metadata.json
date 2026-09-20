@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-09-19T16:49:49.821153+00:00",
+  "generated_at": "2026-09-20T17:00:27.841012+00:00",
   "counts": {
     "items": 89,
     "domains": 24,
     "categories": {
-      "reportagem_autoral": 57,
+      "reportagem_autoral": 58,
       "republicacao": 0,
       "eco_repercussao": 1,
       "citacao_fonte": 4,
-      "mencao": 7,
+      "mencao": 6,
       "entrevista": 1,
       "palestra_curso": 0,
       "perfil_bio": 19
     },
     "recent": {
       "last_1_day": 0,
-      "last_7_days": 2,
-      "last_30_days": 8
+      "last_7_days": 1,
+      "last_30_days": 9
     }
   },
   "date_range": {
     "min": "2019-09-16",
-    "max": "2026-09-12"
+    "max": "2026-09-15"
   },
   "methodology": {
     "names": [
@@ -39,7 +39,7 @@
         "google-news-rss:\"Luiz Fernando Toledo\"": 40,
         "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 1,
         "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 3,
-        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 16
+        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 17
       }
     },
     "enrich": {
@@ -49,19 +49,19 @@
       "dropped": 7,
       "categories": {
         "perfil_bio": 19,
-        "reportagem_autoral": 57,
-        "mencao": 7,
+        "reportagem_autoral": 58,
+        "mencao": 6,
         "entrevista": 1,
         "citacao_fonte": 4,
         "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 51,
+        "bbc.com": 52,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
         "ojoioeotrigo.com.br": 2,
-        "estadao.com.br": 4,
+        "estadao.com.br": 3,
         "g1.globo.com": 2,
         "escavador.com": 1,
         "icfj.org": 1,
@@ -78,8 +78,8 @@
         "abraji.org.br": 3,
         "sbtnews.sbt.com.br": 1,
         "fiquemsabendo.com.br": 1,
-        "piaui.uol.com.br": 2,
-        "cnnbrasil.com.br": 5
+        "cnnbrasil.com.br": 5,
+        "piaui.uol.com.br": 2
       },
       "errors": [
         {
