@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-09-20T17:00:27.841012+00:00",
+  "generated_at": "2026-09-21T18:55:27.558594+00:00",
   "counts": {
-    "items": 89,
+    "items": 87,
     "domains": 24,
     "categories": {
-      "reportagem_autoral": 58,
+      "reportagem_autoral": 59,
       "republicacao": 0,
       "eco_repercussao": 1,
-      "citacao_fonte": 4,
+      "citacao_fonte": 3,
       "mencao": 6,
       "entrevista": 1,
       "palestra_curso": 0,
-      "perfil_bio": 19
+      "perfil_bio": 17
     },
     "recent": {
       "last_1_day": 0,
@@ -33,7 +33,7 @@
   "sources": {
     "discovery": {
       "seeds": {
-        "known_external_sources": 51
+        "known_external_sources": 50
       },
       "searches": {
         "google-news-rss:\"Luiz Fernando Toledo\"": 40,
@@ -44,19 +44,19 @@
     },
     "enrich": {
       "fetched": 62,
-      "reused": 34,
-      "kept": 89,
+      "reused": 32,
+      "kept": 87,
       "dropped": 7,
       "categories": {
-        "perfil_bio": 19,
-        "reportagem_autoral": 58,
+        "perfil_bio": 17,
+        "reportagem_autoral": 59,
         "mencao": 6,
         "entrevista": 1,
-        "citacao_fonte": 4,
+        "citacao_fonte": 3,
         "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 52,
+        "bbc.com": 53,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
@@ -69,17 +69,17 @@
         "blogfca.pucminas.br": 1,
         "institutoling.org.br": 1,
         "tvgazeta.com.br": 1,
-        "reutersinstitute.politics.ox.ac.uk": 2,
+        "reutersinstitute.politics.ox.ac.uk": 1,
         "brown.columbia.edu": 1,
         "repositorio.fgv.br": 1,
         "talks.ox.ac.uk": 1,
         "cima.ned.org": 1,
         "scielo.br": 1,
-        "abraji.org.br": 3,
+        "abraji.org.br": 2,
         "sbtnews.sbt.com.br": 1,
         "fiquemsabendo.com.br": 1,
-        "cnnbrasil.com.br": 5,
-        "piaui.uol.com.br": 2
+        "piaui.uol.com.br": 2,
+        "cnnbrasil.com.br": 4
       },
       "errors": [
         {
