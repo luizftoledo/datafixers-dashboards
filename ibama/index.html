@@ -137,6 +137,7 @@
 
 <h1>IBAMA · Buscar autos de infração</h1>
 <p class="sub">Dataset de fiscalizações ambientais (Sistema SICAFI). Fonte: <a href="https://dadosabertos.ibama.gov.br/" target="_blank">dadosabertos.ibama.gov.br</a>.</p>
+<div class="tip"><b>Cobertura em revisão:</b> esta cópia ainda não contém todos os autos do arquivo oficial. Um resultado vazio aqui não confirma que o auto não existe. <a href="https://dadosabertos.ibama.gov.br/dataset/fiscalizacao-auto-de-infracao" target="_blank" rel="noopener">Consulte também a fonte oficial</a>.</div>
 <div class="meta-box" id="metaBox"><span>Carregando informações da base…</span></div>
 
 <!-- Abas -->
@@ -149,7 +150,7 @@
 <div class="panel active" id="panel-busca">
   <div class="tip">
     <b>Como usar:</b> digite <b>nome ou parte do nome</b> (ex: <code>madeireira</code>), <b>CPF/CNPJ ou parte</b> (ex: <code>12345678</code>), ou <b>palavras da descrição da multa</b> (ex: <code>desmatamento</code>, <code>queimada</code>). Mínimo 3 caracteres. <br>
-    Clique no nome de qualquer infrator pra ver <b>todas as multas</b> dele.
+    Clique no nome de um infrator para ver os autos encontrados nesta cópia (até 1.000 por consulta).
   </div>
 
   <input type="search" class="search-input" id="busca" inputmode="search" autocapitalize="none" autocorrect="off" placeholder="Buscar (mín. 3 caracteres)…">
@@ -227,6 +228,11 @@
 
 <script>
 const API = 'https://ibama-worker.datafixers.org';
+async function fetchJSON(url) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error('A base está temporariamente indisponível. Tente novamente mais tarde.');
+  return response.json();
+}
 let _lastResults = [];
 let _lastModalResults = [];
 
@@ -375,7 +381,7 @@ function highlightTerm(text, term){
 }
 
 // Meta da base: total, faixa de anos, snapshot
-fetch(API + '/api/stats').then(r=>r.json()).then(r=>{
+fetchJSON(API + '/api/stats').then(r=>{
   const s = r.stats || {};
   const last = r.last_snapshot || {};
   const taken = last.taken_at ? new Date(last.taken_at).toLocaleString('pt-BR', { day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit' }) : '—';
@@ -389,7 +395,7 @@ fetch(API + '/api/stats').then(r=>r.json()).then(r=>{
     <span>🔄 Última atualização: <b>${taken}</b></span>
   `;
 }).catch(()=>{
-  document.getElementById('metaBox').innerHTML = '<span style="color:#a00">Não foi possível carregar informações da base.</span>';
+  document.getElementById('metaBox').innerHTML = '<span style="color:#a00">Base temporariamente indisponível. Os totais não puderam ser verificados agora; isso não significa que haja zero autos.</span>';
 });
 
 // Tabs
@@ -413,8 +419,9 @@ function runBusca(){
     const params = new URLSearchParams({ q });
     if (buscaScope === 'descricao') params.set('scope', 'descricao');
     try {
-      const data = await fetch(API + '/api/busca?' + params).then(r=>r.json());
-      if (!Array.isArray(data) || data.length === 0) {
+      const data = await fetchJSON(API + '/api/busca?' + params);
+      if (!Array.isArray(data)) throw new Error('Resposta inesperada da base.');
+      if (data.length === 0) {
         document.getElementById('busca-result').innerHTML = '<p class="empty">Nenhum resultado.</p>';
         return;
       }
@@ -422,7 +429,7 @@ function runBusca(){
       _lastResults = data;
       document.getElementById('busca-result').innerHTML = `
         <div class="result-header">
-          <span><strong>${data.length}</strong> resultado(s) · total ${fmtBRLcompact(total)}${data.length >= 100 ? ' (mostrando top 100)' : ''}</span>
+          <span><strong>${data.length}</strong> resultado(s) exibido(s) · soma destes autos ${fmtBRLcompact(total)}${data.length >= 100 ? ' · limite de 100 por busca; pode haver mais' : ''}</span>
           <div class="result-actions">
             <button class="btn-action" onclick="downloadResults('busca_${escapeHtml(q.replace(/[^a-z0-9]/gi,'_'))}')">📥 Baixar CSV</button>
             <button class="btn-action secondary" onclick="abrirLAI(_lastResults)">📝 Texto pra LAI</button>
@@ -492,7 +499,7 @@ document.getElementById('multiBtn').addEventListener('click', async ()=>{
   }
   document.getElementById('multi-result').innerHTML = '<div class="loading">Buscando ' + cpfs.length + ' identificador(es)…</div>';
   try {
-    const data = await fetch(API + '/api/busca-multi?cpfs=' + encodeURIComponent(cpfs.join(','))).then(r=>r.json());
+    const data = await fetchJSON(API + '/api/busca-multi?cpfs=' + encodeURIComponent(cpfs.join(',')));
     if (!Array.isArray(data) || data.length === 0) {
       document.getElementById('multi-result').innerHTML = `
         <p class="empty">Nenhum dos ${cpfs.length} identificadores tem auto de infração no banco.</p>
@@ -554,7 +561,7 @@ async function openInfrator(cpf, nome){
     return;
   }
   try {
-    const data = await fetch(API + '/api/infrator?' + params).then(r=>r.json());
+    const data = await fetchJSON(API + '/api/infrator?' + params);
     if (!Array.isArray(data) || !data.length) {
       document.getElementById('modalBody').innerHTML = '<p class="empty">Nenhuma multa encontrada com esse identificador.</p>';
       return;
@@ -566,7 +573,7 @@ async function openInfrator(cpf, nome){
     const safeNome = (nome||'infrator').replace(/[^a-z0-9]/gi,'_').slice(0,40);
     document.getElementById('modalBody').innerHTML = `
       <div style="background:#f5f5f3;padding:10px 14px;border-radius:6px;margin-bottom:14px;display:flex;gap:14px;flex-wrap:wrap;font-size:0.9em;align-items:center">
-        <div><strong>${data.length}</strong> autos · <strong>${fmtBRLcompact(total)}</strong></div>
+        <div><strong>${data.length}</strong> autos exibidos${data.length >= 1000 ? ' (limite da consulta; pode haver mais)' : ''} · <strong>${fmtBRLcompact(total)}</strong> destes autos</div>
         <div>UFs: ${ufs.join(', ') || '—'}</div>
         ${cancel ? `<div style="color:#a00">${cancel} cancelado(s)</div>` : ''}
         <div style="margin-left:auto;display:flex;gap:6px">
