@@ -2,7 +2,7 @@ name: Atualizar autos do Ibama no D1
 
 on:
   schedule:
-    - cron: "20 7 * * *" # 04:20 BRT / 07:20 UTC
+    - cron: "20 7 * * 1" # segunda-feira, 04:20 BRT / 07:20 UTC
   workflow_dispatch: {}
 
 permissions:
@@ -37,4 +37,4 @@ jobs:
           SHA=$(sha256sum /tmp/auto_infracao.zip | awk '{print $1}')
           BYTES=$(stat -c%s /tmp/auto_infracao.zip)
           TAKEN_AT=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-          npx wrangler d1 execute ibama --remote --command "INSERT INTO snapshots (dataset, taken_at, source_url, sha256, size_bytes, notes) VALUES ('auto_infracao', '$TAKEN_AT', '$SOURCE_URL', '$SHA', $BYTES, 'daily GitHub Actions upsert of current-year official CSV');"
+          npx wrangler d1 execute ibama --remote --command "INSERT INTO snapshots (dataset, taken_at, source_url, sha256, size_bytes, notes) VALUES ('auto_infracao', '$TAKEN_AT', '$SOURCE_URL', '$SHA', $BYTES, 'weekly GitHub Actions upsert of current-year official CSV');"
