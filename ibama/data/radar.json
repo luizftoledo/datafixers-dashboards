@@ -1,0 +1,74 @@
+{
+  "generated_at": "2026-09-22T21:39:24.702928+00:00",
+  "year": 2026,
+  "through": "2026-09-21",
+  "previous_year": 2025,
+  "total_current": 12012,
+  "total_previous": 11566,
+  "places": [
+    {
+      "city": "RIO DE JANEIRO",
+      "uf": "RJ",
+      "current": 293,
+      "previous": 50,
+      "delta": 243
+    },
+    {
+      "city": "GOIANIA",
+      "uf": "GO",
+      "current": 195,
+      "previous": 35,
+      "delta": 160
+    },
+    {
+      "city": "FLORIANOPOLIS",
+      "uf": "SC",
+      "current": 175,
+      "previous": 32,
+      "delta": 143
+    },
+    {
+      "city": "TRAIRAO",
+      "uf": "PA",
+      "current": 125,
+      "previous": 8,
+      "delta": 117
+    },
+    {
+      "city": "ALENQUER",
+      "uf": "PA",
+      "current": 98,
+      "previous": 0,
+      "delta": 98
+    },
+    {
+      "city": "FEIJO",
+      "uf": "AC",
+      "current": 142,
+      "previous": 51,
+      "delta": 91
+    },
+    {
+      "city": "CAMPOS DOS GOYTACAZES",
+      "uf": "RJ",
+      "current": 98,
+      "previous": 7,
+      "delta": 91
+    },
+    {
+      "city": "CUJUBIM",
+      "uf": "RO",
+      "current": 109,
+      "previous": 26,
+      "delta": 83
+    },
+    {
+      "city": "CARUARU",
+      "uf": "PE",
+      "current": 78,
+      "previous": 2,
+      "delta": 76
+    }
+  ],
+  "method": "Autos por municipio e UF com data do auto entre 1 jan e a data de corte em cada ano. Normalizacao de caixa e acentos. Selecionados apenas locais com >=30 autos no ano atual, >=20 a mais que no anterior e pelo menos 1,8 vez o volume anterior."
+}

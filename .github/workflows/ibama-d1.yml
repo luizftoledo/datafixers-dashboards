@@ -6,7 +6,7 @@ on:
   workflow_dispatch: {}
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   sync:
@@ -38,3 +38,11 @@ jobs:
           BYTES=$(stat -c%s /tmp/auto_infracao.zip)
           TAKEN_AT=$(date -u +%Y-%m-%dT%H:%M:%SZ)
           npx wrangler d1 execute ibama --remote --command "INSERT INTO snapshots (dataset, taken_at, source_url, sha256, size_bytes, notes) VALUES ('auto_infracao', '$TAKEN_AT', '$SOURCE_URL', '$SHA', $BYTES, 'weekly GitHub Actions upsert of current-year official CSV');"
+      - name: Atualizar radar editorial do site
+        run: |
+          python3 scripts/build_ibama_radar.py /tmp/auto_infracao.zip
+          git add ibama/data/radar.json
+          if ! git diff --cached --quiet; then
+            git -c user.name="datafixers-bot" -c user.email="actions@users.noreply.github.com" commit -m "Atualizar radar Ibama com dados oficiais"
+            git push origin HEAD:main
+          fi

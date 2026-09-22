@@ -10,6 +10,7 @@ on:
   # 12:00/21:00 UTC).
   schedule:
     - cron: "0 7 * * *"
+    - cron: "0 8 * * 1" # após a atualização semanal do radar Ibama
     - cron: "20 12 * * *"
     - cron: "20 21 * * *"
 
