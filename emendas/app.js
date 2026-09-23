@@ -72,6 +72,14 @@ function parseHttpDate(headerLastModified) {
   return isNaN(d.getTime()) ? null : d;
 }
 
+function isSiopStale(meta) {
+  const raw = meta.siop_base_siafi_date || '';
+  const match = raw.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  const base = match ? new Date(Number(match[3]), Number(match[2]) - 1, Number(match[1])) : parseISODate(raw);
+  const snapshot = parseISODate(meta.snapshot_date);
+  return !base || !snapshot || Number.isNaN(base.getTime()) || Number.isNaN(snapshot.getTime()) || (snapshot - base) / 86400000 > 7;
+}
+
 /* === Renders === */
 
 function renderHeader(report, meta) {
@@ -88,9 +96,14 @@ function renderHeader(report, meta) {
   setText('dateline-source-siop', siopDate);
   setText('compare-siop-date', siopDate);
   setText('chart-source', 'CGU/Portal da Transparência (por data do documento de empenho)');
+  const warning = document.getElementById('siop-freshness-warning');
+  if (warning && isSiopStale(meta)) {
+    warning.style.display = 'block';
+    warning.textContent = `SIOP desatualizado: base SIAFI de ${siopDate}. Os valores de autorizado, execução e comparação entre fontes estão indisponíveis até a rotina obter um snapshot recente. Os dados da CGU continuam disponíveis.`;
+  }
 }
 
-function renderKPI(report) {
+function renderKPI(report, meta) {
   const docs = (report.parallel_monitor || {}).documents || {};
   const totals = docs.totals || {};
   const empenhado = totals.total_empenhado_year || 0;
@@ -100,6 +113,14 @@ function renderKPI(report) {
 
   setText('kpi-empenhado', fmtBRLCompact(empenhado));
   setText('kpi-empenhado-note', `Até ${fmtDate(docs.date_max)} · por data do empenho · CGU`);
+
+  if (isSiopStale(meta)) {
+    setText('kpi-autorizado', '—');
+    setText('kpi-autorizado-note', `SIOP desatualizado · base ${meta.siop_base_siafi_date || 'indisponível'}`);
+    setText('kpi-execucao', '—');
+    setText('kpi-execucao-note', 'Aguardando snapshot recente do SIOP');
+    return;
+  }
 
   setText('kpi-autorizado', fmtBRLCompact(autorizado));
   setText(
@@ -111,13 +132,26 @@ function renderKPI(report) {
   setText('kpi-execucao-note', `${fmtBRLCompact(empenhado)} de ${fmtBRLCompact(autorizado)} autorizados`);
 }
 
-function renderCompare(report) {
+function renderCompare(report, meta) {
   const docs = (report.parallel_monitor || {}).documents || {};
   const ptYear = (docs.totals || {}).total_empenhado_year || 0;
   const siopTotals = (((report.parallel_monitor || {}).siop_snapshot) || {}).totals || {};
   const siopYear = siopTotals.empenhado || 0;
 
   setText('compare-pt', fmtBRLFull(ptYear));
+  if (isSiopStale(meta)) {
+    setText('compare-siop', '—');
+    setText('compare-diff', '—');
+    setText('compare-diff-pct', '—');
+    setText('compare-diff-note', `Comparação indisponível · SIOP base ${meta.siop_base_siafi_date || 'indisponível'}`);
+    const badge = document.getElementById('compare-badge');
+    if (badge) {
+      badge.classList.remove('good', 'bad');
+      badge.classList.add('warn');
+    }
+    setText('compare-badge-text', 'SIOP desatualizado');
+    return;
+  }
   setText('compare-siop', fmtBRLFull(siopYear));
 
   const diff = ptYear - siopYear;
@@ -489,6 +523,9 @@ function renderHealth(report, meta) {
     } else if (broken > 0) {
       cls = 'bad';
       label = `${broken} dia(s) zerado(s)`;
+    } else if (isSiopStale(meta)) {
+      cls = 'bad';
+      label = 'base desatualizada';
     } else if (fallback) {
       cls = 'warn';
       label = 'usando fallback do snapshot anterior';
@@ -513,8 +550,8 @@ function renderHealth(report, meta) {
 
     renderHeader(report, meta);
     renderSpotlight(report);
-    renderKPI(report);
-    renderCompare(report);
+    renderKPI(report, meta);
+    renderCompare(report, meta);
     renderDailyChart(report);
     renderTopDays(report);
     renderTopAuthorsAndOrgaos(report);

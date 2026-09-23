@@ -522,6 +522,7 @@
         <span><strong id="dateline-source-pt">—</strong> · Portal da Transparência</span>
         <span><strong id="dateline-source-siop">—</strong> · SIOP (base SIAFI)</span>
       </div>
+      <p id="siop-freshness-warning" role="status" style="display:none;margin-top:12px;padding:12px 14px;border:1px solid #c58b35;border-radius:8px;background:#fff4dd;color:#543b16"></p>
     </header>
 
     <section id="spotlight-section">
@@ -570,7 +571,7 @@
 
     <section>
       <h2>Comparação SIOP × Portal da Transparência</h2>
-      <p class="sub">As duas fontes deveriam concordar no total empenhado do ano. Diferença até ±2% é tolerância normal de defasagem entre snapshots; acima de 5% sinaliza divergência relevante.</p>
+      <p class="sub">A comparação só é exibida quando a base do SIOP está recente. Entre snapshots próximos, diferença até ±2% pode refletir defasagem; acima de 5% requer investigação.</p>
       <article class="compare-card">
         <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.6rem;margin-bottom:0.4rem">
           <div class="label-side" style="text-transform:none;font-size:0.84rem">Total empenhado em 2026</div>
@@ -706,7 +707,7 @@
     <footer class="footer">
       <h2>Metodologia</h2>
       <p><strong>Fonte primária para a série diária:</strong> CSV <code>2026_EmendasParlamentaresPorDocumento.zip</code> (CGU/Portal da Transparência), agregado por <em>data do documento de empenho</em>. Esta data é a do registro fiscal — o que dá granularidade real dia a dia.</p>
-      <p><strong>Fonte para o teto autorizado e cross-check:</strong> SIOP (Sistema de Planejamento, Orçamento e Finanças do Governo Federal), painel "Emendas Parlamentares — Resultado Primário 6/7/8/9" (Qlik/SigaBrasil). Capturado via Selenium — base SIAFI atualizada com defasagem de até 2 dias úteis.</p>
+      <p><strong>Fonte para o teto autorizado e conferência:</strong> SIOP (Sistema de Planejamento, Orçamento e Finanças do Governo Federal), painel "Emendas Parlamentares — Resultado Primário 6/7/8/9" (Qlik/SigaBrasil). Capturado via Selenium; consulte a data da base SIAFI mostrada no topo antes de usar seus valores.</p>
       <p><strong>Definição:</strong> "empenhado" é o valor já reservado para pagamento (compromisso firmado pela União), não o que foi efetivamente desembolsado ("pago").</p>
       <p><strong>Atualização:</strong> rotina diária às 13:10 UTC (10:10 BRT) via GitHub Actions. Quando a fonte original não publica novo arquivo no dia, o pipeline registra <code>source_changed: false</code> e mantém o snapshot anterior.</p>
       <h2 style="margin-top:1rem">Fontes oficiais</h2>
@@ -720,6 +721,6 @@
     </footer>
   </main>
 
-  <script src="./app.js?v=20260502"></script>
+  <script src="./app.js?v=20260923"></script>
 </body>
 </html>
