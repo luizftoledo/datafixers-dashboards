@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#102c28">
+  <title>Registro arquivado · Lulômetro · Data Fixers</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/platform.css">
+  <style>
+    .record-shell { width: min(900px, calc(100% - 48px)); margin: 0 auto; padding: 28px 0 80px; }
+    .record-back { display: inline-block; margin-bottom: 26px; color: #285e43; font-weight: 700; text-decoration: none; }
+    .record-back:hover { text-decoration: underline; }
+    .record-card { padding: clamp(24px, 5vw, 48px); background: white; border: 1px solid var(--df-line); border-radius: 18px; box-shadow: 0 12px 36px rgba(16,44,40,.055); }
+    .record-kicker { margin: 0 0 14px; color: #397052; font: 600 11px "DM Mono",monospace; letter-spacing: .12em; text-transform: uppercase; }
+    .record-card h1 { margin: 0 0 22px; color: var(--df-pine); font: 800 clamp(26px, 4vw, 40px)/1.18 Manrope,sans-serif; letter-spacing: -.045em; overflow-wrap: anywhere; }
+    .record-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .record-meta span { padding: 5px 10px; background: #e9f0e9; border-radius: 999px; color: #345344; font-size: 12px; font-weight: 700; }
+    .record-note { margin: 0 0 28px; padding: 14px 16px; border-left: 3px solid #6baf87; background: #f1f6f1; color: #42584b; font-size: 14px; }
+    .record-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 0 0 32px; }
+    .record-original { display: inline-flex; align-items: center; min-height: 42px; padding: 9px 16px; background: var(--df-pine); border-radius: 8px; color: white !important; font-size: 14px; font-weight: 700; text-decoration: none; }
+    .record-original:hover { background: #28654e; }
+    .record-domain { color: var(--df-muted); font: 12px "DM Mono",monospace; overflow-wrap: anywhere; }
+    .record-body { padding-top: 28px; border-top: 1px solid var(--df-line); }
+    .record-body h2 { margin: 0 0 20px; color: var(--df-pine); font: 800 18px Manrope,sans-serif; }
+    .record-text { white-space: pre-wrap; overflow-wrap: anywhere; color: var(--df-ink); font-size: 16px; line-height: 1.8; }
+    .record-state { padding: 35px 20px; color: var(--df-muted); text-align: center; }
+    .record-state a { color: #285e43; }
+    @media (max-width: 700px) { .record-shell { width: calc(100% - 32px); padding-top: 20px; } .record-actions { align-items: flex-start; flex-direction: column; } }
+  </style>
+</head>
+<body class="df-ui df-ui--lulometro">
+  <div class="df-sitebar"><div class="df-sitebar__inner"><a class="df-sitebar__brand" href="/"><span class="df-sitebar__mark">DF</span>datafixers</a><a class="df-sitebar__nav" href="/lulometro/">Lulômetro</a></div></div>
+  <main class="record-shell">
+    <a class="record-back" href="/lulometro/">← Voltar à busca</a>
+    <article class="record-card" id="record" aria-live="polite"><div class="record-state">Carregando registro salvo…</div></article>
+  </main>
+  <script>
+    const API = 'https://ibama-worker.datafixers.org';
+    const record = document.getElementById('record');
+    const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const safeUrl = value => { try { const url = new URL(value); return /^https?:$/.test(url.protocol) ? url : null; } catch { return null; } };
+    const sourceNames = { planalto: 'Site do Planalto', biblioteca: 'Biblioteca da Presidência', bluesky: 'Bluesky' };
+    const typeNames = { discurso: 'Discurso', entrevista: 'Entrevista', post: 'Post' };
+
+    async function loadRecord() {
+      const id = new URLSearchParams(location.search).get('id');
+      if (!id) { record.innerHTML = '<div class="record-state">Registro não informado. <a href="/lulometro/">Voltar à busca</a>.</div>'; return; }
+      try {
+        const response = await fetch(`${API}/api/lul/record?id=${encodeURIComponent(id)}`);
+        if (!response.ok) throw new Error('Não foi possível carregar o registro.');
+        const data = await response.json();
+        if (!data || data.erro || !data.id) throw new Error('Registro não encontrado no acervo.');
+        const original = safeUrl(data.url);
+        const title = data.source === 'bluesky' ? 'Post no Bluesky' : (data.title || 'Registro sem título');
+        document.title = `${title} · Lulômetro · Data Fixers`;
+        record.innerHTML = `
+          <p class="record-kicker">Lulômetro / Registro salvo</p>
+          <h1>${esc(title)}</h1>
+          <div class="record-meta">
+            <span>${esc(data.president || 'Presidente não informado')}</span>
+            <span>${esc(sourceNames[data.source] || data.source || 'Fonte não informada')}</span>
+            <span>${esc(typeNames[data.type] || data.type || 'Tipo não informado')}</span>
+            <span>${esc((data.date || '').slice(0, 10) || 'Data não informada')}</span>
+          </div>
+          <p class="record-note">Texto armazenado no acervo do Lulômetro. Para conferir a publicação e seu contexto, consulte a fonte original.</p>
+          <div class="record-actions">
+            ${original ? `<a class="record-original" href="${esc(original.href)}" target="_blank" rel="noopener noreferrer">Abrir fonte original ↗</a><span class="record-domain">${esc(original.hostname)}</span>` : '<span class="record-domain">Link original indisponível neste registro.</span>'}
+          </div>
+          <div class="record-body"><h2>Texto salvo</h2><div class="record-text" id="record-text"></div></div>
+        `;
+        document.getElementById('record-text').textContent = data.text || data.description || 'Texto não disponível neste registro.';
+      } catch (error) {
+        record.innerHTML = `<div class="record-state">${esc(error.message)} <a href="/lulometro/">Voltar à busca</a>.</div>`;
+      }
+    }
+    loadRecord();
+  </script>
+</body>
+</html>

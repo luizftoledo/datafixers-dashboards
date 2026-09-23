@@ -5,12 +5,13 @@ Busca em registros de Lula (2023 em diante) e Bolsonaro (2019–2022), publicado
 ## Arquitetura
 
 - `index.html`: interface estática publicada no Cloudflare Pages.
-- `worker/src/index.ts`: endpoints `/api/lul/stats` e `/api/lul/busca`, consultando D1.
+- `registro/index.html`: página de leitura do texto salvo; o título dos resultados abre essa página, que mostra o link original separadamente.
+- `worker/src/index.ts`: endpoints `/api/lul/stats`, `/api/lul/busca` e `/api/lul/record`, consultando D1.
 - `scripts/build_lulometro_data.py`: coleta e normaliza os registros.
 - `scripts/upsert_lulometro_to_d1.py`: envia os registros ao D1.
 - `.github/workflows/lulometro.yml`: rotina diária.
 
-O workflow gera os arquivos em `lulometro/data/` somente durante a execução. Eles não são versionados; as consultas públicas usam o D1. Se Planalto ou Biblioteca impedirem o acesso automatizado, os registros existentes permanecem no banco, mas novas publicações dessas fontes não entram no acervo.
+O workflow gera os arquivos em `lulometro/data/` somente durante a execução. Eles não são versionados; as consultas públicas usam o D1, que guarda o texto salvo de cada registro. Se Planalto ou Biblioteca impedirem o acesso automatizado, os registros existentes permanecem no banco, mas novas publicações dessas fontes não entram no acervo.
 
 ## Verificação
 

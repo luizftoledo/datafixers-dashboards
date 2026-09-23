@@ -131,7 +131,6 @@
 const API = 'https://ibama-worker.datafixers.org';
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const safeUrl = value => { try { const url = new URL(value); return /^https?:$/.test(url.protocol) ? url.href : ''; } catch { return ''; } };
 const safeExcerpt = value => esc(value).replaceAll('&lt;mark&gt;', '<mark>').replaceAll('&lt;/mark&gt;', '</mark>');
 
 const SOURCE_LABELS = {
@@ -238,7 +237,7 @@ async function search(offset = 0) {
         const srcClass = d.source ? `src-${d.source}` : '';
         const srcLabel = SOURCE_LABELS_SHORT[d.source] || d.source || '?';
         const typeLabel = (TYPE_LABELS[d.type] || d.type || '').toLowerCase().replace(' (redes sociais)','');
-        const href = safeUrl(d.url);
+        const archiveHref = d.id ? `/lulometro/registro/?id=${encodeURIComponent(d.id)}` : '';
         return `
         <div class="result">
           <div class="result-meta">
@@ -246,7 +245,7 @@ async function search(offset = 0) {
             <span class="pill ${esc(srcClass)}">${esc(srcLabel)} · ${esc(typeLabel)}</span>
             <span class="pill">${esc((d.date || '').slice(0,10))}</span>
           </div>
-          <div class="result-title">${href ? `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(d.title)}</a>` : esc(d.title)}</div>
+          <div class="result-title">${archiveHref ? `<a href="${esc(archiveHref)}" target="_blank" rel="noopener">${esc(d.title)}</a>` : esc(d.title)}</div>
           <div class="result-excerpt">${safeExcerpt(d.excerpt || '')}</div>
         </div>`;
       }).join('') + `<div class="pagination">${offset ? '<button type="button" id="previous">← Anteriores</button>' : ''}${hasMore ? '<button type="button" id="next">Próximos 20 →</button>' : ''}</div>`;

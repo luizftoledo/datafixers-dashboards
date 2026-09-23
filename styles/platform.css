@@ -225,8 +225,8 @@ body.df-ui--lulometro #source-status { margin: 0 0 26px; color: var(--df-muted);
 body.df-ui--lulometro .search { padding: 24px; border: 1px solid var(--df-line); border-radius: 16px; background: white; box-shadow: 0 10px 30px rgba(16,44,40,.045); }
 body.df-ui--lulometro .search input { border: 1px solid #a9bdad; }
 body.df-ui--lulometro .result { padding: 18px 20px; }
-body.df-ui--lulometro .result-title a { color: var(--df-ink); }
-body.df-ui--lulometro .result-title a:hover { color: #27714e; }
+body.df-ui--lulometro .result-title a { color: var(--df-ink); text-decoration: underline; text-decoration-color: #a8c6af; text-decoration-thickness: 1px; }
+body.df-ui--lulometro .result-title a:hover { color: #27714e; text-decoration-color: currentColor; }
 body.df-ui--lulometro .pill.pres { background: var(--df-pine); }
 body.df-ui--lulometro .pagination button { border-color: var(--df-line); color: var(--df-pine); }
 body.df-ui--lulometro .pagination button:hover { background: #e8eee8; }
