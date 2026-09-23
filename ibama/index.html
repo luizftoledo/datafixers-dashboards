@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#102c28">
-<title>Radar Ibama · Data Fixers</title>
-<meta name="description" content="Investigue autos de infração ambiental do Ibama por pessoa, empresa, processo ou tema. Encontre registros e caminhos para apuração.">
+<title>Consulta de autos do Ibama · Data Fixers</title>
+<meta name="description" content="Consulte autos de infração do Ibama por número, nome, CPF/CNPJ, município ou descrição. Compare municípios e exporte resultados.">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
@@ -23,11 +23,6 @@
   .meta-box{background:#fff;border:1px solid #e5e5e5;border-radius:8px;padding:10px 14px;margin:12px 0 20px;font-size:0.85em;color:#444;display:flex;flex-wrap:wrap;gap:14px}
   .meta-box span{white-space:nowrap}
   .meta-box b{color:#111}
-  .paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0 26px}
-  .path{background:#fff;border:1px solid #ddd;border-radius:10px;padding:18px;text-align:left;cursor:pointer;font:inherit}
-  .path:hover,.path:focus{border-color:#d96e30;outline:none;box-shadow:0 0 0 2px #f5d4bd}
-  .path strong{display:block;font-size:1.02em;margin-bottom:6px}
-  .path span{display:block;font-size:.85em;color:#555;line-height:1.45}
   .search-row{display:flex;gap:8px;align-items:stretch}
   .search-row .search-input{flex:1;min-width:0}
   .search-row button{background:#111;color:#fff;border:0;border-radius:10px;padding:0 20px;font:600 15px Inter,sans-serif;cursor:pointer}
@@ -141,7 +136,7 @@
     h1{font-size:2.4em}
     .sub{margin-bottom:32px}
   }
-  @media (max-width: 700px){.paths{grid-template-columns:1fr}.search-row{flex-direction:column}.search-row button{padding:12px}}
+  @media (max-width: 700px){.search-row{flex-direction:column}.search-row button{padding:12px}}
 
   /* Plataforma Ibama */
   :root{--pine:#102c28;--pine2:#183d36;--mint:#bce8d7;--paper:#f3f5f1;--ink:#172823;--muted:#687871;--line:#dce4dc;--orange:#ed965f}
@@ -158,18 +153,12 @@
   .sitebar-right a{color:#f8fffa;text-decoration:none}
   .sitebar-right a:hover{text-decoration:underline}
   .sitebar-pill{border:1px solid rgba(188,232,215,.5);padding:6px 11px;border-radius:999px;color:var(--mint)}
-  .hero{background:radial-gradient(circle at 82% 15%,#2a6253 0,transparent 31%),linear-gradient(115deg,#102c28 20%,#163b33 100%);color:white;padding:70px 0 76px;position:relative;overflow:hidden}
+  .hero{background:radial-gradient(circle at 82% 15%,#2a6253 0,transparent 31%),linear-gradient(115deg,#102c28 20%,#163b33 100%);color:white;padding:42px 0 44px;position:relative;overflow:hidden}
   .hero:after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(90deg,transparent,#000);pointer-events:none}
   .hero .shell{position:relative;z-index:1}
   .eyebrow{font:500 11px 'DM Mono',monospace;letter-spacing:.15em;text-transform:uppercase;color:var(--mint);margin-bottom:18px}
-  h1{font:800 clamp(42px,6vw,76px)/1.04 Manrope,sans-serif;letter-spacing:-.065em;max-width:870px;margin:0 0 23px}
-  .hero .sub{font-size:clamp(16px,2vw,20px);color:#d5e8db;max-width:700px;margin:0 0 32px;line-height:1.55}
-  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-  .hero-primary,.hero-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:11px 18px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:700}
-  .hero-primary{background:var(--mint);color:var(--pine)}.hero-primary:hover{background:#dcf8e6}
-  .hero-secondary{border:1px solid rgba(255,255,255,.45);color:#fff}.hero-secondary:hover{background:rgba(255,255,255,.1)}
-  .hero-foot{display:flex;gap:22px;flex-wrap:wrap;margin-top:52px;padding-top:22px;border-top:1px solid rgba(255,255,255,.22);color:#c5d9ce;font-size:12px}
-  .hero-foot span:before{content:'●';color:var(--mint);font-size:7px;vertical-align:2px;margin-right:8px}
+  h1{font:800 clamp(32px,4vw,50px)/1.1 Manrope,sans-serif;letter-spacing:-.055em;max-width:940px;margin:0 0 12px}
+  .hero .sub{font-size:clamp(14px,1.6vw,17px);color:#d5e8db;max-width:800px;margin:0;line-height:1.55}
   main.shell{padding:52px 0 70px}
   .section-kicker{font:500 11px 'DM Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#4d7565;margin-bottom:10px}
   .section-title{font:800 clamp(25px,3vw,34px)/1.2 Manrope,sans-serif;letter-spacing:-.045em;margin-bottom:9px}
@@ -177,14 +166,7 @@
   .coverage{background:#fff;border:1px solid #e5d9c7;border-left:4px solid #d68650;border-radius:11px;padding:16px 19px;margin:0 0 48px;display:flex;gap:13px;align-items:flex-start;color:#665440;font-size:13px;box-shadow:0 5px 20px rgba(20,40,32,.035)}
   .coverage-icon{background:#fff0df;color:#9c5f2f;border-radius:7px;width:27px;height:27px;flex:none;display:grid;place-items:center;font-weight:800}
   .coverage b{color:#4c3b2c}.coverage a{color:#76502e;font-weight:700}
-  .paths{margin:26px 0 48px;gap:14px}
-  .path{min-height:198px;border:1px solid var(--line);box-shadow:0 6px 22px rgba(22,42,31,.035);border-radius:13px;padding:21px;display:flex;flex-direction:column;align-items:flex-start;background:#fff}
-  .path:hover,.path:focus-visible{border-color:#68a68a;box-shadow:0 14px 32px rgba(20,60,43,.12);transform:translateY(-3px);outline:none}
-  .path-index{font:500 12px 'DM Mono',monospace;color:#648071;margin-bottom:auto;border:1px solid var(--line);padding:5px 8px;border-radius:6px}
-  .path strong{font:800 18px/1.25 Manrope,sans-serif;letter-spacing:-.035em;margin:19px 0 7px}
-  .path span:not(.path-index){font-size:13px;color:#627269;line-height:1.5}
-  .path em{font-style:normal;color:#267352;font-weight:700;margin-top:13px;font-size:13px}
-  .radar-section{margin:0 0 48px;padding:28px 30px 25px;background:#e8eee8;border:1px solid #d9e4d9;border-radius:14px}
+  .radar-section{margin:42px 0 0;padding:28px 30px 25px;background:#e8eee8;border:1px solid #d9e4d9;border-radius:14px}
   .radar-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:22px}.radar-head .section-title{margin-bottom:5px}
   .radar-tag{border:1px solid #a8c8af;border-radius:999px;padding:7px 11px;white-space:nowrap;font:500 11px 'DM Mono',monospace;color:#396a4b;background:#f3faf2}
   .radar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.radar-card{border:1px solid #cbdaca;border-radius:10px;background:#fff;padding:19px;text-align:left;cursor:pointer;font:inherit;min-height:168px;display:flex;flex-direction:column}.radar-card:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(20,50,30,.11);border-color:#6aa67d}.radar-card:focus-visible{outline:3px solid #e8a46b}
@@ -207,23 +189,16 @@
   .info-card details{font-size:13px;color:#516457}.info-card summary{cursor:pointer;font-weight:700;color:#244b36}.meta-box{background:transparent;border:0;padding:9px 0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.meta-box span{white-space:normal}
   .footer{background:var(--pine);color:#c9ded0;margin:0;padding:28px 0;border:0}.footer a{color:#fff;text-decoration:none}.footer a:hover{text-decoration:underline}
   .modal{border-radius:14px}.modal h3{font-family:Manrope,sans-serif}
-  @media(max-width:800px){.info-row{grid-template-columns:1fr}.paths{grid-template-columns:1fr}.path{min-height:155px}.radar-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sitebar-right .sitebar-pill{display:none}}
-  @media(max-width:600px){.shell{width:min(100% - 32px,1180px)}.sitebar .shell{height:60px}.sitebar-right{font-size:11px}.hero{padding:52px 0 55px}.hero-foot{margin-top:36px;gap:10px 18px}.coverage{margin-bottom:38px}.paths{margin-bottom:36px}main.shell{padding-top:40px}.radar-section{padding:22px 18px}.radar-head{align-items:flex-start;flex-direction:column}.radar-grid{grid-template-columns:1fr}.radar-card{min-height:135px}.workbench-head{padding:22px 18px 0}.panel{padding:22px 18px 28px}.search-row{flex-direction:column}.search-row button{padding:12px}.tabs{gap:18px}.tab{font-size:12px}.info-card{padding:20px}}
+  @media(max-width:800px){.info-row{grid-template-columns:1fr}.radar-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:600px){.shell{width:min(100% - 32px,1180px)}.sitebar .shell{height:60px}.sitebar-right{font-size:11px}.hero{padding:34px 0 36px}main.shell{padding-top:28px}.coverage{margin-bottom:28px}.radar-section{padding:22px 18px}.radar-head{align-items:flex-start;flex-direction:column}.radar-grid{grid-template-columns:1fr}.radar-card{min-height:135px}.workbench-head{padding:22px 18px 0}.panel{padding:22px 18px 28px}.search-row{flex-direction:column}.search-row button{padding:12px}.tabs{gap:18px}.tab{font-size:12px}.info-card{padding:20px}}
 </style>
 </head>
 <body>
-<header class="sitebar"><div class="shell"><a class="brand" href="https://dashboards.datafixers.org"><span class="brand-mark">DF</span>datafixers</a><div class="sitebar-right"><span class="sitebar-pill">Ferramenta de investigação</span><a href="https://dadosabertos.ibama.gov.br/dataset/fiscalizacao-auto-de-infracao" target="_blank" rel="noopener">Fonte oficial ↗</a></div></div></header>
-<section class="hero"><div class="shell"><div class="eyebrow">Data Fixers / Radar ambiental</div><h1>Do auto de infração à próxima pauta.</h1><p class="sub">Explore registros do Ibama, identifique padrões e encontre o próximo passo da apuração. Busque por auto, pessoa, empresa ou tema.</p><div class="hero-actions"><a class="hero-primary" href="#investigar">Começar a investigar <span aria-hidden="true" style="margin-left:12px">↗</span></a><a class="hero-secondary" href="#metodo">Como usar os dados</a></div><div class="hero-foot"><span>Dados públicos do Ibama</span><span>Busca e exportação</span><span>Roteiro para checagem</span></div></div></section>
+<header class="sitebar"><div class="shell"><a class="brand" href="https://dashboards.datafixers.org"><span class="brand-mark">DF</span>datafixers</a><div class="sitebar-right"><a href="https://dadosabertos.ibama.gov.br/dataset/fiscalizacao-auto-de-infracao" target="_blank" rel="noopener">Fonte oficial ↗</a></div></div></header>
+<section class="hero"><div class="shell"><div class="eyebrow">Data Fixers / Ibama</div><h1>Consulta de autos de infração do Ibama</h1><p class="sub">Busque por auto, processo, nome, CPF/CNPJ, município ou descrição. Consulte resultados em lote, compare municípios e exporte os registros exibidos.</p></div></section>
 <main class="shell">
 <div class="coverage"><div class="coverage-icon" aria-hidden="true">!</div><div><b>Cobertura em revisão.</b> Esta cópia ainda não contém todos os autos do arquivo oficial. <span id="coverageDetail"></span>Um resultado vazio não confirma que o auto inexiste. <a href="https://dadosabertos.ibama.gov.br/dataset/fiscalizacao-auto-de-infracao" target="_blank" rel="noopener">Confira na fonte oficial ↗</a></div></div>
-<div class="section-kicker">Escolha um ponto de partida</div><h2 class="section-title">Três caminhos para investigar</h2><p class="section-sub">Parta de um identificador, siga a trajetória de um autuado ou procure recorrência em um assunto.</p>
-<div class="paths" aria-label="Caminhos para começar">
-  <button class="path" data-path="auto"><span class="path-index">01 / CASO</span><strong>Conferir um auto ou processo</strong><span>Use o número do auto ou processo para localizar o registro e suas informações básicas.</span><em>Buscar registro ↗</em></button>
-  <button class="path" data-path="all"><span class="path-index">02 / ATOR</span><strong>Investigar pessoa ou empresa</strong><span>Pesquise nome ou CPF/CNPJ. Compare datas, locais, valores e descrições dos autos.</span><em>Investigar autuado ↗</em></button>
-  <button class="path" data-path="descricao"><span class="path-index">03 / TEMA</span><strong>Explorar um tema</strong><span>Encontre menções a desmatamento, fauna, madeira e outros assuntos nas descrições.</span><em>Explorar descrições ↗</em></button>
-</div>
-<section class="radar-section" aria-labelledby="radarTitle"><div class="radar-head"><div><div class="section-kicker">Pistas nos dados oficiais</div><h2 class="section-title" id="radarTitle">Onde vale olhar mais de perto</h2><p class="section-sub">Municípios com mais autos registrados neste ano do que no mesmo período do ano anterior.</p></div><span class="radar-tag" id="radarDate">Carregando recorte</span></div><div class="radar-grid" id="radarGrid"><p class="loading">Carregando pistas…</p></div><p class="radar-note" id="radarNote">Uma diferença no número de autos é uma pista de apuração. Verifique operações, alterações no registro e o andamento dos processos antes de concluir o que mudou.</p></section>
-<section class="workbench" id="investigar"><div class="workbench-head"><div class="section-kicker">Ferramenta de pesquisa</div><h2>Encontre os registros</h2><p>Busque e abra o histórico disponível nesta cópia. Os resultados mais recentes aparecem primeiro.</p>
+<section class="workbench" id="investigar"><div class="workbench-head"><div class="section-kicker">Consulta</div><h2>Buscar autos</h2><p>Resultados ordenados pela data do auto, do mais recente ao mais antigo.</p>
 <!-- Abas -->
 <div class="tabs">
   <button class="tab active" data-tab="busca">Busca individual</button>
@@ -232,7 +207,7 @@
 
 <!-- Aba 1: Busca simples -->
 <div class="panel active" id="panel-busca">
-  <div class="tip">Digite ao menos três caracteres. Exibimos 50 autos por página; clique no nome de um autuado para ver outros registros vinculados ao identificador nesta cópia.</div>
+  <div class="tip">Digite ao menos três caracteres. A busca exibe 50 autos por página. Clique no nome para consultar outros autos vinculados ao identificador.</div>
 
   <div class="search-row"><input type="search" class="search-input" id="busca" inputmode="search" autocapitalize="none" autocorrect="off" placeholder="Nome, CPF/CNPJ ou município…"><button id="buscaBtn" type="button">Buscar</button></div>
 
@@ -248,8 +223,7 @@
 <!-- Aba 2: Busca múltipla -->
 <div class="panel" id="panel-multi">
   <div class="tip">
-    <b>Como usar:</b> cole uma lista de <b>CPFs ou CNPJs</b> (separados por espaço, vírgula ou quebra de linha). O sistema busca todos de uma vez e mostra <b>quantos autos cada um tem e o valor total</b>. <br>
-    Útil pra checar uma lista de empresas, autoridades, doadores de campanha, etc. Até <b>50 por vez</b>.
+    Cole até <b>50 CPFs ou CNPJs</b>, separados por espaço, vírgula ou quebra de linha. A tabela mostra a quantidade de autos e a soma dos valores registrados para cada identificador nesta cópia.
   </div>
 
   <textarea class="search-input" id="multiInput" placeholder="Cole aqui CPFs/CNPJs separados por espaço, vírgula ou quebra de linha…&#10;&#10;Ex:&#10;12345678000199&#10;98765432000150 11111111000111&#10;22.222.222/0001-22, 33333333000133"></textarea>
@@ -263,7 +237,8 @@
   <div id="multi-result"></div>
 </div>
 </section>
-<div class="info-row" id="metodo"><div class="info-card"><div class="section-kicker">Método de apuração</div><h3>Um registro é o começo da história.</h3><ol><li><b>Confira o auto</b> e o processo diretamente com o Ibama.</li><li><b>Compare contexto:</b> repetição, local, período, valor e outros documentos.</li><li><b>Verifique o desfecho:</b> contestação, cancelamento, decisão e pagamento são etapas distintas.</li><li><b>Ouça os envolvidos</b> antes de tirar conclusões ou publicar.</li></ol></div><div class="info-card"><div class="section-kicker">Transparência</div><h3>Sobre esta base</h3><p>Os registros vêm dos dados abertos do Ibama. Valor autuado não significa multa definitiva ou paga. A cobertura local está sendo conferida com o arquivo oficial.</p><details style="margin-top:17px"><summary>Ver volume e última atualização</summary><div class="meta-box" id="metaBox"><span>Carregando informações da base…</span></div></details><p style="margin-top:16px"><a href="https://dadosabertos.ibama.gov.br/dataset/fiscalizacao-auto-de-infracao" target="_blank" rel="noopener">Abrir conjunto de dados oficial ↗</a></p></div></div>
+<section class="radar-section" aria-labelledby="radarTitle"><div class="radar-head"><div><div class="section-kicker">Comparação anual</div><h2 class="section-title" id="radarTitle">Autos por município</h2><p class="section-sub">Municípios com aumento no número de autos até a mesma data em cada ano.</p></div><span class="radar-tag" id="radarDate">Carregando recorte</span></div><div class="radar-grid" id="radarGrid"><p class="loading">Carregando comparação…</p></div><p class="radar-note" id="radarNote">Os números usam a data do auto. Mudanças no registro ou na fiscalização podem afetar a comparação.</p></section>
+<div class="info-row" id="metodo"><div class="info-card"><div class="section-kicker">Verificação</div><h3>Antes de usar um resultado</h3><ol><li><b>Confira o auto</b> e o processo diretamente com o Ibama.</li><li><b>Compare contexto:</b> repetição, local, período, valor e outros documentos.</li><li><b>Verifique o desfecho:</b> contestação, cancelamento, decisão e pagamento são etapas distintas.</li><li><b>Ouça os envolvidos</b> antes de tirar conclusões ou publicar.</li></ol></div><div class="info-card"><div class="section-kicker">Transparência</div><h3>Sobre esta base</h3><p>Os registros vêm dos dados abertos do Ibama. Valor autuado não significa multa definitiva ou paga. A cobertura local está sendo conferida com o arquivo oficial.</p><details style="margin-top:17px"><summary>Ver volume e última atualização</summary><div class="meta-box" id="metaBox"><span>Carregando informações da base…</span></div></details><p style="margin-top:16px"><a href="https://dadosabertos.ibama.gov.br/dataset/fiscalizacao-auto-de-infracao" target="_blank" rel="noopener">Abrir conjunto de dados oficial ↗</a></p></div></div>
 </main>
 
 <!-- Modal: texto LAI -->
@@ -293,7 +268,7 @@
   </div>
 </div>
 
-<div class="footer"><div class="shell"><a href="https://dashboards.datafixers.org">Data Fixers ↗</a> · Ferramentas para investigar dados públicos</div></div>
+<div class="footer"><div class="shell"><a href="https://dashboards.datafixers.org">Data Fixers ↗</a></div></div>
 
 <script>
 const API = 'https://ibama-worker.datafixers.org';
@@ -425,8 +400,8 @@ function highlightTerm(text, term){
   return out;
 }
 
-fetch('data/radar.json').then(r => { if (!r.ok) throw new Error('Radar indisponível'); return r.json(); }).then(r => {
-  if (!Array.isArray(r.places) || !r.places.length) throw new Error('Radar sem registros');
+fetch('data/radar.json').then(r => { if (!r.ok) throw new Error('Comparação indisponível'); return r.json(); }).then(r => {
+  if (!Array.isArray(r.places) || !r.places.length) throw new Error('Comparação sem registros');
   const cutoff = new Date(r.through + 'T12:00:00Z').toLocaleDateString('pt-BR', {day:'2-digit',month:'long',year:'numeric'});
   const cutoffDay = new Date(r.through + 'T12:00:00Z').toLocaleDateString('pt-BR', {day:'2-digit',month:'long'});
   document.getElementById('radarDate').textContent = `Autos até ${cutoff}`;
@@ -436,7 +411,7 @@ fetch('data/radar.json').then(r => { if (!r.ok) throw new Error('Radar indispon�
       <span class="signal">+${fmt(p.delta)}</span><span class="compare">${fmt(p.current)} autos em ${r.year} · ${fmt(p.previous)} em ${r.previous_year}</span>
       <span class="explore">Pesquisar município nesta cópia ↗</span>
     </button>`).join('');
-  document.getElementById('radarNote').innerHTML = `<b>Como ler:</b> comparação de 1º de janeiro a ${cutoffDay} em ${r.previous_year} e ${r.year}, por data do auto. São pistas, não uma medida direta de infrações cometidas ou do resultado dos processos. A busca abaixo usa uma cópia ainda incompleta da base. <a href="https://dadosabertos.ibama.gov.br/dataset/fiscalizacao-auto-de-infracao" target="_blank" rel="noopener">Arquivo oficial ↗</a>`;
+  document.getElementById('radarNote').innerHTML = `<b>Como ler:</b> comparação de 1º de janeiro a ${cutoffDay} em ${r.previous_year} e ${r.year}, por data do auto. A variação não mede diretamente infrações cometidas nem o resultado dos processos. A busca acima usa uma cópia ainda incompleta da base. <a href="https://dadosabertos.ibama.gov.br/dataset/fiscalizacao-auto-de-infracao" target="_blank" rel="noopener">Arquivo oficial ↗</a>`;
   document.querySelectorAll('.radar-card').forEach(card => card.addEventListener('click', () => {
     document.querySelector('[data-tab="busca"]').click();
     document.getElementById('scopeAll').click();
@@ -445,7 +420,7 @@ fetch('data/radar.json').then(r => { if (!r.ok) throw new Error('Radar indispon�
     runBusca(0);
   }));
 }).catch(() => {
-  document.getElementById('radarGrid').innerHTML = '<p class="empty">O radar editorial está temporariamente indisponível. A busca abaixo continua disponível.</p>';
+  document.getElementById('radarGrid').innerHTML = '<p class="empty">A comparação está temporariamente indisponível. A busca acima continua disponível.</p>';
   document.getElementById('radarDate').textContent = 'Sem dados agora';
 });
 
@@ -456,12 +431,12 @@ fetchJSON(API + '/api/stats').then(r=>{
   const taken = last.taken_at ? new Date(last.taken_at).toLocaleString('pt-BR', { day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit' }) : '—';
   const anoMin = (s.ano_min || '').replace(/^0/, '');
   document.getElementById('metaBox').innerHTML = `
-    <span>📊 <b>${fmt(s.total)}</b> autos de infração</span>
-    <span>📅 Anos: <b>${anoMin || s.ano_min} – ${s.ano_max}</b></span>
-    <span>🌎 <b>${s.estados}/27</b> estados</span>
-    <span>👥 <b>${fmtNumHuman(s.infratores_unicos)}</b> infratores únicos</span>
-    <span>💰 Valor autuado nesta cópia: <b>${fmtFromMi(s.valor_total_milhoes)}</b></span>
-    <span>🔄 Última atualização: <b>${taken}</b></span>
+    <span><b>${fmt(s.total)}</b> autos de infração</span>
+    <span>Anos: <b>${anoMin || s.ano_min} – ${s.ano_max}</b></span>
+    <span><b>${s.estados}/27</b> estados</span>
+    <span><b>${fmtNumHuman(s.infratores_unicos)}</b> autuados únicos</span>
+    <span>Valor autuado nesta cópia: <b>${fmtFromMi(s.valor_total_milhoes)}</b></span>
+    <span>Última atualização: <b>${taken}</b></span>
   `;
 }).catch(()=>{
   document.getElementById('metaBox').innerHTML = '<span style="color:#a00">Base temporariamente indisponível. Os totais não puderam ser verificados agora; isso não significa que haja zero autos.</span>';
@@ -505,8 +480,8 @@ async function runBusca(offset = 0){
         <div class="result-header">
           <span>Autos <strong>${offset + 1}–${offset + shown.length}</strong> · soma dos exibidos ${fmtBRLcompact(total)}${hasMore ? ' · há mais resultados' : ''}</span>
           <div class="result-actions">
-            <button class="btn-action" onclick="downloadResults('busca_${escapeHtml(q.replace(/[^a-z0-9]/gi,'_'))}')">📥 Baixar CSV</button>
-            <button class="btn-action secondary" onclick="abrirLAI(_lastResults)">📝 Texto pra LAI</button>
+            <button class="btn-action" onclick="downloadResults('busca_${escapeHtml(q.replace(/[^a-z0-9]/gi,'_'))}')">Exportar CSV</button>
+            <button class="btn-action secondary" onclick="abrirLAI(_lastResults)">Gerar pedido de documentos</button>
           </div>
         </div>
         ${shown.map(r=>{
@@ -550,11 +525,6 @@ document.querySelectorAll('#scopeAll,#scopeDesc,#scopeAuto').forEach(b=>{
     document.getElementById('busca-result').innerHTML = '';
   });
 });
-document.querySelectorAll('.path').forEach(button=>button.addEventListener('click',()=>{
-  document.getElementById(button.dataset.path === 'auto' ? 'scopeAuto' : button.dataset.path === 'descricao' ? 'scopeDesc' : 'scopeAll').click();
-  document.getElementById('busca').focus();
-}));
-
 // === BUSCA MÚLTIPLA ===
 function parseCpfs(text){
   return (text||'').split(/[\s,;\n]+/).map(s => s.replace(/\D/g,'')).filter(s => s.length >= 3);
@@ -596,7 +566,7 @@ document.getElementById('multiBtn').addEventListener('click', async ()=>{
       <div class="result-header">
         <span><strong>${data.length} de ${cpfs.length}</strong> identificadores com autos · ${fmt(totalN)} autos · total ${fmtBRLcompact(totalValor)}</span>
         <div class="result-actions">
-          <button class="btn-action" onclick="downloadMulti(_lastResults)">📥 Baixar CSV</button>
+          <button class="btn-action" onclick="downloadMulti(_lastResults)">Exportar CSV</button>
         </div>
       </div>
       ${data.map(r=>{
@@ -658,8 +628,8 @@ async function openInfrator(cpf, nome){
         <div>UFs: ${ufs.join(', ') || '—'}</div>
         ${cancel ? `<div style="color:#a00">${cancel} cancelado(s)</div>` : ''}
         <div style="margin-left:auto;display:flex;gap:6px">
-          <button class="btn-action" onclick="downloadResults('autos_${safeNome}', _lastModalResults)">📥 CSV</button>
-          <button class="btn-action secondary" onclick="abrirLAI(_lastModalResults)">📝 Texto LAI</button>
+          <button class="btn-action" onclick="downloadResults('autos_${safeNome}', _lastModalResults)">Exportar CSV</button>
+          <button class="btn-action secondary" onclick="abrirLAI(_lastModalResults)">Gerar pedido de documentos</button>
         </div>
       </div>
       ${data.map(m => {
