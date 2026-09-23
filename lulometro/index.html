@@ -92,11 +92,15 @@
     .filters{grid-template-columns:repeat(2,minmax(160px,200px));margin-top:0}
   }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/platform.css">
 </head>
-<body>
+<body class="df-ui df-ui--lulometro">
+<div class="df-sitebar"><div class="df-sitebar__inner"><a class="df-sitebar__brand" href="/"><span class="df-sitebar__mark">DF</span>datafixers</a><a class="df-sitebar__nav" href="/">Todos os painéis</a></div></div>
 
-<h1>Lulômetro</h1>
-<p class="sub">Busca textual nos registros disponíveis de Lula (2023 em diante) e Bolsonaro (2019–2022). O acervo inclui discursos, entrevistas e posts do Bluesky.</p>
+<header class="df-hero"><div class="df-container"><div class="df-eyebrow">Data Fixers / Lulômetro</div><h1>Lulômetro</h1>
+<p class="sub">Busca textual nos registros disponíveis de Lula (2023 em diante) e Bolsonaro (2019–2022). O acervo inclui discursos, entrevistas e posts do Bluesky.</p></div></header>
+<main class="df-container df-content">
 
 <div class="stats" id="stats"><div class="loading">Carregando…</div></div>
 <p class="hint" id="source-status">Carregando datas por fonte…</p>
@@ -122,6 +126,7 @@
   <p><a href="https://dashboards.datafixers.org">← Voltar para dashboards</a> · <a href="https://ibama-worker.datafixers.org/api/lul/stats" target="_blank" rel="noopener">Dados da API</a></p>
 </div>
 
+</main>
 <script>
 const API = 'https://ibama-worker.datafixers.org';
 const $ = id => document.getElementById(id);

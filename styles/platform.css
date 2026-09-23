@@ -1,0 +1,258 @@
+/* Visual comum dos painéis Data Fixers. Carregado depois dos estilos locais. */
+:root {
+  --df-pine: #102c28;
+  --df-pine-2: #193f36;
+  --df-mint: #bce8d7;
+  --df-paper: #f3f5f1;
+  --df-ink: #172823;
+  --df-muted: #607269;
+  --df-line: #dce4dc;
+  --df-focus: #e8a46b;
+}
+
+html { scroll-behavior: smooth; }
+body.df-ui {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: var(--df-paper);
+  color: var(--df-ink);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.55;
+}
+body.df-ui *, body.df-ui *::before, body.df-ui *::after { box-sizing: border-box; }
+body.df-ui :is(h1,h2,h3,h4) {
+  font-family: Manrope, sans-serif;
+  letter-spacing: -.035em;
+}
+body.df-ui :is(button,input,select,textarea) { font-family: "DM Sans", sans-serif; }
+body.df-ui :is(a,button,input,select,textarea,summary):focus-visible {
+  outline: 3px solid var(--df-focus);
+  outline-offset: 3px;
+}
+body.df-ui a { text-underline-offset: 3px; }
+
+.df-sitebar {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  background: var(--df-pine);
+  border-bottom: 1px solid rgba(255,255,255,.14);
+  color: white;
+}
+.df-sitebar__inner {
+  width: min(1180px, calc(100% - 48px));
+  height: 66px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.df-sitebar__brand {
+  display: inline-flex;
+  align-items: center;
+  color: white !important;
+  text-decoration: none;
+  font: 800 18px Manrope, sans-serif;
+  letter-spacing: -.05em;
+  white-space: nowrap;
+}
+.df-sitebar__mark {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 9px;
+  background: var(--df-mint);
+  color: var(--df-pine);
+  font: 800 14px Manrope, sans-serif;
+  letter-spacing: -.04em;
+}
+.df-sitebar__nav {
+  color: #d8ebe1 !important;
+  font: 700 12px "DM Sans", sans-serif;
+  text-decoration: none;
+}
+.df-sitebar__nav:hover { color: white !important; text-decoration: underline; }
+
+.df-container { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
+.df-hero {
+  color: white;
+  background: radial-gradient(circle at 82% 12%, #2a6253 0, transparent 32%),
+              linear-gradient(115deg, #102c28 20%, #163b33 100%);
+  padding: 48px 0 50px;
+}
+.df-eyebrow {
+  color: var(--df-mint);
+  font: 500 11px "DM Mono", monospace;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.df-hero h1 {
+  max-width: 960px;
+  margin: 0 0 12px;
+  color: white;
+  font: 800 clamp(32px, 4vw, 50px)/1.1 Manrope, sans-serif;
+  letter-spacing: -.055em;
+}
+.df-hero :is(.sub,.lede,p) { max-width: 800px; color: #d5e8db; font-size: clamp(14px, 1.55vw, 17px); }
+.df-hero a { color: var(--df-mint) !important; }
+.df-content { padding-block: 42px 70px; }
+
+body.df-ui :is(.page,.wrap,.shell) { max-width: 1180px; }
+body.df-ui :is(.card,.panel,.kpi,.stat,.result,.result-card,.chart-card,.metric-card,.section) {
+  border-color: var(--df-line);
+  border-radius: 14px;
+}
+body.df-ui :is(.card,.panel,.stat,.result,.chart-card,.metric-card) {
+  box-shadow: 0 8px 28px rgba(16,44,40,.045);
+}
+body.df-ui :is(input:not([type="checkbox"]):not([type="radio"]),select,textarea) {
+  border-color: #becdc0;
+  border-radius: 8px;
+  background-color: white;
+  color: var(--df-ink);
+}
+body.df-ui :is(input:not([type="checkbox"]):not([type="radio"]),select,textarea):focus {
+  border-color: #3c936a;
+  box-shadow: 0 0 0 3px #ccebd8;
+}
+body.df-ui button { transition: background .18s, border-color .18s, box-shadow .18s, transform .18s; }
+body.df-ui button:hover { filter: none; }
+body.df-ui :is(th,.table-head) { background: #e8eee8; color: #315442; }
+body.df-ui :is(td,th) { border-color: var(--df-line); }
+body.df-ui :is(.label,.kicker,.eyebrow,.section-kicker) { letter-spacing: .09em; }
+body.df-ui :is(.pill,.badge,.tag) { border-radius: 999px; }
+
+/* Páginas com hero já existente. */
+body.df-ui :is(.hero,.head):not(.df-hero) {
+  background: radial-gradient(circle at 82% 12%, #2a6253 0, transparent 32%),
+              linear-gradient(115deg, #102c28 20%, #163b33 100%);
+  color: white;
+  border-color: #31584b;
+  border-radius: 18px;
+  box-shadow: 0 14px 35px rgba(16,44,40,.09);
+}
+body.df-ui :is(.hero,.head):not(.df-hero) h1 {
+  color: white;
+  font: 800 clamp(30px, 3.8vw, 46px)/1.1 Manrope, sans-serif;
+  letter-spacing: -.05em;
+}
+body.df-ui :is(.hero,.head):not(.df-hero) :is(.sub,.lede,.dek) { color: #d5e8db; }
+body.df-ui :is(.hero,.head):not(.df-hero) :is(.kicker,.eyebrow) { color: var(--df-mint); }
+body.df-ui :is(.hero,.head):not(.df-hero) a { color: var(--df-mint); }
+body.df-ui :is(.hero,.head):not(.df-hero) :is(.dateline,.source,.meta,.update-schedule-note) { color: #d5e8db; }
+body.df-ui :is(.hero,.head):not(.df-hero) :is(.kpi,.stat,.metric-card) { color: var(--df-ink); }
+body.df-ui :is(.hero,.head):not(.df-hero) :is(.kpi,.stat,.metric-card) :is(.label,.value) { color: var(--df-ink); }
+
+/* Navegação anterior continua acessível sem competir com a barra principal. */
+body.df-ui :is(.quick-nav,.topbar) { margin-top: 16px; }
+body.df-ui :is(.quick-nav,.topbar) a { color: #356b50; }
+body.df-ui .hero :is(.filters,.status-row) :is(label,.hint) { color: #d5e8db; }
+body.df-ui .hero .filters :is(input,select) { color: var(--df-ink); }
+body.df-ui .hero .status-row .pill { background: rgba(188,232,215,.13); border-color: rgba(188,232,215,.35); color: #eefaf2; }
+body.df-ui .hero .status-row .scraper-health-btn { color: var(--df-pine); }
+body.df-ui--lai .hero-learn-anchor a { color: #23563e !important; }
+body.df-ui--basometro .hero > .hint { color: #d5e8db; }
+body.df-ui--aeronaves .hero-note {
+  background: linear-gradient(150deg, #173b34, #204c3e);
+  color: #e4f2e9;
+  border-color: rgba(188,232,215,.32);
+}
+body.df-ui--aeronaves .btn-primary {
+  background: var(--df-pine);
+  color: white;
+  box-shadow: 0 10px 24px rgba(16,44,40,.2);
+}
+body.df-ui--aeronaves .btn-primary:hover { background: #28654e; }
+body.df-ui--aeronaves .hero-note code { color: white; }
+body.df-ui--clipping .hero p:not(.eyebrow) { color: #d5e8db; }
+body.df-ui--clipping .hero :is(.badge,.meta) { color: var(--df-ink); }
+
+body.df-ui--emendas .head,
+body.df-ui--sancoes .head,
+body.df-ui--cartao .head {
+  padding: 30px 32px 32px;
+  margin-block: 16px 24px;
+}
+body.df-ui--emendas .head .dek,
+body.df-ui--sancoes .head .dek,
+body.df-ui--cartao .head .dek {
+  max-width: 800px;
+  font: 400 15px/1.6 "DM Sans", sans-serif;
+  color: #d5e8db;
+}
+body.df-ui--emendas .head .dateline,
+body.df-ui--sancoes .head .dateline,
+body.df-ui--cartao .head .dateline,
+body.df-ui--emendas .head .dateline *,
+body.df-ui--sancoes .head .dateline *,
+body.df-ui--cartao .head .dateline * { color: #d5e8db !important; }
+body.df-ui--emendas .head .dateline,
+body.df-ui--sancoes .head .dateline,
+body.df-ui--cartao .head .dateline { margin-top: 18px; }
+body.df-ui--emendas .head :is(.kicker,.section-kicker),
+body.df-ui--sancoes .head :is(.kicker,.section-kicker),
+body.df-ui--cartao .head :is(.kicker,.section-kicker) { color: var(--df-mint); }
+body.df-ui--emendas .spotlight,
+body.df-ui--sancoes .spotlight,
+body.df-ui--cartao .spotlight { border-radius: 14px; }
+
+body.df-ui--pesquisas { --accent: #236f4d; --accent-soft: #e6f1ea; }
+body.df-ui--pesquisas .top a.brand { display: none; }
+body.df-ui--pesquisas .top { justify-content: flex-end; }
+body.df-ui--pesquisas #gate { background: var(--df-paper); }
+body.df-ui--pesquisas #gate .box {
+  width: min(420px, calc(100% - 32px));
+  padding: 30px;
+  border: 1px solid var(--df-line);
+  border-radius: 16px;
+  box-shadow: 0 16px 45px rgba(16,44,40,.09);
+}
+body.df-ui--pesquisas #gate h2 { font: 800 23px Manrope,sans-serif; color: var(--df-pine); }
+body.df-ui--pesquisas #gate button { background: var(--df-pine); border-radius: 8px; font-weight: 700; }
+body.df-ui--pesquisas #gate button:hover { background: #28654e; }
+
+/* Lulômetro e páginas compactas. */
+body.df-ui--lulometro .stats { gap: 12px; margin-bottom: 16px; }
+body.df-ui--lulometro .stat { padding: 18px 20px; background: white; }
+body.df-ui--lulometro .stat .label { color: var(--df-muted); }
+body.df-ui--lulometro .stat .value { font: 800 25px Manrope, sans-serif; color: var(--df-pine); }
+body.df-ui--lulometro #source-status { margin: 0 0 26px; color: var(--df-muted); }
+body.df-ui--lulometro .search { padding: 24px; border: 1px solid var(--df-line); border-radius: 16px; background: white; box-shadow: 0 10px 30px rgba(16,44,40,.045); }
+body.df-ui--lulometro .search input { border: 1px solid #a9bdad; }
+body.df-ui--lulometro .result { padding: 18px 20px; }
+body.df-ui--lulometro .result-title a { color: var(--df-ink); }
+body.df-ui--lulometro .result-title a:hover { color: #27714e; }
+body.df-ui--lulometro .pill.pres { background: var(--df-pine); }
+body.df-ui--lulometro .pagination button { border-color: var(--df-line); color: var(--df-pine); }
+body.df-ui--lulometro .pagination button:hover { background: #e8eee8; }
+body.df-ui--lulometro .results h2 { font-family: Manrope,sans-serif !important; letter-spacing: -.035em; }
+
+body.df-ui--home .df-home-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+body.df-ui--home .df-home-grid .card { margin: 0; padding: 22px 24px; min-height: 104px; }
+body.df-ui--home .df-home-grid .card:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(16,44,40,.1); border-color: #89ad98; }
+body.df-ui--home .df-home-grid .card .t { font: 800 17px Manrope,sans-serif; color: var(--df-pine); }
+body.df-ui--home .df-home-grid .card .d { color: var(--df-muted); }
+
+body.df-ui--relatorios .warning { border-radius: 12px; }
+body.df-ui--relatorios :is(.filters,.search,.stats) { border-color: var(--df-line); }
+body.df-ui--relatorios .card a.open { background: var(--df-pine); }
+body.df-ui--relatorios .card a.open:hover { background: #28654e; }
+body.df-ui--relatorios .year-block h3 { color: #236f4d; border-bottom-color: #8bb79b; }
+
+@media (max-width: 700px) {
+  .df-sitebar__inner,.df-container { width: min(100% - 32px, 1180px); }
+  .df-sitebar__inner { height: 60px; }
+  .df-hero { padding: 36px 0 38px; }
+  .df-content { padding-block: 28px 50px; }
+  body.df-ui--home .df-home-grid { grid-template-columns: 1fr; }
+  body.df-ui--lulometro .stats { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  body.df-ui--lulometro .search { padding: 18px; }
+  body.df-ui--emendas .head,
+  body.df-ui--sancoes .head,
+  body.df-ui--cartao .head { padding: 24px 20px; }
+}

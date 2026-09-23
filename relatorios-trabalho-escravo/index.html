@@ -35,11 +35,15 @@
   .sem-resgate-pill{background:#eef6ee;color:#2a6b2a;font-weight:500}
   .nao-detectado-pill{background:#f4f4f4;color:#888;font-style:italic}
 </style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/platform.css">
 </head>
-<body>
+<body class="df-ui df-ui--relatorios">
+<div class="df-sitebar"><div class="df-sitebar__inner"><a class="df-sitebar__brand" href="/"><span class="df-sitebar__mark">DF</span>datafixers</a><a class="df-sitebar__nav" href="/">Todos os painéis</a></div></div>
 
-<h1>Relatórios de Trabalho Escravo</h1>
-<p class="sub">409 operações de fiscalização do MTE/SIT contra trabalho análogo à escravidão, organizadas por ano (1995-2025). Fonte: <a href="https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho/areas-de-atuacao/copy_of_combate-ao-trabalho-escravo-e-analogo-ao-de-escravo" target="_blank">gov.br/trabalho-e-emprego</a>.</p>
+<header class="df-hero"><div class="df-container"><div class="df-eyebrow">Data Fixers / Fiscalização</div><h1>Relatórios de Trabalho Escravo</h1>
+<p class="sub">409 operações de fiscalização do MTE/SIT contra trabalho análogo à escravidão, organizadas por ano (1995-2025). Fonte: <a href="https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho/areas-de-atuacao/copy_of_combate-ao-trabalho-escravo-e-analogo-ao-de-escravo" target="_blank">gov.br/trabalho-e-emprego</a>.</p></div></header>
+<main class="df-container df-content">
 
 <div class="ai-warn">
   ⚠️ <strong>Resumos, número de resgatados e punições foram extraídos por IA</strong> a partir do OCR de PDFs oficiais do MTE/SIT. Podem conter erros de leitura ou interpretação — <strong>sempre confira no PDF original</strong> antes de usar como fonte. Sem avaliação editorial humana; nenhum trecho é opinião do Data Fixers.
@@ -61,6 +65,7 @@
 <p><a href="https://dashboards.datafixers.org">← Voltar pra dashboards</a></p>
 </div>
 
+</main>
 <script>
 let DATA = null;
 

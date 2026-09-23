@@ -520,8 +520,11 @@
   }
   body.locked > :not(#gate) { display: none !important; }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/platform.css">
 </head>
-<body class="locked">
+<body class="locked df-ui df-ui--pesquisas">
+<div class="df-sitebar"><div class="df-sitebar__inner"><a class="df-sitebar__brand" href="/"><span class="df-sitebar__mark">DF</span>datafixers</a><a class="df-sitebar__nav" href="/">Todos os painéis</a></div></div>
 <div id="gate">
   <div class="box">
     <h2>Acesso restrito</h2>
@@ -877,9 +880,9 @@ function renderStatus(status) {
   const lastChange = status.last_change ? new Date(status.last_change) : null;
   const ageHours = (Date.now() - lastCheck.getTime()) / 3.6e6;
 
-  let cls = "", label = "Raspador OK";
-  if (!status.ok) { cls = "error"; label = "Raspador com erro"; }
-  else if (ageHours > 30) { cls = "warn"; label = "Raspador atrasado"; }
+  let cls = "", label = "Base disponível";
+  if (!status.ok) { cls = "error"; label = "Último download falhou"; }
+  else if (ageHours > 30) { cls = "warn"; label = "Base desatualizada"; }
 
   const fmtAbs = (d) => d.toLocaleString("pt-BR", {
     day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit",
@@ -893,12 +896,12 @@ function renderStatus(status) {
   banner.className = `status-banner${cls ? " " + cls : ""}`;
   banner.innerHTML = `
     <span class="pill">${escape(label)}</span>
-    <span>Última verificação: <b>${escape(fmtAbs(lastCheck))}</b> (${escape(ago)})</span>
+    <span>Último download bem-sucedido: <b>${escape(fmtAbs(lastCheck))}</b> (${escape(ago)})</span>
     <span class="sep">·</span>
     <span><b>${status.total}</b> pesquisas no dataset</span>
     ${lastChange ? `<span class="sep">·</span><span>última mudança em ${escape(fmtAbs(lastChange))}</span>` : ""}
     <span class="sep">·</span>
-    <span>roda 2× ao dia (09h e 18h BRT) via GitHub Actions</span>
+    <a href="https://github.com/luizftoledo/datafixers-dashboards/actions/workflows/pesquisas-eleitorais.yml" target="_blank" rel="noopener">Ver histórico da atualização ↗</a>
   `;
 }
 

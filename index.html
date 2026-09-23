@@ -42,10 +42,13 @@
     a.card:hover{transform:translateX(2px)}
   }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/platform.css">
 </head>
-<body>
-<h1>Dashboards</h1>
-<p class="sub">Painéis jornalísticos · Data Fixers</p>
+<body class="df-ui df-ui--home">
+<div class="df-sitebar"><div class="df-sitebar__inner"><a class="df-sitebar__brand" href="/"><span class="df-sitebar__mark">DF</span>datafixers</a><a class="df-sitebar__nav" href="/">Todos os painéis</a></div></div>
+<header class="df-hero"><div class="df-container"><div class="df-eyebrow">Data Fixers / Painéis</div><h1>Dashboards</h1><p class="sub">Dados públicos para consulta e análise.</p></div></header>
+<main class="df-container df-content df-home-grid">
 
 <a class="card" href="/lai/"><div class="t">LAI Dashboard</div><div class="d">Pedidos de informação ao Governo Federal — negativas, prazos, recursos</div></a>
 <a class="card" href="/pesquisas/"><div class="t">Pesquisas Eleitorais</div><div class="d">Pesquisas nacionais para presidente registradas no TSE</div></a>
@@ -59,7 +62,8 @@
 <a class="card" href="/cartao-corporativo/"><div class="t">Cartão corporativo</div><div class="d">Despesas agregadas do cartão da Presidência</div></a>
 <a class="card" href="/relatorios-trabalho-escravo/"><div class="t">Relatórios de trabalho escravo</div><div class="d">Busca em relatórios de fiscalização disponíveis</div></a>
 
-<div class="footer">
+</main>
+<div class="footer df-container">
 <p><a href="https://datafixers.org">← Voltar pra datafixers.org</a></p>
 </div>
 </body>
