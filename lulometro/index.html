@@ -60,6 +60,9 @@
   .result-title a:hover{color:#d96e30}
   .result-excerpt{font-size:0.9em;color:#444;line-height:1.55;word-wrap:break-word}
   .result-excerpt mark{background:#fef08a;padding:0 2px;border-radius:2px}
+  .pagination{display:flex;justify-content:space-between;gap:10px;margin:18px 0}
+  .pagination button{background:#fff;border:1px solid #bbb;border-radius:7px;padding:9px 13px;font:600 13px Inter,sans-serif;cursor:pointer}
+  .pagination button:hover{border-color:#111;background:#f5f5f2}
 
   .loading{text-align:center;padding:40px 20px;color:#aaa;font-style:italic}
   .empty{text-align:center;padding:40px 20px;color:#888}
@@ -93,9 +96,10 @@
 <body>
 
 <h1>Lulômetro</h1>
-<p class="sub">Busca textual em discursos, entrevistas, pronunciamentos e posts em redes sociais de presidentes brasileiros.</p>
+<p class="sub">Busca textual nos registros disponíveis de Lula (2023 em diante) e Bolsonaro (2019–2022). O acervo inclui discursos, entrevistas e posts do Bluesky.</p>
 
 <div class="stats" id="stats"><div class="loading">Carregando…</div></div>
+<p class="hint" id="source-status">Carregando datas por fonte…</p>
 
 <div class="search">
   <div class="search-wrap">
@@ -112,15 +116,18 @@
   <div class="hint">Busca com tolerância a acentos. Múltiplas palavras = todas precisam estar no texto.</div>
 </div>
 
-<div class="results" id="results"><div class="hint">Digite acima pra começar.</div></div>
+<div class="results" id="results"><div class="hint">Digite acima para buscar.</div></div>
 
 <div class="footer">
-  <p><a href="https://dashboards.datafixers.org">← Voltar pra dashboards</a> · API: <a href="https://ibama-worker.datafixers.org/api/lul/stats" target="_blank">/api/lul/stats</a></p>
+  <p><a href="https://dashboards.datafixers.org">← Voltar para dashboards</a> · <a href="https://ibama-worker.datafixers.org/api/lul/stats" target="_blank" rel="noopener">Dados da API</a></p>
 </div>
 
 <script>
 const API = 'https://ibama-worker.datafixers.org';
 const $ = id => document.getElementById(id);
+const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const safeUrl = value => { try { const url = new URL(value); return /^https?:$/.test(url.protocol) ? url.href : ''; } catch { return ''; } };
+const safeExcerpt = value => esc(value).replaceAll('&lt;mark&gt;', '<mark>').replaceAll('&lt;/mark&gt;', '</mark>');
 
 const SOURCE_LABELS = {
   planalto: 'Site do Planalto · discursos e entrevistas',
@@ -138,57 +145,71 @@ const TYPE_LABELS = {
   post: 'Posts (redes sociais)',
 };
 
+let overviewHtml = '';
 async function loadStats() {
-  const r = await fetch(API + '/api/lul/stats').then(r => r.json());
+  try {
+  const response = await fetch(API + '/api/lul/stats');
+  if (!response.ok) throw new Error('API indisponível');
+  const r = await response.json();
   const s = r.stats || {};
   $('stats').innerHTML = `
-    <div class="stat"><div class="label">Documentos</div><div class="value">${(s.total||0).toLocaleString('pt-BR')}</div></div>
-    <div class="stat"><div class="label">Presidentes</div><div class="value">${s.presidentes||0}</div></div>
-    <div class="stat"><div class="label">Última data</div><div class="value" style="font-size:1em">${(s.data_max||'—').slice(0,10)}</div></div>
-    <div class="stat"><div class="label">Tipos</div><div class="value" style="font-size:1em">${(r.by_type||[]).length}</div></div>
+    <div class="stat"><div class="label">Registros</div><div class="value">${Number(s.total||0).toLocaleString('pt-BR')}</div></div>
+    <div class="stat"><div class="label">Presidentes</div><div class="value">${Number(s.presidentes||0)}</div></div>
+    <div class="stat"><div class="label">Data mais recente</div><div class="value" style="font-size:1em">${esc((s.data_max||'—').slice(0,10))}</div></div>
+    <div class="stat"><div class="label">Fontes</div><div class="value" style="font-size:1em">${(r.by_source||[]).length}</div></div>
   `;
+  $('source-status').textContent = 'Último registro por fonte: ' + (r.by_source||[]).map(item =>
+    `${SOURCE_LABELS_SHORT[item.source] || item.source}: ${(item.latest_date || 'data não informada').slice(0,10)}`
+  ).join(' · ') + '. Data do registro não indica atualização completa da fonte.';
 
   // Popula president
   const presSet = new Map();
   for (const p of (r.by_president || [])) {
-    const slug = p.president.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+    const slug = p.president_slug;
     if (!presSet.has(slug)) presSet.set(slug, p.president);
   }
   for (const [slug, name] of presSet) {
-    $('president').insertAdjacentHTML('beforeend', `<option value="${slug}">${name}</option>`);
+    $('president').insertAdjacentHTML('beforeend', `<option value="${esc(slug)}">${esc(name)}</option>`);
   }
 
   // Popula source
   for (const s of (r.by_source || [])) {
     const label = SOURCE_LABELS[s.source] || s.source;
-    $('source').insertAdjacentHTML('beforeend', `<option value="${s.source}">${label} (${s.n.toLocaleString('pt-BR')})</option>`);
+    $('source').insertAdjacentHTML('beforeend', `<option value="${esc(s.source)}">${esc(label)} (${Number(s.n).toLocaleString('pt-BR')})</option>`);
   }
 
   // Popula type
   // By president — barras
-  const max = Math.max(...(r.by_president||[]).map(p => p.n));
-  $('results').innerHTML =
+  const max = Math.max(1,...(r.by_president||[]).map(p => p.n));
+  overviewHtml =
     '<h2 style="font-family:Playfair Display,serif;font-size:1.2em;margin-bottom:12px">Por presidente</h2>' +
     '<div class="by-pres">' +
     (r.by_president||[]).map(p => `
       <div class="bar-row">
-        <span class="name">${p.president}<br><span style="color:#888;font-size:0.85em">${p.mandate}</span></span>
+        <span class="name">${esc(p.president)}<br><span style="color:#888;font-size:0.85em">${esc(p.mandate)}</span></span>
         <span class="bar-wrap">
           <span class="bar" style="width:${Math.max(20, Math.round(p.n/max*180))}px"></span>
-          <span class="n">${p.n.toLocaleString('pt-BR')}</span>
+          <span class="n">${Number(p.n).toLocaleString('pt-BR')}</span>
         </span>
       </div>
-    `).join('') + '</div>';
+    `).join('') + '</div><p class="hint">Quantidades de registros disponíveis por período; os mandatos têm durações diferentes.</p>';
+  if (!$('q').value.trim()) $('results').innerHTML = overviewHtml;
+  } catch (error) {
+    $('stats').innerHTML = '<div class="empty">Não foi possível carregar os totais agora.</div>';
+    $('source-status').textContent = 'Datas por fonte indisponíveis.';
+    if (!$('q').value.trim()) $('results').innerHTML = '<div class="empty">A API está temporariamente indisponível.</div>';
+  }
 }
 
-let timer;
-async function search() {
+let timer, searchSeq = 0;
+async function search(offset = 0) {
+  const seq = ++searchSeq;
   const q = $('q').value.trim();
   if (q.length < 2) {
-    if (q.length === 0) $('results').innerHTML = '<div class="hint">Digite acima pra começar.</div>';
+    $('results').innerHTML = q.length === 0 ? (overviewHtml || '<div class="hint">Digite acima para buscar.</div>') : '<div class="hint">Digite ao menos duas letras.</div>';
     return;
   }
-  const params = new URLSearchParams({ q, limit: '20' });
+  const params = new URLSearchParams({ q, limit: '21', offset: String(offset) });
   const pres = $('president').value;
   const src = $('source').value;
   if (pres) params.set('president', pres);
@@ -196,37 +217,44 @@ async function search() {
 
   $('results').innerHTML = '<div class="loading">Buscando…</div>';
   try {
-    const r = await fetch(API + '/api/lul/busca?' + params).then(r => r.json());
-    if (r.erro) { $('results').innerHTML = `<div class="empty">Erro: ${r.erro}</div>`; return; }
+    const response = await fetch(API + '/api/lul/busca?' + params);
+    if (!response.ok) throw new Error('A busca está temporariamente indisponível.');
+    const r = await response.json();
+    if (seq !== searchSeq) return;
+    if (r.erro) { $('results').innerHTML = `<div class="empty">Erro: ${esc(r.erro)}</div>`; return; }
     if (!Array.isArray(r) || r.length === 0) {
       $('results').innerHTML = '<div class="empty">Nenhum resultado pra esses filtros.</div>';
       return;
     }
+    const shown = r.slice(0,20), hasMore = r.length > 20;
     $('results').innerHTML =
-      `<h2 style="font-family:Playfair Display,serif;font-size:1.15em;margin-bottom:12px">${r.length} resultado(s)</h2>` +
-      r.map(d => {
+      `<h2 style="font-family:Playfair Display,serif;font-size:1.15em;margin-bottom:12px">Resultados ${offset + 1}–${offset + shown.length}${hasMore ? ' · há mais' : ''}</h2>` +
+      shown.map(d => {
         const srcClass = d.source ? `src-${d.source}` : '';
         const srcLabel = SOURCE_LABELS_SHORT[d.source] || d.source || '?';
         const typeLabel = (TYPE_LABELS[d.type] || d.type || '').toLowerCase().replace(' (redes sociais)','');
+        const href = safeUrl(d.url);
         return `
         <div class="result">
           <div class="result-meta">
-            <span class="pill pres">${d.president}</span>
-            <span class="pill ${srcClass}">${srcLabel} · ${typeLabel}</span>
-            <span class="pill">${(d.date || '').slice(0,10)}</span>
+            <span class="pill pres">${esc(d.president)}</span>
+            <span class="pill ${esc(srcClass)}">${esc(srcLabel)} · ${esc(typeLabel)}</span>
+            <span class="pill">${esc((d.date || '').slice(0,10))}</span>
           </div>
-          <div class="result-title"><a href="${d.url}" target="_blank" rel="noopener">${d.title}</a></div>
-          <div class="result-excerpt">${d.excerpt || ''}</div>
+          <div class="result-title">${href ? `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(d.title)}</a>` : esc(d.title)}</div>
+          <div class="result-excerpt">${safeExcerpt(d.excerpt || '')}</div>
         </div>`;
-      }).join('');
+      }).join('') + `<div class="pagination">${offset ? '<button type="button" id="previous">← Anteriores</button>' : ''}${hasMore ? '<button type="button" id="next">Próximos 20 →</button>' : ''}</div>`;
+    if (offset) $('previous').addEventListener('click', () => search(Math.max(0,offset-20)));
+    if (hasMore) $('next').addEventListener('click', () => search(offset+20));
   } catch (e) {
-    $('results').innerHTML = `<div class="empty">Erro: ${e.message}</div>`;
+    if (seq === searchSeq) $('results').innerHTML = `<div class="empty">${esc(e.message)}</div>`;
   }
 }
 
-$('q').addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(search, 350); });
-$('president').addEventListener('change', search);
-$('source').addEventListener('change', search);
+$('q').addEventListener('input', () => { searchSeq++; clearTimeout(timer); timer = setTimeout(() => search(0), 350); });
+$('president').addEventListener('change', () => search(0));
+$('source').addEventListener('change', () => search(0));
 
 loadStats();
 </script>

@@ -20,8 +20,7 @@ import time
 import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.error import URLError
-from urllib.request import Request, urlopen
+import requests
 
 CSV_ZIP_URL = (
     "https://cdn.tse.jus.br/estatistica/sead/odsele/"
@@ -65,13 +64,17 @@ def fetch_zip(tentativas: int = 5) -> bytes:
     Timeout curto (60s) + mais tentativas dá mais chances de pegar uma janela
     boa do que poucas tentativas de 180s presas num connect que nunca abre.
     """
-    req = Request(CSV_ZIP_URL, headers={"User-Agent": "luizftoledo-portfolio/1.0"})
     ultimo_erro: Exception | None = None
     for tentativa in range(1, tentativas + 1):
         try:
-            with urlopen(req, timeout=60) as resp:
-                return resp.read()
-        except (URLError, TimeoutError, OSError) as exc:
+            resp = requests.get(
+                CSV_ZIP_URL,
+                headers={"User-Agent": "luizftoledo-portfolio/1.0"},
+                timeout=60,
+            )
+            resp.raise_for_status()
+            return resp.content
+        except requests.RequestException as exc:
             ultimo_erro = exc
             if tentativa < tentativas:
                 espera = 10 * (2 ** (tentativa - 1))

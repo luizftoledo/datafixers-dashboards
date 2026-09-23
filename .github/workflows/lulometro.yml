@@ -44,6 +44,19 @@ jobs:
         run: |
           python scripts/build_lulometro_data.py --max-details 2500 --max-failures 3
 
+      - name: Check official source discovery
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          meta = json.loads(Path('lulometro/data/metadata.json').read_text())
+          found = meta.get('candidate_urls', 0)
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as out:
+              out.write(f"Lulômetro: {meta.get('total_records', 0)} registros; {found} URLs candidatas das fontes oficiais.\n")
+          if found == 0:
+              print('::warning::Nenhuma URL encontrada no Planalto ou na Biblioteca; a atualização pode conter somente Bluesky.')
+          PY
+
       - name: Upsert to Cloudflare D1
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

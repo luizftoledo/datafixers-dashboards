@@ -636,17 +636,17 @@ JSON:`;
           FROM lulometro_records
         `).first();
         const byPres = await env.DB.prepare(`
-          SELECT president, mandate, COUNT(*) AS n
+          SELECT president_slug, president, mandate, COUNT(*) AS n
           FROM lulometro_records
           WHERE president IS NOT NULL
-          GROUP BY president, mandate ORDER BY n DESC
+          GROUP BY president_slug, president, mandate ORDER BY n DESC
         `).all();
         const byType = await env.DB.prepare(`
           SELECT type, COUNT(*) AS n FROM lulometro_records
           WHERE type IS NOT NULL GROUP BY type ORDER BY n DESC
         `).all();
         const bySource = await env.DB.prepare(`
-          SELECT source, COUNT(*) AS n FROM lulometro_records
+          SELECT source, COUNT(*) AS n, MAX(date) AS latest_date FROM lulometro_records
           WHERE source IS NOT NULL AND source != '' GROUP BY source ORDER BY n DESC
         `).all();
         return Response.json({
@@ -660,7 +660,8 @@ JSON:`;
       if (path === '/api/lul/busca') {
         const q = (url.searchParams.get('q') || '').trim();
         if (q.length < 2) return Response.json({ erro: 'q precisa ter 2+ chars' }, { status: 400, headers: CORS });
-        const limit = Math.min(50, parseInt(url.searchParams.get('limit') || '20'));
+        const limit = Math.max(1, Math.min(51, parseInt(url.searchParams.get('limit') || '20') || 20));
+        const offset = Math.max(0, Math.min(100000, parseInt(url.searchParams.get('offset') || '0') || 0));
         const president = url.searchParams.get('president');
         const mandate = url.searchParams.get('mandate');
         const source = url.searchParams.get('source');  // planalto | biblioteca | bluesky
@@ -681,8 +682,8 @@ JSON:`;
         if (mandate) { sql += ' AND r.mandate = ?'; params.push(mandate); }
         if (source) { sql += ' AND r.source = ?'; params.push(source); }
         if (type) { sql += ' AND r.type = ?'; params.push(type); }
-        sql += ' ORDER BY r.date DESC LIMIT ?';
-        params.push(limit);
+        sql += ' ORDER BY r.date DESC, r.id DESC LIMIT ? OFFSET ?';
+        params.push(limit, offset);
         const r = await env.DB.prepare(sql).bind(...params).all();
         return Response.json(r.results, { headers: CORS });
       }

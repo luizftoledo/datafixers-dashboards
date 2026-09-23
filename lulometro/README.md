@@ -1,58 +1,17 @@
-# Lulometro (GitHub Pages)
+# Lulômetro
 
-Dashboard para comparar discursos e entrevistas de presidentes brasileiros por palavra-chave.
+Busca em registros de Lula (2023 em diante) e Bolsonaro (2019–2022), publicados no Planalto, na Biblioteca da Presidência e no Bluesky. O acervo é parcial: a data mais recente de cada fonte aparece na interface, mas não comprova cobertura completa.
 
-Escopo atual do acervo publicado: apenas `Lula 3 (2023-)` e `Bolsonaro (2019-2022)`.
+## Arquitetura
 
-## Entregas
+- `index.html`: interface estática publicada no Cloudflare Pages.
+- `worker/src/index.ts`: endpoints `/api/lul/stats` e `/api/lul/busca`, consultando D1.
+- `scripts/build_lulometro_data.py`: coleta e normaliza os registros.
+- `scripts/upsert_lulometro_to_d1.py`: envia os registros ao D1.
+- `.github/workflows/lulometro.yml`: rotina diária.
 
-- `index.html`: interface principal do dashboard.
-- `app.js`: busca, filtros, gráficos e tabela.
-- `data/records.jsonl.gz`: base completa com textos integrais.
-- `data/items.json`: tabela de metadados para consumo rápido.
-- `data/super_tabela.csv`: exportação tabular (data, nome, local, link, etc.).
-- `data/metadata.json`: status da atualização diária.
-- `data/sources.json`: diagnóstico de fontes e rastreamento.
+O workflow gera os arquivos em `lulometro/data/` somente durante a execução. Eles não são versionados; as consultas públicas usam o D1. Se Planalto ou Biblioteca impedirem o acesso automatizado, os registros existentes permanecem no banco, mas novas publicações dessas fontes não entram no acervo.
 
-## Atualização diária
+## Verificação
 
-Workflow: `.github/workflows/update-lulometro-dashboard.yml`
-
-Pipeline:
-
-1. Rastreia listagens do Planalto (`entrevistas`, `discursos-e-pronunciamentos`).
-2. Rastreia ex-presidentes na Biblioteca da Presidência.
-3. Atualiza incrementalmente apenas URLs novas/incompletas.
-4. Regrava os arquivos em `lulometro-dashboard/data`.
-5. Faz commit automático somente quando há mudança.
-
-## Build local
-
-```bash
-cd <repo>
-python3 scripts/build_lulometro_data.py
-```
-
-Modo debug (limita novos fetches):
-
-```bash
-python3 scripts/build_lulometro_data.py --max-new-details 100
-```
-
-Modo em lotes (útil para recuperar base grande sem perder progresso):
-
-```bash
-python3 scripts/build_lulometro_data.py --skip-crawl --max-details 2000
-```
-
-Evitar insistir em URLs que já falharam várias vezes:
-
-```bash
-python3 scripts/build_lulometro_data.py --max-failures 3
-```
-
-Forçar refetch de detalhes:
-
-```bash
-python3 scripts/build_lulometro_data.py --force-details
-```
+Confira as datas por fonte em `/api/lul/stats` e o log do workflow. Um workflow concluído com sucesso pode ter encontrado zero URLs novas nas fontes oficiais; esse resultado exige conferência antes de afirmar que o acervo está atualizado.

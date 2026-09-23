@@ -1706,7 +1706,13 @@ def main() -> int:
                 print(f"→ Preservando {len(preserved_bsky)} posts Bluesky de execução anterior", flush=True)
                 normalized.extend(preserved_bsky)
 
-        records_sorted = sort_records(normalized)
+        # Existing records already contain Bluesky posts. A successful refresh
+        # replaces those posts; --skip-bluesky keeps the cached copy. In either
+        # case, keep one row per stable record ID in the exported corpus.
+        records_by_id = {}
+        for record in normalized:
+            records_by_id[record["id"]] = record
+        records_sorted = sort_records(records_by_id.values())
         save_records(records_sorted)
 
         items = build_items_json(records_sorted)

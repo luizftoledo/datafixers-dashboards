@@ -15,6 +15,7 @@ from build_aeronaves_dashboard_data import (
     DATA_FILE,
     META_FILE,
     build_dataset,
+    adapt_source_row,
     clean_value,
     normalize_text,
     parse_source_updated_at,
@@ -27,7 +28,10 @@ DEFAULT_MIN_ROW_RATIO = 0.9
 DEFAULT_TIMEOUT = 180
 DEFAULT_RETRIES = 3
 SUMMARY_SAMPLE_SIZE = 10
-EXPECTED_FIELDS = {"MARCA", "NM_OPERADOR", "PROPRIETARIOS"}
+EXPECTED_FIELD_SETS = (
+    {"MARCA", "NM_OPERADOR", "PROPRIETARIOS"},
+    {"MARCAS", "OPERADORES", "PROPRIETARIOS"},
+)
 
 
 def owner_names(raw_value):
@@ -63,7 +67,8 @@ def summarize_source_csv(path):
         reader = csv.DictReader(fh, delimiter=";")
         summary["fieldnames"] = reader.fieldnames or []
 
-        for row in reader:
+        for source_row in reader:
+            row = adapt_source_row(source_row)
             if not any(clean_value(value) for value in row.values()):
                 continue
 
@@ -191,9 +196,8 @@ def validate_candidate(current_summary, candidate_summary, min_rows, min_row_rat
     if candidate_summary["rows"] < min_rows:
         return False, f"arquivo com poucas linhas ({candidate_summary['rows']})"
 
-    missing_fields = sorted(EXPECTED_FIELDS - set(candidate_summary["fieldnames"]))
-    if missing_fields:
-        return False, f"CSV sem colunas esperadas: {', '.join(missing_fields)}"
+    if not any(fields <= set(candidate_summary["fieldnames"]) for fields in EXPECTED_FIELD_SETS):
+        return False, "CSV sem colunas esperadas no formato antigo ou novo"
 
     if current_summary and current_summary["rows"] > 0:
         min_allowed_rows = int(current_summary["rows"] * min_row_ratio)
@@ -326,8 +330,7 @@ def main():
             print(json.dumps(report, ensure_ascii=False, indent=2))
 
             if not is_valid:
-                print(f"[skip] {validation_reason}")
-                return
+                raise SystemExit(validation_reason)
 
             if not report["meaningful_changes_detected"]:
                 print("[skip] sem mudancas relevantes em linhas, nomes ou prefixos.")
@@ -361,8 +364,7 @@ def main():
     print(json.dumps(report, ensure_ascii=False, indent=2))
 
     if not is_valid:
-        print(f"[skip] {validation_reason}")
-        return
+        raise SystemExit(validation_reason)
 
     if not report["meaningful_changes_detected"]:
         print("[skip] sem mudancas relevantes em linhas, nomes ou prefixos.")

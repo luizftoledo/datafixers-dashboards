@@ -109,6 +109,35 @@ def first_owner_name(raw_value):
     return first_piece
 
 
+def adapt_source_row(row):
+    """Converte o CSV novo da ANAC para os campos usados pela busca."""
+    if "MARCAS" not in row:
+        return row
+
+    def people(value):
+        try:
+            parsed = json.loads(value or "[]")
+            return parsed if isinstance(parsed, list) else []
+        except (ValueError, TypeError):
+            return []
+
+    operators = people(row.get("OPERADORES"))
+    owners = people(row.get("PROPRIETARIOS"))
+    primary = operators[0] if operators else {}
+    return {
+        **row,
+        "MARCA": row.get("MARCAS", ""),
+        "NM_OPERADOR": primary.get("NOME", ""),
+        "OUTROS_OPERADORES": "; ".join(p.get("NOME", "") for p in operators[1:] if p.get("NOME")),
+        "UF_OPERADOR": primary.get("UF", ""),
+        "SG_UF": primary.get("UF", ""),
+        "CPF_CNPJ": primary.get("DOCUMENTO", ""),
+        "PROPRIETARIOS": "; ".join(
+            f'{p.get("NOME", "")}|{p.get("DOCUMENTO", "")}' for p in owners if p.get("NOME")
+        ),
+    }
+
+
 def write_json(path, payload):
     path.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2),
@@ -137,7 +166,8 @@ def build_dataset(source_path):
         reader = csv.DictReader(fp, delimiter=";")
 
         with gzip.open(DATA_FILE, "wt", encoding="utf-8", compresslevel=9) as out_fp:
-            for row in reader:
+            for source_row in reader:
+                row = adapt_source_row(source_row)
                 record = {}
                 for source_key, compact_key in FIELD_MAP.items():
                     value = clean_value(row.get(source_key))
