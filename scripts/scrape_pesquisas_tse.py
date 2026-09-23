@@ -76,6 +76,11 @@ def fetch_zip(tentativas: int = 5) -> bytes:
             return resp.content
         except requests.RequestException as exc:
             ultimo_erro = exc
+            if isinstance(exc, requests.HTTPError) and exc.response is not None and exc.response.status_code == 403:
+                raise SystemExit(
+                    "TSE respondeu HTTP 403 para este servidor; a base existente foi preservada. "
+                    "Verifique acesso autorizado do ambiente de execução ao CDN do TSE."
+                ) from exc
             if tentativa < tentativas:
                 espera = 10 * (2 ** (tentativa - 1))
                 print(
