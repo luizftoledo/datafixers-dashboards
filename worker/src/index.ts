@@ -29,14 +29,33 @@ function normText(s: string): string {
     .toLowerCase().trim();
 }
 
-async function cachedSearch(env: Env, keyParts: unknown[], query: () => Promise<unknown>): Promise<Response> {
+function lulSearchTerm(value: string): string {
+  return value.normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase().match(/[a-z0-9]+/g)?.join(' ') || '';
+}
+
+function lulOccurrences(value: string, term: string): number {
+  const tokens = lulSearchTerm(value).split(' ').filter(Boolean);
+  if (!tokens.length) return 0;
+  const text = `|${tokens.join('||')}|`;
+  const phrase = `|${term.split(' ').join('||')}|`;
+  let count = 0;
+  let from = 0;
+  while ((from = text.indexOf(phrase, from)) !== -1) {
+    count++;
+    from += phrase.length;
+  }
+  return count;
+}
+
+async function cachedSearch(env: Env, keyParts: unknown[], query: () => Promise<unknown>, ttlMs = 24 * 60 * 60 * 1000): Promise<Response> {
   const bytes = new TextEncoder().encode(JSON.stringify(keyParts));
   const digest = await crypto.subtle.digest('SHA-256', bytes);
   const key = 'cache/ibama-search-v1/' + Array.from(new Uint8Array(digest), b => b.toString(16).padStart(2, '0')).join('') + '.json';
   const cached = await env.ARQUIVOS.get(key);
   if (cached) {
     const entry = await cached.json() as { at: number; results: unknown };
-    if (Date.now() - entry.at < 24 * 60 * 60 * 1000) return Response.json(entry.results, { headers: CORS });
+    if (Date.now() - entry.at < ttlMs) return Response.json(entry.results, { headers: CORS });
   }
   const results = await query();
   await env.ARQUIVOS.put(key, JSON.stringify({ at: Date.now(), results }));
@@ -659,7 +678,8 @@ JSON:`;
 
       if (path === '/api/lul/busca') {
         const q = (url.searchParams.get('q') || '').trim();
-        if (q.length < 2) return Response.json({ erro: 'q precisa ter 2+ chars' }, { status: 400, headers: CORS });
+        const term = lulSearchTerm(q);
+        if (term.length < 2 || term.length > 100) return Response.json({ erro: 'q precisa ter de 2 a 100 caracteres' }, { status: 400, headers: CORS });
         const limit = Math.max(1, Math.min(51, parseInt(url.searchParams.get('limit') || '20') || 20));
         const offset = Math.max(0, Math.min(100000, parseInt(url.searchParams.get('offset') || '0') || 0));
         const president = url.searchParams.get('president');
@@ -667,9 +687,8 @@ JSON:`;
         const source = url.searchParams.get('source');  // planalto | biblioteca | bluesky
         const type = url.searchParams.get('type');      // discurso | entrevista | post
 
-        // FTS5 query — handle special chars
-        const ftsQ = q.split(/\s+/).filter(t => t.length >= 2).map(t => `"${t.replace(/"/g,'""')}"`).join(' AND ');
-        if (!ftsQ) return Response.json([], { headers: CORS });
+        // FTS5 unicode61 ignora caixa, acentos e pontuação entre palavras.
+        const ftsQ = `"${term}"`;
 
         let sql = `
           SELECT r.id, r.date, r.president, r.mandate, r.type, r.source, r.title, r.url,
@@ -686,6 +705,47 @@ JSON:`;
         params.push(limit, offset);
         const r = await env.DB.prepare(sql).bind(...params).all();
         return Response.json(r.results, { headers: CORS });
+      }
+
+      if (path === '/api/lul/tendencia') {
+        const term = lulSearchTerm((url.searchParams.get('q') || '').trim());
+        if (term.length < 2 || term.length > 100) return Response.json({ erro: 'q precisa ter de 2 a 100 caracteres' }, { status: 400, headers: CORS });
+        const president = url.searchParams.get('president');
+        const source = url.searchParams.get('source');
+        const mandate = url.searchParams.get('mandate');
+        const type = url.searchParams.get('type');
+        let sql = `
+          SELECT r.rowid AS row_id, r.date, r.text, r.description, r.title
+          FROM lulometro_fts f
+          JOIN lulometro_records r ON r.rowid = f.rowid
+          WHERE lulometro_fts MATCH ? AND r.rowid > ?`;
+        const filters: (string | number)[] = [];
+        if (president) { sql += ' AND r.president_slug = ?'; filters.push(president); }
+        if (mandate) { sql += ' AND r.mandate = ?'; filters.push(mandate); }
+        if (source) { sql += ' AND r.source = ?'; filters.push(source); }
+        if (type) { sql += ' AND r.type = ?'; filters.push(type); }
+        sql += ' ORDER BY r.rowid LIMIT 100';
+        return cachedSearch(env, ['lul-trend-v1', term, president, source, mandate, type], async () => {
+        const daily = new Map<string, { date: string; mentions: number; records: number }>();
+        let lastRow = 0;
+        for (;;) {
+          const batch = await env.DB.prepare(sql).bind(`"${term}"`, lastRow, ...filters).all();
+          const rows = batch.results as { row_id: number; date: string; text: string; description: string; title: string }[];
+          for (const row of rows) {
+            const date = (row.date || '').slice(0, 10);
+            if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) continue;
+            const mentions = lulOccurrences(row.text || row.description || row.title || '', term);
+            if (!mentions) continue;
+            const point = daily.get(date) || { date, mentions: 0, records: 0 };
+            point.mentions += mentions;
+            point.records++;
+            daily.set(date, point);
+          }
+          if (rows.length < 100) break;
+          lastRow = rows[rows.length - 1].row_id;
+        }
+        return { term, daily: [...daily.values()].sort((a, b) => a.date.localeCompare(b.date)) };
+        }, 60 * 60 * 1000);
       }
 
       if (path === '/api/lul/record') {
@@ -712,6 +772,7 @@ JSON:`;
           ],
           lulometro: [
             '/api/lul/stats', '/api/lul/busca?q=...&president=...&mandate=...',
+            '/api/lul/tendencia?q=...&president=...&source=...',
             '/api/lul/record?id=...',
           ],
           ops: ['/run', '/digest'],

@@ -63,6 +63,18 @@
   .pagination{display:flex;justify-content:space-between;gap:10px;margin:18px 0}
   .pagination button{background:#fff;border:1px solid #bbb;border-radius:7px;padding:9px 13px;font:600 13px Inter,sans-serif;cursor:pointer}
   .pagination button:hover{border-color:#111;background:#f5f5f2}
+  .trends{margin:24px 0}
+  .trends h2{font-family:'Playfair Display',serif;font-size:1.35em;margin-bottom:4px}
+  .trends .summary{color:#555;font-size:.88em;margin-bottom:14px}
+  .trend-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .trend-card{background:#fff;border:1px solid #e5e5e5;border-radius:9px;padding:15px;min-width:0}
+  .trend-card h3{font-size:.92em;margin-bottom:2px}
+  .trend-card p{font-size:.76em;color:#777;margin-bottom:12px}
+  .trend-bars{height:125px;display:flex;gap:3px;align-items:end;border-bottom:1px solid #ddd}
+  .trend-bar{flex:1;min-width:0;background:#d96e30;border-radius:3px 3px 0 0}
+  .trend-bar.zero{background:#eee;height:2px!important}
+  .trend-axis{display:flex;justify-content:space-between;color:#777;font-size:.7em;margin-top:5px}
+  .trend-total{font-weight:700;font-variant-numeric:tabular-nums;margin-top:8px;font-size:.9em}
 
   .loading{text-align:center;padding:40px 20px;color:#aaa;font-style:italic}
   .empty{text-align:center;padding:40px 20px;color:#888}
@@ -87,6 +99,7 @@
     .result-meta{font-size:0.78em}
     .result-title{font-size:1.05em}
   }
+  @media (max-width: 639px) {.trend-grid{grid-template-columns:1fr}}
   @media (min-width: 900px) {
     .search-wrap{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}
     .filters{grid-template-columns:repeat(2,minmax(160px,200px));margin-top:0}
@@ -107,7 +120,7 @@
 
 <div class="search">
   <div class="search-wrap">
-    <input type="text" id="q" inputmode="search" autocapitalize="none" autocorrect="off" placeholder="Buscar: amazônia, vorcaro, eleição, reforma…" autofocus>
+    <input type="text" id="q" inputmode="search" autocapitalize="none" autocorrect="off" placeholder="Buscar: bolsa família, amazônia, eleição…" autofocus>
     <div class="filters">
       <select id="president" aria-label="Filtrar por presidente">
         <option value="">Todos presidentes</option>
@@ -117,9 +130,10 @@
       </select>
     </div>
   </div>
-  <div class="hint">Busca com tolerância a acentos. Múltiplas palavras = todas precisam estar no texto.</div>
+  <div class="hint">Busque palavras ou expressões. A busca ignora acentos, maiúsculas e pontuação entre palavras.</div>
 </div>
 
+<section class="trends" id="trends" aria-live="polite" hidden></section>
 <div class="results" id="results"><div class="hint">Digite acima para buscar.</div></div>
 
 <div class="footer">
@@ -206,10 +220,55 @@ async function loadStats() {
 }
 
 let timer, searchSeq = 0;
+const number = value => Number(value || 0).toLocaleString('pt-BR');
+const dayKey = date => date.toISOString().slice(0,10);
+const utcDay = value => new Date(value + 'T00:00:00Z');
+const addDays = (date, n) => new Date(date.getTime() + n * 86400000);
+
+function renderTrends(data) {
+  const daily = new Map((data.daily || []).filter(row => /^\d{4}-\d{2}-\d{2}$/.test(row.date))
+    .map(row => [row.date, Number(row.mentions || 0)]));
+  const today = utcDay(dayKey(new Date()));
+  const sum = keys => keys.reduce((n, key) => n + (daily.get(key) || 0), 0);
+  const days = Array.from({length:14}, (_, i) => dayKey(addDays(today, i - 13)));
+  const monday = addDays(today, -(today.getUTCDay() + 6) % 7);
+  const weeks = Array.from({length:12}, (_, i) => addDays(monday, (i - 11) * 7));
+  const months = Array.from({length:12}, (_, i) => new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth() + i - 11, 1)));
+  const years = [...new Set([...daily.keys()].map(key => key.slice(0,4)))].sort();
+  const series = [
+    {title:'Por dia', note:'Últimos 14 dias', points:days.map(key => ({label:key.slice(5), value:daily.get(key) || 0}))},
+    {title:'Por semana', note:'Últimas 12 semanas · início na segunda-feira', points:weeks.map(start => {
+      const keys = Array.from({length:7}, (_, i) => dayKey(addDays(start, i)));
+      return {label:dayKey(start).slice(5), value:sum(keys)};
+    })},
+    {title:'No último ano', note:'Últimos 12 meses', points:months.map(start => {
+      const prefix = dayKey(start).slice(0,7);
+      return {label:prefix, value:[...daily].reduce((n, [key, value]) => n + (key.startsWith(prefix) ? value : 0), 0)};
+    })},
+    {title:'Série histórica', note:'Todos os anos disponíveis', points:years.map(year => ({
+      label:year, value:[...daily].reduce((n, [key, value]) => n + (key.startsWith(year) ? value : 0), 0)
+    }))},
+  ];
+  const total = [...daily.values()].reduce((n, value) => n + value, 0);
+  $('trends').hidden = false;
+  $('trends').innerHTML = `<h2>Citações de “${esc($('q').value.trim())}”</h2>
+    <p class="summary">${number(total)} ocorrência(s) nos textos datados. Cada repetição da expressão conta uma vez; os filtros de presidente e fonte também se aplicam aos gráficos.</p>
+    <div class="trend-grid">${series.map(item => {
+      const max = Math.max(1, ...item.points.map(point => point.value));
+      const subtotal = item.points.reduce((n, point) => n + point.value, 0);
+      return `<div class="trend-card"><h3>${item.title}</h3><p>${item.note}</p>
+        <div class="trend-bars" role="img" aria-label="${esc(item.title)}: ${esc(item.points.map(point => `${point.label}: ${number(point.value)}`).join(', '))}">
+        ${item.points.map(point => `<div class="trend-bar${point.value ? '' : ' zero'}" style="height:${Math.max(2, Math.round(point.value / max * 100))}%" title="${esc(point.label)}: ${number(point.value)}"></div>`).join('')}</div>
+        <div class="trend-axis"><span>${esc(item.points[0]?.label || '—')}</span><span>${esc(item.points.at(-1)?.label || '—')}</span></div>
+        <div class="trend-total">${number(subtotal)} ocorrência(s)</div></div>`;
+    }).join('')}</div><p class="hint">Datas referem-se aos registros do acervo. A contagem considera o texto integral, ou a descrição/título quando o texto está vazio.</p>`;
+}
+
 async function search(offset = 0) {
   const seq = ++searchSeq;
   const q = $('q').value.trim();
   if (q.length < 2) {
+    $('trends').hidden = true;
     $('results').innerHTML = q.length === 0 ? (overviewHtml || '<div class="hint">Digite acima para buscar.</div>') : '<div class="hint">Digite ao menos duas letras.</div>';
     return;
   }
@@ -220,11 +279,18 @@ async function search(offset = 0) {
   if (src) params.set('source', src);
 
   $('results').innerHTML = '<div class="loading">Buscando…</div>';
+  $('trends').hidden = true;
   try {
-    const response = await fetch(API + '/api/lul/busca?' + params);
-    if (!response.ok) throw new Error('A busca está temporariamente indisponível.');
-    const r = await response.json();
+    const trendParams = new URLSearchParams(params);
+    trendParams.delete('limit'); trendParams.delete('offset');
+    const [response, trendResponse] = await Promise.all([
+      fetch(API + '/api/lul/busca?' + params),
+      fetch(API + '/api/lul/tendencia?' + trendParams),
+    ]);
+    if (!response.ok || !trendResponse.ok) throw new Error('A busca está temporariamente indisponível.');
+    const [r, trend] = await Promise.all([response.json(), trendResponse.json()]);
     if (seq !== searchSeq) return;
+    renderTrends(trend);
     if (r.erro) { $('results').innerHTML = `<div class="empty">Erro: ${esc(r.erro)}</div>`; return; }
     if (!Array.isArray(r) || r.length === 0) {
       $('results').innerHTML = '<div class="empty">Nenhum resultado pra esses filtros.</div>';
