@@ -20,7 +20,8 @@ import time
 import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
-import requests
+from curl_cffi import requests
+from curl_cffi.requests.exceptions import HTTPError, RequestException
 
 CSV_ZIP_URL = (
     "https://cdn.tse.jus.br/estatistica/sead/odsele/"
@@ -63,20 +64,23 @@ def fetch_zip(tentativas: int = 5) -> bytes:
     connect) de forma intermitente — da mesma run, às vezes responde em 4s.
     Timeout curto (60s) + mais tentativas dá mais chances de pegar uma janela
     boa do que poucas tentativas de 180s presas num connect que nunca abre.
+
+    Desde ago/26 o Akamai do CDN devolve 403 para clientes que não parecem
+    navegador (fingerprint TLS). curl_cffi com impersonate="chrome" passa.
     """
     ultimo_erro: Exception | None = None
     for tentativa in range(1, tentativas + 1):
         try:
             resp = requests.get(
                 CSV_ZIP_URL,
-                headers={"User-Agent": "luizftoledo-portfolio/1.0"},
+                impersonate="chrome",
                 timeout=60,
             )
             resp.raise_for_status()
             return resp.content
-        except requests.RequestException as exc:
+        except RequestException as exc:
             ultimo_erro = exc
-            if isinstance(exc, requests.HTTPError) and exc.response is not None and exc.response.status_code == 403:
+            if isinstance(exc, HTTPError) and exc.response is not None and exc.response.status_code == 403:
                 raise SystemExit(
                     "TSE respondeu HTTP 403 para este servidor; a base existente foi preservada. "
                     "Verifique acesso autorizado do ambiente de execução ao CDN do TSE."
