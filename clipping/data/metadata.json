@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-09-25T18:06:16.622832+00:00",
+  "generated_at": "2026-09-26T17:24:30.503091+00:00",
   "counts": {
-    "items": 89,
+    "items": 88,
     "domains": 24,
     "categories": {
       "reportagem_autoral": 61,
       "republicacao": 0,
       "eco_repercussao": 1,
       "citacao_fonte": 3,
-      "mencao": 6,
+      "mencao": 5,
       "entrevista": 1,
       "palestra_curso": 0,
       "perfil_bio": 17
@@ -20,7 +20,7 @@
     }
   },
   "date_range": {
-    "min": "2019-09-16",
+    "min": "2019-02-05",
     "max": "2026-09-23"
   },
   "methodology": {
@@ -43,26 +43,26 @@
       }
     },
     "enrich": {
-      "fetched": 64,
+      "fetched": 63,
       "reused": 33,
-      "kept": 89,
+      "kept": 88,
       "dropped": 8,
       "categories": {
         "perfil_bio": 17,
         "reportagem_autoral": 61,
-        "mencao": 6,
+        "mencao": 5,
         "entrevista": 1,
         "citacao_fonte": 3,
         "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 53,
+        "bbc.com": 52,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
         "ojoioeotrigo.com.br": 2,
         "estadao.com.br": 5,
-        "g1.globo.com": 2,
+        "g1.globo.com": 3,
         "escavador.com": 1,
         "icfj.org": 1,
         "devstudies.cam.ac.uk": 1,
@@ -79,7 +79,7 @@
         "sbtnews.sbt.com.br": 1,
         "fiquemsabendo.com.br": 1,
         "piaui.uol.com.br": 2,
-        "cnnbrasil.com.br": 4
+        "cnnbrasil.com.br": 3
       },
       "errors": [
         {
