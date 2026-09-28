@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-27T17:40:53.800446+00:00",
-  "snapshot_date": "2026-09-27",
+  "generated_at": "2026-09-28T20:05:26.706385+00:00",
+  "snapshot_date": "2026-09-28",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -1021,7 +1021,7 @@
     "total_liquidado": 26109837287.31,
     "total_pago": 35116913066.55
   },
-  "run_date": "2026-09-27",
+  "run_date": "2026-09-28",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1121,7 +1121,7 @@
         ]
       },
       "last_update": "",
-      "base_siafi_date": "24/9/2026",
+      "base_siafi_date": "25/9/2026",
       "rows": [],
       "rows_count": 0,
       "unique_nro_emendas": 0,
@@ -3220,7 +3220,7 @@
         },
         {
           "author": "JORGE SOLLA",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 600000.0
         },
         {
@@ -3235,7 +3235,7 @@
         },
         {
           "author": "ANDRE JANONES",
-          "party": "Nao identificado",
+          "party": "REDE",
           "empenhado": 476809.0
         },
         {
@@ -3245,17 +3245,17 @@
         },
         {
           "author": "LUIZ COUTO",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 414459.96
         },
         {
           "author": "NATALIA BONAVIDES",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 410000.0
         },
         {
           "author": "NIKOLAS FERREIRA",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 398929.82
         }
       ],
@@ -3840,7 +3840,7 @@
       }
     },
     "party_lookup": {
-      "camara_mapeados": 0,
+      "camara_mapeados": 513,
       "senado_mapeados": 81
     }
   },
@@ -5497,6 +5497,17 @@
       "autores_com_aumento": 0,
       "destinos_com_aumento": 0,
       "previous_snapshot_date": "2026-09-26",
+      "interval_days": 1,
+      "source_changed": false
+    },
+    {
+      "date": "2026-09-28",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 346272240889.65,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-09-27",
       "interval_days": 1,
       "source_changed": false
     }
@@ -7361,7 +7372,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-09-28",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-09-27T17:40:53.800446+00:00"
+  "updated_at": "2026-09-28T20:05:26.706385+00:00"
 }
