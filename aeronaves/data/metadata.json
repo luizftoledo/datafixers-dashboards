@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-09-29T18:13:50+00:00",
-  "source_updated_at": "2026-09-29",
-  "source_header": "Atualizado em: 2026-09-29",
+  "generated_at": "2026-09-30T18:05:33+00:00",
+  "source_updated_at": "2026-09-30",
+  "source_header": "Atualizado em: 2026-09-30",
   "source_file": "dados_aeronaves.csv",
-  "source_size_bytes": 23769828,
+  "source_size_bytes": 23772542,
   "data_file": "records.jsonl.gz",
-  "rows": 34903,
-  "active_rows": 26720,
-  "canceled_rows": 8183,
-  "rows_with_document": 34903,
+  "rows": 34906,
+  "active_rows": 26724,
+  "canceled_rows": 8182,
+  "rows_with_document": 34906,
   "rows_with_masked_document": 11786,
-  "unique_operators": 20502,
+  "unique_operators": 20507,
   "null_uf_rows": 0,
   "ufs": [
     "AC",
@@ -48,10 +48,10 @@
   "year_max": 2029,
   "search_result_limit": 20,
   "sample_queries": [
-    "PS-GAR",
-    "ARMAZENS GERAIS PENEIRA ALTA LTDA",
-    "04485441000181",
-    "RIZA SECURITIZADORA S.A."
+    "PP-ARR",
+    "Indisponível",
+    "VICA VIACAO CHARTER AEREA",
+    "PR-AMV"
   ],
   "methodology": [
     "Esta página foi gerada a partir do CSV original entregue para o site, em vez de consultar o portal da ANAC em tempo real.",
