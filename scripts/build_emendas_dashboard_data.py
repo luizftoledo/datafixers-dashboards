@@ -616,9 +616,8 @@ def extract_siop_totals_from_grid(driver):
           if(!title || title === 'Resize column') continue;
           const left = parsePx(el.style.left);
           const top = parsePx(el.style.top);
-          const height = parsePx(el.style.height);
-          if(left === null || top === null || height === null) continue;
-          if(top !== 0 || height !== 39) continue;
+          if(left === null || top === null) continue;
+          if(top !== 0) continue;
           topCells.push({title, left});
         }
 
@@ -668,7 +667,17 @@ def extract_siop_totals_with_retry(driver, wait, group_label="Por Partido", atte
             open_siop_step2_group(driver, wait, group_label=group_label)
             totals = extract_siop_totals_from_grid(driver)
             if totals.get("dotacao_inicial_emenda", 0) <= 0 or totals.get("dotacao_atual_emenda", 0) <= 0:
-                raise RuntimeError("totais zerados ou grid ainda não carregado")
+                sample = driver.execute_script(
+                    """
+                    const frame = [...document.querySelectorAll('.QvFrame[objtype="Grid"]')]
+                      .find((f) => getComputedStyle(f).display !== 'none' && (f.innerText || '').includes('Nro. Emenda'));
+                    return frame ? [...frame.querySelectorAll('[title]')]
+                      .filter((el) => el.style.top === '0px')
+                      .slice(0, 12)
+                      .map((el) => `${el.title}:${el.style.height}`) : ['grid ausente'];
+                    """
+                )
+                raise RuntimeError("totais zerados ou grid ainda não carregado; topo=" + "|".join(sample))
             return totals
         except Exception as exc:
             last_error = normalize_text(str(exc))[:220]
