@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T20:01:43.991300+00:00",
+  "generated_at": "2026-10-01T20:06:13.702641+00:00",
   "snapshot_date": "2026-10-01",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
@@ -1048,7 +1048,7 @@
       }
     },
     "siop_snapshot": {
-      "available": false,
+      "available": true,
       "source_url": "https://www1.siop.planejamento.gov.br/QvAJAXZfc/opendoc.htm?document=IAS%2FExecucao_Orcamentaria.qvw&host=QVS%40pqlk04&anonymous=true",
       "last_update": "",
       "base_siafi_date": "30/9/2026",
@@ -1060,28 +1060,52 @@
           "8 - Emendas de Comissão"
         ]
       },
-      "totals": {},
+      "totals": {
+        "dotacao_inicial_emenda": 49769403428.0,
+        "dotacao_atual_emenda": 49901486762.0,
+        "empenhado": 39973960657.0,
+        "liquidado": 26122218585.0,
+        "pago": 25856536619.0
+      },
       "per_rp": [
         {
           "rp": "6 - Emendas Individuais",
-          "available": false,
-          "totals": {},
-          "error": "totais zerados ou grid ainda não carregado"
+          "available": true,
+          "totals": {
+            "dotacao_inicial_emenda": 26560925142.0,
+            "dotacao_atual_emenda": 26560925142.0,
+            "empenhado": 22876104086.0,
+            "liquidado": 15878074868.0,
+            "pago": 15801120485.0
+          },
+          "error": ""
         },
         {
           "rp": "7 - Emendas de Bancada Estadual",
-          "available": false,
-          "totals": {},
-          "error": "totais zerados ou grid ainda não carregado"
+          "available": true,
+          "totals": {
+            "dotacao_inicial_emenda": 11176561619.0,
+            "dotacao_atual_emenda": 11225311619.0,
+            "empenhado": 7465307830.0,
+            "liquidado": 5052012344.0,
+            "pago": 4878402205.0
+          },
+          "error": ""
         },
         {
           "rp": "8 - Emendas de Comissão",
-          "available": false,
-          "totals": {},
-          "error": "totais zerados ou grid ainda não carregado"
+          "available": true,
+          "totals": {
+            "dotacao_inicial_emenda": 12031916667.0,
+            "dotacao_atual_emenda": 12115250001.0,
+            "empenhado": 9632548741.0,
+            "liquidado": 5192131373.0,
+            "pago": 5177013929.0
+          },
+          "error": ""
         }
       ],
-      "error": "6 - Emendas Individuais: totais zerados ou grid ainda não carregado ; 7 - Emendas de Bancada Estadual: totais zerados ou grid ainda não carregado ; 8 - Emendas de Comissão: totais zerados ou grid ainda não carregado"
+      "error": ""
     },
     "siop_details": {
       "available": false,
@@ -7406,13 +7430,13 @@
     {
       "date": "2026-10-01",
       "last_update": "",
-      "base_siafi_date": "30/4/2026",
-      "dotacao_inicial_emenda": 49901486761.0,
-      "dotacao_atual_emenda": 49901486761.0,
-      "empenhado": 13590646127.0,
-      "liquidado": 572514487.0,
-      "pago": 466412376.0
+      "base_siafi_date": "30/9/2026",
+      "dotacao_inicial_emenda": 49769403428.0,
+      "dotacao_atual_emenda": 49901486762.0,
+      "empenhado": 39973960657.0,
+      "liquidado": 26122218585.0,
+      "pago": 25856536619.0
     }
   ],
-  "updated_at": "2026-10-01T20:01:43.991300+00:00"
+  "updated_at": "2026-10-01T20:06:13.702641+00:00"
 }
