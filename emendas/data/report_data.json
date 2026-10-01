@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T19:33:59.699960+00:00",
+  "generated_at": "2026-10-01T19:53:27.540469+00:00",
   "snapshot_date": "2026-10-01",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
@@ -1088,68 +1088,19 @@
         },
         {
           "rp": "8 - Emendas de Comissão",
-          "available": true,
-          "totals": {
-            "dotacao_inicial_emenda": 0.0,
-            "dotacao_atual_emenda": 0.0,
-            "empenhado": 0.0,
-            "liquidado": 0.0,
-            "pago": 0.0
-          },
-          "error": ""
+          "available": false,
+          "totals": {},
+          "error": "filtro não confirmado"
         }
       ],
-      "error": "dotação inicial/atual zerada — provável quebra do scraper Qlik (DOM mudou)"
+      "error": "8 - Emendas de Comissão: filtro não confirmado"
     },
     "siop_details": {
       "available": false,
       "source_url": "https://www1.siop.planejamento.gov.br/QvAJAXZfc/opendoc.htm?document=IAS%2FExecucao_Orcamentaria.qvw&host=QVS%40pqlk04&anonymous=true",
-      "group_selected": "Por Partido",
-      "filters": {
-        "year": 2026,
-        "rp": [
-          "6 - Emendas Individuais",
-          "7 - Emendas de Bancada Estadual",
-          "8 - Emendas de Comissão"
-        ]
-      },
-      "last_update": "",
       "base_siafi_date": "30/9/2026",
-      "rows": [],
       "rows_count": 0,
-      "unique_nro_emendas": 0,
-      "sweep_steps": 27,
-      "sweep_stop_reason": "6 - Emendas Individuais: stable_signature | 7 - Emendas de Bancada Estadual: stable_signature | 8 - Emendas de Comissão: stable_signature",
-      "top_authors": [],
-      "top_parties": [],
-      "top_orgaos": [],
-      "per_rp": [
-        {
-          "rp": "6 - Emendas Individuais",
-          "available": true,
-          "rows_count": 0,
-          "sweep_steps": 9,
-          "sweep_stop_reason": "stable_signature",
-          "error": ""
-        },
-        {
-          "rp": "7 - Emendas de Bancada Estadual",
-          "available": true,
-          "rows_count": 0,
-          "sweep_steps": 9,
-          "sweep_stop_reason": "stable_signature",
-          "error": ""
-        },
-        {
-          "rp": "8 - Emendas de Comissão",
-          "available": true,
-          "rows_count": 0,
-          "sweep_steps": 9,
-          "sweep_stop_reason": "stable_signature",
-          "error": ""
-        }
-      ],
-      "error": "grid sem emendas válidas ou base SIAFI desatualizada"
+      "error": "Varredura detalhada não executada na rotina diária; use EMENDAS_SIOP_DETAILS=1."
     },
     "documents": {
       "year": 2026,
@@ -7475,5 +7426,5 @@
       "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-10-01T19:33:59.699960+00:00"
+  "updated_at": "2026-10-01T19:53:27.540469+00:00"
 }
