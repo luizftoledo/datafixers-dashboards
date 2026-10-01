@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Votos de 2022 × emendas de 2026 | Datafixers</title>
+  <meta name="description" content="Cruze votos municipais de Lula, Jair Bolsonaro, Hugo Motta e Davi Alcolumbre em 2022 com emendas pagas e empenhadas em 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+  <style>
+    :root{--ink:#151a20;--muted:#5b6570;--line:#dce1e3;--bg:#f8faf9;--accent:#174c5b;--soft:#e5eff0;--orange:#a45924}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,system-ui,sans-serif}a{color:var(--accent)}
+    .wrap{max-width:1160px;margin:auto;padding:20px 18px 70px}.top{display:flex;gap:16px;align-items:center;font-size:13px;margin-bottom:32px}.top a{text-decoration:none}
+    h1,h2,h3{font-family:Newsreader,Georgia,serif;line-height:1.15}h1{font-size:clamp(34px,5vw,58px);letter-spacing:-.025em;margin:0 0 12px}h2{font-size:30px;margin:0 0 12px}h3{font-size:22px;margin:0 0 8px}
+    .eyebrow{color:var(--orange);font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin-bottom:12px}.lead{font:21px/1.35 Newsreader,Georgia,serif;max-width:760px;margin:0 0 20px}.small,.note{color:var(--muted);font-size:13px}.note{max-width:900px}
+    .controls{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:12px;margin:28px 0 22px}.control label{display:block;font-size:12px;font-weight:700;margin-bottom:5px}.control select,.control input{width:100%;height:42px;border:1px solid var(--line);border-radius:4px;background:white;color:var(--ink);padding:0 10px;font:inherit}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 26px}.kpi{background:white;border:1px solid var(--line);padding:17px}.kpi .value{font-size:26px;font-weight:700;letter-spacing:-.04em}.kpi .label{color:var(--muted);font-size:12px}
+    .card{background:white;border:1px solid var(--line);padding:20px;margin:18px 0}.chartbox{height:390px;position:relative}.split{display:grid;grid-template-columns:2fr 1fr;gap:18px;align-items:start}
+    .tablewrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:13px}th,td{text-align:right;padding:11px 8px;border-bottom:1px solid var(--line);white-space:nowrap}th:first-child,td:first-child{text-align:left}th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em}tbody tr:hover{background:#f3f7f6}
+    .story{border-top:1px solid var(--line);padding:14px 0}.story span{font-size:11px;color:var(--muted)}.story a{display:block;font-weight:600;text-decoration:none}.story a:hover{text-decoration:underline}.story p{margin:4px 0 0;color:var(--muted);font-size:13px}
+    .method{border-top:1px solid var(--line);margin-top:35px;padding-top:25px}.method p{max-width:850px;color:var(--muted);font-size:13px}.warning{background:#fff4e9;border-left:3px solid var(--orange);padding:10px 13px;font-size:13px;margin:12px 0}
+    @media(max-width:850px){.controls{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}.kpis{grid-template-columns:1fr}.chartbox{height:310px}}
+    @media(max-width:520px){.controls{grid-template-columns:1fr}.card{padding:14px}.wrap{padding:14px 12px 50px}}
+  </style>
+</head>
+<body>
+<main class="wrap">
+  <nav class="top"><a href="/">Datafixers</a><span>›</span><a href="/emendas/">Monitor de emendas</a><span>›</span><strong>Votos × emendas</strong></nav>
+  <div class="eyebrow">Eleições 2022 · Execução de emendas 2026</div>
+  <h1>Onde os votos encontram as emendas</h1>
+  <p class="lead">Veja quanto cada município recebeu em emendas em 2026 e como votou na eleição de 2022. Explore o país, a Paraíba e o Amapá por candidato ou autor.</p>
+  <p class="small" id="update">Carregando dados oficiais…</p>
+  <div class="controls">
+    <div class="control"><label for="profile">Recorte eleitoral</label><select id="profile"><option value="lula">Lula: voto presidencial × todas as emendas</option><option value="flavio">Flávio: suas emendas × voto de Jair (contexto)</option><option value="hugo">Hugo Motta: voto próprio × suas emendas</option><option value="davi">Davi Alcolumbre: voto próprio × suas emendas</option></select></div>
+    <div class="control"><label for="metric">Valor</label><select id="metric"><option value="paid">Pago</option><option value="committed">Empenhado</option></select></div>
+    <div class="control"><label for="uf">Estado</label><select id="uf"><option value="">Todos</option></select></div>
+    <div class="control"><label for="search">Município</label><input id="search" placeholder="Buscar nome"></div>
+  </div>
+  <div class="warning" id="caveat"></div>
+  <div class="kpis"><div class="kpi"><div class="value" id="kpi-money">—</div><div class="label" id="kpi-money-label">Emendas no recorte</div></div><div class="kpi"><div class="value" id="kpi-cities">—</div><div class="label">Municípios com valor registrado</div></div><div class="kpi"><div class="value" id="kpi-vote">—</div><div class="label" id="kpi-vote-label">Votos em 2022</div></div></div>
+  <div class="split">
+    <section class="card"><h2>Voto e dinheiro em cada cidade</h2><p class="note">Cada ponto é um município com emenda registrada. Eixo horizontal: porcentagem dos votos nominais válidos do cargo. Eixo vertical: valor de 2026, em milhões de reais. Passe o cursor para ver o município.</p><div class="chartbox"><canvas id="chart"></canvas></div></section>
+    <section class="card"><h2>Leitura do recorte</h2><div id="insight"></div><p class="note">A comparação descreve a distribuição territorial. Ela não permite concluir que a emenda causou o voto: os pagamentos de 2026 ocorreram depois da eleição de 2022.</p></section>
+  </div>
+  <section class="card"><h2>Cidades que mais receberam</h2><p class="note" id="table-sub"></p><div class="tablewrap"><table><thead><tr><th>Município</th><th>Emendas 2026</th><th>Votos 2022</th><th>% votos válidos</th></tr></thead><tbody id="rows"></tbody></table></div><p class="note">O ranking usa o município de aplicação informado pela CGU, não o domicílio do favorecido. Valores negativos de estorno permanecem no cálculo.</p></section>
+  <section class="card"><h2>Reportagens para seguir as pistas</h2><p class="note">Leituras publicadas que relacionam recursos, redutos e personagens. Os valores citados por elas podem seguir outras bases e períodos.</p>
+    <div class="story"><span>FOLHA · 11 SET 2026</span><a href="https://www1.folha.uol.com.br/poder/2026/09/monitor-das-emendas-ferramenta-mostra-destino-das-verbas-parlamentares.shtml" target="_blank" rel="noopener">Monitor nacional de emendas por parlamentar e cidade ↗</a><p>Ferramenta com empenhos e pagamentos desde 2023.</p></div>
+    <div class="story"><span>FOLHA · 26 SET 2026</span><a href="https://www1.folha.uol.com.br/poder/2026/09/emendas-viram-principal-arma-do-centrao-na-campanha-e-transformam-prefeitos-em-cabos-eleitorais.shtml" target="_blank" rel="noopener">Emendas, prefeitos e campanha em cidades pequenas ↗</a><p>Reportagem recente de campo sobre o peso eleitoral dos repasses, incluindo municípios do Amapá.</p></div>
+    <div class="story"><span>FOLHA · 18 JUL 2026</span><a href="https://www1.folha.uol.com.br/poder/2026/07/injecao-de-verba-de-emenda-em-municipios-sobe-20-em-ano-eleitoral-e-vira-trunfo-para-congressistas.shtml" target="_blank" rel="noopener">A injeção de emendas em ano eleitoral ↗</a><p>Compara 2026 com 2022 e destaca Duque de Caxias e Macapá.</p></div>
+    <div class="story"><span>FOLHA · 4 OUT 2022</span><a href="https://www1.folha.uol.com.br/poder/2022/10/bolsonaro-avanca-mas-so-vence-em-15-cidades-do-nordeste.shtml" target="_blank" rel="noopener">Redutos de Lula no Nordeste e emendas do relator ↗</a><p>Analisa a votação presidencial em cidades nordestinas, inclusive uma cidade que recebeu R$ 69 milhões em emendas do relator.</p></div>
+    <div class="story"><span>CNN BRASIL · 20 DEZ 2024</span><a href="https://www.cnnbrasil.com.br/politica/campeoes-nacionais-em-emendas-sao-redutos-de-alcolumbre-no-amapa/" target="_blank" rel="noopener">Cidades do Amapá lideram repasses per capita ↗</a><p>Aponta municípios ligados politicamente a Davi Alcolumbre.</p></div>
+    <div class="story"><span>FOLHA · 27 JAN 2025</span><a href="https://www.youtube.com/watch?v=XySyE5DxS38" target="_blank" rel="noopener">Patos, reduto de Hugo Motta, e obras com emendas ↗</a><p>Reportagem em vídeo sobre obras financiadas por recursos indicados pelo deputado.</p></div>
+    <div class="story"><span>CNN BRASIL · 22 SET 2026</span><a href="https://www.cnnbrasil.com.br/politica/assessora-de-flavio-negociou-emenda-com-condenado-em-caso-marielle/" target="_blank" rel="noopener">Investigação sobre emenda do gabinete de Flávio Bolsonaro ↗</a><p>Reportagem sobre apuração da Polícia Federal; não é prova de relação entre votos e repasses.</p></div>
+  </section>
+  <section class="method"><h2>Como o cruzamento foi feito</h2><p>Agregamos os votos nominais válidos do <a id="source-votes" target="_blank" rel="noopener">TSE por município e zona</a> e convertemos os códigos municipais com a <a id="source-map" target="_blank" rel="noopener">tabela oficial TSE–IBGE</a>. Para presidente usamos o segundo turno de 2022; para deputado federal e senador, o primeiro turno. Somamos os valores pagos e empenhados dos <a id="source-cgu" target="_blank" rel="noopener">documentos de emendas de 2026 da CGU</a> pelo código IBGE do município de aplicação, incluindo documentos de emendas de anos anteriores.</p><p id="coverage"></p><p>“Todas as emendas” inclui autores de diferentes partidos e modalidades. Lula não é autor parlamentar dessas emendas. Para Flávio Bolsonaro não existe votação própria em 2022, pois seu mandato de senador veio da eleição de 2018; o voto de Jair Bolsonaro em 2022 aparece apenas como contexto. Autoria registrada na CGU não demonstra atuação individual em emendas coletivas ou vínculo causal com resultados eleitorais.</p><p>Os arquivos brutos ficam nas fontes oficiais; os agregados usados nesta página estão em <a href="/emendas/data/election_2022.json">dados do cruzamento</a> e <a href="/emendas/data/votes_2022_baseline.json">base eleitoral compacta</a>. O código de reprodução está no <a href="https://github.com/luizftoledo/datafixers-dashboards/blob/main/scripts/build_emendas_election_data.py">repositório</a>.</p></section>
+</main>
+<script src="app.js" defer></script>
+</body>
+</html>

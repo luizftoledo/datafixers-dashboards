@@ -16,6 +16,10 @@ Agora com duas leituras:
 - `data/daily_history.json`: série histórica do monitoramento diário.
 - `data/state/latest_aggregates.json.gz`: estado agregado para cálculo do delta diário.
 - `scripts/build_emendas_dashboard_data.py`: integra as fontes `UNICO`, `documentos` e `apoiamento`.
+- `eleicoes/`: cruzamento interativo de votos municipais de 2022 com documentos de emendas de 2026.
+- `data/votes_2022_baseline.json`: votos do TSE agregados por município IBGE (snapshot compacto).
+- `data/election_2022.json`: emendas da CGU por município e votos de 2022 para o painel.
+- `scripts/build_emendas_election_data.py`: atualiza o cruzamento; `--rebuild-votes` só é necessário quando o arquivo de votos do TSE mudar.
 
 ## Atualização diária automática
 
@@ -34,6 +38,7 @@ Workflow: `.github/workflows/update-emendas-dashboard.yml`
 ```bash
 cd <seu-repositorio>
 python3 scripts/build_emendas_dashboard_data.py
+python3 scripts/build_emendas_election_data.py
 ```
 
 Forçar rebuild mesmo sem mudança de `etag/last-modified`:
