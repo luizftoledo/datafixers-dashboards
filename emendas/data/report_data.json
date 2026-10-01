@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-30T18:31:13.857654+00:00",
-  "snapshot_date": "2026-09-30",
+  "generated_at": "2026-10-01T18:48:34.559109+00:00",
+  "snapshot_date": "2026-10-01",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -13,12 +13,12 @@
   "metrics": {
     "total_empenhado_atual": 346325139415.88,
     "total_empenhado_snapshot_anterior": 346272240889.65,
-    "delta_liquido_desde_snapshot_anterior": 52898526.23,
-    "delta_positivo_desde_snapshot_anterior": 54268190.72,
-    "delta_negativo_desde_snapshot_anterior": -1369664.49,
-    "autores_com_aumento": 111,
-    "destinos_com_aumento": 29,
-    "pares_autor_destino_com_aumento": 118,
+    "delta_liquido_desde_snapshot_anterior": 0.0,
+    "delta_positivo_desde_snapshot_anterior": 0.0,
+    "delta_negativo_desde_snapshot_anterior": 0.0,
+    "autores_com_aumento": 0,
+    "destinos_com_aumento": 0,
+    "pares_autor_destino_com_aumento": 0,
     "total_autores_mapeados": 1614,
     "total_destinos_mapeados": 5459,
     "total_linhas_csv": 94606,
@@ -27,8 +27,8 @@
     "current_year_total_empenhado": 41354061514.24,
     "current_year_total_liquidado": 26132474973.85,
     "current_year_total_pago": 35149215600.79,
-    "current_year_total_empenhado_por_ano_emenda": 40023768287.41,
-    "current_year_total_pago_por_ano_emenda": 25832371937.5,
+    "current_year_total_empenhado_por_ano_emenda": 41354061514.24,
+    "current_year_total_pago_por_ano_emenda": 35149215600.79,
     "_pago_e_empenhado_source": "por_data_documento"
   },
   "top_authors_today": [
@@ -1021,7 +1021,7 @@
     "total_liquidado": 26132474973.85,
     "total_pago": 35149215600.79
   },
-  "run_date": "2026-09-30",
+  "run_date": "2026-10-01",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1030,21 +1030,21 @@
       "stages": [
         {
           "stage": "Empenhado",
-          "value": 40023768287.41
+          "value": 40060378330.46
         },
         {
           "stage": "Liquidado",
-          "value": 26132474973.85
+          "value": 26144446504.15
         },
         {
           "stage": "Pago",
-          "value": 25832371937.5
+          "value": 25878742486.65
         }
       ],
       "stage_values": {
-        "empenhado": 40023768287.41,
-        "liquidado": 26132474973.85,
-        "pago": 25832371937.5
+        "empenhado": 40060378330.46,
+        "liquidado": 26144446504.15,
+        "pago": 25878742486.65
       }
     },
     "siop_snapshot": {
@@ -1105,7 +1105,7 @@
           "error": ""
         }
       ],
-      "error": "6 - Emendas Individuais: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
+      "error": "dotação inicial/atual zerada — provável quebra do scraper Qlik (DOM mudou)",
       "fallback_from_previous": true
     },
     "siop_details": {
@@ -1121,7 +1121,7 @@
         ]
       },
       "last_update": "",
-      "base_siafi_date": "28/9/2026",
+      "base_siafi_date": "30/9/2026",
       "rows": [],
       "rows_count": 0,
       "unique_nro_emendas": 0,
@@ -1156,8 +1156,7 @@
           "error": ""
         }
       ],
-      "error": "6 - Emendas Individuais: filtro não confirmado ; 7 - Emendas de Bancada Estadual: filtro não confirmado ; 8 - Emendas de Comissão: filtro não confirmado",
-      "fallback_from_previous": true
+      "error": ""
     },
     "documents": {
       "year": 2026,
@@ -3206,7 +3205,7 @@
         },
         {
           "author": "TONINHO WANDSCHEER",
-          "party": "Nao identificado",
+          "party": "PP",
           "empenhado": 1288669.0
         },
         {
@@ -3216,12 +3215,12 @@
         },
         {
           "author": "JOSE MEDEIROS",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 1000000.0
         },
         {
           "author": "BOHN GASS",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 1000000.0
         },
         {
@@ -3256,32 +3255,32 @@
         },
         {
           "author": "ACACIO FAVACHO",
-          "party": "Nao identificado",
+          "party": "MDB",
           "empenhado": 500000.0
         },
         {
           "author": "HELDER SALOMAO",
-          "party": "Nao identificado",
+          "party": "PT",
           "empenhado": 450000.0
         },
         {
           "author": "HELIO LOPES",
-          "party": "Nao identificado",
+          "party": "PL",
           "empenhado": 420000.0
         },
         {
           "author": "CHICO ALENCAR",
-          "party": "Nao identificado",
+          "party": "PSOL",
           "empenhado": 405000.0
         },
         {
           "author": "GILSON MARQUES",
-          "party": "Nao identificado",
+          "party": "NOVO",
           "empenhado": 400000.0
         },
         {
           "author": "JANDIRA FEGHALI",
-          "party": "Nao identificado",
+          "party": "PCdoB",
           "empenhado": 400000.0
         },
         {
@@ -3876,7 +3875,7 @@
       }
     },
     "party_lookup": {
-      "camara_mapeados": 0,
+      "camara_mapeados": 513,
       "senado_mapeados": 81
     }
   },
@@ -5568,6 +5567,17 @@
       "previous_snapshot_date": "2026-09-29",
       "interval_days": 1,
       "source_changed": true
+    },
+    {
+      "date": "2026-10-01",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 346325139415.88,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-09-30",
+      "interval_days": 1,
+      "source_changed": false
     }
   ],
   "siop_daily_history": [
@@ -7460,6 +7470,17 @@
       "empenhado": 13590646127.0,
       "liquidado": 572514487.0,
       "pago": 466412376.0
+    },
+    {
+      "date": "2026-10-01",
+      "last_update": "",
+      "base_siafi_date": "30/4/2026",
+      "dotacao_inicial_emenda": 49901486761.0,
+      "dotacao_atual_emenda": 49901486761.0,
+      "empenhado": 13590646127.0,
+      "liquidado": 572514487.0,
+      "pago": 466412376.0
     }
-  ]
+  ],
+  "updated_at": "2026-10-01T18:48:34.559109+00:00"
 }
