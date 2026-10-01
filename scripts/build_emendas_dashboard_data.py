@@ -559,13 +559,36 @@ def siop_selection_confirmed(driver, year, rp_label):
     return year_token in normalized and rp_token in normalized
 
 
+def siop_option_selected(driver, caption_title, option_value):
+    return bool(driver.execute_script(
+        """
+        const [caption, value] = arguments;
+        const frame = [...document.querySelectorAll('.QvFrame')]
+          .find((el) => el.querySelector('.QvCaption')?.getAttribute('title') === caption);
+        return !!frame && [...frame.querySelectorAll('[class*="QvSelected"]')]
+          .some((el) => (el.innerText || '').trim() === value);
+        """,
+        caption_title,
+        option_value,
+    ))
+
+
 def apply_siop_single_rp_filter(driver, wait, year, rp_label, retries=8):
     for _ in range(max(1, retries)):
         open_siop_step1_filters(driver, wait)
         clear_siop_filters(driver)
 
         year_ok = click_siop_filter_value(driver, "Ano", str(year))
-        rp_ok = click_siop_filter_value(driver, "Resultado Primário (RP)", rp_label)
+        if year_ok:
+            time.sleep(1.2)
+        rp_ok = False
+        if year_ok:
+            for _ in range(4):
+                if siop_option_selected(driver, "Resultado Primário (RP)", rp_label):
+                    rp_ok = True
+                    break
+                click_siop_filter_value(driver, "Resultado Primário (RP)", rp_label)
+                time.sleep(0.5)
         if year_ok and rp_ok and siop_selection_confirmed(driver, year, rp_label):
             return True
         time.sleep(0.8)
