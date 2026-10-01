@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T19:53:27.540469+00:00",
+  "generated_at": "2026-10-01T20:01:43.991300+00:00",
   "snapshot_date": "2026-10-01",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
@@ -1064,36 +1064,24 @@
       "per_rp": [
         {
           "rp": "6 - Emendas Individuais",
-          "available": true,
-          "totals": {
-            "dotacao_inicial_emenda": 0.0,
-            "dotacao_atual_emenda": 0.0,
-            "empenhado": 0.0,
-            "liquidado": 0.0,
-            "pago": 0.0
-          },
-          "error": ""
+          "available": false,
+          "totals": {},
+          "error": "totais zerados ou grid ainda não carregado"
         },
         {
           "rp": "7 - Emendas de Bancada Estadual",
-          "available": true,
-          "totals": {
-            "dotacao_inicial_emenda": 0.0,
-            "dotacao_atual_emenda": 0.0,
-            "empenhado": 0.0,
-            "liquidado": 0.0,
-            "pago": 0.0
-          },
-          "error": ""
+          "available": false,
+          "totals": {},
+          "error": "totais zerados ou grid ainda não carregado"
         },
         {
           "rp": "8 - Emendas de Comissão",
           "available": false,
           "totals": {},
-          "error": "filtro não confirmado"
+          "error": "totais zerados ou grid ainda não carregado"
         }
       ],
-      "error": "8 - Emendas de Comissão: filtro não confirmado"
+      "error": "6 - Emendas Individuais: totais zerados ou grid ainda não carregado ; 7 - Emendas de Bancada Estadual: totais zerados ou grid ainda não carregado ; 8 - Emendas de Comissão: totais zerados ou grid ainda não carregado"
     },
     "siop_details": {
       "available": false,
@@ -7426,5 +7414,5 @@
       "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-10-01T19:53:27.540469+00:00"
+  "updated_at": "2026-10-01T20:01:43.991300+00:00"
 }
