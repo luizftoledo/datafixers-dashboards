@@ -121,6 +121,12 @@ def parse_ddmmyyyy(value):
         return None
 
 
+def siop_base_is_recent(value, reference_date=None, max_age_days=7):
+    base_date = parse_ddmmyyyy(value)
+    reference_date = reference_date or dt.datetime.now(dt.timezone.utc).date()
+    return bool(base_date and 0 <= (reference_date - base_date).days <= max_age_days)
+
+
 def parse_currency(value):
     text = normalize_text(value)
     if not text:
@@ -909,6 +915,10 @@ def extract_siop_snapshot(year, rp_filters):
                 result["totals"] = {}
                 result["available"] = False
                 result["error"] = "dotação inicial/atual zerada — provável quebra do scraper Qlik (DOM mudou)"
+            elif not siop_base_is_recent(base_siafi_date):
+                result["totals"] = {}
+                result["available"] = False
+                result["error"] = f"base SIAFI desatualizada ({base_siafi_date or 'data ausente'})"
             else:
                 result["totals"] = {k: to_float(v) for k, v in aggregate.items()}
                 result["available"] = True
@@ -1134,8 +1144,8 @@ def extract_siop_details(party_lookup, year, rp_filters):
             {"orgao": name, "empenhado": to_float(value)}
             for name, value in sort_top(orgao_totals, 20)
         ]
-        result["available"] = True
-        result["error"] = ""
+        result["available"] = bool(cleaned_rows) and siop_base_is_recent(result.get("base_siafi_date"))
+        result["error"] = "" if result["available"] else "grid sem emendas válidas ou base SIAFI desatualizada"
     except Exception as exc:
         result["error"] = normalize_text(str(exc))[:500]
     finally:
@@ -1722,6 +1732,7 @@ def apply_siop_fallback_from_previous(report):
         and not current_snapshot.get("available")
         and isinstance(previous_snapshot, dict)
         and previous_snapshot.get("available")
+        and siop_base_is_recent(previous_snapshot.get("base_siafi_date"))
     ):
         fallback_snapshot = dict(previous_snapshot)
         fallback_snapshot["fallback_from_previous"] = True
@@ -1733,6 +1744,8 @@ def apply_siop_fallback_from_previous(report):
         and not current_details.get("available")
         and isinstance(previous_details, dict)
         and previous_details.get("available")
+        and siop_base_is_recent(previous_details.get("base_siafi_date"))
+        and int(previous_details.get("rows_count") or 0) > 0
     ):
         fallback_details = dict(previous_details)
         fallback_details["fallback_from_previous"] = True

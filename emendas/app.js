@@ -421,6 +421,26 @@ function renderTopDays(report) {
     .join('');
 }
 
+function renderElectionWindow(report) {
+  const docs = (report.parallel_monitor || {}).documents || {};
+  const latest = parseISODate(docs.date_max);
+  if (!latest) return;
+  const start = new Date(latest);
+  start.setDate(start.getDate() - 29);
+  const windowDays = (docs.daily_series || []).filter((day) => {
+    const date = parseISODate(day.date);
+    return date && date >= start && date <= latest;
+  });
+  const total = windowDays.reduce((sum, day) => sum + (Number(day.empenhado) || 0), 0);
+  const peak = windowDays.reduce((best, day) =>
+    !best || (Number(day.empenhado) || 0) > (Number(best.empenhado) || 0) ? day : best, null);
+  setText('election-30d-total', fmtBRLCompact(total));
+  setText('election-30d-period', `${FMT_BR_DATE.format(start)} a ${fmtDate(docs.date_max)} · 30 dias até o último dado disponível`);
+  setText('election-30d-peak', peak ? fmtBRLCompact(peak.empenhado) : '—');
+  setText('election-30d-peak-date', peak ? fmtDateLong(peak.date) : 'Sem empenhos na janela');
+  setText('election-source-date', fmtDate(docs.date_max));
+}
+
 function renderTopAuthorsAndOrgaos(report) {
   const docs = (report.parallel_monitor || {}).documents || {};
   const authors = docs.top_authors_year || [];
@@ -554,6 +574,7 @@ function renderHealth(report, meta) {
     renderCompare(report, meta);
     renderDailyChart(report);
     renderTopDays(report);
+    renderElectionWindow(report);
     renderTopAuthorsAndOrgaos(report);
     renderTopDestinations(report);
     renderHealth(report, meta);

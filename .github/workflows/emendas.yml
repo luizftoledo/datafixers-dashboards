@@ -53,3 +53,26 @@ jobs:
           done
           echo "Push failed after retries."
           exit 1
+
+      - name: Check SIOP freshness
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          import sys
+          from datetime import datetime, timezone
+
+          with open('emendas/data/metadata.json', encoding='utf-8') as source:
+              meta = json.load(source)
+          date_text = meta.get('siop_base_siafi_date', '')
+          try:
+              base = datetime.strptime(date_text, '%d/%m/%Y').date()
+              age = (datetime.now(timezone.utc).date() - base).days
+          except ValueError:
+              age = 999
+          if not meta.get('siop_snapshot_available') or not 0 <= age <= 7:
+              error = meta.get('siop_snapshot_error') or 'snapshot ausente ou antigo'
+              print(f'::error title=SIOP desatualizado::Base {date_text or "sem data"}; {error}')
+              sys.exit(1)
+          print(f'SIOP atualizado: base {date_text} ({age} dia(s)).')
+          PY
