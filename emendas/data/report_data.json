@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T18:48:34.559109+00:00",
+  "generated_at": "2026-10-01T19:33:59.699960+00:00",
   "snapshot_date": "2026-10-01",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
@@ -1048,10 +1048,10 @@
       }
     },
     "siop_snapshot": {
-      "available": true,
+      "available": false,
       "source_url": "https://www1.siop.planejamento.gov.br/QvAJAXZfc/opendoc.htm?document=IAS%2FExecucao_Orcamentaria.qvw&host=QVS%40pqlk04&anonymous=true",
       "last_update": "",
-      "base_siafi_date": "30/4/2026",
+      "base_siafi_date": "30/9/2026",
       "filters": {
         "year": 2026,
         "rp": [
@@ -1060,23 +1060,17 @@
           "8 - Emendas de Comissão"
         ]
       },
-      "totals": {
-        "dotacao_inicial_emenda": 49901486761.0,
-        "dotacao_atual_emenda": 49901486761.0,
-        "empenhado": 13590646127.0,
-        "liquidado": 572514487.0,
-        "pago": 466412376.0
-      },
+      "totals": {},
       "per_rp": [
         {
           "rp": "6 - Emendas Individuais",
           "available": true,
           "totals": {
-            "dotacao_inicial_emenda": 26560925142.0,
-            "dotacao_atual_emenda": 26560925142.0,
-            "empenhado": 12632570948.0,
-            "liquidado": 555258267.0,
-            "pago": 452105229.0
+            "dotacao_inicial_emenda": 0.0,
+            "dotacao_atual_emenda": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0
           },
           "error": ""
         },
@@ -1084,11 +1078,11 @@
           "rp": "7 - Emendas de Bancada Estadual",
           "available": true,
           "totals": {
-            "dotacao_inicial_emenda": 11225311619.0,
-            "dotacao_atual_emenda": 11225311619.0,
-            "empenhado": 729841988.0,
-            "liquidado": 10665189.0,
-            "pago": 7950768.0
+            "dotacao_inicial_emenda": 0.0,
+            "dotacao_atual_emenda": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0
           },
           "error": ""
         },
@@ -1096,20 +1090,19 @@
           "rp": "8 - Emendas de Comissão",
           "available": true,
           "totals": {
-            "dotacao_inicial_emenda": 12115250000.0,
-            "dotacao_atual_emenda": 12115250000.0,
-            "empenhado": 228233191.0,
-            "liquidado": 6591031.0,
-            "pago": 6356379.0
+            "dotacao_inicial_emenda": 0.0,
+            "dotacao_atual_emenda": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0
           },
           "error": ""
         }
       ],
-      "error": "dotação inicial/atual zerada — provável quebra do scraper Qlik (DOM mudou)",
-      "fallback_from_previous": true
+      "error": "dotação inicial/atual zerada — provável quebra do scraper Qlik (DOM mudou)"
     },
     "siop_details": {
-      "available": true,
+      "available": false,
       "source_url": "https://www1.siop.planejamento.gov.br/QvAJAXZfc/opendoc.htm?document=IAS%2FExecucao_Orcamentaria.qvw&host=QVS%40pqlk04&anonymous=true",
       "group_selected": "Por Partido",
       "filters": {
@@ -1156,7 +1149,7 @@
           "error": ""
         }
       ],
-      "error": ""
+      "error": "grid sem emendas válidas ou base SIAFI desatualizada"
     },
     "documents": {
       "year": 2026,
@@ -7482,5 +7475,5 @@
       "pago": 466412376.0
     }
   ],
-  "updated_at": "2026-10-01T18:48:34.559109+00:00"
+  "updated_at": "2026-10-01T19:33:59.699960+00:00"
 }
