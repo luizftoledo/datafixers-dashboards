@@ -73,6 +73,7 @@ function parseHttpDate(headerLastModified) {
 }
 
 function isSiopStale(meta) {
+  if (!meta.siop_snapshot_available) return true;
   const raw = meta.siop_base_siafi_date || '';
   const match = raw.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
   const base = match ? new Date(Number(match[3]), Number(match[2]) - 1, Number(match[1])) : parseISODate(raw);
@@ -99,7 +100,7 @@ function renderHeader(report, meta) {
   const warning = document.getElementById('siop-freshness-warning');
   if (warning && isSiopStale(meta)) {
     warning.style.display = 'block';
-    warning.textContent = `SIOP desatualizado: base SIAFI de ${siopDate}. Os valores de autorizado, execução e comparação entre fontes estão indisponíveis até a rotina obter um snapshot recente. Os dados da CGU continuam disponíveis.`;
+    warning.textContent = `SIOP indisponível ou desatualizado: base SIAFI de ${siopDate}. Os valores de autorizado, execução e comparação entre fontes estão indisponíveis até a rotina obter um snapshot válido e recente. Os dados da CGU continuam disponíveis.`;
   }
 }
 
@@ -116,7 +117,7 @@ function renderKPI(report, meta) {
 
   if (isSiopStale(meta)) {
     setText('kpi-autorizado', '—');
-    setText('kpi-autorizado-note', `SIOP desatualizado · base ${meta.siop_base_siafi_date || 'indisponível'}`);
+    setText('kpi-autorizado-note', `SIOP indisponível ou desatualizado · base ${meta.siop_base_siafi_date || 'indisponível'}`);
     setText('kpi-execucao', '—');
     setText('kpi-execucao-note', 'Aguardando snapshot recente do SIOP');
     return;
@@ -149,7 +150,7 @@ function renderCompare(report, meta) {
       badge.classList.remove('good', 'bad');
       badge.classList.add('warn');
     }
-    setText('compare-badge-text', 'SIOP desatualizado');
+    setText('compare-badge-text', 'SIOP indisponível');
     return;
   }
   setText('compare-siop', fmtBRLFull(siopYear));
