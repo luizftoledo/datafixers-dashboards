@@ -5,6 +5,7 @@ import datetime as dt
 import gzip
 import io
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -1983,7 +1984,16 @@ def build_parallel_monitor_payload(report, party_lookup, party_lookup_meta):
     siop_rp_filters = list(SIOP_DEFAULT_RP_FILTERS)
     execucao_ano_corrente = fetch_execucao_ano_corrente(current_year)
     siop_snapshot = extract_siop_snapshot(current_year, siop_rp_filters)
-    siop_details = extract_siop_details(party_lookup, current_year, siop_rp_filters)
+    if os.environ.get("EMENDAS_SIOP_DETAILS") == "1":
+        siop_details = extract_siop_details(party_lookup, current_year, siop_rp_filters)
+    else:
+        siop_details = {
+            "available": False,
+            "source_url": SIOP_PANEL_URL,
+            "base_siafi_date": siop_snapshot.get("base_siafi_date", ""),
+            "rows_count": 0,
+            "error": "Varredura detalhada não executada na rotina diária; use EMENDAS_SIOP_DETAILS=1.",
+        }
     documents_monitor = build_documents_monitor(current_year, party_lookup)
     apoiamento_monitor = build_apoiamento_monitor(current_year)
     return {

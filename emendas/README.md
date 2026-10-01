@@ -41,3 +41,13 @@ Forçar rebuild mesmo sem mudança de `etag/last-modified`:
 ```bash
 python3 scripts/build_emendas_dashboard_data.py --force
 ```
+
+A varredura detalhada de linhas do Qlik/SIOP é opcional porque pode levar muito
+tempo e retornar um grid incompleto. Para executá-la manualmente:
+
+```bash
+EMENDAS_SIOP_DETAILS=1 python3 scripts/build_emendas_dashboard_data.py --force
+```
+
+O job diário coleta os totais por RP e só os publica como disponíveis quando os
+três filtros são confirmados e a base SIAFI tem no máximo sete dias.
