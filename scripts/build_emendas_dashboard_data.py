@@ -666,7 +666,10 @@ def extract_siop_totals_with_retry(driver, wait, group_label="Por Partido", atte
     for _ in range(max(1, attempts)):
         try:
             open_siop_step2_group(driver, wait, group_label=group_label)
-            return extract_siop_totals_from_grid(driver)
+            totals = extract_siop_totals_from_grid(driver)
+            if totals.get("dotacao_inicial_emenda", 0) <= 0 or totals.get("dotacao_atual_emenda", 0) <= 0:
+                raise RuntimeError("totais zerados ou grid ainda não carregado")
+            return totals
         except Exception as exc:
             last_error = normalize_text(str(exc))[:220]
             time.sleep(1.0)
@@ -901,7 +904,18 @@ def extract_siop_snapshot(year, rp_filters):
         per_rp = []
         errors = []
 
-        for rp_label in rp_filters:
+        for rp_index, rp_label in enumerate(rp_filters):
+            if rp_index:
+                # O Qlik mantém seleções anteriores mesmo depois de "limpar";
+                # cada RP precisa de uma sessão nova para não herdar esse estado.
+                driver.quit()
+                driver = webdriver.Chrome(options=options)
+                wait = WebDriverWait(driver, 40)
+                navigate_siop_to_emendas(driver, wait)
+                body_text = driver.find_element("tag name", "body").text
+                last_update, base_siafi_date = parse_siop_dates_from_text(body_text)
+                result["last_update"] = last_update
+                result["base_siafi_date"] = base_siafi_date
             if not apply_siop_single_rp_filter(driver, wait, year=year, rp_label=rp_label):
                 per_rp.append(
                     {
