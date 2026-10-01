@@ -561,12 +561,26 @@ function renderHealth(report, meta) {
 
 /* === Boot === */
 
+async function fetchDashboardJson(filename) {
+  let lastError;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    if (attempt) await new Promise((resolve) => setTimeout(resolve, attempt * 500));
+    try {
+      const response = await fetch(`./data/${filename}?v=${Date.now()}-${attempt}`, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return await response.json();
+    } catch (error) {
+      lastError = error;
+    }
+  }
+  throw new Error(`Não foi possível carregar ${filename} após três tentativas (${lastError?.message || 'falha de rede'}).`);
+}
+
 (async function bootstrap() {
   try {
-    const cacheBuster = `?v=${Date.now()}`;
     const [report, meta] = await Promise.all([
-      fetch(`./data/report_data.json${cacheBuster}`).then((r) => r.json()),
-      fetch(`./data/metadata.json${cacheBuster}`).then((r) => r.json()),
+      fetchDashboardJson('report_data.json'),
+      fetchDashboardJson('metadata.json'),
     ]);
 
     renderHeader(report, meta);
@@ -583,5 +597,11 @@ function renderHealth(report, meta) {
     console.error('[dashboard] falha ao carregar dados:', err);
     setText('spotlight-title', 'Falha ao carregar dados');
     setText('spotlight-body-1', `Erro: ${err && err.message ? err.message : err}`);
+    const retry = document.createElement('button');
+    retry.type = 'button';
+    retry.textContent = 'Tentar novamente';
+    retry.style.cssText = 'padding:9px 14px;border:1px solid #666;background:#fff;cursor:pointer;font:inherit';
+    retry.addEventListener('click', () => window.location.reload());
+    document.getElementById('spotlight-body-2')?.replaceChildren(retry);
   }
 })();
