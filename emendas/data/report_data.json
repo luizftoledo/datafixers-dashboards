@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-02T18:21:17.681873+00:00",
-  "snapshot_date": "2026-10-02",
+  "generated_at": "2026-10-03T17:12:02.929977+00:00",
+  "snapshot_date": "2026-10-03",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -13,12 +13,12 @@
   "metrics": {
     "total_empenhado_atual": 342533306914.69,
     "total_empenhado_snapshot_anterior": 346325139415.88,
-    "delta_liquido_desde_snapshot_anterior": -3791832501.19,
-    "delta_positivo_desde_snapshot_anterior": 20727172.18,
-    "delta_negativo_desde_snapshot_anterior": -3812559673.37,
-    "autores_com_aumento": 21,
-    "destinos_com_aumento": 8,
-    "pares_autor_destino_com_aumento": 95,
+    "delta_liquido_desde_snapshot_anterior": 0.0,
+    "delta_positivo_desde_snapshot_anterior": 0.0,
+    "delta_negativo_desde_snapshot_anterior": 0.0,
+    "autores_com_aumento": 0,
+    "destinos_com_aumento": 0,
+    "pares_autor_destino_com_aumento": 0,
     "total_autores_mapeados": 1614,
     "total_destinos_mapeados": 5459,
     "total_linhas_csv": 94627,
@@ -27,8 +27,8 @@
     "current_year_total_empenhado": 41397119285.57,
     "current_year_total_liquidado": 26144446504.15,
     "current_year_total_pago": 35213123519.86,
-    "current_year_total_empenhado_por_ano_emenda": 40060378330.46,
-    "current_year_total_pago_por_ano_emenda": 25878742486.65,
+    "current_year_total_empenhado_por_ano_emenda": 41397119285.57,
+    "current_year_total_pago_por_ano_emenda": 35213123519.86,
     "_pago_e_empenhado_source": "por_data_documento"
   },
   "top_authors_today": [
@@ -949,7 +949,7 @@
     "total_liquidado": 26144446504.15,
     "total_pago": 35213123519.86
   },
-  "run_date": "2026-10-02",
+  "run_date": "2026-10-03",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -5487,6 +5487,17 @@
       "previous_snapshot_date": "2026-10-01",
       "interval_days": 1,
       "source_changed": true
+    },
+    {
+      "date": "2026-10-03",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 342533306914.69,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-10-02",
+      "interval_days": 1,
+      "source_changed": false
     }
   ],
   "siop_daily_history": [
@@ -7399,6 +7410,17 @@
       "empenhado": 39996538255.0,
       "liquidado": 26126827708.0,
       "pago": 25866799577.0
+    },
+    {
+      "date": "2026-10-03",
+      "last_update": "",
+      "base_siafi_date": "1/10/2026",
+      "dotacao_inicial_emenda": 49769403428.0,
+      "dotacao_atual_emenda": 49901486762.0,
+      "empenhado": 39996538255.0,
+      "liquidado": 26126827708.0,
+      "pago": 25866799577.0
     }
-  ]
+  ],
+  "updated_at": "2026-10-03T17:12:02.929977+00:00"
 }
