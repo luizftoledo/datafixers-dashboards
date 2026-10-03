@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-10-02T18:00:43+00:00",
-  "source_updated_at": "2026-10-02",
-  "source_header": "Atualizado em: 2026-10-02",
+  "generated_at": "2026-10-03T16:37:17+00:00",
+  "source_updated_at": "2026-10-03",
+  "source_header": "Atualizado em: 2026-10-03",
   "source_file": "dados_aeronaves.csv",
-  "source_size_bytes": 23784924,
+  "source_size_bytes": 23790614,
   "data_file": "records.jsonl.gz",
-  "rows": 34919,
-  "active_rows": 26733,
-  "canceled_rows": 8186,
-  "rows_with_document": 34919,
-  "rows_with_masked_document": 11785,
+  "rows": 34924,
+  "active_rows": 26736,
+  "canceled_rows": 8188,
+  "rows_with_document": 34924,
+  "rows_with_masked_document": 11786,
   "unique_operators": 20520,
   "null_uf_rows": 0,
   "ufs": [
@@ -48,10 +48,10 @@
   "year_max": 2029,
   "search_result_limit": 20,
   "sample_queries": [
-    "PP-ARR",
-    "Indisponível",
-    "VICA VIACAO CHARTER AEREA",
-    "PR-AMV"
+    "PP-XSX",
+    "ADRIANO NIEBISCH",
+    "766XXXXXX00",
+    "PU-ANL"
   ],
   "methodology": [
     "Esta página foi gerada a partir do CSV original entregue para o site, em vez de consultar o portal da ANAC em tempo real.",
