@@ -11,13 +11,13 @@
     }
   },
   "enrich": {
-    "fetched": 65,
-    "reused": 35,
-    "kept": 94,
+    "fetched": 66,
+    "reused": 33,
+    "kept": 93,
     "dropped": 6,
     "categories": {
       "perfil_bio": 17,
-      "reportagem_autoral": 65,
+      "reportagem_autoral": 64,
       "mencao": 7,
       "entrevista": 1,
       "citacao_fonte": 3,
@@ -27,9 +27,9 @@
       "bbc.com": 57,
       "intercept.com.br": 1,
       "piaui.folha.uol.com.br": 1,
-      "apublica.org": 3,
+      "apublica.org": 4,
       "ojoioeotrigo.com.br": 2,
-      "estadao.com.br": 6,
+      "estadao.com.br": 5,
       "g1.globo.com": 2,
       "escavador.com": 1,
       "icfj.org": 1,
@@ -45,9 +45,9 @@
       "scielo.br": 1,
       "abraji.org.br": 2,
       "sbtnews.sbt.com.br": 1,
-      "fiquemsabendo.com.br": 1,
       "piaui.uol.com.br": 2,
-      "cnnbrasil.com.br": 4
+      "fiquemsabendo.com.br": 1,
+      "cnnbrasil.com.br": 3
     },
     "errors": [
       {
