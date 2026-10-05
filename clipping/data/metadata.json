@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-10-04T17:52:34.709026+00:00",
+  "generated_at": "2026-10-05T21:15:33.724036+00:00",
   "counts": {
     "items": 93,
     "domains": 24,
     "categories": {
-      "reportagem_autoral": 64,
+      "reportagem_autoral": 65,
       "republicacao": 0,
       "eco_repercussao": 1,
       "citacao_fonte": 3,
-      "mencao": 7,
+      "mencao": 6,
       "entrevista": 1,
       "palestra_curso": 0,
       "perfil_bio": 17
     },
     "recent": {
-      "last_1_day": 0,
-      "last_7_days": 2,
-      "last_30_days": 11
+      "last_1_day": 1,
+      "last_7_days": 3,
+      "last_30_days": 12
     }
   },
   "date_range": {
     "min": "2019-09-16",
-    "max": "2026-10-01"
+    "max": "2026-10-05"
   },
   "methodology": {
     "names": [
@@ -33,33 +33,33 @@
   "sources": {
     "discovery": {
       "seeds": {
-        "known_external_sources": 50
+        "known_external_sources": 51
       },
       "searches": {
         "google-news-rss:\"Luiz Fernando Toledo\"": 40,
         "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 0,
-        "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 4,
+        "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 3,
         "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 19
       }
     },
     "enrich": {
-      "fetched": 66,
+      "fetched": 67,
       "reused": 33,
       "kept": 93,
-      "dropped": 6,
+      "dropped": 7,
       "categories": {
         "perfil_bio": 17,
-        "reportagem_autoral": 64,
-        "mencao": 7,
+        "reportagem_autoral": 65,
+        "mencao": 6,
         "entrevista": 1,
         "citacao_fonte": 3,
         "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 57,
+        "bbc.com": 58,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
-        "apublica.org": 4,
+        "apublica.org": 3,
         "ojoioeotrigo.com.br": 2,
         "estadao.com.br": 5,
         "g1.globo.com": 2,
@@ -77,8 +77,8 @@
         "scielo.br": 1,
         "abraji.org.br": 2,
         "sbtnews.sbt.com.br": 1,
-        "piaui.uol.com.br": 2,
         "fiquemsabendo.com.br": 1,
+        "piaui.uol.com.br": 2,
         "cnnbrasil.com.br": 3
       },
       "errors": [
