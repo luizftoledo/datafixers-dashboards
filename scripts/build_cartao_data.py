@@ -344,7 +344,18 @@ def build():
 
     for index, month in enumerate(to_process, start=1):
         print(f"[{index}/{len(to_process)}] baixando e processando CPGF {month}")
-        zip_path = download_month_zip(session, month)
+        try:
+            zip_path = download_month_zip(session, month)
+        except requests.HTTPError as exc:
+            status = exc.response.status_code if exc.response is not None else None
+            if existing_months and month > max(existing_months) and status in (403, 404):
+                print(
+                    f"::warning::CPGF {month}: download indisponível (HTTP {status}). "
+                    "Dados anteriores preservados; atualização pendente. "
+                    "A próxima execução tentará novamente."
+                )
+                continue
+            raise
         parsed, parsed_presidencia = parse_csv_from_zip(zip_path, month)
         for parsed_month, aggregate in parsed.items():
             if START_MONTH <= parsed_month <= latest_month:
@@ -352,6 +363,14 @@ def build():
         for parsed_month, aggregate in parsed_presidencia.items():
             if START_MONTH <= parsed_month <= latest_month:
                 new_presidencia[parsed_month] = aggregate
+
+    if to_process and not new_months:
+        print("Nenhum mês novo disponível. Arquivo e data de atualização preservados.")
+        return
+
+    available_months = set(existing_months) | set(new_months)
+    latest_month = max(month for month in available_months if month <= latest_month)
+    target_months = list(month_range(START_MONTH, latest_month))
 
     ordered_months = {
         month: (
