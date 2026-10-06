@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-10-04T16:57:26+00:00",
-  "source_updated_at": "2026-10-04",
-  "source_header": "Atualizado em: 2026-10-04",
+  "generated_at": "2026-10-06T10:24:18+00:00",
+  "source_updated_at": "2026-10-06",
+  "source_header": "Atualizado em: 2026-10-06",
   "source_file": "dados_aeronaves.csv",
-  "source_size_bytes": 23789795,
+  "source_size_bytes": 23795140,
   "data_file": "records.jsonl.gz",
-  "rows": 34923,
-  "active_rows": 26735,
-  "canceled_rows": 8188,
-  "rows_with_document": 34923,
-  "rows_with_masked_document": 11786,
+  "rows": 34930,
+  "active_rows": 26745,
+  "canceled_rows": 8185,
+  "rows_with_document": 34930,
+  "rows_with_masked_document": 11788,
   "unique_operators": 20522,
   "null_uf_rows": 0,
   "ufs": [
@@ -48,10 +48,10 @@
   "year_max": 2029,
   "search_result_limit": 20,
   "sample_queries": [
-    "PP-KDG",
-    "CARLOS OSORIO CAMARA REIS",
-    "021XXXXXX08",
-    "PS-GAR"
+    "PP-ARR",
+    "Indisponível",
+    "VICA VIACAO CHARTER AEREA",
+    "PR-AMV"
   ],
   "methodology": [
     "Esta página foi gerada a partir do CSV original entregue para o site, em vez de consultar o portal da ANAC em tempo real.",
