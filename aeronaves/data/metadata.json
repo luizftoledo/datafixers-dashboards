@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-10-06T10:24:18+00:00",
-  "source_updated_at": "2026-10-06",
-  "source_header": "Atualizado em: 2026-10-06",
+  "generated_at": "2026-10-07T19:04:14+00:00",
+  "source_updated_at": "2026-10-07",
+  "source_header": "Atualizado em: 2026-10-07",
   "source_file": "dados_aeronaves.csv",
-  "source_size_bytes": 23795140,
+  "source_size_bytes": 24214804,
   "data_file": "records.jsonl.gz",
-  "rows": 34930,
-  "active_rows": 26745,
-  "canceled_rows": 8185,
-  "rows_with_document": 34930,
-  "rows_with_masked_document": 11788,
-  "unique_operators": 20522,
+  "rows": 35018,
+  "active_rows": 26824,
+  "canceled_rows": 8194,
+  "rows_with_document": 35018,
+  "rows_with_masked_document": 11803,
+  "unique_operators": 20528,
   "null_uf_rows": 0,
   "ufs": [
     "AC",
@@ -48,10 +48,10 @@
   "year_max": 2029,
   "search_result_limit": 20,
   "sample_queries": [
-    "PP-ARR",
-    "Indisponível",
-    "VICA VIACAO CHARTER AEREA",
-    "PR-AMV"
+    "PR-JLE",
+    "MASTER AVIAÇÃO AGRÍCOLA LTDA",
+    "24365724000105",
+    "PT-BZS"
   ],
   "methodology": [
     "Esta página foi gerada a partir do CSV original entregue para o site, em vez de consultar o portal da ANAC em tempo real.",
