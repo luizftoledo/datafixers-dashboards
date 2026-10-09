@@ -7,27 +7,27 @@
       "google-news-rss:\"Luiz Fernando Toledo\"": 40,
       "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 1,
       "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 3,
-      "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 19
+      "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 21
     }
   },
   "enrich": {
-    "fetched": 67,
+    "fetched": 70,
     "reused": 32,
-    "kept": 91,
+    "kept": 94,
     "dropped": 8,
     "categories": {
       "perfil_bio": 17,
-      "reportagem_autoral": 63,
-      "mencao": 6,
+      "reportagem_autoral": 65,
+      "mencao": 7,
       "entrevista": 1,
       "citacao_fonte": 3,
       "eco_repercussao": 1
     },
     "domains": {
-      "bbc.com": 57,
+      "bbc.com": 59,
       "intercept.com.br": 1,
       "piaui.folha.uol.com.br": 1,
-      "apublica.org": 3,
+      "apublica.org": 4,
       "ojoioeotrigo.com.br": 2,
       "estadao.com.br": 4,
       "g1.globo.com": 2,
@@ -44,9 +44,9 @@
       "cima.ned.org": 1,
       "scielo.br": 1,
       "abraji.org.br": 2,
-      "piaui.uol.com.br": 2,
       "sbtnews.sbt.com.br": 1,
       "fiquemsabendo.com.br": 1,
+      "piaui.uol.com.br": 2,
       "cnnbrasil.com.br": 3
     },
     "errors": [
@@ -57,6 +57,10 @@
       {
         "url": "https://noticias.uol.com.br/colunas/jose-roberto-de-toledo/2024/04/23/governo-libera-r-24-bi-e-piora-relacao-com-arthur-lira.htm",
         "error": "403 Client Error: Forbidden for url: https://noticias.uol.com.br/colunas/jose-roberto-de-toledo/2024/04/23/governo-libera-r-24-bi-e-piora-relacao-com-arthur-lira.htm | jina: 403 Client Error: Forbidden for url: https://r.jina.ai/http://https://noticias.uol.com.br/colunas/jose-roberto-de-toledo/2024/04/23/governo-libera-r-24-bi-e-piora-relacao-com-arthur-lira.htm"
+      },
+      {
+        "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2024/06/12/vereador-senador-politicos-favorecidos-pec-das-praias.htm",
+        "error": "403 Client Error: Forbidden for url: https://noticias.uol.com.br/politica/ultimas-noticias/2024/06/12/vereador-senador-politicos-favorecidos-pec-das-praias.htm | jina: 403 Client Error: Forbidden for url: https://r.jina.ai/http://https://noticias.uol.com.br/politica/ultimas-noticias/2024/06/12/vereador-senador-politicos-favorecidos-pec-das-praias.htm"
       }
     ]
   }
