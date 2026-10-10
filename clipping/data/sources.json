@@ -1,7 +1,7 @@
 {
   "discovery": {
     "seeds": {
-      "known_external_sources": 51
+      "known_external_sources": 50
     },
     "searches": {
       "google-news-rss:\"Luiz Fernando Toledo\"": 40,
@@ -13,11 +13,11 @@
   "enrich": {
     "fetched": 70,
     "reused": 32,
-    "kept": 94,
-    "dropped": 8,
+    "kept": 95,
+    "dropped": 7,
     "categories": {
       "perfil_bio": 17,
-      "reportagem_autoral": 65,
+      "reportagem_autoral": 66,
       "mencao": 7,
       "entrevista": 1,
       "citacao_fonte": 3,
@@ -29,7 +29,7 @@
       "piaui.folha.uol.com.br": 1,
       "apublica.org": 4,
       "ojoioeotrigo.com.br": 2,
-      "estadao.com.br": 4,
+      "estadao.com.br": 5,
       "g1.globo.com": 2,
       "escavador.com": 1,
       "icfj.org": 1,
@@ -44,8 +44,8 @@
       "cima.ned.org": 1,
       "scielo.br": 1,
       "abraji.org.br": 2,
-      "sbtnews.sbt.com.br": 1,
       "fiquemsabendo.com.br": 1,
+      "sbtnews.sbt.com.br": 1,
       "piaui.uol.com.br": 2,
       "cnnbrasil.com.br": 3
     },
@@ -59,8 +59,8 @@
         "error": "403 Client Error: Forbidden for url: https://noticias.uol.com.br/colunas/jose-roberto-de-toledo/2024/04/23/governo-libera-r-24-bi-e-piora-relacao-com-arthur-lira.htm | jina: 403 Client Error: Forbidden for url: https://r.jina.ai/http://https://noticias.uol.com.br/colunas/jose-roberto-de-toledo/2024/04/23/governo-libera-r-24-bi-e-piora-relacao-com-arthur-lira.htm"
       },
       {
-        "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2024/06/12/vereador-senador-politicos-favorecidos-pec-das-praias.htm",
-        "error": "403 Client Error: Forbidden for url: https://noticias.uol.com.br/politica/ultimas-noticias/2024/06/12/vereador-senador-politicos-favorecidos-pec-das-praias.htm | jina: 403 Client Error: Forbidden for url: https://r.jina.ai/http://https://noticias.uol.com.br/politica/ultimas-noticias/2024/06/12/vereador-senador-politicos-favorecidos-pec-das-praias.htm"
+        "url": "https://ojoioeotrigo.com.br/2024/07/autuados-por-trabalho-escravo-receberam-mais-de-r-1-bilhao-em-isencoes-fiscais",
+        "error": "403 Client Error: Forbidden for url: https://ojoioeotrigo.com.br/2024/07/autuados-por-trabalho-escravo-receberam-mais-de-r-1-bilhao-em-isencoes-fiscais | jina: 403 Client Error: Forbidden for url: https://r.jina.ai/http://https://ojoioeotrigo.com.br/2024/07/autuados-por-trabalho-escravo-receberam-mais-de-r-1-bilhao-em-isencoes-fiscais"
       }
     ]
   }
