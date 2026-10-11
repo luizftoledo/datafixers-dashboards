@@ -12,12 +12,12 @@
   },
   "enrich": {
     "fetched": 70,
-    "reused": 32,
-    "kept": 95,
+    "reused": 33,
+    "kept": 96,
     "dropped": 7,
     "categories": {
       "perfil_bio": 17,
-      "reportagem_autoral": 66,
+      "reportagem_autoral": 67,
       "mencao": 7,
       "entrevista": 1,
       "citacao_fonte": 3,
@@ -27,9 +27,9 @@
       "bbc.com": 59,
       "intercept.com.br": 1,
       "piaui.folha.uol.com.br": 1,
-      "apublica.org": 4,
+      "apublica.org": 3,
       "ojoioeotrigo.com.br": 2,
-      "estadao.com.br": 5,
+      "estadao.com.br": 6,
       "g1.globo.com": 2,
       "escavador.com": 1,
       "icfj.org": 1,
@@ -45,9 +45,9 @@
       "scielo.br": 1,
       "abraji.org.br": 2,
       "fiquemsabendo.com.br": 1,
-      "sbtnews.sbt.com.br": 1,
       "piaui.uol.com.br": 2,
-      "cnnbrasil.com.br": 3
+      "sbtnews.sbt.com.br": 1,
+      "cnnbrasil.com.br": 4
     },
     "errors": [
       {
@@ -55,12 +55,12 @@
         "error": "HTTPSConnectionPool(host='devstudies.cam.ac.uk', port=443): Max retries exceeded with url: /news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil (Caused by NameResolutionError(\"HTTPSConnection(host='devstudies.cam.ac.uk', port=443): Failed to resolve 'devstudies.cam.ac.uk' ([Errno -5] No address associated with hostname)\")) | jina: 403 Client Error: Forbidden for url: https://r.jina.ai/http://https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil"
       },
       {
-        "url": "https://noticias.uol.com.br/colunas/jose-roberto-de-toledo/2024/04/23/governo-libera-r-24-bi-e-piora-relacao-com-arthur-lira.htm",
-        "error": "403 Client Error: Forbidden for url: https://noticias.uol.com.br/colunas/jose-roberto-de-toledo/2024/04/23/governo-libera-r-24-bi-e-piora-relacao-com-arthur-lira.htm | jina: 403 Client Error: Forbidden for url: https://r.jina.ai/http://https://noticias.uol.com.br/colunas/jose-roberto-de-toledo/2024/04/23/governo-libera-r-24-bi-e-piora-relacao-com-arthur-lira.htm"
-      },
-      {
         "url": "https://ojoioeotrigo.com.br/2024/07/autuados-por-trabalho-escravo-receberam-mais-de-r-1-bilhao-em-isencoes-fiscais",
         "error": "403 Client Error: Forbidden for url: https://ojoioeotrigo.com.br/2024/07/autuados-por-trabalho-escravo-receberam-mais-de-r-1-bilhao-em-isencoes-fiscais | jina: 403 Client Error: Forbidden for url: https://r.jina.ai/http://https://ojoioeotrigo.com.br/2024/07/autuados-por-trabalho-escravo-receberam-mais-de-r-1-bilhao-em-isencoes-fiscais"
+      },
+      {
+        "url": "https://noticias.uol.com.br/colunas/jose-roberto-de-toledo/2024/04/23/governo-libera-r-24-bi-e-piora-relacao-com-arthur-lira.htm",
+        "error": "403 Client Error: Forbidden for url: https://noticias.uol.com.br/colunas/jose-roberto-de-toledo/2024/04/23/governo-libera-r-24-bi-e-piora-relacao-com-arthur-lira.htm | jina: 403 Client Error: Forbidden for url: https://r.jina.ai/http://https://noticias.uol.com.br/colunas/jose-roberto-de-toledo/2024/04/23/governo-libera-r-24-bi-e-piora-relacao-com-arthur-lira.htm"
       }
     ]
   }
