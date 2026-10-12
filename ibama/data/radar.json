@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-10-05T16:10:37.371959+00:00",
+  "generated_at": "2026-10-12T16:49:31.496850+00:00",
   "year": 2026,
-  "through": "2026-09-27",
+  "through": "2026-10-10",
   "previous_year": 2025,
-  "total_current": 12398,
-  "total_previous": 12043,
+  "total_current": 12934,
+  "total_previous": 12680,
   "places": [
     {
       "city": "RIO DE JANEIRO",
       "uf": "RJ",
-      "current": 293,
+      "current": 295,
       "previous": 77,
-      "delta": 216
+      "delta": 218
     },
     {
       "city": "GOIANIA",
       "uf": "GO",
-      "current": 195,
+      "current": 196,
       "previous": 38,
-      "delta": 157
+      "delta": 158
     },
     {
       "city": "FLORIANOPOLIS",
       "uf": "SC",
-      "current": 178,
+      "current": 179,
       "previous": 37,
-      "delta": 141
+      "delta": 142
     },
     {
       "city": "TRAIRAO",
@@ -35,18 +35,18 @@
       "delta": 118
     },
     {
+      "city": "FEIJO",
+      "uf": "AC",
+      "current": 186,
+      "previous": 87,
+      "delta": 99
+    },
+    {
       "city": "ALENQUER",
       "uf": "PA",
       "current": 98,
       "previous": 0,
       "delta": 98
-    },
-    {
-      "city": "FEIJO",
-      "uf": "AC",
-      "current": 167,
-      "previous": 73,
-      "delta": 94
     },
     {
       "city": "CAMPOS DOS GOYTACAZES",
@@ -56,18 +56,18 @@
       "delta": 91
     },
     {
-      "city": "CUJUBIM",
-      "uf": "RO",
-      "current": 111,
-      "previous": 26,
+      "city": "NOVO PROGRESSO",
+      "uf": "PA",
+      "current": 164,
+      "previous": 79,
       "delta": 85
     },
     {
-      "city": "CARUARU",
-      "uf": "PE",
-      "current": 83,
-      "previous": 2,
-      "delta": 81
+      "city": "RIO BRANCO",
+      "uf": "AC",
+      "current": 122,
+      "previous": 37,
+      "delta": 85
     }
   ],
   "method": "Autos por municipio e UF com data do auto entre 1 jan e a data de corte em cada ano. Normalizacao de caixa e acentos. Selecionados apenas locais com >=30 autos no ano atual, >=20 a mais que no anterior e pelo menos 1,8 vez o volume anterior."
