@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-10-12T21:53:48.641131+00:00",
+  "generated_at": "2026-10-13T19:59:11.471460+00:00",
   "counts": {
-    "items": 98,
-    "domains": 26,
+    "items": 96,
+    "domains": 25,
     "categories": {
-      "reportagem_autoral": 67,
+      "reportagem_autoral": 66,
       "republicacao": 0,
       "eco_repercussao": 1,
       "citacao_fonte": 3,
-      "mencao": 9,
+      "mencao": 8,
       "entrevista": 1,
       "palestra_curso": 0,
       "perfil_bio": 17
     },
     "recent": {
       "last_1_day": 0,
-      "last_7_days": 3,
-      "last_30_days": 11
+      "last_7_days": 2,
+      "last_30_days": 9
     }
   },
   "date_range": {
-    "min": "2015-10-28",
+    "min": "2019-09-16",
     "max": "2026-10-08"
   },
   "methodology": {
@@ -43,14 +43,14 @@
       }
     },
     "enrich": {
-      "fetched": 70,
-      "reused": 34,
-      "kept": 98,
-      "dropped": 6,
+      "fetched": 68,
+      "reused": 35,
+      "kept": 96,
+      "dropped": 7,
       "categories": {
         "perfil_bio": 17,
-        "reportagem_autoral": 67,
-        "mencao": 9,
+        "reportagem_autoral": 66,
+        "mencao": 8,
         "entrevista": 1,
         "citacao_fonte": 3,
         "eco_repercussao": 1
@@ -60,7 +60,7 @@
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 4,
-        "ojoioeotrigo.com.br": 2,
+        "ojoioeotrigo.com.br": 1,
         "estadao.com.br": 5,
         "g1.globo.com": 2,
         "escavador.com": 1,
@@ -76,12 +76,11 @@
         "cima.ned.org": 1,
         "scielo.br": 1,
         "abraji.org.br": 2,
+        "sbtnews.sbt.com.br": 1,
         "fiquemsabendo.com.br": 1,
         "piaui.uol.com.br": 2,
-        "sbtnews.sbt.com.br": 1,
-        "lance.com.br": 1,
-        "cnnbrasil.com.br": 4,
-        "noticias.uol.com.br": 1
+        "noticias.uol.com.br": 1,
+        "cnnbrasil.com.br": 4
       },
       "errors": [
         {
