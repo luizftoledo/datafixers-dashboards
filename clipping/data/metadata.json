@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-13T19:59:11.471460+00:00",
+  "generated_at": "2026-10-14T18:12:23.443320+00:00",
   "counts": {
-    "items": 96,
-    "domains": 25,
+    "items": 98,
+    "domains": 26,
     "categories": {
-      "reportagem_autoral": 66,
+      "reportagem_autoral": 68,
       "republicacao": 0,
       "eco_repercussao": 1,
       "citacao_fonte": 3,
@@ -14,14 +14,14 @@
       "perfil_bio": 17
     },
     "recent": {
-      "last_1_day": 0,
-      "last_7_days": 2,
-      "last_30_days": 9
+      "last_1_day": 2,
+      "last_7_days": 3,
+      "last_30_days": 11
     }
   },
   "date_range": {
-    "min": "2019-09-16",
-    "max": "2026-10-08"
+    "min": "2015-10-28",
+    "max": "2026-10-14"
   },
   "methodology": {
     "names": [
@@ -38,28 +38,28 @@
       "searches": {
         "google-news-rss:\"Luiz Fernando Toledo\"": 40,
         "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 1,
-        "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 3,
+        "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 4,
         "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 21
       }
     },
     "enrich": {
-      "fetched": 68,
-      "reused": 35,
-      "kept": 96,
+      "fetched": 71,
+      "reused": 34,
+      "kept": 98,
       "dropped": 7,
       "categories": {
         "perfil_bio": 17,
-        "reportagem_autoral": 66,
+        "reportagem_autoral": 68,
         "mencao": 8,
         "entrevista": 1,
         "citacao_fonte": 3,
         "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 59,
+        "bbc.com": 61,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
-        "apublica.org": 4,
+        "apublica.org": 3,
         "ojoioeotrigo.com.br": 1,
         "estadao.com.br": 5,
         "g1.globo.com": 2,
@@ -79,6 +79,7 @@
         "sbtnews.sbt.com.br": 1,
         "fiquemsabendo.com.br": 1,
         "piaui.uol.com.br": 2,
+        "lance.com.br": 1,
         "noticias.uol.com.br": 1,
         "cnnbrasil.com.br": 4
       },
