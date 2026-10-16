@@ -11,14 +11,14 @@
     }
   },
   "enrich": {
-    "fetched": 73,
-    "reused": 34,
+    "fetched": 72,
+    "reused": 35,
     "kept": 100,
     "dropped": 7,
     "categories": {
       "perfil_bio": 17,
-      "reportagem_autoral": 69,
-      "mencao": 8,
+      "reportagem_autoral": 70,
+      "mencao": 7,
       "entrevista": 1,
       "citacao_fonte": 3,
       "republicacao": 1,
@@ -55,6 +55,10 @@
       {
         "url": "https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil",
         "error": "HTTPSConnectionPool(host='devstudies.cam.ac.uk', port=443): Max retries exceeded with url: /news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil (Caused by NameResolutionError(\"HTTPSConnection(host='devstudies.cam.ac.uk', port=443): Failed to resolve 'devstudies.cam.ac.uk' ([Errno -5] No address associated with hostname)\")) | jina: 422 Client Error: Unprocessable Entity for url: https://r.jina.ai/http://https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil"
+      },
+      {
+        "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2024/06/12/vereador-senador-politicos-favorecidos-pec-das-praias.htm",
+        "error": "403 Client Error: Forbidden for url: https://noticias.uol.com.br/politica/ultimas-noticias/2024/06/12/vereador-senador-politicos-favorecidos-pec-das-praias.htm | jina: 403 Client Error: Forbidden for url: https://r.jina.ai/http://https://noticias.uol.com.br/politica/ultimas-noticias/2024/06/12/vereador-senador-politicos-favorecidos-pec-das-praias.htm"
       }
     ]
   }
