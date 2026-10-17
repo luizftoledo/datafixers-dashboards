@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-10-16T17:43:37.400970+00:00",
+  "generated_at": "2026-10-17T16:41:00.243172+00:00",
   "counts": {
     "items": 100,
-    "domains": 25,
+    "domains": 26,
     "categories": {
-      "reportagem_autoral": 70,
+      "reportagem_autoral": 69,
       "republicacao": 1,
       "eco_repercussao": 1,
       "citacao_fonte": 3,
-      "mencao": 7,
+      "mencao": 8,
       "entrevista": 1,
       "palestra_curso": 0,
       "perfil_bio": 17
     },
     "recent": {
-      "last_1_day": 1,
+      "last_1_day": 0,
       "last_7_days": 4,
       "last_30_days": 13
     }
   },
   "date_range": {
-    "min": "2019-09-16",
+    "min": "2015-10-28",
     "max": "2026-10-15"
   },
   "methodology": {
@@ -49,8 +49,8 @@
       "dropped": 7,
       "categories": {
         "perfil_bio": 17,
-        "reportagem_autoral": 70,
-        "mencao": 7,
+        "reportagem_autoral": 69,
+        "mencao": 8,
         "entrevista": 1,
         "citacao_fonte": 3,
         "republicacao": 1,
@@ -62,7 +62,7 @@
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
         "ojoioeotrigo.com.br": 1,
-        "estadao.com.br": 6,
+        "estadao.com.br": 5,
         "g1.globo.com": 2,
         "escavador.com": 1,
         "icfj.org": 1,
@@ -77,9 +77,10 @@
         "cima.ned.org": 1,
         "scielo.br": 1,
         "abraji.org.br": 2,
-        "sbtnews.sbt.com.br": 1,
         "fiquemsabendo.com.br": 1,
+        "sbtnews.sbt.com.br": 1,
         "piaui.uol.com.br": 2,
+        "lance.com.br": 1,
         "noticias.uol.com.br": 1,
         "cnnbrasil.com.br": 4
       },
@@ -87,10 +88,6 @@
         {
           "url": "https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil",
           "error": "HTTPSConnectionPool(host='devstudies.cam.ac.uk', port=443): Max retries exceeded with url: /news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil (Caused by NameResolutionError(\"HTTPSConnection(host='devstudies.cam.ac.uk', port=443): Failed to resolve 'devstudies.cam.ac.uk' ([Errno -5] No address associated with hostname)\")) | jina: 422 Client Error: Unprocessable Entity for url: https://r.jina.ai/http://https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil"
-        },
-        {
-          "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2024/06/12/vereador-senador-politicos-favorecidos-pec-das-praias.htm",
-          "error": "403 Client Error: Forbidden for url: https://noticias.uol.com.br/politica/ultimas-noticias/2024/06/12/vereador-senador-politicos-favorecidos-pec-das-praias.htm | jina: 403 Client Error: Forbidden for url: https://r.jina.ai/http://https://noticias.uol.com.br/politica/ultimas-noticias/2024/06/12/vereador-senador-politicos-favorecidos-pec-das-praias.htm"
         }
       ]
     }
