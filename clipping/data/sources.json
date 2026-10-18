@@ -12,8 +12,8 @@
   },
   "enrich": {
     "fetched": 72,
-    "reused": 35,
-    "kept": 100,
+    "reused": 34,
+    "kept": 99,
     "dropped": 7,
     "categories": {
       "perfil_bio": 17,
@@ -21,16 +21,15 @@
       "mencao": 8,
       "entrevista": 1,
       "citacao_fonte": 3,
-      "republicacao": 1,
       "eco_repercussao": 1
     },
     "domains": {
-      "bbc.com": 63,
+      "bbc.com": 62,
       "intercept.com.br": 1,
       "piaui.folha.uol.com.br": 1,
       "apublica.org": 3,
       "ojoioeotrigo.com.br": 1,
-      "estadao.com.br": 5,
+      "estadao.com.br": 6,
       "g1.globo.com": 2,
       "escavador.com": 1,
       "icfj.org": 1,
@@ -45,17 +44,19 @@
       "cima.ned.org": 1,
       "scielo.br": 1,
       "abraji.org.br": 2,
-      "fiquemsabendo.com.br": 1,
       "sbtnews.sbt.com.br": 1,
+      "fiquemsabendo.com.br": 1,
       "piaui.uol.com.br": 2,
-      "lance.com.br": 1,
-      "noticias.uol.com.br": 1,
-      "cnnbrasil.com.br": 4
+      "cnnbrasil.com.br": 5
     },
     "errors": [
       {
         "url": "https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil",
         "error": "HTTPSConnectionPool(host='devstudies.cam.ac.uk', port=443): Max retries exceeded with url: /news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil (Caused by NameResolutionError(\"HTTPSConnection(host='devstudies.cam.ac.uk', port=443): Failed to resolve 'devstudies.cam.ac.uk' ([Errno -5] No address associated with hostname)\")) | jina: 422 Client Error: Unprocessable Entity for url: https://r.jina.ai/http://https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil"
+      },
+      {
+        "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2024/06/12/vereador-senador-politicos-favorecidos-pec-das-praias.htm",
+        "error": "403 Client Error: Forbidden for url: https://noticias.uol.com.br/politica/ultimas-noticias/2024/06/12/vereador-senador-politicos-favorecidos-pec-das-praias.htm | jina: 403 Client Error: Forbidden for url: https://r.jina.ai/http://https://noticias.uol.com.br/politica/ultimas-noticias/2024/06/12/vereador-senador-politicos-favorecidos-pec-das-praias.htm"
       }
     ]
   }
