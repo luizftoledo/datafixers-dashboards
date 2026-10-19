@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-10-12T16:49:31.496850+00:00",
+  "generated_at": "2026-10-19T14:46:15.067472+00:00",
   "year": 2026,
-  "through": "2026-10-10",
+  "through": "2026-10-18",
   "previous_year": 2025,
-  "total_current": 12934,
-  "total_previous": 12680,
+  "total_current": 13162,
+  "total_previous": 12944,
   "places": [
     {
       "city": "RIO DE JANEIRO",
       "uf": "RJ",
-      "current": 295,
+      "current": 297,
       "previous": 77,
-      "delta": 218
+      "delta": 220
     },
     {
       "city": "GOIANIA",
@@ -35,13 +35,6 @@
       "delta": 118
     },
     {
-      "city": "FEIJO",
-      "uf": "AC",
-      "current": 186,
-      "previous": 87,
-      "delta": 99
-    },
-    {
       "city": "ALENQUER",
       "uf": "PA",
       "current": 98,
@@ -56,17 +49,24 @@
       "delta": 91
     },
     {
-      "city": "NOVO PROGRESSO",
-      "uf": "PA",
-      "current": 164,
-      "previous": 79,
-      "delta": 85
+      "city": "FEIJO",
+      "uf": "AC",
+      "current": 193,
+      "previous": 105,
+      "delta": 88
     },
     {
-      "city": "RIO BRANCO",
-      "uf": "AC",
-      "current": 122,
-      "previous": 37,
+      "city": "NOVO PROGRESSO",
+      "uf": "PA",
+      "current": 165,
+      "previous": 79,
+      "delta": 86
+    },
+    {
+      "city": "CUJUBIM",
+      "uf": "RO",
+      "current": 111,
+      "previous": 26,
       "delta": 85
     }
   ],
