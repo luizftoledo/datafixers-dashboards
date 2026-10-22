@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-10-21T17:35:21+00:00",
-  "source_updated_at": "2026-10-21",
-  "source_header": "Atualizado em: 2026-10-21",
+  "generated_at": "2026-10-22T17:32:00+00:00",
+  "source_updated_at": "2026-10-22",
+  "source_header": "Atualizado em: 2026-10-22",
   "source_file": "dados_aeronaves.csv",
-  "source_size_bytes": 24279294,
+  "source_size_bytes": 24285972,
   "data_file": "records.jsonl.gz",
-  "rows": 35052,
-  "active_rows": 26853,
+  "rows": 35061,
+  "active_rows": 26862,
   "canceled_rows": 8199,
-  "rows_with_document": 35052,
-  "rows_with_masked_document": 11812,
-  "unique_operators": 20552,
+  "rows_with_document": 35061,
+  "rows_with_masked_document": 11815,
+  "unique_operators": 20557,
   "null_uf_rows": 0,
   "ufs": [
     "AC",
@@ -48,10 +48,10 @@
   "year_max": 2029,
   "search_result_limit": 20,
   "sample_queries": [
-    "PS-BGS",
-    "JOSÉ ALFREDO BERG FILHO",
-    "000XXXXXX41",
-    "PS-KSK"
+    "PR-JLE",
+    "MASTER AVIAÇÃO AGRÍCOLA LTDA",
+    "24365724000105",
+    "PT-BZS"
   ],
   "methodology": [
     "Esta página foi gerada a partir do CSV original entregue para o site, em vez de consultar o portal da ANAC em tempo real.",
