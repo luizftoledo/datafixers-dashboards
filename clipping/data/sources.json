@@ -12,19 +12,20 @@
   },
   "enrich": {
     "fetched": 66,
-    "reused": 39,
-    "kept": 100,
+    "reused": 40,
+    "kept": 101,
     "dropped": 5,
     "categories": {
       "perfil_bio": 17,
       "reportagem_autoral": 67,
       "mencao": 11,
       "entrevista": 1,
+      "republicacao": 1,
       "citacao_fonte": 3,
       "eco_repercussao": 1
     },
     "domains": {
-      "bbc.com": 57,
+      "bbc.com": 58,
       "intercept.com.br": 1,
       "piaui.folha.uol.com.br": 1,
       "apublica.org": 4,
