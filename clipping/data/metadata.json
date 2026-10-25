@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-10-24T17:00:53.594964+00:00",
+  "generated_at": "2026-10-25T17:15:08.040654+00:00",
   "counts": {
     "items": 101,
     "domains": 25,
     "categories": {
       "reportagem_autoral": 67,
-      "republicacao": 1,
+      "republicacao": 0,
       "eco_repercussao": 1,
       "citacao_fonte": 3,
-      "mencao": 11,
+      "mencao": 12,
       "entrevista": 1,
       "palestra_curso": 0,
       "perfil_bio": 17
     },
     "recent": {
-      "last_1_day": 3,
+      "last_1_day": 1,
       "last_7_days": 5,
       "last_30_days": 13
     }
   },
   "date_range": {
     "min": "2015-10-28",
-    "max": "2026-10-23"
+    "max": "2026-10-24"
   },
   "methodology": {
     "names": [
@@ -50,9 +50,8 @@
       "categories": {
         "perfil_bio": 17,
         "reportagem_autoral": 67,
-        "mencao": 11,
+        "mencao": 12,
         "entrevista": 1,
-        "republicacao": 1,
         "citacao_fonte": 3,
         "eco_repercussao": 1
       },
