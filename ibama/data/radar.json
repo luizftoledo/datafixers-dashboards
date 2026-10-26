@@ -1,38 +1,38 @@
 {
-  "generated_at": "2026-10-19T14:46:15.067472+00:00",
+  "generated_at": "2026-10-26T14:24:05.104271+00:00",
   "year": 2026,
-  "through": "2026-10-18",
+  "through": "2026-10-24",
   "previous_year": 2025,
-  "total_current": 13162,
-  "total_previous": 12944,
+  "total_current": 13572,
+  "total_previous": 13216,
   "places": [
     {
       "city": "RIO DE JANEIRO",
       "uf": "RJ",
-      "current": 297,
+      "current": 299,
       "previous": 77,
-      "delta": 220
+      "delta": 222
     },
     {
       "city": "GOIANIA",
       "uf": "GO",
-      "current": 196,
+      "current": 200,
       "previous": 38,
-      "delta": 158
+      "delta": 162
     },
     {
       "city": "FLORIANOPOLIS",
       "uf": "SC",
-      "current": 179,
-      "previous": 37,
+      "current": 182,
+      "previous": 40,
       "delta": 142
     },
     {
       "city": "TRAIRAO",
       "uf": "PA",
       "current": 126,
-      "previous": 8,
-      "delta": 118
+      "previous": 9,
+      "delta": 117
     },
     {
       "city": "ALENQUER",
@@ -49,13 +49,6 @@
       "delta": 91
     },
     {
-      "city": "FEIJO",
-      "uf": "AC",
-      "current": 193,
-      "previous": 105,
-      "delta": 88
-    },
-    {
       "city": "NOVO PROGRESSO",
       "uf": "PA",
       "current": 165,
@@ -68,6 +61,13 @@
       "current": 111,
       "previous": 26,
       "delta": 85
+    },
+    {
+      "city": "CARUARU",
+      "uf": "PE",
+      "current": 86,
+      "previous": 2,
+      "delta": 84
     }
   ],
   "method": "Autos por municipio e UF com data do auto entre 1 jan e a data de corte em cada ano. Normalizacao de caixa e acentos. Selecionados apenas locais com >=30 autos no ano atual, >=20 a mais que no anterior e pelo menos 1,8 vez o volume anterior."
