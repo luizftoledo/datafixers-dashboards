@@ -1,10 +1,10 @@
 {
   "discovery": {
     "seeds": {
-      "known_external_sources": 49
+      "known_external_sources": 47
     },
     "searches": {
-      "google-news-rss:\"Luiz Fernando Toledo\"": 25,
+      "google-news-rss:\"Luiz Fernando Toledo\"": 27,
       "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 1,
       "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 4,
       "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 9
@@ -13,17 +13,17 @@
   "enrich": {
     "fetched": 54,
     "reused": 27,
-    "kept": 76,
-    "dropped": 5,
+    "kept": 78,
+    "dropped": 3,
     "categories": {
       "perfil_bio": 17,
-      "reportagem_autoral": 54,
-      "mencao": 3,
+      "reportagem_autoral": 55,
+      "mencao": 4,
       "entrevista": 1,
       "citacao_fonte": 1
     },
     "domains": {
-      "bbc.com": 48,
+      "bbc.com": 49,
       "intercept.com.br": 1,
       "piaui.folha.uol.com.br": 1,
       "apublica.org": 3,
@@ -45,7 +45,8 @@
       "abraji.org.br": 1,
       "sbtnews.sbt.com.br": 1,
       "piaui.uol.com.br": 3,
-      "fiquemsabendo.com.br": 1
+      "fiquemsabendo.com.br": 1,
+      "lance.com.br": 1
     },
     "errors": [
       {
