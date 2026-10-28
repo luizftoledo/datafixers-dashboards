@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-10-27T18:12:11+00:00",
-  "source_updated_at": "2026-10-27",
-  "source_header": "Atualizado em: 2026-10-27",
+  "generated_at": "2026-10-28T18:28:15+00:00",
+  "source_updated_at": "2026-10-28",
+  "source_header": "Atualizado em: 2026-10-28",
   "source_file": "dados_aeronaves.csv",
-  "source_size_bytes": 24303758,
+  "source_size_bytes": 24312203,
   "data_file": "records.jsonl.gz",
-  "rows": 35089,
-  "active_rows": 26886,
+  "rows": 35092,
+  "active_rows": 26889,
   "canceled_rows": 8203,
-  "rows_with_document": 35089,
-  "rows_with_masked_document": 11821,
-  "unique_operators": 20563,
+  "rows_with_document": 35092,
+  "rows_with_masked_document": 11820,
+  "unique_operators": 20566,
   "null_uf_rows": 0,
   "ufs": [
     "AC",
@@ -48,10 +48,10 @@
   "year_max": 2029,
   "search_result_limit": 20,
   "sample_queries": [
-    "PT-JTK",
-    "AEROCLUBE DO ESPIRITO SANTO",
-    "27565076000110",
-    "PT-UPN"
+    "PS-GFN",
+    "FERRONORTE INDUSTRIAL LTDA",
+    "03119889000119",
+    "PR-SFG"
   ],
   "methodology": [
     "Esta página foi gerada a partir do CSV original entregue para o site, em vez de consultar o portal da ANAC em tempo real.",
