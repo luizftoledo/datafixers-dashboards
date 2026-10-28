@@ -31,6 +31,8 @@ jobs:
           echo "Removidos do deploy (nao do repo):"
           find . -path ./.git -prune -o -type f -size +24M -print -exec rm -f {} \;
 
+      - name: Incluir aviso de curso nas páginas públicas
+        run: python3 scripts/install_course_banner.py --root .
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
