@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-10-28T18:28:15+00:00",
-  "source_updated_at": "2026-10-28",
-  "source_header": "Atualizado em: 2026-10-28",
+  "generated_at": "2026-10-29T18:36:48+00:00",
+  "source_updated_at": "2026-10-29",
+  "source_header": "Atualizado em: 2026-10-29",
   "source_file": "dados_aeronaves.csv",
-  "source_size_bytes": 24312203,
+  "source_size_bytes": 24314366,
   "data_file": "records.jsonl.gz",
-  "rows": 35092,
-  "active_rows": 26889,
+  "rows": 35094,
+  "active_rows": 26891,
   "canceled_rows": 8203,
-  "rows_with_document": 35092,
+  "rows_with_document": 35094,
   "rows_with_masked_document": 11820,
-  "unique_operators": 20566,
+  "unique_operators": 20563,
   "null_uf_rows": 0,
   "ufs": [
     "AC",
@@ -48,10 +48,10 @@
   "year_max": 2029,
   "search_result_limit": 20,
   "sample_queries": [
-    "PS-GFN",
-    "FERRONORTE INDUSTRIAL LTDA",
-    "03119889000119",
-    "PR-SFG"
+    "PR-JLE",
+    "MASTER AVIAÇÃO AGRÍCOLA LTDA",
+    "24365724000105",
+    "PT-BZS"
   ],
   "methodology": [
     "Esta página foi gerada a partir do CSV original entregue para o site, em vez de consultar o portal da ANAC em tempo real.",
