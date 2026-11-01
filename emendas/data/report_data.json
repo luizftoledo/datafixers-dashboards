@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-31T17:39:13.577285+00:00",
-  "snapshot_date": "2026-10-31",
+  "generated_at": "2026-11-01T18:23:17.939924+00:00",
+  "snapshot_date": "2026-11-01",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -996,7 +996,7 @@
     "total_liquidado": 26243532419.43,
     "total_pago": 35560507959.37
   },
-  "run_date": "2026-10-31",
+  "run_date": "2026-11-01",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -3346,7 +3346,7 @@
         },
         {
           "author": "MARIO FRIAS",
-          "party": "PL",
+          "party": "Nao identificado",
           "empenhado": 1176000.0
         },
         {
@@ -3356,7 +3356,7 @@
         },
         {
           "author": "DA VITORIA",
-          "party": "PP",
+          "party": "Nao identificado",
           "empenhado": 922333.77
         },
         {
@@ -3371,7 +3371,7 @@
         },
         {
           "author": "TONINHO WANDSCHEER",
-          "party": "PP",
+          "party": "Nao identificado",
           "empenhado": 675000.0
         },
         {
@@ -3381,12 +3381,12 @@
         },
         {
           "author": "GILBERTO ABRAMO",
-          "party": "REPUBLICANOS",
+          "party": "Nao identificado",
           "empenhado": 500000.0
         },
         {
           "author": "TARCISIO MOTTA",
-          "party": "PSOL",
+          "party": "Nao identificado",
           "empenhado": 403785.2
         },
         {
@@ -3396,27 +3396,27 @@
         },
         {
           "author": "TABATA AMARAL",
-          "party": "PSB",
+          "party": "Nao identificado",
           "empenhado": 350000.0
         },
         {
           "author": "JANDIRA FEGHALI",
-          "party": "PCdoB",
+          "party": "Nao identificado",
           "empenhado": 300000.0
         },
         {
           "author": "PAULO PIMENTA",
-          "party": "PT",
+          "party": "Nao identificado",
           "empenhado": 258483.51
         },
         {
           "author": "RUBENS PEREIRA JUNIOR",
-          "party": "PT",
+          "party": "Nao identificado",
           "empenhado": 250000.0
         },
         {
           "author": "SAMIA BOMFIM",
-          "party": "PSOL",
+          "party": "Nao identificado",
           "empenhado": 200000.0
         },
         {
@@ -3426,12 +3426,12 @@
         },
         {
           "author": "DAIANA SANTOS",
-          "party": "PCdoB",
+          "party": "Nao identificado",
           "empenhado": 200000.0
         },
         {
           "author": "MARANGONI",
-          "party": "PODE",
+          "party": "Nao identificado",
           "empenhado": 200000.0
         }
       ],
@@ -4020,7 +4020,7 @@
       }
     },
     "party_lookup": {
-      "camara_mapeados": 513,
+      "camara_mapeados": 0,
       "senado_mapeados": 81
     }
   },
@@ -6051,6 +6051,17 @@
       "autores_com_aumento": 0,
       "destinos_com_aumento": 0,
       "previous_snapshot_date": "2026-10-30",
+      "interval_days": 1,
+      "source_changed": false
+    },
+    {
+      "date": "2026-11-01",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 342841860209.16,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-10-31",
       "interval_days": 1,
       "source_changed": false
     }
@@ -8255,7 +8266,17 @@
       "empenhado": 40400462236.0,
       "liquidado": 26246640055.0,
       "pago": 25911990253.0
+    },
+    {
+      "date": "2026-11-01",
+      "last_update": "",
+      "base_siafi_date": "29/10/2026",
+      "dotacao_inicial_emenda": 49769403428.0,
+      "dotacao_atual_emenda": 49901486762.0,
+      "empenhado": 40400462236.0,
+      "liquidado": 26246640055.0,
+      "pago": 25911990253.0
     }
   ],
-  "updated_at": "2026-10-31T17:39:13.577285+00:00"
+  "updated_at": "2026-11-01T18:23:17.939924+00:00"
 }
