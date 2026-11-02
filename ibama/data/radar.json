@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-10-26T14:24:05.104271+00:00",
+  "generated_at": "2026-11-02T17:12:40.708208+00:00",
   "year": 2026,
-  "through": "2026-10-24",
+  "through": "2026-11-01",
   "previous_year": 2025,
-  "total_current": 13572,
-  "total_previous": 13216,
+  "total_current": 13800,
+  "total_previous": 13595,
   "places": [
     {
       "city": "RIO DE JANEIRO",
       "uf": "RJ",
-      "current": 299,
+      "current": 300,
       "previous": 77,
-      "delta": 222
+      "delta": 223
     },
     {
       "city": "GOIANIA",
       "uf": "GO",
       "current": 200,
-      "previous": 38,
-      "delta": 162
+      "previous": 47,
+      "delta": 153
     },
     {
       "city": "FLORIANOPOLIS",
       "uf": "SC",
-      "current": 182,
-      "previous": 40,
-      "delta": 142
+      "current": 184,
+      "previous": 44,
+      "delta": 140
     },
     {
       "city": "TRAIRAO",
@@ -40,6 +40,13 @@
       "current": 98,
       "previous": 0,
       "delta": 98
+    },
+    {
+      "city": "CARUARU",
+      "uf": "PE",
+      "current": 94,
+      "previous": 2,
+      "delta": 92
     },
     {
       "city": "CAMPOS DOS GOYTACAZES",
@@ -61,13 +68,6 @@
       "current": 111,
       "previous": 26,
       "delta": 85
-    },
-    {
-      "city": "CARUARU",
-      "uf": "PE",
-      "current": 86,
-      "previous": 2,
-      "delta": 84
     }
   ],
   "method": "Autos por municipio e UF com data do auto entre 1 jan e a data de corte em cada ano. Normalizacao de caixa e acentos. Selecionados apenas locais com >=30 autos no ano atual, >=20 a mais que no anterior e pelo menos 1,8 vez o volume anterior."
