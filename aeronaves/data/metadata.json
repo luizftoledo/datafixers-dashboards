@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-11-01T18:03:19+00:00",
-  "source_updated_at": "2026-11-01",
-  "source_header": "Atualizado em: 2026-11-01",
+  "generated_at": "2026-11-02T21:53:07+00:00",
+  "source_updated_at": "2026-11-02",
+  "source_header": "Atualizado em: 2026-11-02",
   "source_file": "dados_aeronaves.csv",
-  "source_size_bytes": 24327620,
+  "source_size_bytes": 24327916,
   "data_file": "records.jsonl.gz",
-  "rows": 35111,
-  "active_rows": 26906,
+  "rows": 35112,
+  "active_rows": 26907,
   "canceled_rows": 8205,
-  "rows_with_document": 35111,
+  "rows_with_document": 35112,
   "rows_with_masked_document": 11831,
-  "unique_operators": 20577,
+  "unique_operators": 20578,
   "null_uf_rows": 0,
   "ufs": [
     "AC",
@@ -48,10 +48,10 @@
   "year_max": 2029,
   "search_result_limit": 20,
   "sample_queries": [
-    "PP-KLA",
-    "KLABIN S.A.",
-    "89637490013395",
-    "PS-GAR"
+    "PR-JLE",
+    "MASTER AVIAÇÃO AGRÍCOLA LTDA",
+    "24365724000105",
+    "PT-BZS"
   ],
   "methodology": [
     "Esta página foi gerada a partir do CSV original entregue para o site, em vez de consultar o portal da ANAC em tempo real.",
