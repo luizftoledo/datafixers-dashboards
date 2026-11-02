@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-11-01T18:36:48.939229+00:00",
+  "generated_at": "2026-11-02T22:29:47.570532+00:00",
   "counts": {
-    "items": 98,
-    "domains": 25,
+    "items": 88,
+    "domains": 24,
     "categories": {
-      "reportagem_autoral": 68,
+      "reportagem_autoral": 60,
       "republicacao": 0,
       "eco_repercussao": 2,
-      "citacao_fonte": 2,
-      "mencao": 8,
+      "citacao_fonte": 1,
+      "mencao": 7,
       "entrevista": 1,
       "palestra_curso": 0,
       "perfil_bio": 17
     },
     "recent": {
-      "last_1_day": 1,
+      "last_1_day": 0,
       "last_7_days": 4,
       "last_30_days": 15
     }
   },
   "date_range": {
-    "min": "2019-02-05",
+    "min": "2019-09-16",
     "max": "2026-10-31"
   },
   "methodology": {
@@ -36,33 +36,33 @@
         "known_external_sources": 47
       },
       "searches": {
-        "google-news-rss:\"Luiz Fernando Toledo\"": 40,
+        "google-news-rss:\"Luiz Fernando Toledo\"": 27,
         "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 1,
         "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 4,
         "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 20
       }
     },
     "enrich": {
-      "fetched": 76,
-      "reused": 26,
-      "kept": 98,
+      "fetched": 60,
+      "reused": 32,
+      "kept": 88,
       "dropped": 4,
       "categories": {
         "perfil_bio": 17,
-        "reportagem_autoral": 68,
-        "mencao": 8,
+        "reportagem_autoral": 60,
+        "mencao": 7,
         "entrevista": 1,
-        "citacao_fonte": 2,
+        "citacao_fonte": 1,
         "eco_repercussao": 2
       },
       "domains": {
-        "bbc.com": 60,
+        "bbc.com": 52,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
         "ojoioeotrigo.com.br": 1,
-        "estadao.com.br": 5,
-        "g1.globo.com": 2,
+        "estadao.com.br": 4,
+        "g1.globo.com": 1,
         "escavador.com": 1,
         "icfj.org": 1,
         "devstudies.cam.ac.uk": 1,
@@ -76,11 +76,10 @@
         "cima.ned.org": 1,
         "scielo.br": 1,
         "abraji.org.br": 2,
-        "fiquemsabendo.com.br": 1,
-        "piaui.uol.com.br": 5,
         "sbtnews.sbt.com.br": 1,
-        "geledes.org.br": 1,
-        "cnnbrasil.com.br": 3
+        "piaui.uol.com.br": 5,
+        "fiquemsabendo.com.br": 1,
+        "cnnbrasil.com.br": 4
       },
       "errors": [
         {
