@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T18:32:14.398282+00:00",
+  "updated_at": "2026-11-03T19:32:53.437190+00:00",
   "years_covered": [
     2015,
     2016,
@@ -15,17 +15,17 @@
     2026
   ],
   "overall": {
-    "total_requests": 1006765,
-    "denied_total": 66910,
-    "restricted_total": 125541,
-    "personal_restricted_total": 13726,
-    "denied_rate": 0.0664603954249502,
-    "restricted_rate": 0.12469742194057203,
-    "personal_share_in_restricted": 0.10933479898997141
+    "total_requests": 1006376,
+    "denied_total": 66793,
+    "restricted_total": 125418,
+    "personal_restricted_total": 13629,
+    "denied_rate": 0.06636982598949101,
+    "restricted_rate": 0.12462340119398714,
+    "personal_share_in_restricted": 0.10866861216093383
   },
   "source": {
     "source_id": "publica",
-    "source_label": "Pedidos e recursos marcados como públicos (BuscaLAI)",
+    "source_label": "Pedidos federais marcados como públicos (BuscaLAI)",
     "portal_url": "https://buscalai.cgu.gov.br/DownloadDados/DownloadDados",
     "download_url_template": "https://dadosabertos-download.cgu.gov.br/FalaBR/Arquivos_FalaBR_Filtrado/Arquivos_csv_{year}.zip",
     "precedentes_url": "https://www.gov.br/cgu/pt-br/acesso-a-informacao/dados-abertos/arquivos/busca-de-precedentes",
@@ -44,7 +44,7 @@
       2026
     ]
   },
-  "sample_count": 66910,
-  "years_refreshed_in_run": 1,
+  "sample_count": 66793,
+  "years_refreshed_in_run": 4,
   "build_notes": "Cache anual incremental: anos anteriores ficam congelados; ano corrente é reprocessado a cada execução."
 }

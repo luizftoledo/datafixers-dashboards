@@ -9,7 +9,7 @@ import build_lai_dashboard_data as base
 SOURCES = {
     "ampla": {
         "id": "ampla",
-        "label": "Todos os pedidos e recursos (Fala.BR/CGU)",
+        "label": "Pedidos federais (Fala.BR/CGU)",
         "portal_url": "https://falabr.cgu.gov.br/web/dadosabertoslai",
         "download_url_template": (
             "https://dadosabertos-download.cgu.gov.br/FalaBR/Arquivos_FalaBR/"
@@ -23,7 +23,7 @@ SOURCES = {
     },
     "publica": {
         "id": "publica",
-        "label": "Pedidos e recursos marcados como públicos (BuscaLAI)",
+        "label": "Pedidos federais marcados como públicos (BuscaLAI)",
         "portal_url": "https://buscalai.cgu.gov.br/DownloadDados/DownloadDados",
         "download_url_template": (
             "https://dadosabertos-download.cgu.gov.br/FalaBR/Arquivos_FalaBR_Filtrado/"
