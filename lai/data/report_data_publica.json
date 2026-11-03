@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-01T18:32:14.398282+00:00",
+  "generated_at": "2026-11-03T19:32:53.437190+00:00",
   "source": {
     "source_id": "publica",
-    "source_label": "Pedidos e recursos marcados como públicos (BuscaLAI)",
+    "source_label": "Pedidos federais marcados como públicos (BuscaLAI)",
     "portal_url": "https://buscalai.cgu.gov.br/DownloadDados/DownloadDados",
     "download_url_template": "https://dadosabertos-download.cgu.gov.br/FalaBR/Arquivos_FalaBR_Filtrado/Arquivos_csv_{year}.zip",
     "precedentes_url": "https://www.gov.br/cgu/pt-br/acesso-a-informacao/dados-abertos/arquivos/busca-de-precedentes",
@@ -22,13 +22,13 @@
     ]
   },
   "overall": {
-    "total_requests": 1006765,
-    "denied_total": 66910,
-    "restricted_total": 125541,
-    "personal_restricted_total": 13726,
-    "denied_rate": 0.0664603954249502,
-    "restricted_rate": 0.12469742194057203,
-    "personal_share_in_restricted": 0.10933479898997141
+    "total_requests": 1006376,
+    "denied_total": 66793,
+    "restricted_total": 125418,
+    "personal_restricted_total": 13629,
+    "denied_rate": 0.06636982598949101,
+    "restricted_rate": 0.12462340119398714,
+    "personal_share_in_restricted": 0.10866861216093383
   },
   "series": [
     {
@@ -63,42 +63,42 @@
     },
     {
       "year": 2018,
-      "total_requests": 90662,
-      "denied_total": 6162,
-      "restricted_total": 10044,
+      "total_requests": 90628,
+      "denied_total": 6161,
+      "restricted_total": 10041,
       "personal_restricted_total": 1257,
-      "denied_rate": 0.06796673358187554,
-      "restricted_rate": 0.11078511393968807,
-      "personal_share_in_restricted": 0.12514934289127838
+      "denied_rate": 0.06798119786379485,
+      "restricted_rate": 0.11079357372997307,
+      "personal_share_in_restricted": 0.12518673438900507
     },
     {
       "year": 2019,
-      "total_requests": 95421,
+      "total_requests": 95392,
       "denied_total": 7526,
       "restricted_total": 12226,
       "personal_restricted_total": 1116,
-      "denied_rate": 0.07887152723195104,
-      "restricted_rate": 0.1281269322266587,
+      "denied_rate": 0.07889550486413956,
+      "restricted_rate": 0.12816588393156658,
       "personal_share_in_restricted": 0.09128087681989204
     },
     {
       "year": 2020,
-      "total_requests": 110675,
+      "total_requests": 110663,
       "denied_total": 7261,
-      "restricted_total": 12266,
-      "personal_restricted_total": 1368,
-      "denied_rate": 0.06560650553422182,
-      "restricted_rate": 0.11082900384007228,
-      "personal_share_in_restricted": 0.11152780042393608
+      "restricted_total": 12265,
+      "personal_restricted_total": 1367,
+      "denied_rate": 0.06561361972836449,
+      "restricted_rate": 0.11083198539710654,
+      "personal_share_in_restricted": 0.11145536078271505
     },
     {
       "year": 2021,
-      "total_requests": 79113,
+      "total_requests": 79111,
       "denied_total": 5110,
       "restricted_total": 9794,
       "personal_restricted_total": 1025,
-      "denied_rate": 0.06459115442468367,
-      "restricted_rate": 0.12379760595603756,
+      "denied_rate": 0.06459278734942044,
+      "restricted_rate": 0.12380073567519055,
       "personal_share_in_restricted": 0.10465591178272411
     },
     {
@@ -113,43 +113,43 @@
     },
     {
       "year": 2023,
-      "total_requests": 89519,
-      "denied_total": 6056,
-      "restricted_total": 11271,
-      "personal_restricted_total": 860,
-      "denied_rate": 0.0676504429227315,
-      "restricted_rate": 0.12590623219651695,
-      "personal_share_in_restricted": 0.07630201401827699
+      "total_requests": 89508,
+      "denied_total": 6054,
+      "restricted_total": 11269,
+      "personal_restricted_total": 859,
+      "denied_rate": 0.06763641238771953,
+      "restricted_rate": 0.12589936095097645,
+      "personal_share_in_restricted": 0.07622681693140473
     },
     {
       "year": 2024,
-      "total_requests": 78987,
-      "denied_total": 5353,
-      "restricted_total": 10928,
-      "personal_restricted_total": 1063,
-      "denied_rate": 0.06777064580247383,
-      "restricted_rate": 0.13835188068922735,
-      "personal_share_in_restricted": 0.09727306002928257
+      "total_requests": 78827,
+      "denied_total": 5293,
+      "restricted_total": 10866,
+      "personal_restricted_total": 1010,
+      "denied_rate": 0.0671470435256955,
+      "restricted_rate": 0.1378461694597029,
+      "personal_share_in_restricted": 0.09295048775998528
     },
     {
       "year": 2025,
-      "total_requests": 83924,
-      "denied_total": 5353,
-      "restricted_total": 12149,
-      "personal_restricted_total": 932,
-      "denied_rate": 0.0637838997187932,
-      "restricted_rate": 0.14476192745817645,
-      "personal_share_in_restricted": 0.07671413285044036
+      "total_requests": 83773,
+      "denied_total": 5299,
+      "restricted_total": 12092,
+      "personal_restricted_total": 889,
+      "denied_rate": 0.06325427046900553,
+      "restricted_rate": 0.14434244923782125,
+      "personal_share_in_restricted": 0.07351968243466755
     },
     {
       "year": 2026,
-      "total_requests": 67506,
+      "total_requests": 67516,
       "denied_total": 4979,
-      "restricted_total": 11625,
-      "personal_restricted_total": 743,
-      "denied_rate": 0.07375640683791071,
-      "restricted_rate": 0.17220691494089413,
-      "personal_share_in_restricted": 0.06391397849462366
+      "restricted_total": 11627,
+      "personal_restricted_total": 744,
+      "denied_rate": 0.0737454825522839,
+      "restricted_rate": 0.17221103145920966,
+      "personal_share_in_restricted": 0.06398899114130903
     }
   ],
   "monthly_series": [
@@ -589,24 +589,24 @@
       "year": 2018,
       "month": 1,
       "month_label": "janeiro",
-      "total_requests": 8083,
+      "total_requests": 8075,
       "denied_total": 591,
       "restricted_total": 928,
       "personal_restricted_total": 198,
-      "denied_rate": 0.07311641717184214,
-      "restricted_rate": 0.11480885809724112,
+      "denied_rate": 0.07318885448916408,
+      "restricted_rate": 0.11492260061919504,
       "personal_share_in_restricted": 0.21336206896551724
     },
     {
       "year": 2018,
       "month": 2,
       "month_label": "fevereiro",
-      "total_requests": 6487,
+      "total_requests": 6486,
       "denied_total": 488,
       "restricted_total": 772,
       "personal_restricted_total": 100,
-      "denied_rate": 0.07522737783258826,
-      "restricted_rate": 0.11900724525975027,
+      "denied_rate": 0.07523897625655257,
+      "restricted_rate": 0.11902559358618563,
       "personal_share_in_restricted": 0.12953367875647667
     },
     {
@@ -625,48 +625,48 @@
       "year": 2018,
       "month": 4,
       "month_label": "abril",
-      "total_requests": 8444,
+      "total_requests": 8440,
       "denied_total": 546,
       "restricted_total": 855,
       "personal_restricted_total": 167,
-      "denied_rate": 0.06466129796305069,
-      "restricted_rate": 0.1012553292278541,
+      "denied_rate": 0.06469194312796209,
+      "restricted_rate": 0.10130331753554503,
       "personal_share_in_restricted": 0.1953216374269006
     },
     {
       "year": 2018,
       "month": 5,
       "month_label": "maio",
-      "total_requests": 7888,
-      "denied_total": 500,
-      "restricted_total": 833,
+      "total_requests": 7884,
+      "denied_total": 499,
+      "restricted_total": 832,
       "personal_restricted_total": 90,
-      "denied_rate": 0.06338742393509128,
-      "restricted_rate": 0.10560344827586207,
-      "personal_share_in_restricted": 0.10804321728691477
+      "denied_rate": 0.06329274479959411,
+      "restricted_rate": 0.10553018772196854,
+      "personal_share_in_restricted": 0.10817307692307693
     },
     {
       "year": 2018,
       "month": 6,
       "month_label": "junho",
-      "total_requests": 7296,
+      "total_requests": 7294,
       "denied_total": 413,
-      "restricted_total": 733,
+      "restricted_total": 732,
       "personal_restricted_total": 49,
-      "denied_rate": 0.056606359649122806,
-      "restricted_rate": 0.10046600877192982,
-      "personal_share_in_restricted": 0.06684856753069578
+      "denied_rate": 0.05662188099808062,
+      "restricted_rate": 0.10035645736221552,
+      "personal_share_in_restricted": 0.06693989071038252
     },
     {
       "year": 2018,
       "month": 7,
       "month_label": "julho",
-      "total_requests": 7521,
+      "total_requests": 7516,
       "denied_total": 438,
       "restricted_total": 720,
       "personal_restricted_total": 82,
-      "denied_rate": 0.05823693657758277,
-      "restricted_rate": 0.09573195053849222,
+      "denied_rate": 0.0582756785524215,
+      "restricted_rate": 0.09579563597658329,
       "personal_share_in_restricted": 0.11388888888888889
     },
     {
@@ -685,132 +685,132 @@
       "year": 2018,
       "month": 9,
       "month_label": "setembro",
-      "total_requests": 7174,
+      "total_requests": 7170,
       "denied_total": 523,
-      "restricted_total": 846,
+      "restricted_total": 845,
       "personal_restricted_total": 62,
-      "denied_rate": 0.07290214664064679,
-      "restricted_rate": 0.11792584332311123,
-      "personal_share_in_restricted": 0.07328605200945626
+      "denied_rate": 0.07294281729428173,
+      "restricted_rate": 0.11785216178521618,
+      "personal_share_in_restricted": 0.07337278106508875
     },
     {
       "year": 2018,
       "month": 10,
       "month_label": "outubro",
-      "total_requests": 8053,
+      "total_requests": 8051,
       "denied_total": 546,
       "restricted_total": 834,
       "personal_restricted_total": 93,
-      "denied_rate": 0.06780081957034645,
-      "restricted_rate": 0.10356388923382591,
+      "denied_rate": 0.06781766240218606,
+      "restricted_rate": 0.10358961619674574,
       "personal_share_in_restricted": 0.11151079136690648
     },
     {
       "year": 2018,
       "month": 11,
       "month_label": "novembro",
-      "total_requests": 6657,
+      "total_requests": 6654,
       "denied_total": 498,
       "restricted_total": 819,
       "personal_restricted_total": 95,
-      "denied_rate": 0.07480847228481298,
-      "restricted_rate": 0.12302839116719243,
+      "denied_rate": 0.07484220018034266,
+      "restricted_rate": 0.12308385933273219,
       "personal_share_in_restricted": 0.115995115995116
     },
     {
       "year": 2018,
       "month": 12,
       "month_label": "dezembro",
-      "total_requests": 5670,
+      "total_requests": 5669,
       "denied_total": 432,
       "restricted_total": 696,
       "personal_restricted_total": 51,
-      "denied_rate": 0.0761904761904762,
-      "restricted_rate": 0.12275132275132275,
+      "denied_rate": 0.07620391603457399,
+      "restricted_rate": 0.12277297583348033,
       "personal_share_in_restricted": 0.07327586206896551
     },
     {
       "year": 2019,
       "month": 1,
       "month_label": "janeiro",
-      "total_requests": 7276,
+      "total_requests": 7269,
       "denied_total": 525,
       "restricted_total": 898,
       "personal_restricted_total": 55,
-      "denied_rate": 0.07215503023639362,
-      "restricted_rate": 0.1234194612424409,
+      "denied_rate": 0.07222451506397029,
+      "restricted_rate": 0.12353831338561012,
       "personal_share_in_restricted": 0.061247216035634745
     },
     {
       "year": 2019,
       "month": 2,
       "month_label": "fevereiro",
-      "total_requests": 7122,
+      "total_requests": 7119,
       "denied_total": 484,
       "restricted_total": 849,
       "personal_restricted_total": 78,
-      "denied_rate": 0.06795843864083123,
-      "restricted_rate": 0.11920808761583825,
+      "denied_rate": 0.06798707683663435,
+      "restricted_rate": 0.11925832279814581,
       "personal_share_in_restricted": 0.09187279151943463
     },
     {
       "year": 2019,
       "month": 3,
       "month_label": "março",
-      "total_requests": 7179,
+      "total_requests": 7176,
       "denied_total": 477,
       "restricted_total": 811,
       "personal_restricted_total": 71,
-      "denied_rate": 0.06644379440033431,
-      "restricted_rate": 0.1129683799972141,
+      "denied_rate": 0.06647157190635451,
+      "restricted_rate": 0.11301560758082498,
       "personal_share_in_restricted": 0.08754623921085081
     },
     {
       "year": 2019,
       "month": 4,
       "month_label": "abril",
-      "total_requests": 9512,
+      "total_requests": 9510,
       "denied_total": 606,
       "restricted_total": 1078,
       "personal_restricted_total": 82,
-      "denied_rate": 0.06370899915895711,
-      "restricted_rate": 0.1133305298570227,
+      "denied_rate": 0.06372239747634069,
+      "restricted_rate": 0.11335436382754994,
       "personal_share_in_restricted": 0.07606679035250463
     },
     {
       "year": 2019,
       "month": 5,
       "month_label": "maio",
-      "total_requests": 9737,
+      "total_requests": 9735,
       "denied_total": 1080,
       "restricted_total": 1547,
       "personal_restricted_total": 110,
-      "denied_rate": 0.11091712026291466,
-      "restricted_rate": 0.1588785046728972,
+      "denied_rate": 0.11093990755007704,
+      "restricted_rate": 0.15891114535182332,
       "personal_share_in_restricted": 0.07110536522301228
     },
     {
       "year": 2019,
       "month": 6,
       "month_label": "junho",
-      "total_requests": 6212,
+      "total_requests": 6209,
       "denied_total": 536,
       "restricted_total": 856,
       "personal_restricted_total": 64,
-      "denied_rate": 0.08628461043142305,
-      "restricted_rate": 0.13779781068898905,
+      "denied_rate": 0.08632630053148656,
+      "restricted_rate": 0.13786439040103077,
       "personal_share_in_restricted": 0.07476635514018691
     },
     {
       "year": 2019,
       "month": 7,
       "month_label": "julho",
-      "total_requests": 7653,
+      "total_requests": 7652,
       "denied_total": 653,
       "restricted_total": 1018,
       "personal_restricted_total": 97,
-      "denied_rate": 0.08532601594146086,
-      "restricted_rate": 0.13301973082451327,
+      "denied_rate": 0.08533716675378986,
+      "restricted_rate": 0.13303711447987454,
       "personal_share_in_restricted": 0.09528487229862476
     },
     {
@@ -829,24 +829,24 @@
       "year": 2019,
       "month": 9,
       "month_label": "setembro",
-      "total_requests": 8856,
+      "total_requests": 8855,
       "denied_total": 695,
       "restricted_total": 1147,
       "personal_restricted_total": 80,
-      "denied_rate": 0.07847786811201446,
-      "restricted_rate": 0.129516711833785,
+      "denied_rate": 0.07848673066064371,
+      "restricted_rate": 0.1295313382269904,
       "personal_share_in_restricted": 0.06974716652136007
     },
     {
       "year": 2019,
       "month": 10,
       "month_label": "outubro",
-      "total_requests": 9251,
+      "total_requests": 9249,
       "denied_total": 601,
       "restricted_total": 1022,
       "personal_restricted_total": 72,
-      "denied_rate": 0.06496594962706734,
-      "restricted_rate": 0.11047454329261701,
+      "denied_rate": 0.06497999783760407,
+      "restricted_rate": 0.11049843226294735,
       "personal_share_in_restricted": 0.07045009784735812
     },
     {
@@ -865,84 +865,84 @@
       "year": 2019,
       "month": 12,
       "month_label": "dezembro",
-      "total_requests": 5983,
+      "total_requests": 5978,
       "denied_total": 417,
       "restricted_total": 680,
       "personal_restricted_total": 80,
-      "denied_rate": 0.06969747618251713,
-      "restricted_rate": 0.11365535684439244,
+      "denied_rate": 0.06975577116092338,
+      "restricted_rate": 0.11375041820006691,
       "personal_share_in_restricted": 0.11764705882352941
     },
     {
       "year": 2020,
       "month": 1,
       "month_label": "janeiro",
-      "total_requests": 8295,
+      "total_requests": 8294,
       "denied_total": 567,
-      "restricted_total": 1039,
-      "personal_restricted_total": 95,
-      "denied_rate": 0.06835443037974684,
-      "restricted_rate": 0.1252561784207354,
-      "personal_share_in_restricted": 0.09143407122232916
+      "restricted_total": 1038,
+      "personal_restricted_total": 94,
+      "denied_rate": 0.06836267181094767,
+      "restricted_rate": 0.1251507113576079,
+      "personal_share_in_restricted": 0.0905587668593449
     },
     {
       "year": 2020,
       "month": 2,
       "month_label": "fevereiro",
-      "total_requests": 8656,
+      "total_requests": 8654,
       "denied_total": 658,
       "restricted_total": 1087,
       "personal_restricted_total": 112,
-      "denied_rate": 0.07601663585951941,
-      "restricted_rate": 0.12557763401109057,
+      "denied_rate": 0.07603420383637624,
+      "restricted_rate": 0.12560665588167322,
       "personal_share_in_restricted": 0.10303587856485741
     },
     {
       "year": 2020,
       "month": 3,
       "month_label": "março",
-      "total_requests": 7513,
+      "total_requests": 7511,
       "denied_total": 623,
       "restricted_total": 1003,
       "personal_restricted_total": 111,
-      "denied_rate": 0.08292293358179156,
-      "restricted_rate": 0.13350192998802077,
+      "denied_rate": 0.08294501397949673,
+      "restricted_rate": 0.13353747836506458,
       "personal_share_in_restricted": 0.1106679960119641
     },
     {
       "year": 2020,
       "month": 4,
       "month_label": "abril",
-      "total_requests": 8625,
+      "total_requests": 8624,
       "denied_total": 599,
       "restricted_total": 1177,
       "personal_restricted_total": 88,
-      "denied_rate": 0.06944927536231885,
-      "restricted_rate": 0.13646376811594202,
+      "denied_rate": 0.06945732838589981,
+      "restricted_rate": 0.1364795918367347,
       "personal_share_in_restricted": 0.07476635514018691
     },
     {
       "year": 2020,
       "month": 5,
       "month_label": "maio",
-      "total_requests": 9817,
+      "total_requests": 9813,
       "denied_total": 689,
       "restricted_total": 1272,
       "personal_restricted_total": 162,
-      "denied_rate": 0.07018437404502394,
-      "restricted_rate": 0.12957115208312112,
+      "denied_rate": 0.07021298277794762,
+      "restricted_rate": 0.12962396820544175,
       "personal_share_in_restricted": 0.12735849056603774
     },
     {
       "year": 2020,
       "month": 6,
       "month_label": "junho",
-      "total_requests": 10285,
+      "total_requests": 10284,
       "denied_total": 726,
       "restricted_total": 1218,
       "personal_restricted_total": 146,
-      "denied_rate": 0.07058823529411765,
-      "restricted_rate": 0.11842489061740398,
+      "denied_rate": 0.0705950991831972,
+      "restricted_rate": 0.11843640606767794,
       "personal_share_in_restricted": 0.11986863711001643
     },
     {
@@ -973,12 +973,12 @@
       "year": 2020,
       "month": 9,
       "month_label": "setembro",
-      "total_requests": 10308,
+      "total_requests": 10307,
       "denied_total": 602,
       "restricted_total": 927,
       "personal_restricted_total": 103,
-      "denied_rate": 0.05840124175397749,
-      "restricted_rate": 0.089930151338766,
+      "denied_rate": 0.05840690792665179,
+      "restricted_rate": 0.08993887649170466,
       "personal_share_in_restricted": 0.1111111111111111
     },
     {
@@ -1129,24 +1129,24 @@
       "year": 2021,
       "month": 10,
       "month_label": "outubro",
-      "total_requests": 5744,
+      "total_requests": 5743,
       "denied_total": 283,
       "restricted_total": 576,
       "personal_restricted_total": 39,
-      "denied_rate": 0.049268802228412255,
-      "restricted_rate": 0.10027855153203342,
+      "denied_rate": 0.049277381159672645,
+      "restricted_rate": 0.10029601253700157,
       "personal_share_in_restricted": 0.06770833333333333
     },
     {
       "year": 2021,
       "month": 11,
       "month_label": "novembro",
-      "total_requests": 5557,
+      "total_requests": 5556,
       "denied_total": 494,
       "restricted_total": 787,
       "personal_restricted_total": 253,
-      "denied_rate": 0.08889688680942955,
-      "restricted_rate": 0.14162317797372684,
+      "denied_rate": 0.08891288696904248,
+      "restricted_rate": 0.14164866810655147,
       "personal_share_in_restricted": 0.32147395171537485
     },
     {
@@ -1345,12 +1345,12 @@
       "year": 2023,
       "month": 4,
       "month_label": "abril",
-      "total_requests": 6861,
+      "total_requests": 6860,
       "denied_total": 443,
       "restricted_total": 944,
       "personal_restricted_total": 78,
-      "denied_rate": 0.06456784725258709,
-      "restricted_rate": 0.13758927270077248,
+      "denied_rate": 0.06457725947521865,
+      "restricted_rate": 0.13760932944606413,
       "personal_share_in_restricted": 0.0826271186440678
     },
     {
@@ -1381,12 +1381,12 @@
       "year": 2023,
       "month": 7,
       "month_label": "julho",
-      "total_requests": 7222,
+      "total_requests": 7221,
       "denied_total": 437,
       "restricted_total": 890,
       "personal_restricted_total": 70,
-      "denied_rate": 0.06050955414012739,
-      "restricted_rate": 0.12323456106341733,
+      "denied_rate": 0.060517933804182245,
+      "restricted_rate": 0.12325162719844897,
       "personal_share_in_restricted": 0.07865168539325842
     },
     {
@@ -1417,325 +1417,325 @@
       "year": 2023,
       "month": 10,
       "month_label": "outubro",
-      "total_requests": 8317,
+      "total_requests": 8315,
       "denied_total": 519,
       "restricted_total": 1019,
       "personal_restricted_total": 76,
-      "denied_rate": 0.062402308524708426,
-      "restricted_rate": 0.1225201394733678,
+      "denied_rate": 0.0624173180998196,
+      "restricted_rate": 0.12254960914010823,
       "personal_share_in_restricted": 0.0745829244357213
     },
     {
       "year": 2023,
       "month": 11,
       "month_label": "novembro",
-      "total_requests": 6559,
+      "total_requests": 6558,
       "denied_total": 454,
       "restricted_total": 802,
       "personal_restricted_total": 83,
-      "denied_rate": 0.06921786857752706,
-      "restricted_rate": 0.12227473700259185,
+      "denied_rate": 0.06922842329978653,
+      "restricted_rate": 0.12229338212869777,
       "personal_share_in_restricted": 0.10349127182044887
     },
     {
       "year": 2023,
       "month": 12,
       "month_label": "dezembro",
-      "total_requests": 5465,
-      "denied_total": 291,
-      "restricted_total": 612,
-      "personal_restricted_total": 52,
-      "denied_rate": 0.05324794144556267,
-      "restricted_rate": 0.11198536139066789,
-      "personal_share_in_restricted": 0.08496732026143791
+      "total_requests": 5459,
+      "denied_total": 289,
+      "restricted_total": 610,
+      "personal_restricted_total": 51,
+      "denied_rate": 0.05294009891921597,
+      "restricted_rate": 0.11174207730353544,
+      "personal_share_in_restricted": 0.08360655737704918
     },
     {
       "year": 2024,
       "month": 1,
       "month_label": "janeiro",
-      "total_requests": 7610,
-      "denied_total": 461,
-      "restricted_total": 1019,
-      "personal_restricted_total": 102,
-      "denied_rate": 0.06057818659658344,
-      "restricted_rate": 0.13390275952693823,
-      "personal_share_in_restricted": 0.10009813542688911
+      "total_requests": 7592,
+      "denied_total": 453,
+      "restricted_total": 1011,
+      "personal_restricted_total": 95,
+      "denied_rate": 0.059668071654373024,
+      "restricted_rate": 0.13316649104320338,
+      "personal_share_in_restricted": 0.09396636993076163
     },
     {
       "year": 2024,
       "month": 2,
       "month_label": "fevereiro",
-      "total_requests": 6437,
-      "denied_total": 368,
-      "restricted_total": 778,
-      "personal_restricted_total": 89,
-      "denied_rate": 0.05716948889234115,
-      "restricted_rate": 0.12086375640826472,
-      "personal_share_in_restricted": 0.11439588688946016
+      "total_requests": 6429,
+      "denied_total": 364,
+      "restricted_total": 774,
+      "personal_restricted_total": 85,
+      "denied_rate": 0.05661844765904495,
+      "restricted_rate": 0.12039197386840877,
+      "personal_share_in_restricted": 0.10981912144702842
     },
     {
       "year": 2024,
       "month": 3,
       "month_label": "março",
-      "total_requests": 6788,
-      "denied_total": 451,
-      "restricted_total": 926,
-      "personal_restricted_total": 113,
-      "denied_rate": 0.0664407778432528,
-      "restricted_rate": 0.13641720683559222,
-      "personal_share_in_restricted": 0.12203023758099352
+      "total_requests": 6776,
+      "denied_total": 450,
+      "restricted_total": 924,
+      "personal_restricted_total": 112,
+      "denied_rate": 0.06641086186540732,
+      "restricted_rate": 0.13636363636363635,
+      "personal_share_in_restricted": 0.12121212121212122
     },
     {
       "year": 2024,
       "month": 4,
       "month_label": "abril",
-      "total_requests": 6970,
-      "denied_total": 587,
-      "restricted_total": 1106,
-      "personal_restricted_total": 91,
-      "denied_rate": 0.08421807747489239,
-      "restricted_rate": 0.1586800573888092,
-      "personal_share_in_restricted": 0.08227848101265822
+      "total_requests": 6963,
+      "denied_total": 584,
+      "restricted_total": 1103,
+      "personal_restricted_total": 88,
+      "denied_rate": 0.08387189429843458,
+      "restricted_rate": 0.1584087318684475,
+      "personal_share_in_restricted": 0.07978241160471441
     },
     {
       "year": 2024,
       "month": 5,
       "month_label": "maio",
-      "total_requests": 6616,
-      "denied_total": 490,
-      "restricted_total": 935,
-      "personal_restricted_total": 81,
-      "denied_rate": 0.07406287787182587,
-      "restricted_rate": 0.14132406287787183,
-      "personal_share_in_restricted": 0.08663101604278074
+      "total_requests": 6602,
+      "denied_total": 482,
+      "restricted_total": 927,
+      "personal_restricted_total": 75,
+      "denied_rate": 0.07300817933959407,
+      "restricted_rate": 0.14041199636473795,
+      "personal_share_in_restricted": 0.08090614886731391
     },
     {
       "year": 2024,
       "month": 6,
       "month_label": "junho",
-      "total_requests": 6360,
-      "denied_total": 455,
-      "restricted_total": 918,
-      "personal_restricted_total": 97,
-      "denied_rate": 0.07154088050314465,
-      "restricted_rate": 0.14433962264150943,
-      "personal_share_in_restricted": 0.1056644880174292
+      "total_requests": 6345,
+      "denied_total": 445,
+      "restricted_total": 908,
+      "personal_restricted_total": 88,
+      "denied_rate": 0.07013396375098503,
+      "restricted_rate": 0.14310480693459418,
+      "personal_share_in_restricted": 0.09691629955947137
     },
     {
       "year": 2024,
       "month": 7,
       "month_label": "julho",
-      "total_requests": 6499,
-      "denied_total": 465,
-      "restricted_total": 910,
-      "personal_restricted_total": 78,
-      "denied_rate": 0.07154946914909986,
-      "restricted_rate": 0.1400215417756578,
-      "personal_share_in_restricted": 0.08571428571428572
+      "total_requests": 6485,
+      "denied_total": 463,
+      "restricted_total": 907,
+      "personal_restricted_total": 76,
+      "denied_rate": 0.07139552814186584,
+      "restricted_rate": 0.13986121819583655,
+      "personal_share_in_restricted": 0.08379272326350606
     },
     {
       "year": 2024,
       "month": 8,
       "month_label": "agosto",
-      "total_requests": 6086,
-      "denied_total": 417,
-      "restricted_total": 821,
-      "personal_restricted_total": 74,
-      "denied_rate": 0.06851790995727901,
-      "restricted_rate": 0.13489976996385147,
-      "personal_share_in_restricted": 0.09013398294762484
+      "total_requests": 6072,
+      "denied_total": 406,
+      "restricted_total": 810,
+      "personal_restricted_total": 64,
+      "denied_rate": 0.06686429512516469,
+      "restricted_rate": 0.13339920948616601,
+      "personal_share_in_restricted": 0.07901234567901234
     },
     {
       "year": 2024,
       "month": 9,
       "month_label": "setembro",
-      "total_requests": 6353,
-      "denied_total": 399,
-      "restricted_total": 856,
-      "personal_restricted_total": 67,
-      "denied_rate": 0.06280497402801825,
-      "restricted_rate": 0.13473949315284117,
-      "personal_share_in_restricted": 0.07827102803738317
+      "total_requests": 6338,
+      "denied_total": 389,
+      "restricted_total": 846,
+      "personal_restricted_total": 58,
+      "denied_rate": 0.06137582833701483,
+      "restricted_rate": 0.1334805932470811,
+      "personal_share_in_restricted": 0.06855791962174941
     },
     {
       "year": 2024,
       "month": 10,
       "month_label": "outubro",
-      "total_requests": 7656,
-      "denied_total": 521,
-      "restricted_total": 1069,
-      "personal_restricted_total": 113,
-      "denied_rate": 0.06805120167189133,
-      "restricted_rate": 0.13962904911180773,
-      "personal_share_in_restricted": 0.10570626753975679
+      "total_requests": 7643,
+      "denied_total": 519,
+      "restricted_total": 1067,
+      "personal_restricted_total": 112,
+      "denied_rate": 0.06790527279863928,
+      "restricted_rate": 0.13960486719874396,
+      "personal_share_in_restricted": 0.1049671977507029
     },
     {
       "year": 2024,
       "month": 11,
       "month_label": "novembro",
-      "total_requests": 6106,
+      "total_requests": 6095,
       "denied_total": 394,
       "restricted_total": 838,
       "personal_restricted_total": 82,
-      "denied_rate": 0.06452669505404521,
-      "restricted_rate": 0.13724205699312153,
+      "denied_rate": 0.06464315012305168,
+      "restricted_rate": 0.13748974569319114,
       "personal_share_in_restricted": 0.09785202863961814
     },
     {
       "year": 2024,
       "month": 12,
       "month_label": "dezembro",
-      "total_requests": 5506,
-      "denied_total": 345,
-      "restricted_total": 752,
-      "personal_restricted_total": 76,
-      "denied_rate": 0.06265891754449691,
-      "restricted_rate": 0.1365782782419179,
-      "personal_share_in_restricted": 0.10106382978723404
+      "total_requests": 5487,
+      "denied_total": 344,
+      "restricted_total": 751,
+      "personal_restricted_total": 75,
+      "denied_rate": 0.06269363951157281,
+      "restricted_rate": 0.13686896300346274,
+      "personal_share_in_restricted": 0.09986684420772303
     },
     {
       "year": 2025,
       "month": 1,
       "month_label": "janeiro",
-      "total_requests": 7422,
-      "denied_total": 450,
-      "restricted_total": 991,
+      "total_requests": 7416,
+      "denied_total": 449,
+      "restricted_total": 990,
       "personal_restricted_total": 91,
-      "denied_rate": 0.060630557801131774,
-      "restricted_rate": 0.1335219617353813,
-      "personal_share_in_restricted": 0.09182643794147326
+      "denied_rate": 0.06054476806903991,
+      "restricted_rate": 0.13349514563106796,
+      "personal_share_in_restricted": 0.09191919191919191
     },
     {
       "year": 2025,
       "month": 2,
       "month_label": "fevereiro",
-      "total_requests": 7120,
-      "denied_total": 401,
-      "restricted_total": 974,
-      "personal_restricted_total": 60,
-      "denied_rate": 0.05632022471910112,
-      "restricted_rate": 0.13679775280898876,
-      "personal_share_in_restricted": 0.061601642710472276
+      "total_requests": 7103,
+      "denied_total": 398,
+      "restricted_total": 970,
+      "personal_restricted_total": 57,
+      "denied_rate": 0.05603266225538505,
+      "restricted_rate": 0.13656201604955653,
+      "personal_share_in_restricted": 0.058762886597938144
     },
     {
       "year": 2025,
       "month": 3,
       "month_label": "março",
-      "total_requests": 6463,
-      "denied_total": 371,
-      "restricted_total": 956,
-      "personal_restricted_total": 58,
-      "denied_rate": 0.05740368250038682,
-      "restricted_rate": 0.1479189231007272,
-      "personal_share_in_restricted": 0.060669456066945605
+      "total_requests": 6456,
+      "denied_total": 370,
+      "restricted_total": 955,
+      "personal_restricted_total": 57,
+      "denied_rate": 0.05731102850061958,
+      "restricted_rate": 0.14792441140024784,
+      "personal_share_in_restricted": 0.05968586387434555
     },
     {
       "year": 2025,
       "month": 4,
       "month_label": "abril",
-      "total_requests": 7271,
+      "total_requests": 7266,
       "denied_total": 437,
       "restricted_total": 1007,
       "personal_restricted_total": 77,
-      "denied_rate": 0.060101774171365696,
-      "restricted_rate": 0.13849539265575575,
+      "denied_rate": 0.06014313239746766,
+      "restricted_rate": 0.1385906963941646,
       "personal_share_in_restricted": 0.07646474677259185
     },
     {
       "year": 2025,
       "month": 5,
       "month_label": "maio",
-      "total_requests": 8043,
-      "denied_total": 467,
-      "restricted_total": 1056,
-      "personal_restricted_total": 78,
-      "denied_rate": 0.05806291184881263,
-      "restricted_rate": 0.13129429317418873,
-      "personal_share_in_restricted": 0.07386363636363637
+      "total_requests": 8023,
+      "denied_total": 452,
+      "restricted_total": 1040,
+      "personal_restricted_total": 64,
+      "denied_rate": 0.056338028169014086,
+      "restricted_rate": 0.12962732145082886,
+      "personal_share_in_restricted": 0.06153846153846154
     },
     {
       "year": 2025,
       "month": 6,
       "month_label": "junho",
-      "total_requests": 7114,
-      "denied_total": 428,
-      "restricted_total": 1021,
-      "personal_restricted_total": 77,
-      "denied_rate": 0.06016305875737982,
-      "restricted_rate": 0.1435198200730953,
-      "personal_share_in_restricted": 0.07541625857002938
+      "total_requests": 7096,
+      "denied_total": 420,
+      "restricted_total": 1013,
+      "personal_restricted_total": 70,
+      "denied_rate": 0.05918827508455468,
+      "restricted_rate": 0.1427564825253664,
+      "personal_share_in_restricted": 0.06910167818361303
     },
     {
       "year": 2025,
       "month": 7,
       "month_label": "julho",
-      "total_requests": 7707,
-      "denied_total": 574,
-      "restricted_total": 1190,
-      "personal_restricted_total": 68,
-      "denied_rate": 0.07447774750227067,
-      "restricted_rate": 0.15440508628519528,
-      "personal_share_in_restricted": 0.05714285714285714
+      "total_requests": 7697,
+      "denied_total": 573,
+      "restricted_total": 1189,
+      "personal_restricted_total": 67,
+      "denied_rate": 0.07444458880083149,
+      "restricted_rate": 0.15447576978043392,
+      "personal_share_in_restricted": 0.056349873843566024
     },
     {
       "year": 2025,
       "month": 8,
       "month_label": "agosto",
-      "total_requests": 7208,
-      "denied_total": 441,
-      "restricted_total": 1028,
-      "personal_restricted_total": 89,
-      "denied_rate": 0.06118201997780244,
-      "restricted_rate": 0.14261931187569368,
-      "personal_share_in_restricted": 0.08657587548638132
+      "total_requests": 7202,
+      "denied_total": 439,
+      "restricted_total": 1026,
+      "personal_restricted_total": 87,
+      "denied_rate": 0.06095529019716745,
+      "restricted_rate": 0.14246042765898362,
+      "personal_share_in_restricted": 0.0847953216374269
     },
     {
       "year": 2025,
       "month": 9,
       "month_label": "setembro",
-      "total_requests": 7360,
-      "denied_total": 541,
-      "restricted_total": 1191,
-      "personal_restricted_total": 108,
-      "denied_rate": 0.0735054347826087,
-      "restricted_rate": 0.16182065217391303,
-      "personal_share_in_restricted": 0.0906801007556675
+      "total_requests": 7350,
+      "denied_total": 537,
+      "restricted_total": 1187,
+      "personal_restricted_total": 107,
+      "denied_rate": 0.07306122448979592,
+      "restricted_rate": 0.16149659863945579,
+      "personal_share_in_restricted": 0.09014321819713564
     },
     {
       "year": 2025,
       "month": 10,
       "month_label": "outubro",
-      "total_requests": 7135,
-      "denied_total": 449,
-      "restricted_total": 1047,
+      "total_requests": 7119,
+      "denied_total": 448,
+      "restricted_total": 1045,
       "personal_restricted_total": 78,
-      "denied_rate": 0.0629292221443588,
-      "restricted_rate": 0.14674141555711281,
-      "personal_share_in_restricted": 0.07449856733524356
+      "denied_rate": 0.06293018682399214,
+      "restricted_rate": 0.14679027953364238,
+      "personal_share_in_restricted": 0.07464114832535886
     },
     {
       "year": 2025,
       "month": 11,
       "month_label": "novembro",
-      "total_requests": 5567,
-      "denied_total": 416,
-      "restricted_total": 889,
-      "personal_restricted_total": 78,
-      "denied_rate": 0.0747260643075265,
-      "restricted_rate": 0.15969103646488234,
-      "personal_share_in_restricted": 0.08773903262092239
+      "total_requests": 5547,
+      "denied_total": 404,
+      "restricted_total": 877,
+      "personal_restricted_total": 70,
+      "denied_rate": 0.07283216152875428,
+      "restricted_rate": 0.15810347935821165,
+      "personal_share_in_restricted": 0.07981755986316989
     },
     {
       "year": 2025,
       "month": 12,
       "month_label": "dezembro",
-      "total_requests": 5514,
-      "denied_total": 378,
-      "restricted_total": 799,
-      "personal_restricted_total": 70,
-      "denied_rate": 0.06855277475516866,
-      "restricted_rate": 0.14490388103010518,
-      "personal_share_in_restricted": 0.08760951188986232
+      "total_requests": 5498,
+      "denied_total": 372,
+      "restricted_total": 793,
+      "personal_restricted_total": 64,
+      "denied_rate": 0.06766096762459076,
+      "restricted_rate": 0.14423426700618408,
+      "personal_share_in_restricted": 0.0807061790668348
     },
     {
       "year": 2026,
@@ -1837,25 +1837,25 @@
       "year": 2026,
       "month": 9,
       "month_label": "setembro",
-      "total_requests": 6823,
+      "total_requests": 6824,
       "denied_total": 565,
-      "restricted_total": 1376,
-      "personal_restricted_total": 69,
-      "denied_rate": 0.08280814890810494,
-      "restricted_rate": 0.20167081928770336,
-      "personal_share_in_restricted": 0.0501453488372093
+      "restricted_total": 1377,
+      "personal_restricted_total": 70,
+      "denied_rate": 0.0827960140679953,
+      "restricted_rate": 0.20178780773739743,
+      "personal_share_in_restricted": 0.050835148874364564
     },
     {
       "year": 2026,
       "month": 10,
       "month_label": "outubro",
-      "total_requests": 3167,
+      "total_requests": 3176,
       "denied_total": 270,
-      "restricted_total": 563,
+      "restricted_total": 564,
       "personal_restricted_total": 22,
-      "denied_rate": 0.08525418377012946,
-      "restricted_rate": 0.1777707609725292,
-      "personal_share_in_restricted": 0.03907637655417407
+      "denied_rate": 0.08501259445843828,
+      "restricted_rate": 0.17758186397984888,
+      "personal_share_in_restricted": 0.03900709219858156
     },
     {
       "year": 2026,
@@ -1909,7 +1909,7 @@
     },
     {
       "year": 2015,
-      "reason": "Dados pessoais",
+      "reason": "Dados pessoais (art. 31 da Lei nº 12527/2011)",
       "count": 1151,
       "share_in_restricted": 0.14031451907838596
     },
@@ -1963,7 +1963,7 @@
     },
     {
       "year": 2016,
-      "reason": "Dados pessoais",
+      "reason": "Dados pessoais (art. 31 da Lei nº 12527/2011)",
       "count": 628,
       "share_in_restricted": 0.0667375132837407
     },
@@ -2017,7 +2017,7 @@
     },
     {
       "year": 2017,
-      "reason": "Dados pessoais",
+      "reason": "Dados pessoais (art. 31 da Lei nº 12527/2011)",
       "count": 1019,
       "share_in_restricted": 0.11528453444959837
     },
@@ -2049,55 +2049,55 @@
       "year": 2018,
       "reason": "Pedido genérico",
       "count": 1503,
-      "share_in_restricted": 0.1496415770609319
+      "share_in_restricted": 0.14968628622647145
     },
     {
       "year": 2018,
       "reason": "Parte da informação é de competência de outro órgão/entidade",
       "count": 900,
-      "share_in_restricted": 0.08960573476702509
+      "share_in_restricted": 0.089632506722438
     },
     {
       "year": 2018,
       "reason": "Parte da informação é inexistente",
-      "count": 867,
-      "share_in_restricted": 0.08632019115890084
+      "count": 866,
+      "share_in_restricted": 0.08624638980181257
     },
     {
       "year": 2018,
       "reason": "Informação sigilosa de acordo com legislação específica",
       "count": 902,
-      "share_in_restricted": 0.08980485862206292
+      "share_in_restricted": 0.08983169007071008
     },
     {
       "year": 2018,
-      "reason": "Dados pessoais",
+      "reason": "Dados pessoais (art. 31 da Lei nº 12527/2011)",
       "count": 1043,
-      "share_in_restricted": 0.10384309040223019
+      "share_in_restricted": 0.10387411612389204
     },
     {
       "year": 2018,
       "reason": "Pedido desproporcional ou desarrazoado",
       "count": 625,
-      "share_in_restricted": 0.06222620469932298
+      "share_in_restricted": 0.062244796335026394
     },
     {
       "year": 2018,
       "reason": "Processo decisório em curso",
       "count": 528,
-      "share_in_restricted": 0.052568697729988054
+      "share_in_restricted": 0.052584403943830293
     },
     {
       "year": 2018,
       "reason": "Parte da informação é sigilosa de acordo com legislação específica",
       "count": 415,
-      "share_in_restricted": 0.041318199920350455
+      "share_in_restricted": 0.041330544766457526
     },
     {
       "year": 2018,
       "reason": "Outros motivos",
-      "count": 3261,
-      "share_in_restricted": 0.3246714456391876
+      "count": 3259,
+      "share_in_restricted": 0.3245692660093616
     },
     {
       "year": 2019,
@@ -2125,7 +2125,7 @@
     },
     {
       "year": 2019,
-      "reason": "Dados pessoais",
+      "reason": "Dados pessoais (art. 31 da Lei nº 12527/2011)",
       "count": 872,
       "share_in_restricted": 0.07132340912808768
     },
@@ -2157,55 +2157,55 @@
       "year": 2020,
       "reason": "Pedido genérico",
       "count": 1859,
-      "share_in_restricted": 0.15155714984510027
+      "share_in_restricted": 0.1515695067264574
     },
     {
       "year": 2020,
       "reason": "Parte da informação é de competência de outro órgão/entidade",
       "count": 848,
-      "share_in_restricted": 0.06913419207565628
+      "share_in_restricted": 0.06913982878108439
     },
     {
       "year": 2020,
       "reason": "Parte da informação é inexistente",
       "count": 1367,
-      "share_in_restricted": 0.11144627425403554
+      "share_in_restricted": 0.11145536078271505
     },
     {
       "year": 2020,
       "reason": "Informação sigilosa de acordo com legislação específica",
       "count": 988,
-      "share_in_restricted": 0.08054785586173162
+      "share_in_restricted": 0.08055442315532002
     },
     {
       "year": 2020,
-      "reason": "Dados pessoais",
+      "reason": "Dados pessoais (art. 31 da Lei nº 12527/2011)",
       "count": 968,
-      "share_in_restricted": 0.07891733246372086
+      "share_in_restricted": 0.07892376681614349
     },
     {
       "year": 2020,
       "reason": "Pedido desproporcional ou desarrazoado",
       "count": 866,
-      "share_in_restricted": 0.07060166313386597
+      "share_in_restricted": 0.07060741948634325
     },
     {
       "year": 2020,
       "reason": "Processo decisório em curso",
       "count": 562,
-      "share_in_restricted": 0.045817707484102396
+      "share_in_restricted": 0.04582144313086017
     },
     {
       "year": 2020,
       "reason": "Parte da informação é sigilosa de acordo com legislação específica",
       "count": 577,
-      "share_in_restricted": 0.047040600032610465
+      "share_in_restricted": 0.04704443538524256
     },
     {
       "year": 2020,
       "reason": "Outros motivos",
-      "count": 4231,
-      "share_in_restricted": 0.3449372248491766
+      "count": 4230,
+      "share_in_restricted": 0.34488381573583365
     },
     {
       "year": 2021,
@@ -2233,7 +2233,7 @@
     },
     {
       "year": 2021,
-      "reason": "Dados pessoais",
+      "reason": "Dados pessoais (art. 31 da Lei nº 12527/2011)",
       "count": 762,
       "share_in_restricted": 0.07780273636920564
     },
@@ -2287,7 +2287,7 @@
     },
     {
       "year": 2022,
-      "reason": "Dados pessoais",
+      "reason": "Dados pessoais (art. 31 da Lei nº 12527/2011)",
       "count": 474,
       "share_in_restricted": 0.053949465058046896
     },
@@ -2319,217 +2319,217 @@
       "year": 2023,
       "reason": "Pedido genérico",
       "count": 1109,
-      "share_in_restricted": 0.0983941087747316
+      "share_in_restricted": 0.09841157156801845
     },
     {
       "year": 2023,
       "reason": "Parte da informação é de competência de outro órgão/entidade",
       "count": 1125,
-      "share_in_restricted": 0.09981368112856003
+      "share_in_restricted": 0.09983139586476174
     },
     {
       "year": 2023,
       "reason": "Parte da informação é inexistente",
       "count": 1186,
-      "share_in_restricted": 0.10522580072753084
+      "share_in_restricted": 0.10524447599609549
     },
     {
       "year": 2023,
       "reason": "Informação sigilosa de acordo com legislação específica",
       "count": 1190,
-      "share_in_restricted": 0.10558069381598793
+      "share_in_restricted": 0.1055994320702813
     },
     {
       "year": 2023,
-      "reason": "Dados pessoais",
-      "count": 474,
-      "share_in_restricted": 0.04205483098216662
+      "reason": "Dados pessoais (art. 31 da Lei nº 12527/2011)",
+      "count": 473,
+      "share_in_restricted": 0.04197355577247316
     },
     {
       "year": 2023,
       "reason": "Pedido desproporcional ou desarrazoado",
       "count": 829,
-      "share_in_restricted": 0.07355159258273446
+      "share_in_restricted": 0.07356464637501109
     },
     {
       "year": 2023,
       "reason": "Processo decisório em curso",
-      "count": 642,
-      "share_in_restricted": 0.05696034069736492
+      "count": 641,
+      "share_in_restricted": 0.05688171088827758
     },
     {
       "year": 2023,
       "reason": "Parte da informação é sigilosa de acordo com legislação específica",
       "count": 621,
-      "share_in_restricted": 0.05509715198296513
+      "share_in_restricted": 0.055106930517348475
     },
     {
       "year": 2023,
       "reason": "Outros motivos",
       "count": 4095,
-      "share_in_restricted": 0.3633217993079585
+      "share_in_restricted": 0.36338628094773273
     },
     {
       "year": 2024,
       "reason": "Pedido genérico",
-      "count": 835,
-      "share_in_restricted": 0.07640922401171303
+      "count": 833,
+      "share_in_restricted": 0.0766611448555126
     },
     {
       "year": 2024,
       "reason": "Parte da informação é de competência de outro órgão/entidade",
       "count": 1299,
-      "share_in_restricted": 0.11886896046852123
+      "share_in_restricted": 0.1195472114853672
     },
     {
       "year": 2024,
       "reason": "Parte da informação é inexistente",
       "count": 1229,
-      "share_in_restricted": 0.11246339677891655
+      "share_in_restricted": 0.11310509847229891
     },
     {
       "year": 2024,
       "reason": "Informação sigilosa de acordo com legislação específica",
       "count": 1088,
-      "share_in_restricted": 0.09956076134699854
+      "share_in_restricted": 0.10012884226026136
     },
     {
       "year": 2024,
-      "reason": "Dados pessoais",
-      "count": 664,
-      "share_in_restricted": 0.06076134699853587
+      "reason": "Dados pessoais (art. 31 da Lei nº 12527/2011)",
+      "count": 611,
+      "share_in_restricted": 0.056230443585496045
     },
     {
       "year": 2024,
       "reason": "Pedido desproporcional ou desarrazoado",
       "count": 561,
-      "share_in_restricted": 0.05133601756954612
+      "share_in_restricted": 0.051628934290447265
     },
     {
       "year": 2024,
       "reason": "Processo decisório em curso",
-      "count": 896,
-      "share_in_restricted": 0.08199121522693997
+      "count": 893,
+      "share_in_restricted": 0.08218295600957114
     },
     {
       "year": 2024,
       "reason": "Parte da informação é sigilosa de acordo com legislação específica",
-      "count": 661,
-      "share_in_restricted": 0.06048682284040996
+      "count": 660,
+      "share_in_restricted": 0.060739922694643844
     },
     {
       "year": 2024,
       "reason": "Outros motivos",
-      "count": 3695,
-      "share_in_restricted": 0.3381222547584187
+      "count": 3692,
+      "share_in_restricted": 0.3397754463464016
     },
     {
       "year": 2025,
       "reason": "Pedido genérico",
-      "count": 905,
-      "share_in_restricted": 0.07449172771421517
+      "count": 898,
+      "share_in_restricted": 0.07426397618260007
     },
     {
       "year": 2025,
       "reason": "Parte da informação é de competência de outro órgão/entidade",
       "count": 1538,
-      "share_in_restricted": 0.12659478146349493
+      "share_in_restricted": 0.12719153159113464
     },
     {
       "year": 2025,
       "reason": "Parte da informação é inexistente",
-      "count": 1354,
-      "share_in_restricted": 0.11144950201662689
+      "count": 1353,
+      "share_in_restricted": 0.1118921601058551
     },
     {
       "year": 2025,
       "reason": "Informação sigilosa de acordo com legislação específica",
-      "count": 1211,
-      "share_in_restricted": 0.09967898592476747
+      "count": 1210,
+      "share_in_restricted": 0.10006615944426067
     },
     {
       "year": 2025,
-      "reason": "Dados pessoais",
-      "count": 442,
-      "share_in_restricted": 0.03638159519302
+      "reason": "Dados pessoais (art. 31 da Lei nº 12527/2011)",
+      "count": 399,
+      "share_in_restricted": 0.03299702282500827
     },
     {
       "year": 2025,
       "reason": "Pedido desproporcional ou desarrazoado",
       "count": 678,
-      "share_in_restricted": 0.05580706230965512
+      "share_in_restricted": 0.056070129010916306
     },
     {
       "year": 2025,
       "reason": "Processo decisório em curso",
       "count": 883,
-      "share_in_restricted": 0.07268087908469834
+      "share_in_restricted": 0.07302348660271253
     },
     {
       "year": 2025,
       "reason": "Parte da informação é sigilosa de acordo com legislação específica",
       "count": 942,
-      "share_in_restricted": 0.0775372458638571
+      "share_in_restricted": 0.07790274561693682
     },
     {
       "year": 2025,
       "reason": "Outros motivos",
-      "count": 4196,
-      "share_in_restricted": 0.345378220429665
+      "count": 4191,
+      "share_in_restricted": 0.3465927886205756
     },
     {
       "year": 2026,
       "reason": "Pedido genérico",
       "count": 871,
-      "share_in_restricted": 0.0749247311827957
+      "share_in_restricted": 0.07491184312376366
     },
     {
       "year": 2026,
       "reason": "Parte da informação é de competência de outro órgão/entidade",
-      "count": 1343,
-      "share_in_restricted": 0.1155268817204301
+      "count": 1344,
+      "share_in_restricted": 0.11559301625526791
     },
     {
       "year": 2026,
       "reason": "Parte da informação é inexistente",
       "count": 1425,
-      "share_in_restricted": 0.12258064516129032
+      "share_in_restricted": 0.12255955964565236
     },
     {
       "year": 2026,
       "reason": "Informação sigilosa de acordo com legislação específica",
       "count": 1052,
-      "share_in_restricted": 0.09049462365591397
+      "share_in_restricted": 0.09047905736647459
     },
     {
       "year": 2026,
-      "reason": "Dados pessoais",
-      "count": 0,
-      "share_in_restricted": 0.0
+      "reason": "Dados pessoais (art. 31 da Lei nº 12527/2011)",
+      "count": 381,
+      "share_in_restricted": 0.032768555947363893
     },
     {
       "year": 2026,
       "reason": "Pedido desproporcional ou desarrazoado",
       "count": 707,
-      "share_in_restricted": 0.06081720430107527
+      "share_in_restricted": 0.060806742925948225
     },
     {
       "year": 2026,
       "reason": "Processo decisório em curso",
       "count": 759,
-      "share_in_restricted": 0.06529032258064515
+      "share_in_restricted": 0.065279091769158
     },
     {
       "year": 2026,
       "reason": "Parte da informação é sigilosa de acordo com legislação específica",
       "count": 980,
-      "share_in_restricted": 0.08430107526881721
+      "share_in_restricted": 0.08428657435279951
     },
     {
       "year": 2026,
       "reason": "Outros motivos",
-      "count": 4488,
-      "share_in_restricted": 0.38606451612903225
+      "count": 4108,
+      "share_in_restricted": 0.35331555861357183
     }
   ],
   "theme_series": [
@@ -2704,24 +2704,24 @@
     {
       "year": 2018,
       "theme": "Contratos, licitações e fornecedores",
-      "count": 27574,
-      "share_in_year": 0.304140654298383,
-      "restricted_count": 3051,
-      "restricted_rate_in_theme": 0.11064771161238848
+      "count": 27562,
+      "share_in_year": 0.30412234629474333,
+      "restricted_count": 3048,
+      "restricted_rate_in_theme": 0.11058704012771206
     },
     {
       "year": 2018,
       "theme": "Outros temas",
-      "count": 31485,
-      "share_in_year": 0.34727890406123846,
+      "count": 31464,
+      "share_in_year": 0.3471774727457298,
       "restricted_count": 2584,
-      "restricted_rate_in_theme": 0.08207082737811656
+      "restricted_rate_in_theme": 0.0821256038647343
     },
     {
       "year": 2018,
       "theme": "Dados pessoais e vida privada",
       "count": 6533,
-      "share_in_year": 0.0720588559705279,
+      "share_in_year": 0.07208588957055215,
       "restricted_count": 779,
       "restricted_rate_in_theme": 0.1192407775906934
     },
@@ -2729,23 +2729,23 @@
       "year": 2018,
       "theme": "Servidores, salários e concursos",
       "count": 9670,
-      "share_in_year": 0.106659901612583,
+      "share_in_year": 0.10669991614070706,
       "restricted_count": 522,
       "restricted_rate_in_theme": 0.053981385729058945
     },
     {
       "year": 2018,
       "theme": "Educação e pesquisa",
-      "count": 7765,
-      "share_in_year": 0.0856477906951093,
+      "count": 7764,
+      "share_in_year": 0.08566888820232157,
       "restricted_count": 870,
-      "restricted_rate_in_theme": 0.11204121056020605
+      "restricted_rate_in_theme": 0.11205564142194745
     },
     {
       "year": 2018,
       "theme": "Previdência e benefícios sociais",
       "count": 3111,
-      "share_in_year": 0.034314266175464916,
+      "share_in_year": 0.034327139515381556,
       "restricted_count": 544,
       "restricted_rate_in_theme": 0.17486338797814208
     },
@@ -2753,39 +2753,39 @@
       "year": 2018,
       "theme": "Saúde e medicamentos",
       "count": 4524,
-      "share_in_year": 0.049899627186693434,
+      "share_in_year": 0.049918347530564504,
       "restricted_count": 399,
       "restricted_rate_in_theme": 0.08819628647214854
     },
     {
       "year": 2019,
       "theme": "Contratos, licitações e fornecedores",
-      "count": 31346,
-      "share_in_year": 0.32850211169449073,
+      "count": 31336,
+      "share_in_year": 0.32849714860784973,
       "restricted_count": 3993,
-      "restricted_rate_in_theme": 0.12738467428060996
+      "restricted_rate_in_theme": 0.1274253255042124
     },
     {
       "year": 2019,
       "theme": "Outros temas",
-      "count": 33196,
-      "share_in_year": 0.34788987749027994,
+      "count": 33180,
+      "share_in_year": 0.3478279100972828,
       "restricted_count": 3236,
-      "restricted_rate_in_theme": 0.09748162429208339
+      "restricted_rate_in_theme": 0.0975286317058469
     },
     {
       "year": 2019,
       "theme": "Dados pessoais e vida privada",
-      "count": 6367,
-      "share_in_year": 0.06672535395772419,
+      "count": 6364,
+      "share_in_year": 0.06671418986917142,
       "restricted_count": 1146,
-      "restricted_rate_in_theme": 0.17999057640961205
+      "restricted_rate_in_theme": 0.18007542426147077
     },
     {
       "year": 2019,
       "theme": "Servidores, salários e concursos",
       "count": 7575,
-      "share_in_year": 0.07938504102870438,
+      "share_in_year": 0.07940917477356592,
       "restricted_count": 591,
       "restricted_rate_in_theme": 0.07801980198019802
     },
@@ -2793,7 +2793,7 @@
       "year": 2019,
       "theme": "Educação e pesquisa",
       "count": 8890,
-      "share_in_year": 0.0931660745538194,
+      "share_in_year": 0.09319439785306945,
       "restricted_count": 930,
       "restricted_rate_in_theme": 0.1046119235095613
     },
@@ -2801,7 +2801,7 @@
       "year": 2019,
       "theme": "Previdência e benefícios sociais",
       "count": 2636,
-      "share_in_year": 0.027624946290648808,
+      "share_in_year": 0.027633344515263336,
       "restricted_count": 419,
       "restricted_rate_in_theme": 0.15895295902883155
     },
@@ -2809,63 +2809,63 @@
       "year": 2019,
       "theme": "Saúde e medicamentos",
       "count": 5411,
-      "share_in_year": 0.05670659498433259,
+      "share_in_year": 0.05672383428379738,
       "restricted_count": 518,
       "restricted_rate_in_theme": 0.09573091849935317
     },
     {
       "year": 2020,
       "theme": "Contratos, licitações e fornecedores",
-      "count": 32539,
-      "share_in_year": 0.29400496950530836,
-      "restricted_count": 4020,
-      "restricted_rate_in_theme": 0.12354405482651587
+      "count": 32533,
+      "share_in_year": 0.2939826319546732,
+      "restricted_count": 4019,
+      "restricted_rate_in_theme": 0.12353610180432177
     },
     {
       "year": 2020,
       "theme": "Outros temas",
-      "count": 32399,
-      "share_in_year": 0.2927400045177321,
+      "count": 32396,
+      "share_in_year": 0.29274463912960974,
       "restricted_count": 3199,
-      "restricted_rate_in_theme": 0.09873761535849872
+      "restricted_rate_in_theme": 0.0987467588591184
     },
     {
       "year": 2020,
       "theme": "Dados pessoais e vida privada",
-      "count": 8150,
-      "share_in_year": 0.07363903320533093,
+      "count": 8149,
+      "share_in_year": 0.0736379819813307,
       "restricted_count": 923,
-      "restricted_rate_in_theme": 0.1132515337423313
+      "restricted_rate_in_theme": 0.11326543134126887
     },
     {
       "year": 2020,
       "theme": "Servidores, salários e concursos",
       "count": 8244,
-      "share_in_year": 0.0744883668398464,
+      "share_in_year": 0.07449644415929443,
       "restricted_count": 780,
       "restricted_rate_in_theme": 0.09461426491994178
     },
     {
       "year": 2020,
       "theme": "Educação e pesquisa",
-      "count": 8351,
-      "share_in_year": 0.07545516150892252,
+      "count": 8350,
+      "share_in_year": 0.07545430722102238,
       "restricted_count": 769,
-      "restricted_rate_in_theme": 0.09208478026583643
+      "restricted_rate_in_theme": 0.09209580838323353
     },
     {
       "year": 2020,
       "theme": "Previdência e benefícios sociais",
-      "count": 15733,
-      "share_in_year": 0.1421549582109781,
+      "count": 15732,
+      "share_in_year": 0.1421613366707933,
       "restricted_count": 813,
-      "restricted_rate_in_theme": 0.051674823619144473
+      "restricted_rate_in_theme": 0.05167810831426392
     },
     {
       "year": 2020,
       "theme": "Saúde e medicamentos",
       "count": 5259,
-      "share_in_year": 0.04751750621188164,
+      "share_in_year": 0.04752265888327625,
       "restricted_count": 535,
       "restricted_rate_in_theme": 0.10173036698992204
     },
@@ -2873,23 +2873,23 @@
       "year": 2021,
       "theme": "Contratos, licitações e fornecedores",
       "count": 23312,
-      "share_in_year": 0.2946671217119816,
+      "share_in_year": 0.2946745711721505,
       "restricted_count": 2995,
       "restricted_rate_in_theme": 0.12847460535346603
     },
     {
       "year": 2021,
       "theme": "Outros temas",
-      "count": 25592,
-      "share_in_year": 0.32348665832416923,
+      "count": 25590,
+      "share_in_year": 0.32346955543476885,
       "restricted_count": 2377,
-      "restricted_rate_in_theme": 0.09288058768365114
+      "restricted_rate_in_theme": 0.09288784681516217
     },
     {
       "year": 2021,
       "theme": "Dados pessoais e vida privada",
       "count": 7460,
-      "share_in_year": 0.09429550137145602,
+      "share_in_year": 0.09429788524983883,
       "restricted_count": 1741,
       "restricted_rate_in_theme": 0.2333780160857909
     },
@@ -2897,7 +2897,7 @@
       "year": 2021,
       "theme": "Servidores, salários e concursos",
       "count": 5082,
-      "share_in_year": 0.0642372302908498,
+      "share_in_year": 0.06423885426805374,
       "restricted_count": 377,
       "restricted_rate_in_theme": 0.07418339236521054
     },
@@ -2905,7 +2905,7 @@
       "year": 2021,
       "theme": "Educação e pesquisa",
       "count": 5458,
-      "share_in_year": 0.06898992580233337,
+      "share_in_year": 0.06899166993212069,
       "restricted_count": 404,
       "restricted_rate_in_theme": 0.07401978746793697
     },
@@ -2913,7 +2913,7 @@
       "year": 2021,
       "theme": "Previdência e benefícios sociais",
       "count": 6880,
-      "share_in_year": 0.08696421574203987,
+      "share_in_year": 0.08696641427867174,
       "restricted_count": 369,
       "restricted_rate_in_theme": 0.05363372093023256
     },
@@ -2921,7 +2921,7 @@
       "year": 2021,
       "theme": "Saúde e medicamentos",
       "count": 5329,
-      "share_in_year": 0.06735934675717012,
+      "share_in_year": 0.0673610496643956,
       "restricted_count": 541,
       "restricted_rate_in_theme": 0.10151998498780258
     },
@@ -2984,216 +2984,216 @@
     {
       "year": 2023,
       "theme": "Contratos, licitações e fornecedores",
-      "count": 27881,
-      "share_in_year": 0.31145343446642615,
-      "restricted_count": 3589,
-      "restricted_rate_in_theme": 0.12872565546429468
+      "count": 27879,
+      "share_in_year": 0.3114693658667382,
+      "restricted_count": 3588,
+      "restricted_rate_in_theme": 0.12869902076832024
     },
     {
       "year": 2023,
       "theme": "Outros temas",
-      "count": 30371,
-      "share_in_year": 0.3392687585875624,
+      "count": 30366,
+      "share_in_year": 0.33925459176833356,
       "restricted_count": 2873,
-      "restricted_rate_in_theme": 0.09459681933423332
+      "restricted_rate_in_theme": 0.09461239544227096
     },
     {
       "year": 2023,
       "theme": "Dados pessoais e vida privada",
-      "count": 8748,
-      "share_in_year": 0.09772227124967883,
+      "count": 8746,
+      "share_in_year": 0.0977119363632301,
       "restricted_count": 1512,
-      "restricted_rate_in_theme": 0.1728395061728395
+      "restricted_rate_in_theme": 0.1728790304139035
     },
     {
       "year": 2023,
       "theme": "Servidores, salários e concursos",
       "count": 6857,
-      "share_in_year": 0.07659826405567532,
+      "share_in_year": 0.07660767752603119,
       "restricted_count": 597,
       "restricted_rate_in_theme": 0.08706431383987166
     },
     {
       "year": 2023,
       "theme": "Educação e pesquisa",
-      "count": 6379,
-      "share_in_year": 0.07125861548944917,
+      "count": 6378,
+      "share_in_year": 0.07125620056307816,
       "restricted_count": 464,
-      "restricted_rate_in_theme": 0.0727386737733187
+      "restricted_rate_in_theme": 0.07275007839448103
     },
     {
       "year": 2023,
       "theme": "Previdência e benefícios sociais",
-      "count": 3933,
-      "share_in_year": 0.04393480713591528,
+      "count": 3932,
+      "share_in_year": 0.04392903427626581,
       "restricted_count": 457,
-      "restricted_rate_in_theme": 0.11619628782100178
+      "restricted_rate_in_theme": 0.11622583926754833
     },
     {
       "year": 2023,
       "theme": "Saúde e medicamentos",
       "count": 5350,
-      "share_in_year": 0.059763849015292844,
+      "share_in_year": 0.05977119363632301,
       "restricted_count": 592,
       "restricted_rate_in_theme": 0.11065420560747663
     },
     {
       "year": 2024,
       "theme": "Contratos, licitações e fornecedores",
-      "count": 27961,
-      "share_in_year": 0.3539949611961462,
-      "restricted_count": 3937,
-      "restricted_rate_in_theme": 0.14080326168591967
+      "count": 27909,
+      "share_in_year": 0.3540538140484859,
+      "restricted_count": 3908,
+      "restricted_rate_in_theme": 0.1400265147443477
     },
     {
       "year": 2024,
       "theme": "Outros temas",
-      "count": 23646,
-      "share_in_year": 0.2993657184093585,
-      "restricted_count": 2566,
-      "restricted_rate_in_theme": 0.10851729679438382
+      "count": 23585,
+      "share_in_year": 0.2991995128572697,
+      "restricted_count": 2549,
+      "restricted_rate_in_theme": 0.10807716769132923
     },
     {
       "year": 2024,
       "theme": "Dados pessoais e vida privada",
-      "count": 8404,
-      "share_in_year": 0.10639725524453392,
-      "restricted_count": 1352,
-      "restricted_rate_in_theme": 0.16087577344121848
+      "count": 8373,
+      "share_in_year": 0.10621995001712611,
+      "restricted_count": 1349,
+      "restricted_rate_in_theme": 0.16111310163621162
     },
     {
       "year": 2024,
       "theme": "Servidores, salários e concursos",
-      "count": 7599,
-      "share_in_year": 0.09620570473622242,
+      "count": 7597,
+      "share_in_year": 0.09637560734266178,
       "restricted_count": 687,
-      "restricted_rate_in_theme": 0.09040663245163838
+      "restricted_rate_in_theme": 0.09043043306568382
     },
     {
       "year": 2024,
       "theme": "Educação e pesquisa",
-      "count": 5098,
-      "share_in_year": 0.06454226644890931,
+      "count": 5094,
+      "share_in_year": 0.06462252781407386,
       "restricted_count": 645,
-      "restricted_rate_in_theme": 0.12652020400156924
+      "restricted_rate_in_theme": 0.12661955241460543
     },
     {
       "year": 2024,
       "theme": "Previdência e benefícios sociais",
-      "count": 2337,
-      "share_in_year": 0.029587147252079456,
-      "restricted_count": 203,
-      "restricted_rate_in_theme": 0.08686350021394951
+      "count": 2330,
+      "share_in_year": 0.029558400040595227,
+      "restricted_count": 202,
+      "restricted_rate_in_theme": 0.08669527896995709
     },
     {
       "year": 2024,
       "theme": "Saúde e medicamentos",
-      "count": 3942,
-      "share_in_year": 0.0499069467127502,
-      "restricted_count": 542,
-      "restricted_rate_in_theme": 0.13749365804160324
+      "count": 3939,
+      "share_in_year": 0.04997018787978738,
+      "restricted_count": 541,
+      "restricted_rate_in_theme": 0.13734450368113735
     },
     {
       "year": 2025,
       "theme": "Contratos, licitações e fornecedores",
-      "count": 34134,
-      "share_in_year": 0.4067251322625232,
-      "restricted_count": 5106,
-      "restricted_rate_in_theme": 0.14958692213042715
+      "count": 34087,
+      "share_in_year": 0.40689721031836035,
+      "restricted_count": 5089,
+      "restricted_rate_in_theme": 0.14929445243054537
     },
     {
       "year": 2025,
       "theme": "Outros temas",
-      "count": 22754,
-      "share_in_year": 0.27112625708974786,
-      "restricted_count": 2351,
-      "restricted_rate_in_theme": 0.10332249274852773
+      "count": 22688,
+      "share_in_year": 0.27082711613527033,
+      "restricted_count": 2335,
+      "restricted_rate_in_theme": 0.10291784203102962
     },
     {
       "year": 2025,
       "theme": "Dados pessoais e vida privada",
-      "count": 10095,
-      "share_in_year": 0.12028740288832754,
-      "restricted_count": 1709,
-      "restricted_rate_in_theme": 0.16929172857850422
+      "count": 10069,
+      "share_in_year": 0.1201938572093634,
+      "restricted_count": 1704,
+      "restricted_rate_in_theme": 0.16923229714966728
     },
     {
       "year": 2025,
       "theme": "Servidores, salários e concursos",
       "count": 6396,
-      "share_in_year": 0.07621181068585864,
+      "share_in_year": 0.07634918171725974,
       "restricted_count": 749,
       "restricted_rate_in_theme": 0.11710444027517199
     },
     {
       "year": 2025,
       "theme": "Educação e pesquisa",
-      "count": 4532,
-      "share_in_year": 0.05400123921643392,
+      "count": 4539,
+      "share_in_year": 0.05418213505544746,
       "restricted_count": 487,
-      "restricted_rate_in_theme": 0.10745807590467785
+      "restricted_rate_in_theme": 0.10729235514430491
     },
     {
       "year": 2025,
       "theme": "Previdência e benefícios sociais",
-      "count": 2392,
-      "share_in_year": 0.02850197798007721,
-      "restricted_count": 241,
-      "restricted_rate_in_theme": 0.10075250836120402
+      "count": 2389,
+      "share_in_year": 0.028517541451302926,
+      "restricted_count": 240,
+      "restricted_rate_in_theme": 0.10046044370029301
     },
     {
       "year": 2025,
       "theme": "Saúde e medicamentos",
-      "count": 3621,
-      "share_in_year": 0.0431461798770316,
-      "restricted_count": 503,
-      "restricted_rate_in_theme": 0.13891190278928472
+      "count": 3605,
+      "share_in_year": 0.04303295811299583,
+      "restricted_count": 490,
+      "restricted_rate_in_theme": 0.13592233009708737
     },
     {
       "year": 2026,
       "theme": "Contratos, licitações e fornecedores",
-      "count": 28102,
-      "share_in_year": 0.4162889224661512,
-      "restricted_count": 4600,
-      "restricted_rate_in_theme": 0.16368941712333643
+      "count": 28108,
+      "share_in_year": 0.41631613247230287,
+      "restricted_count": 4602,
+      "restricted_rate_in_theme": 0.16372562971396043
     },
     {
       "year": 2026,
       "theme": "Outros temas",
-      "count": 15317,
-      "share_in_year": 0.22689834977631618,
-      "restricted_count": 1807,
-      "restricted_rate_in_theme": 0.11797349350394985
+      "count": 15319,
+      "share_in_year": 0.22689436577996328,
+      "restricted_count": 1808,
+      "restricted_rate_in_theme": 0.11802336967164959
     },
     {
       "year": 2026,
       "theme": "Dados pessoais e vida privada",
-      "count": 13564,
-      "share_in_year": 0.2009302876781323,
-      "restricted_count": 2846,
-      "restricted_rate_in_theme": 0.20982011206133883
+      "count": 13565,
+      "share_in_year": 0.20091533858640914,
+      "restricted_count": 2845,
+      "restricted_rate_in_theme": 0.20973092517508293
     },
     {
       "year": 2026,
       "theme": "Servidores, salários e concursos",
       "count": 3862,
-      "share_in_year": 0.057209729505525435,
+      "share_in_year": 0.057201255998578115,
       "restricted_count": 458,
       "restricted_rate_in_theme": 0.11859140341791817
     },
     {
       "year": 2026,
       "theme": "Educação e pesquisa",
-      "count": 2930,
-      "share_in_year": 0.04340354931413504,
+      "count": 2931,
+      "share_in_year": 0.04341193198649209,
       "restricted_count": 296,
-      "restricted_rate_in_theme": 0.10102389078498293
+      "restricted_rate_in_theme": 0.10098942340498124
     },
     {
       "year": 2026,
       "theme": "Previdência e benefícios sociais",
       "count": 1313,
-      "share_in_year": 0.019450122952033893,
+      "share_in_year": 0.019447242135197582,
       "restricted_count": 212,
       "restricted_rate_in_theme": 0.16146230007616147
     },
@@ -3201,7 +3201,7 @@
       "year": 2026,
       "theme": "Saúde e medicamentos",
       "count": 2418,
-      "share_in_year": 0.03581903830770598,
+      "share_in_year": 0.035813733041056936,
       "restricted_count": 424,
       "restricted_rate_in_theme": 0.17535153019023986
     }
@@ -3209,23 +3209,23 @@
   "top_reasons": [
     {
       "reason": "Pedido genérico",
-      "count": 13826
+      "count": 13817
     },
     {
       "reason": "Parte da informação é de competência de outro órgão/entidade",
-      "count": 12465
+      "count": 12466
     },
     {
       "reason": "Parte da informação é inexistente",
-      "count": 12207
+      "count": 12205
     },
     {
       "reason": "Informação sigilosa de acordo com legislação específica",
-      "count": 11163
+      "count": 11162
     },
     {
-      "reason": "Dados pessoais",
-      "count": 8497
+      "reason": "Dados pessoais (art. 31 da Lei nº 12527/2011)",
+      "count": 8781
     },
     {
       "reason": "Pedido desproporcional ou desarrazoado",
@@ -3233,15 +3233,15 @@
     },
     {
       "reason": "Processo decisório em curso",
-      "count": 7045
+      "count": 7041
     },
     {
       "reason": "Parte da informação é sigilosa de acordo com legislação específica",
-      "count": 6846
+      "count": 6845
     },
     {
       "reason": "Pedido exige tratamento adicional de dados",
-      "count": 6776
+      "count": 6774
     },
     {
       "reason": "Pedido incompreensível",
@@ -3249,91 +3249,91 @@
     },
     {
       "reason": "Parte da informação demandará mais tempo para produção",
-      "count": 6168
+      "count": 6167
     },
     {
       "reason": "Informação classificada conforme artigos 23 e 24 da Lei nº 12.527/2011",
-      "count": 5228
+      "count": 5224
     },
     {
-      "reason": "Parte da informação contém dados pessoais",
-      "count": 4486
+      "reason": "Parte da informação contém dados pessoais (art. 31 da Lei nº 12527/2011)",
+      "count": 4848
     },
     {
       "reason": "Parte da informação classificada conforme artigos 23 e 24 da Lei nº 12.527/2011",
-      "count": 3725
+      "count": 3724
     },
     {
       "reason": "Parte da informação está relacionada a processo decisório em curso",
-      "count": 3517
+      "count": 3515
     }
   ],
   "top_themes": [
     {
       "theme": "Contratos, licitações e fornecedores",
-      "count": 321949,
-      "restricted_count": 41311,
-      "restricted_rate_in_theme": 0.12831535429524552
+      "count": 321826,
+      "restricted_count": 41262,
+      "restricted_rate_in_theme": 0.1282121394790974
     },
     {
       "theme": "Outros temas",
-      "count": 233310,
-      "restricted_count": 31159,
-      "restricted_rate_in_theme": 0.13355192662123355
+      "count": 233181,
+      "restricted_count": 31127,
+      "restricted_rate_in_theme": 0.13348857754276722
     },
     {
       "theme": "Dados pessoais e vida privada",
-      "count": 91663,
-      "restricted_count": 14622,
-      "restricted_rate_in_theme": 0.15951910803704875
+      "count": 91601,
+      "restricted_count": 14613,
+      "restricted_rate_in_theme": 0.15952882610451852
     },
     {
       "theme": "Servidores, salários e concursos",
-      "count": 86173,
+      "count": 86171,
       "restricted_count": 7004,
-      "restricted_rate_in_theme": 0.08127835865062143
+      "restricted_rate_in_theme": 0.08128024509405717
     },
     {
       "theme": "Educação e pesquisa",
-      "count": 73520,
+      "count": 73521,
       "restricted_count": 6853,
-      "restricted_rate_in_theme": 0.09321273122959739
+      "restricted_rate_in_theme": 0.09321146339141198
     },
     {
       "theme": "Previdência e benefícios sociais",
-      "count": 51400,
-      "restricted_count": 5972,
-      "restricted_rate_in_theme": 0.11618677042801556
+      "count": 51388,
+      "restricted_count": 5970,
+      "restricted_rate_in_theme": 0.11617498248618355
     },
     {
       "theme": "Saúde e medicamentos",
-      "count": 50392,
-      "restricted_count": 5574,
-      "restricted_rate_in_theme": 0.11061279568185427
+      "count": 50373,
+      "restricted_count": 5560,
+      "restricted_rate_in_theme": 0.11037659063387131
     },
     {
       "theme": "Gastos públicos e orçamento",
-      "count": 43200,
+      "count": 43191,
       "restricted_count": 5465,
-      "restricted_rate_in_theme": 0.12650462962962963
+      "restricted_rate_in_theme": 0.12653099025259892
     },
     {
       "theme": "Obras, infraestrutura e transportes",
-      "count": 24597,
-      "restricted_count": 3046,
-      "restricted_rate_in_theme": 0.12383624019189332
+      "count": 24591,
+      "restricted_count": 3044,
+      "restricted_rate_in_theme": 0.1237851246390956
     },
     {
       "theme": "Processos administrativos e sanções",
-      "count": 12916,
-      "restricted_count": 2112,
-      "restricted_rate_in_theme": 0.16351811706410654
+      "count": 12893,
+      "restricted_count": 2099,
+      "restricted_rate_in_theme": 0.16280152020476227
     },
     {
       "theme": "Segurança pública e polícia",
-      "count": 11823,
-      "restricted_count": 1907,
-      "restricted_rate_in_theme": 0.16129577941300854
+      "count": 11818,
+      "restricted_count": 1905,
+      "restricted_rate_in_theme": 0.1611947876121171
     },
     {
       "theme": "Meio ambiente e território",
@@ -3409,13 +3409,13 @@
     },
     {
       "org": "MS – Ministério da Saúde",
-      "total_requests": 49538,
+      "total_requests": 49537,
       "denied_total": 2466,
       "restricted_total": 7108,
       "personal_restricted_total": 572,
-      "denied_rate": 0.049779966894101496,
-      "restricted_rate": 0.14348580887399573,
-      "personal_rate_in_total": 0.011546691428802132,
+      "denied_rate": 0.04978097179885742,
+      "restricted_rate": 0.1434887054121162,
+      "personal_rate_in_total": 0.011546924521065063,
       "personal_rate_in_restricted": 0.08047270680922904,
       "concentration_year": 2026,
       "top_requester_share": 0.02,
@@ -3441,13 +3441,13 @@
     },
     {
       "org": "ANVISA – Agência Nacional de Vigilância Sanitária",
-      "total_requests": 36831,
+      "total_requests": 36832,
       "denied_total": 1695,
       "restricted_total": 3720,
       "personal_restricted_total": 66,
-      "denied_rate": 0.04602101490592164,
-      "restricted_rate": 0.10100187342184573,
-      "personal_rate_in_total": 0.0017919687220004888,
+      "denied_rate": 0.04601976542137272,
+      "restricted_rate": 0.10099913119026933,
+      "personal_rate_in_total": 0.0017919200695047785,
       "personal_rate_in_restricted": 0.017741935483870968,
       "concentration_year": 2026,
       "top_requester_share": 0.05,
@@ -3457,17 +3457,17 @@
     },
     {
       "org": "ANEEL – Agência Nacional de Energia Elétrica",
-      "total_requests": 31096,
-      "denied_total": 1658,
-      "restricted_total": 2672,
-      "personal_restricted_total": 570,
-      "denied_rate": 0.05331875482377155,
-      "restricted_rate": 0.08592745047594547,
-      "personal_rate_in_total": 0.018330331875482376,
-      "personal_rate_in_restricted": 0.21332335329341318,
+      "total_requests": 30753,
+      "denied_total": 1547,
+      "restricted_total": 2555,
+      "personal_restricted_total": 473,
+      "denied_rate": 0.050304035378662244,
+      "restricted_rate": 0.08308132539914805,
+      "personal_rate_in_total": 0.015380613273501773,
+      "personal_rate_in_restricted": 0.18512720156555773,
       "concentration_year": 2026,
       "top_requester_share": 0.03,
-      "top_requester_denied_rate": 0.46,
+      "top_requester_denied_rate": 0.45,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.11
     },
@@ -3489,14 +3489,14 @@
     },
     {
       "org": "BB – Banco do Brasil S.A.",
-      "total_requests": 6097,
-      "denied_total": 1335,
-      "restricted_total": 1690,
-      "personal_restricted_total": 54,
-      "denied_rate": 0.21896014433327865,
-      "restricted_rate": 0.2771855010660981,
-      "personal_rate_in_total": 0.00885681482696408,
-      "personal_rate_in_restricted": 0.03195266272189349,
+      "total_requests": 6446,
+      "denied_total": 1338,
+      "restricted_total": 1699,
+      "personal_restricted_total": 55,
+      "denied_rate": 0.20757058641017687,
+      "restricted_rate": 0.263574309649395,
+      "personal_rate_in_total": 0.008532423208191127,
+      "personal_rate_in_restricted": 0.032371983519717484,
       "concentration_year": 2026,
       "top_requester_share": 0.02,
       "top_requester_denied_rate": 0.5,
@@ -3521,14 +3521,14 @@
     },
     {
       "org": "PF – Polícia Federal",
-      "total_requests": 12444,
-      "denied_total": 1313,
-      "restricted_total": 2262,
+      "total_requests": 12427,
+      "denied_total": 1310,
+      "restricted_total": 2259,
       "personal_restricted_total": 621,
-      "denied_rate": 0.1055126968820315,
-      "restricted_rate": 0.18177434908389586,
-      "personal_rate_in_total": 0.04990356798457088,
-      "personal_rate_in_restricted": 0.27453580901856767,
+      "denied_rate": 0.10541562726321718,
+      "restricted_rate": 0.18178160457069284,
+      "personal_rate_in_total": 0.04997183551943349,
+      "personal_rate_in_restricted": 0.2749003984063745,
       "concentration_year": 2026,
       "top_requester_share": 0.01,
       "top_requester_denied_rate": 0.0,
@@ -3585,14 +3585,14 @@
     },
     {
       "org": "MDS - Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
-      "total_requests": 34091,
-      "denied_total": 1116,
-      "restricted_total": 2741,
-      "personal_restricted_total": 145,
-      "denied_rate": 0.03273591270423279,
-      "restricted_rate": 0.08040245226012731,
-      "personal_rate_in_total": 0.004253321991141357,
-      "personal_rate_in_restricted": 0.05290040131338927,
+      "total_requests": 34063,
+      "denied_total": 1113,
+      "restricted_total": 2737,
+      "personal_restricted_total": 143,
+      "denied_rate": 0.032674749728444356,
+      "restricted_rate": 0.08035111411208642,
+      "personal_rate_in_total": 0.004198103514076857,
+      "personal_rate_in_restricted": 0.05224698575082207,
       "concentration_year": 2026,
       "top_requester_share": 0.02,
       "top_requester_denied_rate": 0.0,
@@ -3633,13 +3633,13 @@
     },
     {
       "org": "CEX – Comando do Exército",
-      "total_requests": 7619,
+      "total_requests": 7617,
       "denied_total": 1039,
       "restricted_total": 1217,
       "personal_restricted_total": 230,
-      "denied_rate": 0.13636960231001444,
-      "restricted_rate": 0.15973224832655203,
-      "personal_rate_in_total": 0.030187688673054207,
+      "denied_rate": 0.1364054089536563,
+      "restricted_rate": 0.15977418931337797,
+      "personal_rate_in_total": 0.03019561507155048,
       "personal_rate_in_restricted": 0.18898931799506985,
       "concentration_year": 2026,
       "top_requester_share": 0.02,
@@ -3649,13 +3649,13 @@
     },
     {
       "org": "BACEN – Banco Central do Brasil",
-      "total_requests": 20469,
+      "total_requests": 20470,
       "denied_total": 1008,
       "restricted_total": 1692,
       "personal_restricted_total": 69,
-      "denied_rate": 0.04924520005862524,
-      "restricted_rate": 0.08266158581269237,
-      "personal_rate_in_total": 0.0033709511944892277,
+      "denied_rate": 0.04924279433317049,
+      "restricted_rate": 0.08265754763067905,
+      "personal_rate_in_total": 0.0033707865168539327,
       "personal_rate_in_restricted": 0.040780141843971635,
       "concentration_year": 2026,
       "top_requester_share": 0.01,
@@ -3889,14 +3889,14 @@
     },
     {
       "org": "DNIT – Departamento Nacional de Infraestrutura de Transportes",
-      "total_requests": 9494,
+      "total_requests": 9496,
       "denied_total": 499,
-      "restricted_total": 785,
+      "restricted_total": 786,
       "personal_restricted_total": 46,
-      "denied_rate": 0.052559511270275965,
-      "restricted_rate": 0.08268380029492312,
-      "personal_rate_in_total": 0.00484516536760059,
-      "personal_rate_in_restricted": 0.05859872611464968,
+      "denied_rate": 0.05254844144903117,
+      "restricted_rate": 0.08277169334456613,
+      "personal_rate_in_total": 0.004844144903117102,
+      "personal_rate_in_restricted": 0.058524173027989825,
       "concentration_year": 2026,
       "top_requester_share": 0.03,
       "top_requester_denied_rate": 0.0,
@@ -3969,13 +3969,13 @@
     },
     {
       "org": "MD – Ministério da Defesa",
-      "total_requests": 5405,
+      "total_requests": 5404,
       "denied_total": 356,
       "restricted_total": 978,
       "personal_restricted_total": 47,
-      "denied_rate": 0.06586493987049029,
-      "restricted_rate": 0.1809435707678076,
-      "personal_rate_in_total": 0.008695652173913044,
+      "denied_rate": 0.06587712805329386,
+      "restricted_rate": 0.18097705403404885,
+      "personal_rate_in_total": 0.008697261287934863,
       "personal_rate_in_restricted": 0.04805725971370143,
       "concentration_year": 2026,
       "top_requester_share": 0.03,
@@ -4289,13 +4289,13 @@
     },
     {
       "org": "ICMBio – Instituto Chico Mendes de Conservação da Biodiversidade",
-      "total_requests": 5384,
+      "total_requests": 5386,
       "denied_total": 213,
       "restricted_total": 295,
       "personal_restricted_total": 20,
-      "denied_rate": 0.03956166419019316,
-      "restricted_rate": 0.05479197622585438,
-      "personal_rate_in_total": 0.003714710252600297,
+      "denied_rate": 0.03954697363535091,
+      "restricted_rate": 0.054771630152246564,
+      "personal_rate_in_total": 0.003713330857779428,
       "personal_rate_in_restricted": 0.06779661016949153,
       "concentration_year": 2026,
       "top_requester_share": 0.02,
@@ -4613,13 +4613,13 @@
     },
     {
       "org": "MS – Ministério da Saúde",
-      "total_requests": 49538,
+      "total_requests": 49537,
       "denied_total": 2466,
       "restricted_total": 7108,
       "personal_restricted_total": 572,
-      "denied_rate": 0.049779966894101496,
-      "restricted_rate": 0.14348580887399573,
-      "personal_rate_in_total": 0.011546691428802132,
+      "denied_rate": 0.04978097179885742,
+      "restricted_rate": 0.1434887054121162,
+      "personal_rate_in_total": 0.011546924521065063,
       "personal_rate_in_restricted": 0.08047270680922904,
       "concentration_year": 2026,
       "top_requester_share": 0.02,
@@ -4645,13 +4645,13 @@
     },
     {
       "org": "ANVISA – Agência Nacional de Vigilância Sanitária",
-      "total_requests": 36831,
+      "total_requests": 36832,
       "denied_total": 1695,
       "restricted_total": 3720,
       "personal_restricted_total": 66,
-      "denied_rate": 0.04602101490592164,
-      "restricted_rate": 0.10100187342184573,
-      "personal_rate_in_total": 0.0017919687220004888,
+      "denied_rate": 0.04601976542137272,
+      "restricted_rate": 0.10099913119026933,
+      "personal_rate_in_total": 0.0017919200695047785,
       "personal_rate_in_restricted": 0.017741935483870968,
       "concentration_year": 2026,
       "top_requester_share": 0.05,
@@ -4661,17 +4661,17 @@
     },
     {
       "org": "ANEEL – Agência Nacional de Energia Elétrica",
-      "total_requests": 31096,
-      "denied_total": 1658,
-      "restricted_total": 2672,
-      "personal_restricted_total": 570,
-      "denied_rate": 0.05331875482377155,
-      "restricted_rate": 0.08592745047594547,
-      "personal_rate_in_total": 0.018330331875482376,
-      "personal_rate_in_restricted": 0.21332335329341318,
+      "total_requests": 30753,
+      "denied_total": 1547,
+      "restricted_total": 2555,
+      "personal_restricted_total": 473,
+      "denied_rate": 0.050304035378662244,
+      "restricted_rate": 0.08308132539914805,
+      "personal_rate_in_total": 0.015380613273501773,
+      "personal_rate_in_restricted": 0.18512720156555773,
       "concentration_year": 2026,
       "top_requester_share": 0.03,
-      "top_requester_denied_rate": 0.46,
+      "top_requester_denied_rate": 0.45,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.11
     },
@@ -4693,14 +4693,14 @@
     },
     {
       "org": "BB – Banco do Brasil S.A.",
-      "total_requests": 6097,
-      "denied_total": 1335,
-      "restricted_total": 1690,
-      "personal_restricted_total": 54,
-      "denied_rate": 0.21896014433327865,
-      "restricted_rate": 0.2771855010660981,
-      "personal_rate_in_total": 0.00885681482696408,
-      "personal_rate_in_restricted": 0.03195266272189349,
+      "total_requests": 6446,
+      "denied_total": 1338,
+      "restricted_total": 1699,
+      "personal_restricted_total": 55,
+      "denied_rate": 0.20757058641017687,
+      "restricted_rate": 0.263574309649395,
+      "personal_rate_in_total": 0.008532423208191127,
+      "personal_rate_in_restricted": 0.032371983519717484,
       "concentration_year": 2026,
       "top_requester_share": 0.02,
       "top_requester_denied_rate": 0.5,
@@ -4709,14 +4709,14 @@
     },
     {
       "org": "PF – Polícia Federal",
-      "total_requests": 12444,
-      "denied_total": 1313,
-      "restricted_total": 2262,
+      "total_requests": 12427,
+      "denied_total": 1310,
+      "restricted_total": 2259,
       "personal_restricted_total": 621,
-      "denied_rate": 0.1055126968820315,
-      "restricted_rate": 0.18177434908389586,
-      "personal_rate_in_total": 0.04990356798457088,
-      "personal_rate_in_restricted": 0.27453580901856767,
+      "denied_rate": 0.10541562726321718,
+      "restricted_rate": 0.18178160457069284,
+      "personal_rate_in_total": 0.04997183551943349,
+      "personal_rate_in_restricted": 0.2749003984063745,
       "concentration_year": 2026,
       "top_requester_share": 0.01,
       "top_requester_denied_rate": 0.0,
@@ -5749,13 +5749,13 @@
       "org": "MS – Ministério da Saúde",
       "summary": {
         "org": "MS – Ministério da Saúde",
-        "total_requests": 49538,
+        "total_requests": 49537,
         "denied_total": 2466,
         "restricted_total": 7108,
         "personal_restricted_total": 572,
-        "denied_rate": 0.049779966894101496,
-        "restricted_rate": 0.14348580887399573,
-        "personal_rate_in_total": 0.011546691428802132,
+        "denied_rate": 0.04978097179885742,
+        "restricted_rate": 0.1434887054121162,
+        "personal_rate_in_total": 0.011546924521065063,
         "personal_rate_in_restricted": 0.08047270680922904,
         "concentration_year": 2026,
         "top_requester_share": 0.02,
@@ -5844,24 +5844,24 @@
         },
         {
           "theme": "Dados pessoais e vida privada",
-          "total_requests": 4799,
+          "total_requests": 4798,
           "restricted_total": 737,
-          "restricted_rate": 0.15357366117941237,
+          "restricted_rate": 0.153605669028762,
           "top_decisions": [
             {
               "decision": "Acesso Concedido",
-              "count": 3593,
-              "share_in_theme": 0.7486976453427797
+              "count": 3592,
+              "share_in_theme": 0.7486452688620259
             },
             {
               "decision": "Acesso Parcialmente Concedido",
               "count": 512,
-              "share_in_theme": 0.10668889351948323
+              "share_in_theme": 0.1067111296373489
             },
             {
               "decision": "Acesso Negado",
               "count": 225,
-              "share_in_theme": 0.046884767659929154
+              "share_in_theme": 0.04689453939141309
             }
           ],
           "examples": [
@@ -6259,13 +6259,13 @@
       "org": "ANVISA – Agência Nacional de Vigilância Sanitária",
       "summary": {
         "org": "ANVISA – Agência Nacional de Vigilância Sanitária",
-        "total_requests": 36831,
+        "total_requests": 36832,
         "denied_total": 1695,
         "restricted_total": 3720,
         "personal_restricted_total": 66,
-        "denied_rate": 0.04602101490592164,
-        "restricted_rate": 0.10100187342184573,
-        "personal_rate_in_total": 0.0017919687220004888,
+        "denied_rate": 0.04601976542137272,
+        "restricted_rate": 0.10099913119026933,
+        "personal_rate_in_total": 0.0017919200695047785,
         "personal_rate_in_restricted": 0.017741935483870968,
         "concentration_year": 2026,
         "top_requester_share": 0.05,
@@ -6315,24 +6315,24 @@
         },
         {
           "theme": "Contratos, licitações e fornecedores",
-          "total_requests": 9569,
+          "total_requests": 9570,
           "restricted_total": 1269,
-          "restricted_rate": 0.1326157383216637,
+          "restricted_rate": 0.13260188087774294,
           "top_decisions": [
             {
               "decision": "Acesso Concedido",
-              "count": 7546,
-              "share_in_theme": 0.7885881492318947
+              "count": 7547,
+              "share_in_theme": 0.7886102403343783
             },
             {
               "decision": "Acesso Negado",
               "count": 650,
-              "share_in_theme": 0.06792768314348417
+              "share_in_theme": 0.06792058516196448
             },
             {
               "decision": "Acesso Parcialmente Concedido",
               "count": 619,
-              "share_in_theme": 0.06468805517817953
+              "share_in_theme": 0.06468129571577848
             }
           ],
           "examples": [
@@ -6514,41 +6514,41 @@
       "org": "ANEEL – Agência Nacional de Energia Elétrica",
       "summary": {
         "org": "ANEEL – Agência Nacional de Energia Elétrica",
-        "total_requests": 31096,
-        "denied_total": 1658,
-        "restricted_total": 2672,
-        "personal_restricted_total": 570,
-        "denied_rate": 0.05331875482377155,
-        "restricted_rate": 0.08592745047594547,
-        "personal_rate_in_total": 0.018330331875482376,
-        "personal_rate_in_restricted": 0.21332335329341318,
+        "total_requests": 30753,
+        "denied_total": 1547,
+        "restricted_total": 2555,
+        "personal_restricted_total": 473,
+        "denied_rate": 0.050304035378662244,
+        "restricted_rate": 0.08308132539914805,
+        "personal_rate_in_total": 0.015380613273501773,
+        "personal_rate_in_restricted": 0.18512720156555773,
         "concentration_year": 2026,
         "top_requester_share": 0.03,
-        "top_requester_denied_rate": 0.46,
+        "top_requester_denied_rate": 0.45,
         "concentration_flag": false,
         "denied_rate_adjusted": 0.11
       },
       "top_themes": [
         {
           "theme": "Outros temas",
-          "total_requests": 15661,
-          "restricted_total": 1124,
-          "restricted_rate": 0.07177064044441607,
+          "total_requests": 15537,
+          "restricted_total": 1087,
+          "restricted_rate": 0.06996202613117075,
           "top_decisions": [
             {
               "decision": "Acesso Concedido",
-              "count": 13332,
-              "share_in_theme": 0.851286635591597
+              "count": 13273,
+              "share_in_theme": 0.8542833236789599
             },
             {
               "decision": "Acesso Negado",
-              "count": 803,
-              "share_in_theme": 0.05127386501500543
+              "count": 767,
+              "share_in_theme": 0.04936602947802021
             },
             {
               "decision": "Informação Inexistente",
-              "count": 495,
-              "share_in_theme": 0.031607177064044444
+              "count": 491,
+              "share_in_theme": 0.031601982364677865
             }
           ],
           "examples": [
@@ -6570,24 +6570,24 @@
         },
         {
           "theme": "Contratos, licitações e fornecedores",
-          "total_requests": 10070,
-          "restricted_total": 934,
-          "restricted_rate": 0.09275074478649453,
+          "total_requests": 9953,
+          "restricted_total": 886,
+          "restricted_rate": 0.08901838641615593,
           "top_decisions": [
             {
               "decision": "Acesso Concedido",
-              "count": 8210,
-              "share_in_theme": 0.8152929493545183
+              "count": 8153,
+              "share_in_theme": 0.819150005023611
             },
             {
               "decision": "Acesso Negado",
-              "count": 599,
-              "share_in_theme": 0.05948361469712016
+              "count": 556,
+              "share_in_theme": 0.05586255400381795
             },
             {
               "decision": "Informação Inexistente",
-              "count": 405,
-              "share_in_theme": 0.04021847070506455
+              "count": 404,
+              "share_in_theme": 0.040590776650256205
             }
           ],
           "examples": [
@@ -6609,24 +6609,24 @@
         },
         {
           "theme": "Dados pessoais e vida privada",
-          "total_requests": 1462,
-          "restricted_total": 152,
-          "restricted_rate": 0.1039671682626539,
+          "total_requests": 1418,
+          "restricted_total": 148,
+          "restricted_rate": 0.10437235543018336,
           "top_decisions": [
             {
               "decision": "Acesso Concedido",
-              "count": 914,
-              "share_in_theme": 0.625170998632011
+              "count": 899,
+              "share_in_theme": 0.6339915373765868
             },
             {
               "decision": "Informação Inexistente",
-              "count": 216,
-              "share_in_theme": 0.14774281805745554
+              "count": 214,
+              "share_in_theme": 0.15091678420310295
             },
             {
               "decision": "Não se trata de solicitação de informação",
-              "count": 102,
-              "share_in_theme": 0.06976744186046512
+              "count": 93,
+              "share_in_theme": 0.06558533145275035
             }
           ],
           "examples": [
@@ -6648,24 +6648,24 @@
         },
         {
           "theme": "Processos administrativos e sanções",
-          "total_requests": 1065,
-          "restricted_total": 98,
-          "restricted_rate": 0.09201877934272301,
+          "total_requests": 1046,
+          "restricted_total": 86,
+          "restricted_rate": 0.08221797323135756,
           "top_decisions": [
             {
               "decision": "Acesso Concedido",
-              "count": 892,
-              "share_in_theme": 0.8375586854460094
+              "count": 887,
+              "share_in_theme": 0.8479923518164436
             },
             {
               "decision": "Acesso Negado",
-              "count": 73,
-              "share_in_theme": 0.06854460093896714
+              "count": 61,
+              "share_in_theme": 0.058317399617590825
             },
             {
               "decision": "Informação Inexistente",
               "count": 32,
-              "share_in_theme": 0.03004694835680751
+              "share_in_theme": 0.030592734225621414
             }
           ],
           "examples": [
@@ -6687,24 +6687,24 @@
         },
         {
           "theme": "Segurança pública e polícia",
-          "total_requests": 728,
-          "restricted_total": 192,
-          "restricted_rate": 0.26373626373626374,
+          "total_requests": 727,
+          "restricted_total": 191,
+          "restricted_rate": 0.2627235213204952,
           "top_decisions": [
             {
               "decision": "Acesso Concedido",
               "count": 470,
-              "share_in_theme": 0.6456043956043956
+              "share_in_theme": 0.6464924346629987
             },
             {
               "decision": "Acesso Parcialmente Concedido",
               "count": 170,
-              "share_in_theme": 0.23351648351648352
+              "share_in_theme": 0.23383768913342504
             },
             {
               "decision": "Informação Inexistente",
               "count": 60,
-              "share_in_theme": 0.08241758241758242
+              "share_in_theme": 0.08253094910591471
             }
           ],
           "examples": [
@@ -6726,24 +6726,24 @@
         },
         {
           "theme": "Obras, infraestrutura e transportes",
-          "total_requests": 559,
+          "total_requests": 556,
           "restricted_total": 43,
-          "restricted_rate": 0.07692307692307693,
+          "restricted_rate": 0.07733812949640288,
           "top_decisions": [
             {
               "decision": "Acesso Concedido",
-              "count": 394,
-              "share_in_theme": 0.7048300536672629
+              "count": 393,
+              "share_in_theme": 0.7068345323741008
             },
             {
               "decision": "Não se trata de solicitação de informação",
-              "count": 64,
-              "share_in_theme": 0.11449016100178891
+              "count": 62,
+              "share_in_theme": 0.11151079136690648
             },
             {
               "decision": "Informação Inexistente",
               "count": 30,
-              "share_in_theme": 0.05366726296958855
+              "share_in_theme": 0.0539568345323741
             }
           ],
           "examples": [
@@ -7024,14 +7024,14 @@
       "org": "BB – Banco do Brasil S.A.",
       "summary": {
         "org": "BB – Banco do Brasil S.A.",
-        "total_requests": 6097,
-        "denied_total": 1335,
-        "restricted_total": 1690,
-        "personal_restricted_total": 54,
-        "denied_rate": 0.21896014433327865,
-        "restricted_rate": 0.2771855010660981,
-        "personal_rate_in_total": 0.00885681482696408,
-        "personal_rate_in_restricted": 0.03195266272189349,
+        "total_requests": 6446,
+        "denied_total": 1338,
+        "restricted_total": 1699,
+        "personal_restricted_total": 55,
+        "denied_rate": 0.20757058641017687,
+        "restricted_rate": 0.263574309649395,
+        "personal_rate_in_total": 0.008532423208191127,
+        "personal_rate_in_restricted": 0.032371983519717484,
         "concentration_year": 2026,
         "top_requester_share": 0.02,
         "top_requester_denied_rate": 0.5,
@@ -7041,24 +7041,24 @@
       "top_themes": [
         {
           "theme": "Outros temas",
-          "total_requests": 2118,
-          "restricted_total": 562,
-          "restricted_rate": 0.26534466477809254,
+          "total_requests": 2233,
+          "restricted_total": 564,
+          "restricted_rate": 0.25257501119570086,
           "top_decisions": [
             {
               "decision": "Acesso Concedido",
-              "count": 1165,
-              "share_in_theme": 0.5500472143531634
+              "count": 1176,
+              "share_in_theme": 0.5266457680250783
             },
             {
               "decision": "Acesso Negado",
-              "count": 507,
-              "share_in_theme": 0.23937677053824363
+              "count": 509,
+              "share_in_theme": 0.22794446932377968
             },
             {
               "decision": "Não se trata de solicitação de informação",
-              "count": 247,
-              "share_in_theme": 0.1166194523135033
+              "count": 270,
+              "share_in_theme": 0.12091356918943126
             }
           ],
           "examples": [
@@ -7080,24 +7080,24 @@
         },
         {
           "theme": "Contratos, licitações e fornecedores",
-          "total_requests": 1892,
-          "restricted_total": 530,
-          "restricted_rate": 0.28012684989429176,
+          "total_requests": 1989,
+          "restricted_total": 533,
+          "restricted_rate": 0.2679738562091503,
           "top_decisions": [
             {
               "decision": "Acesso Concedido",
-              "count": 1154,
-              "share_in_theme": 0.6099365750528541
+              "count": 1175,
+              "share_in_theme": 0.5907491201608849
             },
             {
               "decision": "Acesso Negado",
               "count": 393,
-              "share_in_theme": 0.2077167019027484
+              "share_in_theme": 0.1975867269984917
             },
             {
               "decision": "Acesso Parcialmente Concedido",
-              "count": 137,
-              "share_in_theme": 0.07241014799154334
+              "count": 140,
+              "share_in_theme": 0.07038712921065862
             }
           ],
           "examples": [
@@ -7119,24 +7119,24 @@
         },
         {
           "theme": "Dados pessoais e vida privada",
-          "total_requests": 664,
-          "restricted_total": 199,
-          "restricted_rate": 0.2996987951807229,
+          "total_requests": 690,
+          "restricted_total": 201,
+          "restricted_rate": 0.29130434782608694,
           "top_decisions": [
             {
               "decision": "Acesso Concedido",
-              "count": 375,
-              "share_in_theme": 0.5647590361445783
+              "count": 386,
+              "share_in_theme": 0.5594202898550724
             },
             {
               "decision": "Acesso Negado",
               "count": 152,
-              "share_in_theme": 0.2289156626506024
+              "share_in_theme": 0.22028985507246376
             },
             {
               "decision": "Acesso Parcialmente Concedido",
-              "count": 47,
-              "share_in_theme": 0.07078313253012049
+              "count": 49,
+              "share_in_theme": 0.07101449275362319
             }
           ],
           "examples": [
@@ -7158,24 +7158,24 @@
         },
         {
           "theme": "Servidores, salários e concursos",
-          "total_requests": 497,
+          "total_requests": 511,
           "restricted_total": 140,
-          "restricted_rate": 0.28169014084507044,
+          "restricted_rate": 0.273972602739726,
           "top_decisions": [
             {
               "decision": "Acesso Concedido",
-              "count": 297,
-              "share_in_theme": 0.5975855130784709
+              "count": 300,
+              "share_in_theme": 0.5870841487279843
             },
             {
               "decision": "Acesso Negado",
               "count": 90,
-              "share_in_theme": 0.18108651911468812
+              "share_in_theme": 0.1761252446183953
             },
             {
               "decision": "Acesso Parcialmente Concedido",
               "count": 50,
-              "share_in_theme": 0.1006036217303823
+              "share_in_theme": 0.09784735812133072
             }
           ],
           "examples": [
@@ -7197,24 +7197,24 @@
         },
         {
           "theme": "Gastos públicos e orçamento",
-          "total_requests": 347,
-          "restricted_total": 110,
-          "restricted_rate": 0.3170028818443804,
+          "total_requests": 374,
+          "restricted_total": 111,
+          "restricted_rate": 0.2967914438502674,
           "top_decisions": [
             {
               "decision": "Acesso Concedido",
-              "count": 183,
-              "share_in_theme": 0.5273775216138329
+              "count": 185,
+              "share_in_theme": 0.4946524064171123
             },
             {
               "decision": "Acesso Negado",
-              "count": 74,
-              "share_in_theme": 0.2132564841498559
+              "count": 75,
+              "share_in_theme": 0.20053475935828877
             },
             {
               "decision": "Acesso Parcialmente Concedido",
               "count": 36,
-              "share_in_theme": 0.1037463976945245
+              "share_in_theme": 0.0962566844919786
             }
           ],
           "examples": [
@@ -7236,24 +7236,24 @@
         },
         {
           "theme": "Previdência e benefícios sociais",
-          "total_requests": 264,
+          "total_requests": 274,
           "restricted_total": 81,
-          "restricted_rate": 0.3068181818181818,
+          "restricted_rate": 0.2956204379562044,
           "top_decisions": [
             {
               "decision": "Acesso Concedido",
-              "count": 138,
-              "share_in_theme": 0.5227272727272727
+              "count": 139,
+              "share_in_theme": 0.5072992700729927
             },
             {
               "decision": "Acesso Negado",
               "count": 62,
-              "share_in_theme": 0.23484848484848486
+              "share_in_theme": 0.22627737226277372
             },
             {
               "decision": "Não se trata de solicitação de informação",
-              "count": 23,
-              "share_in_theme": 0.08712121212121213
+              "count": 25,
+              "share_in_theme": 0.09124087591240876
             }
           ],
           "examples": [
@@ -7279,14 +7279,14 @@
       "org": "PF – Polícia Federal",
       "summary": {
         "org": "PF – Polícia Federal",
-        "total_requests": 12444,
-        "denied_total": 1313,
-        "restricted_total": 2262,
+        "total_requests": 12427,
+        "denied_total": 1310,
+        "restricted_total": 2259,
         "personal_restricted_total": 621,
-        "denied_rate": 0.1055126968820315,
-        "restricted_rate": 0.18177434908389586,
-        "personal_rate_in_total": 0.04990356798457088,
-        "personal_rate_in_restricted": 0.27453580901856767,
+        "denied_rate": 0.10541562726321718,
+        "restricted_rate": 0.18178160457069284,
+        "personal_rate_in_total": 0.04997183551943349,
+        "personal_rate_in_restricted": 0.2749003984063745,
         "concentration_year": 2026,
         "top_requester_share": 0.01,
         "top_requester_denied_rate": 0.0,
@@ -7296,24 +7296,24 @@
       "top_themes": [
         {
           "theme": "Outros temas",
-          "total_requests": 3645,
+          "total_requests": 3640,
           "restricted_total": 561,
-          "restricted_rate": 0.15390946502057612,
+          "restricted_rate": 0.15412087912087913,
           "top_decisions": [
             {
               "decision": "Acesso Concedido",
-              "count": 2682,
-              "share_in_theme": 0.7358024691358025
+              "count": 2677,
+              "share_in_theme": 0.7354395604395605
             },
             {
               "decision": "Acesso Negado",
               "count": 393,
-              "share_in_theme": 0.10781893004115227
+              "share_in_theme": 0.10796703296703297
             },
             {
               "decision": "Acesso Parcialmente Concedido",
               "count": 168,
-              "share_in_theme": 0.04609053497942387
+              "share_in_theme": 0.046153846153846156
             }
           ],
           "examples": [
@@ -7335,24 +7335,24 @@
         },
         {
           "theme": "Contratos, licitações e fornecedores",
-          "total_requests": 3137,
+          "total_requests": 3134,
           "restricted_total": 596,
-          "restricted_rate": 0.18999043672298374,
+          "restricted_rate": 0.19017230376515634,
           "top_decisions": [
             {
               "decision": "Acesso Concedido",
-              "count": 2247,
-              "share_in_theme": 0.716289448517692
+              "count": 2244,
+              "share_in_theme": 0.7160178685386088
             },
             {
               "decision": "Acesso Negado",
               "count": 313,
-              "share_in_theme": 0.09977685686962065
+              "share_in_theme": 0.09987236758136567
             },
             {
               "decision": "Acesso Parcialmente Concedido",
               "count": 283,
-              "share_in_theme": 0.09021357985336309
+              "share_in_theme": 0.09029993618379069
             }
           ],
           "examples": [
@@ -7374,24 +7374,24 @@
         },
         {
           "theme": "Segurança pública e polícia",
-          "total_requests": 2745,
+          "total_requests": 2742,
           "restricted_total": 597,
-          "restricted_rate": 0.2174863387978142,
+          "restricted_rate": 0.21772428884026257,
           "top_decisions": [
             {
               "decision": "Acesso Concedido",
-              "count": 1842,
-              "share_in_theme": 0.6710382513661202
+              "count": 1839,
+              "share_in_theme": 0.6706783369803063
             },
             {
               "decision": "Acesso Parcialmente Concedido",
               "count": 316,
-              "share_in_theme": 0.1151183970856102
+              "share_in_theme": 0.11524434719183078
             },
             {
               "decision": "Acesso Negado",
               "count": 281,
-              "share_in_theme": 0.10236794171220401
+              "share_in_theme": 0.1024799416484318
             }
           ],
           "examples": [
@@ -7413,24 +7413,24 @@
         },
         {
           "theme": "Dados pessoais e vida privada",
-          "total_requests": 1276,
-          "restricted_total": 238,
-          "restricted_rate": 0.1865203761755486,
+          "total_requests": 1271,
+          "restricted_total": 235,
+          "restricted_rate": 0.1848937844217152,
           "top_decisions": [
             {
               "decision": "Acesso Concedido",
-              "count": 852,
-              "share_in_theme": 0.6677115987460815
+              "count": 850,
+              "share_in_theme": 0.6687647521636507
             },
             {
               "decision": "Acesso Negado",
-              "count": 160,
-              "share_in_theme": 0.12539184952978055
+              "count": 157,
+              "share_in_theme": 0.12352478363493312
             },
             {
               "decision": "Não se trata de solicitação de informação",
               "count": 124,
-              "share_in_theme": 0.09717868338557993
+              "share_in_theme": 0.0975609756097561
             }
           ],
           "examples": [
@@ -7491,24 +7491,24 @@
         },
         {
           "theme": "Servidores, salários e concursos",
-          "total_requests": 413,
+          "total_requests": 412,
           "restricted_total": 75,
-          "restricted_rate": 0.18159806295399517,
+          "restricted_rate": 0.1820388349514563,
           "top_decisions": [
             {
               "decision": "Acesso Concedido",
-              "count": 301,
-              "share_in_theme": 0.7288135593220338
+              "count": 300,
+              "share_in_theme": 0.7281553398058253
             },
             {
               "decision": "Acesso Negado",
               "count": 45,
-              "share_in_theme": 0.1089588377723971
+              "share_in_theme": 0.10922330097087378
             },
             {
               "decision": "Acesso Parcialmente Concedido",
               "count": 30,
-              "share_in_theme": 0.07263922518159806
+              "share_in_theme": 0.07281553398058252
             }
           ],
           "examples": [
@@ -7542,7 +7542,7 @@
     "ANEEL – Agência Nacional de Energia Elétrica": {
       "concentration_year": 2026,
       "top_requester_share": 0.03,
-      "top_requester_denied_rate": 0.46,
+      "top_requester_denied_rate": 0.45,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.11
     },
@@ -8057,19 +8057,19 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.03
     },
-    "CBTU – Companhia Brasileira de Trens Urbanos": {
-      "concentration_year": 2026,
-      "top_requester_share": 0.08,
-      "top_requester_denied_rate": 0.0,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.05
-    },
     "UFAL – Universidade Federal de Alagoas": {
       "concentration_year": 2026,
       "top_requester_share": 0.03,
       "top_requester_denied_rate": 0.33,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.18
+    },
+    "CBTU – Companhia Brasileira de Trens Urbanos": {
+      "concentration_year": 2026,
+      "top_requester_share": 0.08,
+      "top_requester_denied_rate": 0.0,
+      "concentration_flag": false,
+      "denied_rate_adjusted": 0.05
     },
     "UFMG – Universidade Federal de Minas Gerais": {
       "concentration_year": 2026,
@@ -8094,7 +8094,7 @@
     },
     "IFRN – Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte": {
       "concentration_year": 2026,
-      "top_requester_share": 0.04,
+      "top_requester_share": 0.03,
       "top_requester_denied_rate": 0.4,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.05
@@ -8143,7 +8143,7 @@
     },
     "UFPE – Universidade Federal de Pernambuco": {
       "concentration_year": 2026,
-      "top_requester_share": 0.09,
+      "top_requester_share": 0.08,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.02
@@ -8162,19 +8162,19 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.04
     },
-    "UFSM – Universidade Federal de Santa Maria": {
-      "concentration_year": 2026,
-      "top_requester_share": 0.04,
-      "top_requester_denied_rate": 0.0,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.04
-    },
     "UFMA – Fundação Universidade Federal do Maranhão": {
       "concentration_year": 2026,
       "top_requester_share": 0.02,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.01
+    },
+    "UFSM – Universidade Federal de Santa Maria": {
+      "concentration_year": 2026,
+      "top_requester_share": 0.04,
+      "top_requester_denied_rate": 0.0,
+      "concentration_flag": false,
+      "denied_rate_adjusted": 0.04
     },
     "UNIFESP – Universidade Federal de São Paulo": {
       "concentration_year": 2026,
@@ -8295,19 +8295,19 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
     },
-    "UFOP – Fundação Universidade Federal de Ouro Preto": {
-      "concentration_year": 2026,
-      "top_requester_share": 0.03,
-      "top_requester_denied_rate": 0.0,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.06
-    },
     "IF BAIANO – Instituto Federal de Educação, Ciência e Tecnologia Baiano": {
       "concentration_year": 2026,
       "top_requester_share": 0.0,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
+    },
+    "UFOP – Fundação Universidade Federal de Ouro Preto": {
+      "concentration_year": 2026,
+      "top_requester_share": 0.03,
+      "top_requester_denied_rate": 0.0,
+      "concentration_flag": false,
+      "denied_rate_adjusted": 0.06
     },
     "UFABC – Fundação Universidade Federal do ABC": {
       "concentration_year": 2026,
@@ -8400,19 +8400,19 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.01
     },
-    "FBN – Fundação Biblioteca Nacional": {
-      "concentration_year": 2026,
-      "top_requester_share": 0.05,
-      "top_requester_denied_rate": 0.0,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.0
-    },
     "FUNARTE – Fundação Nacional de Artes": {
       "concentration_year": 2026,
       "top_requester_share": 0.06,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.06
+    },
+    "FBN – Fundação Biblioteca Nacional": {
+      "concentration_year": 2026,
+      "top_requester_share": 0.05,
+      "top_requester_denied_rate": 0.0,
+      "concentration_flag": false,
+      "denied_rate_adjusted": 0.0
     },
     "UFU – Universidade Federal de Uberlândia": {
       "concentration_year": 2026,
@@ -8442,13 +8442,6 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.12
     },
-    "UFCG – Universidade Federal de Campina Grande": {
-      "concentration_year": 2026,
-      "top_requester_share": 0.03,
-      "top_requester_denied_rate": 0.8,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.06
-    },
     "FCP – Fundação Cultural Palmares": {
       "concentration_year": 2026,
       "top_requester_share": 0.04,
@@ -8456,12 +8449,12 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.04
     },
-    "BNB – Banco do Nordeste do Brasil S.A.": {
+    "UFCG – Universidade Federal de Campina Grande": {
       "concentration_year": 2026,
       "top_requester_share": 0.03,
-      "top_requester_denied_rate": 0.5,
+      "top_requester_denied_rate": 0.8,
       "concentration_flag": false,
-      "denied_rate_adjusted": 0.21
+      "denied_rate_adjusted": 0.06
     },
     "CODEVASF – Companhia de Desenvolvimento dos Vales do São Francisco e do Parnaíba": {
       "concentration_year": 2026,
@@ -8476,6 +8469,13 @@
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
+    },
+    "BNB – Banco do Nordeste do Brasil S.A.": {
+      "concentration_year": 2026,
+      "top_requester_share": 0.03,
+      "top_requester_denied_rate": 0.5,
+      "concentration_flag": false,
+      "denied_rate_adjusted": 0.21
     },
     "EPE – Empresa de Pesquisa Energética": {
       "concentration_year": 2026,
@@ -8512,19 +8512,19 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.04
     },
-    "IPEA - Instituto de Pesquisa Econômica Aplicada": {
-      "concentration_year": 2026,
-      "top_requester_share": 0.07,
-      "top_requester_denied_rate": 0.33,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.11
-    },
     "UNIPAMPA – Fundação Universidade Federal do Pampa": {
       "concentration_year": 2026,
       "top_requester_share": 0.05,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.1
+    },
+    "IPEA - Instituto de Pesquisa Econômica Aplicada": {
+      "concentration_year": 2026,
+      "top_requester_share": 0.07,
+      "top_requester_denied_rate": 0.33,
+      "concentration_flag": false,
+      "denied_rate_adjusted": 0.11
     },
     "UFRA – Universidade Federal Rural da Amazônia": {
       "concentration_year": 2026,
@@ -8547,19 +8547,19 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
     },
-    "UNILA – Universidade Federal da Integração Latino-Americana": {
-      "concentration_year": 2026,
-      "top_requester_share": 0.04,
-      "top_requester_denied_rate": 0.0,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.05
-    },
     "UFOPA – Universidade Federal do Oeste do Pará": {
       "concentration_year": 2026,
       "top_requester_share": 0.04,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.02
+    },
+    "UNILA – Universidade Federal da Integração Latino-Americana": {
+      "concentration_year": 2026,
+      "top_requester_share": 0.04,
+      "top_requester_denied_rate": 0.0,
+      "concentration_flag": false,
+      "denied_rate_adjusted": 0.05
     },
     "UFERSA-RN – Universidade Federal Rural do Semi-Árido": {
       "concentration_year": 2026,
@@ -8603,9 +8603,9 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.01
     },
-    "ENAP – Fundação Escola Nacional de Administração Pública": {
+    "CDRJ – Companhia Docas do Rio de Janeiro": {
       "concentration_year": 2026,
-      "top_requester_share": 0.04,
+      "top_requester_share": 0.07,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.02
@@ -8617,9 +8617,9 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.05
     },
-    "CDRJ – Companhia Docas do Rio de Janeiro": {
+    "ENAP – Fundação Escola Nacional de Administração Pública": {
       "concentration_year": 2026,
-      "top_requester_share": 0.07,
+      "top_requester_share": 0.04,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.02
@@ -8638,13 +8638,6 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
     },
-    "UFLA – Universidade Federal de Lavras": {
-      "concentration_year": 2026,
-      "top_requester_share": 0.04,
-      "top_requester_denied_rate": 0.0,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.03
-    },
     "IFSPE – Instituto Federal de Educação, Ciência e Tecnologia do Sertão Pernambucano": {
       "concentration_year": 2026,
       "top_requester_share": 0.04,
@@ -8652,12 +8645,12 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.03
     },
-    "CDP – Companhia Docas do Pará": {
+    "UFLA – Universidade Federal de Lavras": {
       "concentration_year": 2026,
-      "top_requester_share": 0.17,
+      "top_requester_share": 0.04,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
-      "denied_rate_adjusted": 0.0
+      "denied_rate_adjusted": 0.03
     },
     "UFGD – Fundação Universidade Federal da Grande Dourados": {
       "concentration_year": 2026,
@@ -8666,12 +8659,12 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.07
     },
-    "IFRS – Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Sul": {
+    "CDP – Companhia Docas do Pará": {
       "concentration_year": 2026,
-      "top_requester_share": 0.07,
+      "top_requester_share": 0.17,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
-      "denied_rate_adjusted": 0.06
+      "denied_rate_adjusted": 0.0
     },
     "ABGF - Agencia Brasileira Gestora de Fundos Garantidores e Garantias S.A.": {
       "concentration_year": 2026,
@@ -8686,6 +8679,13 @@
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.05
+    },
+    "IFRS – Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Sul": {
+      "concentration_year": 2026,
+      "top_requester_share": 0.07,
+      "top_requester_denied_rate": 0.0,
+      "concentration_flag": false,
+      "denied_rate_adjusted": 0.06
     },
     "UNILAB – Universidade da Integração Internacional da Lusofonia Afro-Brasileira": {
       "concentration_year": 2026,
@@ -8729,12 +8729,12 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.09
     },
-    "UNIRIO – Universidade Federal do Estado do Rio de Janeiro": {
+    "HEMOBRÁS – Empresa Brasileira de Hemoderivados e Biotecnologia": {
       "concentration_year": 2026,
       "top_requester_share": 0.06,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
-      "denied_rate_adjusted": 0.01
+      "denied_rate_adjusted": 0.14
     },
     "IFMGSE – Instituto Federal de Educação, Ciência e Tecnologia do Sudeste de Minas Gerais": {
       "concentration_year": 2026,
@@ -8750,12 +8750,12 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
     },
-    "HEMOBRÁS – Empresa Brasileira de Hemoderivados e Biotecnologia": {
+    "UNIRIO – Universidade Federal do Estado do Rio de Janeiro": {
       "concentration_year": 2026,
       "top_requester_share": 0.06,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
-      "denied_rate_adjusted": 0.14
+      "denied_rate_adjusted": 0.01
     },
     "IFTO – Instituto Federal de Educação, Ciência e Tecnologia do Tocantins": {
       "concentration_year": 2026,
@@ -8763,6 +8763,13 @@
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.05
+    },
+    "UFRB – Universidade Federal do Recôncavo da Bahia": {
+      "concentration_year": 2026,
+      "top_requester_share": 0.03,
+      "top_requester_denied_rate": 0.0,
+      "concentration_flag": false,
+      "denied_rate_adjusted": 0.03
     },
     "UFRR – Fundação Universidade Federal de Roraima": {
       "concentration_year": 2026,
@@ -8778,13 +8785,6 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.05
     },
-    "UFRB – Universidade Federal do Recôncavo da Bahia": {
-      "concentration_year": 2026,
-      "top_requester_share": 0.03,
-      "top_requester_denied_rate": 0.0,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.03
-    },
     "IFTM – Instituto Federal de Educação, Ciência e Tecnologia do Triângulo Mineiro": {
       "concentration_year": 2026,
       "top_requester_share": 0.05,
@@ -8792,19 +8792,19 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
     },
-    "CBPF – Centro Brasileiro de Pesquisas Físicas": {
-      "concentration_year": 2026,
-      "top_requester_share": 0.29,
-      "top_requester_denied_rate": 0.0,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.14
-    },
     "DNOCS – Departamento Nacional de Obras Contra as Secas": {
       "concentration_year": 2026,
       "top_requester_share": 0.07,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.06
+    },
+    "CBPF – Centro Brasileiro de Pesquisas Físicas": {
+      "concentration_year": 2026,
+      "top_requester_share": 0.29,
+      "top_requester_denied_rate": 0.0,
+      "concentration_flag": false,
+      "denied_rate_adjusted": 0.14
     },
     "UFCSPA – Fundação Universidade Federal de Ciências da Saúde de Porto Alegre": {
       "concentration_year": 2026,
@@ -8827,16 +8827,16 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.04
     },
-    "INPE-MCT – Instituto Nacional de Pesquisas Espaciais": {
+    "ITI – Instituto Nacional de Tecnologia da Informação": {
       "concentration_year": 2026,
-      "top_requester_share": 0.08,
+      "top_requester_share": 0.06,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
     },
-    "ITI – Instituto Nacional de Tecnologia da Informação": {
+    "INPE-MCT – Instituto Nacional de Pesquisas Espaciais": {
       "concentration_year": 2026,
-      "top_requester_share": 0.06,
+      "top_requester_share": 0.08,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
@@ -8876,20 +8876,6 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
     },
-    "VPR – Vice-Presidência da República": {
-      "concentration_year": 2026,
-      "top_requester_share": 0.25,
-      "top_requester_denied_rate": 1.0,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.25
-    },
-    "FURG – Fundação Universidade Federal do Rio Grande": {
-      "concentration_year": 2026,
-      "top_requester_share": 0.04,
-      "top_requester_denied_rate": 0.0,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.04
-    },
     "IFSULDEMINAS – Instituto Federal de Educação, Ciência e Tecnologia do Sul de Minas Gerais": {
       "concentration_year": 2026,
       "top_requester_share": 0.05,
@@ -8904,12 +8890,26 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
     },
+    "FURG – Fundação Universidade Federal do Rio Grande": {
+      "concentration_year": 2026,
+      "top_requester_share": 0.04,
+      "top_requester_denied_rate": 0.0,
+      "concentration_flag": false,
+      "denied_rate_adjusted": 0.04
+    },
     "CODEBA – Companhia das Docas do Estado da Bahia": {
       "concentration_year": 2026,
       "top_requester_share": 0.08,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.04
+    },
+    "VPR – Vice-Presidência da República": {
+      "concentration_year": 2026,
+      "top_requester_share": 0.25,
+      "top_requester_denied_rate": 1.0,
+      "concentration_flag": false,
+      "denied_rate_adjusted": 0.25
     },
     "CEFET-MG – Centro Federal de Educação Tecnológica de Minas Gerais": {
       "concentration_year": 2026,
@@ -8918,12 +8918,12 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
     },
-    "EBSERH - HUB-UNB - Hospital Universitário de Brasília": {
+    "IFRR – Instituto Federal de Educação, Ciência e Tecnologia de Roraima": {
       "concentration_year": 2026,
-      "top_requester_share": 0.07,
+      "top_requester_share": 0.1,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
-      "denied_rate_adjusted": 0.03
+      "denied_rate_adjusted": 0.02
     },
     "TRENSURB – Empresa de Trens Urbanos de Porto Alegre S.A.": {
       "concentration_year": 2026,
@@ -8946,12 +8946,19 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.13
     },
-    "IFRR – Instituto Federal de Educação, Ciência e Tecnologia de Roraima": {
+    "EBSERH - HUB-UNB - Hospital Universitário de Brasília": {
       "concentration_year": 2026,
-      "top_requester_share": 0.1,
+      "top_requester_share": 0.07,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
-      "denied_rate_adjusted": 0.02
+      "denied_rate_adjusted": 0.03
+    },
+    "IBRAM – Instituto Brasileiro de Museus": {
+      "concentration_year": 2026,
+      "top_requester_share": 0.08,
+      "top_requester_denied_rate": 0.5,
+      "concentration_flag": false,
+      "denied_rate_adjusted": 0.04
     },
     "SUFRAMA – Superintendência da Zona Franca de Manaus": {
       "concentration_year": 2026,
@@ -8967,13 +8974,6 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.05
     },
-    "IBRAM – Instituto Brasileiro de Museus": {
-      "concentration_year": 2026,
-      "top_requester_share": 0.08,
-      "top_requester_denied_rate": 0.5,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.04
-    },
     "SUDAM – Superintendência do Desenvolvimento da Amazônia": {
       "concentration_year": 2026,
       "top_requester_share": 0.14,
@@ -8981,12 +8981,12 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.05
     },
-    "UFCA - Universidade Federal do Cariri": {
+    "EMGEPRON – Empresa Gerencial de Projetos Navais": {
       "concentration_year": 2026,
-      "top_requester_share": 0.12,
+      "top_requester_share": 0.06,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
-      "denied_rate_adjusted": 0.0
+      "denied_rate_adjusted": 0.06
     },
     "NUCLEP – Nuclebrás Equipamentos Pesados S.A.": {
       "concentration_year": 2026,
@@ -8995,12 +8995,12 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.04
     },
-    "EMGEPRON – Empresa Gerencial de Projetos Navais": {
+    "UFCA - Universidade Federal do Cariri": {
       "concentration_year": 2026,
-      "top_requester_share": 0.06,
+      "top_requester_share": 0.12,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
-      "denied_rate_adjusted": 0.06
+      "denied_rate_adjusted": 0.0
     },
     "CP II – Colégio Pedro II": {
       "concentration_year": 2026,
@@ -9044,13 +9044,6 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.2
     },
-    "INB – Indústrias Nucleares do Brasil S.A.": {
-      "concentration_year": 2026,
-      "top_requester_share": 0.12,
-      "top_requester_denied_rate": 0.0,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.05
-    },
     "CDC – Companhia Docas do Ceará": {
       "concentration_year": 2026,
       "top_requester_share": 0.09,
@@ -9064,6 +9057,13 @@
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
+    },
+    "INB – Indústrias Nucleares do Brasil S.A.": {
+      "concentration_year": 2026,
+      "top_requester_share": 0.12,
+      "top_requester_denied_rate": 0.0,
+      "concentration_flag": false,
+      "denied_rate_adjusted": 0.05
     },
     "IMBEL – Indústria de Material Bélico do Brasil": {
       "concentration_year": 2026,
@@ -9128,16 +9128,16 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
     },
-    "SUDECO – Superintendência de Desenvolvimento do Centro-Oeste": {
+    "ESG – Escola Superior de Guerra": {
       "concentration_year": 2026,
-      "top_requester_share": 0.2,
+      "top_requester_share": 0.17,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
     },
-    "ESG – Escola Superior de Guerra": {
+    "SUDECO – Superintendência de Desenvolvimento do Centro-Oeste": {
       "concentration_year": 2026,
-      "top_requester_share": 0.17,
+      "top_requester_share": 0.2,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
@@ -9149,16 +9149,16 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
     },
-    "EBSERH - HUGV-UFAM – Hospital Universitário Getúlio Vargas": {
+    "JBRJ – Instituto de Pesquisas Jardim Botânico do Rio de Janeiro": {
       "concentration_year": 2026,
-      "top_requester_share": 0.05,
+      "top_requester_share": 0.12,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
     },
-    "JBRJ – Instituto de Pesquisas Jardim Botânico do Rio de Janeiro": {
+    "EBSERH - HUGV-UFAM – Hospital Universitário Getúlio Vargas": {
       "concentration_year": 2026,
-      "top_requester_share": 0.12,
+      "top_requester_share": 0.05,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
@@ -9170,13 +9170,6 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
     },
-    "BBTur Viagens e Turismo Ltda": {
-      "concentration_year": 2025,
-      "top_requester_share": 0.1,
-      "top_requester_denied_rate": 0.0,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.0
-    },
     "UFOB - Universidade Federal do Oeste da Bahia": {
       "concentration_year": 2026,
       "top_requester_share": 0.12,
@@ -9184,16 +9177,16 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.06
     },
-    "INPA – Instituto Nacional de Pesquisas da Amazônia": {
+    "CTI – Centro de Tecnologia da Informação Renato Archer": {
       "concentration_year": 2026,
-      "top_requester_share": 0.18,
+      "top_requester_share": 0.22,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
     },
-    "CTI – Centro de Tecnologia da Informação Renato Archer": {
+    "INPA – Instituto Nacional de Pesquisas da Amazônia": {
       "concentration_year": 2026,
-      "top_requester_share": 0.22,
+      "top_requester_share": 0.18,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
@@ -9204,20 +9197,6 @@
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.03
-    },
-    "EBSERH - CH-UFC - Complexo Hospitalar da Universidade Federal do Ceará - Hospital Universitário Walter Cantídio (HUWC) e Maternidade Escola Assis Chateaubriand (MEAC)": {
-      "concentration_year": 2026,
-      "top_requester_share": 0.04,
-      "top_requester_denied_rate": 0.0,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.03
-    },
-    "EBSERH - HUCAM-UFES - Hospital Universitário Cassiano Antônio Moraes": {
-      "concentration_year": 2026,
-      "top_requester_share": 0.07,
-      "top_requester_denied_rate": 0.0,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.0
     },
     "FUNAG – Fundação Alexandre de Gusmão": {
       "concentration_year": 2026,
@@ -9233,6 +9212,27 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
     },
+    "EBSERH - CH-UFC - Complexo Hospitalar da Universidade Federal do Ceará - Hospital Universitário Walter Cantídio (HUWC) e Maternidade Escola Assis Chateaubriand (MEAC)": {
+      "concentration_year": 2026,
+      "top_requester_share": 0.04,
+      "top_requester_denied_rate": 0.0,
+      "concentration_flag": false,
+      "denied_rate_adjusted": 0.03
+    },
+    "EBSERH - HUCAM-UFES - Hospital Universitário Cassiano Antônio Moraes": {
+      "concentration_year": 2026,
+      "top_requester_share": 0.07,
+      "top_requester_denied_rate": 0.0,
+      "concentration_flag": false,
+      "denied_rate_adjusted": 0.0
+    },
+    "IFG – Instituto Federal de Educação, Ciência e Tecnologia de Goiás": {
+      "concentration_year": 2026,
+      "top_requester_share": 0.04,
+      "top_requester_denied_rate": 0.0,
+      "concentration_flag": false,
+      "denied_rate_adjusted": 0.0
+    },
     "AMAZUL - Amazônia Azul Tecnologias de Defesa S.A.": {
       "concentration_year": 2026,
       "top_requester_share": 0.07,
@@ -9240,9 +9240,23 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.07
     },
-    "IFG – Instituto Federal de Educação, Ciência e Tecnologia de Goiás": {
+    "UNIFESSPA – Universidade Federal do Sul e Sudeste do Pará": {
       "concentration_year": 2026,
-      "top_requester_share": 0.04,
+      "top_requester_share": 0.05,
+      "top_requester_denied_rate": 0.0,
+      "concentration_flag": false,
+      "denied_rate_adjusted": 0.1
+    },
+    "CETENE – Centro de Tecnologias Estratégicas do Nordeste": {
+      "concentration_year": 2026,
+      "top_requester_share": 0.12,
+      "top_requester_denied_rate": 0.0,
+      "concentration_flag": false,
+      "denied_rate_adjusted": 0.0
+    },
+    "INSA – Instituto Nacional do Semi-Árido": {
+      "concentration_year": 2026,
+      "top_requester_share": 0.14,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
@@ -9254,40 +9268,12 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.03
     },
-    "CETENE – Centro de Tecnologias Estratégicas do Nordeste": {
-      "concentration_year": 2026,
-      "top_requester_share": 0.12,
-      "top_requester_denied_rate": 0.0,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.0
-    },
-    "UNIFESSPA – Universidade Federal do Sul e Sudeste do Pará": {
-      "concentration_year": 2026,
-      "top_requester_share": 0.05,
-      "top_requester_denied_rate": 0.0,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.1
-    },
-    "INSA – Instituto Nacional do Semi-Árido": {
-      "concentration_year": 2026,
-      "top_requester_share": 0.14,
-      "top_requester_denied_rate": 0.0,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.0
-    },
     "EBSERH - HUPAA-UFAL - Hospital Universitário Professor Alberto Antunes": {
       "concentration_year": 2026,
       "top_requester_share": 0.07,
       "top_requester_denied_rate": 0.5,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.04
-    },
-    "MPEG-MCTI – Museu Paraense Emílio Goeldi": {
-      "concentration_year": 2026,
-      "top_requester_share": 0.25,
-      "top_requester_denied_rate": 0.0,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.0
     },
     "EBSERH/HUPES-UFBA – EBSERH - Filial Hospital Universitário Edgard Santos": {
       "concentration_year": 2026,
@@ -9299,6 +9285,13 @@
     "CETEM – Centro de Tecnologia Mineral": {
       "concentration_year": 2026,
       "top_requester_share": 0.5,
+      "top_requester_denied_rate": 0.0,
+      "concentration_flag": false,
+      "denied_rate_adjusted": 0.0
+    },
+    "MPEG-MCTI – Museu Paraense Emílio Goeldi": {
+      "concentration_year": 2026,
+      "top_requester_share": 0.25,
       "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
       "denied_rate_adjusted": 0.0
@@ -9590,12 +9583,12 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.02
     },
-    "ANPD - Autoridade Nacional de Proteção de Dados": {
-      "concentration_year": 2025,
-      "top_requester_share": 0.02,
-      "top_requester_denied_rate": 0.33,
+    "ANPD - Agência Nacional de Proteção de Dados": {
+      "concentration_year": 2026,
+      "top_requester_share": 0.07,
+      "top_requester_denied_rate": 0.0,
       "concentration_flag": false,
-      "denied_rate_adjusted": 0.08
+      "denied_rate_adjusted": 0.09
     },
     "EBSERH – CHC-UFPR (HC e MVFA) Complexo do Hospital de Clínicas da Universidade Federal do Paraná": {
       "concentration_year": 2026,
@@ -9779,13 +9772,6 @@
       "concentration_flag": false,
       "denied_rate_adjusted": 0.09
     },
-    "ANPD - Agência Nacional de Proteção de Dados": {
-      "concentration_year": 2026,
-      "top_requester_share": 0.07,
-      "top_requester_denied_rate": 0.0,
-      "concentration_flag": false,
-      "denied_rate_adjusted": 0.09
-    },
     "Autoridade Nacional de Segurança Nuclear": {
       "concentration_year": 2026,
       "top_requester_share": 0.04,
@@ -9842,7 +9828,7 @@
       {
         "year": 2018,
         "count": 1257,
-        "share_in_restricted": 0.12514934289127838
+        "share_in_restricted": 0.12518673438900507
       },
       {
         "year": 2019,
@@ -9851,8 +9837,8 @@
       },
       {
         "year": 2020,
-        "count": 1368,
-        "share_in_restricted": 0.11152780042393608
+        "count": 1367,
+        "share_in_restricted": 0.11145536078271505
       },
       {
         "year": 2021,
@@ -9866,23 +9852,23 @@
       },
       {
         "year": 2023,
-        "count": 860,
-        "share_in_restricted": 0.07630201401827699
+        "count": 859,
+        "share_in_restricted": 0.07622681693140473
       },
       {
         "year": 2024,
-        "count": 1063,
-        "share_in_restricted": 0.09727306002928257
+        "count": 1010,
+        "share_in_restricted": 0.09295048775998528
       },
       {
         "year": 2025,
-        "count": 932,
-        "share_in_restricted": 0.07671413285044036
+        "count": 889,
+        "share_in_restricted": 0.07351968243466755
       },
       {
         "year": 2026,
-        "count": 743,
-        "share_in_restricted": 0.06391397849462366
+        "count": 744,
+        "share_in_restricted": 0.06398899114130903
       }
     ],
     "top_orgs": [
@@ -9939,30 +9925,30 @@
       },
       {
         "org": "PF – Polícia Federal",
-        "total_requests": 12444,
-        "denied_total": 1313,
-        "restricted_total": 2262,
+        "total_requests": 12427,
+        "denied_total": 1310,
+        "restricted_total": 2259,
         "personal_restricted_total": 621,
-        "denied_rate": 0.1055126968820315,
-        "restricted_rate": 0.18177434908389586,
-        "personal_rate_in_total": 0.04990356798457088,
-        "personal_rate_in_restricted": 0.27453580901856767,
+        "denied_rate": 0.10541562726321718,
+        "restricted_rate": 0.18178160457069284,
+        "personal_rate_in_total": 0.04997183551943349,
+        "personal_rate_in_restricted": 0.2749003984063745,
         "concentration_year": 2026,
         "top_requester_share": 0.01,
         "top_requester_denied_rate": 0.0,
         "concentration_flag": false,
         "denied_rate_adjusted": 0.16,
-        "share_in_org_restricted": 0.27453580901856767
+        "share_in_org_restricted": 0.2749003984063745
       },
       {
         "org": "MS – Ministério da Saúde",
-        "total_requests": 49538,
+        "total_requests": 49537,
         "denied_total": 2466,
         "restricted_total": 7108,
         "personal_restricted_total": 572,
-        "denied_rate": 0.049779966894101496,
-        "restricted_rate": 0.14348580887399573,
-        "personal_rate_in_total": 0.011546691428802132,
+        "denied_rate": 0.04978097179885742,
+        "restricted_rate": 0.1434887054121162,
+        "personal_rate_in_total": 0.011546924521065063,
         "personal_rate_in_restricted": 0.08047270680922904,
         "concentration_year": 2026,
         "top_requester_share": 0.02,
@@ -9973,20 +9959,20 @@
       },
       {
         "org": "ANEEL – Agência Nacional de Energia Elétrica",
-        "total_requests": 31096,
-        "denied_total": 1658,
-        "restricted_total": 2672,
-        "personal_restricted_total": 570,
-        "denied_rate": 0.05331875482377155,
-        "restricted_rate": 0.08592745047594547,
-        "personal_rate_in_total": 0.018330331875482376,
-        "personal_rate_in_restricted": 0.21332335329341318,
+        "total_requests": 30753,
+        "denied_total": 1547,
+        "restricted_total": 2555,
+        "personal_restricted_total": 473,
+        "denied_rate": 0.050304035378662244,
+        "restricted_rate": 0.08308132539914805,
+        "personal_rate_in_total": 0.015380613273501773,
+        "personal_rate_in_restricted": 0.18512720156555773,
         "concentration_year": 2026,
         "top_requester_share": 0.03,
-        "top_requester_denied_rate": 0.46,
+        "top_requester_denied_rate": 0.45,
         "concentration_flag": false,
         "denied_rate_adjusted": 0.11,
-        "share_in_org_restricted": 0.21332335329341318
+        "share_in_org_restricted": 0.18512720156555773
       },
       {
         "org": "MTE - Ministério do Trabalho e Emprego",
@@ -10058,13 +10044,13 @@
       },
       {
         "org": "CEX – Comando do Exército",
-        "total_requests": 7619,
+        "total_requests": 7617,
         "denied_total": 1039,
         "restricted_total": 1217,
         "personal_restricted_total": 230,
-        "denied_rate": 0.13636960231001444,
-        "restricted_rate": 0.15973224832655203,
-        "personal_rate_in_total": 0.030187688673054207,
+        "denied_rate": 0.1364054089536563,
+        "restricted_rate": 0.15977418931337797,
+        "personal_rate_in_total": 0.03019561507155048,
         "personal_rate_in_restricted": 0.18898931799506985,
         "concentration_year": 2026,
         "top_requester_share": 0.02,
@@ -10160,20 +10146,20 @@
       },
       {
         "org": "MDS - Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
-        "total_requests": 34091,
-        "denied_total": 1116,
-        "restricted_total": 2741,
-        "personal_restricted_total": 145,
-        "denied_rate": 0.03273591270423279,
-        "restricted_rate": 0.08040245226012731,
-        "personal_rate_in_total": 0.004253321991141357,
-        "personal_rate_in_restricted": 0.05290040131338927,
+        "total_requests": 34063,
+        "denied_total": 1113,
+        "restricted_total": 2737,
+        "personal_restricted_total": 143,
+        "denied_rate": 0.032674749728444356,
+        "restricted_rate": 0.08035111411208642,
+        "personal_rate_in_total": 0.004198103514076857,
+        "personal_rate_in_restricted": 0.05224698575082207,
         "concentration_year": 2026,
         "top_requester_share": 0.02,
         "top_requester_denied_rate": 0.0,
         "concentration_flag": false,
         "denied_rate_adjusted": 0.09,
-        "share_in_org_restricted": 0.05290040131338927
+        "share_in_org_restricted": 0.05224698575082207
       },
       {
         "org": "INCRA – Instituto Nacional de Colonização e Reforma Agrária",
@@ -10316,20 +10302,20 @@
       },
       {
         "org": "PF – Polícia Federal",
-        "total_requests": 12444,
-        "denied_total": 1313,
-        "restricted_total": 2262,
+        "total_requests": 12427,
+        "denied_total": 1310,
+        "restricted_total": 2259,
         "personal_restricted_total": 621,
-        "denied_rate": 0.1055126968820315,
-        "restricted_rate": 0.18177434908389586,
-        "personal_rate_in_total": 0.04990356798457088,
-        "personal_rate_in_restricted": 0.27453580901856767,
+        "denied_rate": 0.10541562726321718,
+        "restricted_rate": 0.18178160457069284,
+        "personal_rate_in_total": 0.04997183551943349,
+        "personal_rate_in_restricted": 0.2749003984063745,
         "concentration_year": 2026,
         "top_requester_share": 0.01,
         "top_requester_denied_rate": 0.0,
         "concentration_flag": false,
         "denied_rate_adjusted": 0.16,
-        "personal_rate_in_denied": 0.472962680883473
+        "personal_rate_in_denied": 0.47404580152671755
       },
       {
         "org": "HFA – Hospital das Forças Armadas",
@@ -10384,13 +10370,13 @@
       },
       {
         "org": "CEX – Comando do Exército",
-        "total_requests": 7619,
+        "total_requests": 7617,
         "denied_total": 1039,
         "restricted_total": 1217,
         "personal_restricted_total": 230,
-        "denied_rate": 0.13636960231001444,
-        "restricted_rate": 0.15973224832655203,
-        "personal_rate_in_total": 0.030187688673054207,
+        "denied_rate": 0.1364054089536563,
+        "restricted_rate": 0.15977418931337797,
+        "personal_rate_in_total": 0.03019561507155048,
         "personal_rate_in_restricted": 0.18898931799506985,
         "concentration_year": 2026,
         "top_requester_share": 0.02,
@@ -10449,23 +10435,6 @@
         "concentration_flag": false,
         "denied_rate_adjusted": 0.34,
         "personal_rate_in_denied": 0.08005082592121983
-      },
-      {
-        "org": "ANPD - Autoridade Nacional de Proteção de Dados",
-        "total_requests": 588,
-        "denied_total": 98,
-        "restricted_total": 206,
-        "personal_restricted_total": 15,
-        "denied_rate": 0.16666666666666666,
-        "restricted_rate": 0.35034013605442177,
-        "personal_rate_in_total": 0.025510204081632654,
-        "personal_rate_in_restricted": 0.07281553398058252,
-        "concentration_year": 2025,
-        "top_requester_share": 0.02,
-        "top_requester_denied_rate": 0.33,
-        "concentration_flag": false,
-        "denied_rate_adjusted": 0.08,
-        "personal_rate_in_denied": 0.15306122448979592
       },
       {
         "org": "INEP – Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira",
@@ -10604,6 +10573,23 @@
         "personal_rate_in_denied": 0.23579545454545456
       },
       {
+        "org": "ANPD - Agência Nacional de Proteção de Dados",
+        "total_requests": 764,
+        "denied_total": 114,
+        "restricted_total": 255,
+        "personal_restricted_total": 15,
+        "denied_rate": 0.14921465968586387,
+        "restricted_rate": 0.3337696335078534,
+        "personal_rate_in_total": 0.01963350785340314,
+        "personal_rate_in_restricted": 0.058823529411764705,
+        "concentration_year": 2026,
+        "top_requester_share": 0.07,
+        "top_requester_denied_rate": 0.0,
+        "concentration_flag": false,
+        "denied_rate_adjusted": 0.09,
+        "personal_rate_in_denied": 0.13157894736842105
+      },
+      {
         "org": "UFSCar – Fundação Universidade Federal de São Carlos",
         "total_requests": 1740,
         "denied_total": 26,
@@ -10619,23 +10605,6 @@
         "concentration_flag": false,
         "denied_rate_adjusted": 0.05,
         "personal_rate_in_denied": 1.2692307692307692
-      },
-      {
-        "org": "ANEEL – Agência Nacional de Energia Elétrica",
-        "total_requests": 31096,
-        "denied_total": 1658,
-        "restricted_total": 2672,
-        "personal_restricted_total": 570,
-        "denied_rate": 0.05331875482377155,
-        "restricted_rate": 0.08592745047594547,
-        "personal_rate_in_total": 0.018330331875482376,
-        "personal_rate_in_restricted": 0.21332335329341318,
-        "concentration_year": 2026,
-        "top_requester_share": 0.03,
-        "top_requester_denied_rate": 0.46,
-        "concentration_flag": false,
-        "denied_rate_adjusted": 0.11,
-        "personal_rate_in_denied": 0.34378769601930037
       },
       {
         "org": "FUNASA – Fundação Nacional de Saúde",
@@ -10893,6 +10862,23 @@
         "personal_rate_in_denied": 0.375
       },
       {
+        "org": "UFF – Universidade Federal Fluminense",
+        "total_requests": 2772,
+        "denied_total": 114,
+        "restricted_total": 238,
+        "personal_restricted_total": 44,
+        "denied_rate": 0.04112554112554113,
+        "restricted_rate": 0.08585858585858586,
+        "personal_rate_in_total": 0.015873015873015872,
+        "personal_rate_in_restricted": 0.18487394957983194,
+        "concentration_year": 2026,
+        "top_requester_share": 0.05,
+        "top_requester_denied_rate": 0.11,
+        "concentration_flag": false,
+        "denied_rate_adjusted": 0.03,
+        "personal_rate_in_denied": 0.38596491228070173
+      },
+      {
         "org": "INCRA – Instituto Nacional de Colonização e Reforma Agrária",
         "total_requests": 8072,
         "denied_total": 788,
@@ -10944,23 +10930,6 @@
         "personal_rate_in_denied": 0.11361310133060389
       },
       {
-        "org": "UFF – Universidade Federal Fluminense",
-        "total_requests": 2771,
-        "denied_total": 114,
-        "restricted_total": 237,
-        "personal_restricted_total": 43,
-        "denied_rate": 0.04114038253338145,
-        "restricted_rate": 0.08552869000360881,
-        "personal_rate_in_total": 0.015517863587152653,
-        "personal_rate_in_restricted": 0.18143459915611815,
-        "concentration_year": 2026,
-        "top_requester_share": 0.05,
-        "top_requester_denied_rate": 0.11,
-        "concentration_flag": false,
-        "denied_rate_adjusted": 0.03,
-        "personal_rate_in_denied": 0.37719298245614036
-      },
-      {
         "org": "MCOM - Ministério das Comunicações",
         "total_requests": 1881,
         "denied_total": 57,
@@ -10976,6 +10945,23 @@
         "concentration_flag": false,
         "denied_rate_adjusted": 0.02,
         "personal_rate_in_denied": 0.5087719298245614
+      },
+      {
+        "org": "ANEEL – Agência Nacional de Energia Elétrica",
+        "total_requests": 30753,
+        "denied_total": 1547,
+        "restricted_total": 2555,
+        "personal_restricted_total": 473,
+        "denied_rate": 0.050304035378662244,
+        "restricted_rate": 0.08308132539914805,
+        "personal_rate_in_total": 0.015380613273501773,
+        "personal_rate_in_restricted": 0.18512720156555773,
+        "concentration_year": 2026,
+        "top_requester_share": 0.03,
+        "top_requester_denied_rate": 0.45,
+        "concentration_flag": false,
+        "denied_rate_adjusted": 0.11,
+        "personal_rate_in_denied": 0.30575307045895284
       },
       {
         "org": "UFU – Universidade Federal de Uberlândia",
@@ -11047,13 +11033,13 @@
       },
       {
         "org": "UFRGS – Universidade Federal do Rio Grande do Sul",
-        "total_requests": 2818,
+        "total_requests": 2817,
         "denied_total": 63,
         "restricted_total": 167,
         "personal_restricted_total": 41,
-        "denied_rate": 0.022356281050390347,
-        "restricted_rate": 0.05926188786373315,
-        "personal_rate_in_total": 0.014549325762952448,
+        "denied_rate": 0.022364217252396165,
+        "restricted_rate": 0.059282925097621585,
+        "personal_rate_in_total": 0.01455449059282925,
         "personal_rate_in_restricted": 0.24550898203592814,
         "concentration_year": 2026,
         "top_requester_share": 0.05,
@@ -11098,13 +11084,13 @@
       },
       {
         "org": "UTFPR – Universidade Tecnológica Federal do Paraná",
-        "total_requests": 1832,
+        "total_requests": 1831,
         "denied_total": 66,
         "restricted_total": 188,
         "personal_restricted_total": 26,
-        "denied_rate": 0.036026200873362446,
-        "restricted_rate": 0.10262008733624454,
-        "personal_rate_in_total": 0.014192139737991267,
+        "denied_rate": 0.03604587657018023,
+        "restricted_rate": 0.10267613326051338,
+        "personal_rate_in_total": 0.014199890770071,
         "personal_rate_in_restricted": 0.13829787234042554,
         "concentration_year": 2026,
         "top_requester_share": 0.04,
@@ -11200,16 +11186,16 @@
       },
       {
         "org": "IFRN – Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte",
-        "total_requests": 2134,
+        "total_requests": 2135,
         "denied_total": 99,
         "restricted_total": 185,
         "personal_restricted_total": 29,
-        "denied_rate": 0.04639175257731959,
-        "restricted_rate": 0.0866916588566073,
-        "personal_rate_in_total": 0.01358950328022493,
+        "denied_rate": 0.046370023419203744,
+        "restricted_rate": 0.08665105386416862,
+        "personal_rate_in_total": 0.013583138173302109,
         "personal_rate_in_restricted": 0.15675675675675677,
         "concentration_year": 2026,
-        "top_requester_share": 0.04,
+        "top_requester_share": 0.03,
         "top_requester_denied_rate": 0.4,
         "concentration_flag": false,
         "denied_rate_adjusted": 0.05,
@@ -11416,13 +11402,13 @@
           },
           {
             "org": "BB – Banco do Brasil S.A.",
-            "total_requests": 681,
+            "total_requests": 694,
             "denied_total": 184,
-            "restricted_total": 257,
+            "restricted_total": 260,
             "personal_restricted_total": 6,
-            "personal_rate_in_total": 0.00881057268722467,
+            "personal_rate_in_total": 0.008645533141210375,
             "personal_rate_in_denied": 0.03260869565217391,
-            "personal_rate_in_restricted": 0.023346303501945526
+            "personal_rate_in_restricted": 0.023076923076923078
           },
           {
             "org": "SGPR – Secretaria-Geral da Presidência da República",
@@ -12000,16 +11986,6 @@
             "personal_rate_in_restricted": 0.2
           },
           {
-            "org": "BB – Banco do Brasil S.A.",
-            "total_requests": 997,
-            "denied_total": 138,
-            "restricted_total": 214,
-            "personal_restricted_total": 4,
-            "personal_rate_in_total": 0.004012036108324975,
-            "personal_rate_in_denied": 0.028985507246376812,
-            "personal_rate_in_restricted": 0.018691588785046728
-          },
-          {
             "org": "UFG – Universidade Federal de Goiás",
             "total_requests": 258,
             "denied_total": 16,
@@ -12018,6 +11994,16 @@
             "personal_rate_in_total": 0.003875968992248062,
             "personal_rate_in_denied": 0.0625,
             "personal_rate_in_restricted": 0.05555555555555555
+          },
+          {
+            "org": "BB – Banco do Brasil S.A.",
+            "total_requests": 1044,
+            "denied_total": 138,
+            "restricted_total": 214,
+            "personal_restricted_total": 4,
+            "personal_rate_in_total": 0.0038314176245210726,
+            "personal_rate_in_denied": 0.028985507246376812,
+            "personal_rate_in_restricted": 0.018691588785046728
           },
           {
             "org": "MCTI – Ministério da Ciência, Tecnologia, Inovações",
@@ -12781,11 +12767,11 @@
           },
           {
             "org": "PF – Polícia Federal",
-            "total_requests": 685,
+            "total_requests": 684,
             "denied_total": 153,
             "restricted_total": 255,
             "personal_restricted_total": 138,
-            "personal_rate_in_total": 0.20145985401459854,
+            "personal_rate_in_total": 0.20175438596491227,
             "personal_rate_in_denied": 0.9019607843137255,
             "personal_rate_in_restricted": 0.5411764705882353
           },
@@ -12821,13 +12807,13 @@
           },
           {
             "org": "ANEEL – Agência Nacional de Energia Elétrica",
-            "total_requests": 2730,
-            "denied_total": 169,
-            "restricted_total": 246,
+            "total_requests": 2698,
+            "denied_total": 168,
+            "restricted_total": 244,
             "personal_restricted_total": 116,
-            "personal_rate_in_total": 0.04249084249084249,
-            "personal_rate_in_denied": 0.6863905325443787,
-            "personal_rate_in_restricted": 0.4715447154471545
+            "personal_rate_in_total": 0.042994810971089696,
+            "personal_rate_in_denied": 0.6904761904761905,
+            "personal_rate_in_restricted": 0.47540983606557374
           },
           {
             "org": "IFPA – Instituto Federal de Educação, Ciência e Tecnologia do Pará",
@@ -12920,16 +12906,6 @@
             "personal_rate_in_restricted": 0.05172413793103448
           },
           {
-            "org": "BB – Banco do Brasil S.A.",
-            "total_requests": 563,
-            "denied_total": 97,
-            "restricted_total": 112,
-            "personal_restricted_total": 9,
-            "personal_rate_in_total": 0.015985790408525755,
-            "personal_rate_in_denied": 0.09278350515463918,
-            "personal_rate_in_restricted": 0.08035714285714286
-          },
-          {
             "org": "INCRA – Instituto Nacional de Colonização e Reforma Agrária",
             "total_requests": 1041,
             "denied_total": 102,
@@ -12938,6 +12914,16 @@
             "personal_rate_in_total": 0.01536983669548511,
             "personal_rate_in_denied": 0.1568627450980392,
             "personal_rate_in_restricted": 0.06060606060606061
+          },
+          {
+            "org": "BB – Banco do Brasil S.A.",
+            "total_requests": 599,
+            "denied_total": 99,
+            "restricted_total": 114,
+            "personal_restricted_total": 9,
+            "personal_rate_in_total": 0.015025041736227046,
+            "personal_rate_in_denied": 0.09090909090909091,
+            "personal_rate_in_restricted": 0.07894736842105263
           },
           {
             "org": "UFSCar – Fundação Universidade Federal de São Carlos",
@@ -13396,11 +13382,11 @@
           },
           {
             "org": "PF – Polícia Federal",
-            "total_requests": 917,
+            "total_requests": 916,
             "denied_total": 93,
             "restricted_total": 177,
             "personal_restricted_total": 76,
-            "personal_rate_in_total": 0.08287895310796074,
+            "personal_rate_in_total": 0.08296943231441048,
             "personal_rate_in_denied": 0.8172043010752689,
             "personal_rate_in_restricted": 0.4293785310734463
           },
@@ -13486,11 +13472,11 @@
           },
           {
             "org": "ANEEL – Agência Nacional de Energia Elétrica",
-            "total_requests": 2681,
+            "total_requests": 2653,
             "denied_total": 205,
             "restricted_total": 293,
             "personal_restricted_total": 72,
-            "personal_rate_in_total": 0.026855650876538604,
+            "personal_rate_in_total": 0.027139087825103655,
             "personal_rate_in_denied": 0.35121951219512193,
             "personal_rate_in_restricted": 0.24573378839590443
           },
@@ -13506,13 +13492,13 @@
           },
           {
             "org": "BB – Banco do Brasil S.A.",
-            "total_requests": 530,
+            "total_requests": 576,
             "denied_total": 121,
-            "restricted_total": 146,
+            "restricted_total": 147,
             "personal_restricted_total": 13,
-            "personal_rate_in_total": 0.024528301886792454,
+            "personal_rate_in_total": 0.022569444444444444,
             "personal_rate_in_denied": 0.10743801652892562,
-            "personal_rate_in_restricted": 0.08904109589041095
+            "personal_rate_in_restricted": 0.08843537414965986
           },
           {
             "org": "MT - Ministério dos Transportes",
@@ -14021,11 +14007,11 @@
           },
           {
             "org": "PF – Polícia Federal",
-            "total_requests": 1612,
+            "total_requests": 1610,
             "denied_total": 131,
             "restricted_total": 195,
             "personal_restricted_total": 100,
-            "personal_rate_in_total": 0.062034739454094295,
+            "personal_rate_in_total": 0.062111801242236024,
             "personal_rate_in_denied": 0.7633587786259542,
             "personal_rate_in_restricted": 0.5128205128205128
           },
@@ -14220,16 +14206,6 @@
             "personal_rate_in_restricted": 0.0859375
           },
           {
-            "org": "ANEEL – Agência Nacional de Energia Elétrica",
-            "total_requests": 1810,
-            "denied_total": 124,
-            "restricted_total": 186,
-            "personal_restricted_total": 31,
-            "personal_rate_in_total": 0.01712707182320442,
-            "personal_rate_in_denied": 0.25,
-            "personal_rate_in_restricted": 0.16666666666666666
-          },
-          {
             "org": "IFRN – Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte",
             "total_requests": 293,
             "denied_total": 12,
@@ -14240,14 +14216,14 @@
             "personal_rate_in_restricted": 0.18518518518518517
           },
           {
-            "org": "BB – Banco do Brasil S.A.",
-            "total_requests": 601,
-            "denied_total": 169,
-            "restricted_total": 203,
-            "personal_restricted_total": 10,
-            "personal_rate_in_total": 0.016638935108153077,
-            "personal_rate_in_denied": 0.05917159763313609,
-            "personal_rate_in_restricted": 0.04926108374384237
+            "org": "ANEEL – Agência Nacional de Energia Elétrica",
+            "total_requests": 1800,
+            "denied_total": 124,
+            "restricted_total": 185,
+            "personal_restricted_total": 30,
+            "personal_rate_in_total": 0.016666666666666666,
+            "personal_rate_in_denied": 0.24193548387096775,
+            "personal_rate_in_restricted": 0.16216216216216217
           },
           {
             "org": "UFJF – Universidade Federal de Juiz de Fora",
@@ -14258,6 +14234,16 @@
             "personal_rate_in_total": 0.01568627450980392,
             "personal_rate_in_denied": 0.36363636363636365,
             "personal_rate_in_restricted": 0.26666666666666666
+          },
+          {
+            "org": "BB – Banco do Brasil S.A.",
+            "total_requests": 642,
+            "denied_total": 169,
+            "restricted_total": 203,
+            "personal_restricted_total": 10,
+            "personal_rate_in_total": 0.01557632398753894,
+            "personal_rate_in_denied": 0.05917159763313609,
+            "personal_rate_in_restricted": 0.04926108374384237
           },
           {
             "org": "MGI - Ministério da Gestão e da Inovação em Serviços Públicos",
@@ -14816,11 +14802,11 @@
           },
           {
             "org": "PF – Polícia Federal",
-            "total_requests": 1312,
+            "total_requests": 1310,
             "denied_total": 50,
             "restricted_total": 131,
             "personal_restricted_total": 19,
-            "personal_rate_in_total": 0.014481707317073171,
+            "personal_rate_in_total": 0.01450381679389313,
             "personal_rate_in_denied": 0.38,
             "personal_rate_in_restricted": 0.1450381679389313
           },
@@ -15005,16 +14991,6 @@
             "personal_rate_in_restricted": 0.024958402662229616
           },
           {
-            "org": "BB – Banco do Brasil S.A.",
-            "total_requests": 237,
-            "denied_total": 33,
-            "restricted_total": 42,
-            "personal_restricted_total": 1,
-            "personal_rate_in_total": 0.004219409282700422,
-            "personal_rate_in_denied": 0.030303030303030304,
-            "personal_rate_in_restricted": 0.023809523809523808
-          },
-          {
             "org": "UFRN – Universidade Federal do Rio Grande do Norte",
             "total_requests": 240,
             "denied_total": 4,
@@ -15033,6 +15009,16 @@
             "personal_rate_in_total": 0.004008016032064128,
             "personal_rate_in_denied": 0.0847457627118644,
             "personal_rate_in_restricted": 0.06369426751592357
+          },
+          {
+            "org": "BB – Banco do Brasil S.A.",
+            "total_requests": 258,
+            "denied_total": 33,
+            "restricted_total": 43,
+            "personal_restricted_total": 1,
+            "personal_rate_in_total": 0.003875968992248062,
+            "personal_rate_in_denied": 0.030303030303030304,
+            "personal_rate_in_restricted": 0.023255813953488372
           },
           {
             "org": "SUSEP – Superintendência de Seguros Privados",
@@ -15480,16 +15466,6 @@
             "personal_rate_in_restricted": 0.04878048780487805
           },
           {
-            "org": "BB – Banco do Brasil S.A.",
-            "total_requests": 410,
-            "denied_total": 61,
-            "restricted_total": 80,
-            "personal_restricted_total": 2,
-            "personal_rate_in_total": 0.004878048780487805,
-            "personal_rate_in_denied": 0.03278688524590164,
-            "personal_rate_in_restricted": 0.025
-          },
-          {
             "org": "BNDES – Banco Nacional de Desenvolvimento Econômico e Social",
             "total_requests": 445,
             "denied_total": 10,
@@ -15498,6 +15474,16 @@
             "personal_rate_in_total": 0.0044943820224719105,
             "personal_rate_in_denied": 0.2,
             "personal_rate_in_restricted": 0.043478260869565216
+          },
+          {
+            "org": "BB – Banco do Brasil S.A.",
+            "total_requests": 454,
+            "denied_total": 61,
+            "restricted_total": 80,
+            "personal_restricted_total": 2,
+            "personal_rate_in_total": 0.004405286343612335,
+            "personal_rate_in_denied": 0.03278688524590164,
+            "personal_rate_in_restricted": 0.025
           },
           {
             "org": "MAPA - Ministério da Agricultura e Pecuária",
@@ -15676,11 +15662,11 @@
           },
           {
             "org": "PF – Polícia Federal",
-            "total_requests": 1494,
+            "total_requests": 1491,
             "denied_total": 128,
             "restricted_total": 220,
             "personal_restricted_total": 49,
-            "personal_rate_in_total": 0.03279785809906292,
+            "personal_rate_in_total": 0.03286384976525822,
             "personal_rate_in_denied": 0.3828125,
             "personal_rate_in_restricted": 0.22272727272727272
           },
@@ -15866,11 +15852,11 @@
           },
           {
             "org": "CEX – Comando do Exército",
-            "total_requests": 1149,
+            "total_requests": 1148,
             "denied_total": 354,
             "restricted_total": 375,
             "personal_restricted_total": 14,
-            "personal_rate_in_total": 0.012184508268059183,
+            "personal_rate_in_total": 0.012195121951219513,
             "personal_rate_in_denied": 0.03954802259887006,
             "personal_rate_in_restricted": 0.037333333333333336
           },
@@ -15955,16 +15941,6 @@
             "personal_rate_in_restricted": 0.08006042296072508
           },
           {
-            "org": "ANEEL – Agência Nacional de Energia Elétrica",
-            "total_requests": 2192,
-            "denied_total": 108,
-            "restricted_total": 204,
-            "personal_restricted_total": 21,
-            "personal_rate_in_total": 0.00958029197080292,
-            "personal_rate_in_denied": 0.19444444444444445,
-            "personal_rate_in_restricted": 0.10294117647058823
-          },
-          {
             "org": "MS – Ministério da Saúde",
             "total_requests": 4842,
             "denied_total": 264,
@@ -15983,6 +15959,16 @@
             "personal_rate_in_total": 0.009259259259259259,
             "personal_rate_in_denied": 0.25,
             "personal_rate_in_restricted": 0.1111111111111111
+          },
+          {
+            "org": "ANEEL – Agência Nacional de Energia Elétrica",
+            "total_requests": 2185,
+            "denied_total": 106,
+            "restricted_total": 202,
+            "personal_restricted_total": 20,
+            "personal_rate_in_total": 0.009153318077803204,
+            "personal_rate_in_denied": 0.18867924528301888,
+            "personal_rate_in_restricted": 0.09900990099009901
           },
           {
             "org": "MEC – Ministério da Educação",
@@ -16135,16 +16121,6 @@
             "personal_rate_in_restricted": 0.16666666666666666
           },
           {
-            "org": "BB – Banco do Brasil S.A.",
-            "total_requests": 591,
-            "denied_total": 128,
-            "restricted_total": 175,
-            "personal_restricted_total": 3,
-            "personal_rate_in_total": 0.005076142131979695,
-            "personal_rate_in_denied": 0.0234375,
-            "personal_rate_in_restricted": 0.017142857142857144
-          },
-          {
             "org": "UFPB – Universidade Federal da Paraíba",
             "total_requests": 394,
             "denied_total": 25,
@@ -16193,6 +16169,16 @@
             "personal_rate_in_total": 0.004901960784313725,
             "personal_rate_in_denied": 0.2,
             "personal_rate_in_restricted": 0.07142857142857142
+          },
+          {
+            "org": "BB – Banco do Brasil S.A.",
+            "total_requests": 619,
+            "denied_total": 128,
+            "restricted_total": 175,
+            "personal_restricted_total": 3,
+            "personal_rate_in_total": 0.004846526655896607,
+            "personal_rate_in_denied": 0.0234375,
+            "personal_rate_in_restricted": 0.017142857142857144
           },
           {
             "org": "IFBA – Instituto Federal de Educação, Ciência e Tecnologia da Bahia",
@@ -16278,16 +16264,6 @@
             "personal_rate_in_total": 0.053201970443349754,
             "personal_rate_in_denied": 0.5046728971962616,
             "personal_rate_in_restricted": 0.18685121107266436
-          },
-          {
-            "org": "ANEEL – Agência Nacional de Energia Elétrica",
-            "total_requests": 1705,
-            "denied_total": 175,
-            "restricted_total": 300,
-            "personal_restricted_total": 85,
-            "personal_rate_in_total": 0.04985337243401759,
-            "personal_rate_in_denied": 0.4857142857142857,
-            "personal_rate_in_restricted": 0.2833333333333333
           },
           {
             "org": "FIOCRUZ – Fundação Oswaldo Cruz",
@@ -16380,6 +16356,16 @@
             "personal_rate_in_restricted": 0.24
           },
           {
+            "org": "ANEEL – Agência Nacional de Energia Elétrica",
+            "total_requests": 1571,
+            "denied_total": 117,
+            "restricted_total": 241,
+            "personal_restricted_total": 33,
+            "personal_rate_in_total": 0.021005728835136857,
+            "personal_rate_in_denied": 0.28205128205128205,
+            "personal_rate_in_restricted": 0.13692946058091288
+          },
+          {
             "org": "UNB – Fundação Universidade de Brasília",
             "total_requests": 338,
             "denied_total": 13,
@@ -16420,16 +16406,6 @@
             "personal_rate_in_restricted": 0.14285714285714285
           },
           {
-            "org": "MDS - Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
-            "total_requests": 717,
-            "denied_total": 39,
-            "restricted_total": 119,
-            "personal_restricted_total": 12,
-            "personal_rate_in_total": 0.016736401673640166,
-            "personal_rate_in_denied": 0.3076923076923077,
-            "personal_rate_in_restricted": 0.10084033613445378
-          },
-          {
             "org": "MDA - Ministério do Desenvolvimento Agrário e Agricultura Familiar",
             "total_requests": 243,
             "denied_total": 16,
@@ -16448,6 +16424,16 @@
             "personal_rate_in_total": 0.01608187134502924,
             "personal_rate_in_denied": 0.2716049382716049,
             "personal_rate_in_restricted": 0.2018348623853211
+          },
+          {
+            "org": "MDS - Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
+            "total_requests": 692,
+            "denied_total": 37,
+            "restricted_total": 116,
+            "personal_restricted_total": 11,
+            "personal_rate_in_total": 0.015895953757225433,
+            "personal_rate_in_denied": 0.2972972972972973,
+            "personal_rate_in_restricted": 0.09482758620689655
           },
           {
             "org": "MGI - Ministério da Gestão e da Inovação em Serviços Públicos",
@@ -16521,11 +16507,11 @@
           },
           {
             "org": "CEX – Comando do Exército",
-            "total_requests": 1195,
+            "total_requests": 1194,
             "denied_total": 86,
             "restricted_total": 105,
             "personal_restricted_total": 15,
-            "personal_rate_in_total": 0.012552301255230125,
+            "personal_rate_in_total": 0.01256281407035176,
             "personal_rate_in_denied": 0.1744186046511628,
             "personal_rate_in_restricted": 0.14285714285714285
           },
@@ -16571,11 +16557,11 @@
           },
           {
             "org": "BB – Banco do Brasil S.A.",
-            "total_requests": 291,
+            "total_requests": 301,
             "denied_total": 87,
             "restricted_total": 95,
             "personal_restricted_total": 3,
-            "personal_rate_in_total": 0.010309278350515464,
+            "personal_rate_in_total": 0.009966777408637873,
             "personal_rate_in_denied": 0.034482758620689655,
             "personal_rate_in_restricted": 0.031578947368421054
           },
@@ -16925,24 +16911,14 @@
             "personal_rate_in_restricted": 0.3076923076923077
           },
           {
-            "org": "ANEEL – Agência Nacional de Energia Elétrica",
-            "total_requests": 1714,
-            "denied_total": 157,
-            "restricted_total": 251,
-            "personal_restricted_total": 59,
-            "personal_rate_in_total": 0.03442240373395566,
-            "personal_rate_in_denied": 0.37579617834394907,
-            "personal_rate_in_restricted": 0.2350597609561753
-          },
-          {
             "org": "MDS - Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
-            "total_requests": 740,
-            "denied_total": 35,
-            "restricted_total": 103,
-            "personal_restricted_total": 24,
-            "personal_rate_in_total": 0.032432432432432434,
-            "personal_rate_in_denied": 0.6857142857142857,
-            "personal_rate_in_restricted": 0.23300970873786409
+            "total_requests": 737,
+            "denied_total": 34,
+            "restricted_total": 102,
+            "personal_restricted_total": 23,
+            "personal_rate_in_total": 0.031207598371777476,
+            "personal_rate_in_denied": 0.6764705882352942,
+            "personal_rate_in_restricted": 0.22549019607843138
           },
           {
             "org": "ANCINE – Agência Nacional do Cinema",
@@ -17016,13 +16992,13 @@
           },
           {
             "org": "PF – Polícia Federal",
-            "total_requests": 1347,
-            "denied_total": 190,
-            "restricted_total": 240,
+            "total_requests": 1339,
+            "denied_total": 187,
+            "restricted_total": 237,
             "personal_restricted_total": 29,
-            "personal_rate_in_total": 0.021529324424647365,
-            "personal_rate_in_denied": 0.15263157894736842,
-            "personal_rate_in_restricted": 0.12083333333333333
+            "personal_rate_in_total": 0.021657953696788648,
+            "personal_rate_in_denied": 0.15508021390374332,
+            "personal_rate_in_restricted": 0.12236286919831224
           },
           {
             "org": "UFC – Universidade Federal do Ceará",
@@ -17216,11 +17192,11 @@
           },
           {
             "org": "UFRGS – Universidade Federal do Rio Grande do Sul",
-            "total_requests": 267,
+            "total_requests": 266,
             "denied_total": 16,
             "restricted_total": 32,
             "personal_restricted_total": 3,
-            "personal_rate_in_total": 0.011235955056179775,
+            "personal_rate_in_total": 0.011278195488721804,
             "personal_rate_in_denied": 0.1875,
             "personal_rate_in_restricted": 0.09375
           },
@@ -17236,11 +17212,11 @@
           },
           {
             "org": "MD – Ministério da Defesa",
-            "total_requests": 455,
+            "total_requests": 454,
             "denied_total": 16,
             "restricted_total": 102,
             "personal_restricted_total": 5,
-            "personal_rate_in_total": 0.01098901098901099,
+            "personal_rate_in_total": 0.011013215859030838,
             "personal_rate_in_denied": 0.3125,
             "personal_rate_in_restricted": 0.049019607843137254
           },
@@ -17253,6 +17229,16 @@
             "personal_rate_in_total": 0.010238907849829351,
             "personal_rate_in_denied": 0.3,
             "personal_rate_in_restricted": 0.125
+          },
+          {
+            "org": "ANEEL – Agência Nacional de Energia Elétrica",
+            "total_requests": 1580,
+            "denied_total": 107,
+            "restricted_total": 198,
+            "personal_restricted_total": 16,
+            "personal_rate_in_total": 0.010126582278481013,
+            "personal_rate_in_denied": 0.14953271028037382,
+            "personal_rate_in_restricted": 0.08080808080808081
           },
           {
             "org": "ANTT – Agência Nacional de Transportes Terrestres",
@@ -17306,11 +17292,11 @@
           },
           {
             "org": "MS – Ministério da Saúde",
-            "total_requests": 4481,
+            "total_requests": 4480,
             "denied_total": 183,
             "restricted_total": 941,
             "personal_restricted_total": 39,
-            "personal_rate_in_total": 0.008703414416424905,
+            "personal_rate_in_total": 0.008705357142857143,
             "personal_rate_in_denied": 0.21311475409836064,
             "personal_rate_in_restricted": 0.04144527098831031
           },
@@ -17385,6 +17371,16 @@
             "personal_rate_in_restricted": 0.2222222222222222
           },
           {
+            "org": "BB – Banco do Brasil S.A.",
+            "total_requests": 387,
+            "denied_total": 117,
+            "restricted_total": 130,
+            "personal_restricted_total": 2,
+            "personal_rate_in_total": 0.00516795865633075,
+            "personal_rate_in_denied": 0.017094017094017096,
+            "personal_rate_in_restricted": 0.015384615384615385
+          },
+          {
             "org": "UNB – Fundação Universidade de Brasília",
             "total_requests": 410,
             "denied_total": 11,
@@ -17443,16 +17439,6 @@
             "personal_rate_in_total": 0.003875968992248062,
             "personal_rate_in_denied": 0.025,
             "personal_rate_in_restricted": 0.01694915254237288
-          },
-          {
-            "org": "ANM - Agência Nacional de Mineração",
-            "total_requests": 519,
-            "denied_total": 24,
-            "restricted_total": 44,
-            "personal_restricted_total": 2,
-            "personal_rate_in_total": 0.0038535645472061657,
-            "personal_rate_in_denied": 0.08333333333333333,
-            "personal_rate_in_restricted": 0.045454545454545456
           }
         ]
       },
@@ -17561,11 +17547,11 @@
           },
           {
             "org": "ANEEL – Agência Nacional de Energia Elétrica",
-            "total_requests": 1203,
+            "total_requests": 1205,
             "denied_total": 135,
             "restricted_total": 199,
             "personal_restricted_total": 32,
-            "personal_rate_in_total": 0.02660016625103907,
+            "personal_rate_in_total": 0.026556016597510373,
             "personal_rate_in_denied": 0.23703703703703705,
             "personal_rate_in_restricted": 0.16080402010050251
           },
@@ -17901,13 +17887,13 @@
           },
           {
             "org": "DNIT – Departamento Nacional de Infraestrutura de Transportes",
-            "total_requests": 1914,
+            "total_requests": 1916,
             "denied_total": 139,
-            "restricted_total": 270,
+            "restricted_total": 271,
             "personal_restricted_total": 9,
-            "personal_rate_in_total": 0.004702194357366771,
+            "personal_rate_in_total": 0.004697286012526096,
             "personal_rate_in_denied": 0.06474820143884892,
-            "personal_rate_in_restricted": 0.03333333333333333
+            "personal_rate_in_restricted": 0.033210332103321034
           },
           {
             "org": "UFMA – Fundação Universidade Federal do Maranhão",
@@ -18051,11 +18037,11 @@
           },
           {
             "org": "BACEN – Banco Central do Brasil",
-            "total_requests": 2105,
+            "total_requests": 2106,
             "denied_total": 149,
             "restricted_total": 288,
             "personal_restricted_total": 3,
-            "personal_rate_in_total": 0.0014251781472684087,
+            "personal_rate_in_total": 0.0014245014245014246,
             "personal_rate_in_denied": 0.020134228187919462,
             "personal_rate_in_restricted": 0.010416666666666666
           }
@@ -18074,12 +18060,12 @@
       2025
     ],
     "current_ytd": {
-      "total_requests": 67506,
+      "total_requests": 67516,
       "denied_total": 4979,
-      "restricted_total": 11625,
-      "personal_restricted_total": 743,
-      "denied_rate": 0.07375640683791071,
-      "restricted_rate": 0.17220691494089413
+      "restricted_total": 11627,
+      "personal_restricted_total": 744,
+      "denied_rate": 0.0737454825522839,
+      "restricted_rate": 0.17221103145920966
     },
     "baseline_ytd_avg": {
       "years": [
@@ -18087,15 +18073,15 @@
         2024,
         2025
       ],
-      "total_requests_avg": 72571.0,
-      "denied_total_avg": 4828.0,
-      "restricted_total_avg": 9885.333333333334,
-      "personal_restricted_total_avg": 804.6666666666666,
-      "denied_rate_avg": 0.06653416250606664,
-      "restricted_rate_avg": 0.13646764524711077
+      "total_requests_avg": 72488.0,
+      "denied_total_avg": 4796.333333333333,
+      "restricted_total_avg": 9852.0,
+      "personal_restricted_total_avg": 777.6666666666666,
+      "denied_rate_avg": 0.0661549992433345,
+      "restricted_rate_avg": 0.1361537160333107
     },
-    "denied_rate_delta_pp": 0.7222244331844069,
-    "restricted_rate_delta_pp": 3.5739269693783355,
+    "denied_rate_delta_pp": 0.7590483308949403,
+    "restricted_rate_delta_pp": 3.605731542589896,
     "denied_rate_status": "estável",
     "restricted_rate_status": "piorando",
     "top_denial_rate_current_year": [
@@ -18133,6 +18119,15 @@
     "top_denial_rate_min_requests": 200,
     "org_spikes": [
       {
+        "org": "ANEEL – Agência Nacional de Energia Elétrica",
+        "current_denied": 33,
+        "baseline_denied_avg": 11.333333333333334,
+        "delta_abs": 21.666666666666664,
+        "lift_ratio": 1.9117647058823528,
+        "current_denied_rate": 0.28448275862068967,
+        "baseline_denied_rate_avg": 0.0591304347826087
+      },
+      {
         "org": "CEX – Comando do Exército",
         "current_denied": 19,
         "baseline_denied_avg": 7.0,
@@ -18140,15 +18135,6 @@
         "lift_ratio": 1.7142857142857144,
         "current_denied_rate": 0.2638888888888889,
         "baseline_denied_rate_avg": 0.09417040358744395
-      },
-      {
-        "org": "ANEEL – Agência Nacional de Energia Elétrica",
-        "current_denied": 33,
-        "baseline_denied_avg": 12.666666666666666,
-        "delta_abs": 20.333333333333336,
-        "lift_ratio": 1.6052631578947372,
-        "current_denied_rate": 0.2894736842105263,
-        "baseline_denied_rate_avg": 0.06365159128978225
       }
     ],
     "theme_worsening": [
@@ -18163,64 +18149,64 @@
       {
         "theme": "Obras, infraestrutura e transportes",
         "current_restricted_rate": 0.20833333333333334,
-        "baseline_restricted_rate_avg": 0.13022963195973575,
-        "delta_pp": 7.81037013735976,
+        "baseline_restricted_rate_avg": 0.1300787401574803,
+        "delta_pp": 7.825459317585304,
         "current_total_requests": 1080,
         "current_restricted_total": 225
       },
       {
         "theme": "Gastos públicos e orçamento",
         "current_restricted_rate": 0.18568232662192394,
-        "baseline_restricted_rate_avg": 0.12786489746682753,
-        "delta_pp": 5.781742915509641,
+        "baseline_restricted_rate_avg": 0.12799121844127334,
+        "delta_pp": 5.76911081806506,
         "current_total_requests": 1788,
         "current_restricted_total": 332
       },
       {
         "theme": "Previdência e benefícios sociais",
         "current_restricted_rate": 0.16146230007616147,
-        "baseline_restricted_rate_avg": 0.1085157501334757,
-        "delta_pp": 5.294654994268577,
+        "baseline_restricted_rate_avg": 0.10849812934259756,
+        "delta_pp": 5.296417073356391,
         "current_total_requests": 1313,
         "current_restricted_total": 212
       },
       {
+        "theme": "Processos administrativos e sanções",
+        "current_restricted_rate": 0.2210849539406346,
+        "baseline_restricted_rate_avg": 0.17143776133805083,
+        "delta_pp": 4.964719260258377,
+        "current_total_requests": 977,
+        "current_restricted_total": 216
+      },
+      {
         "theme": "Saúde e medicamentos",
         "current_restricted_rate": 0.17535153019023986,
-        "baseline_restricted_rate_avg": 0.127599824484423,
-        "delta_pp": 4.775170570581685,
+        "baseline_restricted_rate_avg": 0.12658227848101267,
+        "delta_pp": 4.8769251709227195,
         "current_total_requests": 2418,
         "current_restricted_total": 424
       },
       {
-        "theme": "Processos administrativos e sanções",
-        "current_restricted_rate": 0.22131147540983606,
-        "baseline_restricted_rate_avg": 0.17391304347826086,
-        "delta_pp": 4.73984319315752,
-        "current_total_requests": 976,
-        "current_restricted_total": 216
-      },
-      {
         "theme": "Dados pessoais e vida privada",
-        "current_restricted_rate": 0.20982011206133883,
-        "baseline_restricted_rate_avg": 0.1682060621829062,
-        "delta_pp": 4.1614049878432615,
-        "current_total_requests": 13564,
-        "current_restricted_total": 2846
+        "current_restricted_rate": 0.20973092517508293,
+        "baseline_restricted_rate_avg": 0.16827298775722843,
+        "delta_pp": 4.14579374178545,
+        "current_total_requests": 13565,
+        "current_restricted_total": 2845
       },
       {
         "theme": "Outros temas",
-        "current_restricted_rate": 0.1713283398122689,
-        "baseline_restricted_rate_avg": 0.1417976673427992,
-        "delta_pp": 2.9530672469469694,
-        "current_total_requests": 10547,
-        "current_restricted_total": 1807
+        "current_restricted_rate": 0.1714069017823284,
+        "baseline_restricted_rate_avg": 0.14138164578394852,
+        "delta_pp": 3.002525599837988,
+        "current_total_requests": 10548,
+        "current_restricted_total": 1808
       }
     ]
   },
   "search_dashboard": {
     "sample_file": "./data/request_samples_publica.jsonl.gz",
-    "sample_count": 66910,
+    "sample_count": 66793,
     "sample_method": "cobertura total dos pedidos negados (sem amostragem)",
     "decision_scope": "Acesso Negado",
     "top_orgs_covered": [
@@ -18236,7 +18222,7 @@
       "BB – Banco do Brasil S.A.",
       "PF – Polícia Federal"
     ],
-    "top_org_rows_in_search": 28054,
+    "top_org_rows_in_search": 27943,
     "presets": [
       {
         "id": "dados-pessoais",
@@ -18306,7 +18292,7 @@
   },
   "methodology": {
     "unit_of_analysis": "pedido individual da base Pedidos_csv",
-    "data_scope": "Pedidos e recursos marcados como públicos (BuscaLAI)",
+    "data_scope": "Pedidos federais marcados como públicos (BuscaLAI)",
     "source_files": [
       "Pedidos_csv_YYYY.csv",
       "PedidosLinkArquivo_csv_YYYY.csv (link do pedido/anexo no BuscaLAI)"
@@ -18545,8 +18531,8 @@
         ]
       },
       "request_link_rule": "Cada pedido negado recebe URL de detalhe no formato https://api-laibr.cgu.gov.br/buscar-pedidos/{IdPedido}; também guarda https://buscalai.cgu.gov.br/busca/{IdPedido} como alternativa no portal. Quando houver registro no arquivo PedidosLinkArquivo, mantém URL de anexo.",
-      "sample_count": 66910,
-      "top_org_rows_in_search": 28054,
+      "sample_count": 66793,
+      "top_org_rows_in_search": 27943,
       "top_orgs_covered": [
         "MF - Ministério da Fazenda",
         "PETROBRAS – Petróleo Brasileiro S.A.",
