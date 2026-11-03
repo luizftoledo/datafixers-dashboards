@@ -997,85 +997,7 @@
 
     .error { color: var(--danger); }
 
-    .course-popup {
-      position: fixed;
-      right: max(1rem, env(safe-area-inset-right));
-      bottom: max(1rem, env(safe-area-inset-bottom));
-      width: min(380px, calc(100vw - 1.2rem));
-      border: 1px solid #d7cfbe;
-      border-radius: 14px;
-      background: #fffdf8;
-      box-shadow: 0 16px 36px rgba(22, 20, 18, 0.22);
-      padding: 0.78rem 0.82rem 0.74rem;
-      display: grid;
-      gap: 0.5rem;
-      z-index: 60;
-      opacity: 0;
-      transform: translateY(10px);
-      pointer-events: none;
-      transition: opacity 160ms ease, transform 160ms ease;
-    }
 
-    .course-popup.show {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    .course-popup .title {
-      margin: 0;
-      font-size: 0.86rem;
-      font-weight: 800;
-      color: #4a433a;
-    }
-
-    .course-popup .text {
-      margin: 0;
-      font-size: 0.8rem;
-      line-height: 1.4;
-      color: #5b544b;
-    }
-
-    .course-popup .actions {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
-    }
-
-    .course-popup .cta {
-      border: 1px solid #2f6f9f;
-      border-radius: 999px;
-      background: linear-gradient(120deg, #2f6f9f, #3f8f6d);
-      color: #fff;
-      text-decoration: none;
-      font-size: 0.82rem;
-      font-weight: 700;
-      padding: 0.5rem 0.95rem;
-      min-height: 40px;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .course-popup .close {
-      border: 1px solid #d2cab8;
-      border-radius: 8px;
-      background: #f8f4eb;
-      color: #5d554b;
-      font-size: 0.8rem;
-      min-height: 40px;
-      padding: 0.34rem 0.72rem;
-      cursor: pointer;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover { text-decoration: underline; }
-
-    /* Tablet (>= 640px) */
     @media (min-width: 640px) {
       .page {
         margin: 1.1rem auto 2.5rem;
@@ -1131,7 +1053,6 @@
   </style>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles/platform.css">
-  <script defer src="/assets/course-banner.js?v=20261028-course3" data-df-course-loader></script>
 </head>
 <body class="df-ui df-ui--lai">
 <div class="df-sitebar"><div class="df-sitebar__inner"><a class="df-sitebar__brand" href="/"><img class="df-sitebar__logo" src="/assets/datafixers-logo.svg" alt="Data Fixers" width="147" height="32"></a><a class="df-sitebar__nav" href="/">Todos os painéis</a></div></div>
@@ -1352,6 +1273,7 @@
 
     <section class="card learn-more" id="aprenda-mais-transparencia">
       <h2>Aprenda mais sobre transparência e como pedir informações ao governo</h2>
+      <p><a href="https://www.udemy.com/course/investigue-gastos-publicos-com-a-lei-de-acesso-a-informacao/">Curso sobre a Lei de Acesso à Informação</a></p>
       <article class="table-card">
         <h3>Quando usar (ou não) a LAI: guia rápido em vídeo</h3>
         <div class="video-embed">
@@ -1366,39 +1288,8 @@
 
   </main>
 
-  <aside class="course-popup" id="course-popup-lai" aria-live="polite">
-    <p class="title">Curso de LAI</p>
-    <p class="text">Investigue gastos públicos com a Lei de Acesso à Informação. Curso online, gravado e sob demanda.</p>
-    <div class="actions">
-      <a class="cta" href="https://www.udemy.com/course/investigue-gastos-publicos-com-a-lei-de-acesso-a-informacao/" target="_blank" rel="noopener noreferrer">Acessar curso</a>
-      <button class="close" id="course-popup-lai-close" type="button">Fechar</button>
-    </div>
-  </aside>
-
-  <script>
-    (() => {
-      const popup = document.getElementById('course-popup-lai');
-      const closeBtn = document.getElementById('course-popup-lai-close');
-      if (!popup) return;
-      const key = 'lai_dashboard_course_popup_dismissed';
-      const safeGet = () => {
-        try { return sessionStorage.getItem(key); } catch { return null; }
-      };
-      const safeSet = () => {
-        try { sessionStorage.setItem(key, '1'); } catch {}
-      };
-      const isMobile = window.matchMedia && window.matchMedia('(max-width: 820px)').matches;
-      if (!isMobile && safeGet() !== '1') popup.classList.add('show');
-      if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-          popup.classList.remove('show');
-          safeSet();
-        });
-      }
-    })();
-  </script>
   <script src="./vendor/pako.min.js"></script>
   <script src="../scripts/dashboard-update-schedule.js"></script>
-  <script src="./app.js?v=20261103-federal"></script>
+  <script src="./app.js?v=20261103-layout"></script>
 </body>
 </html>

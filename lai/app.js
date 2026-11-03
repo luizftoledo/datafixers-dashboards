@@ -149,8 +149,8 @@
 
   function shortOrgName(name) {
     if (!name) return '';
-    if (name.length <= 40) return name;
-    return `${name.slice(0, 39)}...`;
+    const prefix = name.split(/\s+[–—-]\s+/, 1)[0];
+    return prefix.length <= 20 ? prefix : `${prefix.slice(0, 19)}…`;
   }
 
   function compactText(text, limit = 220) {
@@ -820,6 +820,15 @@
       },
       options: {
         ...commonOptions,
+        plugins: {
+          ...commonOptions.plugins,
+          tooltip: {
+            ...commonOptions.plugins.tooltip,
+            callbacks: {
+              title: (items) => topOrg[items[0]?.dataIndex]?.org || '',
+            },
+          },
+        },
         scales: {
           y: { beginAtZero: true, ticks: { callback: (v) => nFmt.format(v) } },
           y1: {
