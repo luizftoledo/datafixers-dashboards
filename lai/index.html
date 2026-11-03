@@ -444,12 +444,7 @@
       color: #38332d;
     }
 
-    .chart-card canvas {
-      width: 100% !important;
-      height: 260px !important;
-      max-height: 260px;
-      display: block;
-    }
+    .chart-plot { position: relative; height: clamp(260px, 36vw, 410px); min-width: 0; }
 
     .tables,
     .sigilo100-block,
@@ -1095,7 +1090,6 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
       .chart-card { height: 340px; }
-      .chart-card canvas { height: 280px !important; max-height: 280px; }
     }
 
     /* Desktop (>= 1024px) */
@@ -1116,7 +1110,7 @@
     }
     .hero, .source-switch, .overview-details, .alert-card { min-width: 0; }
   .source-switch select { width: 100%; min-width: 0; }
-  .sigilo-trend canvas { max-height: 320px; }
+  .sigilo-trend .chart-plot { max-width: 900px; margin-inline: auto; }
   .sigilo100-block .sigilo-metric { margin: 16px 0; }
   .sigilo-trend { margin-bottom: 16px; }
   .sigilo100-block table { min-width: 0; }
@@ -1160,6 +1154,28 @@
       <p class="update-schedule-note" id="update-schedule-note" aria-live="polite">Frequência de atualização: carregando...</p>
     </header>
 
+    <section class="card" aria-labelledby="panorama-heading">
+      <h2 id="panorama-heading">Panorama dos pedidos e das negativas</h2>
+      <div class="metrics">
+        <article class="metric">
+          <div class="label">Pedidos (série inteira)</div>
+          <div class="value" id="metric-total-requests">--</div>
+        </article>
+        <article class="metric">
+          <div class="label">Negados totalmente</div>
+          <div class="value" id="metric-denied-total">--</div>
+        </article>
+        <article class="metric">
+          <div class="label">Com restrição (negado + parcial)</div>
+          <div class="value" id="metric-restricted-total">--</div>
+        </article>
+        <article class="metric">
+          <div class="label">Restrições por informação pessoal</div>
+          <div class="value" id="metric-personal-total">--</div>
+        </article>
+      </div>
+    </section>
+
     <section class="card sigilo100-block" aria-labelledby="sigilos-heading">
       <h2 id="sigilos-heading">Restrições por informação pessoal</h2>
       <p class="section-note">Pedidos negados ou atendidos parcialmente por envolverem informação pessoal, categoria associada ao “sigilo de 100 anos”. A base não informa o prazo aplicado a cada pedido. Sigilos por outros motivos ficam fora deste recorte.</p>
@@ -1169,8 +1185,9 @@
       </article>
       <article class="chart-card sigilo-trend">
         <h3>Pedidos com restrição por ano</h3>
-        <p class="section-note">O asterisco indica ano parcial.</p>
-        <canvas id="chart-personal" role="img" aria-label="Pedidos com restrição por informação pessoal por ano"></canvas>
+        <p class="section-note">Clique ou toque em uma barra para consultar o ano. O asterisco indica ano parcial.</p>
+        <p class="table-note" id="sigilo-year-value" aria-live="polite"></p>
+        <div class="chart-plot"><canvas id="chart-personal" role="img" aria-label="Pedidos com restrição por informação pessoal por ano"></canvas></div>
       </article>
       <article class="table-card">
         <h3>Órgãos com maior proporção de restrições</h3>
@@ -1194,25 +1211,7 @@
     </section>
 
     <details class="card overview-details">
-      <summary>Panorama geral dos pedidos e das negativas</summary>
-      <div class="metrics">
-        <article class="metric">
-          <div class="label">Pedidos (série inteira)</div>
-          <div class="value" id="metric-total-requests">--</div>
-        </article>
-        <article class="metric">
-          <div class="label">Negados totalmente</div>
-          <div class="value" id="metric-denied-total">--</div>
-        </article>
-        <article class="metric">
-          <div class="label">Com restrição (negado + parcial)</div>
-          <div class="value" id="metric-restricted-total">--</div>
-        </article>
-        <article class="metric">
-          <div class="label">Restrições por informação pessoal</div>
-          <div class="value" id="metric-personal-total">--</div>
-        </article>
-      </div>
+      <summary>Gráficos e tabelas do panorama geral</summary>
     <section class="card alerts">
       <h2>Resumo de atenção agora</h2>
       <div class="alerts-grid" id="alerts-summary">
@@ -1234,19 +1233,19 @@
       <div class="chart-grid">
         <article class="chart-card">
           <h3>Pedidos e negativas por ano</h3>
-          <canvas id="chart-yearly-volume"></canvas>
+          <div class="chart-plot"><canvas id="chart-yearly-volume"></canvas></div>
         </article>
         <article class="chart-card">
           <h3>Taxa de negativa ao longo do tempo</h3>
-          <canvas id="chart-yearly-rate"></canvas>
+          <div class="chart-plot"><canvas id="chart-yearly-rate"></canvas></div>
         </article>
         <article class="chart-card">
           <h3>Motivos de negativa (top motivos)</h3>
-          <canvas id="chart-reasons"></canvas>
+          <div class="chart-plot"><canvas id="chart-reasons"></canvas></div>
         </article>
         <article class="chart-card">
           <h3>Órgãos que mais negam (top 10)</h3>
-          <canvas id="chart-org-top"></canvas>
+          <div class="chart-plot"><canvas id="chart-org-top"></canvas></div>
         </article>
       </div>
     </section>
@@ -1396,6 +1395,6 @@
   </script>
   <script src="./vendor/pako.min.js"></script>
   <script src="../scripts/dashboard-update-schedule.js"></script>
-  <script src="./app.js"></script>
+  <script src="./app.js?v=20261103-chart"></script>
 </body>
 </html>

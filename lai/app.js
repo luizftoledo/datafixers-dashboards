@@ -616,7 +616,7 @@
 
     const commonOptions = {
       responsive: true,
-      maintainAspectRatio: true,
+      maintainAspectRatio: false,
       aspectRatio: 2,
       plugins: { legend: { position: 'bottom' } },
     };
@@ -846,6 +846,13 @@
       },
       options: {
         ...commonOptions,
+        interaction: { mode: 'index', axis: 'x', intersect: false },
+        onClick: (_event, elements) => {
+          const index = elements[0]?.index;
+          if (index === undefined) return;
+          sigilo100SelectedYear = String(rows[index].year);
+          renderTables();
+        },
         plugins: { ...commonOptions.plugins, legend: { display: false } },
         scales: { y: { beginAtZero: true, ticks: { callback: (v) => nFmt.format(v) } } },
       },
@@ -1019,6 +1026,10 @@
 
   function renderSigilo100Note(context) {
     if (!sigilo100Note) return;
+    const period = context.yearSeries || reportData.overall;
+    document.getElementById('sigilo-year-value').textContent = context.yearSeries
+      ? `${context.selectedLabel} · ${nFmt.format(period.personal_restricted_total)} pedidos com restrição por informação pessoal`
+      : '';
     const minRule = context.minRequests > 0
       ? ` Entram órgãos com pelo menos ${nFmt.format(context.minRequests)} pedidos no período.`
       : '';
