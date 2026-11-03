@@ -1107,15 +1107,13 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
-    .hero, .source-switch, .overview-details, .alert-card { min-width: 0; }
+    .hero, .source-switch, .alert-card { min-width: 0; }
   .source-switch select { width: 100%; min-width: 0; }
   .sigilo-trend .chart-plot { width: 100%; max-width: 900px; margin-inline: auto; }
   .sigilo100-block .sigilo-metric { margin: 16px 0; }
   .sigilo-trend { margin-bottom: 16px; }
   .sigilo100-block table { min-width: 0; }
   .sigilo100-block th:not(:first-child), .sigilo100-block td:not(:first-child) { text-align: right; }
-  .overview-details > summary { font-weight: 700; cursor: pointer; }
-  .overview-details > section { margin-top: 12px; }
   @media (max-width: 540px) {
     .sigilo100-block th, .sigilo100-block td { padding: 8px 4px; font-size: .76rem; overflow-wrap: anywhere; }
   }
@@ -1209,8 +1207,6 @@
       </article>
     </section>
 
-    <details class="card overview-details">
-      <summary>Gráficos e tabelas do panorama geral</summary>
     <section class="card alerts">
       <h2>Resumo de atenção agora</h2>
       <div class="alerts-grid" id="alerts-summary">
@@ -1324,8 +1320,6 @@
       <h2>Órgãos em detalhe</h2>
       <div class="org-grid" id="org-cards"></div>
     </section>
-
-    </details>
 
     <section class="card methodology">
       <h2>Nota metodológica (como os dados foram tratados)</h2>
