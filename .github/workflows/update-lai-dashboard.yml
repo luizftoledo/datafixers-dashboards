@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
+          ref: lai-reprocessamento-federal
           fetch-depth: 0
 
       - uses: actions/setup-python@v5
@@ -25,7 +25,7 @@ jobs:
         run: pip install pandas
 
       - name: Build LAI data
-        run: python scripts/build_lai_dashboard_sources.py
+        run: python scripts/build_lai_dashboard_sources.py --end-year 2026
 
       - name: Commit and push if changed
         run: |
@@ -38,8 +38,8 @@ jobs:
           git add lai/data
           git commit -m "data(lai): atualiza datasets"
           for attempt in 1 2 3; do
-            git pull --rebase origin main || true
-            if git push origin HEAD:main; then exit 0; fi
+            git pull --rebase origin lai-reprocessamento-federal || true
+            if git push origin HEAD:lai-reprocessamento-federal; then exit 0; fi
             sleep $((attempt * 5))
           done
           exit 1

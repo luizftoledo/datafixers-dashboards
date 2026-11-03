@@ -3,14 +3,14 @@
   const FALLBACK_SOURCES = {
     ampla: {
       id: 'ampla',
-      label: 'Base ampla CGU (todos os pedidos e recursos)',
+      label: 'Fala.BR — base ampla federal',
       report_file: './data/report_data.json',
       metadata_file: './data/metadata.json',
       samples_file: './data/request_samples.jsonl.gz',
     },
     publica: {
       id: 'publica',
-      label: 'Base pública BuscaLAI (pedidos marcados como públicos)',
+      label: 'BuscaLAI — base pública federal',
       report_file: './data/report_data_publica.json',
       metadata_file: './data/metadata_publica.json',
       samples_file: './data/request_samples_publica.jsonl.gz',
@@ -164,8 +164,8 @@
   }
 
   function describeSource(sourceId, sourceLabel) {
-    if (sourceId === 'ampla') return 'Pedidos registrados na base ampla da CGU.';
-    if (sourceId === 'publica') return 'Somente pedidos marcados como públicos pela CGU.';
+    if (sourceId === 'ampla') return 'Pedidos a órgãos da esfera federal, conforme a classificação da CGU.';
+    if (sourceId === 'publica') return 'Pedidos federais marcados como públicos pela CGU.';
     return sourceLabel || 'Fonte de dados da análise.';
   }
 
@@ -173,7 +173,7 @@
     if (!sourceSelect) return;
     const ids = getLoadedSourceIds();
     sourceSelect.innerHTML = ids.map((id) => {
-      const label = ({ ampla: 'Fala.BR — base ampla', publica: 'BuscaLAI — base pública' })[id] || ((sourceDataMap[id] || {}).cfg || {}).label || id;
+      const label = ({ ampla: 'Fala.BR — base ampla federal', publica: 'BuscaLAI — base pública federal' })[id] || ((sourceDataMap[id] || {}).cfg || {}).label || id;
       return `<option value="${esc(id)}">${esc(label)}</option>`;
     }).join('');
     if (ids.includes(activeSourceId)) sourceSelect.value = activeSourceId;

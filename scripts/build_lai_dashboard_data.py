@@ -667,6 +667,7 @@ def process_year_zip(year, zip_path, source_url):
 
     wanted_cols = [
         "IdPedido",
+        "Esfera",
         "IdSolicitante",
         "DataRegistro",
         "OrgaoDestinatario",
@@ -691,6 +692,9 @@ def process_year_zip(year, zip_path, source_url):
                 on_bad_lines="skip",
             )
             available_cols = set(header_df.columns)
+
+    if "Esfera" not in available_cols:
+        raise ValueError(f"{year}: coluna Esfera ausente em {pedidos_member}")
 
     usecols = [col for col in wanted_cols if col in available_cols]
 
@@ -738,6 +742,7 @@ def process_year_zip(year, zip_path, source_url):
             )
 
             for chunk in iterator:
+                chunk = chunk.loc[chunk["Esfera"].str.strip().str.casefold().eq("federal").fillna(False)]
                 if chunk.empty:
                     continue
 
@@ -960,6 +965,7 @@ def process_year_zip(year, zip_path, source_url):
         "source_url": source_url,
         "zip_member": pedidos_member,
         "processed_at": now_iso(),
+        "esfera": "Federal",
         "total_requests": int(total_requests),
         "denied_total": int(denied_total),
         "restricted_total": int(restricted_total),
@@ -994,6 +1000,8 @@ def process_year_zip(year, zip_path, source_url):
 
 def maybe_process_year(year, force=False):
     cache = load_year_cache(year)
+    if cache is not None and cache.get("esfera") != "Federal":
+        cache = None
     current_year = dt.date.today().year
     cache_version = int((cache or {}).get("request_index_schema_version", 0)) if cache else 0
     should_refresh = (
@@ -1018,8 +1026,7 @@ def maybe_process_year(year, force=False):
             if cache is not None:
                 print(f"[warn] {year}: falha no download ({exc}); mantendo cache")
                 return cache, False
-            print(f"[skip] {year}: sem arquivo disponível ({exc})")
-            return None, False
+            raise RuntimeError(f"{year}: sem arquivo ou cache federal disponível") from exc
 
         print(f"[process] {year}: processando Pedidos_csv")
         payload = process_year_zip(
