@@ -435,7 +435,7 @@
       display: grid;
       gap: 0.45rem;
       min-width: 0;
-      height: 320px;
+      grid-template-columns: minmax(0, 1fr);
     }
 
     .chart-card h3 {
@@ -1089,7 +1089,6 @@
       .org-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-      .chart-card { height: 340px; }
     }
 
     /* Desktop (>= 1024px) */
@@ -1110,7 +1109,7 @@
     }
     .hero, .source-switch, .overview-details, .alert-card { min-width: 0; }
   .source-switch select { width: 100%; min-width: 0; }
-  .sigilo-trend .chart-plot { max-width: 900px; margin-inline: auto; }
+  .sigilo-trend .chart-plot { width: 100%; max-width: 900px; margin-inline: auto; }
   .sigilo100-block .sigilo-metric { margin: 16px 0; }
   .sigilo-trend { margin-bottom: 16px; }
   .sigilo100-block table { min-width: 0; }
