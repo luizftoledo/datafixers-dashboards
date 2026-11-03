@@ -1114,6 +1114,18 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
+    .hero, .source-switch, .overview-details, .alert-card { min-width: 0; }
+  .source-switch select { width: 100%; min-width: 0; }
+  .sigilo-trend canvas { max-height: 320px; }
+  .sigilo100-block .sigilo-metric { margin: 16px 0; }
+  .sigilo-trend { margin-bottom: 16px; }
+  .sigilo100-block table { min-width: 0; }
+  .sigilo100-block th:not(:first-child), .sigilo100-block td:not(:first-child) { text-align: right; }
+  .overview-details > summary { font-weight: 700; cursor: pointer; }
+  .overview-details > section { margin-top: 12px; }
+  @media (max-width: 540px) {
+    .sigilo100-block th, .sigilo100-block td { padding: 8px 4px; font-size: .76rem; overflow-wrap: anywhere; }
+  }
   </style>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles/platform.css">
@@ -1128,9 +1140,8 @@
     </nav>
 
     <header class="card hero">
-      <h1>Transparência no governo federal: por que pedidos de informação são negados?</h1>
-      <p class="sub">Este painel analisa os pedidos feitos pela Lei de Acesso à Informação (LAI). O texto oficial da lei é a <a href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm" target="_blank" rel="noopener noreferrer">Lei nº 12.527/2011</a>. Se você quiser uma explicação prática e simples de como usar a LAI, veja meu <a href="https://www.udemy.com/course/investigue-gastos-publicos-com-a-lei-de-acesso-a-informacao/" target="_blank" rel="noopener noreferrer">curso na Udemy</a>.</p>
-      <p class="hero-learn-anchor"><a href="#aprenda-mais-transparencia">Aprenda mais sobre transparência e como pedir informações ao governo</a></p>
+      <h1>Pedidos de acesso à informação no Executivo federal</h1>
+      <p class="sub">Dados da CGU sobre respostas a pedidos feitos pela Lei de Acesso à Informação (LAI).</p>
       <div class="source-switch">
         <label class="label" for="source-select">Fonte da análise</label>
         <select id="source-select">
@@ -1141,12 +1152,49 @@
       </div>
       <div class="update-line">
         <span id="updated-line">Atualização: carregando...</span>
-        <a class="scraper-health-btn is-loading" id="scraper-health-btn" href="https://github.com/luizftoledo/luizftoledo.github.io/actions" target="_blank" rel="noopener noreferrer">Testando raspador...</a>
+        <a class="scraper-health-btn is-loading" id="scraper-health-btn" href="https://github.com/luizftoledo/datafixers-dashboards/actions/workflows/update-lai-dashboard.yml" target="_blank" rel="noopener noreferrer">Testando raspador...</a>
         <span class="pill" id="years-pill">anos: --</span>
         <span class="pill pill-warning" id="partial-year-pill" hidden>ano parcial</span>
-        <span class="pill">fontes: CGU (Fala.BR + BuscaLAI)</span>
+
       </div>
       <p class="update-schedule-note" id="update-schedule-note" aria-live="polite">Frequência de atualização: carregando...</p>
+    </header>
+
+    <section class="card sigilo100-block" aria-labelledby="sigilos-heading">
+      <h2 id="sigilos-heading">Restrições por informação pessoal</h2>
+      <p class="section-note">Pedidos negados ou atendidos parcialmente por envolverem informação pessoal, categoria associada ao “sigilo de 100 anos”. A base não informa o prazo aplicado a cada pedido. Sigilos por outros motivos ficam fora deste recorte.</p>
+      <article class="metric sigilo-metric">
+        <div class="value" id="sigilo-total">—</div>
+        <div class="label" id="sigilo-total-label">Pedidos com restrição por informação pessoal na série</div>
+      </article>
+      <article class="chart-card sigilo-trend">
+        <h3>Pedidos com restrição por ano</h3>
+        <p class="section-note">O asterisco indica ano parcial.</p>
+        <canvas id="chart-personal" role="img" aria-label="Pedidos com restrição por informação pessoal por ano"></canvas>
+      </article>
+      <article class="table-card">
+        <h3>Órgãos com maior proporção de restrições</h3>
+        <div class="sigilo100-controls">
+          <label for="sigilo100-year-filter">Período</label>
+          <select id="sigilo100-year-filter"></select>
+        </div>
+        <p class="table-note" id="sigilo100-note" aria-live="polite"></p>
+        <div class="table-wrap">
+          <table aria-label="Ranking de restrições por informação pessoal">
+            <thead><tr>
+              <th scope="col">Órgão</th>
+              <th scope="col">Pedidos</th>
+              <th scope="col">Restrições por informação pessoal</th>
+              <th scope="col">% dos pedidos</th>
+            </tr></thead>
+            <tbody id="table-sigilo100-ranking"></tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+
+    <details class="card overview-details">
+      <summary>Panorama geral dos pedidos e das negativas</summary>
       <div class="metrics">
         <article class="metric">
           <div class="label">Pedidos (série inteira)</div>
@@ -1161,12 +1209,10 @@
           <div class="value" id="metric-restricted-total">--</div>
         </article>
         <article class="metric">
-          <div class="label">Negativas por informação pessoal</div>
+          <div class="label">Restrições por informação pessoal</div>
           <div class="value" id="metric-personal-total">--</div>
         </article>
       </div>
-    </header>
-
     <section class="card alerts">
       <h2>Resumo de atenção agora</h2>
       <div class="alerts-grid" id="alerts-summary">
@@ -1203,44 +1249,6 @@
           <canvas id="chart-org-top"></canvas>
         </article>
       </div>
-    </section>
-
-    <section class="card sigilo100-block">
-      <h2>Bloco Sigilo dos 100 anos <span class="table-inline-note">(informação pessoal)</span></h2>
-      <p class="section-note">Este bloco reúne tudo sobre negativas por informação pessoal (o chamado <a href="https://www.youtube.com/watch?v=BAUB6kCcs8k" target="_blank" rel="noopener noreferrer">“sigilo dos 100 anos”</a>): evolução no tempo e ranking proporcional por órgão.</p>
-      <div class="chart-grid">
-        <article class="chart-card">
-          <h3>Evolução anual de negativas por informação pessoal</h3>
-          <canvas id="chart-personal"></canvas>
-        </article>
-        <article class="chart-card sigilo100-rank-card">
-          <h3>Ranking proporcional por órgão</h3>
-          <div class="sigilo100-controls">
-            <select id="sigilo100-year-filter" aria-label="Selecionar ano para ranking de sigilo"></select>
-            <p class="table-note table-note-tight" id="sigilo100-note"></p>
-          </div>
-          <canvas id="chart-sigilo100"></canvas>
-        </article>
-      </div>
-      <article class="table-card">
-        <h3>Órgãos com maior proporção de negativas por informação pessoal</h3>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Posição</th>
-                <th>Órgão</th>
-                <th>Pedidos recebidos</th>
-                <th>Negados (total)</th>
-                <th>Restrições por informação pessoal</th>
-                <th>% pessoal no total de pedidos</th>
-                <th>% pessoal dentro das restrições</th>
-              </tr>
-            </thead>
-            <tbody id="table-sigilo100-ranking"></tbody>
-          </table>
-        </div>
-      </article>
     </section>
 
     <section class="card tables">
@@ -1318,6 +1326,8 @@
       <h2>Órgãos em detalhe</h2>
       <div class="org-grid" id="org-cards"></div>
     </section>
+
+    </details>
 
     <section class="card methodology">
       <h2>Nota metodológica (como os dados foram tratados)</h2>

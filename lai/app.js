@@ -164,12 +164,8 @@
   }
 
   function describeSource(sourceId, sourceLabel) {
-    if (sourceId === 'ampla') {
-      return `${sourceLabel || 'Base ampla'}: inclui todos os pedidos e recursos do Fala.BR (escopo mais completo); na busca textual desta página, o recorte usa pedidos com decisão “Acesso Negado”.`;
-    }
-    if (sourceId === 'publica') {
-      return `${sourceLabel || 'Base pública'}: inclui os pedidos marcados como públicos no BuscaLAI e permite leitura mais rica de texto do pedido, resposta e anexos quando disponíveis.`;
-    }
+    if (sourceId === 'ampla') return 'Pedidos registrados na base ampla da CGU.';
+    if (sourceId === 'publica') return 'Somente pedidos marcados como públicos pela CGU.';
     return sourceLabel || 'Fonte de dados da análise.';
   }
 
@@ -177,7 +173,7 @@
     if (!sourceSelect) return;
     const ids = getLoadedSourceIds();
     sourceSelect.innerHTML = ids.map((id) => {
-      const label = ((sourceDataMap[id] || {}).cfg || {}).label || id;
+      const label = ({ ampla: 'Fala.BR — base ampla', publica: 'BuscaLAI — base pública' })[id] || ((sourceDataMap[id] || {}).cfg || {}).label || id;
       return `<option value="${esc(id)}">${esc(label)}</option>`;
     }).join('');
     if (ids.includes(activeSourceId)) sourceSelect.value = activeSourceId;
@@ -186,13 +182,7 @@
   function renderSourceNote() {
     if (!sourceNote || !reportData) return;
     const source = reportData.source || {};
-    const ids = getLoadedSourceIds();
-    const sourceLabel = source.source_label || (((sourceDataMap[activeSourceId] || {}).cfg || {}).label || '');
-    const note = describeSource(source.source_id || activeSourceId, sourceLabel);
-    const extra = ids.length >= 2
-      ? ' Você pode trocar a fonte no seletor acima.'
-      : '';
-    sourceNote.textContent = `${note}${extra}`;
+    sourceNote.textContent = describeSource(source.source_id || activeSourceId, source.source_label);
   }
 
   function buildBuscaRequestLink(idPedido) {
@@ -371,6 +361,7 @@
     metricTotalRequests.textContent = nFmt.format(overall.total_requests || 0);
     metricDeniedTotal.textContent = `${nFmt.format(overall.denied_total || 0)} (${pFmt.format(overall.denied_rate || 0)})`;
     metricRestrictedTotal.textContent = `${nFmt.format(overall.restricted_total || 0)} (${pFmt.format(overall.restricted_rate || 0)})`;
+    document.getElementById('sigilo-total').textContent = nFmt.format(overall.personal_restricted_total);
     metricPersonalTotal.textContent = `${nFmt.format(overall.personal_restricted_total || 0)} (${pFmt.format(overall.personal_share_in_restricted || 0)})`;
   }
 
@@ -841,134 +832,22 @@
       },
     }));
 
-    const personalSeries = (reportData.personal_info || {}).series || [];
-    const personalLabels = personalSeries.map((row) => (
-      (partialYearCtx && Number(row.year) === partialYear) ? `${row.year}*` : String(row.year)
-    ));
-    const personalSplit = {
-      countComplete: personalSeries.map((row) => (
-        (partialYearCtx && Number(row.year) === partialYear) ? null : row.count
-      )),
-      countPartial: hasPartial ? personalSeries.map((row) => (
-        (Number(row.year) === partialYear) ? row.count : null
-      )) : [],
-      shareComplete: personalSeries.map((row) => (
-        (partialYearCtx && Number(row.year) === partialYear) ? null : row.share_in_restricted * 100
-      )),
-      sharePartial: hasPartial ? personalSeries.map((row) => (
-        (Number(row.year) === partialYear) ? row.share_in_restricted * 100 : null
-      )) : [],
-    };
-
-    const personalDatasets = [
-      {
-        label: hasPartial
-          ? 'Qtde por informação pessoal (anos completos)'
-          : 'Qtde de negativas/restrições por informação pessoal',
-        data: personalSplit.countComplete,
-        borderColor: '#8d5f2c',
-        backgroundColor: 'rgba(141,95,44,0.16)',
-        yAxisID: 'y',
-        tension: 0.22,
-        fill: true,
-      },
-      {
-        label: hasPartial
-          ? '% pessoal nas restrições (anos completos)'
-          : '% pessoal dentro das restrições',
-        data: personalSplit.shareComplete,
-        borderColor: '#2f6f9f',
-        backgroundColor: 'rgba(47,111,159,0.12)',
-        yAxisID: 'y1',
-        tension: 0.22,
-        fill: true,
-      },
-    ];
-    if (hasPartial) {
-      personalDatasets.push(
-        {
-          label: `Qtde (${partialYearCtx.year} parcial)`,
-          data: personalSplit.countPartial,
-          borderColor: '#8d5f2c',
-          backgroundColor: 'rgba(141,95,44,0.25)',
-          yAxisID: 'y',
-          showLine: false,
-          pointRadius: 5,
-          pointStyle: 'rectRot',
-        },
-        {
-          label: `% pessoal (${partialYearCtx.year} parcial)`,
-          data: personalSplit.sharePartial,
-          borderColor: '#2f6f9f',
-          backgroundColor: 'rgba(47,111,159,0.25)',
-          yAxisID: 'y1',
-          showLine: false,
-          pointRadius: 5,
-          pointStyle: 'rectRot',
-        },
-      );
-    }
-
+    const rows = (reportData.personal_info || {}).series || [];
     pushChart(new Chart(document.getElementById('chart-personal'), {
-      type: 'line',
-      data: {
-        labels: personalLabels,
-        datasets: personalDatasets,
-      },
-      options: {
-        ...commonOptions,
-        scales: {
-          y: { beginAtZero: true, ticks: { callback: (v) => nFmt.format(v) } },
-          y1: {
-            beginAtZero: true,
-            position: 'right',
-            grid: { drawOnChartArea: false },
-            ticks: { callback: (v) => `${v.toFixed(1)}%` },
-          },
-        },
-      },
-    }));
-
-    const sigiloContext = getSigilo100Context();
-    renderSigilo100YearOptions(sigiloContext);
-    renderSigilo100Note(sigiloContext);
-    const sigiloRows = (sigiloContext.rows || []).slice(0, 10);
-
-    pushChart(new Chart(document.getElementById('chart-sigilo100'), {
       type: 'bar',
       data: {
-        labels: sigiloRows.map((row) => shortOrgName(row.org)),
-        datasets: [
-          {
-            label: '% do total de pedidos',
-            data: sigiloRows.map((row) => Number(row.personal_rate_in_total || 0) * 100),
-            backgroundColor: 'rgba(141,95,44,0.82)',
-            borderRadius: 6,
-            yAxisID: 'y',
-          },
-          {
-            type: 'line',
-            label: 'Restrições por informação pessoal (qtde)',
-            data: sigiloRows.map((row) => Number(row.personal_restricted_total || 0)),
-            borderColor: '#2f6f9f',
-            backgroundColor: 'rgba(47,111,159,0.14)',
-            yAxisID: 'y1',
-            tension: 0.2,
-            pointRadius: 2,
-          },
-        ],
+        labels: rows.map(({ year }) => Number(year) === partialYear ? `${year}*` : String(year)),
+        datasets: [{
+          label: 'Pedidos com restrição por informação pessoal',
+          data: rows.map(({ count }) => count),
+          backgroundColor: rows.map(({ year }) => Number(year) === partialYear ? '#aa8053' : '#285c66'),
+          borderRadius: 4,
+        }],
       },
       options: {
         ...commonOptions,
-        scales: {
-          y: { beginAtZero: true, ticks: { callback: (v) => `${v.toFixed(1)}%` } },
-          y1: {
-            beginAtZero: true,
-            position: 'right',
-            grid: { drawOnChartArea: false },
-            ticks: { callback: (v) => nFmt.format(v) },
-          },
-        },
+        plugins: { ...commonOptions.plugins, legend: { display: false } },
+        scales: { y: { beginAtZero: true, ticks: { callback: (v) => nFmt.format(v) } } },
       },
     }));
   }
@@ -1141,13 +1020,9 @@
   function renderSigilo100Note(context) {
     if (!sigilo100Note) return;
     const minRule = context.minRequests > 0
-      ? ` com mínimo de ${nFmt.format(context.minRequests)} pedidos no recorte`
+      ? ` Entram órgãos com pelo menos ${nFmt.format(context.minRequests)} pedidos no período.`
       : '';
-    if (context.selectedYearNum && context.yearSeries) {
-      sigilo100Note.innerHTML = `Ano <strong>${esc(context.selectedLabel)}</strong>: ranking por <strong>restrições por informação pessoal ÷ total de pedidos</strong>${minRule}. Total do ano: <strong>${nFmt.format(context.yearSeries.total_requests || 0)}</strong> pedidos e <strong>${nFmt.format(context.yearSeries.denied_total || 0)}</strong> negados.`;
-      return;
-    }
-    sigilo100Note.innerHTML = `Série histórica completa: ranking por <strong>restrições por informação pessoal ÷ total de pedidos</strong>${minRule}. Total da série: <strong>${nFmt.format((reportData.overall || {}).total_requests || 0)}</strong> pedidos e <strong>${nFmt.format((reportData.overall || {}).denied_total || 0)}</strong> negados.`;
+    sigilo100Note.textContent = `Até 25 órgãos, ordenados pela proporção de restrições por informação pessoal entre todos os pedidos recebidos.${minRule}`;
   }
 
   function renderTables() {
@@ -1188,17 +1063,14 @@
       renderSigilo100Note(sigiloContext);
       const rows = (sigiloContext.rows || []).slice(0, 25);
       if (!rows.length) {
-        tableSigilo100Ranking.innerHTML = '<tr><td colspan="7">Sem dados suficientes para o recorte selecionado.</td></tr>';
+        tableSigilo100Ranking.innerHTML = '<tr><td colspan="4">Sem dados suficientes para o recorte selecionado.</td></tr>';
       } else {
-        tableSigilo100Ranking.innerHTML = rows.map((row, index) => `
+        tableSigilo100Ranking.innerHTML = rows.map((row) => `
           <tr>
-            <td>${index + 1}</td>
             <td>${esc(row.org)}</td>
             <td>${nFmt.format(row.total_requests || 0)}</td>
-            <td>${nFmt.format(row.denied_total || 0)}</td>
             <td>${nFmt.format(row.personal_restricted_total || 0)}</td>
             <td>${pFmt.format(row.personal_rate_in_total || 0)}</td>
-            <td>${pFmt.format(row.personal_rate_in_restricted || 0)}</td>
           </tr>
         `).join('');
       }
@@ -1388,7 +1260,6 @@
     if (sigilo100YearFilter) {
       sigilo100YearFilter.addEventListener('change', () => {
         sigilo100SelectedYear = sigilo100YearFilter.value || 'geral';
-        renderCharts();
         renderTables();
       });
     }
@@ -1408,7 +1279,7 @@
       await loadSourceCatalogAndData();
       await applySource(activeSourceId);
     } catch (error) {
-      narrativeList.innerHTML = `<li class="error">Falha ao carregar os dados: ${esc(error.message)}</li>`;
+      document.getElementById('sigilo-total-label').textContent = `Falha ao carregar os dados: ${error.message}`;
       return;
     }
   }
