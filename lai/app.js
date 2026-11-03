@@ -840,7 +840,7 @@
         datasets: [{
           label: 'Pedidos com restrição por informação pessoal',
           data: rows.map(({ count }) => count),
-          backgroundColor: rows.map(({ year }) => Number(year) === partialYear ? '#aa8053' : '#285c66'),
+          backgroundColor: rows.map(({ year }) => Number(year) === partialYear ? '#b4d7d1' : '#2a7975'),
           borderRadius: 4,
         }],
       },

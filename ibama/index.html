@@ -193,9 +193,11 @@
   @media(max-width:600px){.shell{width:min(100% - 32px,1180px)}.sitebar .shell{height:60px}.sitebar-right{font-size:11px}.hero{padding:34px 0 36px}main.shell{padding-top:28px}.coverage{margin-bottom:28px}.radar-section{padding:22px 18px}.radar-head{align-items:flex-start;flex-direction:column}.radar-grid{grid-template-columns:1fr}.radar-card{min-height:135px}.workbench-head{padding:22px 18px 0}.panel{padding:22px 18px 28px}.search-row{flex-direction:column}.search-row button{padding:12px}.tabs{gap:18px}.tab{font-size:12px}.info-card{padding:20px}}
 </style>
   <script defer src="/assets/course-banner.js?v=20261028-course3" data-df-course-loader></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/platform.css">
 </head>
-<body>
-<header class="sitebar"><div class="shell"><a class="brand" href="https://dashboards.datafixers.org"><span class="brand-mark">DF</span>datafixers</a><div class="sitebar-right"><a href="https://dadosabertos.ibama.gov.br/dataset/fiscalizacao-auto-de-infracao" target="_blank" rel="noopener">Fonte oficial ↗</a></div></div></header>
+<body class="df-ui df-ui--ibama">
+<header class="df-sitebar"><div class="df-sitebar__inner"><a class="df-sitebar__brand" href="/"><img class="df-sitebar__logo" src="/assets/datafixers-logo.svg" alt="Data Fixers" width="147" height="32"></a><a class="df-sitebar__nav" href="/">Todos os painéis</a><a class="df-sitebar__nav" href="https://dadosabertos.ibama.gov.br/dataset/fiscalizacao-auto-de-infracao">Fonte oficial</a></div></header>
 <section class="hero"><div class="shell"><div class="eyebrow">Data Fixers / Ibama</div><h1>Consulta de autos de infração do Ibama</h1><p class="sub">Busque por auto, processo, nome, CPF/CNPJ, município ou descrição. Consulte resultados em lote, compare municípios e exporte os registros exibidos.</p></div></section>
 <main class="shell">
 <div class="coverage"><div class="coverage-icon" aria-hidden="true">!</div><div><b>Cobertura em revisão.</b> Esta cópia ainda não contém todos os autos do arquivo oficial. <span id="coverageDetail"></span>Um resultado vazio não confirma que o auto inexiste. <a href="https://dadosabertos.ibama.gov.br/dataset/fiscalizacao-auto-de-infracao" target="_blank" rel="noopener">Confira na fonte oficial ↗</a></div></div>

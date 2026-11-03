@@ -48,6 +48,7 @@
       padding-left: max(16px, env(safe-area-inset-left));
       padding-right: max(16px, env(safe-area-inset-right));
       display: grid;
+      grid-template-columns: minmax(0, 1fr);
       gap: 0.9rem;
     }
 
@@ -165,7 +166,7 @@
     .filters {
       margin-top: 0.8rem;
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
       gap: 0.55rem;
       align-items: stretch;
     }
@@ -220,7 +221,7 @@
     /* Mobile: KPIs em 1 coluna */
     .kpis {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
       gap: 0.55rem;
     }
 
@@ -253,7 +254,7 @@
     /* Mobile: gráficos em 1 coluna */
     .grid-2 {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
       gap: 0.7rem;
     }
 
@@ -289,7 +290,7 @@
     /* Mobile: tabelas em 1 coluna */
     .tables {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
       gap: 0.7rem;
     }
 
@@ -435,12 +436,12 @@
       th { font-size: 0.78rem; }
     }
   </style>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles/platform.css">
   <script defer src="/assets/course-banner.js?v=20261028-course3" data-df-course-loader></script>
 </head>
 <body class="df-ui df-ui--basometro">
-<div class="df-sitebar"><div class="df-sitebar__inner"><a class="df-sitebar__brand" href="/"><span class="df-sitebar__mark">DF</span>datafixers</a><a class="df-sitebar__nav" href="/">Todos os painéis</a></div></div>
+<div class="df-sitebar"><div class="df-sitebar__inner"><a class="df-sitebar__brand" href="/"><img class="df-sitebar__logo" src="/assets/datafixers-logo.svg" alt="Data Fixers" width="147" height="32"></a><a class="df-sitebar__nav" href="/">Todos os painéis</a></div></div>
   <main class="page">
     <div class="quick-nav">
       <a class="nav-btn" href="https://luizftoledo.github.io/" target="_blank" rel="noopener noreferrer">Voltar para home</a>
