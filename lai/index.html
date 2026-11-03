@@ -444,7 +444,18 @@
       color: #38332d;
     }
 
-    .chart-plot { position: relative; height: clamp(260px, 36vw, 410px); min-width: 0; }
+    .chart-plot {
+      position: relative;
+      width: 100%;
+      min-width: 0;
+      height: clamp(320px, 40vw, 420px);
+      overflow: hidden;
+    }
+
+    .chart-plot > canvas {
+      position: absolute;
+      inset: 0;
+    }
 
     .tables,
     .sigilo100-block,
