@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-03T20:04:07.659529+00:00",
-  "snapshot_date": "2026-11-03",
+  "generated_at": "2026-11-04T20:23:08.331574+00:00",
+  "snapshot_date": "2026-11-04",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -996,7 +996,7 @@
     "total_liquidado": 26243532419.43,
     "total_pago": 35560507959.37
   },
-  "run_date": "2026-11-03",
+  "run_date": "2026-11-04",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1026,7 +1026,7 @@
       "available": true,
       "source_url": "https://www1.siop.planejamento.gov.br/QvAJAXZfc/opendoc.htm?document=IAS%2FExecucao_Orcamentaria.qvw&host=QVS%40pqlk04&anonymous=true",
       "last_update": "",
-      "base_siafi_date": "30/10/2026",
+      "base_siafi_date": "3/11/2026",
       "filters": {
         "year": 2026,
         "rp": [
@@ -1038,9 +1038,9 @@
       "totals": {
         "dotacao_inicial_emenda": 49769403428.0,
         "dotacao_atual_emenda": 49901486762.0,
-        "empenhado": 40402334913.0,
-        "liquidado": 26248216088.0,
-        "pago": 25912921558.0
+        "empenhado": 40473248815.0,
+        "liquidado": 26262921954.0,
+        "pago": 25913306030.0
       },
       "per_rp": [
         {
@@ -1049,9 +1049,9 @@
           "totals": {
             "dotacao_inicial_emenda": 26560925142.0,
             "dotacao_atual_emenda": 26560925142.0,
-            "empenhado": 23119218162.0,
-            "liquidado": 15959981644.0,
-            "pago": 15835941761.0
+            "empenhado": 23186501250.0,
+            "liquidado": 15969189274.0,
+            "pago": 15836163814.0
           },
           "error": ""
         },
@@ -1061,9 +1061,9 @@
           "totals": {
             "dotacao_inicial_emenda": 11176561619.0,
             "dotacao_atual_emenda": 11225311619.0,
-            "empenhado": 7479053966.0,
-            "liquidado": 5073712213.0,
-            "pago": 4890004210.0
+            "empenhado": 7481345796.0,
+            "liquidado": 5078259449.0,
+            "pago": 4890095642.0
           },
           "error": ""
         },
@@ -1073,9 +1073,9 @@
           "totals": {
             "dotacao_inicial_emenda": 12031916667.0,
             "dotacao_atual_emenda": 12115250001.0,
-            "empenhado": 9804062785.0,
-            "liquidado": 5214522231.0,
-            "pago": 5186975587.0
+            "empenhado": 9805401769.0,
+            "liquidado": 5215473231.0,
+            "pago": 5187046574.0
           },
           "error": ""
         }
@@ -1085,7 +1085,7 @@
     "siop_details": {
       "available": false,
       "source_url": "https://www1.siop.planejamento.gov.br/QvAJAXZfc/opendoc.htm?document=IAS%2FExecucao_Orcamentaria.qvw&host=QVS%40pqlk04&anonymous=true",
-      "base_siafi_date": "30/10/2026",
+      "base_siafi_date": "3/11/2026",
       "rows_count": 0,
       "error": "Varredura detalhada não executada na rotina diária; use EMENDAS_SIOP_DETAILS=1."
     },
@@ -6086,6 +6086,17 @@
       "previous_snapshot_date": "2026-11-02",
       "interval_days": 1,
       "source_changed": false
+    },
+    {
+      "date": "2026-11-04",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 342841860209.16,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-11-03",
+      "interval_days": 1,
+      "source_changed": false
     }
   ],
   "siop_daily_history": [
@@ -8318,7 +8329,17 @@
       "empenhado": 40402334913.0,
       "liquidado": 26248216088.0,
       "pago": 25912921558.0
+    },
+    {
+      "date": "2026-11-04",
+      "last_update": "",
+      "base_siafi_date": "3/11/2026",
+      "dotacao_inicial_emenda": 49769403428.0,
+      "dotacao_atual_emenda": 49901486762.0,
+      "empenhado": 40473248815.0,
+      "liquidado": 26262921954.0,
+      "pago": 25913306030.0
     }
   ],
-  "updated_at": "2026-11-03T20:04:07.659529+00:00"
+  "updated_at": "2026-11-04T20:23:08.331574+00:00"
 }
