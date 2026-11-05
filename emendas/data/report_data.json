@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-04T20:23:08.331574+00:00",
-  "snapshot_date": "2026-11-04",
+  "generated_at": "2026-11-05T20:36:28.819745+00:00",
+  "snapshot_date": "2026-11-05",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -996,7 +996,7 @@
     "total_liquidado": 26243532419.43,
     "total_pago": 35560507959.37
   },
-  "run_date": "2026-11-04",
+  "run_date": "2026-11-05",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1005,21 +1005,21 @@
       "stages": [
         {
           "stage": "Empenhado",
-          "value": 40368931624.93
+          "value": 40470897053.13
         },
         {
           "stage": "Liquidado",
-          "value": 26243532419.43
+          "value": 26261713856.86
         },
         {
           "stage": "Pago",
-          "value": 25911281671.97
+          "value": 25912914906.9
         }
       ],
       "stage_values": {
-        "empenhado": 40368931624.93,
-        "liquidado": 26243532419.43,
-        "pago": 25911281671.97
+        "empenhado": 40470897053.13,
+        "liquidado": 26261713856.86,
+        "pago": 25912914906.9
       }
     },
     "siop_snapshot": {
@@ -1080,12 +1080,13 @@
           "error": ""
         }
       ],
-      "error": ""
+      "error": "Message: Stacktrace: #0 0x5c532fcc90aa <unknown> #1 0x5c532f5fc875 <unknown> #2 0x5c532f63ec8f <unknown> #3 0x5c532f63ee21 <unknown> #4 0x5c532f67cac4 <unknown> #5 0x5c532f67b143 <unknown> #6 0x5c532f67aa51 <unknown> #7 0x5c532f635a07 <unknown> #8 0x5c532f634d1e <unknown> #9 0x5c532f6357f1 <unknown> #10 0x5c532fc8bc5c <unknown> #11 0x5c532fc8a475 <unknown> #12 0x5c532fc757f8 <unknown> #13 0x5c532fc8b0ca <unknown> #14 0x5c532fc5e3f9 <unknown> #15 0x5c532fcb3848 <unknown> #16 0x5c532fcb39e5 <unkno",
+      "fallback_from_previous": true
     },
     "siop_details": {
       "available": false,
       "source_url": "https://www1.siop.planejamento.gov.br/QvAJAXZfc/opendoc.htm?document=IAS%2FExecucao_Orcamentaria.qvw&host=QVS%40pqlk04&anonymous=true",
-      "base_siafi_date": "3/11/2026",
+      "base_siafi_date": "",
       "rows_count": 0,
       "error": "Varredura detalhada não executada na rotina diária; use EMENDAS_SIOP_DETAILS=1."
     },
@@ -6097,6 +6098,17 @@
       "previous_snapshot_date": "2026-11-03",
       "interval_days": 1,
       "source_changed": false
+    },
+    {
+      "date": "2026-11-05",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 342841860209.16,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-11-04",
+      "interval_days": 1,
+      "source_changed": false
     }
   ],
   "siop_daily_history": [
@@ -8339,7 +8351,17 @@
       "empenhado": 40473248815.0,
       "liquidado": 26262921954.0,
       "pago": 25913306030.0
+    },
+    {
+      "date": "2026-11-05",
+      "last_update": "",
+      "base_siafi_date": "3/11/2026",
+      "dotacao_inicial_emenda": 49769403428.0,
+      "dotacao_atual_emenda": 49901486762.0,
+      "empenhado": 40473248815.0,
+      "liquidado": 26262921954.0,
+      "pago": 25913306030.0
     }
   ],
-  "updated_at": "2026-11-04T20:23:08.331574+00:00"
+  "updated_at": "2026-11-05T20:36:28.819745+00:00"
 }
