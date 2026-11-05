@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T20:33:40.859947+00:00",
+  "generated_at": "2026-11-05T20:50:49.187078+00:00",
   "counts": {
     "items": 78,
     "domains": 23,
@@ -16,7 +16,7 @@
     "recent": {
       "last_1_day": 0,
       "last_7_days": 1,
-      "last_30_days": 15
+      "last_30_days": 14
     }
   },
   "date_range": {
@@ -43,10 +43,10 @@
       }
     },
     "enrich": {
-      "fetched": 54,
+      "fetched": 53,
       "reused": 27,
       "kept": 78,
-      "dropped": 3,
+      "dropped": 2,
       "categories": {
         "perfil_bio": 17,
         "reportagem_autoral": 56,
