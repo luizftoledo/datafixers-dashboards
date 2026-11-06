@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-11-05T20:50:49.187078+00:00",
+  "generated_at": "2026-11-06T20:06:38.979927+00:00",
   "counts": {
-    "items": 78,
+    "items": 79,
     "domains": 23,
     "categories": {
       "reportagem_autoral": 56,
       "republicacao": 0,
       "eco_repercussao": 1,
       "citacao_fonte": 1,
-      "mencao": 2,
+      "mencao": 3,
       "entrevista": 1,
       "palestra_curso": 0,
       "perfil_bio": 17
@@ -16,7 +16,7 @@
     "recent": {
       "last_1_day": 0,
       "last_7_days": 1,
-      "last_30_days": 14
+      "last_30_days": 13
     }
   },
   "date_range": {
@@ -36,21 +36,21 @@
         "known_external_sources": 47
       },
       "searches": {
-        "google-news-rss:\"Luiz Fernando Toledo\"": 26,
-        "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 0,
+        "google-news-rss:\"Luiz Fernando Toledo\"": 25,
+        "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 1,
         "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 4,
         "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 9
       }
     },
     "enrich": {
-      "fetched": 53,
+      "fetched": 54,
       "reused": 27,
-      "kept": 78,
+      "kept": 79,
       "dropped": 2,
       "categories": {
         "perfil_bio": 17,
         "reportagem_autoral": 56,
-        "mencao": 2,
+        "mencao": 3,
         "entrevista": 1,
         "citacao_fonte": 1,
         "eco_repercussao": 1
@@ -61,7 +61,7 @@
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
         "ojoioeotrigo.com.br": 1,
-        "estadao.com.br": 1,
+        "estadao.com.br": 2,
         "g1.globo.com": 1,
         "escavador.com": 1,
         "icfj.org": 1,
