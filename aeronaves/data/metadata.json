@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-11-06T19:38:57+00:00",
-  "source_updated_at": "2026-11-06",
-  "source_header": "Atualizado em: 2026-11-06",
+  "generated_at": "2026-11-07T17:50:05+00:00",
+  "source_updated_at": "2026-11-07",
+  "source_header": "Atualizado em: 2026-11-07",
   "source_file": "dados_aeronaves.csv",
-  "source_size_bytes": 24340504,
+  "source_size_bytes": 24344047,
   "data_file": "records.jsonl.gz",
-  "rows": 35136,
-  "active_rows": 26930,
-  "canceled_rows": 8206,
-  "rows_with_document": 35136,
-  "rows_with_masked_document": 11832,
-  "unique_operators": 20590,
+  "rows": 35139,
+  "active_rows": 26932,
+  "canceled_rows": 8207,
+  "rows_with_document": 35139,
+  "rows_with_masked_document": 11836,
+  "unique_operators": 20598,
   "null_uf_rows": 0,
   "ufs": [
     "AC",
@@ -48,10 +48,10 @@
   "year_max": 2029,
   "search_result_limit": 20,
   "sample_queries": [
-    "PR-JLE",
-    "MASTER AVIAÇÃO AGRÍCOLA LTDA",
-    "24365724000105",
-    "PT-BZS"
+    "PT-BTX",
+    "INOCENCIO ALVES DE OLIVEIRA",
+    "Indisponível",
+    "PT-GEB"
   ],
   "methodology": [
     "Esta página foi gerada a partir do CSV original entregue para o site, em vez de consultar o portal da ANAC em tempo real.",
