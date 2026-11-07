@@ -1,10 +1,10 @@
 {
   "discovery": {
     "seeds": {
-      "known_external_sources": 47
+      "known_external_sources": 48
     },
     "searches": {
-      "google-news-rss:\"Luiz Fernando Toledo\"": 25,
+      "google-news-rss:\"Luiz Fernando Toledo\"": 26,
       "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 1,
       "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 4,
       "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 9
@@ -12,9 +12,9 @@
   },
   "enrich": {
     "fetched": 54,
-    "reused": 27,
+    "reused": 28,
     "kept": 79,
-    "dropped": 2,
+    "dropped": 3,
     "categories": {
       "perfil_bio": 17,
       "reportagem_autoral": 56,
