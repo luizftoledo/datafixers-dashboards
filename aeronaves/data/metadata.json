@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-11-07T17:50:05+00:00",
-  "source_updated_at": "2026-11-07",
-  "source_header": "Atualizado em: 2026-11-07",
+  "generated_at": "2026-11-08T18:02:10+00:00",
+  "source_updated_at": "2026-11-08",
+  "source_header": "Atualizado em: 2026-11-08",
   "source_file": "dados_aeronaves.csv",
-  "source_size_bytes": 24344047,
+  "source_size_bytes": 24345148,
   "data_file": "records.jsonl.gz",
-  "rows": 35139,
-  "active_rows": 26932,
+  "rows": 35142,
+  "active_rows": 26935,
   "canceled_rows": 8207,
-  "rows_with_document": 35139,
+  "rows_with_document": 35142,
   "rows_with_masked_document": 11836,
-  "unique_operators": 20598,
+  "unique_operators": 20600,
   "null_uf_rows": 0,
   "ufs": [
     "AC",
@@ -48,10 +48,10 @@
   "year_max": 2029,
   "search_result_limit": 20,
   "sample_queries": [
-    "PT-BTX",
-    "INOCENCIO ALVES DE OLIVEIRA",
-    "Indisponível",
-    "PT-GEB"
+    "PP-KLA",
+    "KLABIN S.A.",
+    "89637490013395",
+    "PS-GAR"
   ],
   "methodology": [
     "Esta página foi gerada a partir do CSV original entregue para o site, em vez de consultar o portal da ANAC em tempo real.",
