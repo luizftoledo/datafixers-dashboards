@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-11-10T19:56:34+00:00",
-  "source_updated_at": "2026-11-10",
-  "source_header": "Atualizado em: 2026-11-10",
+  "generated_at": "2026-11-11T19:49:24+00:00",
+  "source_updated_at": "2026-11-11",
+  "source_header": "Atualizado em: 2026-11-11",
   "source_file": "dados_aeronaves.csv",
-  "source_size_bytes": 24352185,
+  "source_size_bytes": 24353159,
   "data_file": "records.jsonl.gz",
-  "rows": 35148,
-  "active_rows": 26940,
+  "rows": 35150,
+  "active_rows": 26942,
   "canceled_rows": 8208,
-  "rows_with_document": 35148,
-  "rows_with_masked_document": 11838,
-  "unique_operators": 20601,
+  "rows_with_document": 35150,
+  "rows_with_masked_document": 11834,
+  "unique_operators": 20602,
   "null_uf_rows": 0,
   "ufs": [
     "AC",
@@ -48,10 +48,10 @@
   "year_max": 2029,
   "search_result_limit": 20,
   "sample_queries": [
-    "PT-GEB",
-    "AEROAGRICOLA SAO MATEUS LTDA",
-    "34497274000150",
-    "PT-WEO"
+    "PT-TYD",
+    "Indisponível",
+    "PT-FYH",
+    "PU-MTT"
   ],
   "methodology": [
     "Esta página foi gerada a partir do CSV original entregue para o site, em vez de consultar o portal da ANAC em tempo real.",
