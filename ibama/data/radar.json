@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-09T17:40:15.487442+00:00",
+  "generated_at": "2026-11-16T17:10:10.932150+00:00",
   "year": 2026,
-  "through": "2026-11-08",
+  "through": "2026-11-15",
   "previous_year": 2025,
-  "total_current": 14056,
-  "total_previous": 13919,
+  "total_current": 14453,
+  "total_previous": 14212,
   "places": [
     {
       "city": "RIO DE JANEIRO",
@@ -14,18 +14,18 @@
       "delta": 223
     },
     {
+      "city": "FLORIANOPOLIS",
+      "uf": "SC",
+      "current": 208,
+      "previous": 55,
+      "delta": 153
+    },
+    {
       "city": "GOIANIA",
       "uf": "GO",
       "current": 200,
       "previous": 54,
       "delta": 146
-    },
-    {
-      "city": "FLORIANOPOLIS",
-      "uf": "SC",
-      "current": 187,
-      "previous": 44,
-      "delta": 143
     },
     {
       "city": "TRAIRAO",
@@ -35,18 +35,18 @@
       "delta": 118
     },
     {
+      "city": "SENA MADUREIRA",
+      "uf": "AC",
+      "current": 132,
+      "previous": 30,
+      "delta": 102
+    },
+    {
       "city": "ALENQUER",
       "uf": "PA",
       "current": 98,
       "previous": 0,
       "delta": 98
-    },
-    {
-      "city": "CAMPOS DOS GOYTACAZES",
-      "uf": "RJ",
-      "current": 100,
-      "previous": 7,
-      "delta": 93
     },
     {
       "city": "CARUARU",
@@ -56,18 +56,18 @@
       "delta": 92
     },
     {
+      "city": "CAMPOS DOS GOYTACAZES",
+      "uf": "RJ",
+      "current": 105,
+      "previous": 14,
+      "delta": 91
+    },
+    {
       "city": "NOVO PROGRESSO",
       "uf": "PA",
       "current": 167,
       "previous": 80,
       "delta": 87
-    },
-    {
-      "city": "CUJUBIM",
-      "uf": "RO",
-      "current": 111,
-      "previous": 26,
-      "delta": 85
     }
   ],
   "method": "Autos por municipio e UF com data do auto entre 1 jan e a data de corte em cada ano. Normalizacao de caixa e acentos. Selecionados apenas locais com >=30 autos no ano atual, >=20 a mais que no anterior e pelo menos 1,8 vez o volume anterior."
