@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-11-16T23:02:19.820530+00:00",
+  "generated_at": "2026-11-17T21:55:39.516009+00:00",
   "counts": {
-    "items": 47,
-    "domains": 19,
+    "items": 81,
+    "domains": 24,
     "categories": {
-      "reportagem_autoral": 28,
+      "reportagem_autoral": 57,
       "republicacao": 0,
-      "eco_repercussao": 0,
-      "citacao_fonte": 0,
-      "mencao": 1,
+      "eco_repercussao": 1,
+      "citacao_fonte": 1,
+      "mencao": 4,
       "entrevista": 1,
       "palestra_curso": 0,
       "perfil_bio": 17
     },
     "recent": {
-      "last_1_day": 0,
-      "last_7_days": 1,
-      "last_30_days": 8
+      "last_1_day": 1,
+      "last_7_days": 4,
+      "last_30_days": 13
     }
   },
   "date_range": {
-    "min": "2021-02-06",
-    "max": "2026-11-12"
+    "min": "2015-10-28",
+    "max": "2026-11-17"
   },
   "methodology": {
     "names": [
@@ -36,30 +36,32 @@
         "known_external_sources": 47
       },
       "searches": {
-        "google-news-rss:\"Luiz Fernando Toledo\"": 0,
+        "google-news-rss:\"Luiz Fernando Toledo\"": 28,
         "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 1,
         "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 4,
-        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 0
+        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 9
       }
     },
     "enrich": {
-      "fetched": 34,
+      "fetched": 65,
       "reused": 18,
-      "kept": 47,
-      "dropped": 5,
+      "kept": 81,
+      "dropped": 2,
       "categories": {
         "perfil_bio": 17,
-        "reportagem_autoral": 28,
-        "mencao": 1,
-        "entrevista": 1
+        "reportagem_autoral": 57,
+        "mencao": 4,
+        "entrevista": 1,
+        "citacao_fonte": 1,
+        "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 27,
+        "bbc.com": 50,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
         "ojoioeotrigo.com.br": 1,
-        "estadao.com.br": 1,
+        "estadao.com.br": 2,
         "g1.globo.com": 1,
         "escavador.com": 1,
         "icfj.org": 1,
@@ -72,20 +74,17 @@
         "repositorio.fgv.br": 1,
         "talks.ox.ac.uk": 1,
         "cima.ned.org": 1,
-        "scielo.br": 1
+        "scielo.br": 1,
+        "abraji.org.br": 2,
+        "sbtnews.sbt.com.br": 1,
+        "fiquemsabendo.com.br": 1,
+        "piaui.uol.com.br": 5,
+        "lance.com.br": 1
       },
       "errors": [
         {
           "url": "https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil",
           "error": "HTTPSConnectionPool(host='devstudies.cam.ac.uk', port=443): Max retries exceeded with url: /news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil (Caused by NameResolutionError(\"HTTPSConnection(host='devstudies.cam.ac.uk', port=443): Failed to resolve 'devstudies.cam.ac.uk' ([Errno -5] No address associated with hostname)\")) | jina: 422 Client Error: Unprocessable Entity for url: https://r.jina.ai/http://https://devstudies.cam.ac.uk/news/luiz-fernando-toledo-2024s-fourth-most-awarded-journalist-brazil"
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQRmsyMUxCYUpxeTVlWjllWnRzUDNWOHFjemM4SW8wVUw0OHAzdG1EWFhTMXZZeHMxWWUzYjZyLXFlTGlKZjZzbDhvQ3o4ei1pdVZWRmdkeHVjd29JSFFkUnFTaVZWaC1CM0JoZUF4TGdWc1Bhc0t6WDMwTjJuNDE0Rk52Z2Q4VkFDYlNNMGIzZFpkbDZna3JqZ09sYzJ5RGNmR0NsRjE2YjdBTHNQTHdTc1FmNnZuLXBPYWR2RmhqTlIyMjg3Qzl6RWRVXzB1MTFtVllnWHpaZVk5RGhxTDlnWkxSb0_SAeoBQVVfeXFMT0Vja0d1QTBvR0pYT2pIQVprakpqWThmeXZOTmRtbWhrQmsyd3dwVE5DcFhkR1NuV1NRdW1qdUpScXY3cFdzbldVN21ScVNpMzFfSGhXc1JrV19WTThJMDVESC15MTBpYUxxaElSWnREaHllTE5qNlFnZ0Q3U2lnWDRJY0FRUXJOTXdhRVVzNUVlamhkNlE0SzVVUVRJSEJQbFNYamhtRmdxUWFvNERCU21pMVk0bEMwNEdsNkc4WFVkTjRIZjU1X2dkOFFBQXZPTEVqbE5oT0dRaDhfNVhVekpKOVV5UG5lckZn",
-          "error": "429 Client Error: Too Many Requests for url: https://news.google.com/rss/articles/CBMi5AFBVV95cUxQRmsyMUxCYUpxeTVlWjllWnRzUDNWOHFjemM4SW8wVUw0OHAzdG1EWFhTMXZZeHMxWWUzYjZyLXFlTGlKZjZzbDhvQ3o4ei1pdVZWRmdkeHVjd29JSFFkUnFTaVZWaC1CM0JoZUF4TGdWc1Bhc0t6WDMwTjJuNDE0Rk52Z2Q4VkFDYlNNMGIzZFpkbDZna3JqZ09sYzJ5RGNmR0NsRjE2YjdBTHNQTHdTc1FmNnZuLXBPYWR2RmhqTlIyMjg3Qzl6RWRVXzB1MTFtVllnWHpaZVk5RGhxTDlnWkxSb0_SAeoBQVVfeXFMT0Vja0d1QTBvR0pYT2pIQVprakpqWThmeXZOTmRtbWhrQmsyd3dwVE5DcFhkR1NuV1NRdW1qdUpScXY3cFdzbldVN21ScVNpMzFfSGhXc1JrV19WTThJMDVESC15MTBpYUxxaElSWnREaHllTE5qNlFnZ0Q3U2lnWDRJY0FRUXJOTXdhRVVzNUVlamhkNlE0SzVVUVRJSEJQbFNYamhtRmdxUWFvNERCU21pMVk0bEMwNEdsNkc4WFVkTjRIZjU1X2dkOFFBQXZPTEVqbE5oT0dRaDhfNVhVekpKOVV5UG5lckZn?hl=pt-BR&gl=BR&ceid=BR:pt-419 | jina: 403 Client Error: Forbidden for url: https://r.jina.ai/http://https://news.google.com/rss/articles/CBMi5AFBVV95cUxQRmsyMUxCYUpxeTVlWjllWnRzUDNWOHFjemM4SW8wVUw0OHAzdG1EWFhTMXZZeHMxWWUzYjZyLXFlTGlKZjZzbDhvQ3o4ei1pdVZWRmdkeHVjd29JSFFkUnFTaVZWaC1CM0JoZUF4TGdWc1Bhc0t6WDMwTjJuNDE0Rk52Z2Q4VkFDYlNNMGIzZFpkbDZna3JqZ09sYzJ5RGNmR0NsRjE2YjdBTHNQTHdTc1FmNnZuLXBPYWR2RmhqTlIyMjg3Qzl6RWRVXzB1MTFtVllnWHpaZVk5RGhxTDlnWkxSb0_SAeoBQVVfeXFMT0Vja0d1QTBvR0pYT2pIQVprakpqWThmeXZOTmRtbWhrQmsyd3dwVE5DcFhkR1NuV1NRdW1qdUpScXY3cFdzbldVN21ScVNpMzFfSGhXc1JrV19WTThJMDVESC15MTBpYUxxaElSWnREaHllTE5qNlFnZ0Q3U2lnWDRJY0FRUXJOTXdhRVVzNUVlamhkNlE0SzVVUVRJSEJQbFNYamhtRmdxUWFvNERCU21pMVk0bEMwNEdsNkc4WFVkTjRIZjU1X2dkOFFBQXZPTEVqbE5oT0dRaDhfNVhVekpKOVV5UG5lckZn"
-        },
-        {
-          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNQXFVOG1ZYTMwc0otOTViTERoc0hzWVU4ZFZEMkVHWDZwSjZmMGx1MUp0cTFfb0w4S2IyUENQSzZoeXE2YzZvMF8tZWJYZkpvYzMydUdjbHptZUdEVzJjZ0QweHdRazlFdm5DS3RUbDJDemgwTG1zNW1YVEdDUTFGV2h1ZmNCc2pxaVQxN1BreThYMUhTWFhydXJvY0FXRTdORUh6cEZ5UWk4bUNlNm9lV2dkX3FtU0NQNmfSAb8BQVVfeXFMTTE3U3UwVWJra3hmSDUzSVk0M1V0MUhyeER3MGtRMkl4cDloOHhFNG1pSGJSWGtQT2NHWnZZZDh4cW0wQ2VDREZmSFlxTGRCU2M4S0VWSUk5MzAzemFMczVINUZVSzhEaW1lODBFeUZzdjBkSlhPRG0xZy0xSXh1NVlZR2d3M2JiSHJNcjRFODlEODR4ODZ2cDFrdld4RjNUSzZwYkdIS1ZRblBJaUhqTUtKNTRmUnpfb1lsN3pTWm8",
-          "error": "429 Client Error: Too Many Requests for url: https://news.google.com/rss/articles/CBMiugFBVV95cUxNQXFVOG1ZYTMwc0otOTViTERoc0hzWVU4ZFZEMkVHWDZwSjZmMGx1MUp0cTFfb0w4S2IyUENQSzZoeXE2YzZvMF8tZWJYZkpvYzMydUdjbHptZUdEVzJjZ0QweHdRazlFdm5DS3RUbDJDemgwTG1zNW1YVEdDUTFGV2h1ZmNCc2pxaVQxN1BreThYMUhTWFhydXJvY0FXRTdORUh6cEZ5UWk4bUNlNm9lV2dkX3FtU0NQNmfSAb8BQVVfeXFMTTE3U3UwVWJra3hmSDUzSVk0M1V0MUhyeER3MGtRMkl4cDloOHhFNG1pSGJSWGtQT2NHWnZZZDh4cW0wQ2VDREZmSFlxTGRCU2M4S0VWSUk5MzAzemFMczVINUZVSzhEaW1lODBFeUZzdjBkSlhPRG0xZy0xSXh1NVlZR2d3M2JiSHJNcjRFODlEODR4ODZ2cDFrdld4RjNUSzZwYkdIS1ZRblBJaUhqTUtKNTRmUnpfb1lsN3pTWm8 | jina: 403 Client Error: Forbidden for url: https://r.jina.ai/http://https://news.google.com/rss/articles/CBMiugFBVV95cUxNQXFVOG1ZYTMwc0otOTViTERoc0hzWVU4ZFZEMkVHWDZwSjZmMGx1MUp0cTFfb0w4S2IyUENQSzZoeXE2YzZvMF8tZWJYZkpvYzMydUdjbHptZUdEVzJjZ0QweHdRazlFdm5DS3RUbDJDemgwTG1zNW1YVEdDUTFGV2h1ZmNCc2pxaVQxN1BreThYMUhTWFhydXJvY0FXRTdORUh6cEZ5UWk4bUNlNm9lV2dkX3FtU0NQNmfSAb8BQVVfeXFMTTE3U3UwVWJra3hmSDUzSVk0M1V0MUhyeER3MGtRMkl4cDloOHhFNG1pSGJSWGtQT2NHWnZZZDh4cW0wQ2VDREZmSFlxTGRCU2M4S0VWSUk5MzAzemFMczVINUZVSzhEaW1lODBFeUZzdjBkSlhPRG0xZy0xSXh1NVlZR2d3M2JiSHJNcjRFODlEODR4ODZ2cDFrdld4RjNUSzZwYkdIS1ZRblBJaUhqTUtKNTRmUnpfb1lsN3pTWm8"
         }
       ]
     }
