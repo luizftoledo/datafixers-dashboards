@@ -1761,6 +1761,10 @@ def main() -> int:
             "total_records": len(records_sorted),
             "excluded_records": filtered_out,
             "candidate_urls": len(candidate_by_url),
+            "candidate_urls_by_source": dict(Counter(info["source"] for info in candidate_by_url.values())),
+            "detail_attempted_by_source": dict(Counter(
+                candidate_by_url[url]["source"] for url in needs_detail
+            )),
             "new_urls": len(new_urls),
             "detail_fetched": sum(fetched_by_source.values()),
             "detail_fetched_by_source": dict(fetched_by_source),

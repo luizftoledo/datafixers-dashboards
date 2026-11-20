@@ -57,7 +57,9 @@ jobs:
           with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as out:
               out.write(f"Lulômetro: {meta.get('total_records', 0)} registros; {found} URLs candidatas das fontes oficiais.\n")
               out.write(f"Planalto: {planalto} textos coletados.\n")
-          if planalto == 0:
+          discovered = meta.get('candidate_urls_by_source', {}).get('planalto', 0)
+          attempted = meta.get('detail_attempted_by_source', {}).get('planalto', 0)
+          if not discovered or (attempted and not planalto):
               raise SystemExit("Nenhum texto do Planalto coletado. Consulte os erros do scraper.")
           PY
 
