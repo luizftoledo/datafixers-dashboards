@@ -91,3 +91,17 @@ body.monitor {
 .monitor .explorer-check { display: flex !important; align-items: center; align-self: center; }
 .monitor .explorer-charts { margin-block: 14px 12px; }
 .monitor .explorer-charts article { min-width: 0; border: 1px solid var(--line); border-radius: 6px; padding: 12px; }
+.monitor .cases { margin-top: 12px; }
+.case-topics, .case-filters, .case-pagination { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.case-topics { margin-block: 12px 15px; }
+.monitor .case-topics button[aria-pressed=true] { background: #165e4c; border-color: #165e4c; color: white; }
+.monitor .case-chart-link { display: inline-block; margin-block: 6px 12px; font-size: .85rem; font-weight: 700; }
+.case-filters label { display: grid; gap: 3px; font-size: .77rem; max-width: 100%; }
+.case-filters label:first-child { flex: 1 1 230px; min-width: 0; }
+.case-filters select { width: 100%; }
+.case-filters { margin-block: 4px 8px; }
+.case-table { max-height: 385px; }
+.case-table th { position: sticky; top: 0; }
+.case-table td:last-child { white-space: nowrap; }
+.case-pagination { font-size: .77rem; justify-content: flex-end; }
+.monitor .case-pagination button:disabled { opacity: .45; cursor: default; }

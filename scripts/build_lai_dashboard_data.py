@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import build_lai_monitor as lai_monitor
+import build_lai_cases as lai_cases
 import argparse
 import datetime as dt
 import gzip
@@ -1011,6 +1012,8 @@ def maybe_process_year(year, force=False):
         or year >= current_year
         or cache_version != REQUEST_INDEX_SCHEMA_VERSION
         or (SOURCE_ID == "ampla" and (cache or {}).get("monitor", {}).get("version") != lai_monitor.VERSION)
+        or (SOURCE_ID == "publica" and year >= lai_cases.START_YEAR
+            and (cache or {}).get("public_cases", {}).get("version") != lai_cases.VERSION)
     )
 
     if not should_refresh and cache is not None:
@@ -1038,6 +1041,8 @@ def maybe_process_year(year, force=False):
         )
         if SOURCE_ID == "ampla":
             payload["monitor"] = lai_monitor.read_zip(zip_path)
+        elif SOURCE_ID == "publica" and year >= lai_cases.START_YEAR:
+            payload["public_cases"] = lai_cases.read_public_zip(zip_path)
         save_year_cache(payload)
         return payload, True
 
@@ -2096,6 +2101,10 @@ def run(force=False, start_year=START_YEAR_DEFAULT, end_year=None):
     write_json(METADATA_FILE, metadata)
     if SOURCE_ID == "ampla":
         lai_monitor.write_monitor([payload.get("monitor", {}) for payload in year_payloads])
+    if SOURCE_ID == "publica":
+        recent = [payload.get("public_cases", {}) for payload in year_payloads if payload["year"] >= lai_cases.START_YEAR]
+        if recent and all(entry.get("version") == lai_cases.VERSION for entry in recent):
+            lai_cases.write_cases(recent)
     # Samples (request_samples*.jsonl.gz) intentionally not written — dashboard now ships
     # only aggregated statistics. Re-enable by uncommenting if individual-request search is needed.
     # write_jsonl_gz(SAMPLES_FILE, samples)

@@ -40,6 +40,44 @@
       <div class="chart-plot"><canvas id="chart-yearly-rate" role="img" aria-label="Evolução anual da taxa de negativas e da taxa de negativas mais acessos parciais"></canvas></div>
     </section>
 
+    <section class="monitor-panel cases" aria-labelledby="casos-publicos">
+      <h2 id="casos-publicos">Sigilos em foco</h2>
+      <div class="case-topics" aria-label="Selecione um tema">
+        <button type="button" data-case="advogado" aria-pressed="true">Sigilo do advogado</button>
+        <button type="button" data-case="preparatorio" aria-pressed="false">Documentos preparatórios</button>
+        <button type="button" data-case="classificada" aria-pressed="false">Informação classificada</button>
+        <button type="button" data-case="cem-anos" aria-pressed="false">Prazo de 100 anos</button>
+      </div>
+      <h3 id="case-title">Sigilo profissional do advogado</h3>
+      <p class="section-note" id="case-note"></p>
+      <a class="case-chart-link" id="case-chart-link" href="#explorer-heading">Ver série por ano e por órgão</a>
+      <details open class="monitor-details">
+        <summary>Pedidos com consulta pública</summary>
+        <div class="details-content">
+          <div class="case-filters">
+            <label>Órgão<select id="case-org" disabled></select></label>
+            <label>Ano<select id="case-year" disabled></select></label>
+            <label>Resposta<select id="case-decision" disabled>
+              <option value="">Todas</option>
+              <option value="Acesso Negado">Negativa integral</option>
+              <option value="Acesso Parcialmente Concedido">Acesso parcial</option>
+            </select></label>
+          </div>
+          <p class="section-note" id="case-status" role="status">Carregando pedidos do BuscaLAI…</p>
+          <div class="table-wrap case-table" tabindex="0" aria-label="Pedidos da LAI com consulta pública">
+            <table><thead><tr><th>Data da resposta</th><th>Órgão</th><th>Resposta</th><th>Pedido no BuscaLAI</th></tr></thead>
+              <tbody id="case-rows"></tbody>
+            </table>
+          </div>
+          <div class="case-pagination">
+            <button type="button" id="case-prev" disabled>Anterior</button>
+            <span id="case-page"></span>
+            <button type="button" id="case-next" disabled>Próxima</button>
+          </div>
+        </div>
+      </details>
+    </section>
+
     <section class="monitor-panel explorer" aria-labelledby="explorer-heading">
       <h2 id="explorer-heading">Comparar governos, órgãos e motivos</h2>
       <p class="section-note" id="explorer-status" role="status">Carregando a série de respostas do Fala.BR…</p>
@@ -239,5 +277,6 @@
   <script src="../scripts/dashboard-update-schedule.js"></script>
   <script src="./app.js?v=20261120-monitor"></script>
   <script src="./explorer.js"></script>
+  <script src="./cases.js"></script>
 </body>
 </html>
