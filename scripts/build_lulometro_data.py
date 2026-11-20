@@ -299,8 +299,8 @@ class Fetcher:
                     retryable = is_biblioteca and status in {403, 429, 500, 502, 503, 504}
                     raise FetchError(f"HTTP {status} for {url}", retryable=retryable)
 
-                if is_biblioteca and is_bot_challenge(text):
-                    raise FetchError(f"Bot challenge still active for {url}", retryable=True)
+                if is_bot_challenge(text):
+                    raise FetchError(f"Resposta de bloqueio em {url}", retryable=is_biblioteca)
 
                 return text, final_url, status
             except (requests.RequestException, FetchError) as exc:
@@ -1585,7 +1585,7 @@ def main() -> int:
             flush=True,
         )
 
-        fetched_ok = 0
+        fetched_by_source: Counter[str] = Counter()
         for idx, url in enumerate(needs_detail, start=1):
             hint = candidate_by_url.get(url, {})
             prev = existing_records.get(url, {})
@@ -1627,11 +1627,15 @@ def main() -> int:
                 else:
                     record = parse_document_record(url, html, fetcher, hint, prev)
 
+            if record is not None and len((record.get("text") or "").strip()) < 200:
+                detail_error = ValueError("Texto oficial ausente ou abaixo de 200 caracteres")
+                record = None
+
             if record is not None:
                 record["fetch_failures"] = 0
                 record["last_error"] = ""
                 existing_records[url] = record
-                fetched_ok += 1
+                fetched_by_source[record["source"]] += 1
             elif detail_error is not None:
                 failed_rec = dict(prev)
                 failed_rec["url"] = url
@@ -1758,7 +1762,8 @@ def main() -> int:
             "excluded_records": filtered_out,
             "candidate_urls": len(candidate_by_url),
             "new_urls": len(new_urls),
-            "detail_fetched": fetched_ok,
+            "detail_fetched": sum(fetched_by_source.values()),
+            "detail_fetched_by_source": dict(fetched_by_source),
             "sources": dict(source_counter),
             "types": dict(type_counter),
             "top_presidents": president_counter.most_common(20),
@@ -1791,6 +1796,11 @@ def main() -> int:
         print("Lulometro build complete.", flush=True)
         print(f"Records: {len(records_sorted)}", flush=True)
         print(f"Errors logged: {len(crawl_errors)}", flush=True)
+        for (scope, error), count in Counter(
+            (entry["scope"], entry["error"].split(" https://", 1)[0])
+            for entry in crawl_errors
+        ).most_common(5):
+            print(f"  {scope}: {count} × {error[:250]}", flush=True)
 
     finally:
         fetcher.close()
