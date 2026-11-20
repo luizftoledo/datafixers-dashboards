@@ -9,7 +9,7 @@ import re
 import zipfile
 from pathlib import Path
 
-VERSION = 2
+VERSION = 3
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / 'lai/data/public-cases.json'
 START_YEAR = 2025
@@ -63,8 +63,10 @@ def read_public_zip(path):
                     categories.append('preparatorio')
                 if 'classificada conforme artigos 23 e 24' in reason:
                     categories.append('classificada')
-                if 'dados pessoais' in reason and row.get('PrazoRestricaoAcesso', '').strip() == '100':
-                    categories.append('cem-anos')
+                if 'dados pessoais' in reason:
+                    categories.append('informacao-pessoal')
+                    if row.get('PrazoRestricaoAcesso', '').strip() == '100':
+                        categories.append('cem-anos')
                 ident = row['IdPedido'].strip()
                 nup = row['ProtocoloPedido'].strip()
                 if not re.fullmatch(r'[0-9]+', ident) or not re.fullmatch(r'[0-9./-]{12,25}', nup):

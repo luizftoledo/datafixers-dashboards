@@ -17,3 +17,6 @@
 .topic-cases details p { margin-block: 6px; overflow-wrap: anywhere; }
 .topic-page .case-pagination { margin-top: 6px; }
 .topic-page #topic-note { margin-bottom: 7px; }
+.topic-heading sup { font-size: .48em; margin-left: .14em; }
+.topic-heading sup a { text-decoration: none; }
+.topic-page #nota-pessoal { margin-bottom: 12px; }

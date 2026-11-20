@@ -5,7 +5,7 @@
     advogado: { kind: 3, match: /sigilo profissional do advogado/i, case: 'advogado' },
     preparatorios: { kind: 1, match: /processo decisório em curso/i, case: 'preparatorio' },
     classificada: { kind: 1, match: /classificada conforme artigos 23 e 24/i, case: 'classificada' },
-    'cem-anos': { kind: 5, match: /^100$/, case: 'cem-anos' },
+    'cem-anos': { kind: 1, match: /dados pessoais/i, case: 'informacao-pessoal' },
     negativas: { kind: 1, match: /.*/, case: 'negativas' },
   }[topic];
   const number = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 2 });
