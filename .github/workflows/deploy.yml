@@ -6,8 +6,6 @@ on:
   # crons necessarios: os commits de dados dos outros workflows usam
   # GITHUB_TOKEN, e push de GITHUB_TOKEN nao dispara workflow (regra do
   # GitHub contra loops). Sem isso o site so atualiza em push manual.
-  # Horarios casados com os crons de dados (clipping de manha, pesquisas
-  # 12:00/21:00 UTC).
   schedule:
     - cron: "0 7 * * *"
     - cron: "0 8 * * 1" # após a atualização semanal do radar Ibama
