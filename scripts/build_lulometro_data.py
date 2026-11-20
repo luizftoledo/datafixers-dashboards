@@ -239,6 +239,7 @@ class Fetcher:
     def __init__(self, user_agent: str, use_biblioteca: bool = True):
         self.user_agent = user_agent
         self.use_biblioteca = use_biblioteca
+        self.planalto_rate_limited = False
         self.session = requests.Session()
         self.session.headers.update(
             {
@@ -285,6 +286,9 @@ class Fetcher:
         parsed = urlparse(url)
         is_biblioteca = "biblioteca.presidencia.gov.br" in parsed.netloc
         verify_ssl = not is_biblioteca
+        is_planalto = parsed.hostname == "www.gov.br" and parsed.path.startswith("/planalto/")
+        if is_planalto and self.planalto_rate_limited:
+            raise RuntimeError("Planalto suspenso nesta execução após HTTP 429")
 
         tries = 2 if is_biblioteca else 1
         last_error: Optional[Exception] = None
@@ -295,6 +299,8 @@ class Fetcher:
                 text = resp.text
                 final_url = resp.url
 
+                if is_planalto and status == 429:
+                    self.planalto_rate_limited = True
                 if status >= 400:
                     retryable = is_biblioteca and status in {403, 429, 500, 502, 503, 504}
                     raise FetchError(f"HTTP {status} for {url}", retryable=retryable)

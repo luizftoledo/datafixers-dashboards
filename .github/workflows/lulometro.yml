@@ -40,12 +40,18 @@ jobs:
       - name: Install Wrangler
         run: npm install -g wrangler@4
 
-      - name: Build Lulometro data (Planalto + Biblioteca + Bluesky)
+      - name: Build Lulometro data
         run: |
-          python scripts/build_lulometro_data.py --max-details 2500 --max-failures 3
+          args=()
+          if [ "${{ github.event_name }}" = schedule ]; then
+            # Coleta regular do Planalto roda no Mac. O runner recebe HTTP 429.
+            args+=(--skip-planalto)
+          fi
+          python scripts/build_lulometro_data.py --max-details 2500 --max-failures 3 "${args[@]}"
 
       - name: Check Planalto collection
         id: planalto
+        if: github.event_name == 'workflow_dispatch'
         continue-on-error: true
         run: |
           python - <<'PY'
