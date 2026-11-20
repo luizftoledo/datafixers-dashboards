@@ -1,0 +1,23 @@
+.topic-back { font-size: .86rem; font-weight: 750; }
+.topic-heading { margin-block: 12px; }
+.topic-heading h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.05; }
+.topic-heading p { color: var(--muted); margin-top: 7px; }
+.topic-nav { display: flex; flex-wrap: wrap; gap: 7px; margin-block: 12px; }
+.topic-nav a { padding: 5px 9px; border: 1px solid #aebfb5; border-radius: 5px; font-size: .8rem; font-weight: 650; text-decoration: none; }
+.topic-nav a[aria-current] { color: white; background: #165e4c; border-color: #165e4c; }
+.topic-page .monitor-panel { margin-top: 12px; }
+.topic-controls { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: end; margin-block: 12px; }
+.topic-controls label { display: grid; gap: 3px; font-size: .78rem; min-width: 0; max-width: 100%; }
+.topic-controls label:first-child { flex: 1 1 220px; }
+.topic-controls select, .topic-controls input { min-width: 0; width: 100%; }
+.topic-controls input { padding: 7px 10px; border: 1px solid #aebfb5; border-radius: 5px; }
+.topic-cases td { vertical-align: top; }
+.topic-cases td:first-child { white-space: nowrap; }
+.topic-cases td:nth-child(2) { min-width: 118px; }
+.topic-cases td:nth-child(3) { min-width: 145px; }
+.topic-cases td small { display: block; color: var(--muted); }
+.topic-cases details { margin-top: 4px; }
+.topic-cases summary { cursor: pointer; }
+.topic-cases details p { margin-block: 6px; overflow-wrap: anywhere; }
+.topic-page .case-pagination { margin-top: 6px; }
+.topic-page #topic-note { margin-bottom: 7px; }

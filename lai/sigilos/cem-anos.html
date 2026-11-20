@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Prazo de 100 anos | Monitor da opacidade</title>
+  <link rel="stylesheet" href="/styles/platform.css">
+  <link rel="stylesheet" href="../monitor.css">
+  <link rel="stylesheet" href="./temas.css">
+  <script defer src="../vendor/chart.umd.min.js"></script>
+  <script defer src="./temas.js"></script>
+</head>
+<body class="df-ui monitor" data-topic="cem-anos">
+  <main class="monitor-page topic-page">
+    <a class="topic-back" href="../">Monitor da opacidade</a>
+    <header class="topic-heading"><h1>Prazo de 100 anos</h1><p>Pedidos sobre dados pessoais com prazo de 100 anos registrado no Fala.BR.</p></header>
+    <nav class="topic-nav" aria-label="Temas monitorados"><a href="./advogado.html">Sigilo do advogado</a><a href="./preparatorios.html">Documentos preparatórios</a><a href="./classificada.html">Informação classificada</a><a href="./cem-anos.html" aria-current="page">Prazo de 100 anos</a><a href="./negativas.html">Negativas</a></nav>
+    <p id="topic-source" class="section-note" role="status">Carregando dados do Fala.BR…</p>
+    <section class="monitor-panel topic-analytics" aria-labelledby="topic-analytics">
+      <h2 id="topic-analytics">Evolução e comparação por órgão</h2>
+      <div class="topic-controls">
+        <label>Órgão<select id="topic-org" disabled></select></label>
+        <label>Série<select id="topic-period" disabled><option value="annual">Anual</option><option value="monthly">Mensal</option></select></label>
+        <label>Ano<select id="topic-year" disabled></select></label>
+        <label>Medida<select id="topic-unit" disabled><option value="count">Pedidos</option><option value="rate">% das respostas</option></select></label>
+        <label>Resposta<select id="topic-outcome" disabled><option value="1">Negativa integral</option><option value="2">Acesso parcial</option><option value="both">Negativa ou acesso parcial</option></select></label>
+      </div>
+      <div class="monitor-grid explorer-charts">
+        <article><h3 id="topic-trend-title">Evolução anual</h3><div class="chart-plot"><canvas id="topic-trend" role="img" aria-labelledby="topic-trend-title"></canvas></div></article>
+        <article><h3 id="topic-rank-title">Órgãos no ano selecionado</h3><div class="chart-plot"><canvas id="topic-ranking" role="img" aria-labelledby="topic-rank-title"></canvas></div></article>
+      </div>
+      <p id="topic-note" class="section-note"></p>
+      <details class="monitor-details"><summary>Valores dos gráficos</summary>
+        <div class="details-content monitor-grid">
+          <div class="table-wrap"><table aria-label="Valores da série"><thead><tr><th>Período</th><th>Total federal</th><th id="topic-table-org" hidden>Órgão</th></tr></thead><tbody id="topic-trend-values"></tbody></table></div>
+          <div class="table-wrap"><table aria-label="Valores da comparação por órgão"><thead><tr><th>Órgão</th><th>Pedidos</th><th>Respostas</th><th>Taxa</th></tr></thead><tbody id="topic-rank-values"></tbody></table></div>
+        </div>
+      </details>
+    </section>
+    <section class="monitor-panel topic-cases" aria-labelledby="topic-cases">
+      <h2 id="topic-cases">Pedidos com consulta pública</h2>
+      <p id="topic-case-scope" class="section-note"></p>
+      <div class="topic-controls">
+        <label>Buscar nos casos<input id="topic-search" type="search" placeholder="Termo, órgão ou protocolo" disabled></label>
+        <label>Órgão<select id="topic-case-org" disabled></select></label>
+        <label>Ano<select id="topic-case-year" disabled></select></label>
+        <label>Resposta<select id="topic-case-outcome" disabled><option value="">Todas</option><option>Acesso Negado</option><option>Acesso Parcialmente Concedido</option></select></label>
+      </div>
+      <p id="topic-case-count" class="section-note" role="status">Carregando catálogo público…</p>
+      <div class="table-wrap" tabindex="0" aria-label="Tabela de pedidos e respostas">
+        <table><thead><tr><th>Data</th><th>Órgão e decisão</th><th>Pedido e resposta</th></tr></thead><tbody id="topic-case-rows"></tbody></table>
+      </div>
+      <div class="case-pagination"><button id="topic-prev" type="button" disabled>Anterior</button><span id="topic-page"></span><button id="topic-next" type="button" disabled>Próxima</button></div>
+    </section>
+  </main>
+</body>
+</html>

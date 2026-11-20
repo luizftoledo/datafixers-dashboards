@@ -105,3 +105,5 @@ body.monitor {
 .case-table td:last-child { white-space: nowrap; }
 .case-pagination { font-size: .77rem; justify-content: flex-end; }
 .monitor .case-pagination button:disabled { opacity: .45; cursor: default; }
+.monitor .topic-links a { padding: 6px 10px; border: 1px solid #aebfb5; border-radius: 5px; font-size: .85rem; font-weight: 700; text-decoration: none; }
+.monitor .topic-links a:first-child { color: white; background: #165e4c; border-color: #165e4c; }
