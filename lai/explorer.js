@@ -134,7 +134,7 @@
     trend?.destroy();
     trend = new Chart(byId('explorer-trend'), {
       type: 'line',
-      data: { labels: years.map(formatPeriod), datasets: [{ label: 'Série do recorte', data: points.map(numeric), borderColor: '#165e4c', backgroundColor: '#165e4c', pointRadius: 3 }] },
+      data: { labels: years.map(formatPeriod), datasets: [{ label: 'Série do recorte', data: points.map(numeric), borderColor: '#594174', backgroundColor: '#594174', pointRadius: 3 }] },
       options: { ...opt, plugins: { ...opt.plugins, legend: { display: false } } },
     });
     const ages = [0, 1, 2, 3];
@@ -150,7 +150,7 @@
     governments = new Chart(byId('explorer-gov'), {
       type: 'bar',
       data: { labels: ages.map(i => (i + 1) + 'º ano'), datasets: [
-        mandato('Bolsonaro · 2019–22', 2019, '#586f81'), mandato('Lula · 2023–26', 2023, '#26745e'),
+        mandato('Bolsonaro · 2019–22', 2019, '#586f81'), mandato('Lula · 2023–26', 2023, '#376d68'),
       ] },
       options: { ...opt, plugins: { ...opt.plugins, legend: { position: 'bottom' } } },
     });

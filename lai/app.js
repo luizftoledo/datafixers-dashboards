@@ -611,7 +611,7 @@
       : -1;
     const hasPartial = partialIndex >= 0;
     const years = series.map((row, idx) => (idx === partialIndex ? `${row.year}*` : String(row.year)));
-    const palette = ['#2f6f9f', '#3f8f6d', '#8d5f2c', '#7a4f9e', '#b36f18', '#5a7a2d', '#a04747', '#65758f'];
+    const palette = ['#2f6f9f', '#376d68', '#8d5f2c', '#7a4f9e', '#b36f18', '#5a7a2d', '#a04747', '#65758f'];
 
     const commonOptions = {
       responsive: true,
@@ -696,18 +696,18 @@
       {
         label: hasPartial ? 'Negativas integrais' : 'Negativas integrais',
         data: deniedRateSplit.complete,
-        borderColor: '#b64242',
+        borderColor: '#a24b37',
         backgroundColor: 'rgba(182,66,66,0.12)',
-        tension: 0.25,
-        fill: true,
+        tension: 0,
+        fill: false,
       },
       {
         label: hasPartial ? 'Negados ou parcialmente atendidos' : 'Negados ou parcialmente atendidos',
         data: restrictedRateSplit.complete,
-        borderColor: '#3f8f6d',
+        borderColor: '#376d68',
         backgroundColor: 'rgba(63,143,109,0.12)',
-        tension: 0.25,
-        fill: true,
+        tension: 0,
+        fill: false,
       },
     ];
     if (hasPartial) {
@@ -715,7 +715,7 @@
         {
           label: `Taxa de negado (${partialYearCtx.year} parcial)`,
           data: deniedRateSplit.partial,
-          borderColor: '#b64242',
+          borderColor: '#a24b37',
           backgroundColor: 'rgba(182,66,66,0.18)',
           showLine: false,
           pointRadius: 5,
@@ -724,7 +724,7 @@
         {
           label: `Taxa com restrição (${partialYearCtx.year} parcial)`,
           data: restrictedRateSplit.partial,
-          borderColor: '#3f8f6d',
+          borderColor: '#376d68',
           backgroundColor: 'rgba(63,143,109,0.2)',
           showLine: false,
           pointRadius: 5,
@@ -822,7 +822,7 @@
             type: 'line',
             label: 'Taxa de negado',
             data: topOrg.map((row) => row.denied_rate * 100),
-            borderColor: '#b64242',
+            borderColor: '#a24b37',
             backgroundColor: 'rgba(182,66,66,0.15)',
             yAxisID: 'y1',
             tension: 0.22,

@@ -93,7 +93,7 @@
     const periods = monthly
       ? Array.from({ length: suffix }, (_, i) => ({ year: chosenYear, start: i + 1, end: i + 1, label: monthLabel(i + 1) }))
       : Array.from({ length: lastYear - firstYear + 1 }, (_, i) => ({ year: firstYear + i, start: 1, end: suffix, label: String(firstYear + i) }));
-    const series = [{ label: monthly ? 'Federal · ' + chosenYear : 'Total federal', orgs: all, offset: 0, color: '#165e4c' }];
+    const series = [{ label: monthly ? 'Federal · ' + chosenYear : 'Total federal', orgs: all, offset: 0, color: '#594174' }];
     if (monthly && chosenYear > firstYear) series.push({ label: 'Federal · ' + (chosenYear - 1), orgs: all, offset: -1, color: '#576d82' });
     if (chosen !== null) series.push({ label: data.orgs[chosen].split(/ [–-] /)[0], orgs: [chosen], offset: 0, color: '#a34924' });
     const lineData = series.map(record => ({
@@ -117,7 +117,7 @@
     const options = chartOptions('y');
     rank = new Chart(element('ranking'), {
       type: 'bar',
-      data: { labels: featured.map(r => data.orgs[r.i].split(/ [–-] /)[0]), datasets: [{ label: 'Pedidos no recorte', data: featured.map(value), backgroundColor: '#26745e', borderRadius: 3 }] },
+      data: { labels: featured.map(r => data.orgs[r.i].split(/ [–-] /)[0]), datasets: [{ label: 'Pedidos no recorte', data: featured.map(value), backgroundColor: '#376d68', borderRadius: 3 }] },
       options: {
         ...options,
         plugins: { ...options.plugins, legend: { display: false }, tooltip: { callbacks: {

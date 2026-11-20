@@ -121,3 +121,36 @@ body.monitor {
   .monitor-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3px; margin-bottom: 18px; }
   .monitor-tabs a { min-height: 38px; padding-inline: 7px; }
 }
+
+/* LAI and thematic views share the site editorial palette. */
+body.monitor { background: #faf9f6; --ink: #242332; --muted: #625f6a; --line: #dedbd5; --accent: #594174; }
+.monitor-page { width: min(1160px,calc(100% - 48px)); padding-top: 24px; }
+.monitor .monitor-header h1, .monitor .topic-heading h1 { font-family: var(--df-editorial-serif); font-size: clamp(2.3rem,6vw,4.3rem); line-height: 1.05; }
+.monitor-header, .topic-heading { padding-block: 9px 7px; }
+.monitor .topic-heading p, .monitor-header p { max-width: 65ch; line-height: 1.48; }
+.monitor-meta { padding-bottom: 13px; border-bottom: 1px solid var(--line); }
+.monitor-tabs { background: transparent; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: 0; gap: 4px 16px; }
+.monitor-tabs a { align-self: stretch; padding: 8px 0; border: 0; border-bottom: 3px solid transparent; border-radius: 0; }
+.monitor-tabs a:hover { background: transparent; border-bottom-color: #cabbd7; }
+.monitor-tabs a[aria-current="page"] { background: transparent; color: #302742; border-bottom-color: var(--accent); }
+.monitor-panel, .monitor .sigilo100-block { padding: clamp(14px,2.4vw,26px); border-radius: 3px; border-top: 2px solid #433653; }
+.monitor .monitor-panel h2, .monitor .sigilo100-block h2 { font: 700 clamp(1.3rem,2.7vw,1.75rem)/1.18 var(--df-editorial-serif); letter-spacing: -.025em; }
+.monitor .chart-plot { margin-top: 15px; }
+.monitor .lead-chart .chart-plot { height: clamp(265px,32vw,390px); }
+.monitor .metrics { gap: 0; margin-block: 20px; border-block: 1px solid var(--line); }
+.monitor .metric { padding: 12px 14px; border: 0; border-right: 1px solid var(--line); border-radius: 0; background: transparent; }
+.monitor .metric:last-child { border-right: 0; }
+.monitor .metric .label { letter-spacing: 0; }
+.monitor .metric .value { margin-top: 3px; }
+.monitor-grid { gap: 16px; }
+.monitor .explorer-charts article { border: 0; border-top: 1px solid var(--line); padding: 12px 0 0; border-radius: 0; }
+.monitor .monitor-details { border-radius: 3px; }
+.monitor .monitor-secondary { gap: 9px; }
+.monitor .section-note a { text-underline-offset: 3px; }
+@media (max-width: 720px) {
+  .monitor-page { width: calc(100% - 28px); padding-top: 14px; }
+  .monitor-tabs { gap: 0 10px; }
+  .monitor-tabs a { font-size: .78rem; }
+  .monitor .metric:nth-child(2) { border-right: 0; }
+  .monitor .metric:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+}

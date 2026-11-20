@@ -247,3 +247,52 @@ body.df-ui--relatorios .year-block h3 { color: #2a7975; border-bottom-color: #8b
 
 body.df-ui--ibama .hero::after { display: none; }
 body.df-ui--lai .sigilo-metric { background: #eff4f3; border-color: var(--df-line); }
+
+/* Data Fixers editorial layout. */
+:root {
+  --df-paper: #faf9f6;
+  --df-ink: #242332;
+  --df-muted: #625f6a;
+  --df-line: #dedbd5;
+  --df-pine: #302742;
+  --df-pine-2: #594174;
+  --df-focus: #594174;
+  --df-editorial-serif: Georgia, 'Times New Roman', serif;
+  --df-editorial-sans: Inter, system-ui, sans-serif;
+}
+body.df-ui { font-family: var(--df-editorial-sans); }
+.df-sitebar { border-top: 4px solid var(--df-pine); background: var(--df-paper); }
+.df-sitebar__inner { height: 55px; }
+.df-sitebar__nav { letter-spacing: .025em; }
+body.df-ui h1,
+body.df-ui :is(.hero,.head,.df-hero) h1 {
+  font-family: var(--df-editorial-serif);
+  font-weight: 700;
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+body.df-ui :is(.hero,.head,.df-hero) h1 { font-size: clamp(2rem,5vw,3.5rem); }
+body.df-ui :is(.hero,.head):not(.df-hero) { border-bottom-color: var(--df-line); }
+body.df-ui :is(.panel,.chart-card,.metric-card,.card,.section) { border-radius: 3px; }
+body.df-ui :is(th,.table-head) { background: #f1eee8; color: var(--df-ink); }
+body.df-ui table { font-variant-numeric: tabular-nums; }
+body.df-ui :is(input:not([type=checkbox]):not([type=radio]),select,textarea) { border-radius: 4px; border-color: #bdb7c2; }
+body.df-ui :is(input:not([type=checkbox]):not([type=radio]),select,textarea):focus { border-color: var(--df-focus); box-shadow: 0 0 0 2px #ded4eb; }
+body.df-ui--home .df-hero { padding-block: clamp(28px,6vw,65px) 28px; }
+body.df-ui--home .df-content { padding-block: 12px 40px; }
+body.df-ui--home .df-home-grid { gap: 0 32px; }
+body.df-ui--home .df-home-grid .card {
+  border: 0;
+  border-top: 1px solid var(--df-line);
+  border-radius: 0;
+  background: transparent;
+  padding: 17px 10px 19px 0;
+  min-height: 90px;
+}
+body.df-ui--home .df-home-grid .card .t { font: 700 1.35rem/1.22 var(--df-editorial-serif); }
+body.df-ui--home .df-home-grid .card:hover { transform: none; box-shadow: none; background: #f2edf3; }
+body.df-ui--home .df-home-grid .card:hover .t { text-decoration: underline; }
+@media (max-width: 640px) {
+  .df-sitebar__inner { height: 52px; }
+  body.df-ui--home .df-home-grid { grid-template-columns: minmax(0,1fr); }
+}
