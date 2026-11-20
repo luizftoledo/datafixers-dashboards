@@ -83,3 +83,11 @@ body.monitor {
   .monitor-panel, .monitor .sigilo100-block { padding: 12px; }
 }
 .monitor .chart-plot canvas { max-width: 100%; }
+.monitor .explorer { margin-top: 12px; }
+.monitor .explorer-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 8px 12px; margin-top: 12px; }
+.monitor .explorer-controls label { display: grid; gap: 3px; font-size: .77rem; min-width: 0; max-width: 100%; }
+.monitor .explorer-controls label:nth-child(-n + 2) { flex: 1 1 230px; }
+.monitor .explorer-controls select { width: 100%; min-width: 0; }
+.monitor .explorer-check { display: flex !important; align-items: center; align-self: center; }
+.monitor .explorer-charts { margin-block: 14px 12px; }
+.monitor .explorer-charts article { min-width: 0; border: 1px solid var(--line); border-radius: 6px; padding: 12px; }

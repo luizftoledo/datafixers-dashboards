@@ -40,6 +40,39 @@
       <div class="chart-plot"><canvas id="chart-yearly-rate" role="img" aria-label="Evolução anual da taxa de negativas e da taxa de negativas mais acessos parciais"></canvas></div>
     </section>
 
+    <section class="monitor-panel explorer" aria-labelledby="explorer-heading">
+      <h2 id="explorer-heading">Comparar governos, órgãos e motivos</h2>
+      <p class="section-note" id="explorer-status" role="status">Carregando a série de respostas do Fala.BR…</p>
+      <div class="explorer-controls">
+        <label>Motivo<select id="explorer-reason" disabled></select></label>
+        <label>Órgão<select id="explorer-org" disabled></select></label>
+        <label>Tipo de resposta<select id="explorer-outcome" disabled>
+          <option value="1">Negativa integral</option>
+          <option value="2">Acesso parcial</option>
+          <option value="both">Negativa ou acesso parcial</option>
+        </select></label>
+        <label>Medida<select id="explorer-unit" disabled>
+          <option value="rate">% das respostas</option>
+          <option value="count">Número de pedidos</option>
+        </select></label>
+        <label class="explorer-check"><input type="checkbox" id="explorer-bb" checked disabled> Excluir Banco do Brasil</label>
+      </div>
+      <div class="monitor-grid explorer-charts">
+        <article><h3>Evolução anual</h3><div class="chart-plot"><canvas id="explorer-trend" role="img" aria-label="Série anual do motivo selecionado"></canvas></div></article>
+        <article><h3>Bolsonaro e Lula por ano de mandato</h3><p class="section-note" id="explorer-gov-note"></p><div class="chart-plot"><canvas id="explorer-gov" role="img" aria-label="Comparação entre governos do motivo selecionado"></canvas></div></article>
+      </div>
+      <details class="monitor-details">
+        <summary>Valores e critérios do recorte</summary>
+        <div class="details-content">
+          <p class="section-note" id="explorer-method"></p>
+          <div class="table-wrap"><table aria-label="Série anual do motivo selecionado">
+            <thead><tr><th>Ano</th><th>Respostas</th><th>Pedidos no recorte</th><th>Taxa</th></tr></thead>
+            <tbody id="explorer-table"></tbody>
+          </table></div>
+        </div>
+      </details>
+    </section>
+
     <div class="metrics">
         <article class="metric">
           <div class="label">Pedidos na série</div>
@@ -205,5 +238,6 @@
   </main>
   <script src="../scripts/dashboard-update-schedule.js"></script>
   <script src="./app.js?v=20261120-monitor"></script>
+  <script src="./explorer.js"></script>
 </body>
 </html>

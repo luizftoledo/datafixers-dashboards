@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import build_lai_monitor as lai_monitor
 import argparse
 import datetime as dt
 import gzip
@@ -1009,6 +1010,7 @@ def maybe_process_year(year, force=False):
         or cache is None
         or year >= current_year
         or cache_version != REQUEST_INDEX_SCHEMA_VERSION
+        or (SOURCE_ID == "ampla" and (cache or {}).get("monitor", {}).get("version") != lai_monitor.VERSION)
     )
 
     if not should_refresh and cache is not None:
@@ -1034,6 +1036,8 @@ def maybe_process_year(year, force=False):
             zip_path=zip_path,
             source_url=url,
         )
+        if SOURCE_ID == "ampla":
+            payload["monitor"] = lai_monitor.read_zip(zip_path)
         save_year_cache(payload)
         return payload, True
 
@@ -2090,6 +2094,8 @@ def run(force=False, start_year=START_YEAR_DEFAULT, end_year=None):
 
     write_json(REPORT_FILE, report)
     write_json(METADATA_FILE, metadata)
+    if SOURCE_ID == "ampla":
+        lai_monitor.write_monitor([payload.get("monitor", {}) for payload in year_payloads])
     # Samples (request_samples*.jsonl.gz) intentionally not written — dashboard now ships
     # only aggregated statistics. Re-enable by uncommenting if individual-request search is needed.
     # write_jsonl_gz(SAMPLES_FILE, samples)
