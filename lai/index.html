@@ -3,1099 +3,54 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#f7f6f3">
-  <title>Transparência no governo federal: por que pedidos de informação são negados?</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#f3f2ed">
+  <meta name="description" content="Taxas de negativa, motivos e órgãos na Lei de Acesso à Informação. Dados federais da CGU.">
+  <title>Monitor da opacidade | Data Fixers</title>
+  <link rel="stylesheet" href="/styles/platform.css">
+  <link rel="stylesheet" href="./monitor.css">
   <script src="./vendor/chart.umd.min.js"></script>
-  <style>
-    :root {
-      --bg: #f7f6f3;
-      --paper: #ffffff;
-      --line: #dfddd7;
-      --ink: #23211f;
-      --muted: #68635d;
-      --accent: #2f6f9f;
-      --accent-2: #3f8f6d;
-      --accent-3: #8d5f2c;
-      --danger: #b64242;
-      --shadow: 0 10px 26px rgba(22, 20, 18, 0.08);
-    }
-
-    * { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
-
-    body {
-      margin: 0;
-      font-family: "Manrope", sans-serif;
-      background:
-        radial-gradient(circle at 10% 0%, rgba(47, 111, 159, 0.08), transparent 34%),
-        radial-gradient(circle at 95% 0%, rgba(63, 143, 109, 0.07), transparent 30%),
-        var(--bg);
-      color: var(--ink);
-      padding-left: env(safe-area-inset-left);
-      padding-right: env(safe-area-inset-right);
-      padding-bottom: env(safe-area-inset-bottom);
-    }
-
-    .page {
-      width: min(1220px, 100%);
-      margin: 0.85rem auto 2rem;
-      padding: 0 0.85rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 0.85rem;
-    }
-
-    .page > * {
-      min-width: 0;
-    }
-
-    .quick-nav {
-      display: flex;
-      gap: 0.45rem;
-      flex-wrap: wrap;
-    }
-
-    .quick-nav .nav-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 40px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 0.4rem 0.85rem;
-      background: #fbfaf7;
-      color: #4a453f;
-      font-size: 0.83rem;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .quick-nav .nav-btn:hover {
-      background: #f2eee7;
-      text-decoration: none;
-    }
-
-    .card {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: var(--paper);
-      box-shadow: var(--shadow);
-    }
-
-    .hero {
-      padding: 1rem 0.9rem;
-      display: grid;
-      gap: 0.85rem;
-    }
-
-    h1 {
-      font-family: "Source Serif 4", serif;
-      margin: 0;
-      font-size: clamp(1.35rem, 2.8vw, 2.2rem);
-      line-height: 1.15;
-    }
-
-    .sub {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.5;
-      max-width: 90ch;
-      overflow-wrap: anywhere;
-      word-break: break-word;
-    }
-
-    .hero-learn-anchor {
-      margin: -0.15rem 0 0;
-    }
-
-    .hero-learn-anchor a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.34rem;
-      border: 1px solid #d5cebf;
-      border-radius: 999px;
-      background: #f7f4ee;
-      color: #4f4538;
-      font-size: 0.82rem;
-      font-weight: 700;
-      line-height: 1.25;
-      padding: 0.34rem 0.7rem;
-      text-decoration: none;
-    }
-
-    .hero-learn-anchor a::before {
-      content: "↳";
-      font-weight: 700;
-      color: #6a5a46;
-    }
-
-    .hero-learn-anchor a:hover {
-      background: #f1ece1;
-      text-decoration: none;
-    }
-
-    .update-line {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      align-items: center;
-      color: var(--muted);
-      font-size: 0.84rem;
-    }
-
-    .source-switch {
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: #fbfaf7;
-      padding: 0.62rem 0.66rem;
-      display: grid;
-      gap: 0.42rem;
-      max-width: 860px;
-    }
-
-    .source-switch .label {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: #676058;
-      font-weight: 700;
-    }
-
-    .source-switch select {
-      min-height: 44px;
-      border: 1px solid #d9d6ce;
-      border-radius: 9px;
-      background: #fff;
-      color: #2e2a27;
-      font: inherit;
-      font-size: 16px;
-      padding: 0.55rem 2.1rem 0.55rem 0.65rem;
-      -webkit-appearance: none;
-      appearance: none;
-      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23888' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.75rem center;
-      background-size: 10px;
-    }
-
-    .source-note {
-      margin: 0;
-      font-size: 0.82rem;
-      color: #5a544d;
-      line-height: 1.4;
-    }
-
-    .pill {
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 0.25rem 0.62rem;
-      background: #f9f8f6;
-      color: #4f4a44;
-      font-size: 0.75rem;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-    }
-
-    .pill-warning {
-      border-color: #d4c9b0;
-      background: #f9f2e3;
-      color: #6d5732;
-    }
-
-    .update-schedule-note {
-      margin: 0.4rem 0 0;
-      color: var(--muted);
-      font-size: 0.84rem;
-      line-height: 1.45;
-    }
-
-    .scraper-health-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 40px;
-      padding: 0.34rem 0.82rem;
-      border-radius: 999px;
-      border: 1px solid #d6cfbf;
-      background: #efe6cf;
-      color: #5a5346;
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 800;
-      letter-spacing: 0.01em;
-    }
-
-    .scraper-health-btn.is-ok {
-      border-color: #1f8f5f;
-      background: #1f8f5f;
-      color: #fff;
-    }
-
-    .scraper-health-btn.is-fail {
-      border-color: #c84444;
-      background: #c84444;
-      color: #fff;
-    }
-
-    .scraper-health-btn.is-loading {
-      border-color: #d6cfbf;
-      background: #efe6cf;
-      color: #5a5346;
-    }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.55rem;
-    }
-
-    .metric {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 0.7rem 0.72rem;
-      background: #fcfbfa;
-      min-height: 88px;
-      min-width: 0;
-    }
-
-    .metric .label {
-      font-size: 0.7rem;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      line-height: 1.3;
-    }
-
-    .metric .value {
-      margin-top: 0.4rem;
-      font-family: "JetBrains Mono", monospace;
-      font-size: clamp(0.92rem, 2.6vw, 1.08rem);
-      color: #213241;
-      line-height: 1.3;
-      overflow-wrap: anywhere;
-    }
-
-    .narrative {
-      padding: 0.85rem 0.9rem;
-    }
-
-    .narrative h2,
-    .alerts h2,
-    .charts h2,
-    .tables h2,
-    .orgs h2,
-    .methodology h2 {
-      margin: 0;
-      font-size: 1.02rem;
-    }
-
-    .alerts {
-      padding: 0.85rem 0.9rem;
-      display: grid;
-      gap: 0.68rem;
-    }
-
-    .alerts-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 0.6rem;
-    }
-
-    .alert-card {
-      border: 1px solid #ddd7cc;
-      border-radius: 12px;
-      background: #fdfbf7;
-      padding: 0.62rem 0.66rem;
-      display: grid;
-      gap: 0.42rem;
-      min-width: 0;
-    }
-
-    .alert-card h3 {
-      margin: 0;
-      font-size: 0.86rem;
-      color: #4d463d;
-    }
-
-    .alert-card p,
-    .alert-card ul {
-      margin: 0;
-      font-size: 0.82rem;
-      color: #4b4640;
-      line-height: 1.4;
-    }
-
-    .alert-card ul {
-      padding-left: 1rem;
-      display: grid;
-      gap: 0.24rem;
-    }
-
-    .alert-table-wrap {
-      border: 1px solid #e3ddd0;
-      border-radius: 10px;
-      overflow: auto;
-      background: #fff;
-    }
-
-    .alert-mini-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.79rem;
-    }
-
-    .alert-mini-table th,
-    .alert-mini-table td {
-      border-bottom: 1px solid #f0ece4;
-      padding: 0.42rem 0.5rem;
-      vertical-align: middle;
-      white-space: nowrap;
-    }
-
-    .alert-mini-table th {
-      background: #f7f4ee;
-      color: #5a5348;
-      font-size: 0.73rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      font-weight: 700;
-      position: static;
-    }
-
-    .alert-mini-table td:nth-child(2) {
-      white-space: normal;
-      min-width: 180px;
-      line-height: 1.35;
-    }
-
-    .alert-mini-table td:nth-child(1),
-    .alert-mini-table td:nth-child(3),
-    .alert-mini-table td:nth-child(4),
-    .alert-mini-table td:nth-child(5) {
-      text-align: right;
-      font-family: "JetBrains Mono", monospace;
-      color: #2f2b25;
-    }
-
-    .alert-rate-pill {
-      display: inline-block;
-      min-width: 58px;
-      text-align: center;
-      border-radius: 999px;
-      border: 1px solid #d5c7b3;
-      background: #efe4d2;
-      color: #5d3f1e;
-      padding: 0.12rem 0.4rem;
-      font-weight: 700;
-      font-family: "Merriweather", serif;
-    }
-
-    .narrative-list {
-      margin: 0.68rem 0 0;
-      padding-left: 1rem;
-      display: grid;
-      gap: 0.5rem;
-      color: #322f2b;
-      font-size: 0.92rem;
-      line-height: 1.45;
-    }
-
-    .charts {
-      padding: 0.85rem 0.9rem;
-      display: grid;
-      gap: 0.75rem;
-    }
-
-    .section-note {
-      margin: 0;
-      border: 1px solid #d9d4c8;
-      border-radius: 10px;
-      background: #fbf8f1;
-      color: #5e574d;
-      font-size: 0.82rem;
-      line-height: 1.42;
-      padding: 0.5rem 0.6rem;
-    }
-
-    .chart-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 0.7rem;
-    }
-
-    .chart-card {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: #fff;
-      padding: 0.68rem 0.72rem;
-      display: grid;
-      gap: 0.45rem;
-      min-width: 0;
-      grid-template-columns: minmax(0, 1fr);
-    }
-
-    .chart-card h3 {
-      margin: 0;
-      font-size: 0.9rem;
-      color: #38332d;
-    }
-
-    .chart-plot {
-      position: relative;
-      width: 100%;
-      min-width: 0;
-      height: clamp(320px, 40vw, 420px);
-      overflow: hidden;
-    }
-
-    .chart-plot > canvas {
-      position: absolute;
-      inset: 0;
-    }
-
-    .tables,
-    .sigilo100-block,
-    .orgs,
-    .learn-more {
-      padding: 0.85rem 0.9rem;
-      display: grid;
-      gap: 0.7rem;
-    }
-
-    .sigilo100-controls {
-      display: grid;
-      gap: 0.38rem;
-      align-content: start;
-    }
-
-    .sigilo100-rank-card {
-      height: auto;
-      min-height: 340px;
-      grid-template-rows: auto auto 1fr;
-    }
-
-    .sigilo100-rank-card canvas {
-      height: 210px !important;
-      max-height: 210px;
-    }
-
-    .table-card {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      overflow: hidden;
-      background: #fff;
-    }
-
-    .table-card h3 {
-      margin: 0;
-      padding: 0.66rem 0.76rem;
-      font-size: 0.88rem;
-      border-bottom: 1px solid var(--line);
-      background: #faf9f7;
-    }
-
-    .table-toggle-row {
-      display: flex;
-      gap: 0.45rem;
-      flex-wrap: wrap;
-      padding: 0.58rem 0.7rem 0.16rem;
-      border-bottom: 1px solid #ece9e3;
-      background: #fff;
-    }
-
-    .table-toggle {
-      min-height: 40px;
-      border: 1px solid #d8d3c8;
-      border-radius: 999px;
-      background: #fbfaf8;
-      color: #4d4943;
-      padding: 0.42rem 0.85rem;
-      font-size: 0.82rem;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .table-toggle.active {
-      border-color: #2f6f9f;
-      background: #e8f0f6;
-      color: #214b68;
-      box-shadow: 0 0 0 2px rgba(47, 111, 159, 0.12);
-    }
-
-    #reason-year-filter {
-      min-height: 40px;
-      border: 1px solid #d8d3c8;
-      border-radius: 10px;
-      background: #fff;
-      color: #4d4943;
-      padding: 0.4rem 2rem 0.4rem 0.65rem;
-      font-size: 16px;
-      font-weight: 600;
-      -webkit-appearance: none;
-      appearance: none;
-      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23888' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.65rem center;
-      background-size: 10px;
-    }
-
-    .table-inline-note {
-      font-size: 0.78rem;
-      color: #5a544d;
-      font-weight: 500;
-    }
-
-    .table-inline-note a {
-      color: #2f6f9f;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    .table-wrap {
-      overflow-x: auto;
-      overflow-y: auto;
-      max-height: 320px;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .table-wrap table {
-      min-width: 480px;
-    }
-
-    .table-note {
-      margin: 0.52rem 0.74rem 0.7rem;
-      font-size: 0.8rem;
-      line-height: 1.4;
-      color: #5f5a52;
-    }
-
-    .table-note-tight {
-      margin: 0.46rem 0.74rem 0.3rem;
-    }
-
-    .table-note-legend {
-      margin-top: 0.24rem;
-      border-top: 1px dashed #ddd7cc;
-      padding-top: 0.44rem;
-      color: #585147;
-    }
-
-    .help-tip {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      margin-left: 0.4rem;
-      vertical-align: middle;
-    }
-
-    .help-tip-btn {
-      width: 20px;
-      height: 20px;
-      border-radius: 999px;
-      border: 1px solid #cfc7b8;
-      background: #f5f2eb;
-      color: #5a4e3f;
-      font-size: 0.73rem;
-      font-weight: 800;
-      line-height: 1;
-      cursor: help;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
-    }
-
-    .help-tip-pop {
-      position: absolute;
-      top: calc(100% + 8px);
-      right: 0;
-      z-index: 4;
-      width: min(320px, 86vw);
-      border: 1px solid #d6cfbf;
-      border-radius: 10px;
-      background: #fffdf9;
-      box-shadow: 0 8px 24px rgba(30, 27, 24, 0.16);
-      padding: 0.52rem 0.58rem;
-      font-size: 0.76rem;
-      line-height: 1.45;
-      color: #4f473d;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-4px);
-      transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
-      pointer-events: none;
-    }
-
-    .help-tip:hover .help-tip-pop,
-    .help-tip:focus-within .help-tip-pop {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.84rem;
-    }
-
-    th,
-    td {
-      padding: 0.48rem 0.55rem;
-      border-bottom: 1px solid #efede8;
-      text-align: left;
-      vertical-align: top;
-    }
-
-    th {
-      background: #f7f5f2;
-      color: #4b4640;
-      font-size: 0.77rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      position: sticky;
-      top: 0;
-      z-index: 1;
-    }
-
-    tbody tr:nth-child(even) { background: #fdfcfb; }
-
-    tbody tr.reason-top-row {
-      background: #f6efe1 !important;
-    }
-
-    .video-embed {
-      padding: 0.56rem 0.7rem 0.72rem;
-      border-top: 1px solid #ece9e3;
-      background: #fff;
-      display: grid;
-      gap: 0.44rem;
-    }
-
-    .video-embed p {
-      margin: 0;
-      font-size: 0.79rem;
-      color: #605a53;
-      line-height: 1.4;
-    }
-
-    .video-embed iframe {
-      width: 100%;
-      min-height: 240px;
-      border: 0;
-      border-radius: 10px;
-      background: #101010;
-    }
-
-    .video-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 0.56rem;
-    }
-
-    .org-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 0.7rem;
-    }
-
-    .org-card {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: #fff;
-      padding: 0.75rem 0.78rem;
-      display: grid;
-      gap: 0.5rem;
-      min-width: 0;
-      overflow: hidden;
-    }
-
-    .org-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-    }
-
-    .org-name {
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-
-    .org-tags {
-      display: flex;
-      gap: 0.35rem;
-      flex-wrap: wrap;
-    }
-
-    .mini-tag {
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 0.15rem 0.45rem;
-      font-size: 0.72rem;
-      color: #4f4a44;
-      background: #faf8f5;
-    }
-
-    .concentration-badge {
-      border: 1px solid rgba(182, 66, 66, 0.45);
-      border-radius: 999px;
-      padding: 0.15rem 0.45rem;
-      font-size: 0.72rem;
-      font-weight: 800;
-      color: var(--danger);
-      background: rgba(182, 66, 66, 0.08);
-    }
-
-    .concentration-note {
-      margin: 0;
-      border-left: 3px solid var(--danger);
-      padding: 0.1rem 0 0.1rem 0.55rem;
-      color: var(--muted);
-      font-size: 0.82rem;
-      line-height: 1.42;
-    }
-
-    .org-note {
-      margin: 0;
-      font-size: 0.84rem;
-      color: var(--muted);
-      line-height: 1.4;
-      overflow-wrap: anywhere;
-      word-break: break-word;
-    }
-
-    .org-example {
-      border: 1px solid #dfdacd;
-      border-radius: 10px;
-      background: #faf7f0;
-      padding: 0.44rem 0.5rem;
-      display: grid;
-      gap: 0.42rem;
-    }
-
-    .org-example summary {
-      cursor: pointer;
-      font-size: 0.81rem;
-      color: #4a443d;
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: 0.38rem;
-      flex-wrap: wrap;
-    }
-
-    .org-example summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .key-pill {
-      border: 1px solid #cfd8df;
-      border-radius: 999px;
-      padding: 0.08rem 0.4rem;
-      background: #e8eff4;
-      color: #385568;
-      font-size: 0.73rem;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    .org-example-links {
-      margin: 0;
-      font-size: 0.8rem;
-      color: #5d5750;
-      overflow-wrap: anywhere;
-      word-break: break-word;
-    }
-
-    .org-card .table-wrap {
-      max-width: 100%;
-      overflow-x: auto;
-    }
-
-    .org-card .table-wrap table {
-      table-layout: fixed;
-    }
-
-    .org-card .table-wrap th,
-    .org-card .table-wrap td {
-      overflow-wrap: anywhere;
-      word-break: break-word;
-    }
-
-    .personal-box {
-      border: 1px solid #d9d4c8;
-      border-radius: 10px;
-      background: #fbf8f1;
-      padding: 0.5rem 0.55rem;
-      display: grid;
-      gap: 0.22rem;
-      font-size: 0.8rem;
-      color: #4a443d;
-      line-height: 1.35;
-    }
-
-    .personal-box .title {
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #6b655e;
-      font-weight: 700;
-    }
-
-    input,
-    select,
-    textarea,
-    button {
-      font: inherit;
-      font-size: 16px;
-      border-radius: 11px;
-      border: 1px solid #bcb7ad;
-      padding: 0.7rem 0.75rem;
-      color: var(--ink);
-      background: #fff;
-      min-height: 44px;
-    }
-
-    select {
-      -webkit-appearance: none;
-      appearance: none;
-      padding-right: 2.1rem;
-      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23888' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.75rem center;
-      background-size: 10px;
-    }
-
-    textarea {
-      min-height: 96px;
-      resize: vertical;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 2px rgba(47, 111, 159, 0.2);
-    }
-
-    button {
-      cursor: pointer;
-      border: 0;
-      font-weight: 700;
-      transition: filter 130ms ease, transform 130ms ease;
-    }
-
-    button:hover { filter: brightness(1.03); transform: translateY(-1px); }
-    button:disabled { opacity: 0.62; cursor: wait; transform: none; }
-
-    .methodology {
-      padding: 0.85rem 0.9rem;
-      display: grid;
-      gap: 0.64rem;
-    }
-
-    .sources-footer {
-      padding: 0.85rem 0.9rem;
-      display: grid;
-      gap: 0.62rem;
-    }
-
-    .sources-footer p {
-      margin: 0;
-      color: #4f4941;
-      font-size: 0.84rem;
-      line-height: 1.45;
-    }
-
-    .sources-list {
-      margin: 0;
-      padding-left: 1rem;
-      display: grid;
-      gap: 0.26rem;
-      font-size: 0.83rem;
-      line-height: 1.4;
-      color: #4a443d;
-    }
-
-    .methodology-content {
-      display: grid;
-      gap: 0.58rem;
-      font-size: 0.86rem;
-      color: #44403a;
-      line-height: 1.45;
-    }
-
-    .methodology-content p {
-      margin: 0;
-    }
-
-    #methodology-note {
-      border: 1px solid #ded9cf;
-      border-left: 3px solid var(--danger);
-      border-radius: 10px;
-      background: #fcfbf8;
-      padding: 0.55rem 0.62rem;
-      color: #4f4941;
-      font-size: 0.84rem;
-      line-height: 1.45;
-    }
-
-    #methodology-note p {
-      margin: 0;
-    }
-
-    .methodology-content ul {
-      margin: 0;
-      padding-left: 1rem;
-      display: grid;
-      gap: 0.28rem;
-    }
-
-    .methodology-details {
-      border: 1px solid #ded9cf;
-      border-radius: 10px;
-      background: #fcfbf8;
-      padding: 0.45rem 0.55rem;
-    }
-
-    .methodology-details summary {
-      cursor: pointer;
-      font-weight: 700;
-      color: #4f4a44;
-      list-style: none;
-    }
-
-    .methodology-details summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .methodology-details summary::before {
-      content: "▸ ";
-      color: #6e675e;
-    }
-
-    .methodology-details[open] summary::before {
-      content: "▾ ";
-    }
-
-    .narrative strong,
-    .org-card strong,
-    .table-wrap strong {
-      padding: 0 0.2em;
-      border-radius: 0.28em;
-      background: linear-gradient(180deg, rgba(47, 111, 159, 0.16), rgba(47, 111, 159, 0.16));
-      box-decoration-break: clone;
-      -webkit-box-decoration-break: clone;
-    }
-
-    .error { color: var(--danger); }
-
-
-    @media (min-width: 640px) {
-      .page {
-        margin: 1.1rem auto 2.5rem;
-        padding: 0 1rem;
-        gap: 1rem;
-      }
-      .hero { padding: 1.15rem 1.2rem 1.1rem; gap: 0.9rem; }
-      .narrative,
-      .alerts,
-      .charts,
-      .tables,
-      .sigilo100-block,
-      .orgs,
-      .learn-more,
-      .methodology,
-      .sources-footer { padding: 1rem 1.1rem; }
-      .metrics { gap: 0.65rem; }
-      .alerts-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .video-grid,
-      .org-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    /* Desktop (>= 1024px) */
-    @media (min-width: 1024px) {
-      .page {
-        width: min(1220px, 95vw);
-        padding: 0;
-      }
-      .metrics {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-      .alerts-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .chart-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-    .hero, .source-switch, .alert-card { min-width: 0; }
-  .source-switch select { width: 100%; min-width: 0; }
-  .sigilo-trend .chart-plot { width: 100%; max-width: 900px; margin-inline: auto; }
-  .sigilo100-block .sigilo-metric { margin: 16px 0; }
-  .sigilo-trend { margin-bottom: 16px; }
-  .sigilo100-block table { min-width: 0; }
-  .sigilo100-block th:not(:first-child), .sigilo100-block td:not(:first-child) { text-align: right; }
-  @media (max-width: 540px) {
-    .sigilo100-block th, .sigilo100-block td { padding: 8px 4px; font-size: .76rem; overflow-wrap: anywhere; }
-  }
-  </style>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles/platform.css">
 </head>
-<body class="df-ui df-ui--lai">
+<body class="df-ui monitor">
 <div class="df-sitebar"><div class="df-sitebar__inner"><a class="df-sitebar__brand" href="/"><img class="df-sitebar__logo" src="/assets/datafixers-logo.svg" alt="Data Fixers" width="147" height="32"></a><a class="df-sitebar__nav" href="/">Todos os painéis</a></div></div>
-  <main class="page">
-    <nav class="quick-nav" aria-label="Atalhos">
-      <a class="nav-btn" href="https://luizftoledo.github.io/">Voltar ao Portfolio</a>
-      <a class="nav-btn" href="https://datafixers.org/" target="_blank" rel="noopener noreferrer">Ir para DataFixers.org</a>
-    </nav>
 
-    <header class="card hero">
-      <h1>Transparência no governo federal: por que pedidos de informação são negados?</h1>
-      <p class="sub">Dados da CGU sobre respostas a pedidos feitos pela Lei de Acesso à Informação (LAI).</p>
-      <div class="source-switch">
-        <label class="label" for="source-select">Fonte da análise</label>
-        <select id="source-select">
-          <option value="ampla">Fala.BR — base ampla federal</option>
-          <option value="publica">BuscaLAI — base pública federal</option>
-        </select>
-        <p class="source-note" id="source-note">Carregando descrição da fonte...</p>
+  <main class="monitor-page">
+    <header class="monitor-header">
+      <div>
+        <h1>Monitor da opacidade</h1>
+        <p>Pedidos de acesso à informação no governo federal</p>
       </div>
-      <div class="update-line">
-        <span id="updated-line">Atualização: carregando...</span>
-        <a class="scraper-health-btn is-loading" id="scraper-health-btn" href="https://github.com/luizftoledo/datafixers-dashboards/actions/workflows/update-lai-dashboard.yml" target="_blank" rel="noopener noreferrer">Testando raspador...</a>
-        <span class="pill" id="years-pill">anos: --</span>
-        <span class="pill pill-warning" id="partial-year-pill" hidden>ano parcial</span>
-
+      <div class="monitor-filter">
+        <label for="source-select">Base de dados</label>
+        <select id="source-select"></select>
       </div>
-      <p class="update-schedule-note" id="update-schedule-note" aria-live="polite">Frequência de atualização: carregando...</p>
     </header>
+    <div class="monitor-meta">
+      <span id="updated-line" role="status">Carregando dados…</span>
+      <span id="years-pill"></span>
+      <span id="partial-year-pill" class="partial" hidden></span>
+      <a href="./orgaos.html">Comparar órgãos e governos</a>
+    </div>
 
-    <section class="card" aria-labelledby="panorama-heading">
-      <h2 id="panorama-heading">Panorama dos pedidos e das negativas</h2>
-      <div class="metrics">
+    <section class="monitor-panel lead-chart" aria-labelledby="taxas">
+      <div class="panel-heading">
+        <div><h2 id="taxas">Negativas e acessos parciais</h2>
+        <p>Percentual dos pedidos por ano</p></div>
+        <p id="chart-partial-note" class="partial" hidden></p>
+      </div>
+      <div class="chart-plot"><canvas id="chart-yearly-rate" role="img" aria-label="Evolução anual da taxa de negativas e da taxa de negativas mais acessos parciais"></canvas></div>
+    </section>
+
+    <div class="metrics">
         <article class="metric">
-          <div class="label">Pedidos (série inteira)</div>
+          <div class="label">Pedidos na série</div>
           <div class="value" id="metric-total-requests">--</div>
         </article>
         <article class="metric">
-          <div class="label">Negados totalmente</div>
+          <div class="label">Negativas integrais</div>
           <div class="value" id="metric-denied-total">--</div>
         </article>
         <article class="metric">
-          <div class="label">Com restrição (negado + parcial)</div>
+          <div class="label">Negados ou parciais</div>
           <div class="value" id="metric-restricted-total">--</div>
         </article>
         <article class="metric">
@@ -1103,23 +58,31 @@
           <div class="value" id="metric-personal-total">--</div>
         </article>
       </div>
-    </section>
 
-    <section class="card sigilo100-block" aria-labelledby="sigilos-heading">
+    <div class="monitor-grid">
+      <section class="monitor-panel" aria-labelledby="volume">
+        <h2 id="volume">Pedidos e negativas por ano</h2>
+        <div class="chart-plot"><canvas id="chart-yearly-volume" role="img" aria-label="Quantidade anual de pedidos e negativas integrais"></canvas></div>
+      </section>
+      <section class="monitor-panel" aria-labelledby="orgaos">
+        <h2 id="orgaos">Órgãos com mais negativas</h2>
+        <div class="chart-plot"><canvas id="chart-org-top" role="img" aria-label="Órgãos com mais negativas na série"></canvas></div>
+      </section>
+      <section class="monitor-panel" aria-labelledby="motivos">
+        <h2 id="motivos">Motivos de restrição por ano</h2>
+        <div class="chart-plot"><canvas id="chart-reasons" role="img" aria-label="Motivos de restrição por ano"></canvas></div>
+      </section>
+      <section class="card sigilo100-block" aria-labelledby="sigilos-heading">
       <h2 id="sigilos-heading">Restrições por informação pessoal</h2>
-      <p class="section-note">Pedidos negados ou atendidos parcialmente por envolverem informação pessoal, categoria associada ao “sigilo de 100 anos”. A base não informa o prazo aplicado a cada pedido. Sigilos por outros motivos ficam fora deste recorte.</p>
-      <article class="metric sigilo-metric">
-        <div class="value" id="sigilo-total">—</div>
-        <div class="label" id="sigilo-total-label">Pedidos com restrição por informação pessoal na série</div>
-      </article>
+      <p class="section-note">Pedidos negados ou atendidos em parte por envolverem informação pessoal. A base não informa o prazo da restrição.</p>
+
       <article class="chart-card sigilo-trend">
         <h3>Pedidos com restrição por ano</h3>
-        <p class="section-note">Clique ou toque em uma barra para consultar o ano. O asterisco indica ano parcial.</p>
         <p class="table-note" id="sigilo-year-value" aria-live="polite"></p>
         <div class="chart-plot"><canvas id="chart-personal" role="img" aria-label="Pedidos com restrição por informação pessoal por ano"></canvas></div>
       </article>
-      <article class="table-card">
-        <h3>Órgãos com maior proporção de restrições</h3>
+      <details class="monitor-details"><summary>Ranking de restrições por órgão</summary><div class="details-content"><article class="table-card">
+
         <div class="sigilo100-controls">
           <label for="sigilo100-year-filter">Período</label>
           <select id="sigilo100-year-filter"></select>
@@ -1136,49 +99,13 @@
             <tbody id="table-sigilo100-ranking"></tbody>
           </table>
         </div>
-      </article>
+      </article></div></details>
     </section>
+    </div>
 
-    <section class="card alerts">
-      <h2>Resumo de atenção agora</h2>
-      <div class="alerts-grid" id="alerts-summary">
-        <article class="alert-card">
-          <h3>Carregando monitoramento...</h3>
-          <p>Aguarde os alertas automáticos com base no período mais recente.</p>
-        </article>
-      </div>
-    </section>
+    <div class="monitor-secondary">
+      <details class="monitor-details"><summary>Tabelas e contagens</summary><div class="details-content"><section class="card tables">
 
-    <section class="card narrative">
-      <h2>Leitura rápida dos dados</h2>
-      <ul class="narrative-list" id="narrative-list"></ul>
-    </section>
-
-    <section class="card charts">
-      <h2>Gráficos comparando ano a ano</h2>
-      <p class="section-note" id="chart-partial-note" hidden></p>
-      <div class="chart-grid">
-        <article class="chart-card">
-          <h3>Pedidos e negativas por ano</h3>
-          <div class="chart-plot"><canvas id="chart-yearly-volume"></canvas></div>
-        </article>
-        <article class="chart-card">
-          <h3>Taxa de negativa ao longo do tempo</h3>
-          <div class="chart-plot"><canvas id="chart-yearly-rate"></canvas></div>
-        </article>
-        <article class="chart-card">
-          <h3>Motivos de negativa (top motivos)</h3>
-          <div class="chart-plot"><canvas id="chart-reasons"></canvas></div>
-        </article>
-        <article class="chart-card">
-          <h3>Órgãos que mais negam (top 10)</h3>
-          <div class="chart-plot"><canvas id="chart-org-top"></canvas></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="card tables">
-      <h2>Tabelas detalhadas</h2>
       <article class="table-card">
         <h3>Série histórica anual</h3>
         <div class="table-wrap">
@@ -1224,7 +151,7 @@
           </table>
         </div>
         <p class="table-note" id="table-reasons-note"></p>
-        <p class="table-note table-note-legend">Definições rápidas: “negado” é recusa total. “com restrição” é a soma de recusa total + resposta parcial.</p>
+
       </article>
 
       <article class="table-card">
@@ -1246,50 +173,37 @@
         </div>
       </article>
 
-    </section>
+    </section></div></details>
+      <details class="monitor-details"><summary>Destaques da série</summary><div class="details-content"><section class="card alerts">
 
-    <section class="card orgs">
-      <h2>Órgãos em detalhe</h2>
-      <div class="org-grid" id="org-cards"></div>
-    </section>
+      <div class="alerts-grid" id="alerts-summary">
+        <article class="alert-card">
+          <h3>Carregando monitoramento...</h3>
+          <p>Aguarde os alertas automáticos com base no período mais recente.</p>
+        </article>
+      </div>
+    </section><section class="card narrative">
 
-    <section class="card methodology">
-      <h2>Nota metodológica (como os dados foram tratados)</h2>
+      <ul class="narrative-list" id="narrative-list"></ul>
+    </section></div></details>
+      <details class="monitor-details"><summary>Dados, metodologia e fontes</summary><div class="details-content"><p id="source-note"></p><p id="update-schedule-note"></p><a id="scraper-health-btn" href="https://github.com/luizftoledo/datafixers-dashboards/actions/workflows/update-lai-dashboard.yml">Histórico de atualização</a><section class="card methodology">
+
       <div class="methodology-content" id="methodology-content">
         <p>Carregando metodologia...</p>
       </div>
       <div id="methodology-note">
         <p>As taxas de negativa podem ser infladas por requerentes em massa (serial requesters) — pessoas que enviam centenas de pedidos automatizados ao mesmo órgão, majoritariamente negados. A dashboard sinaliza esses casos com ⚠️ e exibe a taxa ajustada excluindo esses requerentes. Isso não invalida as negativas, mas contextualiza a escala.</p>
       </div>
-    </section>
+    </section><section class="card sources-footer">
+      <h3>Fontes</h3>
 
-    <section class="card sources-footer">
-      <h2>Fontes usadas</h2>
-      <p>Lista completa de links públicos usados neste monitoramento.</p>
       <ul class="sources-list" id="sources-list">
         <li>Carregando links...</li>
       </ul>
-    </section>
-
-    <section class="card learn-more" id="aprenda-mais-transparencia">
-      <h2>Aprenda mais sobre transparência e como pedir informações ao governo</h2>
-      <p><a href="https://www.udemy.com/course/investigue-gastos-publicos-com-a-lei-de-acesso-a-informacao/">Curso sobre a Lei de Acesso à Informação</a></p>
-      <article class="table-card">
-        <h3>Quando usar (ou não) a LAI: guia rápido em vídeo</h3>
-        <div class="video-embed">
-          <p>Dois vídeos diretos ao ponto para ajudar a decidir quando a LAI é o melhor caminho e como evitar pedidos que costumam ser negados.</p>
-          <div class="video-grid">
-            <iframe src="https://www.youtube.com/embed/FNOqGj7eQ34" title="Quando usar ou não a LAI - vídeo 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/y5O3tkyL-Ac" title="Quando usar ou não a LAI - vídeo 2" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-        </div>
-      </article>
-    </section>
-
+    </section></div></details>
+    </div>
   </main>
-
-  <script src="./vendor/pako.min.js"></script>
   <script src="../scripts/dashboard-update-schedule.js"></script>
-  <script src="./app.js?v=20261103-layout"></script>
+  <script src="./app.js?v=20261120-monitor"></script>
 </body>
 </html>

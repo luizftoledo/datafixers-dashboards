@@ -299,7 +299,7 @@
       return;
     }
 
-    const note = `* <strong>${partialYearCtx.year}</strong> é um ano parcial (dados acumulados até <strong>${esc(partialYearCtx.cutoffDateTime)}</strong>). Nos gráficos, esse ano aparece com asterisco e marcação mais clara.`;
+    const note = `* <strong>${partialYearCtx.year}</strong> parcial, até <strong>${esc(partialYearCtx.cutoffDateTime)}</strong>.`;
 
     if (partialYearPill) {
       partialYearPill.hidden = false;
@@ -339,11 +339,11 @@
     const years = (((metadata || {}).years_covered) || ((reportData.source || {}).years_covered) || []);
     const minYear = years.length ? Math.min(...years) : '--';
     const maxYear = years.length ? Math.max(...years) : '--';
-    yearsPill.textContent = `anos: ${minYear}-${maxYear}`;
+    yearsPill.textContent = `${minYear}–${maxYear}`;
     const updatedAtRaw = (metadata || {}).updated_at || reportData.generated_at;
     const updateNotice = scheduleHelper ? scheduleHelper.buildNotice('lai', updatedAtRaw) : null;
     const updatedLabel = formatDateTime(updatedAtRaw);
-    updatedLine.textContent = `Atualizado em ${updatedLabel} (horario de Brasilia)`;
+    updatedLine.textContent = `Atualizado em ${updatedLabel} (horário de Brasília)`;
     if (updateScheduleNote) {
       updateScheduleNote.textContent = updateNotice
         ? updateNotice.text
@@ -361,7 +361,6 @@
     metricTotalRequests.textContent = nFmt.format(overall.total_requests || 0);
     metricDeniedTotal.textContent = `${nFmt.format(overall.denied_total || 0)} (${pFmt.format(overall.denied_rate || 0)})`;
     metricRestrictedTotal.textContent = `${nFmt.format(overall.restricted_total || 0)} (${pFmt.format(overall.restricted_rate || 0)})`;
-    document.getElementById('sigilo-total').textContent = nFmt.format(overall.personal_restricted_total);
     metricPersonalTotal.textContent = `${nFmt.format(overall.personal_restricted_total || 0)} (${pFmt.format(overall.personal_share_in_restricted || 0)})`;
   }
 
@@ -601,7 +600,7 @@
   function renderCharts() {
     destroyCharts();
     if (typeof window.Chart !== 'function') {
-      narrativeList.innerHTML = '<li class="error">Falha ao renderizar gráficos: biblioteca Chart indisponível.</li>';
+      updatedLine.textContent = 'Não foi possível carregar os gráficos.';
       return;
     }
 
@@ -617,7 +616,7 @@
     const commonOptions = {
       responsive: true,
       maintainAspectRatio: false,
-      aspectRatio: 2,
+      animation: false,
       plugins: { legend: { position: 'bottom' } },
     };
 
@@ -695,7 +694,7 @@
     const restrictedRateSplit = splitSeries((row) => row.restricted_rate * 100);
     const rateDatasets = [
       {
-        label: hasPartial ? 'Taxa de negado (anos completos)' : 'Taxa de negado total',
+        label: hasPartial ? 'Negativas integrais' : 'Negativas integrais',
         data: deniedRateSplit.complete,
         borderColor: '#b64242',
         backgroundColor: 'rgba(182,66,66,0.12)',
@@ -703,7 +702,7 @@
         fill: true,
       },
       {
-        label: hasPartial ? 'Taxa com restrição (anos completos)' : 'Taxa com restrição (negado + parcial)',
+        label: hasPartial ? 'Negados ou parcialmente atendidos' : 'Negados ou parcialmente atendidos',
         data: restrictedRateSplit.complete,
         borderColor: '#3f8f6d',
         backgroundColor: 'rgba(63,143,109,0.12)',
@@ -742,8 +741,21 @@
       },
       options: {
         ...commonOptions,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: { filter: (item) => item.datasetIndex < 2 },
+            onClick(event, item, legend) {
+              const chart = legend.chart;
+              const visible = !chart.isDatasetVisible(item.datasetIndex);
+              chart.setDatasetVisibility(item.datasetIndex, visible);
+              if (hasPartial) chart.setDatasetVisibility(item.datasetIndex + 2, visible);
+              chart.update();
+            },
+          },
+        },
         scales: {
-          y: { beginAtZero: true, ticks: { callback: (v) => `${v.toFixed(1)}%` } },
+          y: { beginAtZero: true, ticks: { callback: (v) => `${nFmt.format(v)}%` } },
         },
       },
     }));
@@ -1299,7 +1311,7 @@
       await loadSourceCatalogAndData();
       await applySource(activeSourceId);
     } catch (error) {
-      document.getElementById('sigilo-total-label').textContent = `Falha ao carregar os dados: ${error.message}`;
+      updatedLine.textContent = `Falha ao carregar os dados: ${error.message}`;
       return;
     }
   }

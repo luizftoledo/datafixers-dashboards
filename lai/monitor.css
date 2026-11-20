@@ -1,0 +1,85 @@
+body.monitor {
+  --ink: #192923;
+  --muted: #52625b;
+  --line: #dce4de;
+  --accent: #165e4c;
+  background: #f3f2ed;
+  color: var(--ink);
+}
+.monitor [hidden] { display: none !important; }
+.monitor a { color: var(--accent); }
+.monitor-page {
+  width: min(1240px, calc(100% - 48px));
+  margin-inline: auto;
+  padding-block: 32px 48px;
+}
+.monitor h1, .monitor h2, .monitor h3, .monitor p { margin: 0; }
+.monitor h2 { font-size: clamp(1.03rem, 2vw, 1.3rem); line-height: 1.25; }
+.monitor h3 { font-size: .98rem; }
+.monitor-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.monitor-header h1 { font-size: clamp(2.15rem, 6vw, 4rem); line-height: 1; letter-spacing: -.065em; }
+.monitor-header p { color: var(--muted); margin-top: 9px; }
+.monitor-filter { display: grid; max-width: 100%; gap: 4px; }
+.monitor-filter label, .monitor-meta { font-size: .8rem; color: var(--muted); }
+.monitor select, .monitor button {
+  padding: 7px 10px;
+  max-width: 100%;
+  border: 1px solid #aebfb5;
+  border-radius: 5px;
+  background: white;
+  color: var(--ink);
+}
+.monitor select { min-width: 0; }
+.monitor button { cursor: pointer; }
+.monitor .table-toggle.active { background: #dceedf; }
+.monitor-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 5px 15px; margin-block: 12px 19px; }
+.monitor-meta a { font-weight: 700; }
+.monitor .partial { color: #79500c; }
+.monitor-panel, .monitor .sigilo100-block {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+}
+.panel-heading { display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 6px 16px; }
+.panel-heading p, .monitor .section-note, .monitor .table-note { color: var(--muted); font-size: .79rem; }
+.monitor .partial { font-size: .75rem; }
+.monitor .chart-plot { position: relative; height: 270px; min-width: 0; margin-top: 10px; }
+.monitor .lead-chart .chart-plot { height: clamp(250px, 32vw, 367px); }
+.monitor .metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-block: 12px; }
+.monitor .metric { padding: 10px 14px; border: 1px solid var(--line); border-radius: 6px; background: #fafbf8; }
+.monitor .metric .label { font-size: .76rem; color: var(--muted); }
+.monitor .metric .value { color: var(--ink); font-size: clamp(.98rem, 2vw, 1.35rem); font-weight: 730; font-variant-numeric: tabular-nums; }
+.monitor-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.monitor .sigilo100-block h3 { margin-top: 10px; }
+.monitor .monitor-error:empty, .monitor #sigilo-year-value:empty { display: none; }
+.monitor .monitor-error { color: #9a231d; }
+.monitor-secondary { display: grid; gap: 7px; margin-top: 12px; }
+.monitor-details { min-width: 0; border: 1px solid var(--line); border-radius: 6px; background: white; }
+.monitor .sigilo100-block .monitor-details { margin-top: 8px; }
+.monitor-details > summary { cursor: pointer; padding: 8px 13px; font-size: .86rem; font-weight: 700; }
+.details-content { padding: 4px 12px 12px; }
+.details-content :is(p,ul) { margin-block: 6px; }
+.monitor .table-card { margin-top: 10px; }
+.monitor .table-wrap { overflow: auto; margin-block: 5px; }
+.monitor table { border-collapse: collapse; width: 100%; font-size: .8rem; }
+.monitor th, .monitor td { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: left; }
+.monitor th { background: #f0f5f1; }
+.monitor :is(.table-toggle-row,.sigilo100-controls) { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-block: 7px; }
+.monitor .help-tip-pop { display: none; }
+.monitor .help-tip:hover .help-tip-pop, .monitor .help-tip:focus-within .help-tip-pop { display: inline; font-size: .8rem; font-weight: 400; }
+.monitor .alerts-grid { display: grid; gap: 8px; }
+@media (max-width: 720px) {
+  .monitor-page { width: calc(100% - 24px); padding-top: 22px; }
+  .monitor-grid { grid-template-columns: minmax(0, 1fr); }
+  .monitor .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .monitor-panel, .monitor .sigilo100-block { padding: 12px; }
+}
+.monitor .chart-plot canvas { max-width: 100%; }
