@@ -46,6 +46,8 @@ def _find_worker_dir() -> Path:
 WORKER_DIR = _find_worker_dir()
 DB_NAME = "ibama"
 CHUNK_SIZE = 100
+MAX_STATEMENT_BYTES = 100_000
+LONG_TEXT_PART_CHARS = 18_000
 
 
 def esc(s: str) -> str:
@@ -116,13 +118,18 @@ def wrangler_exec(sql_or_file: str, is_file: bool = False, retries: int = 3) -> 
     for attempt in range(1, retries + 1):
         res = subprocess.run(cmd, cwd=str(WORKER_DIR), capture_output=True, text=True)
         if res.returncode == 0:
+            # Wrangler can emit upload progress before its JSON array.
+            json_start = res.stdout.find("\n[")
+            payload = res.stdout[json_start + 1:] if json_start >= 0 else res.stdout
             try:
-                return json.loads(res.stdout)
-            except json.JSONDecodeError as e:
-                print(f"   ⚠ JSON parse falhou: {e}", flush=True)
-                print(f"   STDOUT preview: {res.stdout[:500]}", flush=True)
-                # Considera sucesso mesmo se JSON não parseou (output OK normalmente)
-                return {"ok": True}
+                rows, _ = json.JSONDecoder().raw_decode(payload.lstrip())
+            except json.JSONDecodeError:
+                raise RuntimeError("Wrangler não retornou JSON válido para o D1.")
+            if not isinstance(rows, list) or not rows or not all(
+                isinstance(row, dict) and row.get("success") is True for row in rows
+            ):
+                raise RuntimeError("O D1 não confirmou a execução.")
+            return rows
 
         combined = f"{res.stderr}\n{res.stdout}"
         # Erro de autenticação não se resolve com retry: aborta imediatamente
@@ -165,7 +172,7 @@ def fetch_existing_signatures() -> dict[str, str]:
 
 
 def build_upsert_sql(records: list[dict]) -> str:
-    """Gera um BEGIN/COMMIT com INSERT OR REPLACE pros records dados."""
+    """Gera o SQL de importação, preservando textos acima do limite por instrução."""
     cols = [
         "id", "url", "source", "type", "president_slug", "president",
         "mandate", "date", "title", "location", "description", "text",
@@ -189,9 +196,25 @@ def build_upsert_sql(records: list[dict]) -> str:
             str(int(rec.get("word_count") or 0)),
             esc(rec.get("updated_at", "")),
         ]
-        lines.append(
-            f"INSERT OR REPLACE INTO lulometro_records ({', '.join(cols)}) VALUES ({', '.join(values)});"
-        )
+        insert = f"INSERT OR REPLACE INTO lulometro_records ({', '.join(cols)}) VALUES "
+        statement = f"{insert}({', '.join(values)});"
+        if len(statement.encode("utf-8")) <= MAX_STATEMENT_BYTES:
+            lines.append(statement)
+            continue
+
+        # O D1 importa o arquivo como uma transação. Para textos longos, grave
+        # a primeira parte e concatene as restantes dentro do mesmo arquivo.
+        text = rec.get("text") or ""
+        values[cols.index("text")] = esc(text[:LONG_TEXT_PART_CHARS])
+        record_statements = [f"{insert}({', '.join(values)});"]
+        for start in range(LONG_TEXT_PART_CHARS, len(text), LONG_TEXT_PART_CHARS):
+            part = esc(text[start:start + LONG_TEXT_PART_CHARS])
+            record_statements.append(
+                f"UPDATE lulometro_records SET text = text || {part} WHERE id = {values[0]};"
+            )
+        if any(len(sql.encode("utf-8")) > MAX_STATEMENT_BYTES for sql in record_statements):
+            raise ValueError(f"Metadados excedem o limite de SQL do D1 para {rec['id']}.")
+        lines.extend(record_statements)
     return "\n".join(lines)
 
 
@@ -220,7 +243,8 @@ def rebuild_fts() -> None:
     print("→ Rebuild FTS5 index...", flush=True)
     # FTS5 external-content suporta esse comando especial pra re-sincronizar com a tabela base.
     sql = "INSERT INTO lulometro_fts(lulometro_fts) VALUES('rebuild');"
-    wrangler_exec(sql, is_file=False)
+    if not wrangler_exec(sql, is_file=False):
+        raise RuntimeError("Não foi possível reconstruir o índice FTS.")
 
 
 def main() -> int:
@@ -260,9 +284,12 @@ def main() -> int:
 
     chunks = list(chunked(to_upsert, CHUNK_SIZE))
     failed = 0
+    synced = 0
     for i, chunk in enumerate(chunks):
         ok = upsert_chunk(chunk, i, len(chunks))
-        if not ok:
+        if ok:
+            synced += len(chunk)
+        else:
             failed += 1
             if failed > 3:
                 print(f"❌ Muitas falhas ({failed}). Abortando.")
@@ -271,7 +298,11 @@ def main() -> int:
     if not args.skip_fts:
         rebuild_fts()
 
-    print(f"✅ Upsert completo: {len(to_upsert) - failed * CHUNK_SIZE} records sincronizados.")
+    if failed:
+        print(f"❌ {synced}/{len(to_upsert)} registros sincronizados. Falharam {failed} lotes.")
+        return 1
+
+    print(f"✅ Upsert completo: {synced} registros sincronizados.")
     return 0
 
 
