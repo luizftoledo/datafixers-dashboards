@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-20T21:00:22.098565+00:00",
-  "snapshot_date": "2026-11-20",
+  "generated_at": "2026-11-21T20:01:34.452946+00:00",
+  "snapshot_date": "2026-11-21",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -1021,7 +1021,7 @@
     "total_liquidado": 28811709172.37,
     "total_pago": 38514815401.72
   },
-  "run_date": "2026-11-20",
+  "run_date": "2026-11-21",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -6461,6 +6461,17 @@
       "previous_snapshot_date": "2026-11-19",
       "interval_days": 1,
       "source_changed": false
+    },
+    {
+      "date": "2026-11-21",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 344272570896.47,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-11-20",
+      "interval_days": 1,
+      "source_changed": false
     }
   ],
   "siop_daily_history": [
@@ -8863,7 +8874,17 @@
       "empenhado": 41900040316.0,
       "liquidado": 28840586080.0,
       "pago": 28399977310.0
+    },
+    {
+      "date": "2026-11-21",
+      "last_update": "",
+      "base_siafi_date": "19/11/2026",
+      "dotacao_inicial_emenda": 49722539278.0,
+      "dotacao_atual_emenda": 49901486762.0,
+      "empenhado": 41900040316.0,
+      "liquidado": 28840586080.0,
+      "pago": 28399977310.0
     }
   ],
-  "updated_at": "2026-11-20T21:00:22.098565+00:00"
+  "updated_at": "2026-11-21T20:01:34.452946+00:00"
 }
