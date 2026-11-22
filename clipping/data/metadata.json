@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-11-21T20:16:01.645434+00:00",
+  "generated_at": "2026-11-22T20:30:04.642770+00:00",
   "counts": {
-    "items": 80,
+    "items": 83,
     "domains": 25,
     "categories": {
-      "reportagem_autoral": 55,
+      "reportagem_autoral": 57,
       "republicacao": 0,
       "eco_repercussao": 1,
       "citacao_fonte": 1,
-      "mencao": 5,
+      "mencao": 6,
       "entrevista": 1,
       "palestra_curso": 0,
       "perfil_bio": 17
@@ -16,7 +16,7 @@
     "recent": {
       "last_1_day": 0,
       "last_7_days": 1,
-      "last_30_days": 10
+      "last_30_days": 11
     }
   },
   "date_range": {
@@ -36,32 +36,32 @@
         "known_external_sources": 48
       },
       "searches": {
-        "google-news-rss:\"Luiz Fernando Toledo\"": 28,
+        "google-news-rss:\"Luiz Fernando Toledo\"": 29,
         "google-news-rss:\"Luiz Fernando Toledo Antunes\"": 1,
         "google-news-rss:\"segundo reportagem\" \"Luiz Fernando Toledo\"": 4,
-        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 9
+        "google-news-rss:\"levantamento\" \"Luiz Fernando Toledo\"": 10
       }
     },
     "enrich": {
-      "fetched": 66,
-      "reused": 18,
-      "kept": 80,
+      "fetched": 57,
+      "reused": 30,
+      "kept": 83,
       "dropped": 4,
       "categories": {
         "perfil_bio": 17,
-        "reportagem_autoral": 55,
-        "mencao": 5,
+        "reportagem_autoral": 57,
+        "mencao": 6,
         "entrevista": 1,
         "citacao_fonte": 1,
         "eco_repercussao": 1
       },
       "domains": {
-        "bbc.com": 48,
+        "bbc.com": 49,
         "intercept.com.br": 1,
         "piaui.folha.uol.com.br": 1,
         "apublica.org": 3,
         "ojoioeotrigo.com.br": 1,
-        "estadao.com.br": 2,
+        "estadao.com.br": 3,
         "g1.globo.com": 1,
         "escavador.com": 1,
         "icfj.org": 1,
@@ -75,10 +75,10 @@
         "talks.ox.ac.uk": 1,
         "cima.ned.org": 1,
         "scielo.br": 1,
+        "abraji.org.br": 2,
         "fiquemsabendo.com.br": 1,
         "sbtnews.sbt.com.br": 1,
-        "abraji.org.br": 2,
-        "piaui.uol.com.br": 5,
+        "piaui.uol.com.br": 6,
         "lance.com.br": 1,
         "gaz.com.br": 1
       },
