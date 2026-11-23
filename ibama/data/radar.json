@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-11-16T17:10:10.932150+00:00",
+  "generated_at": "2026-11-23T19:20:45.905047+00:00",
   "year": 2026,
-  "through": "2026-11-15",
+  "through": "2026-11-22",
   "previous_year": 2025,
-  "total_current": 14453,
-  "total_previous": 14212,
+  "total_current": 14736,
+  "total_previous": 14558,
   "places": [
     {
       "city": "RIO DE JANEIRO",
       "uf": "RJ",
       "current": 300,
-      "previous": 77,
-      "delta": 223
+      "previous": 81,
+      "delta": 219
     },
     {
       "city": "FLORIANOPOLIS",
       "uf": "SC",
-      "current": 208,
-      "previous": 55,
-      "delta": 153
+      "current": 216,
+      "previous": 59,
+      "delta": 157
     },
     {
       "city": "GOIANIA",
       "uf": "GO",
       "current": 200,
-      "previous": 54,
-      "delta": 146
+      "previous": 55,
+      "delta": 145
     },
     {
       "city": "TRAIRAO",
@@ -37,9 +37,9 @@
     {
       "city": "SENA MADUREIRA",
       "uf": "AC",
-      "current": 132,
+      "current": 139,
       "previous": 30,
-      "delta": 102
+      "delta": 109
     },
     {
       "city": "ALENQUER",
@@ -56,18 +56,18 @@
       "delta": 92
     },
     {
-      "city": "CAMPOS DOS GOYTACAZES",
-      "uf": "RJ",
-      "current": 105,
-      "previous": 14,
-      "delta": 91
-    },
-    {
       "city": "NOVO PROGRESSO",
       "uf": "PA",
       "current": 167,
       "previous": 80,
       "delta": 87
+    },
+    {
+      "city": "CUJUBIM",
+      "uf": "RO",
+      "current": 111,
+      "previous": 26,
+      "delta": 85
     }
   ],
   "method": "Autos por municipio e UF com data do auto entre 1 jan e a data de corte em cada ano. Normalizacao de caixa e acentos. Selecionados apenas locais com >=30 autos no ano atual, >=20 a mais que no anterior e pelo menos 1,8 vez o volume anterior."
