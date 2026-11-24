@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-11-22T20:16:56.979419+00:00",
-  "snapshot_date": "2026-11-22",
+  "generated_at": "2026-11-24T00:44:16.110174+00:00",
+  "snapshot_date": "2026-11-24",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
     "download_url": "https://dadosabertos-download.cgu.gov.br/PortalDaTransparencia/saida/emendas-parlamentares/EmendasParlamentares.zip",
     "senado_reference_url": "https://www9.senado.gov.br/QvAJAXZfc/opendoc.htm?document=senado%2Fsigabrasilpainelcidadao.qvw&host=QVS%40www9&anonymous=true&Sheet=shOrcamentoVisaoGeral",
-    "etag": "\"2bdb459be7478f908395e357bff86e30-6\"",
-    "last_modified": "Thu, 19 Nov 2026 22:36:28 GMT",
-    "zip_bytes": 47221100
+    "etag": "\"07b639718440f80647c4ad8b574dcb33-6\"",
+    "last_modified": "Mon, 23 Nov 2026 21:10:42 GMT",
+    "zip_bytes": 47223045
   },
   "metrics": {
     "total_empenhado_atual": 344272570896.47,
-    "total_empenhado_snapshot_anterior": 344241085387.63,
+    "total_empenhado_snapshot_anterior": 344272570896.47,
     "delta_liquido_desde_snapshot_anterior": 0.0,
     "delta_positivo_desde_snapshot_anterior": 0.0,
     "delta_negativo_desde_snapshot_anterior": 0.0,
@@ -27,626 +27,13 @@
     "current_year_total_empenhado": 43389750282.42,
     "current_year_total_liquidado": 28811709172.37,
     "current_year_total_pago": 38514815401.72,
-    "current_year_total_empenhado_por_ano_emenda": 43389750282.42,
-    "current_year_total_pago_por_ano_emenda": 38514815401.72,
+    "current_year_total_empenhado_por_ano_emenda": 41799642312.24,
+    "current_year_total_pago_por_ano_emenda": 28379605074.19,
     "_pago_e_empenhado_source": "por_data_documento"
   },
-  "top_authors_today": [
-    {
-      "author": "COM. TURISMO",
-      "party": "Comissao",
-      "delta_empenhado": 5962645.0,
-      "share_in_day": 0.1866756342260408,
-      "current_empenhado": 1950881442.46
-    },
-    {
-      "author": "BANCADA DO RIO GRANDE DO SUL",
-      "party": "Bancada",
-      "delta_empenhado": 5843880.0,
-      "share_in_day": 0.18295739648107096,
-      "current_empenhado": 2442104631.96
-    },
-    {
-      "author": "COM. DESENV REGIONAL E TURISMO",
-      "party": "Comissao",
-      "delta_empenhado": 2754837.98,
-      "share_in_day": 0.08624714822138246,
-      "current_empenhado": 9759216694.84
-    },
-    {
-      "author": "COM. DE PREVI., ASSIS. SOCI, INFAN., ADOL. E FAMIL",
-      "party": "Comissao",
-      "delta_empenhado": 2460862.55,
-      "share_in_day": 0.07704350623999283,
-      "current_empenhado": 209890425.55
-    },
-    {
-      "author": "PEDRO AIHARA",
-      "party": "PP",
-      "delta_empenhado": 1723342.97,
-      "share_in_day": 0.053953596417988796,
-      "current_empenhado": 110465489.91
-    },
-    {
-      "author": "COM. DA SAUDE",
-      "party": "Comissao",
-      "delta_empenhado": 1054968.0,
-      "share_in_day": 0.03302843293340083,
-      "current_empenhado": 13541722829.05
-    },
-    {
-      "author": "LEONIDAS CRISTINO",
-      "party": "Nao identificado",
-      "delta_empenhado": 1000000.0,
-      "share_in_day": 0.031307521112868664,
-      "current_empenhado": 175885971.11
-    },
-    {
-      "author": "BANCADA DE SAO PAULO",
-      "party": "Bancada",
-      "delta_empenhado": 850000.0,
-      "share_in_day": 0.026611392945938367,
-      "current_empenhado": 2480528317.92
-    },
-    {
-      "author": "EDUARDO GIRAO",
-      "party": "Nao identificado",
-      "delta_empenhado": 576334.0,
-      "share_in_day": 0.01804358887306405,
-      "current_empenhado": 308781989.88
-    },
-    {
-      "author": "COM. CULTURA",
-      "party": "Comissao",
-      "delta_empenhado": 530000.0,
-      "share_in_day": 0.016592986189820393,
-      "current_empenhado": 112933447.67
-    },
-    {
-      "author": "IVAN VALENTE",
-      "party": "Nao identificado",
-      "delta_empenhado": 497889.22,
-      "share_in_day": 0.015587677267019713,
-      "current_empenhado": 225939008.89
-    },
-    {
-      "author": "FERNANDO DUEIRE",
-      "party": "PSD",
-      "delta_empenhado": 490736.85,
-      "share_in_day": 0.015363754292237663,
-      "current_empenhado": 189932326.28
-    },
-    {
-      "author": "IRAJA",
-      "party": "PSD",
-      "delta_empenhado": 409000.0,
-      "share_in_day": 0.012804776135163285,
-      "current_empenhado": 269710228.58
-    },
-    {
-      "author": "LINDBERGH FARIAS",
-      "party": "PT",
-      "delta_empenhado": 400000.0,
-      "share_in_day": 0.012523008445147466,
-      "current_empenhado": 166705470.82
-    },
-    {
-      "author": "TABATA AMARAL",
-      "party": "PSB",
-      "delta_empenhado": 400000.0,
-      "share_in_day": 0.012523008445147466,
-      "current_empenhado": 178053861.83
-    },
-    {
-      "author": "CHRIS TONIETTO",
-      "party": "PL",
-      "delta_empenhado": 386805.12,
-      "share_in_day": 0.012109909460965698,
-      "current_empenhado": 181931836.95
-    },
-    {
-      "author": "JAYME CAMPOS",
-      "party": "UNIÃO",
-      "delta_empenhado": 380785.96,
-      "share_in_day": 0.011921464482183964,
-      "current_empenhado": 322728902.26
-    },
-    {
-      "author": "DOMINGOS SAVIO",
-      "party": "PL",
-      "delta_empenhado": 379834.96,
-      "share_in_day": 0.011891691029605625,
-      "current_empenhado": 255207898.81
-    },
-    {
-      "author": "IZALCI LUCAS",
-      "party": "PL",
-      "delta_empenhado": 350000.0,
-      "share_in_day": 0.010957632389504033,
-      "current_empenhado": 330643197.69
-    },
-    {
-      "author": "VANDERLAN CARDOSO",
-      "party": "PSD",
-      "delta_empenhado": 312730.0,
-      "share_in_day": 0.009790801077627418,
-      "current_empenhado": 300446389.55
-    }
-  ],
-  "top_destinations_today": [
-    {
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 20734011.66,
-      "share_in_day": 0.6479514041295286,
-      "current_empenhado": 225030832913.5
-    },
-    {
-      "destination": "RIO GRANDE DO SUL (UF)",
-      "delta_empenhado": 5455800.0,
-      "share_in_day": 0.17049731275447164,
-      "current_empenhado": 2566141828.25
-    },
-    {
-      "destination": "Nacional",
-      "delta_empenhado": 1568544.14,
-      "share_in_day": 0.04901802866798155,
-      "current_empenhado": 15846895961.79
-    },
-    {
-      "destination": "SÃO PAULO (UF)",
-      "delta_empenhado": 1405887.22,
-      "share_in_day": 0.04393489369952247,
-      "current_empenhado": 5674654300.4
-    },
-    {
-      "destination": "RIO DE JANEIRO (UF)",
-      "delta_empenhado": 789227.38,
-      "share_in_day": 0.024663871007414538,
-      "current_empenhado": 4173202420.66
-    },
-    {
-      "destination": "MINAS GERAIS (UF)",
-      "delta_empenhado": 676280.26,
-      "share_in_day": 0.021134199750521537,
-      "current_empenhado": 3592383566.2
-    },
-    {
-      "destination": "MARANHÃO (UF)",
-      "delta_empenhado": 403733.64,
-      "share_in_day": 0.012616939896730317,
-      "current_empenhado": 1251600842.58
-    },
-    {
-      "destination": "BAHIA (UF)",
-      "delta_empenhado": 286662.71,
-      "share_in_day": 0.008958396884400895,
-      "current_empenhado": 4182847419.27
-    },
-    {
-      "destination": "GUARULHOS - SP",
-      "delta_empenhado": 200000.0,
-      "share_in_day": 0.00625013060429164,
-      "current_empenhado": 81127910.68
-    },
-    {
-      "destination": "DISTRITO FEDERAL (UF)",
-      "delta_empenhado": 196200.81,
-      "share_in_day": 0.006131403435839046,
-      "current_empenhado": 4170439695.83
-    },
-    {
-      "destination": "PARANÁ (UF)",
-      "delta_empenhado": 144515.24,
-      "share_in_day": 0.004516195621552757,
-      "current_empenhado": 2800513035.87
-    },
-    {
-      "destination": "MATO GROSSO DO SUL (UF)",
-      "delta_empenhado": 61510.42,
-      "share_in_day": 0.001922240792624163,
-      "current_empenhado": 2380093649.14
-    },
-    {
-      "destination": "TRAMANDAÍ - RS",
-      "delta_empenhado": 47777.05,
-      "share_in_day": 0.0014930640119388595,
-      "current_empenhado": 2215969.98
-    },
-    {
-      "destination": "RORAIMA (UF)",
-      "delta_empenhado": 10787.0,
-      "share_in_day": 0.0003371007941424696,
-      "current_empenhado": 1836532470.13
-    },
-    {
-      "destination": "RIO GRANDE DO NORTE (UF)",
-      "delta_empenhado": 5319.4,
-      "share_in_day": 0.00016623472368234476,
-      "current_empenhado": 1527634882.03
-    },
-    {
-      "destination": "PARÁ (UF)",
-      "delta_empenhado": 5317.0,
-      "share_in_day": 0.00016615972211509326,
-      "current_empenhado": 1717477848.06
-    },
-    {
-      "destination": "SERGIPE (UF)",
-      "delta_empenhado": 4265.17,
-      "share_in_day": 0.00013328934774753287,
-      "current_empenhado": 1633853464.66
-    },
-    {
-      "destination": "ALAGOAS (UF)",
-      "delta_empenhado": 2334.05,
-      "share_in_day": 7.294058668473452e-05,
-      "current_empenhado": 1405399897.76
-    },
-    {
-      "destination": "AMAPÁ (UF)",
-      "delta_empenhado": 993.25,
-      "share_in_day": 3.103971111356336e-05,
-      "current_empenhado": 2071833096.28
-    },
-    {
-      "destination": "PIAUÍ (UF)",
-      "delta_empenhado": 164.92,
-      "share_in_day": 5.153857696298886e-06,
-      "current_empenhado": 1125726866.32
-    }
-  ],
-  "top_author_destination_today": [
-    {
-      "author": "COM. TURISMO",
-      "party": "Comissao",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 5962645.0,
-      "current_empenhado": 1948381442.46
-    },
-    {
-      "author": "BANCADA DO RIO GRANDE DO SUL",
-      "party": "Bancada",
-      "destination": "RIO GRANDE DO SUL (UF)",
-      "delta_empenhado": 5455800.0,
-      "current_empenhado": 1332460450.59
-    },
-    {
-      "author": "COM. DESENV REGIONAL E TURISMO",
-      "party": "Comissao",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 2754837.98,
-      "current_empenhado": 9758649508.84
-    },
-    {
-      "author": "COM. DE PREVI., ASSIS. SOCI, INFAN., ADOL. E FAMIL",
-      "party": "Comissao",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 2460862.55,
-      "current_empenhado": 209890425.55
-    },
-    {
-      "author": "PEDRO AIHARA",
-      "party": "PP",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 1722000.0,
-      "current_empenhado": 98124094.12
-    },
-    {
-      "author": "COM. DA SAUDE",
-      "party": "Comissao",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 1054968.0,
-      "current_empenhado": 13541722829.05
-    },
-    {
-      "author": "LEONIDAS CRISTINO",
-      "party": "Nao identificado",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 1000000.0,
-      "current_empenhado": 170336641.29
-    },
-    {
-      "author": "BANCADA DE SAO PAULO",
-      "party": "Bancada",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 850000.0,
-      "current_empenhado": 629209225.0
-    },
-    {
-      "author": "AUGUSTO COUTINHO",
-      "party": "REPUBLICANOS",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 800000.0,
-      "current_empenhado": 191180951.83
-    },
-    {
-      "author": "EDUARDO GIRAO",
-      "party": "Nao identificado",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 576334.0,
-      "current_empenhado": 232343600.82
-    },
-    {
-      "author": "COM. CULTURA",
-      "party": "Comissao",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 530000.0,
-      "current_empenhado": 69722029.0
-    },
-    {
-      "author": "IVAN VALENTE",
-      "party": "Nao identificado",
-      "destination": "SÃO PAULO (UF)",
-      "delta_empenhado": 497889.22,
-      "current_empenhado": 118738783.52
-    },
-    {
-      "author": "FERNANDO DUEIRE",
-      "party": "PSD",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 483885.0,
-      "current_empenhado": 167597433.0
-    },
-    {
-      "author": "IRAJA",
-      "party": "PSD",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 409000.0,
-      "current_empenhado": 264722101.0
-    },
-    {
-      "author": "LINDBERGH FARIAS",
-      "party": "PT",
-      "destination": "RIO DE JANEIRO (UF)",
-      "delta_empenhado": 400000.0,
-      "current_empenhado": 38255572.32
-    },
-    {
-      "author": "TABATA AMARAL",
-      "party": "PSB",
-      "destination": "SÃO PAULO (UF)",
-      "delta_empenhado": 400000.0,
-      "current_empenhado": 46360520.71
-    },
-    {
-      "author": "BANCADA DO RIO GRANDE DO SUL",
-      "party": "Bancada",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 388080.0,
-      "current_empenhado": 982467637.65
-    },
-    {
-      "author": "CHRIS TONIETTO",
-      "party": "PL",
-      "destination": "Nacional",
-      "delta_empenhado": 386805.12,
-      "current_empenhado": 12724291.27
-    },
-    {
-      "author": "JAYME CAMPOS",
-      "party": "UNIÃO",
-      "destination": "Nacional",
-      "delta_empenhado": 380785.96,
-      "current_empenhado": 4052173.45
-    },
-    {
-      "author": "DOMINGOS SAVIO",
-      "party": "PL",
-      "destination": "MINAS GERAIS (UF)",
-      "delta_empenhado": 379834.96,
-      "current_empenhado": 21863109.59
-    },
-    {
-      "author": "IZALCI LUCAS",
-      "party": "PL",
-      "destination": "Nacional",
-      "delta_empenhado": 350000.0,
-      "current_empenhado": 96759111.22
-    },
-    {
-      "author": "VANDERLAN CARDOSO",
-      "party": "PSD",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 312730.0,
-      "current_empenhado": 239679403.47
-    },
-    {
-      "author": "FABIANO CONTARATO",
-      "party": "PT",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 260998.0,
-      "current_empenhado": 281244281.25
-    },
-    {
-      "author": "EFRAIM FILHO",
-      "party": "PL",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 253179.0,
-      "current_empenhado": 288929236.42
-    },
-    {
-      "author": "COM. ESPORTE",
-      "party": "Comissao",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 252000.0,
-      "current_empenhado": 2213428556.47
-    },
-    {
-      "author": "JEFERSON RODRIGUES",
-      "party": "PSDB",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 250000.0,
-      "current_empenhado": 105460670.61
-    },
-    {
-      "author": "BANCADA DO CEARA",
-      "party": "Bancada",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 234018.0,
-      "current_empenhado": 2304510063.17
-    },
-    {
-      "author": "PROFESSORA LUCIENE CAVALCANTE",
-      "party": "PSOL",
-      "destination": "SÃO PAULO (UF)",
-      "delta_empenhado": 226306.39,
-      "current_empenhado": 29282938.17
-    },
-    {
-      "author": "BANCADA DA BAHIA",
-      "party": "Bancada",
-      "destination": "BAHIA (UF)",
-      "delta_empenhado": 216847.6,
-      "current_empenhado": 1551859084.85
-    },
-    {
-      "author": "TERESA LEITAO",
-      "party": "PT",
-      "destination": "PERNAMBUCO (UF)",
-      "delta_empenhado": 211894.65,
-      "current_empenhado": 43669026.23
-    },
-    {
-      "author": "HILDO ROCHA",
-      "party": "MDB",
-      "destination": "MARANHÃO (UF)",
-      "delta_empenhado": 203616.0,
-      "current_empenhado": 3177681.34
-    },
-    {
-      "author": "CHICO ALENCAR",
-      "party": "PSOL",
-      "destination": "Nacional",
-      "delta_empenhado": 200000.0,
-      "current_empenhado": 53200949.76
-    },
-    {
-      "author": "ALENCAR SANTANA",
-      "party": "PT",
-      "destination": "GUARULHOS - SP",
-      "delta_empenhado": 200000.0,
-      "current_empenhado": 1838022.33
-    },
-    {
-      "author": "OTONI DE PAULA",
-      "party": "PSD",
-      "destination": "RIO DE JANEIRO (UF)",
-      "delta_empenhado": 196000.0,
-      "current_empenhado": 57898791.45
-    },
-    {
-      "author": "ZE TROVAO",
-      "party": "PL",
-      "destination": "SANTA CATARINA (UF)",
-      "delta_empenhado": 195759.0,
-      "current_empenhado": 33395759.0
-    },
-    {
-      "author": "RUBENS PEREIRA JUNIOR",
-      "party": "PT",
-      "destination": "MARANHÃO (UF)",
-      "delta_empenhado": 175809.0,
-      "current_empenhado": 13353787.53
-    },
-    {
-      "author": "ZECA DIRCEU",
-      "party": "PT",
-      "destination": "PARANÁ (UF)",
-      "delta_empenhado": 144515.24,
-      "current_empenhado": 24390708.68
-    },
-    {
-      "author": "COM. DE INTEGRACAO NACIONAL E DES. REGIONAL",
-      "party": "Comissao",
-      "destination": "MÚLTIPLO",
-      "delta_empenhado": 127400.0,
-      "current_empenhado": 2651836303.86
-    },
-    {
-      "author": "TALIRIA PETRONE",
-      "party": "PSOL",
-      "destination": "RIO DE JANEIRO (UF)",
-      "delta_empenhado": 110000.0,
-      "current_empenhado": 105185918.69
-    },
-    {
-      "author": "CELSO RUSSOMANNO",
-      "party": "REPUBLICANOS",
-      "destination": "Nacional",
-      "delta_empenhado": 107881.46,
-      "current_empenhado": 11719953.84
-    },
-    {
-      "author": "RODRIGO DE CASTRO",
-      "party": "UNIÃO",
-      "destination": "MINAS GERAIS (UF)",
-      "delta_empenhado": 106444.0,
-      "current_empenhado": 19782076.8
-    },
-    {
-      "author": "VICENTINHO",
-      "party": "Nao identificado",
-      "destination": "SÃO PAULO (UF)",
-      "delta_empenhado": 100000.0,
-      "current_empenhado": 25476395.93
-    },
-    {
-      "author": "DAMARES ALVES",
-      "party": "REPUBLICANOS",
-      "destination": "DISTRITO FEDERAL (UF)",
-      "delta_empenhado": 100000.0,
-      "current_empenhado": 154494808.43
-    },
-    {
-      "author": "JANDIRA FEGHALI",
-      "party": "PCdoB",
-      "destination": "RIO DE JANEIRO (UF)",
-      "delta_empenhado": 92994.62,
-      "current_empenhado": 74022644.48
-    },
-    {
-      "author": "ALENCAR SANTANA",
-      "party": "PT",
-      "destination": "SÃO PAULO (UF)",
-      "delta_empenhado": 78844.24,
-      "current_empenhado": 25627988.72
-    },
-    {
-      "author": "ANA PIMENTEL",
-      "party": "PT",
-      "destination": "MINAS GERAIS (UF)",
-      "delta_empenhado": 74417.7,
-      "current_empenhado": 20965650.03
-    },
-    {
-      "author": "TEREZA CRISTINA",
-      "party": "PP",
-      "destination": "MATO GROSSO DO SUL (UF)",
-      "delta_empenhado": 61510.42,
-      "current_empenhado": 45325325.65
-    },
-    {
-      "author": "ALEX SANTANA",
-      "party": "REPUBLICANOS",
-      "destination": "Nacional",
-      "delta_empenhado": 58744.14,
-      "current_empenhado": 2468993.0
-    },
-    {
-      "author": "BANCADA DO DISTRITO FEDERAL",
-      "party": "Bancada",
-      "destination": "DISTRITO FEDERAL (UF)",
-      "delta_empenhado": 53052.88,
-      "current_empenhado": 2103838377.09
-    },
-    {
-      "author": "SAMIA BOMFIM",
-      "party": "PSOL",
-      "destination": "SÃO PAULO (UF)",
-      "delta_empenhado": 51173.95,
-      "current_empenhado": 94514321.42
-    }
-  ],
+  "top_authors_today": [],
+  "top_destinations_today": [],
+  "top_author_destination_today": [],
   "top_authors_total": [
     {
       "author": "RELATOR GERAL",
@@ -1021,7 +408,7 @@
     "total_liquidado": 28811709172.37,
     "total_pago": 38514815401.72
   },
-  "run_date": "2026-11-22",
+  "run_date": "2026-11-24",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1119,8 +506,8 @@
       "source": {
         "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares-documentos/2026",
         "download_url": "https://dadosabertos-download.cgu.gov.br/PortalDaTransparencia/saida/emendas-parlamentares-documentos/2026_EmendasParlamentaresPorDocumento.zip",
-        "last_modified": "Thu, 19 Nov 2026 22:36:34 GMT",
-        "etag": "\"1e41e3382737445590efaba54ab0fca8-2\"",
+        "last_modified": "Mon, 23 Nov 2026 21:10:50 GMT",
+        "etag": "\"9fad6cb04867b4de3f759e8790338297-2\"",
         "csv_member": "2026_EmendasParlamentares_PorDocumento.csv"
       },
       "rows_processed": 342379,
@@ -4203,8 +3590,8 @@
       "source": {
         "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/apoiamento-emendas-parlamentares-documentos/2026",
         "download_url": "https://dadosabertos-download.cgu.gov.br/PortalDaTransparencia/saida/emendas-parlamentares-apoiamento/2026_ApoiamentoEmendasParlamentares.zip",
-        "last_modified": "Thu, 19 Nov 2026 22:36:39 GMT",
-        "etag": "\"ea90bdfb370533d348c3f33cd046f5df\""
+        "last_modified": "Mon, 23 Nov 2026 21:10:57 GMT",
+        "etag": "\"673f2dd3e72aab2b4c47eb2b33032039\""
       }
     },
     "party_lookup": {
@@ -6483,6 +5870,17 @@
       "previous_snapshot_date": "2026-11-21",
       "interval_days": 1,
       "source_changed": false
+    },
+    {
+      "date": "2026-11-24",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 344272570896.47,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-11-22",
+      "interval_days": 2,
+      "source_changed": true
     }
   ],
   "siop_daily_history": [
@@ -8905,7 +8303,16 @@
       "empenhado": 41900040316.0,
       "liquidado": 28840586080.0,
       "pago": 28399977310.0
+    },
+    {
+      "date": "2026-11-24",
+      "last_update": "",
+      "base_siafi_date": "19/11/2026",
+      "dotacao_inicial_emenda": 49722539278.0,
+      "dotacao_atual_emenda": 49901486762.0,
+      "empenhado": 41900040316.0,
+      "liquidado": 28840586080.0,
+      "pago": 28399977310.0
     }
-  ],
-  "updated_at": "2026-11-22T20:16:56.979419+00:00"
+  ]
 }
