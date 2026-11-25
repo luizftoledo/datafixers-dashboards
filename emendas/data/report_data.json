@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-24T22:59:02.475679+00:00",
-  "snapshot_date": "2026-11-24",
+  "generated_at": "2026-11-25T22:25:28.740189+00:00",
+  "snapshot_date": "2026-11-25",
   "source": {
     "label": "Portal da Transparência (CGU) - Emendas Parlamentares",
     "requested_url": "https://portaldatransparencia.gov.br/download-de-dados/emendas-parlamentares/UNICO",
@@ -13,12 +13,12 @@
   "metrics": {
     "total_empenhado_atual": 344416971211.01,
     "total_empenhado_snapshot_anterior": 344272570896.47,
-    "delta_liquido_desde_snapshot_anterior": 144400314.54,
-    "delta_positivo_desde_snapshot_anterior": 145384600.1,
-    "delta_negativo_desde_snapshot_anterior": -984285.56,
-    "autores_com_aumento": 153,
-    "destinos_com_aumento": 31,
-    "pares_autor_destino_com_aumento": 167,
+    "delta_liquido_desde_snapshot_anterior": 0.0,
+    "delta_positivo_desde_snapshot_anterior": 0.0,
+    "delta_negativo_desde_snapshot_anterior": 0.0,
+    "autores_com_aumento": 0,
+    "destinos_com_aumento": 0,
+    "pares_autor_destino_com_aumento": 0,
     "total_autores_mapeados": 1614,
     "total_destinos_mapeados": 5459,
     "total_linhas_csv": 94961,
@@ -27,8 +27,8 @@
     "current_year_total_empenhado": 43561157934.83,
     "current_year_total_liquidado": 28854346703.38,
     "current_year_total_pago": 38628976880.67,
-    "current_year_total_empenhado_por_ano_emenda": 41944042626.78,
-    "current_year_total_pago_por_ano_emenda": 28422490777.73,
+    "current_year_total_empenhado_por_ano_emenda": 43561157934.83,
+    "current_year_total_pago_por_ano_emenda": 38628976880.67,
     "_pago_e_empenhado_source": "por_data_documento"
   },
   "top_authors_today": [
@@ -1021,7 +1021,7 @@
     "total_liquidado": 28854346703.38,
     "total_pago": 38628976880.67
   },
-  "run_date": "2026-11-24",
+  "run_date": "2026-11-25",
   "parallel_monitor": {
     "year": 2026,
     "execucao_ano_corrente": {
@@ -1051,7 +1051,7 @@
       "available": true,
       "source_url": "https://www1.siop.planejamento.gov.br/QvAJAXZfc/opendoc.htm?document=IAS%2FExecucao_Orcamentaria.qvw&host=QVS%40pqlk04&anonymous=true",
       "last_update": "",
-      "base_siafi_date": "23/11/2026",
+      "base_siafi_date": "24/11/2026",
       "filters": {
         "year": 2026,
         "rp": [
@@ -1063,9 +1063,9 @@
       "totals": {
         "dotacao_inicial_emenda": 49722539278.0,
         "dotacao_atual_emenda": 49901486762.0,
-        "empenhado": 41944796879.0,
-        "liquidado": 28855641164.0,
-        "pago": 28422972745.0
+        "empenhado": 41990602681.0,
+        "liquidado": 28934253419.0,
+        "pago": 28448912192.0
       },
       "per_rp": [
         {
@@ -1074,9 +1074,9 @@
           "totals": {
             "dotacao_inicial_emenda": 26560925142.0,
             "dotacao_atual_emenda": 26560925142.0,
-            "empenhado": 24108643410.0,
-            "liquidado": 18239058974.0,
-            "pago": 18078016371.0
+            "empenhado": 24143084859.0,
+            "liquidado": 18286111875.0,
+            "pago": 18096324267.0
           },
           "error": ""
         },
@@ -1086,9 +1086,9 @@
           "totals": {
             "dotacao_inicial_emenda": 11176561619.0,
             "dotacao_atual_emenda": 11225311619.0,
-            "empenhado": 7735857777.0,
-            "liquidado": 5128000951.0,
-            "pago": 4939523326.0
+            "empenhado": 7738047612.0,
+            "liquidado": 5129120939.0,
+            "pago": 4940765344.0
           },
           "error": ""
         },
@@ -1098,9 +1098,9 @@
           "totals": {
             "dotacao_inicial_emenda": 11985052517.0,
             "dotacao_atual_emenda": 12115250001.0,
-            "empenhado": 10100295692.0,
-            "liquidado": 5488581239.0,
-            "pago": 5405433048.0
+            "empenhado": 10109470210.0,
+            "liquidado": 5519020605.0,
+            "pago": 5411822581.0
           },
           "error": ""
         }
@@ -1110,7 +1110,7 @@
     "siop_details": {
       "available": false,
       "source_url": "https://www1.siop.planejamento.gov.br/QvAJAXZfc/opendoc.htm?document=IAS%2FExecucao_Orcamentaria.qvw&host=QVS%40pqlk04&anonymous=true",
-      "base_siafi_date": "23/11/2026",
+      "base_siafi_date": "24/11/2026",
       "rows_count": 0,
       "error": "Varredura detalhada não executada na rotina diária; use EMENDAS_SIOP_DETAILS=1."
     },
@@ -4244,7 +4244,7 @@
     },
     "party_lookup": {
       "camara_mapeados": 513,
-      "senado_mapeados": 81
+      "senado_mapeados": 82
     }
   },
   "daily_history": [
@@ -6529,6 +6529,17 @@
       "previous_snapshot_date": "2026-11-22",
       "interval_days": 2,
       "source_changed": true
+    },
+    {
+      "date": "2026-11-25",
+      "delta_positivo": 0.0,
+      "delta_liquido": 0.0,
+      "total_empenhado_atual": 344416971211.01,
+      "autores_com_aumento": 0,
+      "destinos_com_aumento": 0,
+      "previous_snapshot_date": "2026-11-24",
+      "interval_days": 1,
+      "source_changed": false
     }
   ],
   "siop_daily_history": [
@@ -8961,6 +8972,17 @@
       "empenhado": 41944796879.0,
       "liquidado": 28855641164.0,
       "pago": 28422972745.0
+    },
+    {
+      "date": "2026-11-25",
+      "last_update": "",
+      "base_siafi_date": "24/11/2026",
+      "dotacao_inicial_emenda": 49722539278.0,
+      "dotacao_atual_emenda": 49901486762.0,
+      "empenhado": 41990602681.0,
+      "liquidado": 28934253419.0,
+      "pago": 28448912192.0
     }
-  ]
+  ],
+  "updated_at": "2026-11-25T22:25:28.740189+00:00"
 }
