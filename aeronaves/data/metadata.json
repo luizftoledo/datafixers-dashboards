@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-11-26T21:50:36+00:00",
-  "source_updated_at": "2026-11-26",
-  "source_header": "Atualizado em: 2026-11-26",
+  "generated_at": "2026-11-27T21:34:13+00:00",
+  "source_updated_at": "2026-11-27",
+  "source_header": "Atualizado em: 2026-11-27",
   "source_file": "dados_aeronaves.csv",
-  "source_size_bytes": 24387149,
+  "source_size_bytes": 24391472,
   "data_file": "records.jsonl.gz",
-  "rows": 35196,
-  "active_rows": 26985,
+  "rows": 35199,
+  "active_rows": 26988,
   "canceled_rows": 8211,
-  "rows_with_document": 35196,
-  "rows_with_masked_document": 11839,
-  "unique_operators": 20616,
+  "rows_with_document": 35199,
+  "rows_with_masked_document": 11842,
+  "unique_operators": 20624,
   "null_uf_rows": 0,
   "ufs": [
     "AC",
@@ -48,10 +48,10 @@
   "year_max": 2029,
   "search_result_limit": 20,
   "sample_queries": [
-    "PT-TYD",
+    "PU-HPB",
     "Indisponível",
-    "PU-MTT",
-    "PT-TIY"
+    "PT-FYH",
+    "PU-MTT"
   ],
   "methodology": [
     "Esta página foi gerada a partir do CSV original entregue para o site, em vez de consultar o portal da ANAC em tempo real.",
